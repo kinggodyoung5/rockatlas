@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-17T15:55:02.224Z",
+  "genres": [
+    {
+      "id": "classic-rock",
+      "name": "클래식 록",
+      "englishName": "Classic Rock",
+      "description": "1960~70년대 록의 문법을 만든 블루스·포크·사이키델릭 기반의 중심 계보.",
+      "color": "#e86335",
+      "accent": "251 146 60",
+      "foldedGenres": [
+        "블루스 록",
+        "포크 록",
+        "사이키델릭 록",
+        "루츠 록"
+      ]
+    },
+    {
+      "id": "hard-rock",
+      "name": "하드 록",
+      "englishName": "Hard Rock",
+      "description": "큰 리프, 강한 드럼, 전면적인 보컬을 중심으로 한 직선적인 록.",
+      "color": "#f2b134",
+      "accent": "250 204 21",
+      "foldedGenres": [
+        "글램 록",
+        "글램 메탈",
+        "부기 록",
+        "아레나 록"
+      ]
+    },
+    {
+      "id": "progressive-art",
+      "name": "프로그레시브 · 아트 록",
+      "englishName": "Progressive & Art Rock",
+      "description": "긴 구성, 변박, 개념적 앨범과 실험적인 사운드 디자인을 탐구하는 계열.",
+      "color": "#7d69d5",
+      "accent": "167 139 250",
+      "foldedGenres": [
+        "아트 록",
+        "네오 프로그",
+        "스페이스 록",
+        "포스트 프로그"
+      ]
+    },
+    {
+      "id": "punk-rock",
+      "name": "펑크 록",
+      "englishName": "Punk Rock",
+      "description": "짧고 빠른 곡, DIY 태도, 사회적 긴장감을 전면에 둔 반응의 음악.",
+      "color": "#d83d5a",
+      "accent": "244 63 94",
+      "foldedGenres": [
+        "개러지 펑크",
+        "하드코어 펑크",
+        "포스트 펑크의 초기 계보"
+      ]
+    },
+    {
+      "id": "alternative-indie",
+      "name": "얼터너티브 · 인디 록",
+      "englishName": "Alternative & Indie Rock",
+      "description": "주류 록의 공식을 비틀며 노이즈, 로파이, 전자음악까지 흡수한 넓은 지대.",
+      "color": "#4f9b88",
+      "accent": "45 212 191",
+      "foldedGenres": [
+        "인디 록",
+        "노이즈 록",
+        "슈게이즈",
+        "브릿팝",
+        "포스트 록"
+      ]
+    },
+    {
+      "id": "grunge",
+      "name": "그런지",
+      "englishName": "Grunge",
+      "description": "시애틀을 중심으로 펑크의 정서와 헤비한 기타를 결합한 1990년대의 장면.",
+      "color": "#84785d",
+      "accent": "202 138 4",
+      "foldedGenres": [
+        "시애틀 사운드",
+        "슬러지 성향 얼터너티브"
+      ]
+    },
+    {
+      "id": "heavy-metal",
+      "name": "헤비 메탈",
+      "englishName": "Heavy Metal",
+      "description": "중량감 있는 리프와 극적인 연주를 중심으로 확장된 메탈의 큰 줄기.",
+      "color": "#8a8e95",
+      "accent": "203 213 225",
+      "foldedGenres": [
+        "NWOBHM",
+        "스피드 메탈",
+        "파워 메탈",
+        "스래시 메탈"
+      ]
+    },
+    {
+      "id": "extreme-metal",
+      "name": "익스트림 메탈",
+      "englishName": "Extreme Metal",
+      "description": "데스·블랙·멜로딕 데스 등 속도와 질감의 극단을 밀어붙이는 계열.",
+      "color": "#6f2d32",
+      "accent": "248 113 113",
+      "foldedGenres": [
+        "데스 메탈",
+        "블랙 메탈",
+        "멜로딕 데스 메탈",
+        "그라인드코어"
+      ]
+    },
+    {
+      "id": "gothic-industrial",
+      "name": "고딕 · 인더스트리얼",
+      "englishName": "Gothic & Industrial Rock",
+      "description": "포스트 펑크의 어둠과 기계적인 리듬, 연극적인 미학이 만나는 계열.",
+      "color": "#536b8b",
+      "accent": "96 165 250",
+      "foldedGenres": [
+        "고딕 록",
+        "다크웨이브",
+        "인더스트리얼 록",
+        "인더스트리얼 메탈"
+      ]
+    }
+  ]
+}

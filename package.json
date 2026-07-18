@@ -1,0 +1,39 @@
+{
+  "name": "rock-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "studio": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "collect:images": "node --experimental-strip-types scripts/collect-image-candidates.ts",
+    "search:images": "node --experimental-strip-types scripts/search-commons-images.ts",
+    "collect:videos": "node --experimental-strip-types scripts/collect-video-candidates.ts",
+    "review:videos": "node --experimental-strip-types scripts/collect-video-candidates.ts --strict",
+    "audit:relations": "node --experimental-strip-types scripts/audit-relations.ts",
+    "audit:facts": "node --experimental-strip-types scripts/audit-band-facts.ts",
+    "collect:relations": "node --experimental-strip-types scripts/collect-relation-candidates.ts",
+    "search:videos": "node --experimental-strip-types scripts/search-youtube-videos.ts",
+    "collect:review": "node --experimental-strip-types scripts/collect-review-candidates.ts",
+    "validate:data": "node --experimental-strip-types scripts/validate-catalog.ts",
+    "review": "node --experimental-strip-types scripts/review-report.ts",
+    "review:strict": "node --experimental-strip-types scripts/review-report.ts --strict"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.6"
+  }
+}

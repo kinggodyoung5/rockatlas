@@ -1,0 +1,159 @@
+import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Play, Users } from 'lucide-react'
+import { genreById } from '../data/genres'
+import { eraById } from '../data/eras'
+import { reviewBand } from '../data/review'
+import type { Band, Track } from '../types/music'
+import { BandImage } from './BandImage'
+import { RelationMap } from './RelationMap'
+
+interface BandDetailProps {
+  band: Band
+  onBack: () => void
+  onSelectBand: (band: Band) => void
+  onPlayTrack: (track: Track) => void
+  isFavorite: boolean
+  onToggleFavorite: (bandId: string) => void
+  visitedIds: string[]
+}
+
+export function BandDetail({ band, onBack, onSelectBand, onPlayTrack, isFavorite, onToggleFavorite, visitedIds }: BandDetailProps) {
+  const genre = genreById[band.primaryGenre]
+  const currentMembers = band.members.filter((member) => member.status !== 'former')
+  const formerMembers = band.members.filter((member) => member.status === 'former')
+  const review = reviewBand(band)
+  const imageCredit = band.image.credit
+  const datedTracks = band.tracks.filter((track): track is Track & { year: number } => typeof track.year === 'number').sort((a, b) => a.year - b.year)
+  const albums = [...new Set(band.tracks.map((track) => track.album).filter((album): album is string => Boolean(album)))]
+  const playableTracks = band.tracks.filter((track) => track.source.embedStatus === 'allowed')
+  const youtubeChannel = band.sources.find((source) => source.publisher === 'YouTube' && source.official)
+  const firstTrackYear = datedTracks.at(0)?.year
+  const lastTrackYear = datedTracks.at(-1)?.year
+  const representativeSpan = firstTrackYear ? (firstTrackYear === lastTrackYear ? `${firstTrackYear}` : `${firstTrackYear}–${lastTrackYear}`) : '연도 확인 중'
+
+  return (
+    <main className="detail-page" style={{ '--genre-color': genre.color } as React.CSSProperties}>
+      <div className="detail-topbar shell">
+        <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 전체 목록</button>
+        <span>ROCK ATLAS / {genre.englishName.toUpperCase()}</span>
+      </div>
+
+      <section className="detail-hero shell">
+        <div className="detail-portrait">
+          <BandImage band={band} eager />
+          <a href={imageCredit.sourceUrl} target="_blank" rel="noreferrer" className="image-credit" title={imageCredit.creator ? `${imageCredit.creator} · ${imageCredit.license}` : undefined}>
+            {imageCredit.reviewStatus === 'verified' ? `사진: ${imageCredit.creator} · ${imageCredit.license}` : '사진 출처 · 라이선스 검토 필요'} <ExternalLink size={12} />
+          </a>
+        </div>
+        <div className="detail-intro">
+          <span className="eyebrow" style={{ color: genre.color }}>{genre.name} / EST. {band.formed}</span>
+          <h1>{band.name}</h1>
+          <button className={`favorite-button detail-favorite ${isFavorite ? 'is-active' : ''}`} onClick={() => onToggleFavorite(band.id)} aria-pressed={isFavorite}>
+            <Heart size={16} fill={isFavorite ? 'currentColor' : 'none'} />
+            {isFavorite ? '저장됨' : '이 밴드 저장'}
+          </button>
+          <span className="detail-kicker">핵심 발자취</span>
+          <p className="detail-summary">{band.summary}</p>
+          <div className="career-stats" aria-label="밴드 핵심 지표">
+            <span><strong>{band.formed}</strong><small>결성</small></span>
+            <span><strong>{representativeSpan}</strong><small>대표곡 연대</small></span>
+            <span><strong>{albums.length}</strong><small>대표 음반</small></span>
+            <span><strong>{band.relations.length}</strong><small>연결 관계</small></span>
+          </div>
+          <div className="detail-facts">
+            <span><MapPin size={17} />{band.origin}</span>
+            <span><CalendarDays size={17} />{band.activeYears}</span>
+            <span><Users size={17} />주요 멤버 {band.members.length}명</span>
+          </div>
+          <div className="tag-list">{band.subgenres.map((tag) => <span key={tag}>#{tag}</span>)}</div>
+        </div>
+      </section>
+
+      <div className="detail-grid shell">
+        <section className="detail-story">
+          <span className="section-no">01 / SOUND</span>
+          <h2>어떤 음악을 하나요?</h2>
+          <p>{band.style}</p>
+          <div className="sound-facts">
+            <div><span>귀에 먼저 잡히는 요소</span><strong>{band.tags.join(' · ') || '편집 대기'}</strong></div>
+            <div><span>세부 장르</span><strong>{band.subgenres.join(' · ') || genre.name}</strong></div>
+            <div><span>대표 음반</span><strong>{albums.join(' · ') || '편집 대기'}</strong></div>
+          </div>
+          <div className="genre-crossings">
+            <span>장르 교차점</span>
+            {band.genreIds.map((id) => <strong key={id}>{genreById[id].name}</strong>)}
+          </div>
+          <div className="era-timeline" aria-label="시대별 장르 변화">
+            {band.eraTags.map((eraTag) => (
+              <div key={eraTag.era}>
+                <strong>{eraById[eraTag.era].label}</strong>
+                <span>{eraTag.subgenres.join(' · ')}</span>
+                {eraTag.note && <small>{eraTag.note}</small>}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="track-list-section">
+          <span className="section-no">02 / FOOTPRINT</span>
+          <h2>대표곡으로 보는 발자취</h2>
+          <div className="career-timeline">
+            <div><time>{band.formed}</time><span><strong>{band.origin}에서 결성</strong><small>{band.activeYears}</small></span></div>
+            {datedTracks.map((track) => (
+              <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? '싱글·수록 음반 정보 확인 중'}</small></span></div>
+            ))}
+          </div>
+          <h3 className="listen-heading">바로 들어보기</h3>
+          {playableTracks.length > 0 ? <div className="track-list">
+            {playableTracks.map((item, index) => (
+              <button key={item.id} className="track-row" onClick={() => onPlayTrack(item)}>
+                <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
+                <span className="track-info"><strong>{item.title}</strong><small>{item.album} {item.year ? `· ${item.year}` : ''}</small></span>
+                <span className="play-button"><Play size={16} fill="currentColor" /></span>
+              </button>
+            ))}
+          </div> : youtubeChannel ? (
+            <a className="youtube-channel-card" href={youtubeChannel.url} target="_blank" rel="noreferrer">
+              <span><strong>{band.name} 공식 YouTube</strong><small>외부 재생이 제한된 대표곡은 공식 채널에서 감상할 수 있습니다.</small></span>
+              <ExternalLink size={18} />
+            </a>
+          ) : null}
+        </section>
+
+        <section className="members-section detail-grid-wide">
+          <span className="section-no">03 / PEOPLE</span>
+          <h2>주요 멤버</h2>
+          <div className="member-columns">
+            <div>
+              <h3>현재 / 후기 라인업</h3>
+              {currentMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.status === 'touring' ? ' · 투어' : ''}</span></p>)}
+            </div>
+            {formerMembers.length > 0 && <div>
+              <h3>과거 핵심 멤버</h3>
+              {formerMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}</span></p>)}
+            </div>}
+          </div>
+        </section>
+      </div>
+
+      <div className="shell"><RelationMap band={band} onSelect={onSelectBand} visitedIds={visitedIds} /></div>
+
+      <details className="sources-disclosure shell">
+        <summary><span>출처 · 권리</span><small>검수 {review.passedChecks}/{review.totalChecks}</small></summary>
+        <div className="sources-disclosure-body">
+          <p>데이터와 이미지·영상 권리 상태를 확인하는 운영 정보입니다.</p>
+          <div className="review-progress" aria-label={`검수 기준 ${review.totalChecks}개 중 ${review.passedChecks}개 통과`}><span style={{ width: `${(review.passedChecks / review.totalChecks) * 100}%` }} /></div>
+          <ul className="review-checks">
+            {review.checks.map((check) => (
+              <li key={check.id} className={check.passed ? 'is-passed' : ''}>{check.passed ? <Check size={14} /> : <CircleAlert size={14} />}<span><strong>{check.label}</strong><small>{check.detail}</small></span></li>
+            ))}
+          </ul>
+          <div className="source-links">
+            {band.sources.map((source) => (
+              <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><span>{source.label}<small>{source.externalId ?? source.note ?? '외부 원문 연결'}</small></span><ExternalLink size={13} /></a>
+            ))}
+          </div>
+        </div>
+      </details>
+    </main>
+  )
+}

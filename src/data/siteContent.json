@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-17T15:55:10.645Z",
+  "brandSuffix": "by kinggodyoung",
+  "heroTitle": "락의 세계를 여행하는 히치하이커를 위한 안내서",
+  "heroDescription": "",
+  "genreSectionLabel": "01 / GENRE COMPASS",
+  "genreSectionTitle": "어디서 시작할까요?",
+  "genreSectionDescription": "세부 장르의 미로 대신, 소리의 차이가 뚜렷한 9개 큰 길로 정리했습니다.",
+  "theme": {
+    "fontPreset": "modern",
+    "baseFontScale": 1,
+    "headingWeight": 900,
+    "backgroundColor": "#0b0b0d",
+    "surfaceColor": "#efeee9",
+    "accentColor": "#e86335",
+    "mutedColor": "#98979a",
+    "heroArtMode": "vinyl",
+    "heroImageUrl": "",
+    "heroImagePosition": "center"
+  },
+  "sectionVisibility": {
+    "genres": true,
+    "bands": true,
+    "manifesto": true
+  },
+  "sectionOrder": [
+    "genres",
+    "bands",
+    "manifesto"
+  ]
+}
