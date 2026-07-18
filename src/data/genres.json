@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-17T15:55:02.224Z",
+  "updatedAt": "2026-07-18T06:09:29.324Z",
   "genres": [
     {
       "id": "classic-rock",
@@ -59,29 +59,29 @@
     },
     {
       "id": "alternative-indie",
-      "name": "얼터너티브 · 인디 록",
-      "englishName": "Alternative & Indie Rock",
-      "description": "주류 록의 공식을 비틀며 노이즈, 로파이, 전자음악까지 흡수한 넓은 지대.",
+      "name": "얼터너티브 · 그런지",
+      "englishName": "Alternative & Grunge",
+      "description": "기존 록의 틀을 벗어나 새로운 사운드를 탐구한 장르. 거친 감성부터 팝적인 멜로디, 전자음악과 메탈의 융합까지 폭넓은 스타일을 아우른다.",
       "color": "#4f9b88",
       "accent": "45 212 191",
       "foldedGenres": [
-        "인디 록",
-        "노이즈 록",
-        "슈게이즈",
-        "브릿팝",
-        "포스트 록"
+        "뉴메탈",
+        "포스트그런지",
+        "팝 록",
+        "일렉트로닉 록"
       ]
     },
     {
       "id": "grunge",
-      "name": "그런지",
-      "englishName": "Grunge",
-      "description": "시애틀을 중심으로 펑크의 정서와 헤비한 기타를 결합한 1990년대의 장면.",
+      "name": "브릿팝 · 인디",
+      "englishName": "Brit pop & Indie",
+      "description": "멜로디와 분위기를 중시하는 감성적인 록. 브릿팝부터 인디록, 슈게이즈와 포스트록까지 개성 있는 사운드와 폭넓은 음악성을 담아낸다.",
       "color": "#84785d",
       "accent": "202 138 4",
       "foldedGenres": [
-        "시애틀 사운드",
-        "슬러지 성향 얼터너티브"
+        "슈게이즈",
+        "드림팝",
+        "포스트록"
       ]
     },
     {
@@ -110,20 +110,6 @@
         "블랙 메탈",
         "멜로딕 데스 메탈",
         "그라인드코어"
-      ]
-    },
-    {
-      "id": "gothic-industrial",
-      "name": "고딕 · 인더스트리얼",
-      "englishName": "Gothic & Industrial Rock",
-      "description": "포스트 펑크의 어둠과 기계적인 리듬, 연극적인 미학이 만나는 계열.",
-      "color": "#536b8b",
-      "accent": "96 165 250",
-      "foldedGenres": [
-        "고딕 록",
-        "다크웨이브",
-        "인더스트리얼 록",
-        "인더스트리얼 메탈"
       ]
     }
   ]

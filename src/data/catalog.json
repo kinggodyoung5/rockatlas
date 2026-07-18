@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18T01:46:34.568Z",
+  "updatedAt": "2026-07-18T06:09:29.274Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -5863,9 +5863,8 @@
       "origin": "크롤리, 잉글랜드",
       "countryCode": "GB",
       "activeYears": "1978–현재",
-      "primaryGenre": "gothic-industrial",
+      "primaryGenre": "alternative-indie",
       "genreIds": [
-        "gothic-industrial",
         "alternative-indie"
       ],
       "tags": [
@@ -5882,8 +5881,7 @@
         {
           "era": "1970s",
           "genreIds": [
-            "punk-rock",
-            "gothic-industrial"
+            "punk-rock"
           ],
           "subgenres": [
             "포스트 펑크"
@@ -5892,7 +5890,6 @@
         {
           "era": "1980s",
           "genreIds": [
-            "gothic-industrial",
             "alternative-indie"
           ],
           "subgenres": [
@@ -6098,9 +6095,8 @@
       "origin": "클리블랜드, 미국",
       "countryCode": "US",
       "activeYears": "1988–현재",
-      "primaryGenre": "gothic-industrial",
+      "primaryGenre": "alternative-indie",
       "genreIds": [
-        "gothic-industrial",
         "alternative-indie"
       ],
       "tags": [
@@ -6117,7 +6113,7 @@
         {
           "era": "1980s",
           "genreIds": [
-            "gothic-industrial"
+            "alternative-indie"
           ],
           "subgenres": [
             "인더스트리얼 록"
@@ -6126,7 +6122,6 @@
         {
           "era": "1990s",
           "genreIds": [
-            "gothic-industrial",
             "alternative-indie"
           ],
           "subgenres": [
@@ -6314,9 +6309,8 @@
       "origin": "베를린, 독일",
       "countryCode": "DE",
       "activeYears": "1994–현재",
-      "primaryGenre": "gothic-industrial",
+      "primaryGenre": "heavy-metal",
       "genreIds": [
-        "gothic-industrial",
         "heavy-metal"
       ],
       "tags": [
@@ -6333,7 +6327,6 @@
         {
           "era": "1990s",
           "genreIds": [
-            "gothic-industrial",
             "heavy-metal"
           ],
           "subgenres": [
@@ -6344,7 +6337,6 @@
         {
           "era": "2000s",
           "genreIds": [
-            "gothic-industrial",
             "heavy-metal"
           ],
           "subgenres": [
@@ -7435,6 +7427,207 @@
           "externalId": "UCtmftE9d_FKl3ZUzPaB1etw",
           "official": true,
           "channelName": "my bloody valentine",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18",
+          "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
+        }
+      ]
+    },
+    {
+      "id": "megadeth",
+      "name": "Megadeth",
+      "formed": 1983,
+      "origin": "로스앤젤레스, 미국",
+      "countryCode": "US",
+      "activeYears": "1983–2002, 2004–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "extreme-metal"
+      ],
+      "tags": [
+        "스래시",
+        "정교한 편곡",
+        "정치적 가사"
+      ],
+      "subgenres": [
+        "스래시 메탈",
+        "스피드 메탈",
+        "헤비 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "heavy-metal",
+            "extreme-metal"
+          ],
+          "subgenres": [
+            "스래시 메탈",
+            "스피드 메탈"
+          ]
+        },
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        }
+      ],
+      "summary": "메탈리카에서 해고된 분노를 더 빠르고 더 정교한 스래시로 되돌려준 밴드.",
+      "style": "촘촘한 트윈 리드 기타와 급변하는 박자 위에 데이브 머스테인의 날 선 보컬과 전쟁·정치를 향한 가사가 얹힌다.",
+      "members": [
+        {
+          "name": "Dave Mustaine",
+          "role": "보컬·기타",
+          "status": "current"
+        },
+        {
+          "name": "Teemu Mäntysaari",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "James LoMenzo",
+          "role": "베이스",
+          "status": "current"
+        },
+        {
+          "name": "Dirk Verbeuren",
+          "role": "드럼",
+          "status": "current"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "symphony-of-destruction",
+          "title": "Symphony of Destruction",
+          "year": 1992,
+          "album": "Countdown to Extinction",
+          "youtubeId": "vfpgpf6QVnI",
+          "source": {
+            "label": "Symphony of Destruction — YouTube",
+            "url": "https://www.youtube.com/watch?v=vfpgpf6QVnI",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "Megadeth",
+            "channelType": "artist",
+            "note": "검색 근거로 공식 채널 업로드로 추정(oEmbed·IFrame 자동 검수 미실행, 네트워크 제한으로 npm run review:videos 재확인 필요) · 사이트는 임베드 없이 외부 링크로만 연결하므로 재생 가능 여부와 무관"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "holy-wars-the-punishment-due",
+          "title": "Holy Wars... The Punishment Due",
+          "year": 1990,
+          "album": "Rust in Peace",
+          "youtubeId": "9d4ui9q7eDM",
+          "source": {
+            "label": "Holy Wars... The Punishment Due — YouTube",
+            "url": "https://www.youtube.com/watch?v=9d4ui9q7eDM",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "megadethvevo",
+            "channelType": "artist",
+            "note": "검색 근거로 VEVO 공식 채널 업로드로 추정(oEmbed·IFrame 자동 검수 미실행, 네트워크 제한으로 npm run review:videos 재확인 필요) · 사이트는 임베드 없이 외부 링크로만 연결하므로 재생 가능 여부와 무관"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced-by",
+          "note": "데이브 머스테인이 메탈리카에서 해고된 뒤, 더 빠르고 무거운 사운드로 답하려 결성",
+          "strength": 3,
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18",
+          "source": {
+            "label": "Megadeth — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Megadeth",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-18",
+            "note": "1983년 4월 11일 Dave Mustaine이 Metallica에서 해고된 뒤 복수심으로 더 빠르고 무거운 밴드를 결성했다는 기록을 확인"
+          }
+        },
+        {
+          "targetBandId": "slayer",
+          "kind": "shared-scene",
+          "note": "스래시 메탈 빅 포의 동료",
+          "strength": 3,
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18",
+          "source": {
+            "label": "Megadeth — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Megadeth",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-18",
+            "note": "Megadeth를 Slayer·Anthrax·Metallica와 함께 미국 스래시 메탈의 'Big Four'로 설명"
+          }
+        }
+      ],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "Megadeth",
+        "fileName": "Megadeth_-_Wacken_Open_Air_2023_12.jpg",
+        "alt": "Megadeth 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Megadeth_-_Wacken_Open_Air_2023_12.jpg",
+          "creator": "Frank Schwichtenberg (Huhu Uet)",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        {
+          "label": "Megadeth — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Megadeth",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 이력과 멤버 교차 확인용"
+        },
+        {
+          "label": "Megadeth 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Megadeth_-_Wacken_Open_Air_2023_12.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "Frank Schwichtenberg (Huhu Uet) · CC BY-SA 4.0 · 표시 URL(displayUrl/originalUrl)은 API 접근 제한으로 미해결, 실제 CDN 경로 확인 필요"
+        },
+        {
+          "label": "Megadeth — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q83431",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q83431",
+          "note": "이름·결성 시점·국가를 교차 확인한 외부 식별자"
+        },
+        {
+          "label": "Megadeth — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+          "note": "이름·결성 시점·국가를 교차 확인한 외부 식별자"
+        },
+        {
+          "label": "Megadeth — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCLVz1B001PIbq9LliJenV2w",
+          "publisher": "YouTube",
+          "externalId": "UCLVz1B001PIbq9LliJenV2w",
+          "official": true,
+          "channelName": "Megadeth",
           "channelType": "artist",
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"

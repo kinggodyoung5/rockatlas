@@ -7,7 +7,6 @@ export type GenreId =
   | 'grunge'
   | 'heavy-metal'
   | 'extreme-metal'
-  | 'gothic-industrial'
 
 export type RelationKind =
   | 'sounds-like'

@@ -27,6 +27,7 @@ function colorToAccent(hex: string) {
 export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, genreMessage, onChange, onGenresChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
+  const [foldedGenresDraft, setFoldedGenresDraft] = useState<Record<string, string>>({})
   const uploadRef = useRef<HTMLInputElement>(null)
   const fontUploadRef = useRef<HTMLInputElement>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
@@ -137,13 +138,13 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
 
       <div className="studio-site-actions"><span className={dirty ? 'is-dirty' : ''}>{message}</span><a href="./" target="_blank" rel="noreferrer"><ExternalLink size={14} /> 실제 화면</a><button onClick={() => void onSave()}><Save size={15} /> 디자인 저장</button></div>
 
-      <details className="studio-genre-editor"><summary>9개 장르 카드 편집</summary><div className="studio-genre-editor-grid">
+      <details className="studio-genre-editor"><summary>8개 장르 카드 편집</summary><div className="studio-genre-editor-grid">
         {genres.map((genre, index) => <details key={genre.id}><summary><span style={{ background: genre.color }} />{String(index + 1).padStart(2, '0')} · {genre.name}</summary><div>
           <div className="studio-genre-order-actions studio-grid-span"><button onClick={() => moveGenre(genre.id, -1)} disabled={index === 0}><ArrowUp size={12} /> 위로</button><button onClick={() => moveGenre(genre.id, 1)} disabled={index === genres.length - 1}><ArrowDown size={12} /> 아래로</button></div>
           <label>한국어 이름<input value={genre.name} onChange={(event) => updateGenre(genre.id, { name: event.target.value })} /></label>
           <label>영문 이름<input value={genre.englishName} onChange={(event) => updateGenre(genre.id, { englishName: event.target.value })} /></label>
           <label>색상<input type="color" value={genre.color} onChange={(event) => updateGenre(genre.id, { color: event.target.value, accent: colorToAccent(event.target.value) })} /></label>
-          <label>함께 보는 장르<input value={genre.foldedGenres.join(', ')} onChange={(event) => updateGenre(genre.id, { foldedGenres: event.target.value.split(',').map((item) => item.trim()).filter(Boolean) })} /></label>
+          <label>함께 보는 장르<input value={foldedGenresDraft[genre.id] ?? genre.foldedGenres.join(', ')} onChange={(event) => { const raw = event.target.value; setFoldedGenresDraft((prev) => ({ ...prev, [genre.id]: raw })); updateGenre(genre.id, { foldedGenres: raw.split(',').map((item) => item.trim()).filter(Boolean) }) }} onBlur={() => setFoldedGenresDraft((prev) => { const next = { ...prev }; delete next[genre.id]; return next })} /></label>
           <label className="studio-grid-span">설명<textarea value={genre.description} onChange={(event) => updateGenre(genre.id, { description: event.target.value })} rows={3} /></label>
         </div></details>)}
       </div><div className="studio-site-actions"><span className={genresDirty ? 'is-dirty' : ''}>{genreMessage}</span><button onClick={() => void onSaveGenres()}><Save size={15} /> 장르 카드 저장</button></div></details>

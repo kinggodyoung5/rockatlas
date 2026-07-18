@@ -229,7 +229,7 @@ export function StudioPage() {
   const [siteMessage, setSiteMessage] = useState('현재 메인 화면 문구입니다.')
   const [studioGenres, setStudioGenres] = useState(() => clone(initialGenres))
   const [genresDirty, setGenresDirty] = useState(false)
-  const [genreMessage, setGenreMessage] = useState('현재 9개 장르 카드입니다.')
+  const [genreMessage, setGenreMessage] = useState('현재 8개 장르 카드입니다.')
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
   const importRef = useRef<HTMLInputElement>(null)
   const isExisting = catalogBands.some((band) => band.id === selectedId)
