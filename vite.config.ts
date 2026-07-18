@@ -9,9 +9,11 @@ const catalogHistoryPath = resolve('src/data/catalog-history.json')
 const siteContentPath = resolve('src/data/siteContent.json')
 const genresPath = resolve('src/data/genres.json')
 const uploadsPath = resolve('public/uploads')
+const fontUploadsPath = resolve('public/uploads/fonts')
 
 type JsonObject = Record<string, unknown>
 type HistoryEntry = { id: string; createdAt: string; label: string; catalog: JsonObject }
+type HealthEntry = { id: string; label: string; url: string; kind: 'link' | 'image' | 'font'; bandId?: string }
 
 const isLocalRequest = (origin: string) => !origin || /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(origin)
 
@@ -47,10 +49,121 @@ function json(response: { setHeader(name: string, value: string): void; end(body
   response.end(JSON.stringify(payload))
 }
 
+async function inspectUrl(entry: HealthEntry, localOrigin: string) {
+  const startedAt = Date.now()
+  try {
+    const target = new URL(entry.url, localOrigin)
+    if (!['http:', 'https:'].includes(target.protocol)) throw new Error('HTTP(S) 주소가 아닙니다.')
+    const request = async (method: 'HEAD' | 'GET') => {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 10_000)
+      try {
+        const result = await fetch(target, { method, redirect: 'follow', signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 link-health-checker', ...(method === 'GET' ? { Range: 'bytes=0-1023' } : {}) } })
+        await result.body?.cancel()
+        return result
+      } finally { clearTimeout(timeout) }
+    }
+    let result = await request('HEAD')
+    if ([405, 501].includes(result.status)) result = await request('GET')
+    const contentType = result.headers.get('content-type') ?? ''
+    const isAsset = entry.kind === 'image' ? contentType.startsWith('image/') : entry.kind === 'font' ? /font|woff|octet-stream/.test(contentType) : true
+    const status = result.status === 403 || result.status === 429
+      ? 'restricted'
+      : result.ok && !isAsset
+        ? 'broken'
+        : result.ok && result.redirected
+          ? 'redirected'
+          : result.ok
+            ? 'ok'
+            : result.status === 404 || result.status === 410
+              ? 'broken'
+              : 'error'
+    return { ...entry, status, httpStatus: result.status, finalUrl: result.url, contentType, durationMs: Date.now() - startedAt, detail: result.ok && !isAsset ? `${entry.kind === 'image' ? '이미지' : '폰트'} 형식이 아닙니다.` : '' }
+  } catch (error) {
+    return { ...entry, status: 'error', httpStatus: 0, finalUrl: '', contentType: '', durationMs: Date.now() - startedAt, detail: error instanceof Error && error.name === 'AbortError' ? '10초 안에 응답하지 않았습니다.' : error instanceof Error ? error.message : '확인 실패' }
+  }
+}
+
 function studioApi(): Plugin {
   return {
     name: 'rock-atlas-studio-api',
     configureServer(server) {
+      server.middlewares.use('/api/studio/health-check', async (request, response, next) => {
+        if (request.method !== 'POST') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('Studio 검사는 로컬에서만 허용됩니다.')
+        }
+        try {
+          const payload = await readBody(request, 800_000)
+          const entries = payload.entries as HealthEntry[] | undefined
+          if (!Array.isArray(entries) || entries.length > 600) throw new Error('검사 항목은 최대 600개까지 보낼 수 있습니다.')
+          if (entries.some((entry) => !entry.id || !entry.label || !entry.url || !['link', 'image', 'font'].includes(entry.kind))) throw new Error('검사 항목 형식이 올바르지 않습니다.')
+          const results = new Array(entries.length)
+          let cursor = 0
+          const localOrigin = `http://${request.headers.host ?? '127.0.0.1:5173'}`
+          await Promise.all(Array.from({ length: Math.min(8, entries.length) }, async () => {
+            while (cursor < entries.length) {
+              const index = cursor
+              cursor += 1
+              results[index] = await inspectUrl(entries[index], localOrigin)
+            }
+          }))
+          json(response, { checkedAt: new Date().toISOString(), results })
+        } catch (error) {
+          response.statusCode = 400
+          response.end(error instanceof Error ? error.message : '전체 상태 검사 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/external-search', async (request, response, next) => {
+        if (request.method !== 'GET') return next()
+        const requestUrl = new URL(request.url ?? '', 'http://localhost')
+        const query = requestUrl.searchParams.get('q')?.trim() ?? ''
+        const provider = requestUrl.searchParams.get('provider')
+        if (query.length < 2 || !['wikidata', 'musicbrainz'].includes(provider ?? '')) {
+          response.statusCode = 400
+          return response.end('검색어 두 글자 이상과 검색 제공자가 필요합니다.')
+        }
+        try {
+          const controller = new AbortController()
+          const timeout = setTimeout(() => controller.abort(), 12_000)
+          let results: unknown[] = []
+          if (provider === 'wikidata') {
+            const url = new URL('https://www.wikidata.org/w/api.php')
+            url.search = new URLSearchParams({ action: 'wbsearchentities', search: query, language: 'ko', uselang: 'ko', type: 'item', limit: '8', format: 'json', origin: '*' }).toString()
+            const apiResponse = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
+            if (!apiResponse.ok) throw new Error(`Wikidata 응답 오류 (${apiResponse.status})`)
+            const payload = await apiResponse.json() as { search?: Array<{ id: string; label?: string; description?: string; concepturi?: string; aliases?: string[] }> }
+            results = (payload.search ?? []).map((item) => ({ id: item.id, name: item.label ?? item.id, description: item.description ?? '', url: item.concepturi ?? `https://www.wikidata.org/wiki/${item.id}`, aliases: item.aliases ?? [] }))
+          } else {
+            const url = new URL('https://musicbrainz.org/ws/2/artist/')
+            url.search = new URLSearchParams({ query: `artist:${query}`, fmt: 'json', limit: '8' }).toString()
+            const apiResponse = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor; personal project)', Accept: 'application/json' } })
+            if (!apiResponse.ok) throw new Error(`MusicBrainz 응답 오류 (${apiResponse.status})`)
+            const payload = await apiResponse.json() as { artists?: Array<{ id: string; name: string; score?: number; type?: string; disambiguation?: string; country?: string; area?: { name?: string }; 'begin-area'?: { name?: string }; 'life-span'?: { begin?: string; end?: string; ended?: boolean }; aliases?: Array<{ name: string }> }> }
+            results = (payload.artists ?? []).map((item) => ({
+              id: item.id,
+              name: item.name,
+              description: [item.type, item.disambiguation].filter(Boolean).join(' · '),
+              url: `https://musicbrainz.org/artist/${item.id}`,
+              score: item.score,
+              country: item.country ?? '',
+              area: item['begin-area']?.name ?? item.area?.name ?? '',
+              begin: item['life-span']?.begin ?? '',
+              end: item['life-span']?.end ?? '',
+              ended: Boolean(item['life-span']?.ended),
+              aliases: (item.aliases ?? []).slice(0, 4).map((alias) => alias.name),
+            }))
+          }
+          clearTimeout(timeout)
+          json(response, { provider, query, results })
+        } catch (error) {
+          response.statusCode = 502
+          response.end(error instanceof Error && error.name === 'AbortError' ? '외부 검색 시간이 초과되었습니다.' : error instanceof Error ? error.message : '외부 검색 실패')
+        }
+      })
+
       server.middlewares.use('/api/studio/catalog', async (request, response, next) => {
         if (request.method === 'GET') {
           response.setHeader('Content-Type', 'application/json; charset=utf-8')
@@ -176,6 +289,34 @@ function studioApi(): Plugin {
         } catch (error) {
           response.statusCode = 400
           response.end(error instanceof Error ? error.message : '이미지 업로드 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/upload-font', async (request, response, next) => {
+        if (request.method !== 'PUT') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('Studio 업로드는 로컬에서만 허용됩니다.')
+        }
+        try {
+          const payload = await readBody(request, 13_000_000)
+          const fileName = typeof payload.fileName === 'string' ? payload.fileName : ''
+          const extension = fileName.split('.').pop()?.toLowerCase() ?? ''
+          if (!['woff2', 'woff', 'ttf', 'otf'].includes(extension)) throw new Error('WOFF2, WOFF, TTF, OTF 폰트만 업로드할 수 있습니다.')
+          const dataUrl = typeof payload.dataUrl === 'string' ? payload.dataUrl : ''
+          const base64 = dataUrl.match(/^data:[^;]*;base64,(.+)$/)?.[1]
+          if (!base64) throw new Error('폰트 파일을 읽지 못했습니다.')
+          const buffer = Buffer.from(base64, 'base64')
+          if (buffer.length > 9_000_000) throw new Error('폰트는 9MB 이하여야 합니다.')
+          await mkdir(fontUploadsPath, { recursive: true })
+          const safeBase = fileName.replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'custom-font'
+          const storedName = `${safeBase}-${Date.now()}.${extension}`
+          await writeFile(resolve(fontUploadsPath, storedName), buffer)
+          const format = extension === 'ttf' ? 'truetype' : extension === 'otf' ? 'opentype' : extension
+          json(response, { ok: true, url: `./uploads/fonts/${storedName}`, format, name: safeBase })
+        } catch (error) {
+          response.statusCode = 400
+          response.end(error instanceof Error ? error.message : '폰트 업로드 실패')
         }
       })
     },

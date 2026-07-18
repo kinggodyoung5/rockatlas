@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, ExternalLink, ImagePlus, Monitor, Save, Smartphone } from 'lucide-react'
+import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Save, Smartphone } from 'lucide-react'
 import { useRef, useState } from 'react'
 import type { Genre } from '../types/music'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
@@ -26,7 +26,9 @@ function colorToAccent(hex: string) {
 
 export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, genreMessage, onChange, onGenresChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
+  const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
   const uploadRef = useRef<HTMLInputElement>(null)
+  const fontUploadRef = useRef<HTMLInputElement>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
   const moveSection = (id: SiteSectionId, direction: -1 | 1) => {
     const order = [...value.sectionOrder]
@@ -57,6 +59,24 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
     const result = await response.json() as { url: string }
     changeTheme({ heroImageUrl: result.url, heroArtMode: 'image' })
   }
+  const uploadFont = async (file: File) => {
+    setFontMessage('폰트 업로드 중…')
+    try {
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(String(reader.result))
+        reader.onerror = () => reject(new Error('폰트를 읽지 못했습니다.'))
+        reader.readAsDataURL(file)
+      })
+      const response = await fetch('/api/studio/upload-font', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fileName: file.name, dataUrl }) })
+      if (!response.ok) throw new Error(await response.text())
+      const result = await response.json() as { url: string; format: SiteContent['theme']['customFontFormat']; name: string }
+      changeTheme({ customFontName: result.name, customFontUrl: result.url, customFontFormat: result.format })
+      setFontMessage(`${file.name} 업로드 완료 · 디자인 저장을 눌러 확정하세요.`)
+    } catch (error) {
+      setFontMessage(error instanceof Error ? error.message : '폰트 업로드에 실패했습니다.')
+    }
+  }
 
   return (
     <section id="design" className="studio-site-settings design-studio-v2">
@@ -75,7 +95,15 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
 
           <details open><summary>폰트와 색상</summary><div className="studio-form-grid">
             <label>폰트 프리셋<select value={value.theme.fontPreset} onChange={(event) => changeTheme({ fontPreset: event.target.value as SiteContent['theme']['fontPreset'] })}><option value="modern">모던 산세리프</option><option value="classic">클래식 세리프</option><option value="editorial">에디토리얼 콘덴스드</option></select></label>
+            <label>업로드 폰트 적용 범위<select value={value.theme.customFontTarget} onChange={(event) => changeTheme({ customFontTarget: event.target.value as SiteContent['theme']['customFontTarget'] })} disabled={!value.theme.customFontUrl}><option value="all">본문과 제목 모두</option><option value="body">본문만</option><option value="heading">제목만</option></select></label>
+            <label className="studio-grid-span">업로드 폰트 이름<input value={value.theme.customFontName} onChange={(event) => changeTheme({ customFontName: event.target.value })} placeholder="파일을 올리면 자동 입력됩니다." /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => fontUploadRef.current?.click()}><FileUp size={15} /> WOFF2·WOFF·TTF·OTF 폰트 업로드</button>
+            <input ref={fontUploadRef} hidden type="file" accept=".woff2,.woff,.ttf,.otf,font/woff2,font/woff,font/ttf,font/otf" onChange={(event) => event.target.files?.[0] && void uploadFont(event.target.files[0])} />
+            <p className="studio-upload-note studio-grid-span">{fontMessage}{value.theme.customFontUrl && <> · <button onClick={() => changeTheme({ customFontName: '', customFontUrl: '', customFontFormat: '' })}>업로드 폰트 해제</button></>}</p>
+            <label>본문 굵기<select value={value.theme.bodyWeight} onChange={(event) => changeTheme({ bodyWeight: Number(event.target.value) as SiteContent['theme']['bodyWeight'] })}><option value={400}>보통 400</option><option value={500}>중간 500</option><option value={600}>약간 굵게 600</option><option value={700}>굵게 700</option></select></label>
+            <label>본문 모양<select value={value.theme.bodyItalic ? 'italic' : 'normal'} onChange={(event) => changeTheme({ bodyItalic: event.target.value === 'italic' })}><option value="normal">일반</option><option value="italic">이탤릭</option></select></label>
             <label>제목 굵기<select value={value.theme.headingWeight} onChange={(event) => changeTheme({ headingWeight: Number(event.target.value) as 700 | 800 | 900 })}><option value={700}>보통</option><option value={800}>굵게</option><option value={900}>매우 굵게</option></select></label>
+            <label>제목 모양<select value={value.theme.headingItalic ? 'italic' : 'normal'} onChange={(event) => changeTheme({ headingItalic: event.target.value === 'italic' })}><option value="normal">일반</option><option value="italic">이탤릭</option></select></label>
             <label>전체 글자 배율 <small>{Math.round(value.theme.baseFontScale * 100)}%</small><input type="range" min="0.85" max="1.2" step="0.05" value={value.theme.baseFontScale} onChange={(event) => changeTheme({ baseFontScale: Number(event.target.value) })} /></label>
             <label>배경색<input type="color" value={value.theme.backgroundColor} onChange={(event) => changeTheme({ backgroundColor: event.target.value })} /></label>
             <label>밝은 면·글자색<input type="color" value={value.theme.surfaceColor} onChange={(event) => changeTheme({ surfaceColor: event.target.value })} /></label>
@@ -97,10 +125,11 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
         </div>
 
         <div className={`studio-live-preview is-${previewMode}`} style={{ '--preview-bg': value.theme.backgroundColor, '--preview-paper': value.theme.surfaceColor, '--preview-accent': value.theme.accentColor } as React.CSSProperties}>
+          {value.theme.customFontUrl && <style>{`@font-face{font-family:RockAtlasCustom;src:url("${value.theme.customFontUrl}") format("${value.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}`}</style>}
           <div className="studio-preview-toolbar"><span>실시간 미리보기</span><button className={previewMode === 'desktop' ? 'is-active' : ''} onClick={() => setPreviewMode('desktop')} aria-label="PC 미리보기"><Monitor size={14} /></button><button className={previewMode === 'mobile' ? 'is-active' : ''} onClick={() => setPreviewMode('mobile')} aria-label="모바일 미리보기"><Smartphone size={14} /></button></div>
-          <div className={`studio-preview-canvas font-${value.theme.fontPreset}`} style={{ fontSize: `${value.theme.baseFontScale}em` }}>
+          <div className={`studio-preview-canvas font-${value.theme.fontPreset}`} style={{ fontSize: `${value.theme.baseFontScale}em`, fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'heading' ? 'RockAtlasCustom' : undefined, fontWeight: value.theme.bodyWeight, fontStyle: value.theme.bodyItalic ? 'italic' : 'normal' }}>
             <header><strong>ROCK ATLAS <i>{value.brandSuffix}</i></strong><small>GENRE · BANDS · STUDIO</small></header>
-            <main><span>WESTERN ROCK DISCOVERY ARCHIVE</span><h4 style={{ fontWeight: value.theme.headingWeight }}>{value.heroTitle}</h4>{value.heroDescription && <p>{value.heroDescription}</p>}<button>장르부터 탐색</button><div className={`preview-art mode-${value.theme.heroArtMode}`} style={value.theme.heroArtMode === 'image' ? { backgroundImage: `url(${value.theme.heroImageUrl})`, backgroundPosition: value.theme.heroImagePosition } : undefined} /></main>
+            <main><span>WESTERN ROCK DISCOVERY ARCHIVE</span><h4 style={{ fontWeight: value.theme.headingWeight, fontStyle: value.theme.headingItalic ? 'italic' : 'normal', fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'body' ? 'RockAtlasCustom' : undefined }}>{value.heroTitle}</h4>{value.heroDescription && <p>{value.heroDescription}</p>}<button>장르부터 탐색</button><div className={`preview-art mode-${value.theme.heroArtMode}`} style={value.theme.heroArtMode === 'image' ? { backgroundImage: `url(${value.theme.heroImageUrl})`, backgroundPosition: value.theme.heroImagePosition } : undefined} /></main>
             {value.sectionVisibility.genres && <footer><small>{value.genreSectionLabel}</small><strong>{value.genreSectionTitle}</strong><p>{value.genreSectionDescription}</p></footer>}
           </div>
         </div>

@@ -7,6 +7,7 @@ import { siteContent, type SiteContent } from '../data/siteContent'
 import type { Band, BandEraTag, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
+import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
 
 const relationLabels: Record<RelationKind, string> = {
   'sounds-like': '비슷한 소리',
@@ -61,7 +62,7 @@ function createDraftBand(): Band {
 }
 
 const membersToText = (members: Member[]) => members.map((member) => [member.name, member.role, member.status, member.activeYears ?? ''].join(' | ')).join('\n')
-const tracksToText = (tracks: Track[]) => tracks.map((track) => [track.title, track.youtubeId, track.year ?? '', track.album ?? ''].join(' | ')).join('\n')
+const tracksToText = (tracks: Track[]) => tracks.map((track) => [track.title, track.youtubeId, track.year ?? '', track.album ?? '', track.guide ?? ''].join(' | ')).join('\n')
 const youtubeIdFromInput = (value: string) => {
   const trimmed = value.trim()
   if (!trimmed) return ''
@@ -87,7 +88,7 @@ function parseMembers(value: string): Member[] {
 
 function parseTracks(value: string, current: Track[]): Track[] {
   const usedIds = new Set<string>()
-  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([title]) => Boolean(title)).map(([title, youtubeInput, year, album], index) => {
+  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([title]) => Boolean(title)).map(([title, youtubeInput, year, album, guide], index) => {
     const youtubeId = youtubeIdFromInput(youtubeInput)
     const existing = current.find((track) => track.youtubeId === youtubeId && youtubeId) ?? current.find((track) => track.title === title)
     const baseId = slugify(title) || `track-${index + 1}`
@@ -104,6 +105,7 @@ function parseTracks(value: string, current: Track[]): Track[] {
         youtubeId,
         year: Number(year) || undefined,
         album: album || undefined,
+        guide: guide || undefined,
         reviewStatus: videoChanged ? 'draft' : existing.reviewStatus,
         source: videoChanged ? {
           ...existing.source,
@@ -123,6 +125,7 @@ function parseTracks(value: string, current: Track[]): Track[] {
       youtubeId,
       year: Number(year) || undefined,
       album: album || undefined,
+      guide: guide || undefined,
       reviewStatus: 'draft',
       source: {
         label: `${title} — YouTube`,
@@ -259,6 +262,27 @@ export function StudioPage() {
   const changeGenres = (nextGenres: typeof studioGenres) => {
     setStudioGenres(nextGenres)
     setGenresDirty(true)
+  }
+
+  const selectExternalCandidate = (publisher: 'Wikidata' | 'MusicBrainz', candidate: ExternalCandidate) => {
+    setDraft((current) => {
+      const withSource = updateExternalSource(current, publisher, candidate.id)
+      if (publisher === 'Wikidata') return withSource
+      const beginYear = Number(candidate.begin?.slice(0, 4))
+      const formed = Number.isFinite(beginYear) && beginYear > 1800 ? beginYear : current.formed
+      const activeYears = candidate.begin
+        ? `${candidate.begin.slice(0, 4)}–${candidate.ended && candidate.end ? candidate.end.slice(0, 4) : '현재'}`
+        : current.activeYears
+      return {
+        ...withSource,
+        formed,
+        activeYears,
+        origin: candidate.area || current.origin,
+        countryCode: candidate.country || current.countryCode,
+      }
+    })
+    setDirty(true)
+    setMessage(`${publisher} 후보 ${candidate.name}을(를) 연결했습니다. MusicBrainz 후보는 결성지·국가·활동연도도 반영됩니다.`)
   }
 
   const saveSiteContent = async () => {
@@ -503,7 +527,7 @@ export function StudioPage() {
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>
             <div className="studio-dual-fields">
               <label>멤버 <small>이름 | 역할 | current/former/touring | 활동연도</small><textarea key={`${selectedId}-members`} defaultValue={membersToText(draft.members)} onBlur={(event) => change({ members: parseMembers(event.target.value) })} rows={8} /></label>
-              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범</small><textarea key={`${selectedId}-tracks`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks) })} rows={8} /></label>
+              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
             </div>
           </section>
 
@@ -529,10 +553,11 @@ export function StudioPage() {
 
           <section className="studio-form-section">
             <div className="studio-section-heading"><span>05</span><div><h3>이미지와 외부 식별자</h3><p>권리 검수 전에는 이미지가 공개 승인으로 처리되지 않습니다.</p></div></div>
+            <ExternalSourceFinder key={selectedId} initialQuery={draft.name} selectedWikidataId={sourceId(draft, 'Wikidata')} selectedMusicBrainzId={sourceId(draft, 'MusicBrainz')} onSelect={selectExternalCandidate} />
             <div className="studio-form-grid">
               <label>Wikidata ID<input value={sourceId(draft, 'Wikidata')} onChange={(event) => { setDraft((current) => updateExternalSource(current, 'Wikidata', event.target.value.trim())); setDirty(true) }} placeholder="Q1299" /></label>
               <label>MusicBrainz ID<input value={sourceId(draft, 'MusicBrainz')} onChange={(event) => { setDraft((current) => updateExternalSource(current, 'MusicBrainz', event.target.value.trim())); setDirty(true) }} /></label>
-              <label className="studio-grid-span">공식 YouTube 채널 URL<input value={sourceUrl(draft, 'YouTube')} onChange={(event) => { setDraft((current) => updateYoutubeSource(current, event.target.value.trim())); setDirty(true) }} placeholder="https://www.youtube.com/@official-channel" /><small>대표곡이 모두 외부 재생 차단일 때 상세 화면에 표시됩니다.</small></label>
+              <label className="studio-grid-span">공식 YouTube 채널 URL<input value={sourceUrl(draft, 'YouTube')} onChange={(event) => { setDraft((current) => updateYoutubeSource(current, event.target.value.trim())); setDirty(true) }} placeholder="https://www.youtube.com/@official-channel" /><small>곡별 링크와 함께 상세 화면 하단의 공식 채널 바로가기에 사용됩니다.</small></label>
               <label className="studio-grid-span">표시 이미지 URL<input value={draft.image.displayUrl ?? ''} onChange={(event) => change({ image: { ...draft.image, displayUrl: event.target.value } })} /></label>
               <label className="studio-grid-span">Commons 원본 페이지<input value={draft.image.credit.sourceUrl} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, sourceUrl: event.target.value } } })} /></label>
               <label>촬영자·제작자<input value={draft.image.credit.creator ?? ''} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, creator: event.target.value } } })} /></label>

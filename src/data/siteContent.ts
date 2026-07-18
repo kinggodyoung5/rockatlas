@@ -11,8 +11,15 @@ export interface SiteContent {
   genreSectionDescription: string
   theme: {
     fontPreset: 'modern' | 'classic' | 'editorial'
+    customFontName: string
+    customFontUrl: string
+    customFontFormat: 'woff2' | 'woff' | 'truetype' | 'opentype' | ''
+    customFontTarget: 'all' | 'body' | 'heading'
     baseFontScale: number
+    bodyWeight: 400 | 500 | 600 | 700
+    bodyItalic: boolean
     headingWeight: 700 | 800 | 900
+    headingItalic: boolean
     backgroundColor: string
     surfaceColor: string
     accentColor: string

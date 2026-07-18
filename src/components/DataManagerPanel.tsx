@@ -2,6 +2,7 @@ import { AlertTriangle, FileDown, FileUp, History, RotateCcw, Save, ShieldCheck,
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import type { Band, EraId, GenreId, Track } from '../types/music'
+import { LinkHealthPanel } from './LinkHealthPanel'
 
 export interface DeletedBandRecord {
   band: Band
@@ -160,6 +161,7 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
           <div className="studio-track-audit">{selected.tracks.map((track) => <div key={track.id}><span><strong>{track.title}</strong><small>{track.source.channelName ?? '채널 미입력'}</small></span><label><input type="checkbox" checked={Boolean(track.source.official)} onChange={(event) => updateTrack(track.id, {}, { official: event.target.checked })} /> 공식</label><select aria-label={`${track.title} 임베드 상태`} value={track.source.embedStatus ?? ''} onChange={(event) => updateTrack(track.id, {}, { embedStatus: event.target.value ? event.target.value as 'allowed' | 'blocked' : undefined, embedCheckedAt: event.target.value ? new Date().toISOString().slice(0, 10) : undefined })}><option value="">미확인</option><option value="allowed">허용</option><option value="blocked">직접 보기</option></select><select aria-label={`${track.title} 검수 상태`} value={track.reviewStatus} onChange={(event) => updateTrack(track.id, { reviewStatus: event.target.value as Track['reviewStatus'], reviewedAt: event.target.value === 'draft' ? undefined : new Date().toISOString().slice(0, 10), reviewedBy: event.target.value === 'draft' ? undefined : 'Studio operator' })}><option value="draft">초안</option><option value="reviewed">검수됨</option><option value="published">공개</option></select></div>)}</div>
         </div> : <p>검수할 밴드가 없습니다.</p>}</details>
       </div>
+      <LinkHealthPanel bands={bands} onSelectBand={onSelectBand} />
     </section>
   )
 }

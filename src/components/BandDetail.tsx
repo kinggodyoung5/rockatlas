@@ -1,4 +1,4 @@
-import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Play, Users } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Users } from 'lucide-react'
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
@@ -10,13 +10,12 @@ interface BandDetailProps {
   band: Band
   onBack: () => void
   onSelectBand: (band: Band) => void
-  onPlayTrack: (track: Track) => void
   isFavorite: boolean
   onToggleFavorite: (bandId: string) => void
   visitedIds: string[]
 }
 
-export function BandDetail({ band, onBack, onSelectBand, onPlayTrack, isFavorite, onToggleFavorite, visitedIds }: BandDetailProps) {
+export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFavorite, visitedIds }: BandDetailProps) {
   const genre = genreById[band.primaryGenre]
   const currentMembers = band.members.filter((member) => member.status !== 'former')
   const formerMembers = band.members.filter((member) => member.status === 'former')
@@ -24,7 +23,6 @@ export function BandDetail({ band, onBack, onSelectBand, onPlayTrack, isFavorite
   const imageCredit = band.image.credit
   const datedTracks = band.tracks.filter((track): track is Track & { year: number } => typeof track.year === 'number').sort((a, b) => a.year - b.year)
   const albums = [...new Set(band.tracks.map((track) => track.album).filter((album): album is string => Boolean(album)))]
-  const playableTracks = band.tracks.filter((track) => track.source.embedStatus === 'allowed')
   const youtubeChannel = band.sources.find((source) => source.publisher === 'YouTube' && source.official)
   const firstTrackYear = datedTracks.at(0)?.year
   const lastTrackYear = datedTracks.at(-1)?.year
@@ -102,21 +100,23 @@ export function BandDetail({ band, onBack, onSelectBand, onPlayTrack, isFavorite
               <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? '싱글·수록 음반 정보 확인 중'}</small></span></div>
             ))}
           </div>
-          <h3 className="listen-heading">바로 들어보기</h3>
-          {playableTracks.length > 0 ? <div className="track-list">
-            {playableTracks.map((item, index) => (
-              <button key={item.id} className="track-row" onClick={() => onPlayTrack(item)}>
+          <h3 className="listen-heading">대표곡 안내</h3>
+          <p className="listen-description">곡의 위치를 먼저 읽고, 원할 때 외부 링크에서 감상하세요.</p>
+          <div className="track-list track-guide-list">
+            {band.tracks.map((item, index) => (
+              <a key={item.id} className="track-row track-guide-row" href={item.source.url} target="_blank" rel="noreferrer">
                 <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
-                <span className="track-info"><strong>{item.title}</strong><small>{item.album} {item.year ? `· ${item.year}` : ''}</small></span>
-                <span className="play-button"><Play size={16} fill="currentColor" /></span>
-              </button>
+                <span className="track-info"><strong>{item.title}</strong><small>{[item.album, item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
+                <span className="track-external"><small>YouTube</small><ExternalLink size={15} /></span>
+              </a>
             ))}
-          </div> : youtubeChannel ? (
+          </div>
+          {youtubeChannel && (
             <a className="youtube-channel-card" href={youtubeChannel.url} target="_blank" rel="noreferrer">
-              <span><strong>{band.name} 공식 YouTube</strong><small>외부 재생이 제한된 대표곡은 공식 채널에서 감상할 수 있습니다.</small></span>
+              <span><strong>{band.name} 공식 YouTube</strong><small>더 많은 음악은 아티스트의 공식 채널에서 확인하세요.</small></span>
               <ExternalLink size={18} />
             </a>
-          ) : null}
+          )}
         </section>
 
         <section className="members-section detail-grid-wide">

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18",
+  "updatedAt": "2026-07-18T01:46:34.568Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -1209,7 +1209,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "시작리프만 들어도 전세계가 아는 히트곡."
         },
         {
           "id": "welcome-jungle",

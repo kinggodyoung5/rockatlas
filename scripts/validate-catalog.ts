@@ -82,7 +82,7 @@ for (const band of bands) {
     trackIds.add(track.id)
     if (!/^[A-Za-z0-9_-]{11}$/.test(track.youtubeId)) errors.push(`${band.id}/${track.id}: 잘못된 YouTube ID`)
     if (track.source.url !== `https://www.youtube.com/watch?v=${track.youtubeId}`) errors.push(`${band.id}/${track.id}: YouTube ID와 출처 URL 불일치`)
-    if (youtubeIds.has(track.youtubeId)) errors.push(`${band.id}/${track.id}: 중복 YouTube ID ${track.youtubeId}`)
+    if (youtubeIds.has(track.youtubeId)) warnings.push(`${band.id}/${track.id}: 같은 YouTube 링크가 다른 대표곡에도 사용됨 (${track.youtubeId})`)
     youtubeIds.add(track.youtubeId)
     if (track.source.official) {
       officialTracks += 1

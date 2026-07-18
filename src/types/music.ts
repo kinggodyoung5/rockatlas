@@ -78,6 +78,7 @@ export interface Track extends ReviewRecord {
   title: string
   year?: number
   album?: string
+  guide?: string
   youtubeId: string
   source: SourceRef
 }

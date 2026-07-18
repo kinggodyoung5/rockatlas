@@ -1,17 +1,23 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { ArrowDown, ArrowRight, Compass, Menu, Search, Shuffle, X } from 'lucide-react'
+import { ArrowDown, ArrowRight, Compass, Menu, Search, Share2, Shuffle, X } from 'lucide-react'
 import { BandCard } from './components/BandCard'
 import { BandDetail } from './components/BandDetail'
 import { JourneyBar } from './components/JourneyBar'
-import { TrackModal } from './components/TrackModal'
 import { VideoReviewPage } from './components/VideoReviewPage'
 import { StudioPage } from './components/StudioPage'
+import { SharePanel } from './components/SharePanel'
 import { bandById, publicBandById, publicBands as bands } from './data/bands'
 import { eras } from './data/eras'
 import { genres } from './data/genres'
 import { siteContent } from './data/siteContent'
 import { useExplorerState } from './hooks/useExplorerState'
-import type { Band, EraId, GenreId, Track } from './types/music'
+import type { Band, EraId, GenreId } from './types/music'
+
+const fontSets = {
+  modern: { body: 'Pretendard, "Noto Sans KR", Inter, Arial, sans-serif', heading: 'Arial, "Noto Sans KR", sans-serif' },
+  classic: { body: 'Georgia, "Noto Serif KR", serif', heading: 'Georgia, "Noto Serif KR", serif' },
+  editorial: { body: 'Inter, Pretendard, sans-serif', heading: '"Arial Narrow", Impact, Pretendard, sans-serif' },
+}
 
 function getBandFromHash() {
   const match = window.location.hash.match(/^#band=(.+)$/)
@@ -27,8 +33,8 @@ function ExplorerApp() {
   const [selectedEra, setSelectedEra] = useState<EraId | 'all'>('all')
   const [query, setQuery] = useState('')
   const [selectedBand, setSelectedBand] = useState<Band | null>(() => getBandFromHash())
-  const [trackSelection, setTrackSelection] = useState<{ band: Band; track: Track } | null>(null)
   const [mobileMenu, setMobileMenu] = useState(false)
+  const [shareOpen, setShareOpen] = useState(false)
   const { favoriteIds, historyIds, toggleFavorite, recordVisit, clearHistory } = useExplorerState()
 
   useEffect(() => {
@@ -63,9 +69,6 @@ function ExplorerApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
-  const playTrack = useCallback((band: Band, track: Track) => setTrackSelection({ band, track }), [])
-  const closeTrack = useCallback(() => setTrackSelection(null), [])
-
   const selectGenre = (genreId: GenreId | 'all') => {
     setSelectedGenre(genreId)
     window.setTimeout(() => document.getElementById('bands')?.scrollIntoView({ behavior: 'smooth' }), 50)
@@ -73,30 +76,13 @@ function ExplorerApp() {
 
   const surpriseMe = () => openBand(bands[Math.floor(Math.random() * bands.length)])
 
-  if (selectedBand) {
-    return (
-      <>
-        <BandDetail
-          band={selectedBand}
-          onBack={closeBand}
-          onSelectBand={openBand}
-          onPlayTrack={(track) => playTrack(selectedBand, track)}
-          isFavorite={favoriteIds.includes(selectedBand.id)}
-          onToggleFavorite={toggleFavorite}
-          visitedIds={historyIds}
-        />
-        <TrackModal selection={trackSelection} onClose={closeTrack} />
-      </>
-    )
-  }
-
   const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
-  const fontSets = {
-    modern: { body: 'Pretendard, "Noto Sans KR", Inter, Arial, sans-serif', heading: 'Arial, "Noto Sans KR", sans-serif' },
-    classic: { body: 'Georgia, "Noto Serif KR", serif', heading: 'Georgia, "Noto Serif KR", serif' },
-    editorial: { body: 'Inter, Pretendard, sans-serif', heading: '"Arial Narrow", Impact, Pretendard, sans-serif' },
+  const presetFonts = fontSets[siteContent.theme.fontPreset]
+  const hasCustomFont = Boolean(siteContent.theme.customFontUrl)
+  const fonts = {
+    body: hasCustomFont && siteContent.theme.customFontTarget !== 'heading' ? 'RockAtlasCustom, sans-serif' : presetFonts.body,
+    heading: hasCustomFont && siteContent.theme.customFontTarget !== 'body' ? 'RockAtlasCustom, sans-serif' : presetFonts.heading,
   }
-  const fonts = fontSets[siteContent.theme.fontPreset]
   const themeStyle = {
     '--paper': siteContent.theme.surfaceColor,
     '--ink': siteContent.theme.backgroundColor,
@@ -105,8 +91,28 @@ function ExplorerApp() {
     '--font-body': fonts.body,
     '--font-heading': fonts.heading,
     '--font-scale': siteContent.theme.baseFontScale,
+    '--body-weight': siteContent.theme.bodyWeight,
+    '--body-style': siteContent.theme.bodyItalic ? 'italic' : 'normal',
     '--heading-weight': siteContent.theme.headingWeight,
+    '--heading-style': siteContent.theme.headingItalic ? 'italic' : 'normal',
   } as React.CSSProperties
+  const fontFaceRule = hasCustomFont ? `@font-face{font-family:RockAtlasCustom;src:url("${siteContent.theme.customFontUrl}") format("${siteContent.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}` : ''
+
+  if (selectedBand) {
+    return (
+      <div className={`app-shell theme-${siteContent.theme.fontPreset}`} style={themeStyle}>
+        {fontFaceRule && <style>{fontFaceRule}</style>}
+        <BandDetail
+          band={selectedBand}
+          onBack={closeBand}
+          onSelectBand={openBand}
+          isFavorite={favoriteIds.includes(selectedBand.id)}
+          onToggleFavorite={toggleFavorite}
+          visitedIds={historyIds}
+        />
+      </div>
+    )
+  }
 
   const genreSection = (
     <section id="genres" className="genre-section" key="genres">
@@ -150,23 +156,25 @@ function ExplorerApp() {
 
   return (
     <div className={`app-shell theme-${siteContent.theme.fontPreset}`} style={themeStyle}>
+      {fontFaceRule && <style>{fontFaceRule}</style>}
+      <a className="skip-link" href="#top">본문으로 건너뛰기</a>
       <header className="site-header shell">
         <a className="wordmark" href="#top" aria-label="Rock Atlas 홈">
           <span className="wordmark-mark">RA</span>
           <span><strong>ROCK ATLAS <i className="wordmark-by">{siteContent.brandSuffix}</i></strong><small>AMPLIFY YOUR TASTE</small></span>
         </a>
-        <nav className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">
+        <nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">
           <a href="#genres" onClick={() => setMobileMenu(false)}>장르</a>
           <a href="#bands" onClick={() => setMobileMenu(false)}>밴드</a>
           <button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>
           {isLocal && <a href="?studio=1">Studio</a>}
         </nav>
-        <button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label="메뉴 열기">
+        <button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">
           {mobileMenu ? <X /> : <Menu />}
         </button>
       </header>
 
-      <main id="top">
+      <main id="top" tabIndex={-1}>
         <section className="hero shell">
           <div className="hero-copy">
             <span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span>
@@ -175,6 +183,7 @@ function ExplorerApp() {
             <div className="hero-actions">
               <a className="primary-button" href={siteContent.sectionVisibility.genres ? '#genres' : '#bands'}>장르부터 탐색 <ArrowDown size={17} /></a>
               <button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button>
+              <button className="text-button" onClick={() => setShareOpen(true)}><Share2 size={16} /> 지도 공유하기</button>
             </div>
           </div>
           <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">
@@ -205,6 +214,7 @@ function ExplorerApp() {
         <p>{bands.length}개 밴드를 수록했습니다. 각 밴드는 주 장르 한 곳에 배치되고 교차 장르는 상세에서 이어집니다.</p>
         <span>SEOUL / 2026</span>
       </footer>
+      <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description={siteContent.heroTitle} onClose={() => setShareOpen(false)} />
     </div>
   )
 }
