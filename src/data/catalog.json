@@ -7633,6 +7633,219 @@
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
       ]
+    },
+    {
+      "id": "travis",
+      "name": "Travis",
+      "formed": 1990,
+      "origin": "글래스고, 스코틀랜드",
+      "countryCode": "GB",
+      "activeYears": "1990–현재",
+      "primaryGenre": "grunge",
+      "genreIds": ["grunge", "alternative-indie"],
+      "tags": ["브릿팝", "서정성", "포스트 브릿팝"],
+      "subgenres": ["포스트 브릿팝", "팝 록", "얼터너티브 록"],
+      "eraTags": [
+        { "era": "1990s", "genreIds": ["grunge"], "subgenres": ["포스트 브릿팝", "얼터너티브 록"] },
+        { "era": "2000s", "genreIds": ["grunge"], "subgenres": ["포스트 브릿팝", "팝 록"] }
+      ],
+      "summary": "감성적이고 따뜻한 멜로디로 2000년대 포스트 브릿팝의 전성기를 개척한 밴드.",
+      "style": "어쿠스틱한 기타 선율과 프란 힐리의 서정적이고 감미로운 보컬을 중심으로 편안한 사운드를 들려준다.",
+      "members": [
+        { "name": "Fran Healy", "role": "리드 보컬·리듬 기타", "status": "current" },
+        { "name": "Andy Dunlop", "role": "리드 기타·밴조", "status": "current" },
+        { "name": "Dougie Payne", "role": "베이스", "status": "current" },
+        { "name": "Neil Primrose", "role": "드럼·퍼커션", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "why-does-it-always-rain-on-me",
+          "title": "Why Does It Always Rain on Me?",
+          "year": 1999,
+          "album": "The Man Who",
+          "youtubeId": "PXatLOWjr-k",
+          "source": { "label": "Why Does It Always Rain on Me? — YouTube", "url": "https://www.youtube.com/watch?v=PXatLOWjr-k", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "Travis", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "sing",
+          "title": "Sing",
+          "year": 2001,
+          "album": "The Invisible Band",
+          "youtubeId": "eYO1-gGWJyo",
+          "source": { "label": "Sing — YouTube", "url": "https://www.youtube.com/watch?v=eYO1-gGWJyo", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "Travis", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "Travis",
+        "fileName": "Travis_band_zz.jpg",
+        "alt": "Travis 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Travis_band_zz.jpg",
+          "creator": "확인 필요",
+          "license": "확인 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Travis — Wikipedia", "url": "https://en.wikipedia.org/wiki/Travis_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력, 멤버 및 영향 관계 확인" },
+        { "label": "Travis — Wikidata", "url": "https://www.wikidata.org/wiki/Q160103", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q160103" },
+        { "label": "Travis — MusicBrainz", "url": "https://musicbrainz.org/artist/22a40b75-affc-4e69-8884-266d087e4751", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "22a40b75-affc-4e69-8884-266d087e4751" },
+        { "label": "Travis 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Travis_band_zz.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "저작자 및 라이선스 정보 확인 실패로 검토 필요" },
+        { "label": "Travis — 공식 YouTube", "url": "https://www.youtube.com/channel/UCfOY7DHgcXBp2drfyFJQvaw", "publisher": "YouTube", "externalId": "UCfOY7DHgcXBp2drfyFJQvaw", "official": true, "channelName": "Travis", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
+      ]
+    },
+    {
+      "id": "imagine-dragons",
+      "name": "Imagine Dragons",
+      "formed": 2008,
+      "origin": "라스베이거스, 미국",
+      "countryCode": "US",
+      "activeYears": "2008–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": ["alternative-indie"],
+      "tags": ["팝 록", "일렉트로팝", "아레나 록"],
+      "subgenres": ["팝 록", "일렉트로팝", "인디 팝", "아레나 록", "얼터너티브 록"],
+      "eraTags": [
+        { "era": "2010s", "genreIds": ["alternative-indie"], "subgenres": ["인디 팝", "팝 록"] },
+        { "era": "2020s", "genreIds": ["alternative-indie"], "subgenres": ["얼터너티브 록", "일렉트로팝"] }
+      ],
+      "summary": "일렉트로닉 비트와 웅장한 아레나 록 사운드를 결합하여 2010년대 팝 록의 대중화를 이끈 밴드.",
+      "style": "강렬한 퍼커션 리듬, 전자음악 요소와 댄 레이놀즈의 폭발적이고 호소력 짙은 보컬 멜로디가 중심을 이룬다.",
+      "members": [
+        { "name": "Dan Reynolds", "role": "보컬·기타·피아노·키보드·퍼커션·드럼", "status": "current" },
+        { "name": "Wayne Sermon", "role": "기타·백보컬·만돌린·신시사이저·바이올린", "status": "current" },
+        { "name": "Ben McKee", "role": "베이스·키보드·백보컬", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "radioactive",
+          "title": "Radioactive",
+          "year": 2012,
+          "album": "Night Visions",
+          "youtubeId": "wsVFmCoykZ4",
+          "source": { "label": "Radioactive — YouTube", "url": "https://www.youtube.com/watch?v=wsVFmCoykZ4", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "ImagineDragons", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "demons",
+          "title": "Demons",
+          "year": 2013,
+          "album": "Night Visions",
+          "youtubeId": "dDxpr3pgp60",
+          "source": { "label": "Demons — YouTube", "url": "https://www.youtube.com/watch?v=dDxpr3pgp60", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "ImagineDragons", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "Imagine Dragons",
+        "fileName": "Imagine_Dragons_2013.jpg",
+        "alt": "Imagine Dragons 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imagine_Dragons_2013.jpg",
+          "creator": "Alexandra Sermon",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Imagine Dragons — Wikipedia", "url": "https://en.wikipedia.org/wiki/Imagine_Dragons", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버 정보 확인" },
+        { "label": "Imagine Dragons — Wikidata", "url": "https://www.wikidata.org/wiki/Q391348", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q391348" },
+        { "label": "Imagine Dragons — MusicBrainz", "url": "https://musicbrainz.org/artist/012151a8-0f9a-44c9-997f-ebd68b5389f9", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "012151a8-0f9a-44c9-997f-ebd68b5389f9" },
+        { "label": "Imagine Dragons 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Imagine_Dragons_2013.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Alexandra Sermon · CC BY-SA 3.0" },
+        { "label": "Imagine Dragons — 공식 YouTube", "url": "https://www.youtube.com/@ImagineDragons", "publisher": "YouTube", "official": true, "channelName": "Imagine Dragons", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
+      ]
+    },
+    {
+      "id": "oasis",
+      "name": "Oasis",
+      "formed": 1991,
+      "origin": "맨체스터, 잉글랜드",
+      "countryCode": "GB",
+      "activeYears": "1991–2009, 2024–현재",
+      "primaryGenre": "grunge",
+      "genreIds": ["grunge", "classic-rock"],
+      "tags": ["브릿팝", "맨체스터", "형제 갈등"],
+      "subgenres": ["브릿팝", "록", "얼터너티브 록"],
+      "eraTags": [
+        { "era": "1990s", "genreIds": ["grunge"], "subgenres": ["브릿팝"] },
+        { "era": "2000s", "genreIds": ["grunge", "classic-rock"], "subgenres": ["록"] }
+      ],
+      "summary": "90년대 브릿팝 열풍의 중심이자, 영국의 시대정신을 대변했던 전설적인 록 밴드.",
+      "style": "노엘 갤러거의 직관적이고 거대한 팝 멜로디와 리암 갤러거의 반항적이고 호소력 짙은 보컬, 묵직한 기타 레이어링이 특징이다.",
+      "members": [
+        { "name": "Liam Gallagher", "role": "보컬", "status": "current" },
+        { "name": "Noel Gallagher", "role": "기타·보컬", "status": "current" },
+        { "name": "Paul Arthurs", "role": "기타", "status": "current" },
+        { "name": "Gem Archer", "role": "기타", "status": "current" },
+        { "name": "Andy Bell", "role": "베이스", "status": "current" },
+        { "name": "Joey Waronker", "role": "드럼", "status": "touring" }
+      ],
+      "tracks": [
+        {
+          "id": "wonderwall",
+          "title": "Wonderwall",
+          "year": 1995,
+          "album": "(What's the Story) Morning Glory?",
+          "youtubeId": "6hzrDeceEKc",
+          "source": { "label": "Wonderwall — YouTube", "url": "https://www.youtube.com/watch?v=6hzrDeceEKc", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "OasisVEVO", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "dont-look-back-in-anger",
+          "title": "Don't Look Back In Anger",
+          "year": 1996,
+          "album": "(What's the Story) Morning Glory?",
+          "youtubeId": "r8OipmKFDeM",
+          "source": { "label": "Don't Look Back In Anger — YouTube", "url": "https://www.youtube.com/watch?v=r8OipmKFDeM", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "OasisVEVO", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "Oasis (band)",
+        "fileName": "Oasis_Noel_and_Liam_WF.jpg",
+        "alt": "Oasis 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oasis_Noel_and_Liam_WF.jpg",
+          "creator": "Will Fresch",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Oasis (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Oasis_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 정보 및 멤버 리스트 교차 확인" },
+        { "label": "Oasis — Wikidata", "url": "https://www.wikidata.org/wiki/Q382890", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q382890" },
+        { "label": "Oasis — MusicBrainz", "url": "https://musicbrainz.org/artist/39ab1aed-75e0-4140-bd47-540276886b60", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "39ab1aed-75e0-4140-bd47-540276886b60" },
+        { "label": "Oasis 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Oasis_Noel_and_Liam_WF.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Will Fresch · CC BY-SA 2.0" },
+        { "label": "Oasis — 공식 YouTube", "url": "https://www.youtube.com/channel/UCd7A6xDlGoar2vHDvVm1CqA", "publisher": "YouTube", "externalId": "UCd7A6xDlGoar2vHDvVm1CqA", "official": true, "channelName": "OasisVEVO", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
+      ]
     }
   ]
 }
