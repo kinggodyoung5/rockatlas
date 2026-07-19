@@ -15,9 +15,12 @@
     "audit:relations": "node --experimental-strip-types scripts/audit-relations.ts",
     "audit:facts": "node --experimental-strip-types scripts/audit-band-facts.ts",
     "collect:relations": "node --experimental-strip-types scripts/collect-relation-candidates.ts",
+    "collect:taxonomy-signals": "node --experimental-strip-types scripts/collect-taxonomy-signals.ts",
+    "migrate:taxonomy-v2": "node --experimental-strip-types scripts/migrate-taxonomy-v2.ts",
     "search:videos": "node --experimental-strip-types scripts/search-youtube-videos.ts",
     "collect:review": "node --experimental-strip-types scripts/collect-review-candidates.ts",
     "validate:data": "node --experimental-strip-types scripts/validate-catalog.ts",
+    "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
     "review": "node --experimental-strip-types scripts/review-report.ts",
     "review:strict": "node --experimental-strip-types scripts/review-report.ts --strict"
   },

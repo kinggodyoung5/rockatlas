@@ -375,6 +375,22 @@ img { display: block; max-width: 100%; }
 .studio-checkboxes legend { padding: 0 6px; color: #777579; font-size: 9px; }
 .studio-checkboxes label { display: flex; align-items: center; gap: 6px; }
 .studio-checkboxes input { display: inline; width: 14px; height: 14px; margin: 0; accent-color: var(--orange); }
+.taxonomy-editor { border-color: color-mix(in srgb, var(--orange) 38%, var(--line)); }
+.taxonomy-subgenre-panel, .mood-score-editor { margin-top: 20px; padding: 18px; border: 1px solid #29282d; background: #0c0c0e; }
+.taxonomy-subgenre-panel > div:first-child, .mood-score-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 13px; }
+.taxonomy-subgenre-panel small, .mood-score-editor small { color: #777579; font-size: 10px; }
+.taxonomy-subgenre-grid { display: flex; flex-wrap: wrap; gap: 7px; }
+.taxonomy-subgenre-grid button { display: grid; gap: 2px; padding: 9px 11px; border: 1px solid #333238; background: #17171a; color: #b7b5ba; text-align: left; }
+.taxonomy-subgenre-grid button small { font-size: 8px; }
+.taxonomy-subgenre-grid button.is-selected { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 14%, #17171a); color: #fff; }
+.mood-score-editor fieldset { margin: 16px 0 0; padding: 14px; border: 1px solid #29282d; }
+.mood-score-editor legend { padding: 0 7px; color: var(--orange); font-size: 10px; font-weight: 800; }
+.mood-score-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.mood-score-grid label { display: grid; gap: 7px; padding: 12px; border: 1px solid #242328; background: #121214; }
+.mood-score-grid label.is-scored { border-color: color-mix(in srgb, var(--orange) 48%, #242328); }
+.mood-score-grid label > span { display: flex; justify-content: space-between; gap: 12px; }
+.mood-score-grid label em { color: var(--orange); font-size: 11px; font-style: normal; }
+.mood-score-grid input[type="range"] { width: 100%; padding: 0; accent-color: var(--orange); }
 .studio-suggestions { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; margin-bottom: 18px; }
 .studio-suggestions > span { display: flex; align-items: center; gap: 6px; width: 100%; color: #8d8a90; font-size: 9px; font-weight: 900; }
 .studio-suggestions button { display: flex; align-items: center; gap: 9px; padding: 9px 10px; border: 1px solid #29282d; color: #aaa8aa; background: #151518; text-align: left; }
@@ -653,6 +669,7 @@ img { display: block; max-width: 100%; }
   .studio-site-actions { align-items: stretch; flex-direction: column; }
   .studio-site-actions > span { margin: 0 0 4px; }
   .studio-form-grid, .studio-dual-fields, .studio-readiness { grid-template-columns: 1fr; }
+  .mood-score-grid { grid-template-columns: 1fr; }
   .studio-relation-row { grid-template-columns: 1fr 1fr; }
   .studio-relation-row input { grid-column: 1 / -1; }
   .studio-final-actions { grid-column: 1; }

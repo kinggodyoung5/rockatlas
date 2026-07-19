@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-07-18T06:09:29.274Z",
+  "schemaVersion": 2,
+  "updatedAt": "2026-07-19T06:36:12.926Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -215,7 +215,28 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "pop-rock",
+          "psychedelic-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "warm-comforting": 3,
+          "cosmic-psychedelic": 3,
+          "experimental-weird": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "the-rolling-stones",
@@ -441,7 +462,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "blues-rock",
+          "roots-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "riff-solo-driven": 4,
+          "anthemic-live": 4,
+          "acoustic-organic": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "the-who",
@@ -669,7 +709,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "mod-rock",
+          "hard-rock",
+          "rock-opera"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "riff-solo-driven": 4,
+          "epic-cinematic": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "led-zeppelin",
@@ -896,7 +956,28 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "folk-rock",
+          "proto-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "acoustic-organic": 3,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "acdc",
@@ -1120,7 +1201,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "guns-n-roses",
@@ -1345,7 +1443,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "hard-rock",
+          "glam-metal",
+          "blues-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "romantic-emotional": 3,
+          "riff-solo-driven": 5,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "pink-floyd",
@@ -1570,7 +1685,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "psychedelic-rock",
+          "space-rock",
+          "progressive-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 4,
+          "dreamy-ethereal": 5,
+          "cosmic-psychedelic": 5,
+          "experimental-weird": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "king-crimson",
@@ -1803,7 +1938,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "progressive-rock",
+          "art-rock",
+          "experimental-rock"
+        ],
+        "moodScores": {
+          "dark-gloomy": 4,
+          "technical-complex": 5,
+          "experimental-weird": 5,
+          "long-form-immersive": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "yes",
@@ -2026,7 +2178,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "symphonic-prog",
+          "progressive-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "hopeful-uplifting": 4,
+          "epic-cinematic": 5,
+          "technical-complex": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "porcupine-tree",
@@ -2249,7 +2418,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "neo-prog",
+          "post-prog",
+          "progressive-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 3,
+          "melancholic-lonely": 4,
+          "dreamy-ethereal": 4,
+          "technical-complex": 4,
+          "long-form-immersive": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "ramones",
@@ -2463,7 +2652,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "punk-rock",
+          "pop-punk",
+          "garage-punk"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "fast-driving": 5,
+          "youth-rebellious": 5,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "the-clash",
@@ -2689,7 +2895,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "punk-rock",
+          "post-punk",
+          "reggae-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "youth-rebellious": 5,
+          "experimental-weird": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "sex-pistols",
@@ -2918,7 +3143,22 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "punk-rock",
+          "anarcho-punk"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "aggressive-heavy": 5,
+          "youth-rebellious": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "radiohead",
@@ -3160,7 +3400,28 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "shoegaze-dream-post"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "art-rock",
+          "electronic-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dreamy-ethereal": 4,
+          "cold-urban": 4,
+          "electronic-synth": 4,
+          "experimental-weird": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "pixies",
@@ -3384,7 +3645,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "noise-pop"
+        ],
+        "moodScores": {
+          "youth-rebellious": 3,
+          "noisy-wall": 4,
+          "experimental-weird": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "sonic-youth",
@@ -3609,7 +3889,25 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "noise-rock",
+          "indie-rock",
+          "no-wave"
+        ],
+        "moodScores": {
+          "cold-urban": 4,
+          "noisy-wall": 5,
+          "experimental-weird": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "nirvana",
@@ -3831,7 +4129,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "punk-emo"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-rock",
+          "punk-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "melancholic-lonely": 5,
+          "youth-rebellious": 5,
+          "noisy-wall": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "pearl-jam",
@@ -4057,7 +4375,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "hopeful-uplifting": 3,
+          "romantic-emotional": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "alice-in-chains",
@@ -4284,7 +4621,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-metal",
+          "sludge-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "melancholic-lonely": 5,
+          "dark-gloomy": 5,
+          "riff-solo-driven": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "black-sabbath",
@@ -4532,7 +4888,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "extreme-metal",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "traditional-heavy-metal",
+          "doom-metal",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "dark-gloomy": 5,
+          "long-form-immersive": 3,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "iron-maiden",
@@ -4756,7 +5132,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "nwobhm",
+          "traditional-heavy-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "epic-cinematic": 5,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "metallica",
@@ -4982,7 +5375,25 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "thrash-metal",
+          "traditional-heavy-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "tool",
@@ -5209,7 +5620,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "progressive-metal",
+          "alternative-metal",
+          "art-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "dark-gloomy": 4,
+          "technical-complex": 5,
+          "experimental-weird": 4,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "slayer",
@@ -5435,7 +5866,25 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "extreme-metal"
+        ],
+        "subgenreIds": [
+          "thrash-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "dark-gloomy": 4,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "death",
@@ -5655,7 +6104,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "extreme-metal",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "death-metal",
+          "technical-death-metal",
+          "progressive-death-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "aggressive-heavy": 5,
+          "dark-gloomy": 4,
+          "technical-complex": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "children-of-bodom",
@@ -5882,7 +6350,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "extreme-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "melodic-death-metal",
+          "power-metal",
+          "neoclassical-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "epic-cinematic": 4,
+          "technical-complex": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "the-cure",
@@ -6114,7 +6601,28 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "shoegaze-dream-post"
+        ],
+        "subgenreIds": [
+          "post-punk",
+          "gothic-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dark-gloomy": 5,
+          "romantic-emotional": 4,
+          "dreamy-ethereal": 4,
+          "cold-urban": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "nine-inch-nails",
@@ -6328,7 +6836,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "industrial-rock",
+          "industrial-metal",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "dark-gloomy": 5,
+          "electronic-synth": 5,
+          "experimental-weird": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "rammstein",
@@ -6552,7 +7079,25 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "neue-deutsche-harte",
+          "industrial-metal",
+          "alternative-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "massive-heavy": 5,
+          "electronic-synth": 5,
+          "epic-cinematic": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "steely-dan",
@@ -6769,7 +7314,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "jazz-rock",
+          "soft-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "cold-urban": 3,
+          "technical-complex": 4,
+          "experimental-weird": 2
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "lynyrd-skynyrd",
@@ -7008,7 +7573,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "southern-rock",
+          "blues-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "warm-comforting": 3,
+          "acoustic-organic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "mogwai",
@@ -7235,7 +7819,27 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "post-rock",
+          "instrumental-rock",
+          "space-rock"
+        ],
+        "moodScores": {
+          "slow-calm": 4,
+          "dreamy-ethereal": 5,
+          "noisy-wall": 4,
+          "epic-cinematic": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "my-bloody-valentine",
@@ -7459,7 +8063,26 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "shoegaze",
+          "noise-pop",
+          "dream-pop"
+        ],
+        "moodScores": {
+          "romantic-emotional": 4,
+          "dreamy-ethereal": 5,
+          "noisy-wall": 5,
+          "experimental-weird": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "megadeth",
@@ -7660,7 +8283,24 @@
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
         }
-      ]
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "thrash-metal",
+          "speed-metal",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "technical-complex": 5,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "travis",
@@ -7670,20 +8310,65 @@
       "countryCode": "GB",
       "activeYears": "1990–현재",
       "primaryGenre": "britpop-indie",
-      "genreIds": ["britpop-indie", "alternative-indie"],
-      "tags": ["브릿팝", "서정성", "포스트 브릿팝"],
-      "subgenres": ["포스트 브릿팝", "팝 록", "얼터너티브 록"],
+      "genreIds": [
+        "britpop-indie",
+        "alternative-indie"
+      ],
+      "tags": [
+        "브릿팝",
+        "서정성",
+        "포스트 브릿팝"
+      ],
+      "subgenres": [
+        "포스트 브릿팝",
+        "팝 록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
-        { "era": "1990s", "genreIds": ["britpop-indie"], "subgenres": ["포스트 브릿팝", "얼터너티브 록"] },
-        { "era": "2000s", "genreIds": ["britpop-indie"], "subgenres": ["포스트 브릿팝", "팝 록"] }
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "포스트 브릿팝",
+            "얼터너티브 록"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "포스트 브릿팝",
+            "팝 록"
+          ]
+        }
       ],
       "summary": "감성적이고 따뜻한 멜로디로 2000년대 포스트 브릿팝의 전성기를 개척한 밴드.",
       "style": "어쿠스틱한 기타 선율과 프란 힐리의 서정적이고 감미로운 보컬을 중심으로 편안한 사운드를 들려준다.",
       "members": [
-        { "name": "Fran Healy", "role": "리드 보컬·리듬 기타", "status": "current" },
-        { "name": "Andy Dunlop", "role": "리드 기타·밴조", "status": "current" },
-        { "name": "Dougie Payne", "role": "베이스", "status": "current" },
-        { "name": "Neil Primrose", "role": "드럼·퍼커션", "status": "current" }
+        {
+          "name": "Fran Healy",
+          "role": "리드 보컬·리듬 기타",
+          "status": "current"
+        },
+        {
+          "name": "Andy Dunlop",
+          "role": "리드 기타·밴조",
+          "status": "current"
+        },
+        {
+          "name": "Dougie Payne",
+          "role": "베이스",
+          "status": "current"
+        },
+        {
+          "name": "Neil Primrose",
+          "role": "드럼·퍼커션",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -7692,7 +8377,15 @@
           "year": 1999,
           "album": "The Man Who",
           "youtubeId": "PXatLOWjr-k",
-          "source": { "label": "Why Does It Always Rain on Me? — YouTube", "url": "https://www.youtube.com/watch?v=PXatLOWjr-k", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "Travis", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Why Does It Always Rain on Me? — YouTube",
+            "url": "https://www.youtube.com/watch?v=PXatLOWjr-k",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "Travis",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7703,7 +8396,15 @@
           "year": 2001,
           "album": "The Invisible Band",
           "youtubeId": "eYO1-gGWJyo",
-          "source": { "label": "Sing — YouTube", "url": "https://www.youtube.com/watch?v=eYO1-gGWJyo", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "Travis", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Sing — YouTube",
+            "url": "https://www.youtube.com/watch?v=eYO1-gGWJyo",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "Travis",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7741,12 +8442,65 @@
         }
       },
       "sources": [
-        { "label": "Travis — Wikipedia", "url": "https://en.wikipedia.org/wiki/Travis_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력, 멤버 및 영향 관계 확인" },
-        { "label": "Travis — Wikidata", "url": "https://www.wikidata.org/wiki/Q160103", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q160103" },
-        { "label": "Travis — MusicBrainz", "url": "https://musicbrainz.org/artist/22a40b75-affc-4e69-8884-266d087e4751", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "22a40b75-affc-4e69-8884-266d087e4751" },
-        { "label": "Travis 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Travis_band_zz.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "저작자 및 라이선스 정보 확인 실패로 검토 필요" },
-        { "label": "Travis — 공식 YouTube", "url": "https://www.youtube.com/channel/UCfOY7DHgcXBp2drfyFJQvaw", "publisher": "YouTube", "externalId": "UCfOY7DHgcXBp2drfyFJQvaw", "official": true, "channelName": "Travis", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
-      ]
+        {
+          "label": "Travis — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Travis_(band)",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 이력, 멤버 및 영향 관계 확인"
+        },
+        {
+          "label": "Travis — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q160103",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q160103"
+        },
+        {
+          "label": "Travis — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/22a40b75-affc-4e69-8884-266d087e4751",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "22a40b75-affc-4e69-8884-266d087e4751"
+        },
+        {
+          "label": "Travis 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Travis_band_zz.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "저작자 및 라이선스 정보 확인 실패로 검토 필요"
+        },
+        {
+          "label": "Travis — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCfOY7DHgcXBp2drfyFJQvaw",
+          "publisher": "YouTube",
+          "externalId": "UCfOY7DHgcXBp2drfyFJQvaw",
+          "official": true,
+          "channelName": "Travis",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18",
+          "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "post-britpop",
+          "pop-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 4,
+          "warm-comforting": 3,
+          "romantic-emotional": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "imagine-dragons",
@@ -7756,19 +8510,61 @@
       "countryCode": "US",
       "activeYears": "2008–현재",
       "primaryGenre": "alternative-indie",
-      "genreIds": ["alternative-indie"],
-      "tags": ["팝 록", "일렉트로팝", "아레나 록"],
-      "subgenres": ["팝 록", "일렉트로팝", "인디 팝", "아레나 록", "얼터너티브 록"],
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "tags": [
+        "팝 록",
+        "일렉트로팝",
+        "아레나 록"
+      ],
+      "subgenres": [
+        "팝 록",
+        "일렉트로팝",
+        "인디 팝",
+        "아레나 록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
-        { "era": "2010s", "genreIds": ["alternative-indie"], "subgenres": ["인디 팝", "팝 록"] },
-        { "era": "2020s", "genreIds": ["alternative-indie"], "subgenres": ["얼터너티브 록", "일렉트로팝"] }
+        {
+          "era": "2010s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "인디 팝",
+            "팝 록"
+          ]
+        },
+        {
+          "era": "2020s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "일렉트로팝"
+          ]
+        }
       ],
       "summary": "일렉트로닉 비트와 웅장한 아레나 록 사운드를 결합하여 2010년대 팝 록의 대중화를 이끈 밴드.",
       "style": "강렬한 퍼커션 리듬, 전자음악 요소와 댄 레이놀즈의 폭발적이고 호소력 짙은 보컬 멜로디가 중심을 이룬다.",
       "members": [
-        { "name": "Dan Reynolds", "role": "보컬·기타·피아노·키보드·퍼커션·드럼", "status": "current" },
-        { "name": "Wayne Sermon", "role": "기타·백보컬·만돌린·신시사이저·바이올린", "status": "current" },
-        { "name": "Ben McKee", "role": "베이스·키보드·백보컬", "status": "current" }
+        {
+          "name": "Dan Reynolds",
+          "role": "보컬·기타·피아노·키보드·퍼커션·드럼",
+          "status": "current"
+        },
+        {
+          "name": "Wayne Sermon",
+          "role": "기타·백보컬·만돌린·신시사이저·바이올린",
+          "status": "current"
+        },
+        {
+          "name": "Ben McKee",
+          "role": "베이스·키보드·백보컬",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -7777,7 +8573,15 @@
           "year": 2012,
           "album": "Night Visions",
           "youtubeId": "wsVFmCoykZ4",
-          "source": { "label": "Radioactive — YouTube", "url": "https://www.youtube.com/watch?v=wsVFmCoykZ4", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "ImagineDragons", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Radioactive — YouTube",
+            "url": "https://www.youtube.com/watch?v=wsVFmCoykZ4",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "ImagineDragons",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7788,7 +8592,15 @@
           "year": 2013,
           "album": "Night Visions",
           "youtubeId": "dDxpr3pgp60",
-          "source": { "label": "Demons — YouTube", "url": "https://www.youtube.com/watch?v=dDxpr3pgp60", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "ImagineDragons", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Demons — YouTube",
+            "url": "https://www.youtube.com/watch?v=dDxpr3pgp60",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "ImagineDragons",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7811,12 +8623,67 @@
         }
       },
       "sources": [
-        { "label": "Imagine Dragons — Wikipedia", "url": "https://en.wikipedia.org/wiki/Imagine_Dragons", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버 정보 확인" },
-        { "label": "Imagine Dragons — Wikidata", "url": "https://www.wikidata.org/wiki/Q391348", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q391348" },
-        { "label": "Imagine Dragons — MusicBrainz", "url": "https://musicbrainz.org/artist/012151a8-0f9a-44c9-997f-ebd68b5389f9", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "012151a8-0f9a-44c9-997f-ebd68b5389f9" },
-        { "label": "Imagine Dragons 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Imagine_Dragons_2013.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Alexandra Sermon · CC BY-SA 3.0" },
-        { "label": "Imagine Dragons — 공식 YouTube", "url": "https://www.youtube.com/@ImagineDragons", "publisher": "YouTube", "official": true, "channelName": "Imagine Dragons", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
-      ]
+        {
+          "label": "Imagine Dragons — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Imagine_Dragons",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 이력 및 멤버 정보 확인"
+        },
+        {
+          "label": "Imagine Dragons — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q391348",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q391348"
+        },
+        {
+          "label": "Imagine Dragons — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/012151a8-0f9a-44c9-997f-ebd68b5389f9",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "012151a8-0f9a-44c9-997f-ebd68b5389f9"
+        },
+        {
+          "label": "Imagine Dragons 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Imagine_Dragons_2013.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "Alexandra Sermon · CC BY-SA 3.0"
+        },
+        {
+          "label": "Imagine Dragons — 공식 YouTube",
+          "url": "https://www.youtube.com/@ImagineDragons",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "Imagine Dragons",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18",
+          "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "pop-rock",
+          "electropop",
+          "indie-pop",
+          "arena-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 3,
+          "massive-heavy": 3,
+          "hopeful-uplifting": 4,
+          "electronic-synth": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "oasis",
@@ -7826,22 +8693,74 @@
       "countryCode": "GB",
       "activeYears": "1991–2009, 2024–현재",
       "primaryGenre": "britpop-indie",
-      "genreIds": ["britpop-indie", "classic-rock"],
-      "tags": ["브릿팝", "맨체스터", "형제 갈등"],
-      "subgenres": ["브릿팝", "록", "얼터너티브 록"],
+      "genreIds": [
+        "britpop-indie",
+        "classic-rock"
+      ],
+      "tags": [
+        "브릿팝",
+        "맨체스터",
+        "형제 갈등"
+      ],
+      "subgenres": [
+        "브릿팝",
+        "록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
-        { "era": "1990s", "genreIds": ["britpop-indie"], "subgenres": ["브릿팝"] },
-        { "era": "2000s", "genreIds": ["britpop-indie", "classic-rock"], "subgenres": ["록"] }
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "브릿팝"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie",
+            "classic-rock"
+          ],
+          "subgenres": [
+            "록"
+          ]
+        }
       ],
       "summary": "90년대 브릿팝 열풍의 중심이자, 영국의 시대정신을 대변했던 전설적인 록 밴드.",
       "style": "노엘 갤러거의 직관적이고 거대한 팝 멜로디와 리암 갤러거의 반항적이고 호소력 짙은 보컬, 묵직한 기타 레이어링이 특징이다.",
       "members": [
-        { "name": "Liam Gallagher", "role": "보컬", "status": "current" },
-        { "name": "Noel Gallagher", "role": "기타·보컬", "status": "current" },
-        { "name": "Paul Arthurs", "role": "기타", "status": "current" },
-        { "name": "Gem Archer", "role": "기타", "status": "current" },
-        { "name": "Andy Bell", "role": "베이스", "status": "current" },
-        { "name": "Joey Waronker", "role": "드럼", "status": "touring" }
+        {
+          "name": "Liam Gallagher",
+          "role": "보컬",
+          "status": "current"
+        },
+        {
+          "name": "Noel Gallagher",
+          "role": "기타·보컬",
+          "status": "current"
+        },
+        {
+          "name": "Paul Arthurs",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Gem Archer",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Andy Bell",
+          "role": "베이스",
+          "status": "current"
+        },
+        {
+          "name": "Joey Waronker",
+          "role": "드럼",
+          "status": "touring"
+        }
       ],
       "tracks": [
         {
@@ -7850,7 +8769,15 @@
           "year": 1995,
           "album": "(What's the Story) Morning Glory?",
           "youtubeId": "6hzrDeceEKc",
-          "source": { "label": "Wonderwall — YouTube", "url": "https://www.youtube.com/watch?v=6hzrDeceEKc", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "OasisVEVO", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Wonderwall — YouTube",
+            "url": "https://www.youtube.com/watch?v=6hzrDeceEKc",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "OasisVEVO",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7861,7 +8788,15 @@
           "year": 1996,
           "album": "(What's the Story) Morning Glory?",
           "youtubeId": "r8OipmKFDeM",
-          "source": { "label": "Don't Look Back In Anger — YouTube", "url": "https://www.youtube.com/watch?v=r8OipmKFDeM", "publisher": "YouTube", "accessedAt": "2026-07-18", "channelName": "OasisVEVO", "channelType": "artist", "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행" },
+          "source": {
+            "label": "Don't Look Back In Anger — YouTube",
+            "url": "https://www.youtube.com/watch?v=r8OipmKFDeM",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "OasisVEVO",
+            "channelType": "artist",
+            "note": "공식 채널 추정 · oEmbed/임베드 자동 검수 미실행"
+          },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18"
@@ -7884,12 +8819,64 @@
         }
       },
       "sources": [
-        { "label": "Oasis (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Oasis_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 정보 및 멤버 리스트 교차 확인" },
-        { "label": "Oasis — Wikidata", "url": "https://www.wikidata.org/wiki/Q382890", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q382890" },
-        { "label": "Oasis — MusicBrainz", "url": "https://musicbrainz.org/artist/39ab1aed-75e0-4140-bd47-540276886b60", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "39ab1aed-75e0-4140-bd47-540276886b60" },
-        { "label": "Oasis 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Oasis_Noel_and_Liam_WF.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Will Fresch · CC BY-SA 2.0" },
-        { "label": "Oasis — 공식 YouTube", "url": "https://www.youtube.com/channel/UCd7A6xDlGoar2vHDvVm1CqA", "publisher": "YouTube", "externalId": "UCd7A6xDlGoar2vHDvVm1CqA", "official": true, "channelName": "OasisVEVO", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
-      ]
+        {
+          "label": "Oasis (band) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Oasis_(band)",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 정보 및 멤버 리스트 교차 확인"
+        },
+        {
+          "label": "Oasis — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q382890",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q382890"
+        },
+        {
+          "label": "Oasis — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/39ab1aed-75e0-4140-bd47-540276886b60",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "39ab1aed-75e0-4140-bd47-540276886b60"
+        },
+        {
+          "label": "Oasis 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Oasis_Noel_and_Liam_WF.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "Will Fresch · CC BY-SA 2.0"
+        },
+        {
+          "label": "Oasis — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCd7A6xDlGoar2vHDvVm1CqA",
+          "publisher": "YouTube",
+          "externalId": "UCd7A6xDlGoar2vHDvVm1CqA",
+          "official": true,
+          "channelName": "OasisVEVO",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18",
+          "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "britpop",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "youth-rebellious": 4,
+          "riff-solo-driven": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "queen",
@@ -7899,28 +8886,71 @@
       "countryCode": "GB",
       "activeYears": "1970–현재",
       "primaryGenre": "hard-rock",
-      "genreIds": ["hard-rock", "progressive-art", "heavy-metal"],
-      "tags": ["글램 록", "오페라틱", "아레나 록"],
-      "subgenres": ["프로그레시브 록", "하드 록", "헤비 메탈", "아레나 록", "팝 록"],
+      "genreIds": [
+        "hard-rock",
+        "progressive-art",
+        "heavy-metal"
+      ],
+      "tags": [
+        "글램 록",
+        "오페라틱",
+        "아레나 록"
+      ],
+      "subgenres": [
+        "프로그레시브 록",
+        "하드 록",
+        "헤비 메탈",
+        "아레나 록",
+        "팝 록"
+      ],
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": ["progressive-art", "hard-rock", "heavy-metal"],
-          "subgenres": ["프로그레시브 록", "하드 록", "헤비 메탈"]
+          "genreIds": [
+            "progressive-art",
+            "hard-rock",
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "프로그레시브 록",
+            "하드 록",
+            "헤비 메탈"
+          ]
         },
         {
           "era": "1980s",
-          "genreIds": ["hard-rock"],
-          "subgenres": ["아레나 록", "팝 록"]
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "아레나 록",
+            "팝 록"
+          ]
         }
       ],
       "summary": "화려한 글램 감성과 프로그레시브 오페라 사운드를 결합해 아레나 록의 정점을 보여준 전설적인 밴드.",
       "style": "프레디 머큐리의 압도적인 보컬과 피아노, 브라이언 메이의 정교한 멀티 트랙 오케스트레이션 기타 레이어링 및 풍성한 보컬 화음이 중심을 이룬다.",
       "members": [
-        { "name": "Freddie Mercury", "role": "보컬·피아노", "status": "former" },
-        { "name": "Brian May", "role": "기타·보컬", "status": "current" },
-        { "name": "Roger Taylor", "role": "드럼·보컬", "status": "current" },
-        { "name": "John Deacon", "role": "베이스", "status": "former" }
+        {
+          "name": "Freddie Mercury",
+          "role": "보컬·피아노",
+          "status": "former"
+        },
+        {
+          "name": "Brian May",
+          "role": "기타·보컬",
+          "status": "current"
+        },
+        {
+          "name": "Roger Taylor",
+          "role": "드럼·보컬",
+          "status": "current"
+        },
+        {
+          "name": "John Deacon",
+          "role": "베이스",
+          "status": "former"
+        }
       ],
       "tracks": [
         {
@@ -7976,12 +9006,68 @@
         }
       },
       "sources": [
-        { "label": "Queen (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Queen_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버, 장르 정보 확인" },
-        { "label": "Queen — Wikidata", "url": "https://www.wikidata.org/wiki/Q15862", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q15862" },
-        { "label": "Queen — MusicBrainz", "url": "https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3" },
-        { "label": "Queen 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Queen_A_Night_At_The_Opera_(1975_Elektra_publicity_photo_02).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "PD-US-no-notice · Koh Hasebe 촬영 추정, 개별 확인 필요" },
-        { "label": "Queen — 공식 YouTube", "url": "https://www.youtube.com/channel/UCiMhD4jzUqG-IgPzUmmytRQ", "publisher": "YouTube", "externalId": "UCiMhD4jzUqG-IgPzUmmytRQ", "official": true, "channelName": "Queen Official", "channelType": "artist", "accessedAt": "2026-07-18" }
-      ]
+        {
+          "label": "Queen (band) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Queen_(band)",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 이력 및 멤버, 장르 정보 확인"
+        },
+        {
+          "label": "Queen — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q15862",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q15862"
+        },
+        {
+          "label": "Queen — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3"
+        },
+        {
+          "label": "Queen 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Queen_A_Night_At_The_Opera_(1975_Elektra_publicity_photo_02).jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "PD-US-no-notice · Koh Hasebe 촬영 추정, 개별 확인 필요"
+        },
+        {
+          "label": "Queen — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCiMhD4jzUqG-IgPzUmmytRQ",
+          "publisher": "YouTube",
+          "externalId": "UCiMhD4jzUqG-IgPzUmmytRQ",
+          "official": true,
+          "channelName": "Queen Official",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "progressive-rock",
+          "hard-rock",
+          "traditional-heavy-metal",
+          "arena-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "romantic-emotional": 4,
+          "epic-cinematic": 5,
+          "technical-complex": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "one-republic",
@@ -7991,35 +9077,85 @@
       "countryCode": "US",
       "activeYears": "2002–현재",
       "primaryGenre": "alternative-indie",
-      "genreIds": ["alternative-indie"],
-      "tags": ["팝 록", "감성 팝", "일렉트로팝"],
-      "subgenres": ["팝 록", "일렉트로팝", "인디 팝", "아레나 록", "얼터너티브 록"],
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "tags": [
+        "팝 록",
+        "감성 팝",
+        "일렉트로팝"
+      ],
+      "subgenres": [
+        "팝 록",
+        "일렉트로팝",
+        "인디 팝",
+        "아레나 록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["팝 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "팝 록"
+          ]
         },
         {
           "era": "2010s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["인디 팝", "일렉트로팝", "아레나 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "인디 팝",
+            "일렉트로팝",
+            "아레나 록"
+          ]
         },
         {
           "era": "2020s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["얼터너티브 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록"
+          ]
         }
       ],
       "summary": "세련된 팝 멜로디와 서정적인 록 사운드를 결합해 2000년대 후반부터 수많은 글로벌 히트곡을 탄생시킨 밴드.",
       "style": "라이언 테더의 감각적인 송라이팅과 보컬을 중심으로, 현악기 편성과 전자 비트를 조화롭게 융합한 스케일 큰 사운드가 특징이다.",
       "members": [
-        { "name": "Ryan Tedder", "role": "보컬·피아노·탬버린", "status": "current" },
-        { "name": "Zach Filkins", "role": "리드 기타·비올라·백보컬", "status": "current" },
-        { "name": "Drew Brown", "role": "리듬 기타·백보컬", "status": "current" },
-        { "name": "Brent Kutzle", "role": "베이스 기타·첼로·백보컬", "status": "current" },
-        { "name": "Eddie Fisher", "role": "드럼·퍼커션·백보컬", "status": "current" },
-        { "name": "Brian Willett", "role": "키보드·신시사이저·바이올린·백보컬", "status": "current" }
+        {
+          "name": "Ryan Tedder",
+          "role": "보컬·피아노·탬버린",
+          "status": "current"
+        },
+        {
+          "name": "Zach Filkins",
+          "role": "리드 기타·비올라·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Drew Brown",
+          "role": "리듬 기타·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Brent Kutzle",
+          "role": "베이스 기타·첼로·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Eddie Fisher",
+          "role": "드럼·퍼커션·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Brian Willett",
+          "role": "키보드·신시사이저·바이올린·백보컬",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8076,12 +9212,64 @@
         }
       },
       "sources": [
-        { "label": "OneRepublic — Wikipedia", "url": "https://en.wikipedia.org/wiki/OneRepublic", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버, 장르 정보 확인" },
-        { "label": "OneRepublic — Wikidata", "url": "https://www.wikidata.org/wiki/Q1438730", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q1438730" },
-        { "label": "OneRepublic — MusicBrainz", "url": "https://musicbrainz.org/artist/c33c2065-b1c3-4406-b066-d33a9e2ea71a", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "c33c2065-b1c3-4406-b066-d33a9e2ea71a" },
-        { "label": "OneRepublic 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:OneRepublic_2016.JPG", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Jeffrey Beall(Denverjeffrey) 업로드 패턴과 일치 · 파일 페이지 직접 열람은 실패해 개별 확인 필요" },
-        { "label": "OneRepublic — 공식 YouTube", "url": "https://www.youtube.com/onerepublic", "publisher": "YouTube", "official": true, "channelName": "OneRepublic", "channelType": "artist", "accessedAt": "2026-07-18" }
-      ]
+        {
+          "label": "OneRepublic — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/OneRepublic",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-18",
+          "note": "기본 이력 및 멤버, 장르 정보 확인"
+        },
+        {
+          "label": "OneRepublic — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1438730",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-18",
+          "externalId": "Q1438730"
+        },
+        {
+          "label": "OneRepublic — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c33c2065-b1c3-4406-b066-d33a9e2ea71a",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-18",
+          "externalId": "c33c2065-b1c3-4406-b066-d33a9e2ea71a"
+        },
+        {
+          "label": "OneRepublic 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:OneRepublic_2016.JPG",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-18",
+          "note": "Jeffrey Beall(Denverjeffrey) 업로드 패턴과 일치 · 파일 페이지 직접 열람은 실패해 개별 확인 필요"
+        },
+        {
+          "label": "OneRepublic — 공식 YouTube",
+          "url": "https://www.youtube.com/onerepublic",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "OneRepublic",
+          "channelType": "artist",
+          "accessedAt": "2026-07-18"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "pop-rock",
+          "electropop",
+          "indie-pop",
+          "arena-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 3,
+          "romantic-emotional": 4,
+          "hopeful-uplifting": 4,
+          "electronic-synth": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "kent",
@@ -8091,33 +9279,75 @@
       "countryCode": "SE",
       "activeYears": "1990–2016",
       "primaryGenre": "alternative-indie",
-      "genreIds": ["alternative-indie"],
-      "tags": ["스칸디나비아", "우울함", "신스팝"],
-      "subgenres": ["얼터너티브 록", "인디 록", "신스팝", "팝 록"],
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "tags": [
+        "스칸디나비아",
+        "우울함",
+        "신스팝"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "인디 록",
+        "신스팝",
+        "팝 록"
+      ],
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["얼터너티브 록", "인디 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "인디 록"
+          ]
         },
         {
           "era": "2000s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["신스팝", "팝 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "신스팝",
+            "팝 록"
+          ]
         },
         {
           "era": "2010s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["신스팝", "얼터너티브 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "신스팝",
+            "얼터너티브 록"
+          ]
         }
       ],
       "summary": "우울하고 서정적인 멜로디와 감각적인 사운드로 북유럽 록 신을 평정했던 스웨덴의 국민 밴드.",
       "style": "초기의 시니컬하고 묵직한 얼터너티브 록 사운드에서 출발하여 점차 정교한 일렉트로닉 신스팝 요소와 대중적인 팝 멜로디를 유기적으로 융합했다.",
       "members": [
-        { "name": "Joakim Berg", "role": "보컬·리듬 기타", "status": "former" },
-        { "name": "Martin Sköld", "role": "베이스 기타·키보드", "status": "former" },
-        { "name": "Markus Mustonen", "role": "드럼·백보컬·키보드·피아노", "status": "former" },
-        { "name": "Sami Sirviö", "role": "리드 기타·키보드", "status": "former" }
+        {
+          "name": "Joakim Berg",
+          "role": "보컬·리듬 기타",
+          "status": "former"
+        },
+        {
+          "name": "Martin Sköld",
+          "role": "베이스 기타·키보드",
+          "status": "former"
+        },
+        {
+          "name": "Markus Mustonen",
+          "role": "드럼·백보컬·키보드·피아노",
+          "status": "former"
+        },
+        {
+          "name": "Sami Sirviö",
+          "role": "리드 기타·키보드",
+          "status": "former"
+        }
       ],
       "tracks": [
         {
@@ -8190,12 +9420,68 @@
         }
       },
       "sources": [
-        { "label": "Kent (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Kent_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업, 해체(2016) 정보 확인" },
-        { "label": "Kent — Wikidata", "url": "https://www.wikidata.org/wiki/Q648786", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q648786", "note": "제출된 Q751518은 오류 · 검증 후 정정" },
-        { "label": "Kent — MusicBrainz", "url": "https://musicbrainz.org/artist/c2764f38-febf-4e47-a0d7-687980aabf38", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "c2764f38-febf-4e47-a0d7-687980aabf38", "note": "제출된 UUID는 오류 · 검증 후 정정" },
-        { "label": "Kent 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Kent_-Stockholm_Music%26_Arts_2014-08-03_-_01.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "파일 페이지 직접 열람 실패 · 개별 확인 필요" },
-        { "label": "Kent — 공식 YouTube", "url": "https://www.youtube.com/channel/UCe0K1KOjcBYIGu5prpZglSg", "publisher": "YouTube", "externalId": "UCe0K1KOjcBYIGu5prpZglSg", "official": true, "channelName": "kentchannel", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Kent (band) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kent_(band)",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 라인업, 해체(2016) 정보 확인"
+        },
+        {
+          "label": "Kent — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q648786",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q648786",
+          "note": "제출된 Q751518은 오류 · 검증 후 정정"
+        },
+        {
+          "label": "Kent — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c2764f38-febf-4e47-a0d7-687980aabf38",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "c2764f38-febf-4e47-a0d7-687980aabf38",
+          "note": "제출된 UUID는 오류 · 검증 후 정정"
+        },
+        {
+          "label": "Kent 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Kent_-Stockholm_Music%26_Arts_2014-08-03_-_01.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19",
+          "note": "파일 페이지 직접 열람 실패 · 개별 확인 필요"
+        },
+        {
+          "label": "Kent — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCe0K1KOjcBYIGu5prpZglSg",
+          "publisher": "YouTube",
+          "externalId": "UCe0K1KOjcBYIGu5prpZglSg",
+          "official": true,
+          "channelName": "kentchannel",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "synthpop",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 4,
+          "cold-urban": 4,
+          "electronic-synth": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "coldplay",
@@ -8205,39 +9491,88 @@
       "countryCode": "GB",
       "activeYears": "1997–현재",
       "primaryGenre": "alternative-indie",
-      "genreIds": ["alternative-indie"],
-      "tags": ["포스트 브릿팝", "감성 록", "스타디움 팝"],
-      "subgenres": ["얼터너티브 록", "팝 록", "포스트 브릿팝", "팝"],
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "tags": [
+        "포스트 브릿팝",
+        "감성 록",
+        "스타디움 팝"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "팝 록",
+        "포스트 브릿팝",
+        "팝"
+      ],
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["얼터너티브 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록"
+          ]
         },
         {
           "era": "2000s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["포스트 브릿팝", "팝 록"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "포스트 브릿팝",
+            "팝 록"
+          ]
         },
         {
           "era": "2010s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["팝 록", "팝"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "팝 록",
+            "팝"
+          ]
         },
         {
           "era": "2020s",
-          "genreIds": ["alternative-indie"],
-          "subgenres": ["팝"]
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "팝"
+          ]
         }
       ],
       "summary": "서정적인 포스트 브릿팝 멜로디로 출발하여 세대의 장벽을 허물고 전 세계적 대형 스타디움 신화를 이룩한 대중적 록 밴드.",
       "style": "크리스 마틴의 감성적인 보컬과 피아노 선율, 아름다운 기타 리프 중심의 사운드에서 점차 보편적이고 화려한 신스팝과 일렉트로닉 요소를 결합해 나갔다.",
       "members": [
-        { "name": "Chris Martin", "role": "보컬·피아노", "status": "current" },
-        { "name": "Jonny Buckland", "role": "리드 기타", "status": "current" },
-        { "name": "Guy Berryman", "role": "베이스 기타", "status": "current" },
-        { "name": "Will Champion", "role": "드럼·퍼커션", "status": "current" },
-        { "name": "Phil Harvey", "role": "매니지먼트·크리에이티브 디렉터(비공식 5번째 멤버)", "status": "current" }
+        {
+          "name": "Chris Martin",
+          "role": "보컬·피아노",
+          "status": "current"
+        },
+        {
+          "name": "Jonny Buckland",
+          "role": "리드 기타",
+          "status": "current"
+        },
+        {
+          "name": "Guy Berryman",
+          "role": "베이스 기타",
+          "status": "current"
+        },
+        {
+          "name": "Will Champion",
+          "role": "드럼·퍼커션",
+          "status": "current"
+        },
+        {
+          "name": "Phil Harvey",
+          "role": "매니지먼트·크리에이티브 디렉터(비공식 5번째 멤버)",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8310,12 +9645,63 @@
         }
       },
       "sources": [
-        { "label": "Coldplay — Wikipedia", "url": "https://en.wikipedia.org/wiki/Coldplay", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
-        { "label": "Coldplay — Wikidata", "url": "https://www.wikidata.org/wiki/Q45188", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q45188" },
-        { "label": "Coldplay — MusicBrainz", "url": "https://musicbrainz.org/artist/cc197bad-dc9c-440d-a5b5-d52ba2e14234", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "cc197bad-dc9c-440d-a5b5-d52ba2e14234" },
-        { "label": "Coldplay 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Coldplay_Glasto24_290624_(26)_(53836754632)_(cropped).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19" },
-        { "label": "Coldplay — 공식 YouTube", "url": "https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw", "publisher": "YouTube", "externalId": "UCDPM_n1atn2ijUwHd0NNRQw", "official": true, "channelName": "Coldplay", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Coldplay — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Coldplay",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 라인업 정보 확인"
+        },
+        {
+          "label": "Coldplay — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q45188",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q45188"
+        },
+        {
+          "label": "Coldplay — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "cc197bad-dc9c-440d-a5b5-d52ba2e14234"
+        },
+        {
+          "label": "Coldplay 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Coldplay_Glasto24_290624_(26)_(53836754632)_(cropped).jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19"
+        },
+        {
+          "label": "Coldplay — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw",
+          "publisher": "YouTube",
+          "externalId": "UCDPM_n1atn2ijUwHd0NNRQw",
+          "official": true,
+          "channelName": "Coldplay",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "pop-rock",
+          "post-britpop"
+        ],
+        "moodScores": {
+          "warm-comforting": 4,
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "judas-priest",
@@ -8325,25 +9711,101 @@
       "countryCode": "GB",
       "activeYears": "1969–1992, 1996–현재",
       "primaryGenre": "heavy-metal",
-      "genreIds": ["heavy-metal"],
-      "tags": ["메탈 갓", "트윈 기타", "가죽과 스터드"],
-      "subgenres": ["헤비 메탈"],
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "tags": [
+        "메탈 갓",
+        "트윈 기타",
+        "가죽과 스터드"
+      ],
+      "subgenres": [
+        "헤비 메탈"
+      ],
       "eraTags": [
-        { "era": "1970s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
-        { "era": "1980s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
-        { "era": "1990s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
-        { "era": "2000s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
-        { "era": "2010s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
-        { "era": "2020s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] }
+        {
+          "era": "1970s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        },
+        {
+          "era": "1980s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        },
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        },
+        {
+          "era": "2010s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        },
+        {
+          "era": "2020s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "헤비 메탈"
+          ]
+        }
       ],
       "summary": "가죽 의상과 스터드 패션을 도입하고 트윈 기타 시스템을 정립하여 정통 헤비메탈의 표준을 제시한 '메탈 갓'.",
       "style": "롭 핼포드의 폭발적인 4옥타브 고음 보컬과 글렌 팁턴, 리치 포크너가 전개하는 정밀하고 날카로운 트윈 기타 리프 및 솔로 배틀이 핵심이다.",
       "members": [
-        { "name": "Rob Halford", "role": "보컬", "status": "current" },
-        { "name": "Glenn Tipton", "role": "기타·백보컬", "status": "current" },
-        { "name": "Ian Hill", "role": "베이스 기타·백보컬", "status": "current" },
-        { "name": "Scott Travis", "role": "드럼·퍼커션", "status": "current" },
-        { "name": "Richie Faulkner", "role": "기타·백보컬", "status": "current" }
+        {
+          "name": "Rob Halford",
+          "role": "보컬",
+          "status": "current"
+        },
+        {
+          "name": "Glenn Tipton",
+          "role": "기타·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Ian Hill",
+          "role": "베이스 기타·백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Scott Travis",
+          "role": "드럼·퍼커션",
+          "status": "current"
+        },
+        {
+          "name": "Richie Faulkner",
+          "role": "기타·백보컬",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8416,12 +9878,60 @@
         }
       },
       "sources": [
-        { "label": "Judas Priest — Wikipedia", "url": "https://en.wikipedia.org/wiki/Judas_Priest", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
-        { "label": "Judas Priest — Wikidata", "url": "https://www.wikidata.org/wiki/Q83468", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q83468" },
-        { "label": "Judas Priest — MusicBrainz", "url": "https://musicbrainz.org/artist/6b335658-22c8-485d-93de-0bc29a1d0349", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "6b335658-22c8-485d-93de-0bc29a1d0349" },
-        { "label": "Judas Priest 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:JudasPriest.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ Commons 카테고리(Category:Judas_Priest) 목록 검색에서 이 파일명이 확인되지 않음 · 존재 여부·저작자·라이선스 전부 재검증 필요" },
-        { "label": "Judas Priest — 공식 YouTube", "url": "https://www.youtube.com/channel/UC48vpdaG8NDvEGLj11XPPZQ", "publisher": "YouTube", "externalId": "UC48vpdaG8NDvEGLj11XPPZQ", "official": true, "channelName": "Judas Priest", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Judas Priest — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Judas_Priest",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 라인업 정보 확인"
+        },
+        {
+          "label": "Judas Priest — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q83468",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q83468"
+        },
+        {
+          "label": "Judas Priest — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/6b335658-22c8-485d-93de-0bc29a1d0349",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "6b335658-22c8-485d-93de-0bc29a1d0349"
+        },
+        {
+          "label": "Judas Priest 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:JudasPriest.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19",
+          "note": "⚠ Commons 카테고리(Category:Judas_Priest) 목록 검색에서 이 파일명이 확인되지 않음 · 존재 여부·저작자·라이선스 전부 재검증 필요"
+        },
+        {
+          "label": "Judas Priest — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC48vpdaG8NDvEGLj11XPPZQ",
+          "publisher": "YouTube",
+          "externalId": "UC48vpdaG8NDvEGLj11XPPZQ",
+          "official": true,
+          "channelName": "Judas Priest",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "two-door-cinema-club",
@@ -8431,32 +9941,76 @@
       "countryCode": "GB",
       "activeYears": "2007–현재",
       "primaryGenre": "britpop-indie",
-      "genreIds": ["britpop-indie", "alternative-indie"],
-      "tags": ["댄서블 인디", "청량함", "신스팝"],
-      "subgenres": ["인디 팝", "인디 록", "댄스 펑크", "신스팝", "포스트 펑크 리바이벌"],
+      "genreIds": [
+        "britpop-indie",
+        "alternative-indie"
+      ],
+      "tags": [
+        "댄서블 인디",
+        "청량함",
+        "신스팝"
+      ],
+      "subgenres": [
+        "인디 팝",
+        "인디 록",
+        "댄스 펑크",
+        "신스팝",
+        "포스트 펑크 리바이벌"
+      ],
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": ["britpop-indie", "alternative-indie"],
-          "subgenres": ["인디 팝", "인디 록"]
+          "genreIds": [
+            "britpop-indie",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "인디 팝",
+            "인디 록"
+          ]
         },
         {
           "era": "2010s",
-          "genreIds": ["britpop-indie", "alternative-indie"],
-          "subgenres": ["인디 팝", "댄스 펑크", "신스팝"]
+          "genreIds": [
+            "britpop-indie",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "인디 팝",
+            "댄스 펑크",
+            "신스팝"
+          ]
         },
         {
           "era": "2020s",
-          "genreIds": ["britpop-indie", "alternative-indie"],
-          "subgenres": ["인디 록", "신스팝"]
+          "genreIds": [
+            "britpop-indie",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "신스팝"
+          ]
         }
       ],
       "summary": "경쾌하고 중독성 있는 기타 리프와 신시사이저 비트를 결합해 2010년대 초반 댄서블 인디 록 열풍을 주도한 밴드.",
       "style": "알렉스 트림블의 깔끔한 보컬을 중심으로, 찰랑거리는 고음역대의 트윈 기타 사운드와 춤추기 좋은 업템포 일렉트로닉 리듬이 결합된 청량한 사운드가 특징이다.",
       "members": [
-        { "name": "Alex Trimble", "role": "보컬·기타·신시사이저·피아노·키보드·드럼·퍼커션", "status": "current" },
-        { "name": "Kevin Baird", "role": "베이스 기타·신시사이저·보컬", "status": "current" },
-        { "name": "Sam Halliday", "role": "기타·신시사이저·보컬", "status": "current" }
+        {
+          "name": "Alex Trimble",
+          "role": "보컬·기타·신시사이저·피아노·키보드·드럼·퍼커션",
+          "status": "current"
+        },
+        {
+          "name": "Kevin Baird",
+          "role": "베이스 기타·신시사이저·보컬",
+          "status": "current"
+        },
+        {
+          "name": "Sam Halliday",
+          "role": "기타·신시사이저·보컬",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8513,12 +10067,66 @@
         }
       },
       "sources": [
-        { "label": "Two Door Cinema Club — Wikipedia", "url": "https://en.wikipedia.org/wiki/Two_Door_Cinema_Club", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
-        { "label": "Two Door Cinema Club — Wikidata", "url": "https://www.wikidata.org/wiki/Q777302", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q777302" },
-        { "label": "Two Door Cinema Club — MusicBrainz", "url": "https://musicbrainz.org/artist/6f1de078-6684-4792-820d-2ffad64c15ed", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "6f1de078-6684-4792-820d-2ffad64c15ed" },
-        { "label": "Two Door Cinema Club 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Two_Door_Cinema_Club,_Tufnell_Park_Dome,_London_(29312606633).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19" },
-        { "label": "Two Door Cinema Club — 공식 YouTube", "url": "https://www.youtube.com/channel/UC21j22BUI19MJ6F8IrxnjJg", "publisher": "YouTube", "externalId": "UC21j22BUI19MJ6F8IrxnjJg", "official": true, "channelName": "Two Door Cinema Club", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Two Door Cinema Club — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Two_Door_Cinema_Club",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 라인업 정보 확인"
+        },
+        {
+          "label": "Two Door Cinema Club — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q777302",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q777302"
+        },
+        {
+          "label": "Two Door Cinema Club — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/6f1de078-6684-4792-820d-2ffad64c15ed",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "6f1de078-6684-4792-820d-2ffad64c15ed"
+        },
+        {
+          "label": "Two Door Cinema Club 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Two_Door_Cinema_Club,_Tufnell_Park_Dome,_London_(29312606633).jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19"
+        },
+        {
+          "label": "Two Door Cinema Club — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC21j22BUI19MJ6F8IrxnjJg",
+          "publisher": "YouTube",
+          "externalId": "UC21j22BUI19MJ6F8IrxnjJg",
+          "official": true,
+          "channelName": "Two Door Cinema Club",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "indie-pop",
+          "indie-rock",
+          "dance-punk",
+          "synthpop",
+          "post-punk-revival"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 4,
+          "groovy-danceable": 5,
+          "electronic-synth": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "green-day",
@@ -8528,19 +10136,62 @@
       "countryCode": "US",
       "activeYears": "1987–현재",
       "primaryGenre": "punk-rock",
-      "genreIds": ["punk-rock", "alternative-indie"],
-      "tags": ["팝 펑크", "네오 펑크", "밀레니엄 록"],
-      "subgenres": ["팝 펑크", "펑크 록", "얼터너티브 록"],
+      "genreIds": [
+        "punk-rock",
+        "alternative-indie"
+      ],
+      "tags": [
+        "팝 펑크",
+        "네오 펑크",
+        "밀레니엄 록"
+      ],
+      "subgenres": [
+        "팝 펑크",
+        "펑크 록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
-        { "era": "1990s", "genreIds": ["punk-rock", "alternative-indie"], "subgenres": ["팝 펑크", "펑크 록"] },
-        { "era": "2000s", "genreIds": ["alternative-indie", "punk-rock"], "subgenres": ["얼터너티브 록", "팝 펑크"] }
+        {
+          "era": "1990s",
+          "genreIds": [
+            "punk-rock",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "팝 펑크",
+            "펑크 록"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie",
+            "punk-rock"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "팝 펑크"
+          ]
+        }
       ],
       "summary": "90년대 팝 펑크의 대중화를 이끌고 2000년대 록 오페라로 시대를 정의한 펑크 록의 아이콘.",
       "style": "Billie Joe의 시원한 파워 코드 플레이와 중독성 강한 멜로디 훅, Mike Dirnt의 선명한 핑거링 베이스가 조화를 이룬다.",
       "members": [
-        { "name": "Billie Joe Armstrong", "role": "보컬·기타", "status": "current" },
-        { "name": "Mike Dirnt", "role": "베이스", "status": "current" },
-        { "name": "Tré Cool", "role": "드럼", "status": "current" }
+        {
+          "name": "Billie Joe Armstrong",
+          "role": "보컬·기타",
+          "status": "current"
+        },
+        {
+          "name": "Mike Dirnt",
+          "role": "베이스",
+          "status": "current"
+        },
+        {
+          "name": "Tré Cool",
+          "role": "드럼",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8597,12 +10248,64 @@
         }
       },
       "sources": [
-        { "label": "Green Day — Wikipedia", "url": "https://en.wikipedia.org/wiki/Green_Day", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
-        { "label": "Green Day — Wikidata", "url": "https://www.wikidata.org/wiki/Q47871", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q47871" },
-        { "label": "Green Day — MusicBrainz", "url": "https://musicbrainz.org/artist/084308bd-1654-436f-ba03-df6697104e19", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "084308bd-1654-436f-ba03-df6697104e19" },
-        { "label": "Green Day 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Green_Day_on_3_Jun_2022.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "Sven Mandel · CC BY-SA 4.0" },
-        { "label": "Green Day — 공식 YouTube", "url": "https://www.youtube.com/channel/UCqC_GY2ZiENFz2pwL0cSfAw", "publisher": "YouTube", "externalId": "UCqC_GY2ZiENFz2pwL0cSfAw", "official": true, "channelName": "Green Day", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Green Day — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Green_Day",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 멤버 정보 교차 확인"
+        },
+        {
+          "label": "Green Day — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q47871",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q47871"
+        },
+        {
+          "label": "Green Day — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/084308bd-1654-436f-ba03-df6697104e19",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "084308bd-1654-436f-ba03-df6697104e19"
+        },
+        {
+          "label": "Green Day 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Green_Day_on_3_Jun_2022.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19",
+          "note": "Sven Mandel · CC BY-SA 4.0"
+        },
+        {
+          "label": "Green Day — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCqC_GY2ZiENFz2pwL0cSfAw",
+          "publisher": "YouTube",
+          "externalId": "UCqC_GY2ZiENFz2pwL0cSfAw",
+          "official": true,
+          "channelName": "Green Day",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "pop-punk",
+          "punk-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "fast-driving": 4,
+          "youth-rebellious": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "theory-of-a-deadman",
@@ -8612,20 +10315,65 @@
       "countryCode": "CA",
       "activeYears": "1999–현재",
       "primaryGenre": "alternative-indie",
-      "genreIds": ["alternative-indie", "hard-rock"],
-      "tags": ["포스트 그런지", "묵직한 그루브", "캐나디안 록"],
-      "subgenres": ["포스트 그런지", "하드 록", "얼터너티브 록"],
+      "genreIds": [
+        "alternative-indie",
+        "hard-rock"
+      ],
+      "tags": [
+        "포스트 그런지",
+        "묵직한 그루브",
+        "캐나디안 록"
+      ],
+      "subgenres": [
+        "포스트 그런지",
+        "하드 록",
+        "얼터너티브 록"
+      ],
       "eraTags": [
-        { "era": "2000s", "genreIds": ["alternative-indie", "hard-rock"], "subgenres": ["포스트 그런지", "하드 록"] },
-        { "era": "2010s", "genreIds": ["alternative-indie"], "subgenres": ["얼터너티브 록"] }
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie",
+            "hard-rock"
+          ],
+          "subgenres": [
+            "포스트 그런지",
+            "하드 록"
+          ]
+        },
+        {
+          "era": "2010s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록"
+          ]
+        }
       ],
       "summary": "Nickelback의 차드 크로거가 발굴한, 2000년대 포스트 그런지 부흥을 이끈 캐나다 출신 하드 록 밴드.",
       "style": "Tyler Connolly의 선명한 보컬과 포스트 그런지 특유의 묵직하고 리드미컬한 기타 리프가 중심을 이룬다.",
       "members": [
-        { "name": "Tyler Connolly", "role": "보컬·기타", "status": "current" },
-        { "name": "Dave Brenner", "role": "기타", "status": "current" },
-        { "name": "Dean Back", "role": "베이스", "status": "current" },
-        { "name": "Joey Dandeneau", "role": "드럼", "status": "current" }
+        {
+          "name": "Tyler Connolly",
+          "role": "보컬·기타",
+          "status": "current"
+        },
+        {
+          "name": "Dave Brenner",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Dean Back",
+          "role": "베이스",
+          "status": "current"
+        },
+        {
+          "name": "Joey Dandeneau",
+          "role": "드럼",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8682,12 +10430,64 @@
         }
       },
       "sources": [
-        { "label": "Theory of a Deadman — Wikipedia", "url": "https://en.wikipedia.org/wiki/Theory_of_a_Deadman", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
-        { "label": "Theory of a Deadman — Wikidata", "url": "https://www.wikidata.org/wiki/Q977214", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q977214" },
-        { "label": "Theory of a Deadman — MusicBrainz", "url": "https://musicbrainz.org/artist/183e636e-d41c-43fe-a428-8a034eb20c7b", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "183e636e-d41c-43fe-a428-8a034eb20c7b" },
-        { "label": "Theory of a Deadman 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Theory_of_a_Deadman_performing.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ 검색 중 \"Theory of a Deadman performing at Rock, White & Blue in 2018.jpg\"라는 더 구체적인 제목의 파일이 발견됨 — 제출된 파일명이 그 축약/오기일 가능성이 있어 재검증 필요" },
-        { "label": "Theory of a Deadman — 공식 YouTube", "url": "https://www.youtube.com/channel/UCcFUPGt_tgcP5iMxiBDsXoA", "publisher": "YouTube", "externalId": "UCcFUPGt_tgcP5iMxiBDsXoA", "official": true, "channelName": "THEORY", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Theory of a Deadman — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Theory_of_a_Deadman",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 멤버 정보 교차 확인"
+        },
+        {
+          "label": "Theory of a Deadman — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q977214",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q977214"
+        },
+        {
+          "label": "Theory of a Deadman — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/183e636e-d41c-43fe-a428-8a034eb20c7b",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "183e636e-d41c-43fe-a428-8a034eb20c7b"
+        },
+        {
+          "label": "Theory of a Deadman 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Theory_of_a_Deadman_performing.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19",
+          "note": "⚠ 검색 중 \"Theory of a Deadman performing at Rock, White & Blue in 2018.jpg\"라는 더 구체적인 제목의 파일이 발견됨 — 제출된 파일명이 그 축약/오기일 가능성이 있어 재검증 필요"
+        },
+        {
+          "label": "Theory of a Deadman — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCcFUPGt_tgcP5iMxiBDsXoA",
+          "publisher": "YouTube",
+          "externalId": "UCcFUPGt_tgcP5iMxiBDsXoA",
+          "official": true,
+          "channelName": "THEORY",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "post-grunge",
+          "hard-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 4,
+          "massive-heavy": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     },
     {
       "id": "bon-jovi",
@@ -8697,22 +10497,79 @@
       "countryCode": "US",
       "activeYears": "1983–현재",
       "primaryGenre": "hard-rock",
-      "genreIds": ["hard-rock"],
-      "tags": ["팝 메탈", "스타디움 록", "떼창 유도"],
-      "subgenres": ["글램 메탈", "하드 록", "아레나 록"],
+      "genreIds": [
+        "hard-rock"
+      ],
+      "tags": [
+        "팝 메탈",
+        "스타디움 록",
+        "떼창 유도"
+      ],
+      "subgenres": [
+        "글램 메탈",
+        "하드 록",
+        "아레나 록"
+      ],
       "eraTags": [
-        { "era": "1980s", "genreIds": ["hard-rock"], "subgenres": ["글램 메탈", "하드 록"] },
-        { "era": "1990s", "genreIds": ["hard-rock"], "subgenres": ["아레나 록", "하드 록"] },
-        { "era": "2000s", "genreIds": ["hard-rock"], "subgenres": ["팝 록", "하드 록"] }
+        {
+          "era": "1980s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "글램 메탈",
+            "하드 록"
+          ]
+        },
+        {
+          "era": "1990s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "아레나 록",
+            "하드 록"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "팝 록",
+            "하드 록"
+          ]
+        }
       ],
       "summary": "대중적인 멜로디와 압도적인 스타디움 스케일로 80년대 글램 메탈과 아레나 록의 전성기를 이끈 주역.",
       "style": "Jon Bon Jovi의 시원한 보컬과 친숙한 팝 감각의 멜로디 훅, 화려하면서도 대중적인 기타 리프가 결합된 사운드가 특징이다.",
       "members": [
-        { "name": "Jon Bon Jovi", "role": "보컬·기타", "status": "current" },
-        { "name": "David Bryan", "role": "키보드", "status": "current" },
-        { "name": "Tico Torres", "role": "드럼", "status": "current" },
-        { "name": "Phil X", "role": "기타", "status": "current" },
-        { "name": "Hugh McDonald", "role": "베이스", "status": "current" }
+        {
+          "name": "Jon Bon Jovi",
+          "role": "보컬·기타",
+          "status": "current"
+        },
+        {
+          "name": "David Bryan",
+          "role": "키보드",
+          "status": "current"
+        },
+        {
+          "name": "Tico Torres",
+          "role": "드럼",
+          "status": "current"
+        },
+        {
+          "name": "Phil X",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Hugh McDonald",
+          "role": "베이스",
+          "status": "current"
+        }
       ],
       "tracks": [
         {
@@ -8768,13 +10625,73 @@
         }
       },
       "sources": [
-        { "label": "Bon Jovi — Wikipedia", "url": "https://en.wikipedia.org/wiki/Bon_Jovi", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
-        { "label": "본 조비 — 위키백과", "url": "https://ko.wikipedia.org/wiki/%EB%B3%B8_%EC%A1%B0%EB%B9%84", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "Bryan Adams 관계 근거 문장 출처(한국어판)" },
-        { "label": "Bon Jovi — Wikidata", "url": "https://www.wikidata.org/wiki/Q259254", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q259254", "note": "제출된 Q9070은 오류 · 검증 후 정정" },
-        { "label": "Bon Jovi — MusicBrainz", "url": "https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "5dcdb5eb-cb72-4e6e-9e63-b7bace604965" },
-        { "label": "Bon Jovi 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ 검색으로 이 파일명의 존재를 확인하지 못함 · 저작자·라이선스 포함 전체 재검증 필요" },
-        { "label": "Bon Jovi — 공식 YouTube", "url": "https://www.youtube.com/channel/UCkBwnm7GOfYHsacwUjriC-w", "publisher": "YouTube", "externalId": "UCkBwnm7GOfYHsacwUjriC-w", "official": true, "channelName": "Bon Jovi", "channelType": "artist", "accessedAt": "2026-07-19" }
-      ]
+        {
+          "label": "Bon Jovi — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bon_Jovi",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "기본 이력 및 멤버 정보 교차 확인"
+        },
+        {
+          "label": "본 조비 — 위키백과",
+          "url": "https://ko.wikipedia.org/wiki/%EB%B3%B8_%EC%A1%B0%EB%B9%84",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-07-19",
+          "note": "Bryan Adams 관계 근거 문장 출처(한국어판)"
+        },
+        {
+          "label": "Bon Jovi — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q259254",
+          "publisher": "Wikidata",
+          "accessedAt": "2026-07-19",
+          "externalId": "Q259254",
+          "note": "제출된 Q9070은 오류 · 검증 후 정정"
+        },
+        {
+          "label": "Bon Jovi — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965",
+          "publisher": "MusicBrainz",
+          "accessedAt": "2026-07-19",
+          "externalId": "5dcdb5eb-cb72-4e6e-9e63-b7bace604965"
+        },
+        {
+          "label": "Bon Jovi 이미지 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1.jpg",
+          "publisher": "Wikimedia Commons",
+          "accessedAt": "2026-07-19",
+          "note": "⚠ 검색으로 이 파일명의 존재를 확인하지 못함 · 저작자·라이선스 포함 전체 재검증 필요"
+        },
+        {
+          "label": "Bon Jovi — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCkBwnm7GOfYHsacwUjriC-w",
+          "publisher": "YouTube",
+          "externalId": "UCkBwnm7GOfYHsacwUjriC-w",
+          "official": true,
+          "channelName": "Bon Jovi",
+          "channelType": "artist",
+          "accessedAt": "2026-07-19"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "glam-metal",
+          "hard-rock",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "romantic-emotional": 4,
+          "hopeful-uplifting": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
     }
   ]
 }

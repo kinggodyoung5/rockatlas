@@ -1,3 +1,5 @@
+import type { GenreTaxonomyId, MoodId, MoodScore, SubgenreId } from './taxonomy'
+
 export type GenreId =
   | 'classic-rock'
   | 'hard-rock'
@@ -99,6 +101,15 @@ export interface BandImage {
   credit: ImageCredit
 }
 
+export interface BandTaxonomyV2 {
+  primaryGenreId: GenreTaxonomyId
+  secondaryGenreIds: GenreTaxonomyId[]
+  subgenreIds: SubgenreId[]
+  moodScores: Partial<Record<MoodId, MoodScore>>
+  reviewStatus: 'draft' | 'reviewed'
+  reviewNote?: string
+}
+
 export interface Band extends ReviewRecord {
   id: string
   name: string
@@ -118,4 +129,5 @@ export interface Band extends ReviewRecord {
   tracks: Track[]
   relations: Relation[]
   sources: SourceRef[]
+  taxonomyV2?: BandTaxonomyV2
 }

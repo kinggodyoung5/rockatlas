@@ -1,0 +1,4613 @@
+{
+  "generatedAt": "2026-07-19T06:33:45.922Z",
+  "source": "MusicBrainz artist genres and community tags",
+  "note": "장르와 분위기 편집을 위한 참고 신호이며 자동 승인 근거로 사용하지 않는다.",
+  "bands": [
+    {
+      "id": "the-beatles",
+      "name": "The Beatles",
+      "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 47,
+          "name": "rock"
+        },
+        {
+          "name": "pop",
+          "disambiguation": "",
+          "count": 28,
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791"
+        },
+        {
+          "name": "pop rock",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "count": 23,
+          "disambiguation": ""
+        },
+        {
+          "name": "psychedelic pop",
+          "count": 16,
+          "id": "2aeb5340-c474-4677-b9a6-35ddac9b6a58",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 15,
+          "id": "c979d6c8-fa9e-47c3-86d6-754a7f89ea18",
+          "name": "merseybeat"
+        },
+        {
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48",
+          "count": 7,
+          "disambiguation": "",
+          "name": "psychedelic rock"
+        },
+        {
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "count": 2,
+          "disambiguation": "",
+          "name": "classic rock"
+        },
+        {
+          "count": 2,
+          "id": "e4581b76-a842-440b-9b0f-1aa7a00a5c57",
+          "disambiguation": "",
+          "name": "rock and roll"
+        },
+        {
+          "id": "f1c9b874-7ef2-4e79-9419-c0bcb5f33a30",
+          "count": 1,
+          "disambiguation": "",
+          "name": "britpop"
+        },
+        {
+          "disambiguation": "",
+          "id": "caec8f8d-d862-4b62-9942-5622c2c18446",
+          "count": 1,
+          "name": "mainstream rock"
+        }
+      ],
+      "tags": [
+        {
+          "name": "rock",
+          "count": 47
+        },
+        {
+          "count": 28,
+          "name": "pop"
+        },
+        {
+          "name": "pop rock",
+          "count": 23
+        },
+        {
+          "name": "british",
+          "count": 22
+        },
+        {
+          "count": 16,
+          "name": "psychedelic pop"
+        },
+        {
+          "count": 15,
+          "name": "merseybeat"
+        },
+        {
+          "count": 9,
+          "name": "british invasion"
+        },
+        {
+          "name": "psychedelic rock",
+          "count": 7
+        },
+        {
+          "name": "60s",
+          "count": 6
+        },
+        {
+          "name": "classic rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "rock and roll"
+        },
+        {
+          "name": "beat",
+          "count": 1
+        },
+        {
+          "name": "britpop",
+          "count": 1
+        },
+        {
+          "name": "europe",
+          "count": 1
+        },
+        {
+          "name": "film soundtrack",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "liverpool"
+        },
+        {
+          "name": "mainstream rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "popular music"
+        },
+        {
+          "name": "psychedelia",
+          "count": 1
+        },
+        {
+          "name": "rock groups",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "rock music"
+        },
+        {
+          "count": 1,
+          "name": "vyrzukhisuc-artiest"
+        }
+      ]
+    },
+    {
+      "id": "the-rolling-stones",
+      "name": "The Rolling Stones",
+      "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+      "genres": [
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": "",
+          "name": "rock",
+          "count": 38
+        },
+        {
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273",
+          "name": "blues rock",
+          "disambiguation": "",
+          "count": 21
+        },
+        {
+          "count": 9,
+          "name": "classic rock",
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810"
+        },
+        {
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48",
+          "disambiguation": "",
+          "name": "psychedelic rock",
+          "count": 8
+        },
+        {
+          "id": "31e04673-75cd-4ae0-af3c-ad9081e39f5b",
+          "name": "british rhythm & blues",
+          "disambiguation": "",
+          "count": 7
+        },
+        {
+          "disambiguation": "",
+          "name": "pop rock",
+          "count": 4,
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e"
+        },
+        {
+          "count": 4,
+          "name": "rock and roll",
+          "disambiguation": "",
+          "id": "e4581b76-a842-440b-9b0f-1aa7a00a5c57"
+        },
+        {
+          "name": "blues",
+          "disambiguation": "",
+          "count": 2,
+          "id": "fe12b346-a10e-450f-bf81-fa20894b5ea2"
+        }
+      ],
+      "tags": [
+        {
+          "count": 38,
+          "name": "rock"
+        },
+        {
+          "name": "blues rock",
+          "count": 21
+        },
+        {
+          "count": 9,
+          "name": "classic rock"
+        },
+        {
+          "count": 8,
+          "name": "british"
+        },
+        {
+          "count": 8,
+          "name": "psychedelic rock"
+        },
+        {
+          "count": 7,
+          "name": "british rhythm & blues"
+        },
+        {
+          "name": "pop rock",
+          "count": 4
+        },
+        {
+          "name": "rock and roll",
+          "count": 4
+        },
+        {
+          "name": "rock & roll",
+          "count": 3
+        },
+        {
+          "name": "blues",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "the-who",
+      "name": "The Who",
+      "mbid": "9fdaa16b-a6c4-4831-b87c-bc9ca8ce7eaa",
+      "genres": [
+        {
+          "name": "rock",
+          "disambiguation": "",
+          "count": 21,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798"
+        },
+        {
+          "count": 15,
+          "name": "hard rock",
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab"
+        },
+        {
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "name": "classic rock",
+          "disambiguation": "",
+          "count": 10
+        },
+        {
+          "id": "f5ce6b81-b277-4a23-ba23-2e1e2a7e51ac",
+          "disambiguation": "",
+          "name": "mod",
+          "count": 9
+        },
+        {
+          "count": 7,
+          "name": "art rock",
+          "disambiguation": "",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b"
+        },
+        {
+          "count": 4,
+          "name": "freakbeat",
+          "disambiguation": "",
+          "id": "1fb25dfa-0c71-4ecb-9ae8-560474d9413b"
+        },
+        {
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock",
+          "count": 4,
+          "disambiguation": ""
+        },
+        {
+          "id": "baaf713d-1e4e-459e-a058-60d89ce1f9df",
+          "disambiguation": "",
+          "name": "rock opera",
+          "count": 4
+        },
+        {
+          "disambiguation": "",
+          "name": "british rhythm & blues",
+          "count": 1,
+          "id": "31e04673-75cd-4ae0-af3c-ad9081e39f5b"
+        }
+      ],
+      "tags": [
+        {
+          "name": "rock",
+          "count": 21
+        },
+        {
+          "count": 15,
+          "name": "hard rock"
+        },
+        {
+          "name": "classic rock",
+          "count": 10
+        },
+        {
+          "name": "mod",
+          "count": 9
+        },
+        {
+          "name": "art rock",
+          "count": 7
+        },
+        {
+          "count": 7,
+          "name": "british"
+        },
+        {
+          "count": 4,
+          "name": "freakbeat"
+        },
+        {
+          "count": 4,
+          "name": "pop rock"
+        },
+        {
+          "name": "rock opera",
+          "count": 4
+        },
+        {
+          "name": "british invasion",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "british rhythm & blues"
+        },
+        {
+          "name": "rock groups",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "led-zeppelin",
+      "name": "Led Zeppelin",
+      "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "name": "hard rock",
+          "count": 34
+        },
+        {
+          "name": "rock",
+          "count": 23,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273",
+          "count": 18,
+          "name": "blues rock"
+        },
+        {
+          "count": 8,
+          "name": "classic rock",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "445dc48f-5233-4b4f-987f-867ff9ade836",
+          "name": "folk rock",
+          "count": 5
+        },
+        {
+          "count": 4,
+          "name": "heavy metal",
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "disambiguation": ""
+        },
+        {
+          "id": "26af3760-750a-4b5e-a699-78c87697585a",
+          "disambiguation": "",
+          "name": "arena rock",
+          "count": 2
+        },
+        {
+          "name": "progressive rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48"
+        }
+      ],
+      "tags": [
+        {
+          "count": 34,
+          "name": "hard rock"
+        },
+        {
+          "name": "rock",
+          "count": 23
+        },
+        {
+          "count": 18,
+          "name": "blues rock"
+        },
+        {
+          "name": "classic rock",
+          "count": 8
+        },
+        {
+          "name": "british",
+          "count": 5
+        },
+        {
+          "name": "folk rock",
+          "count": 5
+        },
+        {
+          "name": "heavy metal",
+          "count": 4
+        },
+        {
+          "count": 2,
+          "name": "arena rock"
+        },
+        {
+          "name": "progressive rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "acdc",
+      "name": "AC/DC",
+      "mbid": "66c662b6-6e2f-4930-8610-912e24c63ed1",
+      "genres": [
+        {
+          "count": 49,
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "name": "hard rock"
+        },
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 16,
+          "name": "rock"
+        },
+        {
+          "count": 12,
+          "disambiguation": "",
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273",
+          "name": "blues rock"
+        },
+        {
+          "disambiguation": "",
+          "id": "e4581b76-a842-440b-9b0f-1aa7a00a5c57",
+          "count": 2,
+          "name": "rock and roll"
+        }
+      ],
+      "tags": [
+        {
+          "name": "hard rock",
+          "count": 49
+        },
+        {
+          "name": "rock",
+          "count": 16
+        },
+        {
+          "count": 12,
+          "name": "blues rock"
+        },
+        {
+          "count": 2,
+          "name": "rock and roll"
+        }
+      ]
+    },
+    {
+      "id": "guns-n-roses",
+      "name": "Guns N' Roses",
+      "mbid": "eeb1195b-f213-4ce1-b28c-8565211f8e43",
+      "genres": [
+        {
+          "disambiguation": "",
+          "name": "hard rock",
+          "count": 30,
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab"
+        },
+        {
+          "disambiguation": "",
+          "name": "glam metal",
+          "count": 9,
+          "id": "818134e3-9392-4624-a13c-c4b19c54bccd"
+        },
+        {
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "disambiguation": "",
+          "name": "heavy metal",
+          "count": 5
+        },
+        {
+          "name": "rock",
+          "count": 4,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798"
+        },
+        {
+          "id": "aca1caab-09d1-44b5-ae84-590ff1d218fc",
+          "disambiguation": "",
+          "name": "aor",
+          "count": 2
+        },
+        {
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "name": "art rock",
+          "count": 2,
+          "disambiguation": ""
+        },
+        {
+          "id": "26af3760-750a-4b5e-a699-78c87697585a",
+          "name": "arena rock",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "name": "punk rock",
+          "disambiguation": "",
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962"
+        }
+      ],
+      "tags": [
+        {
+          "name": "hard rock",
+          "count": 30
+        },
+        {
+          "name": "glam metal",
+          "count": 9
+        },
+        {
+          "name": "heavy metal",
+          "count": 5
+        },
+        {
+          "name": "rock",
+          "count": 4
+        },
+        {
+          "count": 2,
+          "name": "aor"
+        },
+        {
+          "name": "art rock",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "arena rock"
+        },
+        {
+          "count": 1,
+          "name": "punk rock"
+        }
+      ]
+    },
+    {
+      "id": "pink-floyd",
+      "name": "Pink Floyd",
+      "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+      "genres": [
+        {
+          "name": "progressive rock",
+          "disambiguation": "",
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48",
+          "count": 55
+        },
+        {
+          "name": "psychedelic rock",
+          "disambiguation": "",
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48",
+          "count": 44
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": "",
+          "count": 29,
+          "name": "rock"
+        },
+        {
+          "count": 21,
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "disambiguation": "",
+          "name": "art rock"
+        },
+        {
+          "count": 15,
+          "disambiguation": "",
+          "id": "532dcf83-5641-446d-b007-51292b401650",
+          "name": "space rock"
+        },
+        {
+          "name": "progressive",
+          "disambiguation": "",
+          "id": "8d275a8d-154a-4bcb-8b5a-f56306ad4bcb",
+          "count": 9
+        },
+        {
+          "id": "baaf713d-1e4e-459e-a058-60d89ce1f9df",
+          "disambiguation": "",
+          "count": 6,
+          "name": "rock opera"
+        },
+        {
+          "name": "classic rock",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "disambiguation": "",
+          "count": 5
+        },
+        {
+          "name": "psychedelic",
+          "count": 4,
+          "id": "d698ece0-6fed-4262-b446-42c98b73b65a",
+          "disambiguation": ""
+        },
+        {
+          "name": "blues rock",
+          "count": 3,
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273",
+          "disambiguation": ""
+        },
+        {
+          "count": 2,
+          "id": "ef063b60-3206-466c-a7d8-7d317fcdf9fc",
+          "disambiguation": "",
+          "name": "acid rock"
+        },
+        {
+          "name": "experimental rock",
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7",
+          "disambiguation": "",
+          "count": 2
+        },
+        {
+          "name": "psychedelic pop",
+          "disambiguation": "",
+          "id": "2aeb5340-c474-4677-b9a6-35ddac9b6a58",
+          "count": 2
+        },
+        {
+          "id": "f729e6f8-30dc-4b81-9ff4-f4e7de82225d",
+          "disambiguation": "",
+          "count": 1,
+          "name": "symphonic rock"
+        }
+      ],
+      "tags": [
+        {
+          "name": "progressive rock",
+          "count": 55
+        },
+        {
+          "count": 44,
+          "name": "psychedelic rock"
+        },
+        {
+          "name": "rock",
+          "count": 29
+        },
+        {
+          "count": 21,
+          "name": "art rock"
+        },
+        {
+          "count": 15,
+          "name": "space rock"
+        },
+        {
+          "name": "progressive",
+          "count": 9
+        },
+        {
+          "name": "rock opera",
+          "count": 6
+        },
+        {
+          "count": 5,
+          "name": "classic rock"
+        },
+        {
+          "name": "psychedelic",
+          "count": 4
+        },
+        {
+          "name": "blues rock",
+          "count": 3
+        },
+        {
+          "name": "acid rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "album rock"
+        },
+        {
+          "name": "experimental rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "proto-prog"
+        },
+        {
+          "name": "psychedelic pop",
+          "count": 2
+        },
+        {
+          "name": "symphonic rock",
+          "count": 1
+        },
+        {
+          "name": "vyrzukhisuc-artiest",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "king-crimson",
+      "name": "King Crimson",
+      "mbid": "b38225b8-8e5f-42aa-bcdc-7bae5b5bdab3",
+      "genres": [
+        {
+          "name": "progressive rock",
+          "disambiguation": "",
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48",
+          "count": 23
+        },
+        {
+          "name": "art rock",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "count": 7,
+          "disambiguation": ""
+        },
+        {
+          "name": "experimental rock",
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7",
+          "count": 6,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "6a1ba2f9-1e5b-446f-9ffa-c0b0963aa08f",
+          "count": 5,
+          "name": "free improvisation"
+        },
+        {
+          "disambiguation": "",
+          "id": "2377ff19-83e7-4873-b425-dce6d1ad4ef4",
+          "count": 4,
+          "name": "jazz fusion"
+        },
+        {
+          "name": "rock",
+          "count": 2,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "b1c0c2ad-e5ae-4bb6-a1be-d66e195fd2d7",
+          "count": 1,
+          "name": "avant-garde"
+        },
+        {
+          "count": 1,
+          "id": "8d275a8d-154a-4bcb-8b5a-f56306ad4bcb",
+          "disambiguation": "",
+          "name": "progressive"
+        },
+        {
+          "name": "symphonic prog",
+          "disambiguation": "",
+          "id": "166be36f-febb-4523-a005-1fb3603bd3f6",
+          "count": 1
+        },
+        {
+          "name": "symphonic rock",
+          "id": "f729e6f8-30dc-4b81-9ff4-f4e7de82225d",
+          "count": 1,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "name": "progressive rock",
+          "count": 23
+        },
+        {
+          "count": 7,
+          "name": "art rock"
+        },
+        {
+          "name": "experimental rock",
+          "count": 6
+        },
+        {
+          "name": "free improvisation",
+          "count": 5
+        },
+        {
+          "name": "british",
+          "count": 4
+        },
+        {
+          "name": "jazz fusion",
+          "count": 4
+        },
+        {
+          "count": 2,
+          "name": "rock"
+        },
+        {
+          "count": 1,
+          "name": "avant-garde"
+        },
+        {
+          "count": 1,
+          "name": "progressive"
+        },
+        {
+          "count": 1,
+          "name": "symphonic prog"
+        },
+        {
+          "count": 1,
+          "name": "symphonic rock"
+        }
+      ]
+    },
+    {
+      "id": "yes",
+      "name": "Yes",
+      "mbid": "c1d4f2ba-cf39-460c-9528-6b827d3417a1",
+      "genres": [
+        {
+          "name": "progressive rock",
+          "count": 29,
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48",
+          "disambiguation": ""
+        },
+        {
+          "name": "symphonic prog",
+          "count": 7,
+          "disambiguation": "",
+          "id": "166be36f-febb-4523-a005-1fb3603bd3f6"
+        },
+        {
+          "count": 5,
+          "name": "rock",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "count": 4,
+          "name": "art rock",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "489ebed8-1299-4761-ba0b-29d381085f82",
+          "name": "progressive pop",
+          "count": 3
+        },
+        {
+          "name": "classic rock",
+          "count": 2,
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810"
+        },
+        {
+          "disambiguation": "",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "aor",
+          "id": "aca1caab-09d1-44b5-ae84-590ff1d218fc",
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "name": "disco",
+          "disambiguation": "",
+          "id": "a04d680b-b5c5-4f6a-87a3-f9f1ff98e3ea"
+        },
+        {
+          "disambiguation": "",
+          "id": "89255676-1f14-4dd8-bbad-fca839d6aff4",
+          "name": "electronic",
+          "count": 1
+        },
+        {
+          "id": "b7bb11c3-bb83-4047-af65-1e8aba89039f",
+          "disambiguation": "",
+          "count": 1,
+          "name": "garage rock"
+        },
+        {
+          "count": 1,
+          "name": "hard rock",
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab"
+        },
+        {
+          "disambiguation": "",
+          "id": "8d275a8d-154a-4bcb-8b5a-f56306ad4bcb",
+          "count": 1,
+          "name": "progressive"
+        },
+        {
+          "disambiguation": "",
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48",
+          "name": "psychedelic rock",
+          "count": 1
+        },
+        {
+          "id": "988e91a3-3341-416d-b7f8-7dbef6848dac",
+          "disambiguation": "",
+          "count": 1,
+          "name": "synth-pop"
+        }
+      ],
+      "tags": [
+        {
+          "count": 29,
+          "name": "progressive rock"
+        },
+        {
+          "name": "symphonic prog",
+          "count": 7
+        },
+        {
+          "count": 5,
+          "name": "rock"
+        },
+        {
+          "count": 4,
+          "name": "art rock"
+        },
+        {
+          "count": 4,
+          "name": "british"
+        },
+        {
+          "count": 3,
+          "name": "progressive pop"
+        },
+        {
+          "name": "classic rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "pop rock"
+        },
+        {
+          "count": 1,
+          "name": "aor"
+        },
+        {
+          "count": 1,
+          "name": "disco"
+        },
+        {
+          "name": "electronic",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "garage rock"
+        },
+        {
+          "name": "hard rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "montreaux"
+        },
+        {
+          "count": 1,
+          "name": "progressive"
+        },
+        {
+          "count": 1,
+          "name": "psychedelic rock"
+        },
+        {
+          "count": 1,
+          "name": "synth-pop"
+        }
+      ]
+    },
+    {
+      "id": "porcupine-tree",
+      "name": "Porcupine Tree",
+      "mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+      "genres": [
+        {
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48",
+          "disambiguation": "",
+          "count": 23,
+          "name": "progressive rock"
+        },
+        {
+          "name": "psychedelic rock",
+          "count": 5,
+          "disambiguation": "",
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48"
+        },
+        {
+          "disambiguation": "",
+          "id": "5c7785e6-a0b4-4441-a1e6-4fd4c0066a5f",
+          "name": "progressive metal",
+          "count": 4
+        },
+        {
+          "count": 3,
+          "name": "rock",
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798"
+        },
+        {
+          "disambiguation": "",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "name": "metal",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "space rock",
+          "id": "532dcf83-5641-446d-b007-51292b401650",
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "name": "alternative rock",
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18"
+        },
+        {
+          "name": "ambient",
+          "count": 1,
+          "disambiguation": "",
+          "id": "608b0471-7531-4854-a348-e698c69cb699"
+        }
+      ],
+      "tags": [
+        {
+          "count": 23,
+          "name": "progressive rock"
+        },
+        {
+          "count": 5,
+          "name": "psychedelic rock"
+        },
+        {
+          "count": 4,
+          "name": "british"
+        },
+        {
+          "name": "progressive metal",
+          "count": 4
+        },
+        {
+          "count": 3,
+          "name": "rock"
+        },
+        {
+          "name": "metal",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "space rock"
+        },
+        {
+          "count": 1,
+          "name": "alternative rock"
+        },
+        {
+          "name": "ambient",
+          "count": 1
+        },
+        {
+          "name": "new prog",
+          "count": 1
+        },
+        {
+          "name": "todo",
+          "count": 1
+        },
+        {
+          "name": "uk",
+          "count": 1
+        },
+        {
+          "name": "vyrzukhisuc-artiest",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ramones",
+      "name": "Ramones",
+      "mbid": "d6ed7887-a401-47a8-893c-34b967444d26",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 21,
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "name": "punk rock"
+        },
+        {
+          "disambiguation": "",
+          "count": 5,
+          "id": "60e21d01-ce21-4127-86b7-aada79558dab",
+          "name": "pop punk"
+        },
+        {
+          "disambiguation": "",
+          "count": 4,
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "name": "punk"
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "id": "618704fc-daac-44a2-92c9-89e3b1a2fc8c",
+          "name": "power pop"
+        }
+      ],
+      "tags": [
+        {
+          "name": "punk rock",
+          "count": 21
+        },
+        {
+          "count": 5,
+          "name": "pop punk"
+        },
+        {
+          "name": "punk",
+          "count": 4
+        },
+        {
+          "name": "estados unidos",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "new york punk"
+        },
+        {
+          "count": 1,
+          "name": "power pop"
+        }
+      ]
+    },
+    {
+      "id": "the-clash",
+      "name": "The Clash",
+      "mbid": "8f92558c-2baa-4758-8c38-615519e9deda",
+      "genres": [
+        {
+          "count": 20,
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "name": "punk rock",
+          "disambiguation": ""
+        },
+        {
+          "count": 9,
+          "id": "509c006f-67c2-4c54-a568-d2b415cb0642",
+          "name": "dance-punk",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "56407f9d-3398-4bf3-bbbd-ea372fa5adeb",
+          "count": 8,
+          "name": "new wave"
+        },
+        {
+          "disambiguation": "",
+          "name": "post-punk",
+          "id": "f6d8cadd-6a5e-4ec9-9c2b-996b5332a639",
+          "count": 8
+        },
+        {
+          "name": "punk",
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "count": 5,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "name": "reggae rock",
+          "count": 2,
+          "id": "fab69fe7-de95-43f7-9629-67e520dfbebb"
+        },
+        {
+          "disambiguation": "",
+          "name": "funk",
+          "count": 1,
+          "id": "fe4ba6a1-9873-4fd0-a12b-a70c81818514"
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 1,
+          "name": "rock",
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "name": "punk rock",
+          "count": 20
+        },
+        {
+          "count": 9,
+          "name": "dance-punk"
+        },
+        {
+          "count": 8,
+          "name": "new wave"
+        },
+        {
+          "count": 8,
+          "name": "post-punk"
+        },
+        {
+          "count": 5,
+          "name": "british"
+        },
+        {
+          "name": "punk",
+          "count": 5
+        },
+        {
+          "count": 2,
+          "name": "reggae rock"
+        },
+        {
+          "count": 2,
+          "name": "reino unido"
+        },
+        {
+          "name": "classic pop and rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "english"
+        },
+        {
+          "name": "funk",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "rock"
+        },
+        {
+          "count": 1,
+          "name": "server name"
+        },
+        {
+          "count": 1,
+          "name": "uk"
+        }
+      ]
+    },
+    {
+      "id": "sex-pistols",
+      "name": "Sex Pistols",
+      "mbid": "e5db18cb-4b1f-496d-a308-548b611090d3",
+      "genres": [
+        {
+          "count": 12,
+          "disambiguation": "",
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "name": "punk rock"
+        },
+        {
+          "name": "punk",
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "count": 3,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "name": "punk rock",
+          "count": 12
+        },
+        {
+          "name": "punk",
+          "count": 3
+        },
+        {
+          "count": 1,
+          "name": "british"
+        }
+      ]
+    },
+    {
+      "id": "radiohead",
+      "name": "Radiohead",
+      "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+      "genres": [
+        {
+          "count": 41,
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "name": "alternative rock"
+        },
+        {
+          "name": "art rock",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "count": 29,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 18,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7",
+          "name": "experimental rock",
+          "disambiguation": "",
+          "count": 14
+        },
+        {
+          "count": 13,
+          "disambiguation": "",
+          "id": "89255676-1f14-4dd8-bbad-fca839d6aff4",
+          "name": "electronic"
+        },
+        {
+          "name": "indie rock",
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "disambiguation": "",
+          "count": 4
+        },
+        {
+          "disambiguation": "",
+          "count": 3,
+          "id": "930ef127-3653-4677-9b95-ecc90c7c1a14",
+          "name": "art pop"
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "id": "53a3cea3-17af-4421-a07a-5824b540aeb5",
+          "name": "electronica"
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "name": "experimental",
+          "id": "68c81274-5770-4e7b-a4bf-ab0d7d425d99"
+        },
+        {
+          "id": "a493b79c-4072-4371-a14c-446b1027982a",
+          "name": "post-britpop",
+          "count": 2,
+          "disambiguation": ""
+        },
+        {
+          "name": "ambient pop",
+          "id": "2cdcecfe-3e7c-4055-ab34-78eceabe4d9b",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "id": "f1c9b874-7ef2-4e79-9419-c0bcb5f33a30",
+          "name": "britpop",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "f0843e91-c025-4dd7-8aef-6fe3d35470d9",
+          "name": "chamber pop"
+        },
+        {
+          "id": "eee90717-3eee-41bd-b463-003c180544bd",
+          "name": "crossover prog",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "name": "electronic rock",
+          "id": "c4a69842-f891-4569-9506-1882aa5db433",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "id": "8eb583f1-4fd7-460c-8246-dcdccc0e3ef9",
+          "name": "idm",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "name": "indietronica",
+          "id": "9e7ae1de-d5f2-46a5-b105-11c7367dc70d"
+        },
+        {
+          "id": "bbb1310c-24cb-4fc9-97c4-f93e4549f1e2",
+          "name": "post-grunge",
+          "count": 1,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "count": 41,
+          "name": "alternative rock"
+        },
+        {
+          "count": 29,
+          "name": "art rock"
+        },
+        {
+          "count": 18,
+          "name": "rock"
+        },
+        {
+          "count": 14,
+          "name": "british"
+        },
+        {
+          "count": 14,
+          "name": "experimental rock"
+        },
+        {
+          "name": "electronic",
+          "count": 13
+        },
+        {
+          "name": "indie rock",
+          "count": 4
+        },
+        {
+          "count": 3,
+          "name": "art pop"
+        },
+        {
+          "count": 2,
+          "name": "alternative"
+        },
+        {
+          "count": 2,
+          "name": "alternative rock music"
+        },
+        {
+          "name": "electronica",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "experimental"
+        },
+        {
+          "count": 2,
+          "name": "post-britpop"
+        },
+        {
+          "count": 2,
+          "name": "progressive rock music"
+        },
+        {
+          "count": 1,
+          "name": "ambient pop"
+        },
+        {
+          "count": 1,
+          "name": "britpop"
+        },
+        {
+          "count": 1,
+          "name": "britrock"
+        },
+        {
+          "count": 1,
+          "name": "chamber pop"
+        },
+        {
+          "name": "crossover prog",
+          "count": 1
+        },
+        {
+          "name": "electronic rock",
+          "count": 1
+        },
+        {
+          "name": "english",
+          "count": 1
+        },
+        {
+          "name": "idm",
+          "count": 1
+        },
+        {
+          "name": "indietronica",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "oxford"
+        },
+        {
+          "name": "post-grunge",
+          "count": 1
+        },
+        {
+          "name": "uk",
+          "count": 1
+        },
+        {
+          "name": "vyrzukhisuc-artiest",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "pixies",
+      "name": "Pixies",
+      "mbid": "b6b2bb8d-54a9-491f-9607-7b546023b433",
+      "genres": [
+        {
+          "name": "alternative rock",
+          "count": 19,
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18"
+        },
+        {
+          "name": "indie rock",
+          "count": 10,
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "disambiguation": ""
+        },
+        {
+          "name": "noise pop",
+          "count": 2,
+          "id": "1208a8e7-e5bd-4891-9f81-9a9fdfceeb39",
+          "disambiguation": ""
+        },
+        {
+          "name": "punk rock",
+          "count": 1,
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "disambiguation": ""
+        },
+        {
+          "name": "rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798"
+        },
+        {
+          "disambiguation": "",
+          "id": "b76ee78d-ec97-49e9-8ea6-cfc46ecc3b23",
+          "count": 1,
+          "name": "surf rock"
+        }
+      ],
+      "tags": [
+        {
+          "count": 19,
+          "name": "alternative rock"
+        },
+        {
+          "count": 10,
+          "name": "indie rock"
+        },
+        {
+          "count": 2,
+          "name": "noise pop"
+        },
+        {
+          "count": 1,
+          "name": "punk rock"
+        },
+        {
+          "name": "rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "rock groups"
+        },
+        {
+          "count": 1,
+          "name": "rock music"
+        },
+        {
+          "name": "surf rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "sonic-youth",
+      "name": "Sonic Youth",
+      "mbid": "5cbef01b-cc35-4f52-af7b-d0df0c4f61b9",
+      "genres": [
+        {
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 12,
+          "disambiguation": ""
+        },
+        {
+          "count": 11,
+          "disambiguation": "",
+          "name": "noise rock",
+          "id": "8e5474b7-f445-49a7-866d-0f8e34b0a519"
+        },
+        {
+          "disambiguation": "",
+          "count": 9,
+          "name": "experimental rock",
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7"
+        },
+        {
+          "id": "3188a961-88e0-4b12-9b9e-47f79e53d780",
+          "name": "no wave",
+          "count": 8,
+          "disambiguation": ""
+        },
+        {
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "name": "indie rock",
+          "disambiguation": "",
+          "count": 6
+        },
+        {
+          "count": 5,
+          "disambiguation": "",
+          "id": "f6d8cadd-6a5e-4ec9-9c2b-996b5332a639",
+          "name": "post-punk"
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "name": "grunge",
+          "id": "3f08faa9-6c3e-4b6d-b4b8-08eea45954e2"
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "name": "art rock",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "name": "punk rock"
+        }
+      ],
+      "tags": [
+        {
+          "name": "alternative rock",
+          "count": 12
+        },
+        {
+          "count": 11,
+          "name": "noise rock"
+        },
+        {
+          "count": 9,
+          "name": "experimental rock"
+        },
+        {
+          "count": 8,
+          "name": "no wave"
+        },
+        {
+          "name": "indie rock",
+          "count": 6
+        },
+        {
+          "name": "post-punk",
+          "count": 5
+        },
+        {
+          "count": 2,
+          "name": "2008 universal fire victim"
+        },
+        {
+          "count": 2,
+          "name": "grunge"
+        },
+        {
+          "count": 2,
+          "name": "rock"
+        },
+        {
+          "count": 1,
+          "name": "art rock"
+        },
+        {
+          "count": 1,
+          "name": "punk rock"
+        }
+      ]
+    },
+    {
+      "id": "nirvana",
+      "name": "Nirvana",
+      "mbid": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+      "genres": [
+        {
+          "id": "3f08faa9-6c3e-4b6d-b4b8-08eea45954e2",
+          "count": 64,
+          "name": "grunge",
+          "disambiguation": ""
+        },
+        {
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 29,
+          "disambiguation": ""
+        },
+        {
+          "name": "rock",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 23,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "name": "noise rock",
+          "id": "8e5474b7-f445-49a7-866d-0f8e34b0a519",
+          "count": 12
+        },
+        {
+          "disambiguation": "",
+          "count": 8,
+          "id": "00055e8b-b951-46e2-af1e-58b5624e7952",
+          "name": "acoustic rock"
+        },
+        {
+          "name": "sludge metal",
+          "id": "66544dbb-08a8-44c2-a21a-4d251481d2b6",
+          "count": 3,
+          "disambiguation": ""
+        },
+        {
+          "id": "7983ff25-ddf9-411e-a7f9-6cca238bff79",
+          "count": 1,
+          "name": "alternative metal",
+          "disambiguation": ""
+        },
+        {
+          "name": "pigfuck",
+          "id": "4a3546b4-ec9f-431f-8532-55434f1038ea",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "name": "post-hardcore",
+          "id": "aec382b7-b635-470c-9051-2f84e0b5ea1e",
+          "count": 1
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "name": "punk"
+        },
+        {
+          "disambiguation": "",
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "count": 1,
+          "name": "punk rock"
+        }
+      ],
+      "tags": [
+        {
+          "count": 64,
+          "name": "grunge"
+        },
+        {
+          "name": "alternative rock",
+          "count": 29
+        },
+        {
+          "name": "rock",
+          "count": 23
+        },
+        {
+          "count": 12,
+          "name": "noise rock"
+        },
+        {
+          "name": "acoustic rock",
+          "count": 8
+        },
+        {
+          "name": "american",
+          "count": 8
+        },
+        {
+          "name": "seattle",
+          "count": 6
+        },
+        {
+          "count": 4,
+          "name": "90s"
+        },
+        {
+          "count": 3,
+          "name": "sludge metal"
+        },
+        {
+          "name": "usa",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "alternative metal"
+        },
+        {
+          "name": "estados unidos",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "pigfuck"
+        },
+        {
+          "name": "post-hardcore",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "punk"
+        },
+        {
+          "name": "punk rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "united states"
+        }
+      ]
+    },
+    {
+      "id": "pearl-jam",
+      "name": "Pearl Jam",
+      "mbid": "83b9cbe7-9857-49e2-ab8e-b57b01038103",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "3f08faa9-6c3e-4b6d-b4b8-08eea45954e2",
+          "name": "grunge",
+          "count": 32
+        },
+        {
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 20,
+          "name": "alternative rock"
+        },
+        {
+          "name": "rock",
+          "count": 8,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "count": 7,
+          "name": "hard rock"
+        },
+        {
+          "name": "classic rock",
+          "count": 2,
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810"
+        },
+        {
+          "disambiguation": "",
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7",
+          "name": "experimental rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "funk rock",
+          "id": "eca476ac-d63b-431f-9347-c45f530dc15d",
+          "disambiguation": ""
+        },
+        {
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "disambiguation": "",
+          "name": "indie rock",
+          "count": 2
+        },
+        {
+          "disambiguation": "",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "count": 2,
+          "name": "pop rock"
+        },
+        {
+          "id": "00055e8b-b951-46e2-af1e-58b5624e7952",
+          "disambiguation": "",
+          "name": "acoustic rock",
+          "count": 1
+        },
+        {
+          "name": "art rock",
+          "count": 1,
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "bbb1310c-24cb-4fc9-97c4-f93e4549f1e2",
+          "count": 1,
+          "name": "post-grunge"
+        }
+      ],
+      "tags": [
+        {
+          "name": "grunge",
+          "count": 32
+        },
+        {
+          "name": "alternative rock",
+          "count": 20
+        },
+        {
+          "name": "rock",
+          "count": 8
+        },
+        {
+          "count": 7,
+          "name": "hard rock"
+        },
+        {
+          "name": "seattle",
+          "count": 7
+        },
+        {
+          "name": "usa",
+          "count": 4
+        },
+        {
+          "count": 2,
+          "name": "classic rock"
+        },
+        {
+          "name": "experimental rock",
+          "count": 2
+        },
+        {
+          "name": "funk rock",
+          "count": 2
+        },
+        {
+          "name": "indie rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "pop rock"
+        },
+        {
+          "name": "rock and indie",
+          "count": 2
+        },
+        {
+          "name": "acoustic rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "art rock"
+        },
+        {
+          "count": 1,
+          "name": "bridge"
+        },
+        {
+          "name": "christmas singles",
+          "count": 1
+        },
+        {
+          "name": "estados unidos",
+          "count": 1
+        },
+        {
+          "name": "post-grunge",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "alice-in-chains",
+      "name": "Alice in Chains",
+      "mbid": "4bd95eea-b9f6-4d70-a36c-cfea77431553",
+      "genres": [
+        {
+          "name": "grunge",
+          "id": "3f08faa9-6c3e-4b6d-b4b8-08eea45954e2",
+          "disambiguation": "",
+          "count": 29
+        },
+        {
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 19,
+          "name": "alternative rock"
+        },
+        {
+          "count": 13,
+          "disambiguation": "",
+          "id": "7983ff25-ddf9-411e-a7f9-6cca238bff79",
+          "name": "alternative metal"
+        },
+        {
+          "disambiguation": "",
+          "id": "00055e8b-b951-46e2-af1e-58b5624e7952",
+          "count": 8,
+          "name": "acoustic rock"
+        },
+        {
+          "name": "heavy metal",
+          "count": 6,
+          "disambiguation": "",
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9"
+        },
+        {
+          "name": "sludge metal",
+          "id": "66544dbb-08a8-44c2-a21a-4d251481d2b6",
+          "disambiguation": "",
+          "count": 5
+        },
+        {
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "disambiguation": "",
+          "count": 4,
+          "name": "hard rock"
+        },
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 3,
+          "name": "rock"
+        },
+        {
+          "id": "db815815-60fe-44a3-9859-2232df479dc9",
+          "disambiguation": "",
+          "count": 2,
+          "name": "doom metal"
+        },
+        {
+          "name": "stoner metal",
+          "disambiguation": "",
+          "id": "5c76eb54-7342-4d1f-9d98-a93f2f6aa7f6",
+          "count": 2
+        },
+        {
+          "name": "glam metal",
+          "count": 1,
+          "id": "818134e3-9392-4624-a13c-c4b19c54bccd",
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "count": 29,
+          "name": "grunge"
+        },
+        {
+          "name": "alternative rock",
+          "count": 19
+        },
+        {
+          "name": "alternative metal",
+          "count": 13
+        },
+        {
+          "count": 8,
+          "name": "acoustic rock"
+        },
+        {
+          "name": "heavy metal",
+          "count": 6
+        },
+        {
+          "name": "sludge metal",
+          "count": 5
+        },
+        {
+          "count": 4,
+          "name": "hard rock"
+        },
+        {
+          "name": "rock",
+          "count": 3
+        },
+        {
+          "count": 2,
+          "name": "doom metal"
+        },
+        {
+          "name": "stoner metal",
+          "count": 2
+        },
+        {
+          "name": "glam metal",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "black-sabbath",
+      "name": "Black Sabbath",
+      "mbid": "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+      "genres": [
+        {
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "disambiguation": "",
+          "name": "heavy metal",
+          "count": 51
+        },
+        {
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "disambiguation": "",
+          "count": 21,
+          "name": "hard rock"
+        },
+        {
+          "name": "traditional doom metal",
+          "count": 13,
+          "id": "5f2ae224-81de-4dfa-82ec-672c321c4e58",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "count": 12,
+          "name": "metal"
+        },
+        {
+          "name": "doom metal",
+          "count": 7,
+          "disambiguation": "",
+          "id": "db815815-60fe-44a3-9859-2232df479dc9"
+        },
+        {
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "count": 5,
+          "name": "classic rock"
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": "",
+          "name": "rock",
+          "count": 5
+        },
+        {
+          "name": "blues rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273"
+        }
+      ],
+      "tags": [
+        {
+          "count": 51,
+          "name": "heavy metal"
+        },
+        {
+          "name": "hard rock",
+          "count": 21
+        },
+        {
+          "count": 13,
+          "name": "traditional doom metal"
+        },
+        {
+          "count": 12,
+          "name": "metal"
+        },
+        {
+          "name": "proto doom",
+          "count": 8
+        },
+        {
+          "name": "doom metal",
+          "count": 7
+        },
+        {
+          "count": 5,
+          "name": "classic rock"
+        },
+        {
+          "name": "rock",
+          "count": 5
+        },
+        {
+          "name": "british",
+          "count": 4
+        },
+        {
+          "count": 1,
+          "name": "blues rock"
+        }
+      ]
+    },
+    {
+      "id": "iron-maiden",
+      "name": "Iron Maiden",
+      "mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 52,
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "name": "heavy metal"
+        },
+        {
+          "count": 18,
+          "disambiguation": "",
+          "id": "feddf74e-576b-40d6-8896-a7f66f331e48",
+          "name": "nwobhm"
+        },
+        {
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "name": "metal",
+          "count": 13,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "name": "heavy metal",
+          "count": 52
+        },
+        {
+          "name": "nwobhm",
+          "count": 18
+        },
+        {
+          "name": "metal",
+          "count": 13
+        },
+        {
+          "count": 7,
+          "name": "new wave of british heavy metal"
+        },
+        {
+          "count": 6,
+          "name": "british"
+        }
+      ]
+    },
+    {
+      "id": "metallica",
+      "name": "Metallica",
+      "mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+      "genres": [
+        {
+          "name": "thrash metal",
+          "id": "cc4cf136-5690-4ee3-a62b-b172febfe322",
+          "disambiguation": "",
+          "count": 67
+        },
+        {
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "name": "heavy metal",
+          "disambiguation": "",
+          "count": 42
+        },
+        {
+          "disambiguation": "",
+          "count": 33,
+          "name": "metal",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd"
+        },
+        {
+          "name": "hard rock",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "disambiguation": "",
+          "count": 21
+        },
+        {
+          "name": "rock",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 1,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "count": 67,
+          "name": "thrash metal"
+        },
+        {
+          "name": "heavy metal",
+          "count": 42
+        },
+        {
+          "name": "metal",
+          "count": 33
+        },
+        {
+          "name": "hard rock",
+          "count": 21
+        },
+        {
+          "count": 7,
+          "name": "american"
+        },
+        {
+          "count": 1,
+          "name": "rock"
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "name": "Tool",
+      "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "5c7785e6-a0b4-4441-a1e6-4fd4c0066a5f",
+          "count": 40,
+          "name": "progressive metal"
+        },
+        {
+          "name": "alternative metal",
+          "disambiguation": "",
+          "id": "7983ff25-ddf9-411e-a7f9-6cca238bff79",
+          "count": 19
+        },
+        {
+          "name": "progressive rock",
+          "count": 19,
+          "disambiguation": "",
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48"
+        },
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 6,
+          "name": "rock"
+        },
+        {
+          "name": "metal",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "disambiguation": "",
+          "count": 5
+        },
+        {
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 4,
+          "name": "alternative rock"
+        },
+        {
+          "name": "art rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b"
+        },
+        {
+          "name": "electronic",
+          "disambiguation": "",
+          "id": "89255676-1f14-4dd8-bbad-fca839d6aff4",
+          "count": 1
+        },
+        {
+          "name": "heavy metal",
+          "count": 1,
+          "disambiguation": "",
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9"
+        },
+        {
+          "name": "post-metal",
+          "count": 1,
+          "disambiguation": "",
+          "id": "e214700e-dae1-4b69-81e9-276e4e88fa32"
+        }
+      ],
+      "tags": [
+        {
+          "name": "progressive metal",
+          "count": 40
+        },
+        {
+          "count": 19,
+          "name": "alternative metal"
+        },
+        {
+          "count": 19,
+          "name": "progressive rock"
+        },
+        {
+          "count": 6,
+          "name": "rock"
+        },
+        {
+          "name": "metal",
+          "count": 5
+        },
+        {
+          "count": 4,
+          "name": "alternative rock"
+        },
+        {
+          "name": "american",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "art rock"
+        },
+        {
+          "name": "electronic",
+          "count": 1
+        },
+        {
+          "name": "heavy metal",
+          "count": 1
+        },
+        {
+          "name": "post-metal",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "slayer",
+      "name": "Slayer",
+      "mbid": "bdacc37b-8633-4bf8-9dd5-4662ee651aec",
+      "genres": [
+        {
+          "name": "thrash metal",
+          "id": "cc4cf136-5690-4ee3-a62b-b172febfe322",
+          "disambiguation": "",
+          "count": 30
+        },
+        {
+          "count": 4,
+          "disambiguation": "",
+          "name": "metal",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd"
+        },
+        {
+          "id": "13b9a3d0-cadd-483d-9bf5-9c2b32a946a7",
+          "name": "speed metal",
+          "disambiguation": "",
+          "count": 4
+        },
+        {
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "name": "heavy metal",
+          "count": 3,
+          "disambiguation": ""
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "id": "9f7c0c5a-9a5e-4bbc-bf98-036d2d98bbe3",
+          "name": "crossover thrash"
+        },
+        {
+          "name": "nu metal",
+          "id": "bbad9cda-bde2-448e-821c-7ebf85a54020",
+          "disambiguation": "",
+          "count": 2
+        }
+      ],
+      "tags": [
+        {
+          "count": 30,
+          "name": "thrash metal"
+        },
+        {
+          "name": "metal",
+          "count": 4
+        },
+        {
+          "name": "speed metal",
+          "count": 4
+        },
+        {
+          "count": 3,
+          "name": "heavy metal"
+        },
+        {
+          "count": 2,
+          "name": "crossover thrash"
+        },
+        {
+          "count": 2,
+          "name": "nu metal"
+        }
+      ]
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "mbid": "dbb3b771-ae77-4381-b61c-758b5b7898ec",
+      "genres": [
+        {
+          "id": "eacfa027-2fad-413f-a2f1-80fa43674f0b",
+          "name": "death metal",
+          "count": 25,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 13,
+          "id": "db37c56d-e6a7-4809-b549-6f1cb559b559",
+          "name": "technical death metal"
+        },
+        {
+          "disambiguation": "",
+          "count": 8,
+          "id": "5c7785e6-a0b4-4441-a1e6-4fd4c0066a5f",
+          "name": "progressive metal"
+        },
+        {
+          "count": 5,
+          "disambiguation": "",
+          "name": "metal",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd"
+        }
+      ],
+      "tags": [
+        {
+          "count": 25,
+          "name": "death metal"
+        },
+        {
+          "count": 13,
+          "name": "technical death metal"
+        },
+        {
+          "count": 9,
+          "name": "progressive death metal"
+        },
+        {
+          "count": 8,
+          "name": "progressive metal"
+        },
+        {
+          "name": "metal",
+          "count": 5
+        },
+        {
+          "name": "extreme progressive metal",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "children-of-bodom",
+      "name": "Children of Bodom",
+      "mbid": "f57e14e4-b030-467c-b202-539453f504ec",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 20,
+          "id": "5eeb0431-8160-40a7-ae44-c2ad01fed156",
+          "name": "melodic death metal"
+        },
+        {
+          "id": "eacfa027-2fad-413f-a2f1-80fa43674f0b",
+          "count": 6,
+          "disambiguation": "",
+          "name": "death metal"
+        },
+        {
+          "name": "metal",
+          "disambiguation": "",
+          "count": 6,
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd"
+        }
+      ],
+      "tags": [
+        {
+          "count": 20,
+          "name": "melodic death metal"
+        },
+        {
+          "count": 6,
+          "name": "death metal"
+        },
+        {
+          "name": "metal",
+          "count": 6
+        },
+        {
+          "count": 2,
+          "name": "finnish"
+        }
+      ]
+    },
+    {
+      "id": "the-cure",
+      "name": "The Cure",
+      "mbid": "69ee3720-a7cb-4402-b48d-a02c366f2bcf",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 25,
+          "id": "d9858aef-25bf-478b-b135-b900aa1f0fd1",
+          "name": "gothic rock"
+        },
+        {
+          "id": "56407f9d-3398-4bf3-bbbd-ea372fa5adeb",
+          "name": "new wave",
+          "disambiguation": "",
+          "count": 25
+        },
+        {
+          "id": "f6d8cadd-6a5e-4ec9-9c2b-996b5332a639",
+          "name": "post-punk",
+          "count": 25,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 22,
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18"
+        },
+        {
+          "count": 6,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "name": "punk"
+        },
+        {
+          "id": "988e91a3-3341-416d-b7f8-7dbef6848dac",
+          "name": "synth-pop",
+          "disambiguation": "",
+          "count": 2
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "2c473395-9cd5-465d-8d85-c308de067c04",
+          "name": "dance-rock"
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "id": "d9f42dc1-3a92-4217-8ae5-e9672f595b8e",
+          "name": "gothic"
+        },
+        {
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "name": "indie rock",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "name": "jangle pop",
+          "id": "6c207307-cac0-43cf-be8f-e2dde68a92f1",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "name": "pop",
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791"
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock"
+        }
+      ],
+      "tags": [
+        {
+          "name": "gothic rock",
+          "count": 25
+        },
+        {
+          "count": 25,
+          "name": "new wave"
+        },
+        {
+          "count": 25,
+          "name": "post-punk"
+        },
+        {
+          "count": 22,
+          "name": "alternative rock"
+        },
+        {
+          "name": "british",
+          "count": 12
+        },
+        {
+          "count": 8,
+          "name": "goth"
+        },
+        {
+          "name": "dark",
+          "count": 6
+        },
+        {
+          "count": 6,
+          "name": "rock"
+        },
+        {
+          "count": 5,
+          "name": "english"
+        },
+        {
+          "name": "synthpop",
+          "count": 3
+        },
+        {
+          "name": "alternative",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "punk"
+        },
+        {
+          "name": "synth-pop",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "uk"
+        },
+        {
+          "name": "1985",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "80s"
+        },
+        {
+          "name": "britannique",
+          "count": 1
+        },
+        {
+          "name": "classic pop and rock",
+          "count": 1
+        },
+        {
+          "name": "dance-rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "gothic"
+        },
+        {
+          "name": "indie rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "jangle pop"
+        },
+        {
+          "name": "pop",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "pop rock"
+        },
+        {
+          "count": 1,
+          "name": "vyrzukhisuc-artiest"
+        }
+      ]
+    },
+    {
+      "id": "nine-inch-nails",
+      "name": "Nine Inch Nails",
+      "mbid": "b7ffd2af-418f-4be2-bdd1-22f8b48613da",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "ffbc9907-c9be-4ace-876b-b7fd5b9d51f9",
+          "name": "industrial rock",
+          "count": 38
+        },
+        {
+          "count": 16,
+          "name": "industrial",
+          "disambiguation": "",
+          "id": "060beed7-e597-4c42-8e25-5bf8bd5dd3cb"
+        },
+        {
+          "name": "alternative rock",
+          "count": 15,
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "89255676-1f14-4dd8-bbad-fca839d6aff4",
+          "count": 12,
+          "name": "electronic"
+        },
+        {
+          "name": "industrial metal",
+          "count": 7,
+          "id": "d4df54b5-67b4-4fb7-8f73-79e71717a501",
+          "disambiguation": ""
+        },
+        {
+          "id": "6e2e809f-8c54-4e0f-aca0-0642771ab3cf",
+          "disambiguation": "",
+          "count": 5,
+          "name": "electro-industrial"
+        },
+        {
+          "name": "rock",
+          "count": 3,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "name": "post-industrial",
+          "count": 2,
+          "id": "53ceafec-ced4-4bec-ac57-d00cbf3a0c29",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "e5bba957-8c91-496a-a675-c6d0c6b51c33",
+          "name": "dance",
+          "count": 1
+        },
+        {
+          "disambiguation": "",
+          "id": "01ecf8e4-7f7a-4145-ae97-504d3109633d",
+          "count": 1,
+          "name": "dark ambient"
+        },
+        {
+          "count": 1,
+          "name": "electronic rock",
+          "id": "c4a69842-f891-4569-9506-1882aa5db433",
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "name": "hip hop",
+          "id": "52faa157-6bad-4d86-a0ab-d4dec7d2513c",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "bbad9cda-bde2-448e-821c-7ebf85a54020",
+          "count": 1,
+          "name": "nu metal"
+        },
+        {
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791",
+          "disambiguation": "",
+          "name": "pop",
+          "count": 1
+        },
+        {
+          "name": "techno",
+          "count": 1,
+          "disambiguation": "",
+          "id": "41fe3260-fcc1-450b-bd5a-803886c56912"
+        }
+      ],
+      "tags": [
+        {
+          "count": 38,
+          "name": "industrial rock"
+        },
+        {
+          "count": 16,
+          "name": "industrial"
+        },
+        {
+          "count": 15,
+          "name": "alternative rock"
+        },
+        {
+          "count": 12,
+          "name": "electronic"
+        },
+        {
+          "count": 7,
+          "name": "industrial metal"
+        },
+        {
+          "name": "electro-industrial",
+          "count": 5
+        },
+        {
+          "count": 3,
+          "name": "rock"
+        },
+        {
+          "name": "post-industrial",
+          "count": 2
+        },
+        {
+          "name": "ambient music",
+          "count": 1
+        },
+        {
+          "name": "dance",
+          "count": 1
+        },
+        {
+          "name": "dark ambient",
+          "count": 1
+        },
+        {
+          "name": "electronic rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "hip hop"
+        },
+        {
+          "count": 1,
+          "name": "nu metal"
+        },
+        {
+          "name": "pop",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "techno"
+        }
+      ]
+    },
+    {
+      "id": "rammstein",
+      "name": "Rammstein",
+      "mbid": "b2d122f9-eadb-4930-a196-8f221eeb0c66",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 36,
+          "id": "d4df54b5-67b4-4fb7-8f73-79e71717a501",
+          "name": "industrial metal"
+        },
+        {
+          "id": "28f8cf28-d1d6-4df9-8bee-ab0c6a9f0721",
+          "name": "neue deutsche härte",
+          "disambiguation": "",
+          "count": 17
+        },
+        {
+          "disambiguation": "",
+          "count": 12,
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "name": "metal"
+        },
+        {
+          "disambiguation": "",
+          "count": 9,
+          "name": "industrial",
+          "id": "060beed7-e597-4c42-8e25-5bf8bd5dd3cb"
+        }
+      ],
+      "tags": [
+        {
+          "name": "industrial metal",
+          "count": 36
+        },
+        {
+          "count": 19,
+          "name": "german"
+        },
+        {
+          "name": "neue deutsche härte",
+          "count": 17
+        },
+        {
+          "name": "metal",
+          "count": 12
+        },
+        {
+          "name": "industrial",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "steely-dan",
+      "name": "Steely Dan",
+      "mbid": "e01c3376-15fa-40d7-b747-5f219bdefdd7",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 5,
+          "id": "5eea976c-1ab2-4d94-9b63-7d1297d5dba5",
+          "name": "jazz rock"
+        },
+        {
+          "name": "yacht rock",
+          "count": 5,
+          "id": "6d39ad19-fbd6-407b-baf3-ad6ad46a5518",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 4,
+          "name": "rock"
+        },
+        {
+          "name": "pop rock",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "count": 3,
+          "disambiguation": ""
+        },
+        {
+          "name": "soft rock",
+          "disambiguation": "",
+          "count": 3,
+          "id": "7d0c6a6b-5d56-4b1e-a8c7-e32194f246b9"
+        },
+        {
+          "name": "jazz pop",
+          "disambiguation": "",
+          "count": 2,
+          "id": "c88a8b97-ba4b-4d45-916f-4c4a779ccd89"
+        },
+        {
+          "disambiguation": "",
+          "count": 2,
+          "id": "d13290c7-581a-4aa7-85ad-450b35261bf8",
+          "name": "sophisti-pop"
+        }
+      ],
+      "tags": [
+        {
+          "count": 5,
+          "name": "jazz rock"
+        },
+        {
+          "name": "yacht rock",
+          "count": 5
+        },
+        {
+          "name": "rock",
+          "count": 4
+        },
+        {
+          "name": "jazz-rock",
+          "count": 3
+        },
+        {
+          "count": 3,
+          "name": "pop rock"
+        },
+        {
+          "name": "soft rock",
+          "count": 3
+        },
+        {
+          "name": "jazz pop",
+          "count": 2
+        },
+        {
+          "name": "sophisti-pop",
+          "count": 2
+        },
+        {
+          "name": "sophisticated rock",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "lynyrd-skynyrd",
+      "name": "Lynyrd Skynyrd",
+      "mbid": "c544ed4d-2390-4442-a83e-1ea2883b09c8",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "905c1899-3027-4d29-8d9c-bbeef2c8628a",
+          "count": 12,
+          "name": "southern rock"
+        },
+        {
+          "name": "hard rock",
+          "count": 9,
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "disambiguation": ""
+        },
+        {
+          "name": "rock",
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 5
+        },
+        {
+          "name": "acoustic rock",
+          "count": 1,
+          "id": "00055e8b-b951-46e2-af1e-58b5624e7952",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "58e325d5-54fd-4e98-b39a-3aa6bc319273",
+          "count": 1,
+          "name": "blues rock"
+        },
+        {
+          "id": "f07bf7f4-1b55-42ea-8c4d-9906fce84cdf",
+          "disambiguation": "",
+          "count": 1,
+          "name": "boogie rock"
+        },
+        {
+          "name": "classic rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810"
+        }
+      ],
+      "tags": [
+        {
+          "name": "southern rock",
+          "count": 12
+        },
+        {
+          "name": "hard rock",
+          "count": 9
+        },
+        {
+          "name": "rock",
+          "count": 5
+        },
+        {
+          "name": "acoustic rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "blues rock"
+        },
+        {
+          "name": "boogie rock",
+          "count": 1
+        },
+        {
+          "name": "classic rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "mogwai",
+      "name": "Mogwai",
+      "mbid": "d700b3f5-45af-4d02-95ed-57d301bda93e",
+      "genres": [
+        {
+          "count": 30,
+          "disambiguation": "",
+          "id": "0bfffa19-4e4a-4bf7-bf53-6ec44f0a2f8e",
+          "name": "post-rock"
+        },
+        {
+          "id": "4ae63770-68af-4fae-b0f1-5e53f372c743",
+          "name": "instrumental",
+          "count": 9,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 4,
+          "name": "electronic",
+          "id": "89255676-1f14-4dd8-bbad-fca839d6aff4"
+        },
+        {
+          "id": "68c81274-5770-4e7b-a4bf-ab0d7d425d99",
+          "name": "experimental",
+          "count": 4,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 4,
+          "id": "65c97e89-b42b-45c2-a70e-0eca1b8f0ff7",
+          "name": "experimental rock"
+        }
+      ],
+      "tags": [
+        {
+          "name": "post-rock",
+          "count": 30
+        },
+        {
+          "count": 9,
+          "name": "instrumental"
+        },
+        {
+          "name": "scottish",
+          "count": 9
+        },
+        {
+          "count": 4,
+          "name": "electronic"
+        },
+        {
+          "count": 4,
+          "name": "experimental"
+        },
+        {
+          "name": "experimental rock",
+          "count": 4
+        },
+        {
+          "count": 2,
+          "name": "british"
+        }
+      ]
+    },
+    {
+      "id": "my-bloody-valentine",
+      "name": "My Bloody Valentine",
+      "mbid": "8ca01f46-53ac-4af2-8516-55a909c0905e",
+      "genres": [
+        {
+          "count": 18,
+          "disambiguation": "",
+          "name": "shoegaze",
+          "id": "a4012b2e-5c27-4f81-8781-9ae5998d882c"
+        },
+        {
+          "disambiguation": "",
+          "count": 10,
+          "name": "dream pop",
+          "id": "6242615b-5620-465b-b6fb-2e593e90cbad"
+        },
+        {
+          "disambiguation": "",
+          "count": 8,
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "name": "indie rock"
+        },
+        {
+          "name": "noise pop",
+          "id": "1208a8e7-e5bd-4891-9f81-9a9fdfceeb39",
+          "count": 8,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 7,
+          "id": "8e5474b7-f445-49a7-866d-0f8e34b0a519",
+          "name": "noise rock"
+        },
+        {
+          "disambiguation": "",
+          "count": 4,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "name": "post-punk",
+          "id": "f6d8cadd-6a5e-4ec9-9c2b-996b5332a639",
+          "disambiguation": "",
+          "count": 3
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "name": "alternative rock"
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "id": "f390be72-360b-41bb-a310-6a2e638779d2",
+          "name": "indie pop"
+        }
+      ],
+      "tags": [
+        {
+          "count": 18,
+          "name": "shoegaze"
+        },
+        {
+          "name": "dream pop",
+          "count": 10
+        },
+        {
+          "name": "indie rock",
+          "count": 8
+        },
+        {
+          "name": "noise pop",
+          "count": 8
+        },
+        {
+          "name": "noise rock",
+          "count": 7
+        },
+        {
+          "name": "irish",
+          "count": 4
+        },
+        {
+          "name": "rock",
+          "count": 4
+        },
+        {
+          "name": "post-punk",
+          "count": 3
+        },
+        {
+          "count": 1,
+          "name": "alternative rock"
+        },
+        {
+          "count": 1,
+          "name": "british"
+        },
+        {
+          "count": 1,
+          "name": "classic pop and rock"
+        },
+        {
+          "count": 1,
+          "name": "creation records"
+        },
+        {
+          "name": "english",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "indie"
+        },
+        {
+          "count": 1,
+          "name": "indie pop"
+        },
+        {
+          "name": "ireland",
+          "count": 1
+        },
+        {
+          "name": "irlandais",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "irlande"
+        },
+        {
+          "name": "shoegazing",
+          "count": 1
+        },
+        {
+          "name": "spotify boycott",
+          "count": 1
+        },
+        {
+          "name": "the lost generation",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "uk"
+        },
+        {
+          "count": 1,
+          "name": "vyrzukhisuc-artiest"
+        }
+      ]
+    },
+    {
+      "id": "megadeth",
+      "name": "Megadeth",
+      "mbid": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+      "genres": [
+        {
+          "count": 41,
+          "disambiguation": "",
+          "id": "cc4cf136-5690-4ee3-a62b-b172febfe322",
+          "name": "thrash metal"
+        },
+        {
+          "name": "heavy metal",
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "count": 18,
+          "disambiguation": ""
+        },
+        {
+          "count": 9,
+          "disambiguation": "",
+          "name": "speed metal",
+          "id": "13b9a3d0-cadd-483d-9bf5-9c2b32a946a7"
+        },
+        {
+          "count": 8,
+          "disambiguation": "",
+          "name": "metal",
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd"
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock",
+          "disambiguation": "",
+          "count": 1
+        }
+      ],
+      "tags": [
+        {
+          "name": "thrash metal",
+          "count": 41
+        },
+        {
+          "count": 18,
+          "name": "heavy metal"
+        },
+        {
+          "name": "speed metal",
+          "count": 9
+        },
+        {
+          "count": 8,
+          "name": "metal"
+        },
+        {
+          "count": 2,
+          "name": "american"
+        },
+        {
+          "name": "old school thrash",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "rock"
+        }
+      ]
+    },
+    {
+      "id": "travis",
+      "name": "Travis",
+      "mbid": "22a40b75-affc-4e69-8884-266d087e4751",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "f1c9b874-7ef2-4e79-9419-c0bcb5f33a30",
+          "count": 8,
+          "name": "britpop"
+        },
+        {
+          "count": 6,
+          "name": "indie rock",
+          "disambiguation": "",
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7"
+        },
+        {
+          "name": "alternative rock",
+          "count": 4,
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "disambiguation": ""
+        },
+        {
+          "count": 3,
+          "name": "indie pop",
+          "id": "f390be72-360b-41bb-a310-6a2e638779d2",
+          "disambiguation": ""
+        },
+        {
+          "count": 3,
+          "name": "post-britpop",
+          "disambiguation": "",
+          "id": "a493b79c-4072-4371-a14c-446b1027982a"
+        },
+        {
+          "count": 1,
+          "name": "jangle pop",
+          "disambiguation": "",
+          "id": "6c207307-cac0-43cf-be8f-e2dde68a92f1"
+        },
+        {
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "disambiguation": "",
+          "name": "pop rock",
+          "count": 1
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": "",
+          "count": 1,
+          "name": "rock"
+        }
+      ],
+      "tags": [
+        {
+          "count": 8,
+          "name": "britpop"
+        },
+        {
+          "count": 6,
+          "name": "indie rock"
+        },
+        {
+          "count": 4,
+          "name": "alternative rock"
+        },
+        {
+          "count": 3,
+          "name": "indie pop"
+        },
+        {
+          "count": 3,
+          "name": "post-britpop"
+        },
+        {
+          "count": 2,
+          "name": "scottish"
+        },
+        {
+          "name": "alternative",
+          "count": 1
+        },
+        {
+          "name": "british",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "britrock"
+        },
+        {
+          "name": "indie",
+          "count": 1
+        },
+        {
+          "name": "jangle pop",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "pop rock"
+        },
+        {
+          "count": 1,
+          "name": "rock"
+        },
+        {
+          "name": "rock and indie",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "imagine-dragons",
+      "name": "Imagine Dragons",
+      "mbid": "012151a8-0f9a-44c9-997f-ebd68b5389f9",
+      "genres": [
+        {
+          "count": 15,
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "disambiguation": "",
+          "name": "alternative rock"
+        },
+        {
+          "name": "pop rock",
+          "count": 11,
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "disambiguation": ""
+        },
+        {
+          "count": 9,
+          "disambiguation": "",
+          "id": "f390be72-360b-41bb-a310-6a2e638779d2",
+          "name": "indie pop"
+        },
+        {
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791",
+          "disambiguation": "",
+          "count": 6,
+          "name": "pop"
+        },
+        {
+          "name": "alternative pop",
+          "id": "d3ebe947-7c03-43f5-b333-09379881b0f6",
+          "disambiguation": "",
+          "count": 3
+        },
+        {
+          "id": "3f3388b4-e36a-4bf8-a0be-66b10d92aaa4",
+          "disambiguation": "",
+          "count": 2,
+          "name": "electropop"
+        },
+        {
+          "name": "indietronica",
+          "id": "9e7ae1de-d5f2-46a5-b105-11c7367dc70d",
+          "disambiguation": "",
+          "count": 2
+        },
+        {
+          "name": "rock",
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 2
+        }
+      ],
+      "tags": [
+        {
+          "count": 15,
+          "name": "alternative rock"
+        },
+        {
+          "count": 11,
+          "name": "pop rock"
+        },
+        {
+          "count": 9,
+          "name": "indie pop"
+        },
+        {
+          "count": 6,
+          "name": "pop"
+        },
+        {
+          "count": 3,
+          "name": "alternative pop"
+        },
+        {
+          "name": "electropop",
+          "count": 2
+        },
+        {
+          "name": "indietronica",
+          "count": 2
+        },
+        {
+          "name": "rock",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "nuno"
+        }
+      ]
+    },
+    {
+      "id": "oasis",
+      "name": "Oasis",
+      "mbid": "39ab1aed-75e0-4140-bd47-540276886b60",
+      "genres": [
+        {
+          "disambiguation": "",
+          "count": 14,
+          "name": "britpop",
+          "id": "f1c9b874-7ef2-4e79-9419-c0bcb5f33a30"
+        },
+        {
+          "count": 12,
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "name": "alternative rock"
+        },
+        {
+          "count": 8,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "name": "neo-psychedelia",
+          "id": "cd99451c-f6d5-47c7-8d49-6c08b51e61aa",
+          "disambiguation": "",
+          "count": 3
+        },
+        {
+          "count": 2,
+          "disambiguation": "",
+          "name": "indie rock",
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7"
+        },
+        {
+          "disambiguation": "",
+          "count": 2,
+          "name": "psychedelic rock",
+          "id": "146ef761-5ad9-48b4-b0b3-483104f7da48"
+        },
+        {
+          "id": "00055e8b-b951-46e2-af1e-58b5624e7952",
+          "name": "acoustic rock",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "name": "hard rock",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "013161b9-3f21-468f-aa1f-28adf1eae085",
+          "name": "madchester"
+        },
+        {
+          "id": "1208a8e7-e5bd-4891-9f81-9a9fdfceeb39",
+          "name": "noise pop",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock"
+        }
+      ],
+      "tags": [
+        {
+          "count": 14,
+          "name": "britpop"
+        },
+        {
+          "count": 12,
+          "name": "alternative rock"
+        },
+        {
+          "count": 8,
+          "name": "rock"
+        },
+        {
+          "count": 5,
+          "name": "british"
+        },
+        {
+          "count": 3,
+          "name": "neo-psychedelia"
+        },
+        {
+          "count": 2,
+          "name": "indie rock"
+        },
+        {
+          "count": 2,
+          "name": "psychedelic rock"
+        },
+        {
+          "name": "acoustic rock",
+          "count": 1
+        },
+        {
+          "name": "hard rock",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "indie"
+        },
+        {
+          "name": "madchester",
+          "count": 1
+        },
+        {
+          "name": "noise pop",
+          "count": 1
+        },
+        {
+          "name": "pop rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "queen",
+      "name": "Queen",
+      "mbid": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+      "genres": [
+        {
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 43,
+          "name": "rock"
+        },
+        {
+          "name": "glam rock",
+          "disambiguation": "",
+          "id": "54d89e62-5bfb-42bc-a321-9230e6fdcd75",
+          "count": 24
+        },
+        {
+          "name": "hard rock",
+          "count": 21,
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "disambiguation": ""
+        },
+        {
+          "name": "art rock",
+          "disambiguation": "",
+          "id": "b7ef058e-6d83-4ca4-8123-9724bff4648b",
+          "count": 15
+        },
+        {
+          "disambiguation": "",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "count": 11,
+          "name": "pop rock"
+        },
+        {
+          "disambiguation": "",
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "count": 7,
+          "name": "classic rock"
+        },
+        {
+          "count": 6,
+          "id": "f729e6f8-30dc-4b81-9ff4-f4e7de82225d",
+          "disambiguation": "",
+          "name": "symphonic rock"
+        },
+        {
+          "name": "progressive rock",
+          "count": 5,
+          "id": "ae9b8279-3959-48d8-8a88-741a7f6d4a48",
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "id": "150eb95a-7739-4fde-a5fe-b62ca576a928",
+          "disambiguation": "",
+          "name": "baroque pop"
+        },
+        {
+          "disambiguation": "",
+          "id": "a04d680b-b5c5-4f6a-87a3-f9f1ff98e3ea",
+          "count": 1,
+          "name": "disco"
+        }
+      ],
+      "tags": [
+        {
+          "count": 43,
+          "name": "rock"
+        },
+        {
+          "name": "glam rock",
+          "count": 24
+        },
+        {
+          "count": 21,
+          "name": "hard rock"
+        },
+        {
+          "count": 15,
+          "name": "art rock"
+        },
+        {
+          "name": "british",
+          "count": 15
+        },
+        {
+          "name": "pop rock",
+          "count": 11
+        },
+        {
+          "count": 7,
+          "name": "classic rock"
+        },
+        {
+          "name": "symphonic rock",
+          "count": 6
+        },
+        {
+          "name": "progressive rock",
+          "count": 5
+        },
+        {
+          "count": 5,
+          "name": "uk"
+        },
+        {
+          "name": "glorious",
+          "count": 3
+        },
+        {
+          "count": 2,
+          "name": "70's"
+        },
+        {
+          "name": "beholder",
+          "count": 2
+        },
+        {
+          "name": "80's",
+          "count": 1
+        },
+        {
+          "name": "80s",
+          "count": 1
+        },
+        {
+          "name": "baroque pop",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "disco"
+        },
+        {
+          "count": 1,
+          "name": "eclectic"
+        },
+        {
+          "count": 1,
+          "name": "film soundtrack"
+        },
+        {
+          "name": "medley",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "queer"
+        },
+        {
+          "count": 1,
+          "name": "united kingdom"
+        },
+        {
+          "count": 1,
+          "name": "vyrzukhisuc-artiest"
+        }
+      ]
+    },
+    {
+      "id": "one-republic",
+      "name": "OneRepublic",
+      "mbid": "c33c2065-b1c3-4406-b066-d33a9e2ea71a",
+      "genres": [
+        {
+          "name": "pop",
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791",
+          "count": 4,
+          "disambiguation": ""
+        },
+        {
+          "id": "abb2374f-30e5-4d3e-b417-2caf78ef1f6c",
+          "count": 1,
+          "name": "folk pop",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "name": "rock",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "count": 1
+        }
+      ],
+      "tags": [
+        {
+          "count": 4,
+          "name": "pop"
+        },
+        {
+          "count": 1,
+          "name": "folk pop"
+        },
+        {
+          "name": "rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "kent",
+      "name": "Kent",
+      "mbid": "c2764f38-febf-4e47-a0d7-687980aabf38",
+      "genres": [
+        {
+          "name": "rock",
+          "count": 4,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "count": 2,
+          "name": "alternative rock"
+        },
+        {
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791",
+          "disambiguation": "",
+          "name": "pop",
+          "count": 2
+        },
+        {
+          "count": 1,
+          "name": "indie rock",
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "name": "swedish",
+          "count": 5
+        },
+        {
+          "count": 4,
+          "name": "rock"
+        },
+        {
+          "count": 2,
+          "name": "alternative rock"
+        },
+        {
+          "count": 2,
+          "name": "european"
+        },
+        {
+          "count": 2,
+          "name": "pop"
+        },
+        {
+          "count": 1,
+          "name": "alternative"
+        },
+        {
+          "count": 1,
+          "name": "indie"
+        },
+        {
+          "name": "indie rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "coldplay",
+      "name": "Coldplay",
+      "mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+      "genres": [
+        {
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "disambiguation": "",
+          "count": 33
+        },
+        {
+          "name": "pop",
+          "id": "911c7bbb-172d-4df8-9478-dbff4296e791",
+          "disambiguation": "",
+          "count": 13
+        },
+        {
+          "count": 11,
+          "disambiguation": "",
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock"
+        },
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock",
+          "disambiguation": "",
+          "count": 4
+        },
+        {
+          "name": "post-britpop",
+          "id": "a493b79c-4072-4371-a14c-446b1027982a",
+          "disambiguation": "",
+          "count": 3
+        },
+        {
+          "name": "piano rock",
+          "id": "34cd43be-4711-4e77-a25c-c6d6a4bf3cb4",
+          "count": 2,
+          "disambiguation": ""
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "name": "art pop",
+          "id": "930ef127-3653-4677-9b95-ecc90c7c1a14"
+        },
+        {
+          "id": "f1c9b874-7ef2-4e79-9419-c0bcb5f33a30",
+          "name": "britpop",
+          "disambiguation": "",
+          "count": 1
+        },
+        {
+          "id": "6242615b-5620-465b-b6fb-2e593e90cbad",
+          "name": "dream pop",
+          "disambiguation": "",
+          "count": 1
+        }
+      ],
+      "tags": [
+        {
+          "name": "alternative rock",
+          "count": 33
+        },
+        {
+          "name": "pop",
+          "count": 13
+        },
+        {
+          "count": 11,
+          "name": "pop rock"
+        },
+        {
+          "name": "british",
+          "count": 10
+        },
+        {
+          "name": "rock",
+          "count": 4
+        },
+        {
+          "count": 3,
+          "name": "post-britpop"
+        },
+        {
+          "name": "piano rock",
+          "count": 2
+        },
+        {
+          "count": 2,
+          "name": "uk"
+        },
+        {
+          "count": 1,
+          "name": "art pop"
+        },
+        {
+          "name": "britpop",
+          "count": 1
+        },
+        {
+          "name": "dream pop",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "judas-priest",
+      "name": "Judas Priest",
+      "mbid": "6b335658-22c8-485d-93de-0bc29a1d0349",
+      "genres": [
+        {
+          "name": "heavy metal",
+          "count": 29,
+          "id": "a6719055-99c4-47eb-beaa-71081f2376f9",
+          "disambiguation": ""
+        },
+        {
+          "id": "cc28f5aa-5e19-487c-88e1-e56b022f1fdd",
+          "disambiguation": "",
+          "count": 4,
+          "name": "metal"
+        },
+        {
+          "count": 4,
+          "id": "feddf74e-576b-40d6-8896-a7f66f331e48",
+          "disambiguation": "",
+          "name": "nwobhm"
+        },
+        {
+          "name": "hard rock",
+          "count": 1,
+          "disambiguation": "",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab"
+        }
+      ],
+      "tags": [
+        {
+          "count": 29,
+          "name": "heavy metal"
+        },
+        {
+          "count": 4,
+          "name": "british"
+        },
+        {
+          "name": "metal",
+          "count": 4
+        },
+        {
+          "name": "nwobhm",
+          "count": 4
+        },
+        {
+          "count": 1,
+          "name": "hard rock"
+        }
+      ]
+    },
+    {
+      "id": "two-door-cinema-club",
+      "name": "Two Door Cinema Club",
+      "mbid": "6f1de078-6684-4792-820d-2ffad64c15ed",
+      "genres": [
+        {
+          "name": "indie rock",
+          "id": "ccd19ebf-052c-4afe-8ad9-fbb0a73f94a7",
+          "count": 4,
+          "disambiguation": ""
+        },
+        {
+          "id": "b8495241-e3c7-445b-82db-cea5ebe9ea7a",
+          "name": "post-punk revival",
+          "count": 2,
+          "disambiguation": ""
+        },
+        {
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "name": "alternative rock",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "id": "f390be72-360b-41bb-a310-6a2e638779d2",
+          "name": "indie pop",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "id": "9e7ae1de-d5f2-46a5-b105-11c7367dc70d",
+          "name": "indietronica",
+          "count": 1,
+          "disambiguation": ""
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "id": "041b2388-b2d7-4fd9-a3cd-fa49e3195089",
+          "name": "new rave"
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "name": "new wave",
+          "id": "56407f9d-3398-4bf3-bbbd-ea372fa5adeb"
+        },
+        {
+          "count": 1,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "id": "988e91a3-3341-416d-b7f8-7dbef6848dac",
+          "name": "synth-pop",
+          "count": 1,
+          "disambiguation": ""
+        }
+      ],
+      "tags": [
+        {
+          "count": 4,
+          "name": "indie rock"
+        },
+        {
+          "name": "post-punk revival",
+          "count": 2
+        },
+        {
+          "name": "alternative rock",
+          "count": 1
+        },
+        {
+          "name": "indie pop",
+          "count": 1
+        },
+        {
+          "name": "indietronica",
+          "count": 1
+        },
+        {
+          "name": "new rave",
+          "count": 1
+        },
+        {
+          "count": 1,
+          "name": "new wave"
+        },
+        {
+          "count": 1,
+          "name": "rock"
+        },
+        {
+          "name": "synth-pop",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "green-day",
+      "name": "Green Day",
+      "mbid": "084308bd-1654-436f-ba03-df6697104e19",
+      "genres": [
+        {
+          "id": "bd7e1d40-43b1-4ba5-97b3-05b891466962",
+          "disambiguation": "",
+          "name": "punk rock",
+          "count": 33
+        },
+        {
+          "disambiguation": "",
+          "id": "60e21d01-ce21-4127-86b7-aada79558dab",
+          "count": 30,
+          "name": "pop punk"
+        },
+        {
+          "count": 17,
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18",
+          "disambiguation": ""
+        },
+        {
+          "name": "rock",
+          "count": 11,
+          "disambiguation": "",
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798"
+        },
+        {
+          "count": 6,
+          "name": "punk",
+          "id": "8cc9b280-230b-4a3a-b1e2-8acab0744dd3",
+          "disambiguation": ""
+        },
+        {
+          "name": "power pop",
+          "count": 4,
+          "disambiguation": "",
+          "id": "618704fc-daac-44a2-92c9-89e3b1a2fc8c"
+        }
+      ],
+      "tags": [
+        {
+          "name": "punk rock",
+          "count": 33
+        },
+        {
+          "name": "pop punk",
+          "count": 30
+        },
+        {
+          "count": 17,
+          "name": "alternative rock"
+        },
+        {
+          "name": "rock",
+          "count": 11
+        },
+        {
+          "name": "punk",
+          "count": 6
+        },
+        {
+          "name": "power pop",
+          "count": 4
+        },
+        {
+          "name": "queer",
+          "count": 4
+        },
+        {
+          "name": "american",
+          "count": 2
+        },
+        {
+          "name": "alternative",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "theory-of-a-deadman",
+      "name": "Theory of a Deadman",
+      "mbid": "183e636e-d41c-43fe-a428-8a034eb20c7b",
+      "genres": [
+        {
+          "name": "hard rock",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab",
+          "count": 2,
+          "disambiguation": ""
+        },
+        {
+          "name": "post-grunge",
+          "id": "bbb1310c-24cb-4fc9-97c4-f93e4549f1e2",
+          "disambiguation": "",
+          "count": 2
+        },
+        {
+          "disambiguation": "",
+          "count": 2,
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock"
+        },
+        {
+          "disambiguation": "",
+          "count": 1,
+          "name": "alternative rock",
+          "id": "ceeaa283-5d7b-4202-8d1d-e25d116b2a18"
+        }
+      ],
+      "tags": [
+        {
+          "count": 2,
+          "name": "hard rock"
+        },
+        {
+          "count": 2,
+          "name": "post-grunge"
+        },
+        {
+          "name": "rock",
+          "count": 2
+        },
+        {
+          "name": "alternative rock",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "bon-jovi",
+      "name": "Bon Jovi",
+      "mbid": "5dcdb5eb-cb72-4e6e-9e63-b7bace604965",
+      "genres": [
+        {
+          "id": "0e3fc579-2d24-4f20-9dae-736e1ec78798",
+          "name": "rock",
+          "disambiguation": "",
+          "count": 15
+        },
+        {
+          "disambiguation": "",
+          "count": 14,
+          "name": "hard rock",
+          "id": "51cb9f91-e6a2-41bf-891f-e78e3f1e52ab"
+        },
+        {
+          "id": "818134e3-9392-4624-a13c-c4b19c54bccd",
+          "name": "glam metal",
+          "disambiguation": "",
+          "count": 13
+        },
+        {
+          "count": 6,
+          "disambiguation": "",
+          "name": "arena rock",
+          "id": "26af3760-750a-4b5e-a699-78c87697585a"
+        },
+        {
+          "id": "797e2e85-5ffd-495c-a757-8b4079052f0e",
+          "name": "pop rock",
+          "disambiguation": "",
+          "count": 5
+        },
+        {
+          "count": 3,
+          "disambiguation": "",
+          "id": "52856ec0-9f9b-45f4-ab09-1bb8cc0a98e4",
+          "name": "heartland rock"
+        },
+        {
+          "id": "aca1caab-09d1-44b5-ae84-590ff1d218fc",
+          "name": "aor",
+          "disambiguation": "",
+          "count": 2
+        },
+        {
+          "id": "93244085-20e5-4f16-9067-1d19143b3810",
+          "name": "classic rock",
+          "disambiguation": "",
+          "count": 2
+        }
+      ],
+      "tags": [
+        {
+          "count": 15,
+          "name": "rock"
+        },
+        {
+          "count": 14,
+          "name": "hard rock"
+        },
+        {
+          "name": "glam metal",
+          "count": 13
+        },
+        {
+          "count": 6,
+          "name": "arena rock"
+        },
+        {
+          "name": "pop rock",
+          "count": 5
+        },
+        {
+          "count": 3,
+          "name": "heartland rock"
+        },
+        {
+          "name": "aor",
+          "count": 2
+        },
+        {
+          "name": "classic rock",
+          "count": 2
+        },
+        {
+          "name": "hair band",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

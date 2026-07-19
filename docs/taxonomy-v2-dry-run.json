@@ -1,0 +1,1084 @@
+{
+  "generatedAt": "2026-07-19T06:36:12.919Z",
+  "applyRequested": true,
+  "errors": [],
+  "distribution": {
+    "classic-roots-rock": 4,
+    "hard-glam-rock": 5,
+    "pop-soft-rock": 4,
+    "progressive-art-psychedelic": 5,
+    "punk-emo": 4,
+    "indie-britpop-garage": 3,
+    "post-punk-goth-new-wave": 1,
+    "alternative-grunge": 8,
+    "shoegaze-dream-post": 2,
+    "traditional-power-thrash-metal": 6,
+    "folk-symphonic-metal": 0,
+    "extreme-metal": 2,
+    "modern-alternative-metal": 2
+  },
+  "unmappedLabels": [],
+  "bands": [
+    {
+      "id": "the-beatles",
+      "name": "The Beatles",
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "pop-rock",
+          "psychedelic-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "warm-comforting": 3,
+          "cosmic-psychedelic": 3,
+          "experimental-weird": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "the-rolling-stones",
+      "name": "The Rolling Stones",
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "blues-rock",
+          "roots-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "riff-solo-driven": 4,
+          "anthemic-live": 4,
+          "acoustic-organic": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "the-who",
+      "name": "The Who",
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "mod-rock",
+          "hard-rock",
+          "rock-opera"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "riff-solo-driven": 4,
+          "epic-cinematic": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "led-zeppelin",
+      "name": "Led Zeppelin",
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "folk-rock",
+          "proto-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "acoustic-organic": 3,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "acdc",
+      "name": "AC/DC",
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "guns-n-roses",
+      "name": "Guns N' Roses",
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "hard-rock",
+          "glam-metal",
+          "blues-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "romantic-emotional": 3,
+          "riff-solo-driven": 5,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "pink-floyd",
+      "name": "Pink Floyd",
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "psychedelic-rock",
+          "space-rock",
+          "progressive-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 4,
+          "dreamy-ethereal": 5,
+          "cosmic-psychedelic": 5,
+          "experimental-weird": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "king-crimson",
+      "name": "King Crimson",
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "progressive-rock",
+          "art-rock",
+          "experimental-rock"
+        ],
+        "moodScores": {
+          "dark-gloomy": 4,
+          "technical-complex": 5,
+          "experimental-weird": 5,
+          "long-form-immersive": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "yes",
+      "name": "Yes",
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "symphonic-prog",
+          "progressive-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "hopeful-uplifting": 4,
+          "epic-cinematic": 5,
+          "technical-complex": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "porcupine-tree",
+      "name": "Porcupine Tree",
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "neo-prog",
+          "post-prog",
+          "progressive-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 3,
+          "melancholic-lonely": 4,
+          "dreamy-ethereal": 4,
+          "technical-complex": 4,
+          "long-form-immersive": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "ramones",
+      "name": "Ramones",
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "punk-rock",
+          "pop-punk",
+          "garage-punk"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "fast-driving": 5,
+          "youth-rebellious": 5,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "the-clash",
+      "name": "The Clash",
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "punk-rock",
+          "post-punk",
+          "reggae-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "youth-rebellious": 5,
+          "experimental-weird": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "sex-pistols",
+      "name": "Sex Pistols",
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "punk-rock",
+          "anarcho-punk"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "aggressive-heavy": 5,
+          "youth-rebellious": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "radiohead",
+      "name": "Radiohead",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "shoegaze-dream-post"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "art-rock",
+          "electronic-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dreamy-ethereal": 4,
+          "cold-urban": 4,
+          "electronic-synth": 4,
+          "experimental-weird": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "pixies",
+      "name": "Pixies",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "noise-pop"
+        ],
+        "moodScores": {
+          "youth-rebellious": 3,
+          "noisy-wall": 4,
+          "experimental-weird": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "sonic-youth",
+      "name": "Sonic Youth",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "noise-rock",
+          "indie-rock",
+          "no-wave"
+        ],
+        "moodScores": {
+          "cold-urban": 4,
+          "noisy-wall": 5,
+          "experimental-weird": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "nirvana",
+      "name": "Nirvana",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "punk-emo"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-rock",
+          "punk-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "melancholic-lonely": 5,
+          "youth-rebellious": 5,
+          "noisy-wall": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "pearl-jam",
+      "name": "Pearl Jam",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "hopeful-uplifting": 3,
+          "romantic-emotional": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "alice-in-chains",
+      "name": "Alice in Chains",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "grunge",
+          "alternative-metal",
+          "sludge-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "melancholic-lonely": 5,
+          "dark-gloomy": 5,
+          "riff-solo-driven": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "black-sabbath",
+      "name": "Black Sabbath",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "extreme-metal",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "traditional-heavy-metal",
+          "doom-metal",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "dark-gloomy": 5,
+          "long-form-immersive": 3,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "iron-maiden",
+      "name": "Iron Maiden",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "nwobhm",
+          "traditional-heavy-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "epic-cinematic": 5,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "metallica",
+      "name": "Metallica",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "thrash-metal",
+          "traditional-heavy-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "tool",
+      "name": "Tool",
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "progressive-metal",
+          "alternative-metal",
+          "art-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "dark-gloomy": 4,
+          "technical-complex": 5,
+          "experimental-weird": 4,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "slayer",
+      "name": "Slayer",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "extreme-metal"
+        ],
+        "subgenreIds": [
+          "thrash-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "dark-gloomy": 4,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "taxonomyV2": {
+        "primaryGenreId": "extreme-metal",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "death-metal",
+          "technical-death-metal",
+          "progressive-death-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "aggressive-heavy": 5,
+          "dark-gloomy": 4,
+          "technical-complex": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "children-of-bodom",
+      "name": "Children of Bodom",
+      "taxonomyV2": {
+        "primaryGenreId": "extreme-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "melodic-death-metal",
+          "power-metal",
+          "neoclassical-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "epic-cinematic": 4,
+          "technical-complex": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "the-cure",
+      "name": "The Cure",
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "shoegaze-dream-post"
+        ],
+        "subgenreIds": [
+          "post-punk",
+          "gothic-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dark-gloomy": 5,
+          "romantic-emotional": 4,
+          "dreamy-ethereal": 4,
+          "cold-urban": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "nine-inch-nails",
+      "name": "Nine Inch Nails",
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "industrial-rock",
+          "industrial-metal",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "dark-gloomy": 5,
+          "electronic-synth": 5,
+          "experimental-weird": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "rammstein",
+      "name": "Rammstein",
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "neue-deutsche-harte",
+          "industrial-metal",
+          "alternative-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 4,
+          "massive-heavy": 5,
+          "electronic-synth": 5,
+          "epic-cinematic": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "steely-dan",
+      "name": "Steely Dan",
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "jazz-rock",
+          "soft-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "cold-urban": 3,
+          "technical-complex": 4,
+          "experimental-weird": 2
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "lynyrd-skynyrd",
+      "name": "Lynyrd Skynyrd",
+      "taxonomyV2": {
+        "primaryGenreId": "classic-roots-rock",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "southern-rock",
+          "blues-rock",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "warm-comforting": 3,
+          "acoustic-organic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "mogwai",
+      "name": "Mogwai",
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "post-rock",
+          "instrumental-rock",
+          "space-rock"
+        ],
+        "moodScores": {
+          "slow-calm": 4,
+          "dreamy-ethereal": 5,
+          "noisy-wall": 4,
+          "epic-cinematic": 5,
+          "long-form-immersive": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "my-bloody-valentine",
+      "name": "My Bloody Valentine",
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "shoegaze",
+          "noise-pop",
+          "dream-pop"
+        ],
+        "moodScores": {
+          "romantic-emotional": 4,
+          "dreamy-ethereal": 5,
+          "noisy-wall": 5,
+          "experimental-weird": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "megadeth",
+      "name": "Megadeth",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "thrash-metal",
+          "speed-metal",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "technical-complex": 5,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "travis",
+      "name": "Travis",
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "post-britpop",
+          "pop-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 4,
+          "warm-comforting": 3,
+          "romantic-emotional": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "imagine-dragons",
+      "name": "Imagine Dragons",
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "pop-rock",
+          "electropop",
+          "indie-pop",
+          "arena-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 3,
+          "massive-heavy": 3,
+          "hopeful-uplifting": 4,
+          "electronic-synth": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "oasis",
+      "name": "Oasis",
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "britpop",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "youth-rebellious": 4,
+          "riff-solo-driven": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "queen",
+      "name": "Queen",
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "progressive-rock",
+          "hard-rock",
+          "traditional-heavy-metal",
+          "arena-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "romantic-emotional": 4,
+          "epic-cinematic": 5,
+          "technical-complex": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "one-republic",
+      "name": "OneRepublic",
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "pop-rock",
+          "electropop",
+          "indie-pop",
+          "arena-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 3,
+          "romantic-emotional": 4,
+          "hopeful-uplifting": 4,
+          "electronic-synth": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "kent",
+      "name": "Kent",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "synthpop",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 4,
+          "cold-urban": 4,
+          "electronic-synth": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "coldplay",
+      "name": "Coldplay",
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "pop-rock",
+          "post-britpop"
+        ],
+        "moodScores": {
+          "warm-comforting": 4,
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "judas-priest",
+      "name": "Judas Priest",
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [],
+        "subgenreIds": [
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "epic-cinematic": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "two-door-cinema-club",
+      "name": "Two Door Cinema Club",
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "indie-pop",
+          "indie-rock",
+          "dance-punk",
+          "synthpop",
+          "post-punk-revival"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 4,
+          "groovy-danceable": 5,
+          "electronic-synth": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "green-day",
+      "name": "Green Day",
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "pop-punk",
+          "punk-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "fast-driving": 4,
+          "youth-rebellious": 5,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "theory-of-a-deadman",
+      "name": "Theory of a Deadman",
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "post-grunge",
+          "hard-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 4,
+          "massive-heavy": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    },
+    {
+      "id": "bon-jovi",
+      "name": "Bon Jovi",
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "glam-metal",
+          "hard-rock",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "romantic-emotional": 4,
+          "hopeful-uplifting": 4,
+          "riff-solo-driven": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
+      }
+    }
+  ]
+}
