@@ -3082,6 +3082,22 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "kent",
+          "kind": "sounds-like",
+          "note": "Isola 앨범 시기 특유의 우울하고 정교한 분위기로 인해 평론가들로부터 라디오헤드와 자주 비교됨",
+          "strength": 2,
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Kent (band) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Kent_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-19",
+            "note": "Critics have often compared Kent to bands like Radiohead, especially during their Isola era."
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
         }
       ],
       "reviewStatus": "reviewed",
@@ -7845,6 +7861,312 @@
         { "label": "Oasis — MusicBrainz", "url": "https://musicbrainz.org/artist/39ab1aed-75e0-4140-bd47-540276886b60", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "39ab1aed-75e0-4140-bd47-540276886b60" },
         { "label": "Oasis 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Oasis_Noel_and_Liam_WF.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Will Fresch · CC BY-SA 2.0" },
         { "label": "Oasis — 공식 YouTube", "url": "https://www.youtube.com/channel/UCd7A6xDlGoar2vHDvVm1CqA", "publisher": "YouTube", "externalId": "UCd7A6xDlGoar2vHDvVm1CqA", "official": true, "channelName": "OasisVEVO", "channelType": "artist", "accessedAt": "2026-07-18", "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크" }
+      ]
+    },
+    {
+      "id": "queen",
+      "name": "Queen",
+      "formed": 1970,
+      "origin": "런던, 잉글랜드",
+      "countryCode": "GB",
+      "activeYears": "1970–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": ["hard-rock", "progressive-art", "heavy-metal"],
+      "tags": ["글램 록", "오페라틱", "아레나 록"],
+      "subgenres": ["프로그레시브 록", "하드 록", "헤비 메탈", "아레나 록", "팝 록"],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": ["progressive-art", "hard-rock", "heavy-metal"],
+          "subgenres": ["프로그레시브 록", "하드 록", "헤비 메탈"]
+        },
+        {
+          "era": "1980s",
+          "genreIds": ["hard-rock"],
+          "subgenres": ["아레나 록", "팝 록"]
+        }
+      ],
+      "summary": "화려한 글램 감성과 프로그레시브 오페라 사운드를 결합해 아레나 록의 정점을 보여준 전설적인 밴드.",
+      "style": "프레디 머큐리의 압도적인 보컬과 피아노, 브라이언 메이의 정교한 멀티 트랙 오케스트레이션 기타 레이어링 및 풍성한 보컬 화음이 중심을 이룬다.",
+      "members": [
+        { "name": "Freddie Mercury", "role": "보컬·피아노", "status": "former" },
+        { "name": "Brian May", "role": "기타·보컬", "status": "current" },
+        { "name": "Roger Taylor", "role": "드럼·보컬", "status": "current" },
+        { "name": "John Deacon", "role": "베이스", "status": "former" }
+      ],
+      "tracks": [
+        {
+          "id": "bohemian-rhapsody",
+          "title": "Bohemian Rhapsody",
+          "year": 1975,
+          "album": "A Night at the Opera",
+          "youtubeId": "jFKBR1ggTMY",
+          "source": {
+            "label": "Bohemian Rhapsody — YouTube",
+            "url": "https://www.youtube.com/watch?v=jFKBR1ggTMY",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "Queen Official",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "we-will-rock-you",
+          "title": "We Will Rock You",
+          "year": 1977,
+          "album": "News of the World",
+          "youtubeId": "-tJYN-eG1zk",
+          "source": {
+            "label": "We Will Rock You — YouTube",
+            "url": "https://www.youtube.com/watch?v=-tJYN-eG1zk",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "Queen Official",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "Queen (band)",
+        "fileName": "Queen A Night At The Opera (1975 Elektra publicity photo 02).jpg",
+        "alt": "Queen 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Queen_A_Night_At_The_Opera_(1975_Elektra_publicity_photo_02).jpg",
+          "creator": "Koh Hasebe; Distributed by Elektra Records",
+          "license": "Public domain",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Queen (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Queen_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버, 장르 정보 확인" },
+        { "label": "Queen — Wikidata", "url": "https://www.wikidata.org/wiki/Q15862", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q15862" },
+        { "label": "Queen — MusicBrainz", "url": "https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3" },
+        { "label": "Queen 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Queen_A_Night_At_The_Opera_(1975_Elektra_publicity_photo_02).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "PD-US-no-notice · Koh Hasebe 촬영 추정, 개별 확인 필요" },
+        { "label": "Queen — 공식 YouTube", "url": "https://www.youtube.com/channel/UCiMhD4jzUqG-IgPzUmmytRQ", "publisher": "YouTube", "externalId": "UCiMhD4jzUqG-IgPzUmmytRQ", "official": true, "channelName": "Queen Official", "channelType": "artist", "accessedAt": "2026-07-18" }
+      ]
+    },
+    {
+      "id": "one-republic",
+      "name": "OneRepublic",
+      "formed": 2002,
+      "origin": "콜로라도스프링스, 미국",
+      "countryCode": "US",
+      "activeYears": "2002–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": ["alternative-indie"],
+      "tags": ["팝 록", "감성 팝", "일렉트로팝"],
+      "subgenres": ["팝 록", "일렉트로팝", "인디 팝", "아레나 록", "얼터너티브 록"],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["팝 록"]
+        },
+        {
+          "era": "2010s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["인디 팝", "일렉트로팝", "아레나 록"]
+        },
+        {
+          "era": "2020s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["얼터너티브 록"]
+        }
+      ],
+      "summary": "세련된 팝 멜로디와 서정적인 록 사운드를 결합해 2000년대 후반부터 수많은 글로벌 히트곡을 탄생시킨 밴드.",
+      "style": "라이언 테더의 감각적인 송라이팅과 보컬을 중심으로, 현악기 편성과 전자 비트를 조화롭게 융합한 스케일 큰 사운드가 특징이다.",
+      "members": [
+        { "name": "Ryan Tedder", "role": "보컬·피아노·탬버린", "status": "current" },
+        { "name": "Zach Filkins", "role": "리드 기타·비올라·백보컬", "status": "current" },
+        { "name": "Drew Brown", "role": "리듬 기타·백보컬", "status": "current" },
+        { "name": "Brent Kutzle", "role": "베이스 기타·첼로·백보컬", "status": "current" },
+        { "name": "Eddie Fisher", "role": "드럼·퍼커션·백보컬", "status": "current" },
+        { "name": "Brian Willett", "role": "키보드·신시사이저·바이올린·백보컬", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "apologize",
+          "title": "Apologize",
+          "year": 2007,
+          "album": "Dreaming Out Loud",
+          "youtubeId": "-rKUT6zugJ0",
+          "source": {
+            "label": "Apologize — YouTube",
+            "url": "https://www.youtube.com/watch?v=-rKUT6zugJ0",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "OneRepublic",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        },
+        {
+          "id": "counting-stars",
+          "title": "Counting Stars",
+          "year": 2013,
+          "album": "Native",
+          "youtubeId": "lagBUR7GRuI",
+          "source": {
+            "label": "Counting Stars — YouTube",
+            "url": "https://www.youtube.com/watch?v=lagBUR7GRuI",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-18",
+            "channelName": "OneRepublic",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-18",
+      "image": {
+        "wikipediaTitle": "OneRepublic",
+        "fileName": "OneRepublic 2016.JPG",
+        "alt": "OneRepublic 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:OneRepublic_2016.JPG",
+          "creator": "Jeffrey Beall",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "OneRepublic — Wikipedia", "url": "https://en.wikipedia.org/wiki/OneRepublic", "publisher": "Wikipedia", "accessedAt": "2026-07-18", "note": "기본 이력 및 멤버, 장르 정보 확인" },
+        { "label": "OneRepublic — Wikidata", "url": "https://www.wikidata.org/wiki/Q1438730", "publisher": "Wikidata", "accessedAt": "2026-07-18", "externalId": "Q1438730" },
+        { "label": "OneRepublic — MusicBrainz", "url": "https://musicbrainz.org/artist/c33c2065-b1c3-4406-b066-d33a9e2ea71a", "publisher": "MusicBrainz", "accessedAt": "2026-07-18", "externalId": "c33c2065-b1c3-4406-b066-d33a9e2ea71a" },
+        { "label": "OneRepublic 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:OneRepublic_2016.JPG", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-18", "note": "Jeffrey Beall(Denverjeffrey) 업로드 패턴과 일치 · 파일 페이지 직접 열람은 실패해 개별 확인 필요" },
+        { "label": "OneRepublic — 공식 YouTube", "url": "https://www.youtube.com/onerepublic", "publisher": "YouTube", "official": true, "channelName": "OneRepublic", "channelType": "artist", "accessedAt": "2026-07-18" }
+      ]
+    },
+    {
+      "id": "kent",
+      "name": "Kent",
+      "formed": 1990,
+      "origin": "에스킬스투나, 스웨덴",
+      "countryCode": "SE",
+      "activeYears": "1990–2016",
+      "primaryGenre": "alternative-indie",
+      "genreIds": ["alternative-indie"],
+      "tags": ["스칸디나비아", "우울함", "신스팝"],
+      "subgenres": ["얼터너티브 록", "인디 록", "신스팝", "팝 록"],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["얼터너티브 록", "인디 록"]
+        },
+        {
+          "era": "2000s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["신스팝", "팝 록"]
+        },
+        {
+          "era": "2010s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["신스팝", "얼터너티브 록"]
+        }
+      ],
+      "summary": "우울하고 서정적인 멜로디와 감각적인 사운드로 북유럽 록 신을 평정했던 스웨덴의 국민 밴드.",
+      "style": "초기의 시니컬하고 묵직한 얼터너티브 록 사운드에서 출발하여 점차 정교한 일렉트로닉 신스팝 요소와 대중적인 팝 멜로디를 유기적으로 융합했다.",
+      "members": [
+        { "name": "Joakim Berg", "role": "보컬·리듬 기타", "status": "former" },
+        { "name": "Martin Sköld", "role": "베이스 기타·키보드", "status": "former" },
+        { "name": "Markus Mustonen", "role": "드럼·백보컬·키보드·피아노", "status": "former" },
+        { "name": "Sami Sirviö", "role": "리드 기타·키보드", "status": "former" }
+      ],
+      "tracks": [
+        {
+          "id": "if-you-were-here",
+          "title": "If You Were Here",
+          "year": 1998,
+          "album": "Isola",
+          "youtubeId": "cZB_r8TABX8",
+          "source": {
+            "label": "If You Were Here — YouTube",
+            "url": "https://www.youtube.com/watch?v=cZB_r8TABX8",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "kentchannel",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "dom-andra",
+          "title": "Dom andra",
+          "year": 2002,
+          "album": "Vapen & ammunition",
+          "youtubeId": "fWxUr_vDwwE",
+          "source": {
+            "label": "Dom andra — YouTube",
+            "url": "https://www.youtube.com/watch?v=fWxUr_vDwwE",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "kentchannel",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "radiohead",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "Isola 앨범 시기 특유의 우울하고 정교한 분위기로 인해 평론가들로부터 라디오헤드와 자주 비교됨",
+          "source": {
+            "label": "Kent (band) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Kent_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-19",
+            "note": "Critics have often compared Kent to bands like Radiohead, especially during their Isola era."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Kent (band)",
+        "fileName": "Kent - Stockholm Music & Arts 2014-08-03 - 01.jpg",
+        "alt": "Kent 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kent_-Stockholm_Music%26_Arts_2014-08-03_-_01.jpg",
+          "creator": "Bengt Nyman",
+          "license": "CC BY-SA 4.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Kent (band) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Kent_(band)", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업, 해체(2016) 정보 확인" },
+        { "label": "Kent — Wikidata", "url": "https://www.wikidata.org/wiki/Q648786", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q648786", "note": "제출된 Q751518은 오류 · 검증 후 정정" },
+        { "label": "Kent — MusicBrainz", "url": "https://musicbrainz.org/artist/c2764f38-febf-4e47-a0d7-687980aabf38", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "c2764f38-febf-4e47-a0d7-687980aabf38", "note": "제출된 UUID는 오류 · 검증 후 정정" },
+        { "label": "Kent 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Kent_-Stockholm_Music%26_Arts_2014-08-03_-_01.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "파일 페이지 직접 열람 실패 · 개별 확인 필요" },
+        { "label": "Kent — 공식 YouTube", "url": "https://www.youtube.com/channel/UCe0K1KOjcBYIGu5prpZglSg", "publisher": "YouTube", "externalId": "UCe0K1KOjcBYIGu5prpZglSg", "official": true, "channelName": "kentchannel", "channelType": "artist", "accessedAt": "2026-07-19" }
       ]
     }
   ]
