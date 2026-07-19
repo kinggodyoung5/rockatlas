@@ -1,5 +1,6 @@
 import { ArrowRight, GitBranch } from 'lucide-react'
-import { publicBandById as bandById } from '../data/bands'
+import { publicBandById as bandById, publicBands } from '../data/bands'
+import { similarBands } from '../lib/bandSimilarity'
 import type { Band, RelationKind } from '../types/music'
 
 const relationLabels: Record<RelationKind, string> = {
@@ -18,6 +19,8 @@ interface RelationMapProps {
 
 export function RelationMap({ band, onSelect, visitedIds }: RelationMapProps) {
   const sourcedRelations = band.relations.filter((item) => item.source)
+  const relationTargets = new Set(band.relations.map((item) => item.targetBandId))
+  const recommendations = similarBands(band, publicBands).filter((item) => !relationTargets.has(item.band.id)).slice(0, Math.max(4, 8 - band.relations.length))
   return (
     <section className="relation-panel" aria-labelledby="relation-title">
       <div className="section-heading compact">
@@ -51,6 +54,12 @@ export function RelationMap({ band, onSelect, visitedIds }: RelationMapProps) {
           })}
         </div>
       </div>
+      {recommendations.length > 0 && (
+        <div className="similarity-panel">
+          <div><strong>자동 유사도 추천</strong><p>검수된 영향 관계가 아니라 장르·세부 장르·분위기·시대의 유사성으로 계산한 탐색 후보입니다.</p></div>
+          <div className="similarity-grid">{recommendations.map((item) => <button key={item.band.id} onClick={() => onSelect(item.band)}><span>{item.score}% SIMILAR</span><strong>{item.band.name}</strong><p>{item.reasons.join(' · ') || '분위기와 활동 시기 교차'}</p><em>추천으로 이동 <ArrowRight size={13} /></em></button>)}</div>
+        </div>
+      )}
       {sourcedRelations.length > 0 && (
         <div className="relation-sources" aria-label="검수된 관계 근거">
           <strong>검수된 관계 근거</strong>

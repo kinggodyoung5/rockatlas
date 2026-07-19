@@ -8,6 +8,7 @@ const catalogPath = resolve('src/data/catalog.json')
 const catalogHistoryPath = resolve('src/data/catalog-history.json')
 const siteContentPath = resolve('src/data/siteContent.json')
 const genresPath = resolve('src/data/genres.json')
+const taxonomyPath = resolve('src/data/taxonomy.v2.json')
 const uploadsPath = resolve('public/uploads')
 const fontUploadsPath = resolve('public/uploads/fonts')
 
@@ -231,7 +232,7 @@ function studioApi(): Plugin {
         try {
           const payload = await readBody(request, 500_000)
           const genres = payload.genres as Array<{ id?: string; name?: string; color?: string }> | undefined
-          if (payload.schemaVersion !== 1 || !Array.isArray(genres) || genres.length !== 9) throw new Error('장르 9개가 모두 필요합니다.')
+          if (payload.schemaVersion !== 1 || !Array.isArray(genres) || genres.length !== 8) throw new Error('기존 장르 8개가 모두 필요합니다.')
           if (genres.some((genre) => !genre.id || !genre.name || !/^#[0-9a-f]{6}$/i.test(genre.color ?? ''))) throw new Error('장르 이름과 색상을 확인하세요.')
           const nextGenres = { schemaVersion: 1, updatedAt: new Date().toISOString(), genres }
           await writeFile(genresPath, `${JSON.stringify(nextGenres, null, 2)}\n`, 'utf8')
@@ -239,6 +240,37 @@ function studioApi(): Plugin {
         } catch (error) {
           response.statusCode = 400
           response.end(error instanceof Error ? error.message : '장르 저장 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/taxonomy', async (request, response, next) => {
+        if (request.method === 'GET') {
+          response.setHeader('Content-Type', 'application/json; charset=utf-8')
+          response.end(await readFile(taxonomyPath, 'utf8'))
+          return
+        }
+        if (request.method !== 'PUT') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('Studio 저장은 로컬에서만 허용됩니다.')
+        }
+        try {
+          const payload = await readBody(request, 1_000_000)
+          const genres = payload.genres as Array<{ id?: string; name?: string; displayName?: string; englishName?: string; description?: string; vibeDescription?: string; color?: string; order?: number }> | undefined
+          const subgenres = payload.subgenres as unknown[] | undefined
+          const moods = payload.moods as Array<{ id?: string; groupId?: string; name?: string; description?: string; order?: number }> | undefined
+          if (payload.schemaVersion !== 2 || !Array.isArray(genres) || genres.length !== 13 || !Array.isArray(subgenres) || !Array.isArray(moods)) throw new Error('13장르 분류 체계 전체가 필요합니다.')
+          const genreIds = genres.map((genre) => genre.id)
+          if (genreIds.some((id) => !id) || new Set(genreIds).size !== genreIds.length) throw new Error('장르 ID가 비어 있거나 중복되었습니다.')
+          if (genres.some((genre) => !genre.name?.trim() || !genre.displayName?.trim() || !genre.englishName?.trim() || !genre.description?.trim() || !genre.vibeDescription?.trim() || !/^#[0-9a-f]{6}$/i.test(genre.color ?? ''))) throw new Error('장르 이름·설명·색상을 모두 확인하세요.')
+          const moodIds = moods.map((mood) => mood.id)
+          if (moods.length !== 24 || moodIds.some((id) => !id) || new Set(moodIds).size !== moodIds.length || moods.some((mood) => !mood.name?.trim() || !mood.description?.trim() || !mood.groupId)) throw new Error('24개 분위기 카드의 이름과 설명을 확인하세요.')
+          const nextTaxonomy = { ...payload, updatedAt: new Date().toISOString(), genres: genres.map((genre, index) => ({ ...genre, order: index + 1 })) }
+          await writeFile(taxonomyPath, `${JSON.stringify(nextTaxonomy, null, 2)}\n`, 'utf8')
+          json(response, { ok: true, updatedAt: nextTaxonomy.updatedAt, count: genres.length })
+        } catch (error) {
+          response.statusCode = 400
+          response.end(error instanceof Error ? error.message : '13장르 분류 저장 실패')
         }
       })
 

@@ -2,7 +2,9 @@ import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPi
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
+import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band, Track } from '../types/music'
+import type { MoodId } from '../types/taxonomy'
 import { BandImage } from './BandImage'
 import { RelationMap } from './RelationMap'
 
@@ -17,6 +19,19 @@ interface BandDetailProps {
 
 export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFavorite, visitedIds }: BandDetailProps) {
   const genre = genreById[band.primaryGenre]
+  const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
+  const genreColor = taxonomyGenre?.color ?? genre.color
+  const taxonomySubgenres = band.taxonomyV2?.subgenreIds.map((id) => taxonomySubgenreById[id]?.name ?? id) ?? []
+  const taxonomyCrossings = band.taxonomyV2
+    ? [...new Set([band.taxonomyV2.primaryGenreId, ...band.taxonomyV2.secondaryGenreIds])].map((id) => taxonomyGenreById[id]).filter(Boolean)
+    : []
+  const topMoods = band.taxonomyV2
+    ? Object.entries(band.taxonomyV2.moodScores)
+      .filter(([, score]) => score >= 3)
+      .sort((left, right) => right[1] - left[1])
+      .slice(0, 5)
+      .map(([id]) => taxonomyMoodById[id as MoodId]?.name ?? id)
+    : []
   const currentMembers = band.members.filter((member) => member.status !== 'former')
   const formerMembers = band.members.filter((member) => member.status === 'former')
   const review = reviewBand(band)
@@ -29,10 +44,10 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
   const representativeSpan = firstTrackYear ? (firstTrackYear === lastTrackYear ? `${firstTrackYear}` : `${firstTrackYear}–${lastTrackYear}`) : '연도 확인 중'
 
   return (
-    <main className="detail-page" style={{ '--genre-color': genre.color } as React.CSSProperties}>
+    <main className="detail-page" style={{ '--genre-color': genreColor } as React.CSSProperties}>
       <div className="detail-topbar shell">
         <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 전체 목록</button>
-        <span>ROCK ATLAS / {genre.englishName.toUpperCase()}</span>
+        <span>ROCK ATLAS / {(taxonomyGenre?.englishName ?? genre.englishName).toUpperCase()}</span>
       </div>
 
       <section className="detail-hero shell">
@@ -43,7 +58,7 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           </a>
         </div>
         <div className="detail-intro">
-          <span className="eyebrow" style={{ color: genre.color }}>{genre.name} / EST. {band.formed}</span>
+          <span className="eyebrow" style={{ color: genreColor }}>{taxonomyGenre?.displayName ?? genre.name} / EST. {band.formed}</span>
           <h1>{band.name}</h1>
           <button className={`favorite-button detail-favorite ${isFavorite ? 'is-active' : ''}`} onClick={() => onToggleFavorite(band.id)} aria-pressed={isFavorite}>
             <Heart size={16} fill={isFavorite ? 'currentColor' : 'none'} />
@@ -62,7 +77,7 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
             <span><CalendarDays size={17} />{band.activeYears}</span>
             <span><Users size={17} />주요 멤버 {band.members.length}명</span>
           </div>
-          <div className="tag-list">{band.subgenres.map((tag) => <span key={tag}>#{tag}</span>)}</div>
+          <div className="tag-list">{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((tag) => <span key={tag}>#{tag}</span>)}</div>
         </div>
       </section>
 
@@ -73,12 +88,15 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           <p>{band.style}</p>
           <div className="sound-facts">
             <div><span>귀에 먼저 잡히는 요소</span><strong>{band.tags.join(' · ') || '편집 대기'}</strong></div>
-            <div><span>세부 장르</span><strong>{band.subgenres.join(' · ') || genre.name}</strong></div>
+            <div><span>세부 장르</span><strong>{taxonomySubgenres.join(' · ') || band.subgenres.join(' · ') || taxonomyGenre?.displayName || genre.name}</strong></div>
+            {topMoods.length > 0 && <div><span>대표 분위기</span><strong>{topMoods.join(' · ')}</strong></div>}
             <div><span>대표 음반</span><strong>{albums.join(' · ') || '편집 대기'}</strong></div>
           </div>
           <div className="genre-crossings">
             <span>장르 교차점</span>
-            {band.genreIds.map((id) => <strong key={id}>{genreById[id].name}</strong>)}
+            {taxonomyCrossings.length
+              ? taxonomyCrossings.map((item) => <strong key={item.id}>{item.displayName}</strong>)
+              : band.genreIds.map((id) => <strong key={id}>{genreById[id].name}</strong>)}
           </div>
           <div className="era-timeline" aria-label="시대별 장르 변화">
             {band.eraTags.map((eraTag) => (

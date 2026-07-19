@@ -1,22 +1,25 @@
 import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Save, Smartphone } from 'lucide-react'
 import { useRef, useState } from 'react'
-import type { Genre } from '../types/music'
+import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
 
 interface DesignStudioPanelProps {
   value: SiteContent
   dirty: boolean
   message: string
-  genres: Genre[]
+  genres: TaxonomyGenre[]
+  moods: TaxonomyMood[]
   genresDirty: boolean
   genreMessage: string
   onChange: (patch: Partial<SiteContent>) => void
-  onGenresChange: (genres: Genre[]) => void
+  onGenresChange: (genres: TaxonomyGenre[]) => void
+  onMoodsChange: (moods: TaxonomyMood[]) => void
   onSave: () => Promise<void>
   onSaveGenres: () => Promise<void>
 }
 
 const sectionNames: Record<SiteSectionId, string> = { genres: '장르 탐색', bands: '밴드 목록', manifesto: '마무리 선언' }
+const moodGroupNames: Record<MoodGroupId, string> = { energy: '에너지와 속도', emotion: '감정과 정서', texture: '공간감과 음색', listening: '구성과 감상 방식' }
 
 function colorToAccent(hex: string) {
   const normalized = hex.replace('#', '')
@@ -24,10 +27,9 @@ function colorToAccent(hex: string) {
   return [0, 2, 4].map((index) => Number.parseInt(normalized.slice(index, index + 2), 16)).join(' ')
 }
 
-export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, genreMessage, onChange, onGenresChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
+export function DesignStudioPanel({ value, dirty, message, genres, moods, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
-  const [foldedGenresDraft, setFoldedGenresDraft] = useState<Record<string, string>>({})
   const uploadRef = useRef<HTMLInputElement>(null)
   const fontUploadRef = useRef<HTMLInputElement>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
@@ -39,15 +41,16 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
     ;[order[index], order[nextIndex]] = [order[nextIndex], order[index]]
     onChange({ sectionOrder: order })
   }
-  const updateGenre = (id: Genre['id'], patch: Partial<Genre>) => onGenresChange(genres.map((genre) => genre.id === id ? { ...genre, ...patch } : genre))
-  const moveGenre = (id: Genre['id'], direction: -1 | 1) => {
+  const updateGenre = (id: TaxonomyGenre['id'], patch: Partial<TaxonomyGenre>) => onGenresChange(genres.map((genre) => genre.id === id ? { ...genre, ...patch } : genre))
+  const moveGenre = (id: TaxonomyGenre['id'], direction: -1 | 1) => {
     const next = [...genres]
     const index = next.findIndex((genre) => genre.id === id)
     const target = index + direction
     if (target < 0 || target >= next.length) return
     ;[next[index], next[target]] = [next[target], next[index]]
-    onGenresChange(next)
+    onGenresChange(next.map((genre, order) => ({ ...genre, order: order + 1 })))
   }
+  const updateMood = (id: TaxonomyMood['id'], patch: Partial<TaxonomyMood>) => onMoodsChange(moods.map((mood) => mood.id === id ? { ...mood, ...patch } : mood))
   const uploadHero = async (file: File) => {
     const dataUrl = await new Promise<string>((resolve, reject) => {
       const reader = new FileReader()
@@ -138,16 +141,28 @@ export function DesignStudioPanel({ value, dirty, message, genres, genresDirty, 
 
       <div className="studio-site-actions"><span className={dirty ? 'is-dirty' : ''}>{message}</span><a href="./" target="_blank" rel="noreferrer"><ExternalLink size={14} /> 실제 화면</a><button onClick={() => void onSave()}><Save size={15} /> 디자인 저장</button></div>
 
-      <details className="studio-genre-editor"><summary>8개 장르 카드 편집</summary><div className="studio-genre-editor-grid">
+      <details className="studio-genre-editor"><summary>13개 장르 카드 편집</summary><div className="studio-genre-editor-grid">
         {genres.map((genre, index) => <details key={genre.id}><summary><span style={{ background: genre.color }} />{String(index + 1).padStart(2, '0')} · {genre.name}</summary><div>
           <div className="studio-genre-order-actions studio-grid-span"><button onClick={() => moveGenre(genre.id, -1)} disabled={index === 0}><ArrowUp size={12} /> 위로</button><button onClick={() => moveGenre(genre.id, 1)} disabled={index === genres.length - 1}><ArrowDown size={12} /> 아래로</button></div>
-          <label>한국어 이름<input value={genre.name} onChange={(event) => updateGenre(genre.id, { name: event.target.value })} /></label>
+          <label>정식 한국어 이름<input value={genre.name} onChange={(event) => updateGenre(genre.id, { name: event.target.value })} /></label>
+          <label>카드 표시 이름<input value={genre.displayName} onChange={(event) => updateGenre(genre.id, { displayName: event.target.value })} /></label>
           <label>영문 이름<input value={genre.englishName} onChange={(event) => updateGenre(genre.id, { englishName: event.target.value })} /></label>
           <label>색상<input type="color" value={genre.color} onChange={(event) => updateGenre(genre.id, { color: event.target.value, accent: colorToAccent(event.target.value) })} /></label>
-          <label>함께 보는 장르<input value={foldedGenresDraft[genre.id] ?? genre.foldedGenres.join(', ')} onChange={(event) => { const raw = event.target.value; setFoldedGenresDraft((prev) => ({ ...prev, [genre.id]: raw })); updateGenre(genre.id, { foldedGenres: raw.split(',').map((item) => item.trim()).filter(Boolean) }) }} onBlur={() => setFoldedGenresDraft((prev) => { const next = { ...prev }; delete next[genre.id]; return next })} /></label>
+          <label className="studio-grid-span">한 줄 분위기 설명<input value={genre.vibeDescription} onChange={(event) => updateGenre(genre.id, { vibeDescription: event.target.value })} /></label>
           <label className="studio-grid-span">설명<textarea value={genre.description} onChange={(event) => updateGenre(genre.id, { description: event.target.value })} rows={3} /></label>
+          <p className="studio-upload-note studio-grid-span">세부 장르 {genre.subgenreIds.length}개 · 빠른 분위기 {genre.quickMoodIds.length}개 · 고유 ID는 데이터 연결 보호를 위해 잠겨 있습니다.</p>
         </div></details>)}
-      </div><div className="studio-site-actions"><span className={genresDirty ? 'is-dirty' : ''}>{genreMessage}</span><button onClick={() => void onSaveGenres()}><Save size={15} /> 장르 카드 저장</button></div></details>
+      </div></details>
+
+      <details className="studio-genre-editor"><summary>24개 분위기 카드 편집</summary><div className="studio-genre-editor-grid">
+        {moods.map((mood) => <details key={mood.id}><summary>{String(mood.order).padStart(2, '0')} · {mood.name}</summary><div>
+          <label>그룹<input value={moodGroupNames[mood.groupId]} readOnly /></label>
+          <label>카드 이름<input value={mood.name} onChange={(event) => updateMood(mood.id, { name: event.target.value })} /></label>
+          <label className="studio-grid-span">카드 설명<textarea value={mood.description} onChange={(event) => updateMood(mood.id, { description: event.target.value })} rows={3} /></label>
+          <p className="studio-upload-note studio-grid-span">고유 ID와 그룹은 기존 밴드 점수 연결을 보호하기 위해 잠겨 있습니다.</p>
+        </div></details>)}
+      </div></details>
+      <div className="studio-site-actions"><span className={genresDirty ? 'is-dirty' : ''}>{genreMessage}</span><button onClick={() => void onSaveGenres()}><Save size={15} /> 장르·분위기 카드 저장</button></div>
     </section>
   )
 }

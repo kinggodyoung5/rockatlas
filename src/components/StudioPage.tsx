@@ -2,11 +2,12 @@ import { useMemo, useRef, useState } from 'react'
 import { ArrowLeft, Check, Download, ExternalLink, FileUp, Link2, Plus, Save, Search, Sparkles } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { eras } from '../data/eras'
-import { genreCatalog, genres as initialGenres } from '../data/genres'
+import { genres as initialGenres } from '../data/genres'
 import { siteContent, type SiteContent } from '../data/siteContent'
-import { taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
+import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
 import type { GenreTaxonomyId, MoodGroupId, MoodId, MoodScore } from '../types/taxonomy'
+import { scoreBandSimilarity } from '../lib/bandSimilarity'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
@@ -225,6 +226,10 @@ function completeness(band: Band) {
 }
 
 function suggestionScore(subject: Band, candidate: Band) {
+  if (subject.taxonomyV2 && candidate.taxonomyV2) {
+    const result = scoreBandSimilarity(subject, candidate)
+    return { score: result.score, reason: result.reasons.join(', ') || '새 장르·분위기·시대 교차' }
+  }
   let score = subject.primaryGenre === candidate.primaryGenre ? 5 : 0
   const reasons: string[] = []
   const commonGenres = subject.genreIds.filter((item) => candidate.genreIds.includes(item))
@@ -249,9 +254,11 @@ export function StudioPage() {
   const [siteDraft, setSiteDraft] = useState<SiteContent>(() => clone(siteContent))
   const [siteDirty, setSiteDirty] = useState(false)
   const [siteMessage, setSiteMessage] = useState('현재 메인 화면 문구입니다.')
-  const [studioGenres, setStudioGenres] = useState(() => clone(initialGenres))
-  const [genresDirty, setGenresDirty] = useState(false)
-  const [genreMessage, setGenreMessage] = useState('현재 8개 장르 카드입니다.')
+  const studioGenres = initialGenres
+  const [taxonomyGenreDrafts, setTaxonomyGenreDrafts] = useState(() => clone(taxonomyGenres))
+  const [taxonomyMoodDrafts, setTaxonomyMoodDrafts] = useState(() => clone(taxonomyMoods))
+  const [taxonomyDirty, setTaxonomyDirty] = useState(false)
+  const [taxonomyMessage, setTaxonomyMessage] = useState('현재 13개 장르 카드입니다.')
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
   const importRef = useRef<HTMLInputElement>(null)
   const isExisting = catalogBands.some((band) => band.id === selectedId)
@@ -322,9 +329,14 @@ export function StudioPage() {
     setSiteDirty(true)
   }
 
-  const changeGenres = (nextGenres: typeof studioGenres) => {
-    setStudioGenres(nextGenres)
-    setGenresDirty(true)
+  const changeTaxonomyGenres = (nextGenres: typeof taxonomyGenreDrafts) => {
+    setTaxonomyGenreDrafts(nextGenres)
+    setTaxonomyDirty(true)
+  }
+
+  const changeTaxonomyMoods = (nextMoods: typeof taxonomyMoodDrafts) => {
+    setTaxonomyMoodDrafts(nextMoods)
+    setTaxonomyDirty(true)
   }
 
   const selectExternalCandidate = (publisher: 'Wikidata' | 'MusicBrainz', candidate: ExternalCandidate) => {
@@ -365,14 +377,14 @@ export function StudioPage() {
     }
   }
 
-  const saveGenres = async () => {
+  const saveTaxonomyGenres = async () => {
     try {
-      const response = await fetch('/api/studio/genres', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ schemaVersion: genreCatalog.schemaVersion, updatedAt: genreCatalog.updatedAt, genres: studioGenres }) })
+      const response = await fetch('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts }) })
       if (!response.ok) throw new Error(await response.text())
       const result = await response.json() as { updatedAt: string }
-      setGenresDirty(false)
-      setGenreMessage(`장르 카드 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
-    } catch (error) { setGenreMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
+      setTaxonomyDirty(false)
+      setTaxonomyMessage(`13장르 카드 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
+    } catch (error) { setTaxonomyMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
   }
 
   const chooseBand = (band: Band) => {
@@ -484,7 +496,7 @@ export function StudioPage() {
   const saveEverything = async () => {
     await saveCatalog('Studio 전체 저장')
     if (siteDirty) await saveSiteContent()
-    if (genresDirty) await saveGenres()
+    if (taxonomyDirty) await saveTaxonomyGenres()
   }
 
   const exportCatalog = () => {
@@ -528,7 +540,7 @@ export function StudioPage() {
         </div>
       </header>
 
-      <div className="studio-status"><span className={dirty || catalogDirty || siteDirty || genresDirty ? 'is-dirty' : ''}>{dirty || catalogDirty || siteDirty || genresDirty ? '저장되지 않은 변경' : '저장됨'}</span><p>{message}</p></div>
+      <div className="studio-status"><span className={dirty || catalogDirty || siteDirty || taxonomyDirty ? 'is-dirty' : ''}>{dirty || catalogDirty || siteDirty || taxonomyDirty ? '저장되지 않은 변경' : '저장됨'}</span><p>{message}</p></div>
 
       <div className="studio-layout">
         <aside className="studio-sidebar">
@@ -548,7 +560,7 @@ export function StudioPage() {
         </aside>
 
         <div className="studio-editor">
-          <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={studioGenres} genresDirty={genresDirty} genreMessage={genreMessage} onChange={changeSite} onGenresChange={changeGenres} onSave={saveSiteContent} onSaveGenres={saveGenres} />
+          <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} />
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
 

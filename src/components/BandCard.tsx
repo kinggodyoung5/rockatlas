@@ -1,5 +1,6 @@
 import { ArrowUpRight, Heart, MapPin } from 'lucide-react'
 import { genreById } from '../data/genres'
+import { taxonomyGenreById, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band } from '../types/music'
 import { BandImage } from './BandImage'
 
@@ -13,9 +14,13 @@ interface BandCardProps {
 
 export function BandCard({ band, index, onSelect, isFavorite, onToggleFavorite }: BandCardProps) {
   const genre = genreById[band.primaryGenre]
+  const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
+  const genreColor = taxonomyGenre?.color ?? genre.color
+  const genreName = taxonomyGenre?.englishName ?? genre.englishName
+  const subgenreText = band.taxonomyV2?.subgenreIds.slice(0, 2).map((id) => taxonomySubgenreById[id]?.name ?? id).join(' · ') || band.subgenres.slice(0, 2).join(' · ')
 
   return (
-    <article className="band-card group" style={{ '--genre-color': genre.color } as React.CSSProperties}>
+    <article className="band-card group" style={{ '--genre-color': genreColor } as React.CSSProperties}>
       <button className="band-card-hit" onClick={() => onSelect(band)} aria-label={`${band.name} 상세 보기`}>
         <div className="band-card-media">
           <BandImage band={band} />
@@ -24,10 +29,10 @@ export function BandCard({ band, index, onSelect, isFavorite, onToggleFavorite }
         </div>
         <div className="band-card-body">
           <div className="card-kicker">
-            <span style={{ color: genre.color }}>{genre.englishName}</span>
+            <span style={{ color: genreColor }}>{genreName}</span>
             <ArrowUpRight size={17} aria-hidden="true" />
           </div>
-          <span className="card-subgenres">{band.subgenres.slice(0, 2).join(' · ')}</span>
+          <span className="card-subgenres">{subgenreText}</span>
           <h3>{band.name}</h3>
           <p>{band.summary}</p>
           <div className="card-origin"><MapPin size={14} aria-hidden="true" />{band.origin}</div>
