@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowRight, Compass, Menu, Share2, Shuffle, X } from 'lucide-react'
 import { AllBandsPage } from './components/AllBandsPage'
 import { BandDetail } from './components/BandDetail'
@@ -7,8 +7,6 @@ import { GenreExplorerPage } from './components/GenreExplorerPage'
 import { JourneyBar } from './components/JourneyBar'
 import { MoodFinderPage } from './components/MoodFinderPage'
 import { SharePanel } from './components/SharePanel'
-import { StudioPage } from './components/StudioPage'
-import { VideoReviewPage } from './components/VideoReviewPage'
 import { bandById, publicBandById, publicBands as bands } from './data/bands'
 import { siteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
@@ -22,6 +20,9 @@ const fontSets = {
   classic: { body: 'Georgia, "Noto Serif KR", serif', heading: 'Georgia, "Noto Serif KR", serif' },
   editorial: { body: 'Inter, Pretendard, sans-serif', heading: '"Arial Narrow", Impact, Pretendard, sans-serif' },
 }
+
+const StudioPage = lazy(() => import('./components/StudioPage').then((module) => ({ default: module.StudioPage })))
+const VideoReviewPage = lazy(() => import('./components/VideoReviewPage').then((module) => ({ default: module.VideoReviewPage })))
 
 function getBandFromHash() {
   const match = window.location.hash.match(/^#band=(.+)$/)
@@ -64,6 +65,26 @@ function ExplorerApp() {
   useEffect(() => {
     if (selectedBand) recordVisit(selectedBand.id)
   }, [recordVisit, selectedBand])
+
+  useEffect(() => {
+    const activeGenre = route.genreId !== 'all' ? taxonomyGenres.find((genre) => genre.id === route.genreId) : undefined
+    const metadata = selectedBand
+      ? { title: `${selectedBand.name} — ROCK ATLAS`, description: selectedBand.summary }
+      : route.view === 'genre' && activeGenre
+        ? { title: `${activeGenre.displayName} — ROCK ATLAS`, description: activeGenre.description }
+        : route.view === 'bands'
+          ? { title: '모든 밴드 — ROCK ATLAS', description: `${bands.length}개 록 밴드를 장르·시대·국가별로 탐색합니다.` }
+          : route.view === 'moods'
+            ? { title: '느낌으로 찾기 — ROCK ATLAS', description: '원하는 분위기와 감각을 골라 어울리는 록 밴드를 발견합니다.' }
+            : { title: 'ROCK ATLAS — 락밴드 탐험지도', description: siteContent.heroTitle }
+    document.title = metadata.title
+    const setMeta = (selector: string, value: string) => document.querySelector<HTMLMetaElement>(selector)?.setAttribute('content', value)
+    setMeta('meta[name="description"]', metadata.description)
+    setMeta('meta[property="og:title"]', metadata.title)
+    setMeta('meta[property="og:description"]', metadata.description)
+    setMeta('meta[name="twitter:title"]', metadata.title)
+    setMeta('meta[name="twitter:description"]', metadata.description)
+  }, [route.genreId, route.view, selectedBand])
 
   const updateRoute = useCallback((patch: Partial<ExplorerRoute>, replace = false) => {
     const next = { ...routeRef.current, ...patch }
@@ -171,7 +192,7 @@ function ExplorerApp() {
 }
 
 export default function App() {
-  if (new URLSearchParams(window.location.search).get('studio') === '1') return <StudioPage />
-  if (new URLSearchParams(window.location.search).get('review') === 'videos') return <VideoReviewPage />
+  if (new URLSearchParams(window.location.search).get('studio') === '1') return <Suspense fallback={<main className="route-loading">Studio를 불러오는 중입니다…</main>}><StudioPage /></Suspense>
+  if (new URLSearchParams(window.location.search).get('review') === 'videos') return <Suspense fallback={<main className="route-loading">검수 화면을 불러오는 중입니다…</main>}><VideoReviewPage /></Suspense>
   return <ExplorerApp />
 }

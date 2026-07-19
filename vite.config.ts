@@ -15,6 +15,14 @@ const fontUploadsPath = resolve('public/uploads/fonts')
 type JsonObject = Record<string, unknown>
 type HistoryEntry = { id: string; createdAt: string; label: string; catalog: JsonObject }
 type HealthEntry = { id: string; label: string; url: string; kind: 'link' | 'image' | 'font'; bandId?: string }
+type CatalogBandPayload = {
+  id?: unknown
+  name?: unknown
+  formed?: unknown
+  reviewStatus?: unknown
+  relations?: unknown
+  taxonomyV2?: unknown
+}
 
 const isLocalRequest = (origin: string) => !origin || /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(origin)
 
@@ -43,6 +51,55 @@ async function archiveCatalog(label: string) {
   const history = await readHistory()
   history.unshift({ id: `${Date.now()}`, createdAt: new Date().toISOString(), label, catalog: current })
   await writeFile(catalogHistoryPath, `${JSON.stringify(history.slice(0, 20), null, 2)}\n`, 'utf8')
+}
+
+async function validateCatalogBands(bands: CatalogBandPayload[]) {
+  const errors: string[] = []
+  if (!bands.length) errors.push('밴드 목록을 비운 상태로 저장할 수 없습니다.')
+  const ids = bands.map((band) => typeof band.id === 'string' ? band.id.trim() : '')
+  const names = bands.map((band) => typeof band.name === 'string' ? band.name.trim() : '')
+  const normalizedNames = names.map((name) => name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, ''))
+  const idSet = new Set(ids)
+  if (ids.some((id) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))) errors.push('모든 밴드 ID는 영문 소문자·숫자·하이픈 형식이어야 합니다.')
+  if (idSet.size !== ids.length) errors.push('중복된 밴드 ID가 있습니다.')
+  if (names.some((name) => !name)) errors.push('이름이 비어 있는 밴드가 있습니다.')
+  if (new Set(normalizedNames).size !== normalizedNames.length) errors.push('중복된 밴드 이름이 있습니다.')
+
+  const taxonomyCatalog = JSON.parse(await readFile(taxonomyPath, 'utf8')) as {
+    genres?: Array<{ id?: string }>
+    subgenres?: Array<{ id?: string }>
+    moods?: Array<{ id?: string }>
+  }
+  const genreIds = new Set((taxonomyCatalog.genres ?? []).map((item) => item.id).filter((id): id is string => Boolean(id)))
+  const subgenreIds = new Set((taxonomyCatalog.subgenres ?? []).map((item) => item.id).filter((id): id is string => Boolean(id)))
+  const moodIds = new Set((taxonomyCatalog.moods ?? []).map((item) => item.id).filter((id): id is string => Boolean(id)))
+
+  bands.forEach((band, index) => {
+    const label = names[index] || ids[index] || `${index + 1}번째 밴드`
+    if (!Number.isInteger(band.formed) || Number(band.formed) < 1900 || Number(band.formed) > new Date().getFullYear()) errors.push(`${label}: 결성 연도가 올바르지 않습니다.`)
+    if (!['draft', 'reviewed', 'published'].includes(String(band.reviewStatus))) errors.push(`${label}: 공개 상태 값이 올바르지 않습니다.`)
+    if (!Array.isArray(band.relations)) errors.push(`${label}: 관계 목록 형식이 올바르지 않습니다.`)
+    else band.relations.forEach((relation) => {
+      if (!relation || typeof relation !== 'object') return errors.push(`${label}: 관계 항목 형식이 올바르지 않습니다.`)
+      const target = String((relation as { targetBandId?: unknown }).targetBandId ?? '')
+      if (!idSet.has(target)) errors.push(`${label}: 존재하지 않는 관계 대상 ${target || '(빈 ID)'}`)
+      if (target === ids[index]) errors.push(`${label}: 자기 자신을 관계 대상으로 지정할 수 없습니다.`)
+    })
+
+    if (!band.taxonomyV2 || typeof band.taxonomyV2 !== 'object' || Array.isArray(band.taxonomyV2)) return errors.push(`${label}: 새 장르·분위기 분류가 없습니다.`)
+    const taxonomy = band.taxonomyV2 as { primaryGenreId?: unknown; secondaryGenreIds?: unknown; subgenreIds?: unknown; moodScores?: unknown; reviewStatus?: unknown }
+    const primaryGenreId = String(taxonomy.primaryGenreId ?? '')
+    if (!genreIds.has(primaryGenreId)) errors.push(`${label}: 존재하지 않는 대표 장르 ${primaryGenreId || '(빈 ID)'}`)
+    if (!Array.isArray(taxonomy.secondaryGenreIds) || taxonomy.secondaryGenreIds.some((id) => !genreIds.has(String(id)))) errors.push(`${label}: 보조 장르 중 존재하지 않는 값이 있습니다.`)
+    if (!Array.isArray(taxonomy.subgenreIds) || taxonomy.subgenreIds.some((id) => !subgenreIds.has(String(id)))) errors.push(`${label}: 세부 장르 중 존재하지 않는 값이 있습니다.`)
+    if (!taxonomy.moodScores || typeof taxonomy.moodScores !== 'object' || Array.isArray(taxonomy.moodScores)) errors.push(`${label}: 분위기 점수 형식이 올바르지 않습니다.`)
+    else Object.entries(taxonomy.moodScores as Record<string, unknown>).forEach(([id, score]) => {
+      if (!moodIds.has(id) || !Number.isInteger(score) || Number(score) < 1 || Number(score) > 5) errors.push(`${label}: 분위기 ${id} 점수는 허용 ID와 1~5 정수만 사용할 수 있습니다.`)
+    })
+    if (!['draft', 'reviewed'].includes(String(taxonomy.reviewStatus))) errors.push(`${label}: 분류 검수 상태가 올바르지 않습니다.`)
+  })
+
+  if (errors.length) throw new Error(`저장 전 안전 검사에서 ${errors.length}건을 발견했습니다.\n- ${errors.slice(0, 12).join('\n- ')}${errors.length > 12 ? `\n- 외 ${errors.length - 12}건` : ''}`)
 }
 
 function json(response: { setHeader(name: string, value: string): void; end(body?: string): void }, payload: unknown) {
@@ -178,12 +235,11 @@ function studioApi(): Plugin {
         }
         try {
           const payload = await readBody(request, 5_000_000)
-          const bands = payload.bands as Array<{ id?: string }> | undefined
-          if (payload.schemaVersion !== 1 || !Array.isArray(bands)) throw new Error('지원하지 않는 카탈로그 형식입니다.')
-          const ids = bands.map((band) => band.id)
-          if (ids.some((id) => !id) || new Set(ids).size !== ids.length) throw new Error('밴드 ID가 비어 있거나 중복되었습니다.')
+          const bands = payload.bands as CatalogBandPayload[] | undefined
+          if (![1, 2].includes(Number(payload.schemaVersion)) || !Array.isArray(bands)) throw new Error('지원하지 않는 카탈로그 형식입니다.')
+          await validateCatalogBands(bands)
           await archiveCatalog(typeof payload.changeNote === 'string' ? payload.changeNote : 'Studio 저장')
-          const nextCatalog = { schemaVersion: 1, updatedAt: new Date().toISOString(), bands }
+          const nextCatalog = { schemaVersion: 2, updatedAt: new Date().toISOString(), bands }
           await writeFile(catalogPath, `${JSON.stringify(nextCatalog, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextCatalog.updatedAt, count: bands.length })
         } catch (error) {

@@ -8,6 +8,8 @@ import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySub
 import type { Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
 import type { GenreTaxonomyId, MoodGroupId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
+import { forceIntakeDraft } from '../lib/bandIntake'
+import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
@@ -459,7 +461,17 @@ export function StudioPage() {
   }
 
   const addBands = (newBands: Band[]) => {
-    setCatalogBands((current) => [...current, ...newBands])
+    setCatalogBands((current) => {
+      const ids = new Set(current.map((band) => band.id))
+      const names = new Set(current.map((band) => band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')))
+      const safeDrafts = newBands.map(forceIntakeDraft).filter((band) => {
+        const nameKey = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
+        if (!band.id || !band.name || ids.has(band.id) || names.has(nameKey)) return false
+        ids.add(band.id); names.add(nameKey)
+        return true
+      })
+      return [...current, ...safeDrafts]
+    })
     setCatalogDirty(true)
     setMessage(`${newBands.length}개 초안을 추가했습니다. 변경 저장을 눌러 적용하세요.`)
   }
@@ -513,11 +525,13 @@ export function StudioPage() {
     try {
       const payload = JSON.parse(await file.text()) as { schemaVersion?: number; bands?: Band[] }
       if (![1, 2].includes(payload.schemaVersion ?? 0) || !Array.isArray(payload.bands) || payload.bands.length === 0) throw new Error('지원하지 않는 파일입니다.')
+      if (!window.confirm(`전체 백업 ${payload.bands.length}개로 현재 작업 목록을 교체할까요?\n\n새 밴드 추가에는 아래의 ‘새 밴드 검수함’을 사용하세요.`)) return
       setCatalogBands(payload.bands)
       setSelectedId(payload.bands[0].id)
       setDraft(clone(payload.bands[0]))
-      setDirty(true)
-      setMessage(`${payload.bands.length}개 밴드를 가져왔습니다. 저장 버튼을 눌러 적용하세요.`)
+      setDirty(false)
+      setCatalogDirty(true)
+      setMessage(`전체 백업에서 ${payload.bands.length}개 밴드를 불러왔습니다. 저장 버튼을 눌러 적용하세요.`)
     } catch (error) {
       setMessage(`가져오기 실패: ${error instanceof Error ? error.message : '파일을 읽을 수 없습니다.'}`)
     }
@@ -534,7 +548,7 @@ export function StudioPage() {
         </div>
         <div className="studio-header-actions">
           <button onClick={exportCatalog}><Download size={16} /> JSON 백업</button>
-          <button onClick={() => importRef.current?.click()}><FileUp size={16} /> 가져오기</button>
+          <button onClick={() => importRef.current?.click()} title="전체 카탈로그 백업 복원용"><FileUp size={16} /> 전체 백업 복원</button>
           <input ref={importRef} type="file" accept="application/json" hidden onChange={(event) => event.target.files?.[0] && void importCatalog(event.target.files[0])} />
           <button className="studio-save" onClick={() => void saveEverything()}><Save size={16} /> 전체 저장</button>
         </div>
@@ -561,6 +575,8 @@ export function StudioPage() {
 
         <div className="studio-editor">
           <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} />
+
+          <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
 

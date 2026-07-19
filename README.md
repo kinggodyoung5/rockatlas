@@ -13,6 +13,7 @@
 - 앨범·연도·한 줄 안내가 있는 대표곡 외부 링크와 공식 YouTube 채널
 - 즐겨찾기, 최근 탐험, 공유 패널, 반응형 UI와 기본 키보드 접근성
 - 코드 없이 콘텐츠와 디자인을 관리하는 로컬 Studio
+- Gemini 결과를 붙여넣어 중복·필수값·분류를 검사하고 비공개 초안으로 일괄 추가하는 새 밴드 검수함
 
 분위기 점수와 자동 유사도는 객관적인 음악 평가나 영향 관계가 아니라 운영자가 고칠 수 있는 편집 신호입니다. 검수된 영향 관계와 자동 추천을 UI에서 구분합니다.
 
@@ -46,13 +47,16 @@ Windows에서는 프로젝트 폴더의 `운영자페이지-열기.bat`를 더�
 
 Studio에서 할 수 있는 작업:
 
-- 기존 밴드 수정, 신규 초안, CSV·JSON 일괄 입력
+- 기존 밴드 수정, 신규 초안, CSV 일괄 입력, 전체 JSON 백업·복원
+- Gemini 조사 요청문 자동 생성, JSON 붙여넣기·파일 선택, 자동 정리·검사, 안전한 일괄 초안 추가
 - 13장르 대표·보조 분류, 세부 장르, 24개 분위기 점수 편집
 - 장르 카드 이름·설명·색상·순서 편집
 - 멤버·대표곡·관계·출처·이미지·검수 상태 관리
 - Wikidata·MusicBrainz 후보 검색과 선택
 - 메인 문구, 폰트 업로드, 굵기·이탤릭, 색상, 히어로 이미지 관리
 - 링크·이미지 상태 검사, 휴지통, 최근 20회 백업·복구
+
+개발 지식이 없는 운영자를 위한 가장 짧은 추가 절차는 **요청문 복사 → Gemini 결과 붙여넣기 → 자동 검사 → 초안 추가 → 전체 저장**입니다. 상세한 사용법과 자동 안전장치는 `docs/BAND_INTAKE_WORKFLOW.md`에 있습니다.
 
 Studio 저장 API와 외부 검색 프록시는 로컬 Vite 서버에서만 동작합니다. GitHub Pages에 배포된 정적 사이트에서 데이터 파일을 직접 수정할 수는 없습니다. 로컬 Studio에서 저장한 뒤 변경 파일을 Git 커밋·푸시하면 자동 배포됩니다.
 
@@ -77,12 +81,14 @@ src/
   data/siteContent.json       Studio가 관리하는 화면 문구·테마
   lib/explorerRoute.ts        GitHub Pages 호환 URL 상태
   lib/bandSimilarity.ts       설명 가능한 자동 유사도 점수
+  lib/bandIntake.ts           AI 조사 JSON 정리·검사·강제 초안 엔진
   types/music.ts              밴드·트랙·관계 데이터 타입
   types/taxonomy.ts           새 분류 타입
 scripts/
   validate-taxonomy.ts        새 분류와 밴드 연결 검사
 docs/
   TAXONOMY_V2_MIGRATION.md    안전한 병행 전환 원칙
+  BAND_INTAKE_WORKFLOW.md     비개발자용 새 밴드 검수함 사용법
   NEXT_STEPS.md               다음 개발·검수 순서
 PROJECT_STATUS.md             현재 작업 상태와 안전 기준선
 ```

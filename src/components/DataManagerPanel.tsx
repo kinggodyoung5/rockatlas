@@ -1,6 +1,7 @@
 import { AlertTriangle, FileDown, FileUp, History, RotateCcw, Save, ShieldCheck, Trash2 } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
+import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
 import type { Band, EraId, GenreId, Track } from '../types/music'
 import { LinkHealthPanel } from './LinkHealthPanel'
 
@@ -49,6 +50,10 @@ function parseCsv(text: string) {
 const slugify = (value: string) => value.toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const list = (value: string) => value.split(/[;|]/).map((item) => item.trim()).filter(Boolean)
 const eraFromYear = (year: number) => `${Math.min(2020, Math.max(1960, Math.floor(year / 10) * 10))}s` as EraId
+const taxonomyByLegacy: Record<GenreId, (typeof taxonomyGenres)[number]['id']> = {
+  'classic-rock': 'classic-roots-rock', 'hard-rock': 'hard-glam-rock', 'progressive-art': 'progressive-art-psychedelic', 'punk-rock': 'punk-emo',
+  'alternative-indie': 'alternative-grunge', 'britpop-indie': 'indie-britpop-garage', 'heavy-metal': 'traditional-power-thrash-metal', 'extreme-metal': 'extreme-metal',
+}
 
 function csvBand(row: Record<string, string>, index: number): Band {
   const year = Number(row.formed) || new Date().getFullYear()
@@ -56,6 +61,8 @@ function csvBand(row: Record<string, string>, index: number): Band {
   const requestedGenre = row.primaryGenre as GenreId
   const primaryGenre = genres.some((genre) => genre.id === requestedGenre) ? requestedGenre : 'classic-rock'
   const subgenres = list(row.subgenres)
+  const taxonomyPrimary = taxonomyByLegacy[primaryGenre]
+  const taxonomySubgenreIds = taxonomySubgenres.filter((item) => subgenres.some((value) => value === item.id || value.toLocaleLowerCase() === item.name.toLocaleLowerCase() || value.toLocaleLowerCase() === item.englishName.toLocaleLowerCase())).map((item) => item.id)
   return {
     id: slugify(row.id || name) || `csv-band-${Date.now()}-${index}`,
     name, formed: year, origin: row.origin || '', countryCode: (row.countryCode || '').toUpperCase(), activeYears: row.activeYears || `${year}–현재`,
@@ -65,6 +72,7 @@ function csvBand(row: Record<string, string>, index: number): Band {
     image: { wikipediaTitle: name, alt: `${name} 밴드 사진`, credit: { sourceUrl: '', license: '검토 필요', reviewStatus: 'needs-review' } },
     members: [], tracks: [], relations: [],
     sources: [{ label: `${name} — CSV import`, url: 'https://en.wikipedia.org/', publisher: 'Editorial', note: 'Studio CSV 일괄 입력 후 검수 필요' }],
+    taxonomyV2: { primaryGenreId: taxonomyPrimary, secondaryGenreIds: [], subgenreIds: taxonomySubgenreIds, moodScores: {}, reviewStatus: 'draft', reviewNote: 'CSV 일괄 입력 후 분류 검수 필요' },
     reviewStatus: 'draft',
   }
 }
