@@ -27,9 +27,6 @@ type UnknownRecord = Record<string, unknown>
 const legacyGenreIds: GenreId[] = ['classic-rock', 'hard-rock', 'progressive-art', 'punk-rock', 'alternative-indie', 'britpop-indie', 'heavy-metal', 'extreme-metal']
 const relationKinds: RelationKind[] = ['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'evolution']
 const eraIds: EraId[] = ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s']
-const genreIds = new Set(taxonomyGenres.map((item) => item.id))
-const subgenreIds = new Set(taxonomySubgenres.map((item) => item.id))
-const moodIds = new Set(taxonomyMoods.map((item) => item.id))
 
 const legacyByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
   'classic-roots-rock': 'classic-rock',
@@ -62,7 +59,26 @@ const isRecord = (value: unknown): value is UnknownRecord => Boolean(value) && t
 const text = (value: unknown) => typeof value === 'string' ? value.trim() : ''
 const number = (value: unknown) => typeof value === 'number' ? value : Number(value)
 const stringList = (value: unknown) => Array.isArray(value) ? value.map(text).filter(Boolean) : typeof value === 'string' ? value.split(/[,;|]/).map((item) => item.trim()).filter(Boolean) : []
-const slugify = (value: string) => value.toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const slugify = (value: string) => value.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+const normalizeTaxonomyLabel = (value: unknown) => text(value)
+  .toLocaleLowerCase()
+  .normalize('NFKC')
+  .replace(/&/g, 'and')
+  .replace(/[^a-z0-9가-힣]+/g, '')
+
+const genreAliasMap = new Map<string, GenreTaxonomyId>(taxonomyGenres.flatMap((genre) =>
+  [genre.id, genre.name, genre.displayName, genre.englishName].map((label) => [normalizeTaxonomyLabel(label), genre.id] as const),
+))
+const subgenreAliasMap = new Map<string, string>(taxonomySubgenres.flatMap((subgenre) =>
+  [subgenre.id, subgenre.name, subgenre.englishName].map((label) => [normalizeTaxonomyLabel(label), subgenre.id] as const),
+))
+const moodAliasMap = new Map<string, MoodId>(taxonomyMoods.flatMap((mood) =>
+  [mood.id, mood.name].map((label) => [normalizeTaxonomyLabel(label), mood.id] as const),
+))
+
+const resolveGenreId = (value: unknown) => genreAliasMap.get(normalizeTaxonomyLabel(value))
+const resolveSubgenreId = (value: unknown) => subgenreAliasMap.get(normalizeTaxonomyLabel(value))
+const resolveMoodId = (value: unknown) => moodAliasMap.get(normalizeTaxonomyLabel(value))
 
 function eraFromYear(year: number): EraId {
   const candidate = `${Math.min(2020, Math.max(1960, Math.floor(year / 10) * 10))}s` as EraId
@@ -151,7 +167,7 @@ function normalizeRelations(value: unknown): Relation[] {
   if (!Array.isArray(value)) return []
   return value.flatMap((entry) => {
     if (!isRecord(entry)) return []
-    const targetBandId = slugify(text(entry.targetBandId ?? entry.targetId))
+    const targetBandId = slugify(text(entry.targetBandId ?? entry.targetId ?? entry.targetBandName ?? entry.targetName))
     if (!targetBandId) return []
     const kind = relationKinds.includes(text(entry.kind) as RelationKind) ? text(entry.kind) as RelationKind : 'sounds-like'
     const rawStrength = Math.round(number(entry.strength))
@@ -162,20 +178,28 @@ function normalizeRelations(value: unknown): Relation[] {
 
 function normalizeTaxonomy(raw: UnknownRecord, legacy: GenreId): BandTaxonomyV2 {
   const taxonomyRaw = isRecord(raw.taxonomyV2) ? raw.taxonomyV2 : isRecord(raw.taxonomy) ? raw.taxonomy : {}
-  const requestedPrimary = text(taxonomyRaw.primaryGenreId ?? raw.primaryGenreId) as GenreTaxonomyId
-  const primaryGenreId = genreIds.has(requestedPrimary) ? requestedPrimary : taxonomyByLegacy[legacy]
-  const secondaryGenreIds = stringList(taxonomyRaw.secondaryGenreIds).filter((id): id is GenreTaxonomyId => genreIds.has(id as GenreTaxonomyId) && id !== primaryGenreId)
-  const requestedSubgenres = stringList(taxonomyRaw.subgenreIds ?? raw.subgenreIds)
+  const primaryGenreId = resolveGenreId(taxonomyRaw.primaryGenreId ?? taxonomyRaw.primaryGenre ?? raw.primaryGenreId ?? raw.genre) ?? taxonomyByLegacy[legacy]
+  const secondaryGenreIds = stringList(taxonomyRaw.secondaryGenreIds ?? taxonomyRaw.secondaryGenres ?? raw.secondaryGenreIds ?? raw.secondaryGenres)
+    .flatMap((value) => {
+      const id = resolveGenreId(value)
+      return id && id !== primaryGenreId ? [id] : []
+    })
+  const requestedSubgenres = stringList(taxonomyRaw.subgenreIds ?? taxonomyRaw.subgenres ?? raw.subgenreIds ?? raw.subgenres)
+    .flatMap((value) => {
+      const id = resolveSubgenreId(value)
+      return id ? [id] : []
+    })
   const moodScores: Partial<Record<MoodId, MoodScore>> = {}
-  const moodRaw = isRecord(taxonomyRaw.moodScores) ? taxonomyRaw.moodScores : isRecord(raw.moodScores) ? raw.moodScores : {}
-  Object.entries(moodRaw).forEach(([id, value]) => {
+  const moodRaw = isRecord(taxonomyRaw.moodScores) ? taxonomyRaw.moodScores : isRecord(taxonomyRaw.moods) ? taxonomyRaw.moods : isRecord(raw.moodScores) ? raw.moodScores : isRecord(raw.moods) ? raw.moods : {}
+  Object.entries(moodRaw).forEach(([label, value]) => {
+    const id = resolveMoodId(label)
     const score = Math.round(number(value))
-    if (moodIds.has(id as MoodId) && score >= 1 && score <= 5) moodScores[id as MoodId] = score as MoodScore
+    if (id && score >= 1 && score <= 5) moodScores[id] = score as MoodScore
   })
   return {
     primaryGenreId,
     secondaryGenreIds: [...new Set(secondaryGenreIds)],
-    subgenreIds: [...new Set(requestedSubgenres.filter((id) => subgenreIds.has(id)))],
+    subgenreIds: [...new Set(requestedSubgenres)],
     moodScores,
     reviewStatus: 'draft',
     reviewNote: '외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요',
@@ -188,8 +212,9 @@ function normalizeBand(value: unknown, index: number): Band | null {
   const formedValue = number(value.formed ?? value.yearFormed ?? value.formedYear)
   const formed = Number.isInteger(formedValue) && formedValue >= 1900 && formedValue <= new Date().getFullYear() ? formedValue : 0
   const requestedLegacy = text(value.primaryGenre) as GenreId
-  const requestedTaxonomy = text((isRecord(value.taxonomyV2) ? value.taxonomyV2.primaryGenreId : value.primaryGenreId)) as GenreTaxonomyId
-  const legacy = legacyGenreIds.includes(requestedLegacy) ? requestedLegacy : genreIds.has(requestedTaxonomy) ? legacyByTaxonomy[requestedTaxonomy] : 'classic-rock'
+  const taxonomyInput = isRecord(value.taxonomyV2) ? value.taxonomyV2 : isRecord(value.taxonomy) ? value.taxonomy : {}
+  const requestedTaxonomy = resolveGenreId(taxonomyInput.primaryGenreId ?? taxonomyInput.primaryGenre ?? value.primaryGenreId ?? value.genre)
+  const legacy = legacyGenreIds.includes(requestedLegacy) ? requestedLegacy : requestedTaxonomy ? legacyByTaxonomy[requestedTaxonomy] : 'classic-rock'
   const taxonomyV2 = normalizeTaxonomy(value, legacy)
   const taxonomySubgenreNames = taxonomyV2.subgenreIds.map((id) => taxonomySubgenres.find((item) => item.id === id)?.name).filter((item): item is string => Boolean(item))
   const subgenres = [...new Set([...stringList(value.subgenres), ...taxonomySubgenreNames])]
@@ -293,13 +318,13 @@ export function inspectBandIntake(rawText: string, existingBands: Band[]): Intak
     if (musicBrainzId && !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(musicBrainzId)) issues.push({ severity: 'error', code: 'musicbrainz-format', message: 'MusicBrainz ID가 UUID 형식이 아닙니다.' })
     const original = isRecord(rawBands[index]) ? rawBands[index] : {}
     const originalTaxonomy = isRecord(original.taxonomyV2) ? original.taxonomyV2 : isRecord(original.taxonomy) ? original.taxonomy : {}
-    const requestedPrimary = text(originalTaxonomy.primaryGenreId ?? original.primaryGenreId)
+    const requestedPrimary = originalTaxonomy.primaryGenreId ?? originalTaxonomy.primaryGenre ?? original.primaryGenreId ?? original.genre
     const requestedLegacy = text(original.primaryGenre)
-    if (!genreIds.has(requestedPrimary as GenreTaxonomyId) && !legacyGenreIds.includes(requestedLegacy as GenreId)) issues.push({ severity: 'error', code: 'missing-primary-genre', message: '허용된 대표 장르 ID가 없습니다. 자동 오분류를 막기 위해 추가를 중단했습니다.' })
-    const invalidSecondary = stringList(originalTaxonomy.secondaryGenreIds).filter((id) => !genreIds.has(id as GenreTaxonomyId))
-    const invalidSubgenres = stringList(originalTaxonomy.subgenreIds ?? original.subgenreIds).filter((id) => !subgenreIds.has(id))
-    const originalMoods = isRecord(originalTaxonomy.moodScores) ? originalTaxonomy.moodScores : isRecord(original.moodScores) ? original.moodScores : {}
-    const invalidMoods = Object.entries(originalMoods).filter(([id, value]) => !moodIds.has(id as MoodId) || !Number.isInteger(number(value)) || number(value) < 1 || number(value) > 5).map(([id]) => id)
+    if (!resolveGenreId(requestedPrimary) && !legacyGenreIds.includes(requestedLegacy as GenreId)) issues.push({ severity: 'error', code: 'missing-primary-genre', message: '허용된 대표 장르가 없습니다. 자동 오분류를 막기 위해 추가를 중단했습니다.' })
+    const invalidSecondary = stringList(originalTaxonomy.secondaryGenreIds ?? originalTaxonomy.secondaryGenres ?? original.secondaryGenreIds ?? original.secondaryGenres).filter((value) => !resolveGenreId(value))
+    const invalidSubgenres = stringList(originalTaxonomy.subgenreIds ?? originalTaxonomy.subgenres ?? original.subgenreIds ?? original.subgenres).filter((value) => !resolveSubgenreId(value))
+    const originalMoods = isRecord(originalTaxonomy.moodScores) ? originalTaxonomy.moodScores : isRecord(originalTaxonomy.moods) ? originalTaxonomy.moods : isRecord(original.moodScores) ? original.moodScores : isRecord(original.moods) ? original.moods : {}
+    const invalidMoods = Object.entries(originalMoods).filter(([label, value]) => !resolveMoodId(label) || !Number.isInteger(number(value)) || number(value) < 1 || number(value) > 5).map(([id]) => id)
     if (invalidSecondary.length) issues.push({ severity: 'warning', code: 'invalid-secondary-genres', message: `허용되지 않는 보조 장르를 자동 제외했습니다: ${invalidSecondary.join(', ')}` })
     if (invalidSubgenres.length) issues.push({ severity: 'warning', code: 'invalid-subgenres', message: `허용되지 않는 세부 장르를 자동 제외했습니다: ${invalidSubgenres.join(', ')}` })
     if (invalidMoods.length) issues.push({ severity: 'warning', code: 'invalid-moods', message: `허용되지 않는 분위기 ID 또는 점수를 자동 제외했습니다: ${invalidMoods.join(', ')}` })
@@ -337,7 +362,7 @@ export function forceIntakeDraft(band: Band): Band {
 }
 
 export function buildGeminiResearchPrompt() {
-  const genreGuide = taxonomyGenres.map((genre) => `${genre.id}: ${genre.displayName} [${genre.subgenreIds.join(', ')}]`).join('\n')
-  const moodGuide = taxonomyMoods.map((mood) => `${mood.id}: ${mood.name}`).join('\n')
-  return `ROCK ATLAS에 추가할 록 밴드를 조사해 주세요. 사실은 신뢰할 수 있는 출처로 교차 확인하고, 모르는 값은 추측하지 말고 빈 문자열·빈 배열로 두세요. 최종 답변은 설명이나 마크다운 없이 아래 형식의 JSON 하나만 출력하세요. 영상 임베드는 조사하지 않으며 대표곡은 곡 정보와 일반 YouTube 링크 후보만 제공합니다. 분위기 점수는 장르 고정관념이 아니라 실제 대표곡의 청감 특성을 기준으로 1~5점 중 확실한 항목만 넣으세요.\n\n{\n  "schemaVersion": 1,\n  "bands": [{\n    "id": "영문-소문자-슬러그",\n    "name": "밴드명",\n    "formed": 1970,\n    "origin": "도시, 국가",\n    "countryCode": "GB",\n    "activeYears": "1970–현재",\n    "summary": "수치·연도·대표적 성취와 영향이 드러나는 한국어 소개",\n    "style": "리듬·기타·보컬·프로덕션·곡 전개가 구체적인 한국어 설명",\n    "tags": ["핵심 특징"],\n    "taxonomyV2": {\n      "primaryGenreId": "아래 허용 ID 중 하나",\n      "secondaryGenreIds": [],\n      "subgenreIds": ["아래 허용 세부 장르 ID"],\n      "moodScores": {"허용 분위기 ID": 1}\n    },\n    "members": [{"name":"이름","role":"역할","status":"current|former|touring","activeYears":"기간"}],\n    "representativeTracks": [{"title":"곡명","year":1970,"album":"앨범","guide":"왜 대표적인지와 들을 지점","url":"https://www.youtube.com/watch?v=..."}],\n    "relations": [{"targetBandId":"이미 ROCK ATLAS에 있는 밴드 ID일 때만","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"구체적 근거"}],\n    "wikidataId": "Q...",\n    "musicBrainzId": "UUID",\n    "wikipediaUrl": "https://...",\n    "sources": [{"label":"출처명","url":"https://...","publisher":"Wikipedia|Wikidata|MusicBrainz|Editorial"}]\n  }]\n}\n\n허용 장르와 세부 장르:\n${genreGuide}\n\n허용 분위기:\n${moodGuide}`
+  const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
+  const moodIdsText = taxonomyMoods.map((mood) => mood.id).join(', ')
+  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운, 코드펜스는 금지한다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다. 소개와 음악 설명은 한국어로 쓴다.\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["통용되는 한국어 또는 영문 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점 한 문장","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://..."}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다. 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
 }
