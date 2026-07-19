@@ -96,8 +96,7 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
         if (relationTargets.has(relation.targetBandId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: ${relation.targetBandId} 관계가 중복됩니다.` })
         relationTargets.add(relation.targetBandId)
       })
-      if (band.reviewStatus !== 'draft' && band.tracks.some((track) => !track.source.official)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 공개 상태지만 공식 확인되지 않은 영상이 있습니다.` })
-      if (band.reviewStatus !== 'draft' && band.tracks.some((track) => !track.source.embedStatus)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 임베드 상태가 확인되지 않은 영상이 있습니다.` })
+      if (band.reviewStatus !== 'draft' && band.tracks.some((track) => !/^https:\/\//.test(track.source.url))) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 열 수 없는 대표곡 외부 링크가 있습니다.` })
       if (band.reviewStatus !== 'draft' && band.image.credit.reviewStatus !== 'verified') issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 공개 상태지만 이미지 권리 검수가 필요합니다.` })
       if (band.reviewStatus !== 'draft' && !band.sources.some((source) => source.publisher === 'Wikidata' && source.externalId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: Wikidata 식별자가 없습니다.` })
       if (band.reviewStatus !== 'draft' && !band.sources.some((source) => source.publisher === 'MusicBrainz' && source.externalId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: MusicBrainz 식별자가 없습니다.` })
@@ -138,9 +137,9 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
     if (!response.ok) return setMessage(`복구 실패: ${await response.text()}`)
     window.location.reload()
   }
-  const updateTrack = (trackId: string, patch: Partial<Track>, sourcePatch?: Partial<Track['source']>) => {
+  const updateTrack = (trackId: string, patch: Partial<Track>) => {
     if (!selected) return
-    onUpdateBand({ ...selected, tracks: selected.tracks.map((track) => track.id === trackId ? { ...track, ...patch, source: { ...track.source, ...sourcePatch } } : track) })
+    onUpdateBand({ ...selected, tracks: selected.tracks.map((track) => track.id === trackId ? { ...track, ...patch } : track) })
   }
 
   return (
@@ -163,10 +162,10 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
 
         <details><summary><History size={14} /> 변경 이력 <em>{history.length}</em></summary><div className="studio-history-list">{history.length ? history.map((entry) => <div key={entry.id}><span><strong>{entry.label}</strong><small>{new Date(entry.createdAt).toLocaleString('ko-KR')} · {entry.count}개</small></span><button onClick={() => void restoreHistory(entry)}><RotateCcw size={13} /> 이 상태로 복구</button></div>) : <p>아직 저장 이력이 없습니다.</p>}</div></details>
 
-        <details open><summary><ShieldCheck size={14} /> 출처·영상 검수</summary>{selected ? <div className="studio-verification">
+        <details open><summary><ShieldCheck size={14} /> 출처·곡 링크 검수</summary>{selected ? <div className="studio-verification">
           <label>검수할 밴드<select value={selected.id} onChange={(event) => { const band = bands.find((item) => item.id === event.target.value); if (band) onSelectBand(band) }}>{bands.map((band) => <option key={band.id} value={band.id}>{band.name}</option>)}</select></label>
           <div className="studio-source-summary">{selected.sources.map((source) => <a key={`${source.publisher}-${source.url}`} href={source.url} target="_blank" rel="noreferrer"><strong>{source.publisher}</strong><span>{source.externalId ?? source.label}</span></a>)}</div>
-          <div className="studio-track-audit">{selected.tracks.map((track) => <div key={track.id}><span><strong>{track.title}</strong><small>{track.source.channelName ?? '채널 미입력'}</small></span><label><input type="checkbox" checked={Boolean(track.source.official)} onChange={(event) => updateTrack(track.id, {}, { official: event.target.checked })} /> 공식</label><select aria-label={`${track.title} 임베드 상태`} value={track.source.embedStatus ?? ''} onChange={(event) => updateTrack(track.id, {}, { embedStatus: event.target.value ? event.target.value as 'allowed' | 'blocked' : undefined, embedCheckedAt: event.target.value ? new Date().toISOString().slice(0, 10) : undefined })}><option value="">미확인</option><option value="allowed">허용</option><option value="blocked">직접 보기</option></select><select aria-label={`${track.title} 검수 상태`} value={track.reviewStatus} onChange={(event) => updateTrack(track.id, { reviewStatus: event.target.value as Track['reviewStatus'], reviewedAt: event.target.value === 'draft' ? undefined : new Date().toISOString().slice(0, 10), reviewedBy: event.target.value === 'draft' ? undefined : 'Studio operator' })}><option value="draft">초안</option><option value="reviewed">검수됨</option><option value="published">공개</option></select></div>)}</div>
+          <div className="studio-track-audit">{selected.tracks.map((track) => <div key={track.id}><span><strong>{track.title}</strong><small>{[track.album, track.year].filter(Boolean).join(' · ') || '곡 정보 확인 중'}</small></span><a href={track.source.url} target="_blank" rel="noreferrer">외부 링크 열기</a><select aria-label={`${track.title} 검수 상태`} value={track.reviewStatus} onChange={(event) => updateTrack(track.id, { reviewStatus: event.target.value as Track['reviewStatus'], reviewedAt: event.target.value === 'draft' ? undefined : new Date().toISOString().slice(0, 10), reviewedBy: event.target.value === 'draft' ? undefined : 'Studio operator' })}><option value="draft">초안</option><option value="reviewed">검수됨</option><option value="published">공개</option></select></div>)}</div>
         </div> : <p>검수할 밴드가 없습니다.</p>}</details>
       </div>
       <LinkHealthPanel bands={bands} onSelectBand={onSelectBand} />

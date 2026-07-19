@@ -1,6 +1,6 @@
 import type { Band, ReviewStatus, SourceRef } from '../types/music'
 
-export type ReviewCheckId = 'editorial' | 'identifiers' | 'image-rights' | 'official-videos' | 'relations'
+export type ReviewCheckId = 'editorial' | 'identifiers' | 'image-rights' | 'track-links' | 'relations'
 
 export interface ReviewCheck {
   id: ReviewCheckId
@@ -25,8 +25,8 @@ export interface CatalogReviewSummary {
   publishedBands: number
   readyBands: number
   totalTracks: number
-  officialTracks: number
-  embeddableTracks: number
+  reviewedTracks: number
+  validTrackLinks: number
   pendingTracks: number
   totalRelations: number
   pendingRelations: number
@@ -48,14 +48,8 @@ export function reviewBand(band: Band): BandReview {
     && Boolean(image.creator && (image.license === 'Public domain' || image.licenseUrl))
     && Boolean(image.reviewedAt)
     && /commons\.wikimedia\.org/.test(image.sourceUrl)
-  const pendingTracks = band.tracks.filter((track) =>
-    track.reviewStatus === 'draft'
-    || track.source.official !== true
-    || !track.source.embedStatus
-    || !track.source.embedCheckedAt,
-  )
-  const officialTracks = band.tracks.filter((track) => track.source.official === true)
-  const embeddableTracks = band.tracks.filter((track) => track.source.embedStatus === 'allowed')
+  const pendingTracks = band.tracks.filter((track) => track.reviewStatus === 'draft' || !/^https:\/\//.test(track.source.url))
+  const validTrackLinks = band.tracks.filter((track) => /^https:\/\//.test(track.source.url))
   const pendingRelations = band.relations.filter((relation) => relation.reviewStatus === 'draft' || !relation.source)
 
   const checks: ReviewCheck[] = [
@@ -82,12 +76,12 @@ export function reviewBand(band: Band): BandReview {
       detail: imageReady ? `${image.creator} · ${image.license}` : 'Commons 원본·저작자·라이선스 확인 필요',
     },
     {
-      id: 'official-videos',
-      label: '공식 영상 확인',
+      id: 'track-links',
+      label: '대표곡 정보·링크 확인',
       passed: pendingTracks.length === 0,
       detail: pendingTracks.length === 0
-        ? `공식 채널 ${officialTracks.length}개 · 임베드 허용 ${embeddableTracks.length}개 · 재생 목록 제외 ${band.tracks.length - embeddableTracks.length}개`
-        : `공식 채널 ${officialTracks.length}/${band.tracks.length} · 임베드 상태 검수 필요`,
+        ? `검수된 곡 ${band.tracks.length}개 · 외부 링크 ${validTrackLinks.length}개`
+        : `${pendingTracks.length}/${band.tracks.length}개 곡 정보·링크 확인 필요`,
     },
     {
       id: 'relations',
@@ -120,14 +114,9 @@ export function summarizeCatalogReview(bands: Band[]): CatalogReviewSummary {
     publishedBands: bands.filter((band) => band.reviewStatus === 'published').length,
     readyBands: reviews.filter((review) => review.readyToPublish).length,
     totalTracks: tracks.length,
-    officialTracks: tracks.filter((track) => track.source.official === true).length,
-    embeddableTracks: tracks.filter((track) => track.source.embedStatus === 'allowed').length,
-    pendingTracks: tracks.filter((track) =>
-      track.reviewStatus === 'draft'
-      || track.source.official !== true
-      || !track.source.embedStatus
-      || !track.source.embedCheckedAt,
-    ).length,
+    reviewedTracks: tracks.filter((track) => track.reviewStatus !== 'draft').length,
+    validTrackLinks: tracks.filter((track) => /^https:\/\//.test(track.source.url)).length,
+    pendingTracks: tracks.filter((track) => track.reviewStatus === 'draft' || !/^https:\/\//.test(track.source.url)).length,
     totalRelations: relations.length,
     pendingRelations: relations.filter((relation) => relation.reviewStatus === 'draft' || !relation.source).length,
     pendingImages: bands.filter((band) => band.image.credit.reviewStatus !== 'verified').length,

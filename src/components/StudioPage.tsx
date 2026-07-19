@@ -29,6 +29,22 @@ const moodGroupLabels: Record<MoodGroupId, string> = {
   listening: '구성과 감상 방식',
 }
 
+const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
+  'classic-roots-rock': 'classic-rock',
+  'hard-glam-rock': 'hard-rock',
+  'pop-soft-rock': 'classic-rock',
+  'progressive-art-psychedelic': 'progressive-art',
+  'punk-emo': 'punk-rock',
+  'indie-britpop-garage': 'britpop-indie',
+  'post-punk-goth-new-wave': 'alternative-indie',
+  'alternative-grunge': 'alternative-indie',
+  'shoegaze-dream-post': 'britpop-indie',
+  'traditional-power-thrash-metal': 'heavy-metal',
+  'folk-symphonic-metal': 'heavy-metal',
+  'extreme-metal': 'extreme-metal',
+  'modern-alternative-metal': 'heavy-metal',
+}
+
 const clone = <T,>(value: T): T => structuredClone(value)
 const splitList = (value: string) => value.split(',').map((item) => item.trim()).filter(Boolean)
 const slugify = (value: string) => value.toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -139,7 +155,7 @@ function parseTracks(value: string, current: Track[]): Track[] {
           channelType: undefined,
           embedStatus: undefined,
           embedCheckedAt: undefined,
-          note: '영상 변경됨 · 공식 채널과 외부 재생 재검수 필요',
+          note: '대표곡 외부 링크 변경됨 · 제목과 연결 대상 재검수 필요',
         } : existing.source,
       }
     }
@@ -156,7 +172,7 @@ function parseTracks(value: string, current: Track[]): Track[] {
         url: youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : 'https://www.youtube.com/',
         publisher: 'YouTube',
         official: false,
-        note: 'Studio에서 추가한 공식 채널·임베드 검수 대기 영상',
+        note: 'Studio에서 추가한 대표곡 외부 링크 · 연결 대상 검수 필요',
       },
     }
   })
@@ -279,10 +295,11 @@ export function StudioPage() {
 
   const taxonomyDraft = draft.taxonomyV2 ?? createTaxonomyDraft()
   const activeTaxonomyGenreIds = [taxonomyDraft.primaryGenreId, ...taxonomyDraft.secondaryGenreIds]
+  const taxonomyGenreDraftById = useMemo(() => Object.fromEntries(taxonomyGenreDrafts.map((genre) => [genre.id, genre])), [taxonomyGenreDrafts])
   const availableSubgenreIds = useMemo(() => {
-    const related = activeTaxonomyGenreIds.flatMap((id) => taxonomyGenreById[id]?.subgenreIds ?? [])
+    const related = activeTaxonomyGenreIds.flatMap((id) => taxonomyGenreDraftById[id]?.subgenreIds ?? [])
     return [...new Set([...related, ...taxonomyDraft.subgenreIds])]
-  }, [taxonomyDraft.primaryGenreId, taxonomyDraft.secondaryGenreIds, taxonomyDraft.subgenreIds])
+  }, [activeTaxonomyGenreIds, taxonomyDraft.subgenreIds, taxonomyGenreDraftById])
 
   const checks = completeness(draft)
   const passedChecks = checks.filter((check) => check.passed).length
@@ -293,7 +310,16 @@ export function StudioPage() {
   }
 
   const changeTaxonomy = (patch: Partial<BandTaxonomyV2>) => {
-    change({ taxonomyV2: { ...taxonomyDraft, ...patch, reviewStatus: patch.reviewStatus ?? 'draft' } })
+    const nextTaxonomy = { ...taxonomyDraft, ...patch, reviewStatus: patch.reviewStatus ?? 'draft' }
+    const legacyGenreIds = [...new Set([nextTaxonomy.primaryGenreId, ...nextTaxonomy.secondaryGenreIds].map((id) => legacyGenreByTaxonomy[id]))]
+    const primaryGenre = legacyGenreByTaxonomy[nextTaxonomy.primaryGenreId]
+    change({
+      taxonomyV2: nextTaxonomy,
+      primaryGenre,
+      genreIds: legacyGenreIds,
+      subgenres: nextTaxonomy.subgenreIds.map((id) => taxonomySubgenreById[id]?.name ?? id),
+      eraTags: draft.eraTags.map((tag) => ({ ...tag, genreIds: legacyGenreIds })),
+    })
   }
 
   const updateTaxonomyPrimary = (primaryGenreId: GenreTaxonomyId) => {
@@ -604,23 +630,23 @@ export function StudioPage() {
           </section>
 
           <section className="studio-form-section">
-            <div className="studio-section-heading"><span>02</span><div><h3>장르와 시대</h3><p>공개 목록에는 주 장르 한 곳에서만 등장하고, 나머지는 상세 교차점에 표시됩니다.</p></div></div>
-            <div className="studio-form-grid">
-              <label>주 장르<select value={draft.primaryGenre} onChange={(event) => updatePrimaryGenre(event.target.value as GenreId)}>{studioGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
-              <label>세부 장르<input value={draft.subgenres.join(', ')} onChange={(event) => change({ subgenres: splitList(event.target.value) })} placeholder="슈게이즈, 노이즈 팝" /></label>
-              <label className="studio-grid-span">핵심 태그<input value={draft.tags.join(', ')} onChange={(event) => change({ tags: splitList(event.target.value) })} placeholder="기타 질감, 변박, 스튜디오 실험" /></label>
-            </div>
-            <fieldset className="studio-checkboxes"><legend>상세 화면의 장르 교차점</legend>{studioGenres.map((genre) => <label key={genre.id}><input type="checkbox" checked={draft.genreIds.includes(genre.id)} disabled={genre.id === draft.primaryGenre} onChange={() => toggleSecondaryGenre(genre.id)} />{genre.name}</label>)}</fieldset>
+            <div className="studio-section-heading"><span>02</span><div><h3>활동 시대와 핵심 태그</h3><p>시대별 변화는 상세 화면과 시대 필터에 계속 사용됩니다. 장르 분류는 바로 아래의 새 탐색 분류에서 관리하세요.</p></div></div>
+            <label className="studio-wide-field">핵심 태그<input value={draft.tags.join(', ')} onChange={(event) => change({ tags: splitList(event.target.value) })} placeholder="기타 질감, 변박, 스튜디오 실험" /></label>
             <label className="studio-wide-field">시대별 분류 <small>한 줄에 시대 | 세부 장르 | 설명</small><textarea key={`${selectedId}-eras`} defaultValue={erasToText(draft.eraTags)} onBlur={(event) => change({ eraTags: parseEraTags(event.target.value, draft.genreIds, draft.eraTags) })} rows={4} placeholder="1990s | 얼터너티브 록, 아트 록 | 기타 중심에서 전자음향으로 확장" /></label>
+            <details className="legacy-taxonomy-fields"><summary>구형 8장르 호환 데이터 · 새 분류에서 자동 동기화됩니다</summary><div className="studio-form-grid">
+              <label>구형 주 장르<select value={draft.primaryGenre} onChange={(event) => updatePrimaryGenre(event.target.value as GenreId)}>{studioGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
+              <label>구형 표시용 세부 장르<input value={draft.subgenres.join(', ')} onChange={(event) => change({ subgenres: splitList(event.target.value) })} /></label>
+              <fieldset className="studio-checkboxes studio-grid-span"><legend>구형 장르 교차점</legend>{studioGenres.map((genre) => <label key={genre.id}><input type="checkbox" checked={draft.genreIds.includes(genre.id)} disabled={genre.id === draft.primaryGenre} onChange={() => toggleSecondaryGenre(genre.id)} />{genre.name}</label>)}</fieldset>
+            </div></details>
           </section>
 
           <section className="studio-form-section taxonomy-editor">
             <div className="studio-section-heading"><span>02B</span><div><h3>새 장르·분위기 탐색 분류</h3><p>13개 장르 화면과 느낌으로 찾기에 사용될 v2 분류입니다. 기존 분류는 전환이 끝날 때까지 함께 보존됩니다.</p></div></div>
             <div className="studio-form-grid">
-              <label>대표 장르<select value={taxonomyDraft.primaryGenreId} onChange={(event) => updateTaxonomyPrimary(event.target.value as GenreTaxonomyId)}>{taxonomyGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
+              <label>대표 장르<select value={taxonomyDraft.primaryGenreId} onChange={(event) => updateTaxonomyPrimary(event.target.value as GenreTaxonomyId)}>{taxonomyGenreDrafts.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
               <label>분류 검수 상태<select value={taxonomyDraft.reviewStatus} onChange={(event) => changeTaxonomy({ reviewStatus: event.target.value as BandTaxonomyV2['reviewStatus'] })}><option value="draft">초안 · 검토 필요</option><option value="reviewed">운영자 검수 완료</option></select></label>
             </div>
-            <fieldset className="studio-checkboxes taxonomy-genre-options"><legend>보조 상위 장르 · 기본 목록에는 중복 노출되지 않음</legend>{taxonomyGenres.map((genre) => <label key={genre.id}><input type="checkbox" checked={taxonomyDraft.secondaryGenreIds.includes(genre.id)} disabled={genre.id === taxonomyDraft.primaryGenreId} onChange={() => toggleTaxonomySecondary(genre.id)} />{genre.displayName}</label>)}</fieldset>
+            <fieldset className="studio-checkboxes taxonomy-genre-options"><legend>보조 상위 장르 · 기본 목록에는 중복 노출되지 않음</legend>{taxonomyGenreDrafts.map((genre) => <label key={genre.id}><input type="checkbox" checked={taxonomyDraft.secondaryGenreIds.includes(genre.id)} disabled={genre.id === taxonomyDraft.primaryGenreId} onChange={() => toggleTaxonomySecondary(genre.id)} />{genre.displayName}</label>)}</fieldset>
 
             <div className="taxonomy-subgenre-panel">
               <div><strong>관련 세부 장르</strong><small>대표·보조 장르에 속한 항목과 현재 선택된 교차 항목만 표시합니다.</small></div>
@@ -638,7 +664,7 @@ export function StudioPage() {
               <div className="mood-score-intro"><strong>분위기 점수</strong><small>0은 미지정, 3은 분명한 특징, 5는 핵심 정체성입니다. 의미 있는 분위기만 남기세요.</small></div>
               {(Object.keys(moodGroupLabels) as MoodGroupId[]).map((groupId) => (
                 <fieldset key={groupId}><legend>{moodGroupLabels[groupId]}</legend><div className="mood-score-grid">
-                  {taxonomyMoods.filter((mood) => mood.groupId === groupId).map((mood) => {
+                  {taxonomyMoodDrafts.filter((mood) => mood.groupId === groupId).map((mood) => {
                     const score = taxonomyDraft.moodScores[mood.id] ?? 0
                     return <label key={mood.id} className={score > 0 ? 'is-scored' : ''}><span><strong>{mood.name}</strong><em>{score}/5</em></span><small>{mood.description}</small><input type="range" min="0" max="5" step="1" value={score} onChange={(event) => updateMoodScore(mood.id, Number(event.target.value) as MoodScore)} aria-label={`${mood.name} 점수`} /></label>
                   })}
@@ -700,7 +726,7 @@ export function StudioPage() {
         </div>
       </div>
 
-      <footer className="studio-footer"><Link2 size={15} /> 자동 추천은 편집 후보이며, 영향·권리·공식 영상은 운영자가 출처를 확인한 뒤 승인합니다.</footer>
+      <footer className="studio-footer"><Link2 size={15} /> 자동 추천은 편집 후보이며, 영향 관계·이미지 권리·대표곡 외부 링크는 운영자가 확인한 뒤 승인합니다.</footer>
     </main>
   )
 }

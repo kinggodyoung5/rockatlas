@@ -9,9 +9,6 @@ const wikidataIds = new Set<string>()
 const musicBrainzIds = new Set<string>()
 const imageFiles = new Set<string>()
 const youtubeIds = new Set<string>()
-let officialTracks = 0
-let checkedEmbeds = 0
-let allowedEmbeds = 0
 let officialChannels = 0
 
 for (const band of bands) {
@@ -84,19 +81,6 @@ for (const band of bands) {
     if (track.source.url !== `https://www.youtube.com/watch?v=${track.youtubeId}`) errors.push(`${band.id}/${track.id}: YouTube ID와 출처 URL 불일치`)
     if (youtubeIds.has(track.youtubeId)) warnings.push(`${band.id}/${track.id}: 같은 YouTube 링크가 다른 대표곡에도 사용됨 (${track.youtubeId})`)
     youtubeIds.add(track.youtubeId)
-    if (track.source.official) {
-      officialTracks += 1
-      if (!track.source.channelName || !track.source.channelType) errors.push(`${band.id}/${track.id}: 공식 영상 채널 메타데이터 누락`)
-      if (!track.source.embedStatus || !track.source.embedCheckedAt) {
-        const message = `${band.id}/${track.id}: 임베드 검수 메타데이터 누락`
-        if (track.reviewStatus === 'draft') warnings.push(message)
-        else errors.push(message)
-      }
-      else {
-        checkedEmbeds += 1
-        if (track.source.embedStatus === 'allowed') allowedEmbeds += 1
-      }
-    }
   }
 
   const relationTargets = new Set<string>()
@@ -122,9 +106,8 @@ console.log('ROCK ATLAS 카탈로그 무결성 검사')
 console.log(`밴드 ${bands.length} · 장르 ${genres.length} · 트랙 ${bands.flatMap((band) => band.tracks).length} · 관계 ${bands.flatMap((band) => band.relations).length}`)
 console.log(`Wikidata ${wikidataIds.size}/${bands.length} · MusicBrainz ${musicBrainzIds.size}/${bands.length}`)
 console.log(`Commons 검수 이미지 ${imageFiles.size}/${bands.length}`)
-console.log(`YouTube 공식 채널 확인 ${officialTracks}/${youtubeIds.size}`)
+console.log(`대표곡 외부 링크 ${youtubeIds.size}/${bands.flatMap((band) => band.tracks).length}`)
 console.log(`밴드 공식 YouTube 링크 ${officialChannels}/${bands.length}`)
-console.log(`YouTube 임베드 상태 확인 ${checkedEmbeds}/${youtubeIds.size} · 허용 ${allowedEmbeds} · 재생 목록 제외 ${checkedEmbeds - allowedEmbeds}`)
 
 for (const warning of warnings) console.warn(`경고: ${warning}`)
 for (const error of errors) console.error(`오류: ${error}`)

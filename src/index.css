@@ -451,6 +451,10 @@ img { display: block; max-width: 100%; }
 .studio-checkboxes legend { padding: 0 6px; color: #777579; font-size: 9px; }
 .studio-checkboxes label { display: flex; align-items: center; gap: 6px; }
 .studio-checkboxes input { display: inline; width: 14px; height: 14px; margin: 0; accent-color: var(--orange); }
+.legacy-taxonomy-fields { margin-top: 18px; border: 1px solid #2a292e; background: #0b0b0d; }
+.legacy-taxonomy-fields > summary { padding: 13px 15px; color: #858287; cursor: pointer; font-weight: 800; }
+.legacy-taxonomy-fields > .studio-form-grid { padding: 0 15px 15px; }
+.legacy-taxonomy-fields .studio-checkboxes { margin-top: 4px; }
 .taxonomy-editor { border-color: color-mix(in srgb, var(--orange) 38%, var(--line)); }
 .taxonomy-subgenre-panel, .mood-score-editor { margin-top: 20px; padding: 18px; border: 1px solid #29282d; background: #0c0c0e; }
 .taxonomy-subgenre-panel > div:first-child, .mood-score-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 13px; }
@@ -664,12 +668,11 @@ img { display: block; max-width: 100%; }
 .studio-source-summary a strong, .studio-source-summary a span { display: block; }
 .studio-source-summary a span { margin-top: 3px; color: #666469; }
 .studio-track-audit { display: grid; gap: 6px; }
-.studio-track-audit > div { display: grid; grid-template-columns: minmax(120px, 1fr) auto 95px 85px; gap: 6px; align-items: center; padding: 8px; border: 1px solid #29282d; }
+.studio-track-audit > div { display: grid; grid-template-columns: minmax(120px, 1fr) auto 100px; gap: 8px; align-items: center; padding: 8px; border: 1px solid #29282d; }
 .studio-track-audit span strong, .studio-track-audit span small { display: block; }
 .studio-track-audit span strong { font-size: 9px; }
 .studio-track-audit span small { margin-top: 3px; color: #656368; font-size: 7px; }
-.studio-track-audit label { display: flex; align-items: center; gap: 4px; }
-.studio-track-audit input { display: inline; width: 13px; height: 13px; margin: 0; accent-color: var(--orange); }
+.studio-track-audit a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 9px; border: 1px solid #333137; color: #aaa8aa; background: #17171a; white-space: nowrap; }
 .studio-track-audit select { height: 32px; margin: 0; padding: 0 5px; font-size: 8px; }
 
 /* Link and image health */
