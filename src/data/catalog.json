@@ -3618,9 +3618,8 @@
       "origin": "애버딘, 미국",
       "countryCode": "US",
       "activeYears": "1987–1994",
-      "primaryGenre": "grunge",
+      "primaryGenre": "alternative-indie",
       "genreIds": [
-        "grunge",
         "alternative-indie",
         "punk-rock"
       ],
@@ -3649,7 +3648,6 @@
         {
           "era": "1990s",
           "genreIds": [
-            "grunge",
             "alternative-indie"
           ],
           "subgenres": [
@@ -3842,9 +3840,8 @@
       "origin": "시애틀, 미국",
       "countryCode": "US",
       "activeYears": "1990–현재",
-      "primaryGenre": "grunge",
+      "primaryGenre": "alternative-indie",
       "genreIds": [
-        "grunge",
         "alternative-indie"
       ],
       "tags": [
@@ -3861,7 +3858,6 @@
         {
           "era": "1990s",
           "genreIds": [
-            "grunge",
             "alternative-indie"
           ],
           "subgenres": [
@@ -4070,9 +4066,9 @@
       "origin": "시애틀, 미국",
       "countryCode": "US",
       "activeYears": "1987–현재",
-      "primaryGenre": "grunge",
+      "primaryGenre": "alternative-indie",
       "genreIds": [
-        "grunge",
+        "alternative-indie",
         "heavy-metal"
       ],
       "tags": [
@@ -4089,7 +4085,7 @@
         {
           "era": "1990s",
           "genreIds": [
-            "grunge",
+            "alternative-indie",
             "heavy-metal"
           ],
           "subgenres": [
@@ -4452,6 +4448,22 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "judas-priest",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "MTV 선정 역대 가장 위대한 메탈 밴드 랭킹에서 저더스 프리스트가 블랙 사바스의 뒤를 이어 2위로 평가됨",
+          "source": {
+            "label": "Judas Priest — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Judas_Priest",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-19",
+            "note": "They were ranked by MTV as the second \"Greatest Metal Band\" of all time (after Black Sabbath)"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
         }
       ],
       "reviewStatus": "reviewed",
@@ -7657,13 +7669,13 @@
       "origin": "글래스고, 스코틀랜드",
       "countryCode": "GB",
       "activeYears": "1990–현재",
-      "primaryGenre": "grunge",
-      "genreIds": ["grunge", "alternative-indie"],
+      "primaryGenre": "britpop-indie",
+      "genreIds": ["britpop-indie", "alternative-indie"],
       "tags": ["브릿팝", "서정성", "포스트 브릿팝"],
       "subgenres": ["포스트 브릿팝", "팝 록", "얼터너티브 록"],
       "eraTags": [
-        { "era": "1990s", "genreIds": ["grunge"], "subgenres": ["포스트 브릿팝", "얼터너티브 록"] },
-        { "era": "2000s", "genreIds": ["grunge"], "subgenres": ["포스트 브릿팝", "팝 록"] }
+        { "era": "1990s", "genreIds": ["britpop-indie"], "subgenres": ["포스트 브릿팝", "얼터너티브 록"] },
+        { "era": "2000s", "genreIds": ["britpop-indie"], "subgenres": ["포스트 브릿팝", "팝 록"] }
       ],
       "summary": "감성적이고 따뜻한 멜로디로 2000년대 포스트 브릿팝의 전성기를 개척한 밴드.",
       "style": "어쿠스틱한 기타 선율과 프란 힐리의 서정적이고 감미로운 보컬을 중심으로 편안한 사운드를 들려준다.",
@@ -7697,7 +7709,23 @@
           "reviewedAt": "2026-07-18"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "coldplay",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "미디어가 Travis(특히 앨범 The Man Who의 성공)가 Coldplay를 포함한 밴드들이 2000년대에 세계적인 성공을 거둘 수 있는 길을 닦은 것으로 평가.",
+          "source": {
+            "label": "Travis (band) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Travis_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-18"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
       "reviewStatus": "reviewed",
       "reviewedBy": "ROCK ATLAS editorial",
       "reviewedAt": "2026-07-18",
@@ -7797,13 +7825,13 @@
       "origin": "맨체스터, 잉글랜드",
       "countryCode": "GB",
       "activeYears": "1991–2009, 2024–현재",
-      "primaryGenre": "grunge",
-      "genreIds": ["grunge", "classic-rock"],
+      "primaryGenre": "britpop-indie",
+      "genreIds": ["britpop-indie", "classic-rock"],
       "tags": ["브릿팝", "맨체스터", "형제 갈등"],
       "subgenres": ["브릿팝", "록", "얼터너티브 록"],
       "eraTags": [
-        { "era": "1990s", "genreIds": ["grunge"], "subgenres": ["브릿팝"] },
-        { "era": "2000s", "genreIds": ["grunge", "classic-rock"], "subgenres": ["록"] }
+        { "era": "1990s", "genreIds": ["britpop-indie"], "subgenres": ["브릿팝"] },
+        { "era": "2000s", "genreIds": ["britpop-indie", "classic-rock"], "subgenres": ["록"] }
       ],
       "summary": "90년대 브릿팝 열풍의 중심이자, 영국의 시대정신을 대변했던 전설적인 록 밴드.",
       "style": "노엘 갤러거의 직관적이고 거대한 팝 멜로디와 리암 갤러거의 반항적이고 호소력 짙은 보컬, 묵직한 기타 레이어링이 특징이다.",
@@ -8167,6 +8195,585 @@
         { "label": "Kent — MusicBrainz", "url": "https://musicbrainz.org/artist/c2764f38-febf-4e47-a0d7-687980aabf38", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "c2764f38-febf-4e47-a0d7-687980aabf38", "note": "제출된 UUID는 오류 · 검증 후 정정" },
         { "label": "Kent 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Kent_-Stockholm_Music%26_Arts_2014-08-03_-_01.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "파일 페이지 직접 열람 실패 · 개별 확인 필요" },
         { "label": "Kent — 공식 YouTube", "url": "https://www.youtube.com/channel/UCe0K1KOjcBYIGu5prpZglSg", "publisher": "YouTube", "externalId": "UCe0K1KOjcBYIGu5prpZglSg", "official": true, "channelName": "kentchannel", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "coldplay",
+      "name": "Coldplay",
+      "formed": 1997,
+      "origin": "런던, 잉글랜드",
+      "countryCode": "GB",
+      "activeYears": "1997–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": ["alternative-indie"],
+      "tags": ["포스트 브릿팝", "감성 록", "스타디움 팝"],
+      "subgenres": ["얼터너티브 록", "팝 록", "포스트 브릿팝", "팝"],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["얼터너티브 록"]
+        },
+        {
+          "era": "2000s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["포스트 브릿팝", "팝 록"]
+        },
+        {
+          "era": "2010s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["팝 록", "팝"]
+        },
+        {
+          "era": "2020s",
+          "genreIds": ["alternative-indie"],
+          "subgenres": ["팝"]
+        }
+      ],
+      "summary": "서정적인 포스트 브릿팝 멜로디로 출발하여 세대의 장벽을 허물고 전 세계적 대형 스타디움 신화를 이룩한 대중적 록 밴드.",
+      "style": "크리스 마틴의 감성적인 보컬과 피아노 선율, 아름다운 기타 리프 중심의 사운드에서 점차 보편적이고 화려한 신스팝과 일렉트로닉 요소를 결합해 나갔다.",
+      "members": [
+        { "name": "Chris Martin", "role": "보컬·피아노", "status": "current" },
+        { "name": "Jonny Buckland", "role": "리드 기타", "status": "current" },
+        { "name": "Guy Berryman", "role": "베이스 기타", "status": "current" },
+        { "name": "Will Champion", "role": "드럼·퍼커션", "status": "current" },
+        { "name": "Phil Harvey", "role": "매니지먼트·크리에이티브 디렉터(비공식 5번째 멤버)", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "yellow",
+          "title": "Yellow",
+          "year": 2000,
+          "album": "Parachutes",
+          "youtubeId": "yKNxeF4KMsY",
+          "source": {
+            "label": "Yellow — YouTube",
+            "url": "https://www.youtube.com/watch?v=yKNxeF4KMsY",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Coldplay",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "the-scientist",
+          "title": "The Scientist",
+          "year": 2002,
+          "album": "A Rush of Blood to the Head",
+          "youtubeId": "WooCR9zMylg",
+          "source": {
+            "label": "The Scientist — YouTube",
+            "url": "https://www.youtube.com/watch?v=WooCR9zMylg",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Coldplay",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "travis",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "미디어가 Travis(특히 앨범 The Man Who의 성공)가 Coldplay를 포함한 밴드들이 2000년대에 세계적인 성공을 거둘 수 있는 길을 닦은 것으로 평가.",
+          "source": {
+            "label": "Travis (band) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Travis_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-18"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Coldplay",
+        "fileName": "Coldplay Glasto24 290624 (26) (53836754632) (cropped).jpg",
+        "alt": "Coldplay 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coldplay_Glasto24_290624_(26)_(53836754632)_(cropped).jpg",
+          "creator": "Raph_PH",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Coldplay — Wikipedia", "url": "https://en.wikipedia.org/wiki/Coldplay", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
+        { "label": "Coldplay — Wikidata", "url": "https://www.wikidata.org/wiki/Q45188", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q45188" },
+        { "label": "Coldplay — MusicBrainz", "url": "https://musicbrainz.org/artist/cc197bad-dc9c-440d-a5b5-d52ba2e14234", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "cc197bad-dc9c-440d-a5b5-d52ba2e14234" },
+        { "label": "Coldplay 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Coldplay_Glasto24_290624_(26)_(53836754632)_(cropped).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19" },
+        { "label": "Coldplay — 공식 YouTube", "url": "https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw", "publisher": "YouTube", "externalId": "UCDPM_n1atn2ijUwHd0NNRQw", "official": true, "channelName": "Coldplay", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "judas-priest",
+      "name": "Judas Priest",
+      "formed": 1969,
+      "origin": "버밍엄, 잉글랜드",
+      "countryCode": "GB",
+      "activeYears": "1969–1992, 1996–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": ["heavy-metal"],
+      "tags": ["메탈 갓", "트윈 기타", "가죽과 스터드"],
+      "subgenres": ["헤비 메탈"],
+      "eraTags": [
+        { "era": "1970s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
+        { "era": "1980s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
+        { "era": "1990s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
+        { "era": "2000s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
+        { "era": "2010s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] },
+        { "era": "2020s", "genreIds": ["heavy-metal"], "subgenres": ["헤비 메탈"] }
+      ],
+      "summary": "가죽 의상과 스터드 패션을 도입하고 트윈 기타 시스템을 정립하여 정통 헤비메탈의 표준을 제시한 '메탈 갓'.",
+      "style": "롭 핼포드의 폭발적인 4옥타브 고음 보컬과 글렌 팁턴, 리치 포크너가 전개하는 정밀하고 날카로운 트윈 기타 리프 및 솔로 배틀이 핵심이다.",
+      "members": [
+        { "name": "Rob Halford", "role": "보컬", "status": "current" },
+        { "name": "Glenn Tipton", "role": "기타·백보컬", "status": "current" },
+        { "name": "Ian Hill", "role": "베이스 기타·백보컬", "status": "current" },
+        { "name": "Scott Travis", "role": "드럼·퍼커션", "status": "current" },
+        { "name": "Richie Faulkner", "role": "기타·백보컬", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "breaking-the-law",
+          "title": "Breaking the Law",
+          "year": 1980,
+          "album": "British Steel",
+          "youtubeId": "oGEosFMtUw8",
+          "source": {
+            "label": "Breaking the Law — YouTube",
+            "url": "https://www.youtube.com/watch?v=oGEosFMtUw8",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Judas Priest",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "painkiller",
+          "title": "Painkiller",
+          "year": 1990,
+          "album": "Painkiller",
+          "youtubeId": "4s1gBIVOTtk",
+          "source": {
+            "label": "Painkiller — YouTube",
+            "url": "https://www.youtube.com/watch?v=4s1gBIVOTtk",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Judas Priest",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "black-sabbath",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "MTV 선정 역대 가장 위대한 메탈 밴드 랭킹에서 블랙 사바스의 뒤를 이어 2위로 평가됨",
+          "source": {
+            "label": "Judas Priest — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Judas_Priest",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-19",
+            "note": "They were ranked by MTV as the second \"Greatest Metal Band\" of all time (after Black Sabbath)"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Judas Priest",
+        "fileName": "JudasPriest.jpg",
+        "alt": "Judas Priest 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:JudasPriest.jpg",
+          "creator": "Zach Petersen",
+          "license": "CC BY-SA 2.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Judas Priest — Wikipedia", "url": "https://en.wikipedia.org/wiki/Judas_Priest", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
+        { "label": "Judas Priest — Wikidata", "url": "https://www.wikidata.org/wiki/Q83468", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q83468" },
+        { "label": "Judas Priest — MusicBrainz", "url": "https://musicbrainz.org/artist/6b335658-22c8-485d-93de-0bc29a1d0349", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "6b335658-22c8-485d-93de-0bc29a1d0349" },
+        { "label": "Judas Priest 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:JudasPriest.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ Commons 카테고리(Category:Judas_Priest) 목록 검색에서 이 파일명이 확인되지 않음 · 존재 여부·저작자·라이선스 전부 재검증 필요" },
+        { "label": "Judas Priest — 공식 YouTube", "url": "https://www.youtube.com/channel/UC48vpdaG8NDvEGLj11XPPZQ", "publisher": "YouTube", "externalId": "UC48vpdaG8NDvEGLj11XPPZQ", "official": true, "channelName": "Judas Priest", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "two-door-cinema-club",
+      "name": "Two Door Cinema Club",
+      "formed": 2007,
+      "origin": "뱅고어, 북아일랜드",
+      "countryCode": "GB",
+      "activeYears": "2007–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": ["britpop-indie", "alternative-indie"],
+      "tags": ["댄서블 인디", "청량함", "신스팝"],
+      "subgenres": ["인디 팝", "인디 록", "댄스 펑크", "신스팝", "포스트 펑크 리바이벌"],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": ["britpop-indie", "alternative-indie"],
+          "subgenres": ["인디 팝", "인디 록"]
+        },
+        {
+          "era": "2010s",
+          "genreIds": ["britpop-indie", "alternative-indie"],
+          "subgenres": ["인디 팝", "댄스 펑크", "신스팝"]
+        },
+        {
+          "era": "2020s",
+          "genreIds": ["britpop-indie", "alternative-indie"],
+          "subgenres": ["인디 록", "신스팝"]
+        }
+      ],
+      "summary": "경쾌하고 중독성 있는 기타 리프와 신시사이저 비트를 결합해 2010년대 초반 댄서블 인디 록 열풍을 주도한 밴드.",
+      "style": "알렉스 트림블의 깔끔한 보컬을 중심으로, 찰랑거리는 고음역대의 트윈 기타 사운드와 춤추기 좋은 업템포 일렉트로닉 리듬이 결합된 청량한 사운드가 특징이다.",
+      "members": [
+        { "name": "Alex Trimble", "role": "보컬·기타·신시사이저·피아노·키보드·드럼·퍼커션", "status": "current" },
+        { "name": "Kevin Baird", "role": "베이스 기타·신시사이저·보컬", "status": "current" },
+        { "name": "Sam Halliday", "role": "기타·신시사이저·보컬", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "what-you-know",
+          "title": "What You Know",
+          "year": 2011,
+          "album": "Tourist History",
+          "youtubeId": "YXwYJyrKK5A",
+          "source": {
+            "label": "What You Know — YouTube",
+            "url": "https://www.youtube.com/watch?v=YXwYJyrKK5A",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Two Door Cinema Club",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "undercover-martyn",
+          "title": "Undercover Martyn",
+          "year": 2010,
+          "album": "Tourist History",
+          "youtubeId": "zyCnbGik59g",
+          "source": {
+            "label": "Undercover Martyn — YouTube",
+            "url": "https://www.youtube.com/watch?v=zyCnbGik59g",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Two Door Cinema Club",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Two Door Cinema Club",
+        "fileName": "Two Door Cinema Club, Tufnell Park Dome, London (29312606633).jpg",
+        "alt": "Two Door Cinema Club 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Two_Door_Cinema_Club,_Tufnell_Park_Dome,_London_(29312606633).jpg",
+          "creator": "Drew de F Fawkes",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Two Door Cinema Club — Wikipedia", "url": "https://en.wikipedia.org/wiki/Two_Door_Cinema_Club", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 라인업 정보 확인" },
+        { "label": "Two Door Cinema Club — Wikidata", "url": "https://www.wikidata.org/wiki/Q777302", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q777302" },
+        { "label": "Two Door Cinema Club — MusicBrainz", "url": "https://musicbrainz.org/artist/6f1de078-6684-4792-820d-2ffad64c15ed", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "6f1de078-6684-4792-820d-2ffad64c15ed" },
+        { "label": "Two Door Cinema Club 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Two_Door_Cinema_Club,_Tufnell_Park_Dome,_London_(29312606633).jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19" },
+        { "label": "Two Door Cinema Club — 공식 YouTube", "url": "https://www.youtube.com/channel/UC21j22BUI19MJ6F8IrxnjJg", "publisher": "YouTube", "externalId": "UC21j22BUI19MJ6F8IrxnjJg", "official": true, "channelName": "Two Door Cinema Club", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "green-day",
+      "name": "Green Day",
+      "formed": 1987,
+      "origin": "로데오, 미국",
+      "countryCode": "US",
+      "activeYears": "1987–현재",
+      "primaryGenre": "punk-rock",
+      "genreIds": ["punk-rock", "alternative-indie"],
+      "tags": ["팝 펑크", "네오 펑크", "밀레니엄 록"],
+      "subgenres": ["팝 펑크", "펑크 록", "얼터너티브 록"],
+      "eraTags": [
+        { "era": "1990s", "genreIds": ["punk-rock", "alternative-indie"], "subgenres": ["팝 펑크", "펑크 록"] },
+        { "era": "2000s", "genreIds": ["alternative-indie", "punk-rock"], "subgenres": ["얼터너티브 록", "팝 펑크"] }
+      ],
+      "summary": "90년대 팝 펑크의 대중화를 이끌고 2000년대 록 오페라로 시대를 정의한 펑크 록의 아이콘.",
+      "style": "Billie Joe의 시원한 파워 코드 플레이와 중독성 강한 멜로디 훅, Mike Dirnt의 선명한 핑거링 베이스가 조화를 이룬다.",
+      "members": [
+        { "name": "Billie Joe Armstrong", "role": "보컬·기타", "status": "current" },
+        { "name": "Mike Dirnt", "role": "베이스", "status": "current" },
+        { "name": "Tré Cool", "role": "드럼", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "basket-case",
+          "title": "Basket Case",
+          "year": 1994,
+          "album": "Dookie",
+          "youtubeId": "NUTGr5t3MoY",
+          "source": {
+            "label": "Basket Case — YouTube",
+            "url": "https://www.youtube.com/watch?v=NUTGr5t3MoY",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Green Day",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "american-idiot",
+          "title": "American Idiot",
+          "year": 2004,
+          "album": "American Idiot",
+          "youtubeId": "Ee_uujKuJMI",
+          "source": {
+            "label": "American Idiot — YouTube",
+            "url": "https://www.youtube.com/watch?v=Ee_uujKuJMI",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Green Day",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Green Day",
+        "fileName": "Green Day on 3 Jun 2022.jpg",
+        "alt": "Green Day 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_Day_on_3_Jun_2022.jpg",
+          "creator": "Sven Mandel",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Green Day — Wikipedia", "url": "https://en.wikipedia.org/wiki/Green_Day", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
+        { "label": "Green Day — Wikidata", "url": "https://www.wikidata.org/wiki/Q47871", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q47871" },
+        { "label": "Green Day — MusicBrainz", "url": "https://musicbrainz.org/artist/084308bd-1654-436f-ba03-df6697104e19", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "084308bd-1654-436f-ba03-df6697104e19" },
+        { "label": "Green Day 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Green_Day_on_3_Jun_2022.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "Sven Mandel · CC BY-SA 4.0" },
+        { "label": "Green Day — 공식 YouTube", "url": "https://www.youtube.com/channel/UCqC_GY2ZiENFz2pwL0cSfAw", "publisher": "YouTube", "externalId": "UCqC_GY2ZiENFz2pwL0cSfAw", "official": true, "channelName": "Green Day", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "theory-of-a-deadman",
+      "name": "Theory of a Deadman",
+      "formed": 1999,
+      "origin": "델타, 캐나다",
+      "countryCode": "CA",
+      "activeYears": "1999–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": ["alternative-indie", "hard-rock"],
+      "tags": ["포스트 그런지", "묵직한 그루브", "캐나디안 록"],
+      "subgenres": ["포스트 그런지", "하드 록", "얼터너티브 록"],
+      "eraTags": [
+        { "era": "2000s", "genreIds": ["alternative-indie", "hard-rock"], "subgenres": ["포스트 그런지", "하드 록"] },
+        { "era": "2010s", "genreIds": ["alternative-indie"], "subgenres": ["얼터너티브 록"] }
+      ],
+      "summary": "Nickelback의 차드 크로거가 발굴한, 2000년대 포스트 그런지 부흥을 이끈 캐나다 출신 하드 록 밴드.",
+      "style": "Tyler Connolly의 선명한 보컬과 포스트 그런지 특유의 묵직하고 리드미컬한 기타 리프가 중심을 이룬다.",
+      "members": [
+        { "name": "Tyler Connolly", "role": "보컬·기타", "status": "current" },
+        { "name": "Dave Brenner", "role": "기타", "status": "current" },
+        { "name": "Dean Back", "role": "베이스", "status": "current" },
+        { "name": "Joey Dandeneau", "role": "드럼", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "bad-girlfriend",
+          "title": "Bad Girlfriend",
+          "year": 2008,
+          "album": "Scars & Souvenirs",
+          "youtubeId": "9YrWsmlJSiw",
+          "source": {
+            "label": "Bad Girlfriend — YouTube",
+            "url": "https://www.youtube.com/watch?v=9YrWsmlJSiw",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "THEORY",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "rx-medicate",
+          "title": "Rx (Medicate)",
+          "year": 2017,
+          "album": "Wake Up Call",
+          "youtubeId": "iwxfmYR7ItM",
+          "source": {
+            "label": "Rx (Medicate) — YouTube",
+            "url": "https://www.youtube.com/watch?v=iwxfmYR7ItM",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "THEORY",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Theory of a Deadman",
+        "fileName": "Theory of a Deadman performing.jpg",
+        "alt": "Theory of a Deadman 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theory_of_a_Deadman_performing.jpg",
+          "creator": "Patricia H.",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Theory of a Deadman — Wikipedia", "url": "https://en.wikipedia.org/wiki/Theory_of_a_Deadman", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
+        { "label": "Theory of a Deadman — Wikidata", "url": "https://www.wikidata.org/wiki/Q977214", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q977214" },
+        { "label": "Theory of a Deadman — MusicBrainz", "url": "https://musicbrainz.org/artist/183e636e-d41c-43fe-a428-8a034eb20c7b", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "183e636e-d41c-43fe-a428-8a034eb20c7b" },
+        { "label": "Theory of a Deadman 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Theory_of_a_Deadman_performing.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ 검색 중 \"Theory of a Deadman performing at Rock, White & Blue in 2018.jpg\"라는 더 구체적인 제목의 파일이 발견됨 — 제출된 파일명이 그 축약/오기일 가능성이 있어 재검증 필요" },
+        { "label": "Theory of a Deadman — 공식 YouTube", "url": "https://www.youtube.com/channel/UCcFUPGt_tgcP5iMxiBDsXoA", "publisher": "YouTube", "externalId": "UCcFUPGt_tgcP5iMxiBDsXoA", "official": true, "channelName": "THEORY", "channelType": "artist", "accessedAt": "2026-07-19" }
+      ]
+    },
+    {
+      "id": "bon-jovi",
+      "name": "Bon Jovi",
+      "formed": 1983,
+      "origin": "세어빌, 미국",
+      "countryCode": "US",
+      "activeYears": "1983–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": ["hard-rock"],
+      "tags": ["팝 메탈", "스타디움 록", "떼창 유도"],
+      "subgenres": ["글램 메탈", "하드 록", "아레나 록"],
+      "eraTags": [
+        { "era": "1980s", "genreIds": ["hard-rock"], "subgenres": ["글램 메탈", "하드 록"] },
+        { "era": "1990s", "genreIds": ["hard-rock"], "subgenres": ["아레나 록", "하드 록"] },
+        { "era": "2000s", "genreIds": ["hard-rock"], "subgenres": ["팝 록", "하드 록"] }
+      ],
+      "summary": "대중적인 멜로디와 압도적인 스타디움 스케일로 80년대 글램 메탈과 아레나 록의 전성기를 이끈 주역.",
+      "style": "Jon Bon Jovi의 시원한 보컬과 친숙한 팝 감각의 멜로디 훅, 화려하면서도 대중적인 기타 리프가 결합된 사운드가 특징이다.",
+      "members": [
+        { "name": "Jon Bon Jovi", "role": "보컬·기타", "status": "current" },
+        { "name": "David Bryan", "role": "키보드", "status": "current" },
+        { "name": "Tico Torres", "role": "드럼", "status": "current" },
+        { "name": "Phil X", "role": "기타", "status": "current" },
+        { "name": "Hugh McDonald", "role": "베이스", "status": "current" }
+      ],
+      "tracks": [
+        {
+          "id": "livin-on-a-prayer",
+          "title": "Livin' On A Prayer",
+          "year": 1986,
+          "album": "Slippery When Wet",
+          "youtubeId": "zi3hItzxRwg",
+          "source": {
+            "label": "Livin' On A Prayer — YouTube",
+            "url": "https://www.youtube.com/watch?v=zi3hItzxRwg",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Bon Jovi",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        },
+        {
+          "id": "its-my-life",
+          "title": "It's My Life",
+          "year": 2000,
+          "album": "Crush",
+          "youtubeId": "vx2u5uUu3DE",
+          "source": {
+            "label": "It's My Life — YouTube",
+            "url": "https://www.youtube.com/watch?v=vx2u5uUu3DE",
+            "publisher": "YouTube",
+            "accessedAt": "2026-07-19",
+            "channelName": "Bon Jovi",
+            "channelType": "artist"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-19"
+        }
+      ],
+      "relations": [],
+      "reviewStatus": "reviewed",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-07-19",
+      "image": {
+        "wikipediaTitle": "Bon Jovi",
+        "fileName": "Bon_Jovi_1.jpg",
+        "alt": "Bon Jovi 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1.jpg",
+          "creator": "확인 필요",
+          "license": "확인 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "sources": [
+        { "label": "Bon Jovi — Wikipedia", "url": "https://en.wikipedia.org/wiki/Bon_Jovi", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "기본 이력 및 멤버 정보 교차 확인" },
+        { "label": "본 조비 — 위키백과", "url": "https://ko.wikipedia.org/wiki/%EB%B3%B8_%EC%A1%B0%EB%B9%84", "publisher": "Wikipedia", "accessedAt": "2026-07-19", "note": "Bryan Adams 관계 근거 문장 출처(한국어판)" },
+        { "label": "Bon Jovi — Wikidata", "url": "https://www.wikidata.org/wiki/Q259254", "publisher": "Wikidata", "accessedAt": "2026-07-19", "externalId": "Q259254", "note": "제출된 Q9070은 오류 · 검증 후 정정" },
+        { "label": "Bon Jovi — MusicBrainz", "url": "https://musicbrainz.org/artist/5dcdb5eb-cb72-4e6e-9e63-b7bace604965", "publisher": "MusicBrainz", "accessedAt": "2026-07-19", "externalId": "5dcdb5eb-cb72-4e6e-9e63-b7bace604965" },
+        { "label": "Bon Jovi 이미지 — Wikimedia Commons", "url": "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1.jpg", "publisher": "Wikimedia Commons", "accessedAt": "2026-07-19", "note": "⚠ 검색으로 이 파일명의 존재를 확인하지 못함 · 저작자·라이선스 포함 전체 재검증 필요" },
+        { "label": "Bon Jovi — 공식 YouTube", "url": "https://www.youtube.com/channel/UCkBwnm7GOfYHsacwUjriC-w", "publisher": "YouTube", "externalId": "UCkBwnm7GOfYHsacwUjriC-w", "official": true, "channelName": "Bon Jovi", "channelType": "artist", "accessedAt": "2026-07-19" }
       ]
     }
   ]

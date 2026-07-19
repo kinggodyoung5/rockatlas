@@ -4,7 +4,7 @@ export type GenreId =
   | 'progressive-art'
   | 'punk-rock'
   | 'alternative-indie'
-  | 'grunge'
+  | 'britpop-indie'
   | 'heavy-metal'
   | 'extreme-metal'
 
