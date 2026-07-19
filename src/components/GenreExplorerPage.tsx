@@ -28,7 +28,7 @@ export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favorite
   return (
     <main id="top" className="catalog-page" tabIndex={-1} style={{ '--active-genre': genre.color } as React.CSSProperties}>
       <section className="catalog-hero shell">
-        <button className="catalog-back" onClick={onBack}><ArrowLeft size={16} /> 장르 나침반</button>
+        <button className="catalog-back" onClick={onBack}><ArrowLeft size={16} /> 이전 페이지</button>
         <span className="section-no">GENRE {String(genre.order).padStart(2, '0')}</span>
         <h1>{genre.name}</h1><p>{genre.description}</p><strong>{genre.vibeDescription}</strong>
       </section>

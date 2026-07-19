@@ -46,7 +46,7 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
   return (
     <main className="detail-page" style={{ '--genre-color': genreColor } as React.CSSProperties}>
       <div className="detail-topbar shell">
-        <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 전체 목록</button>
+        <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 이전 페이지</button>
         <span>ROCK ATLAS / {(taxonomyGenre?.englishName ?? genre.englishName).toUpperCase()}</span>
       </div>
 

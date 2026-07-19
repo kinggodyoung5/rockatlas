@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowRight, Compass, Menu, Share2, Shuffle, X } from 'lucide-react'
 import { AllBandsPage } from './components/AllBandsPage'
 import { BandDetail } from './components/BandDetail'
@@ -34,15 +34,28 @@ function getBandFromHash() {
 
 function ExplorerApp() {
   const [route, setRoute] = useState<ExplorerRoute>(() => parseExplorerRoute())
+  const routeRef = useRef(route)
   const [selectedBand, setSelectedBand] = useState<Band | null>(() => getBandFromHash())
   const [mobileMenu, setMobileMenu] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const { favoriteIds, historyIds, toggleFavorite, recordVisit, clearHistory } = useExplorerState()
 
   useEffect(() => {
-    const onPopState = () => {
-      setRoute(parseExplorerRoute())
+    window.history.scrollRestoration = 'manual'
+    const onPopState = (event: PopStateEvent) => {
+      const nextRoute = parseExplorerRoute()
+      routeRef.current = nextRoute
+      setRoute(nextRoute)
       setSelectedBand(getBandFromHash())
+      const savedScrollY = typeof event.state?.rockAtlasScrollY === 'number' ? event.state.rockAtlasScrollY : 0
+      const restoreScroll = () => {
+        const previousBehavior = document.documentElement.style.scrollBehavior
+        document.documentElement.style.scrollBehavior = 'auto'
+        window.scrollTo(0, savedScrollY)
+        document.documentElement.style.scrollBehavior = previousBehavior
+      }
+      window.requestAnimationFrame(() => window.requestAnimationFrame(restoreScroll))
+      window.setTimeout(restoreScroll, 180)
     }
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
@@ -53,12 +66,13 @@ function ExplorerApp() {
   }, [recordVisit, selectedBand])
 
   const updateRoute = useCallback((patch: Partial<ExplorerRoute>, replace = false) => {
-    setRoute((current) => {
-      const next = { ...current, ...patch }
-      const url = `${window.location.pathname}${routeToSearch(next)}`
-      window.history[replace ? 'replaceState' : 'pushState']({}, '', url)
-      return next
-    })
+    const next = { ...routeRef.current, ...patch }
+    routeRef.current = next
+    const url = `${window.location.pathname}${routeToSearch(next)}`
+    if (!replace) window.history.replaceState({ ...window.history.state, rockAtlasScrollY: window.scrollY }, '', window.location.href)
+    const state = replace ? window.history.state : { rockAtlasNavigation: true, rockAtlasScrollY: 0 }
+    window.history[replace ? 'replaceState' : 'pushState'](state, '', url)
+    setRoute(next)
     setSelectedBand(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -67,15 +81,27 @@ function ExplorerApp() {
   const goGenre = useCallback((genreId: GenreTaxonomyId) => updateRoute({ ...defaultRoute(), view: 'genre', genreId }), [updateRoute])
   const goBands = useCallback(() => updateRoute({ ...defaultRoute(), view: 'bands' }), [updateRoute])
   const goMoods = useCallback(() => updateRoute({ ...defaultRoute(), view: 'moods' }), [updateRoute])
+  const goBackToPreviousPage = useCallback(() => {
+    if (window.history.state?.rockAtlasNavigation) {
+      window.history.back()
+      return
+    }
+    updateRoute(defaultRoute(), true)
+  }, [updateRoute])
 
   const openBand = useCallback((band: Band) => {
-    window.history.pushState({ bandId: band.id }, '', `${window.location.pathname}${window.location.search}#band=${encodeURIComponent(band.id)}`)
+    window.history.replaceState({ ...window.history.state, rockAtlasScrollY: window.scrollY }, '', window.location.href)
+    window.history.pushState({ rockAtlasNavigation: true, rockAtlasScrollY: 0, bandId: band.id }, '', `${window.location.pathname}${window.location.search}#band=${encodeURIComponent(band.id)}`)
     setSelectedBand(band)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
   const closeBand = useCallback(() => {
-    window.history.pushState({}, '', `${window.location.pathname}${window.location.search}`)
+    if (window.history.state?.rockAtlasNavigation) {
+      window.history.back()
+      return
+    }
+    window.history.replaceState({}, '', `${window.location.pathname}${window.location.search}`)
     setSelectedBand(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -127,9 +153,9 @@ function ExplorerApp() {
 
   const activeGenreId = route.genreId === 'all' ? taxonomyGenres[0].id : route.genreId
   const content = route.view === 'home' ? homeMain
-    : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goHome} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId })} />
-      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} onFilter={(patch, replace) => updateRoute(patch, replace)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
-        : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} onFilter={(patch) => updateRoute(patch)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+    : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goBackToPreviousPage} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId }, true)} />
+      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+        : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
   return (
