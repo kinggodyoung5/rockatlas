@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T09:07:02.652Z",
+  "updatedAt": "2026-07-21T09:39:17.129Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -1027,22 +1027,26 @@
         {
           "name": "Angus Young",
           "role": "리드 기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1973–present"
         },
         {
           "name": "Brian Johnson",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1980–present"
         },
         {
           "name": "Malcolm Young",
           "role": "리듬 기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1973–2014"
         },
         {
           "name": "Phil Rudd",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1974–1983, 1994–present"
         }
       ],
       "tracks": [
@@ -1066,7 +1070,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "앵거스 영의 상징적인 오프닝 기타 리프로 시작해, 브라이언 존슨이 본 스콧의 뒤를 이어 데뷔한 앨범의 타이틀곡답게 강렬한 첫인상을 남긴다."
         },
         {
           "id": "highway-to-hell",
@@ -1088,7 +1093,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "본 스콧의 마지막 스튜디오 앨범 타이틀곡으로, 단순하지만 중독적인 리프와 후렴구 떼창이 하드 록의 정수를 보여준다."
         }
       ],
       "relations": [
@@ -1142,8 +1148,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "AC/DC",
         "fileName": "AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_(4238680962).jpg",
@@ -4447,22 +4453,26 @@
         {
           "name": "Jerry Cantrell",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         },
         {
           "name": "William DuVall",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2006–present"
         },
         {
           "name": "Sean Kinney",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         },
         {
           "name": "Layne Staley",
           "role": "보컬",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1987–2002"
         }
       ],
       "tracks": [
@@ -4486,7 +4496,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "제리 캔트렐의 와우 페달 기타 톤과 레인 스탤리의 낮게 깔린 보컬이 그런지 특유의 어두운 사운드를 정의한 대표곡이다."
         },
         {
           "id": "would",
@@ -4508,7 +4519,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "영화 「싱글즈」 사운드트랙에도 삽입된 곡으로, 무겁게 짓누르는 리프와 캔트렐·스탤리의 이중창 하모니가 특징이다."
         }
       ],
       "relations": [
@@ -4562,8 +4574,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Alice in Chains",
         "fileName": "Alice_in_Chains_2019.jpg",
@@ -4692,22 +4704,26 @@
         {
           "name": "Ozzy Osbourne",
           "role": "보컬",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1979, 1997–2006, 2011–2017, 2025"
         },
         {
           "name": "Tony Iommi",
           "role": "기타",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–2017, 2025"
         },
         {
           "name": "Geezer Butler",
           "role": "베이스",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1984, 1990–1994, 1997–2017, 2025"
         },
         {
           "name": "Bill Ward",
           "role": "드럼",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1980, 1997–2006, 2011–2012"
         }
       ],
       "tracks": [
@@ -4731,7 +4747,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "토니 아이오미의 속도감 있는 리프 위로 오지 오스본의 절박한 보컬이 얹히는, 헤비메탈이라는 장르의 원형을 만든 3분짜리 곡이다."
         },
         {
           "id": "war-pigs",
@@ -4753,7 +4770,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "사이렌 소리와 느릿한 둠 리프로 문을 열고 반전(反戰) 메시지를 담은 가사로 이어지는, 서사적 구성의 오프닝 트랙이다."
         }
       ],
       "relations": [
@@ -4823,8 +4841,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Black Sabbath",
         "fileName": "Sabs.jpg",
@@ -5935,17 +5953,20 @@
         {
           "name": "Chuck Schuldiner",
           "role": "보컬·기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1983–2001"
         },
         {
           "name": "Gene Hoglan",
           "role": "드럼",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1993–1995"
         },
         {
           "name": "Steve Di Giorgio",
           "role": "베이스",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1986, 1991, 1993, 1995"
         }
       ],
       "tracks": [
@@ -5969,7 +5990,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "척 슐다이너의 날카로운 트레몰로 리프와 급격한 템포 변화가 초기 데스메탈의 형태를 확립한 트랙이다."
         },
         {
           "id": "lack-comprehension",
@@ -5991,7 +6013,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "앨범 'Leprosy' 수록곡으로, 원시적이면서도 구조적인 리프 전개가 초기 데스메탈의 원형을 보여준다."
         }
       ],
       "relations": [
@@ -6045,8 +6068,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Death_(metal_band)",
         "fileName": "Death_Mexico_06-89.jpg",
@@ -6176,22 +6199,26 @@
         {
           "name": "Alexi Laiho",
           "role": "보컬·기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1993–2019"
         },
         {
           "name": "Janne Wirman",
           "role": "키보드",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1997–2019"
         },
         {
           "name": "Henkka Seppälä",
           "role": "베이스",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1996–2019"
         },
         {
           "name": "Jaska Raatikainen",
           "role": "드럼",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1993–2019"
         }
       ],
       "tracks": [
@@ -6215,7 +6242,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "얀네 비르만의 클래식·재즈 영향이 묻어나는 키보드 솔로와 알렉시 라이호의 속주 기타가 교차하는 멜로딕 데스메탈 트랙이다."
         },
         {
           "id": "downfall",
@@ -6237,7 +6265,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "동명 앨범의 타이틀곡으로, 공격적인 더블 베이스 드럼과 서정적인 키보드 멜로디의 대비가 돋보인다."
         }
       ],
       "relations": [
@@ -6291,8 +6320,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Children of Bodom",
         "fileName": "Children_of_Bodom_Rockharz_2016_16.jpg",
@@ -9575,27 +9604,32 @@
         {
           "name": "Chris Martin",
           "role": "보컬·피아노",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1996–present"
         },
         {
           "name": "Jonny Buckland",
           "role": "리드 기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1996–present"
         },
         {
           "name": "Guy Berryman",
           "role": "베이스 기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1997–present"
         },
         {
           "name": "Will Champion",
           "role": "드럼·퍼커션",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1998–present"
         },
         {
           "name": "Phil Harvey",
           "role": "매니지먼트·크리에이티브 디렉터(비공식 5번째 멤버)",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1996–present"
         }
       ],
       "tracks": [
@@ -9615,7 +9649,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "잔잔한 기타 아르페지오로 시작해 크리스 마틴의 진심 어린 보컬로 이어지는, 밴드를 세계적으로 알린 데뷔 히트곡이다."
         },
         {
           "id": "the-scientist",
@@ -9633,7 +9668,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "피아노 발라드 형식의 곡으로, 역재생 뮤직비디오로도 유명하며 밴드의 서정적인 면모를 대표한다."
         }
       ],
       "relations": [
@@ -9654,8 +9690,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Coldplay",
         "fileName": "Coldplay Glasto24 290624 (26) (53836754632) (cropped).jpg",
@@ -10590,27 +10626,32 @@
         {
           "name": "Jon Bon Jovi",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "David Bryan",
           "role": "키보드",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Tico Torres",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Phil X",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2013–present"
         },
         {
           "name": "Hugh McDonald",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1994–present"
         }
       ],
       "tracks": [
@@ -10630,7 +10671,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "토미와 지나라는 두 노동자 계급 연인의 이야기를 담은 가사와 토크박스 기타 인트로, 폭발적으로 치솟는 후렴구가 밴드의 대표곡을 완성한다."
         },
         {
           "id": "its-my-life",
@@ -10648,13 +10690,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "2000년대 들어 밴드를 다시 주류로 복귀시킨 곡으로, 신스와 기타가 어우러진 앤섬형 후렴구가 특징이다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "Bon Jovi",
         "fileName": "Bon_Jovi_1.jpg",
@@ -10791,8 +10834,8 @@
           "reviewedAt": "2026-07-21T08:42:40.279Z"
         },
         "fileName": "File:DreamTheater2011.jpg",
-        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/DreamTheater2011.jpg",
-        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/DreamTheater2011.jpg"
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/DreamTheater2011.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/DreamTheater2011.jpg/960px-DreamTheater2011.jpg"
       },
       "members": [
         {
