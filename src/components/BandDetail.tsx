@@ -143,11 +143,11 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           <div className="member-columns">
             <div>
               <h3>현재 / 후기 라인업</h3>
-              {currentMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.status === 'touring' ? ' · 투어' : ''}</span></p>)}
+              {currentMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.activeYears ? ` · ${member.activeYears}` : ''}{member.status === 'touring' ? ' · 투어' : ''}</span></p>)}
             </div>
             {formerMembers.length > 0 && <div>
               <h3>과거 핵심 멤버</h3>
-              {formerMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}</span></p>)}
+              {formerMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.activeYears ? ` · ${member.activeYears}` : ''}</span></p>)}
             </div>}
           </div>
         </section>

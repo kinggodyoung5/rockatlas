@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T09:50:40.249Z",
+  "updatedAt": "2026-07-21T10:36:03.268Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -10114,17 +10114,17 @@
       "members": [
         {
           "name": "Alex Trimble",
-          "role": "보컬·기타·신시사이저·피아노·키보드·드럼·퍼커션",
+          "role": "리드 보컬·기타·신시사이저·피아노·키보드·드럼·퍼커션",
           "status": "current"
         },
         {
           "name": "Kevin Baird",
-          "role": "베이스 기타·신시사이저·보컬",
+          "role": "베이스 기타·신시사이저·백보컬",
           "status": "current"
         },
         {
           "name": "Sam Halliday",
-          "role": "기타·신시사이저·보컬",
+          "role": "기타·신시사이저·백보컬",
           "status": "current"
         }
       ],
@@ -10168,8 +10168,8 @@
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:36:03.268Z",
       "image": {
         "wikipediaTitle": "Two Door Cinema Club",
         "fileName": "Two Door Cinema Club, Tufnell Park Dome, London (29312606633).jpg",
@@ -10893,43 +10893,43 @@
       "members": [
         {
           "name": "John Petrucci",
-          "role": "Guitar, Backing Vocals",
+          "role": "기타·백보컬",
           "status": "current",
           "activeYears": "1985–present"
         },
         {
           "name": "John Myung",
-          "role": "Bass",
+          "role": "베이스",
           "status": "current",
           "activeYears": "1985–present"
         },
         {
           "name": "James LaBrie",
-          "role": "Lead Vocals",
+          "role": "리드 보컬",
           "status": "current",
           "activeYears": "1991–present"
         },
         {
           "name": "Jordan Rudess",
-          "role": "Keyboards",
+          "role": "키보드",
           "status": "current",
           "activeYears": "1999–present"
         },
         {
           "name": "Mike Portnoy",
-          "role": "Drums, Backing Vocals",
+          "role": "드럼·백보컬",
           "status": "current",
           "activeYears": "1985–2010, 2023–present"
         },
         {
           "name": "Mike Mangini",
-          "role": "Drums",
+          "role": "드럼",
           "status": "former",
           "activeYears": "2010–2023"
         },
         {
           "name": "Kevin Moore",
-          "role": "Keyboards",
+          "role": "키보드",
           "status": "former",
           "activeYears": "1985–1994"
         }
@@ -11053,7 +11053,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T08:42:40.279Z"
+      "reviewedAt": "2026-07-21T10:36:03.268Z"
     },
     {
       "id": "deep-purple",
@@ -11324,31 +11324,31 @@
       "members": [
         {
           "name": "Steve Garrigan",
-          "role": "Lead Vocals, Piano, Guitar",
+          "role": "리드 보컬·피아노·기타",
           "status": "current",
           "activeYears": "2005–present"
         },
         {
           "name": "Mark Prendergast",
-          "role": "Guitar, Keyboards, Backing Vocals",
+          "role": "기타·키보드·백보컬",
           "status": "current",
           "activeYears": "2005–present"
         },
         {
           "name": "Vincent May",
-          "role": "Drums, Percussion, Backing Vocals",
+          "role": "드럼·퍼커션·백보컬",
           "status": "current",
           "activeYears": "2005–present"
         },
         {
           "name": "Jason Boland",
-          "role": "Bass, Backing Vocals",
+          "role": "베이스·백보컬",
           "status": "current",
           "activeYears": "2012–present"
         },
         {
           "name": "Conor Linnane",
-          "role": "Bass",
+          "role": "베이스",
           "status": "former",
           "activeYears": "2005–2011"
         }
@@ -11452,7 +11452,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T09:07:02.652Z"
+      "reviewedAt": "2026-07-21T10:36:03.268Z"
     }
   ]
 }
