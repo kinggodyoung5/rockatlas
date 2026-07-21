@@ -266,7 +266,9 @@ function normalizeBand(value: unknown, index: number): Band | null {
   const legacy = legacyGenreIds.includes(requestedLegacy) ? requestedLegacy : requestedTaxonomy ? legacyByTaxonomy[requestedTaxonomy] : 'classic-rock'
   const taxonomyV2 = normalizeTaxonomy(value, legacy)
   const taxonomySubgenreNames = taxonomyV2.subgenreIds.map((id) => taxonomySubgenres.find((item) => item.id === id)?.name).filter((item): item is string => Boolean(item))
-  const subgenres = [...new Set([...stringList(value.subgenres), ...taxonomySubgenreNames])]
+  // Use only the resolved official (Korean) subgenre names here — mixing in Gemini's raw input duplicated every
+  // subgenre as an English/Korean pair whenever the raw value didn't exactly match the canonical name.
+  const subgenres = [...new Set(taxonomySubgenreNames)]
   const id = slugify(text(value.id) || name) || `intake-band-${Date.now()}-${index}`
   const imageRaw = isRecord(value.image) ? value.image : {}
   const creditRaw = isRecord(imageRaw.credit) ? imageRaw.credit : {}
@@ -434,6 +436,7 @@ export function extractJson(textValue: string): unknown {
 const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
   'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable',
+  'english-tags', 'english-roles',
 ])
 
 export async function inspectBandIntake(rawText: string, existingBands: Band[]): Promise<IntakeResult> {
@@ -495,6 +498,11 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     if (!band.sources.some((source) => source.publisher === 'Wikidata' && source.externalId)) issues.push({ severity: 'warning', code: 'no-wikidata', message: 'Wikidata ID가 없습니다.' })
     if (!band.sources.some((source) => source.publisher === 'MusicBrainz' && source.externalId)) issues.push({ severity: 'warning', code: 'no-musicbrainz', message: 'MusicBrainz ID가 없습니다.' })
     if (!band.sources.some((source) => source.publisher === 'Wikipedia' && source.url)) issues.push({ severity: 'warning', code: 'no-wikipedia', message: 'Wikipedia 출처가 없습니다.' })
+    const isPlainEnglish = (value: string) => /^[A-Za-z][A-Za-z0-9\s.,'&-]*$/.test(value.trim())
+    const englishTags = band.tags.filter(isPlainEnglish)
+    if (englishTags.length) issues.push({ severity: 'warning', code: 'english-tags', message: `태그가 영어로 남아있습니다. 한국어로 직접 고쳐주세요: ${englishTags.join(', ')}` })
+    const englishRoleMembers = band.members.filter((member) => isPlainEnglish(member.role)).map((member) => member.name)
+    if (englishRoleMembers.length) issues.push({ severity: 'warning', code: 'english-roles', message: `멤버 역할이 영어로 남아있습니다. 한국어로 직접 고쳐주세요: ${englishRoleMembers.join(', ')}` })
     if (!band.members.length) issues.push({ severity: 'warning', code: 'no-members', message: '멤버 정보가 없습니다.' })
     if (!band.sources.some((source) => source.publisher === 'YouTube' && source.official)) issues.push({ severity: 'warning', code: 'no-official-channel', message: '공식 YouTube 채널 링크가 없습니다. JSON에 youtubeChannelUrl을 포함하면 자동으로 채워집니다.' })
     if (!band.image.credit.sourceUrl) issues.push({ severity: 'warning', code: 'no-image', message: '밴드 사진이 없습니다. JSON의 image.commonsFile에 Commons 파일명을 넣으면 자동으로 채워집니다.' })
@@ -573,5 +581,5 @@ export function finalizeIntakeBand(band: Band): Band {
 export function buildGeminiResearchPrompt() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
   const moodIdsText = taxonomyMoods.map((mood) => mood.id).join(', ')
-  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운(링크 표기 포함), 코드펜스는 금지하고 URL은 항상 순수 주소만 쓴다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다. 소개와 음악 설명은 한국어로 쓴다.\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["통용되는 한국어 또는 영문 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점 한 문장","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"https://www.youtube.com/@공식채널 형태의 실제 채널 주소","image":{"commonsFile":"Wikimedia Commons의 실제 File: 파일명 (예: Dream_Theater_live_2019.jpg), 확실하지 않으면 빈 값"}}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다(watch?v= 뒤 11자리 ID가 실제 존재하는 영상이어야 한다). 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. commonsFile은 Wikimedia Commons에 실제로 존재하는 파일명만 쓰고, 확실하지 않으면 빈 문자열로 둔다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
+  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운(링크 표기 포함), 코드펜스는 금지하고 URL은 항상 순수 주소만 쓴다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다.\n\nJSON의 모든 텍스트 값(소개·음악 설명·태그·멤버 역할·관계 근거·감상 안내 등)은 고유명사(밴드명·인명·앨범명·URL)를 제외하고 전부 한국어로 쓴다. 영어 밴드·장르 용어도 통용되는 한국어 표현으로 옮긴다(예: "Heavy Metal"이 아니라 "헤비메탈", "Lead Vocals"가 아니라 "리드 보컬", "Guitar"가 아니라 "기타"). 절대 영어 단어를 그대로 남기지 않는다.\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["한국어 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할(예: 리드 보컬·기타·베이스·드럼·키보드·백보컬)","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거를 설명하는 한국어 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"https://www.youtube.com/@공식채널 형태의 실제 채널 주소","image":{"commonsFile":"Wikimedia Commons의 실제 File: 파일명 (예: Dream_Theater_live_2019.jpg), 확실하지 않으면 빈 값"}}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다(watch?v= 뒤 11자리 ID가 실제 존재하는 영상이어야 한다). 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. commonsFile은 Wikimedia Commons에 실제로 존재하는 파일명만 쓰고, 확실하지 않으면 빈 문자열로 둔다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
 }
