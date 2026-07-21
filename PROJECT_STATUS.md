@@ -11,13 +11,11 @@
 - 현재 개발 브랜치: `codex/taxonomy-v2` — `main`은 이 브랜치의 **순수 조상**(divergence 없음, `git merge-base --is-ancestor main codex/taxonomy-v2` = true)이라 병합 시 fast-forward로 안전하게 처리됨
 - 원격 백업 브랜치: `backup/pre-taxonomy-v2-20260719`
 - 원격 백업 태그: `pre-taxonomy-v2-20260719`
-- 2026-07-21 있었던 일: 사용자가 GitHub Desktop에서 브랜치를 `main`으로 전환 → 우발적 stash-pop 충돌로 5개 파일에 충돌 마커가 그대로 섞여 저장됨. Claude가 stash의 각 파일 blob(git object, 충돌 마커 없는 원본)을 직접 추출해 무손실 복구, `codex/taxonomy-v2`로 재전환 완료. 이 과정에서 사용자가 Studio로 별도 추가한 3번째 밴드 **Kodaline**도 함께 발견·보존됨(자동 검수 파이프라인이 실제로 잘 작동한 사례 — 대표곡 2곡 자동 검증까지 완료된 상태였음).
-- 미커밋 변경 (전부 로컬에만 있고 커밋·푸시 전):
-  - `src/lib/bandIntake.ts`, `src/components/BandIntakePanel.tsx`, `src/components/StudioPage.tsx`, `src/index.css` — 밴드 등록(Gemini Gem 입고) 기능 자동화 강화
-  - `src/data/catalog.json` — Dream Theater·Deep Purple·Kodaline 데이터를 Claude가 검수·수정 완료
-  - `src/data/siteContent.json` — 히어로 문구 소폭 수정 (사용자 작업으로 추정, 손대지 않음)
-  - `.claude/launch.json` 신규 — Studio 브라우저 미리보기용 dev 서버 설정
-- `npm run validate:data` 결과: **오류 0건** (49개 밴드 전체 통과)
+- 2026-07-21 있었던 일: 사용자가 GitHub Desktop에서 브랜치를 `main`으로 전환 → 우발적 stash-pop 충돌로 5개 파일에 충돌 마커가 그대로 섞여 저장됨. Claude가 stash의 각 파일 blob(git object, 충돌 마커 없는 원본)을 직접 추출해 무손실 복구. 이 과정에서 사용자가 Studio로 별도 추가한 3번째 밴드 **Kodaline**도 함께 발견·보존됨(자동 검수 파이프라인이 실제로 잘 작동한 사례 — 대표곡 2곡 자동 검증까지 완료된 상태였음).
+- 커밋 3개로 정리 후 푸시 완료: `793bff3`(입고 자동화), `0e087bb`(데이터 검수), `2caa7c1`(문서). `codex/taxonomy-v2`·`main` 모두 `origin`에 동기화됨.
+- **`main`에 fast-forward 병합 + 푸시 완료 → GitHub Pages 배포 성공(Actions 확인됨).** 공개 사이트가 taxonomy v2 최신 버전으로 갱신됨.
+- `npm run validate:data` 결과: **오류 0건** (49개 밴드 전체 통과, main 기준으로도 확인)
+- 로컬 미커밋 변경 없음 (전부 커밋·푸시·배포 완료)
 
 상태가 이 문서와 다르면 추측하지 말고 실제 `git status`, `git diff`, 현재 파일 내용을 우선한다. 확인한 차이는 이 문서에 바로 반영한다.
 
