@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T10:36:03.268Z",
+  "updatedAt": "2026-07-21T10:39:37.612Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -3983,17 +3983,20 @@
         {
           "name": "Kurt Cobain",
           "role": "보컬·기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1987–1994"
         },
         {
           "name": "Krist Novoselic",
           "role": "베이스",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1987–1994"
         },
         {
           "name": "Dave Grohl",
           "role": "드럼",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1990–1994"
         }
       ],
       "tracks": [
@@ -4017,7 +4020,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "단순하지만 강렬한 코드 진행과 커트 코베인의 절규하는 보컬로 그런지를 주류 음악으로 끌어올린 상징적인 곡이다."
         },
         {
           "id": "heart-shaped-box",
@@ -4039,7 +4043,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "조용하고 음산한 벌스와 폭발적인 후렴구가 교차하는 다이내믹스로, 밴드의 마지막 정규 앨범 'In Utero'의 정서를 대표한다."
         }
       ],
       "relations": [
@@ -4093,8 +4098,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "Nirvana",
         "fileName": "Nirvana around 1992.jpg",
@@ -5242,22 +5247,26 @@
         {
           "name": "James Hetfield",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1981–present"
         },
         {
           "name": "Lars Ulrich",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1981–present"
         },
         {
           "name": "Kirk Hammett",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Robert Trujillo",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2003–present"
         }
       ],
       "tracks": [
@@ -5281,7 +5290,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "타이틀곡답게 정교한 멀티파트 구성과 급격한 템포 변화로 스래시 메탈의 서사적 가능성을 증명한 8분짜리 대곡이다."
         },
         {
           "id": "one",
@@ -5303,7 +5313,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "느린 어쿠스틱 인트로에서 시작해 전쟁의 참상을 그린 가사와 함께 폭발적인 더블 베이스 드러밍으로 치닫는 극적인 구성이 특징이다."
         }
       ],
       "relations": [
@@ -5357,8 +5368,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "Metallica",
         "fileName": "Metallica_March_2024.jpg",
@@ -6724,12 +6735,14 @@
         {
           "name": "Trent Reznor",
           "role": "보컬·멀티악기",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1988–present"
         },
         {
           "name": "Atticus Ross",
           "role": "키보드·프로덕션",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2016–present"
         }
       ],
       "tracks": [
@@ -6753,7 +6766,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "산업적인 리듬과 강박적인 신스 루프 위로 트렌트 레즈너의 극단적인 가사가 얹힌, 인더스트리얼 록의 상징적인 곡이다."
         },
         {
           "id": "hurt",
@@ -6775,7 +6789,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "절제된 피아노와 노이즈가 서서히 쌓여가는 구성으로, 조니 캐시의 커버로도 널리 알려진 밴드의 가장 내밀한 곡이다."
         }
       ],
       "relations": [
@@ -6829,8 +6844,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "Nine Inch Nails",
         "fileName": "Nine_Inch_Nails_-_20.06.2022_-_O2_Apollo_Manchester.jpg",
@@ -7704,22 +7719,26 @@
         {
           "name": "Stuart Braithwaite",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1995–present"
         },
         {
           "name": "Dominic Aitchison",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1995–present"
         },
         {
           "name": "Martin Bulloch",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1995–present"
         },
         {
           "name": "Barry Burns",
           "role": "기타·키보드",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1998–present"
         }
       ],
       "tracks": [
@@ -7743,7 +7762,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "반복되는 피아노 모티프가 점층적으로 쌓여가며 폭발하는, 밴드 특유의 크레셴도 구조를 압축해서 보여주는 인스트루멘털 트랙이다."
         },
         {
           "id": "take-me-somewhere-nice",
@@ -7765,7 +7785,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "몽환적인 기타 톤과 나른한 보컬이 어우러진, 밴드 초기 포스트록 사운드의 정서를 대표하는 곡이다."
         }
       ],
       "relations": [
@@ -7819,8 +7840,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "Mogwai",
         "fileName": "Mogwai live at Castello Visconteo, Pavia - July 11th, 2018.jpg",
@@ -7948,22 +7969,26 @@
         {
           "name": "Kevin Shields",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Bilinda Butcher",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         },
         {
           "name": "Colm Ó Cíosóig",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Debbie Googe",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         }
       ],
       "tracks": [
@@ -7987,7 +8012,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "폭발적인 드럼 인트로 뒤로 두꺼운 벽처럼 쌓인 왜곡 기타와 몽롱한 보컬이 뒤섞이는, 슈게이즈 장르의 사운드를 정의한 곡이다."
         },
         {
           "id": "when-you-sleep",
@@ -8009,7 +8035,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "글라이딩 기타 이펙트와 달콤하면서도 흐릿한 보컬 하모니가 특징인, 앨범 'Loveless'의 대표적인 드림팝 트랙이다."
         }
       ],
       "relations": [
@@ -8063,8 +8090,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "My_Bloody_Valentine_(band)",
         "fileName": "My Bloody Valentine - Manchester 2013.jpg",
@@ -8193,22 +8220,26 @@
         {
           "name": "Dave Mustaine",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1983–present"
         },
         {
           "name": "Teemu Mäntysaari",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2023–present"
         },
         {
           "name": "James LoMenzo",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2006–2010, 2021–present"
         },
         {
           "name": "Dirk Verbeuren",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2016–present"
         }
       ],
       "tracks": [
@@ -8229,7 +8260,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "간결하고 그루비한 리프 위에 데이브 머스테인의 냉소적인 보컬이 얹힌, 밴드의 가장 대중적인 히트곡이다."
         },
         {
           "id": "holy-wars-the-punishment-due",
@@ -8248,7 +8280,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "복잡한 박자 변화와 속주 기타 솔로가 이어지는, 스래시 메탈의 테크니컬한 정점을 보여주는 대곡이다."
         }
       ],
       "relations": [
@@ -8286,8 +8319,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
         "wikipediaTitle": "Megadeth",
         "fileName": "Megadeth_-_Wacken_Open_Air_2023_12.jpg",
