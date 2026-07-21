@@ -146,9 +146,11 @@ git diff --check
 
 - 방식: 밴드를 알파벳순으로 나눠 배치 진행. 각 배치마다 ①멤버 활동연도 ②대표곡 감상 안내(guide) 보강 ③검수 중 발견되는 오류(이미지 URL 깨짐, 멤버 status 오기재 등) 자동 수정.
 - **A~D 완료** (2026-07-21): AC/DC, Alice in Chains, Black Sabbath, Bon Jovi, Children of Bodom, Coldplay, Death — 7개 밴드. 상세는 11번 항목 참고.
+- **G~L 완료** (2026-07-21): Green Day, Guns N' Roses, Imagine Dragons, Iron Maiden, Judas Priest, Kent, King Crimson, Led Zeppelin, Lynyrd Skynyrd — 9개 밴드. 상세는 13번 항목 참고. (카탈로그에 E·F로 시작하는 밴드가 아직 없어 사용자 지시로 G부터 진행)
 - Deep Purple·Dream Theater·Kodaline은 이미 완료 상태(별도 검수에서 처리).
-- **다음 배치: E부터 알파벳순으로 계속.**
-- 재가입은 `1985–2010, 2023–현재`처럼 여러 구간 허용. 밴드/멤버가 이미 활동 종료된 경우 `status`도 `former`로 맞출 것(활동연도만 채우고 status는 놓치기 쉬움 — Black Sabbath·Children of Bodom에서 실제로 발견된 오류).
+- **다음 배치: M부터 알파벳순으로 계속.**
+- 재가입은 `1985–2010, 2023–현재`처럼 여러 구간 허용. 밴드/멤버가 이미 활동 종료된 경우 `status`도 `former`로 맞출 것(활동연도만 채우고 status는 놓치기 쉬움 — Black Sabbath·Children of Bodom·Led Zeppelin에서 실제로 발견된 오류).
+- 이미지: Wikimedia Commons가 유일한 무료 라이선스 소스라 프로필 사진이 아닌 팬 촬영 콘서트 사진이 대부분이고 밴드마다 화질·구도 편차가 큼(구조적 한계, 완전 통일 불가). 앞으로는 후보가 여럿일 때 멤버 전원이 나온 그룹샷을 우선 선택.
 
 ### P3 · Git 운영 자동화
 
@@ -198,9 +200,21 @@ GitHub Desktop의 커밋 요약은 `Dream Theater 추가`, `밴드 20개 데이�
 - 검수자: `reviewedBy: "Claude (AI 검수)"`로 기록. `npm run validate:data` 오류 0건 유지.
 - **아직 다루지 않은 것**: E부터 시작하는 나머지 40개 밴드(약 160명 이상의 멤버). 이미지 URL도 A~D 9개 밴드만 확인했고 나머지는 미확인 — 이번에 발견된 "URL 경로 오기재" 패턴이 다른 밴드에도 있을 수 있으므로 다음 배치에서 밴드별로 계속 확인할 것.
 
-## 12. 작업 재개 시 첫 행동
+## 13. 멤버 활동연도·감상 안내 보강 — G~L 배치 결과 (2026-07-21, Claude)
+
+카탈로그에 E·F로 시작하는 밴드가 아직 없어(사용자 확인) G부터 진행. 대상: Green Day, Guns N' Roses, Imagine Dragons, Iron Maiden, Judas Priest, Kent, King Crimson, Led Zeppelin, Lynyrd Skynyrd.
+
+- 9개 밴드 멤버 전원(약 34명)에 활동연도 추가, 대표곡 18곡에 한국어 감상 안내 추가(Guns N' Roses의 기존 저품질 안내문 1건도 다른 곡들과 톤을 맞춰 재작성).
+- **검수 중 발견해 수정한 오류**:
+  - **Led Zeppelin 멤버 3명(로버트 플랜트·지미 페이지·존 폴 존스)이 `status: current`로 잘못 표시돼 있었음** — 밴드는 1980년 존 본햄 사망 직후 공식 해체했고 이후 활동 없음(2007년 단발성 재결합 공연 1회뿐)인데도 "현재 활동중"으로 표시돼 있던 것을 `former`로 수정.
+  - King Crimson은 2021년 이후 사실상 활동이 없지만 밴드가 공식 해체를 선언한 적은 없고(로버트 프립도 "해체"가 아닌 "고요해졌다"는 표현 사용) 새 녹음 작업 가능성이 언급돼 있어 `current` 상태 유지(판단 근거로 남김 — 추후 공식 해체 선언 시 정정 필요).
+  - 이미지 URL 4건(Green Day·Imagine Dragons·Judas Priest·Kent)이 `Special:Redirect` 형식이라 형식은 다르지만 전부 정상 작동 확인.
+- 검수자: `reviewedBy: "Claude (AI 검수)"`로 기록. `npm run validate:data` 오류 0건 유지, 49개 밴드 전체.
+- **사진 품질 관련 사용자 질문에 대한 답변 기록**: Wikimedia Commons(무료 라이선스)가 유일한 이미지 소스라 밴드 공식 프로필 사진은 원천적으로 구할 수 없고, 팬이 콘서트에서 찍어 자유 라이선스로 올린 사진만 쓸 수 있음 — 밴드별 화질·구도 편차는 구조적 한계. 앞으로 후보가 여럿이면 그룹샷 우선 선택하기로 함.
+
+## 14. 작업 재개 시 첫 행동
 
 1. `git status`·`git diff`로 위 미커밋 변경이 그대로인지 확인
 2. `npm run validate:data`로 오류 0건 유지되는지 확인
-3. 다음 알파벳 배치(E부터)를 이어서 진행 — 멤버 활동연도, 대표곡 감상 안내, 이미지 URL 실제 접속 확인, status 오기재 여부
+3. 다음 알파벳 배치(M부터)를 이어서 진행 — 멤버 활동연도, 대표곡 감상 안내, 이미지 URL 실제 접속 확인, status 오기재 여부(특히 해체·사망으로 활동이 끝난 밴드는 `current`로 방치되기 쉬우니 매 밴드마다 명시적으로 확인할 것)
 4. `main` 병합·GitHub Pages 배포는 사용자가 명시적으로 요청할 때만 진행(단, 이번 세션에서 사용자가 "최신 버전으로 반영해달라"고 명시했으므로 이후에도 유사한 요청이 있으면 동일하게 처리 가능)

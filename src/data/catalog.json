@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T09:39:17.129Z",
+  "updatedAt": "2026-07-21T09:50:40.249Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -783,22 +783,26 @@
         {
           "name": "Robert Plant",
           "role": "보컬",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1980, 2007"
         },
         {
           "name": "Jimmy Page",
           "role": "기타",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1980, 2007"
         },
         {
           "name": "John Paul Jones",
           "role": "베이스·키보드",
-          "status": "current"
+          "status": "former",
+          "activeYears": "1968–1980, 2007"
         },
         {
           "name": "John Bonham",
           "role": "드럼",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1968–1980"
         }
       ],
       "tracks": [
@@ -822,7 +826,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "지미 페이지의 강렬한 리프와 로버트 플랜트의 관능적인 보컬, 실험적인 사운드 이펙트가 어우러진 하드 록의 초석이 된 곡이다."
         },
         {
           "id": "kashmir",
@@ -844,7 +849,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "존 본햄의 최면적인 드럼 그루브와 중동풍 오케스트레이션이 결합된, 밴드의 가장 웅장하고 실험적인 곡 중 하나다."
         }
       ],
       "relations": [
@@ -898,8 +904,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Led Zeppelin",
         "fileName": "Led_Zeppelin_-_promotional_image_(1971).jpg",
@@ -1274,22 +1280,26 @@
         {
           "name": "Axl Rose",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–present"
         },
         {
           "name": "Slash",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–1996, 2016–present"
         },
         {
           "name": "Duff McKagan",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–1997, 2016–present"
         },
         {
           "name": "Izzy Stradlin",
           "role": "기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1985–1991"
         }
       ],
       "tracks": [
@@ -1314,7 +1324,7 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17",
-          "guide": "시작리프만 들어도 전세계가 아는 히트곡."
+          "guide": "슬래시가 손가락 워밍업 삼아 연주하던 리프에서 시작됐다는 일화로 유명한 인트로가, 하드 록 역사상 가장 상징적인 기타 선율 중 하나로 꼽힌다."
         },
         {
           "id": "welcome-jungle",
@@ -1336,7 +1346,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "사이렌처럼 울리는 도입부 기타음과 액슬 로즈의 날카로운 샤우팅으로 앨범 'Appetite for Destruction'의 문을 여는 트랙이다."
         }
       ],
       "relations": [
@@ -1390,8 +1401,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Guns_N'_Roses",
         "fileName": "GNR_Belgrade_2025_05_(cropped).jpg",
@@ -1771,22 +1782,26 @@
         {
           "name": "Robert Fripp",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1969–present"
         },
         {
           "name": "Mel Collins",
           "role": "색소폰·플루트",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1970–1972, 2013–2021"
         },
         {
           "name": "Tony Levin",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1981–1984, 1994–1997, 2013–2021"
         },
         {
           "name": "Bill Bruford",
           "role": "드럼",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1972–1997"
         }
       ],
       "tracks": [
@@ -1810,7 +1825,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "왜곡된 보컬 이펙트와 폭발적인 색소폰·기타 유니즌 연주로 프로그레시브 록의 탄생을 알린, 밴드 데뷔 앨범의 첫 트랙이다."
         },
         {
           "id": "starless",
@@ -1832,7 +1848,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "느리게 고조되는 멜로트론과 베이스 위로 서서히 긴장감을 쌓다 폭발하는 구성으로, 밴드의 서사적인 곡 전개를 대표한다."
         }
       ],
       "relations": [
@@ -1886,8 +1903,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "King Crimson",
         "fileName": "King_Crimson,_De_vereeniging_te_Nijmegen_-_48113112087_(cropped).jpg",
@@ -4976,22 +4993,26 @@
         {
           "name": "Bruce Dickinson",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1981–1993, 1999–present"
         },
         {
           "name": "Steve Harris",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1975–present"
         },
         {
           "name": "Dave Murray",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1976–present"
         },
         {
           "name": "Adrian Smith",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1980–1990, 1999–present"
         }
       ],
       "tracks": [
@@ -5015,7 +5036,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "스티브 해리스 특유의 갤로핑 베이스 주법과 크림전쟁을 소재로 한 가사, 라이브에서 브루스 디킨슨이 영국 국기를 흔드는 퍼포먼스로 유명하다."
         },
         {
           "id": "number-beast",
@@ -5037,7 +5059,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "브루스 디킨슨의 첫 정규 앨범 타이틀곡으로, 극적인 내레이션 인트로와 폭발적인 고음 보컬이 헤비메탈의 전형을 만들었다."
         }
       ],
       "relations": [
@@ -5091,8 +5114,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Iron Maiden",
         "fileName": "IronMaidencollage2.jpg",
@@ -7424,27 +7447,32 @@
         {
           "name": "Johnny Van Zant",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         },
         {
           "name": "Rickey Medlocke",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1971–1972, 1996–present"
         },
         {
           "name": "Michael Cartellone",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1999–present"
         },
         {
           "name": "Ronnie Van Zant",
           "role": "보컬",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1964–1977"
         },
         {
           "name": "Gary Rossington",
           "role": "기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1964–1977, 1987–2023"
         }
       ],
       "tracks": [
@@ -7468,7 +7496,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "닐 영에 대한 답가로 알려진 곡으로, 경쾌한 트리플 기타 리프와 남부 록 특유의 자부심 넘치는 가사가 특징이다."
         },
         {
           "id": "free-bird",
@@ -7490,7 +7519,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedAt": "2026-07-18",
-          "reviewedBy": "Codex IFrame review"
+          "reviewedBy": "Codex IFrame review",
+          "guide": "로니 밴 잰트의 절절한 보컬로 시작해 개리 로싱턴 등의 기타 삼중주가 몰아치는 즉흥 솔로로 마무리되는, 남부 록을 대표하는 대곡이다."
         }
       ],
       "relations": [
@@ -7544,8 +7574,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Lynyrd Skynyrd",
         "fileName": "Lynyrd Skynyrd band (1973).jpg",
@@ -8589,17 +8619,20 @@
         {
           "name": "Dan Reynolds",
           "role": "보컬·기타·피아노·키보드·퍼커션·드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2008–present"
         },
         {
           "name": "Wayne Sermon",
           "role": "기타·백보컬·만돌린·신시사이저·바이올린",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2009–present"
         },
         {
           "name": "Ben McKee",
           "role": "베이스·키보드·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2010–present"
         }
       ],
       "tracks": [
@@ -8620,7 +8653,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "웅장한 드럼 비트와 덥스텝풍 신스 브레이크가 결합된 사운드로, 밴드를 단숨에 세계적으로 알린 히트곡이다."
         },
         {
           "id": "demons",
@@ -8639,13 +8673,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "밝은 멜로디와 어두운 가사가 대비를 이루는 곡으로, 어쿠스틱 기타와 웅장한 코러스가 교차한다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Imagine Dragons",
         "fileName": "Imagine_Dragons_2013.jpg",
@@ -9380,22 +9415,26 @@
         {
           "name": "Joakim Berg",
           "role": "보컬·리듬 기타",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1990–2016, 2025"
         },
         {
           "name": "Martin Sköld",
           "role": "베이스 기타·키보드",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1990–2016, 2025"
         },
         {
           "name": "Markus Mustonen",
           "role": "드럼·백보컬·키보드·피아노",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1990–2016, 2025"
         },
         {
           "name": "Sami Sirviö",
           "role": "리드 기타·키보드",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1990–2016, 2025"
         }
       ],
       "tracks": [
@@ -9415,7 +9454,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "드물게 영어로 발표된 곡으로, 몽환적인 신스 사운드와 요아킴 베리의 서정적인 보컬이 스웨덴 록의 국제적 성공을 이끌었다."
         },
         {
           "id": "dom-andra",
@@ -9433,7 +9473,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "'남들은'이라는 제목처럼 소외감과 자기 확신을 노래한 스웨덴어 가사가 밴드 특유의 멜랑콜리한 정서를 대표한다."
         }
       ],
       "relations": [
@@ -9455,8 +9496,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Kent (band)",
         "fileName": "Kent-sthlm2010.jpg",
@@ -9848,27 +9889,32 @@
         {
           "name": "Rob Halford",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1973–1992, 2003–present"
         },
         {
           "name": "Glenn Tipton",
           "role": "기타·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1974–present"
         },
         {
           "name": "Ian Hill",
           "role": "베이스 기타·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1969–present"
         },
         {
           "name": "Scott Travis",
           "role": "드럼·퍼커션",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1989–present"
         },
         {
           "name": "Richie Faulkner",
           "role": "기타·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2011–present"
         }
       ],
       "tracks": [
@@ -9888,7 +9934,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "짧고 간결한 리프와 반복되는 후렴구로, 밴드를 메인스트림에 각인시킨 대표적인 앤섬이다."
         },
         {
           "id": "painkiller",
@@ -9906,7 +9953,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "스콧 트래비스의 폭발적인 더블 베이스 드러밍과 롭 핼포드의 극한 고음 샤우팅이 스피드 메탈의 정점을 보여준다."
         }
       ],
       "relations": [
@@ -9928,8 +9976,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Judas Priest",
         "fileName": "JudasPriest.jpg",
@@ -10252,17 +10300,20 @@
         {
           "name": "Billie Joe Armstrong",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1986–present"
         },
         {
           "name": "Mike Dirnt",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1986–present"
         },
         {
           "name": "Tré Cool",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1990–present"
         }
       ],
       "tracks": [
@@ -10282,7 +10333,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "무한 반복되는 코드 진행 위에 빌리 조 암스트롱의 불안 신경증적인 가사가 얹힌, 90년대 팝펑크를 대중화시킨 곡이다."
         },
         {
           "id": "american-idiot",
@@ -10300,13 +10352,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-19"
+          "reviewedAt": "2026-07-19",
+          "guide": "2000년대 초 미국 사회를 겨냥한 정치적 메시지와 질주하는 펑크 리듬이 결합된, 밴드의 재도약을 알린 록 오페라 앨범의 타이틀곡이다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-19",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
         "wikipediaTitle": "Green Day",
         "fileName": "Green Day on 3 Jun 2022.jpg",
