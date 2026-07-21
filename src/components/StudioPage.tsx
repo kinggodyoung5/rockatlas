@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, Check, Download, ExternalLink, FileUp, Link2, Loader2, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { eras } from '../data/eras'
@@ -290,6 +290,13 @@ export function StudioPage() {
   const [catalogBands, setCatalogBands] = useState<Band[]>(() => clone(initialBands))
   const [selectedId, setSelectedId] = useState(initialBands[0]?.id ?? '')
   const [draft, setDraft] = useState<Band>(() => clone(initialBands[0] ?? createDraftBand()))
+  const editorTitleRef = useRef<HTMLElement>(null)
+  const isFirstSelection = useRef(true)
+
+  useEffect(() => {
+    if (isFirstSelection.current) { isFirstSelection.current = false; return }
+    editorTitleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [selectedId])
   const [query, setQuery] = useState('')
   const [message, setMessage] = useState('카탈로그를 불러왔습니다.')
   const [dirty, setDirty] = useState(false)
@@ -651,7 +658,7 @@ export function StudioPage() {
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
 
-          <section className="studio-editor-title">
+          <section className="studio-editor-title" ref={editorTitleRef}>
             <div>
               <span>{isExisting ? 'EDIT BAND' : 'NEW BAND'}</span>
               <h2>{draft.name}</h2>
