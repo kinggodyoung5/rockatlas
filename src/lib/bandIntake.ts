@@ -60,6 +60,42 @@ const text = (value: unknown) => typeof value === 'string' ? value.trim() : ''
 const number = (value: unknown) => typeof value === 'number' ? value : Number(value)
 const stringList = (value: unknown) => Array.isArray(value) ? value.map(text).filter(Boolean) : typeof value === 'string' ? value.split(/[,;|]/).map((item) => item.trim()).filter(Boolean) : []
 const slugify = (value: string) => value.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+const markdownLinkPattern = /\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)/g
+
+function safeHost(value: string): string {
+  try { return new URL(value).hostname } catch { return '' }
+}
+const isGoogleRedirect = (value: string) => /(^|\.)google\.[a-z.]+$/i.test(safeHost(value))
+/** Gemini's search-grounding mode rewrites every citation as a Google redirect (…/search?q=<real url>); unwrap it to reach the real target. */
+function unwrapGoogleRedirect(value: string): string {
+  if (!isGoogleRedirect(value)) return value
+  try {
+    const parsed = new URL(value)
+    const inner = parsed.searchParams.get('q') || parsed.searchParams.get('url')
+    return inner ? unwrapGoogleRedirect(inner) : value
+  } catch { return value }
+}
+/** Gemini occasionally wraps a URL in markdown syntax, and search-grounded answers wrap the real link in a Google redirect on either side of the link — pick whichever side is a direct, non-Google URL. */
+function stripMarkdownToUrl(value: string): string {
+  const trimmed = value.trim()
+  const wholeMatch = /^\[([^\]]*)\]\((\S+)\)$/.exec(trimmed)
+  if (wholeMatch) {
+    const [, label, target] = wholeMatch
+    const candidates = [label.trim(), unwrapGoogleRedirect(target.trim()), target.trim()]
+    return candidates.find((candidate) => /^https?:\/\//.test(candidate) && !isGoogleRedirect(candidate)) ?? candidates[0]
+  }
+  const urlMatches = [...trimmed.matchAll(/https?:\/\/[^\s)\]]+/g)].map((match) => unwrapGoogleRedirect(match[0]))
+  const direct = urlMatches.find((url) => !isGoogleRedirect(url))
+  if (direct) return direct
+  return urlMatches[0] ?? trimmed
+}
+/** For prose fields, markdown links should collapse to their visible label text. */
+function stripMarkdownToText(value: string): string {
+  return value.replace(markdownLinkPattern, (_match, label: string, url: string) => (label.trim() || stripMarkdownToUrl(url))).trim()
+}
+const textUrl = (value: unknown) => stripMarkdownToUrl(text(value))
+const textProse = (value: unknown) => stripMarkdownToText(text(value))
 const normalizeTaxonomyLabel = (value: unknown) => text(value)
   .toLocaleLowerCase()
   .normalize('NFKC')
@@ -86,7 +122,7 @@ function eraFromYear(year: number): EraId {
 }
 
 function youtubeId(value: unknown) {
-  const input = text(value)
+  const input = textUrl(value)
   if (!input) return ''
   try {
     const url = new URL(input)
@@ -105,7 +141,7 @@ function normalizeSources(value: unknown, name: string, raw: UnknownRecord): Sou
       if (!isRecord(entry)) return
       const publisher = text(entry.publisher) as SourceRef['publisher']
       const allowed: SourceRef['publisher'][] = ['Wikipedia', 'Wikidata', 'Wikimedia Commons', 'MusicBrainz', 'YouTube', 'Editorial']
-      const url = text(entry.url)
+      const url = textUrl(entry.url)
       if (!allowed.includes(publisher) || !url) return
       sources.push({
         label: text(entry.label) || `${name} — ${publisher}`,
@@ -119,10 +155,21 @@ function normalizeSources(value: unknown, name: string, raw: UnknownRecord): Sou
   }
   const wikidataId = text(raw.wikidataId ?? raw.wikidata_id)
   const musicBrainzId = text(raw.musicBrainzId ?? raw.musicbrainzId ?? raw.musicbrainz_id)
-  const wikipediaUrl = text(raw.wikipediaUrl ?? raw.wikipedia_url)
+  const wikipediaUrl = textUrl(raw.wikipediaUrl ?? raw.wikipedia_url)
+  const youtubeChannelUrl = textUrl(raw.youtubeChannelUrl ?? raw.officialYoutubeUrl ?? raw.youtube_channel_url)
   if (wikidataId && !sources.some((item) => item.publisher === 'Wikidata')) sources.push({ label: `${name} — Wikidata`, url: `https://www.wikidata.org/wiki/${wikidataId}`, publisher: 'Wikidata', externalId: wikidataId, note: '외부 조사에서 가져온 식별자 · 운영자 확인 필요' })
   if (musicBrainzId && !sources.some((item) => item.publisher === 'MusicBrainz')) sources.push({ label: `${name} — MusicBrainz`, url: `https://musicbrainz.org/artist/${musicBrainzId}`, publisher: 'MusicBrainz', externalId: musicBrainzId, note: '외부 조사에서 가져온 식별자 · 운영자 확인 필요' })
   if (wikipediaUrl && !sources.some((item) => item.publisher === 'Wikipedia')) sources.push({ label: `${name} — Wikipedia`, url: wikipediaUrl, publisher: 'Wikipedia', note: '외부 조사에서 가져온 출처 · 운영자 확인 필요' })
+  if (youtubeChannelUrl && /^https:\/\/(www\.)?youtube\.com\//.test(youtubeChannelUrl) && !sources.some((item) => item.publisher === 'YouTube')) {
+    sources.push({
+      label: `${name} — 공식 YouTube`,
+      url: youtubeChannelUrl,
+      publisher: 'YouTube',
+      official: true,
+      externalId: youtubeChannelUrl.match(/(?:channel\/|youtube\.com\/)(UC[\w-]+|@[\w.-]+)/)?.[1],
+      note: '외부 조사에서 가져온 공식 채널 · 운영자 확인 필요',
+    })
+  }
   return sources
 }
 
@@ -149,11 +196,11 @@ function normalizeTracks(value: unknown, name: string): Track[] {
       title,
       year: Number.isInteger(year) && year > 1900 ? year : undefined,
       album: text(raw.album) || undefined,
-      guide: text(raw.guide ?? raw.description) || undefined,
+      guide: textProse(raw.guide ?? raw.description) || undefined,
       youtubeId: id,
       source: {
         label: `${name} — ${title}`,
-        url: id ? `https://www.youtube.com/watch?v=${id}` : text(raw.url) || 'https://www.youtube.com/',
+        url: id ? `https://www.youtube.com/watch?v=${id}` : textUrl(raw.url) || 'https://www.youtube.com/',
         publisher: 'YouTube',
         official: false,
         note: '곡 정보와 링크는 운영자 확인 전 초안입니다.',
@@ -171,8 +218,10 @@ function normalizeRelations(value: unknown): Relation[] {
     if (!targetBandId) return []
     const kind = relationKinds.includes(text(entry.kind) as RelationKind) ? text(entry.kind) as RelationKind : 'sounds-like'
     const rawStrength = Math.round(number(entry.strength))
-    const strength = (rawStrength >= 1 && rawStrength <= 3 ? rawStrength : 1) as 1 | 2 | 3
-    return [{ targetBandId, kind, strength, note: text(entry.note) || '외부 조사에서 제안된 관계 · 근거 확인 필요', reviewStatus: 'draft' }]
+    // Gemini often rates strength on its own 1-5 scale; clamp toward the nearer end instead of silently
+    // collapsing an out-of-range "5" (meant as strongest) down to 1 (weakest).
+    const strength = (Number.isFinite(rawStrength) ? Math.min(3, Math.max(1, rawStrength)) : 1) as 1 | 2 | 3
+    return [{ targetBandId, kind, strength, note: textProse(entry.note) || '외부 조사에서 제안된 관계 · 근거 확인 필요', reviewStatus: 'draft' }]
   })
 }
 
@@ -234,19 +283,19 @@ function normalizeBand(value: unknown, index: number): Band | null {
     subgenres,
     eraTags: [{ era: eraFromYear(formed), genreIds: [legacy], subgenres }],
     tags: stringList(value.tags),
-    summary: text(value.summary ?? value.achievementSummary ?? value.introduction),
-    style: text(value.style ?? value.soundDescription ?? value.musicDescription),
+    summary: textProse(value.summary ?? value.achievementSummary ?? value.introduction),
+    style: textProse(value.style ?? value.soundDescription ?? value.musicDescription),
     image: {
       wikipediaTitle: text(imageRaw.wikipediaTitle) || name,
       fileName: text(imageRaw.fileName) || undefined,
-      displayUrl: text(imageRaw.displayUrl ?? value.imageUrl) || undefined,
-      originalUrl: text(imageRaw.originalUrl) || undefined,
+      displayUrl: textUrl(imageRaw.displayUrl ?? value.imageUrl) || undefined,
+      originalUrl: textUrl(imageRaw.originalUrl) || undefined,
       alt: text(imageRaw.alt) || `${name} 밴드 사진`,
       credit: {
-        sourceUrl: text(creditRaw.sourceUrl),
+        sourceUrl: textUrl(creditRaw.sourceUrl) || text(imageRaw.commonsFile ?? imageRaw.commons_file),
         creator: text(creditRaw.creator) || undefined,
         license: text(creditRaw.license) || '검토 필요',
-        licenseUrl: text(creditRaw.licenseUrl) || undefined,
+        licenseUrl: textUrl(creditRaw.licenseUrl) || undefined,
         reviewStatus: 'needs-review',
       },
     },
@@ -268,6 +317,106 @@ function unwrapBands(payload: unknown): unknown[] {
   return []
 }
 
+export interface YoutubeCheckResult {
+  ok: boolean
+  title?: string
+  error?: string
+}
+
+/** Confirms a YouTube video actually exists and is embeddable, via the public oEmbed endpoint (no API key, CORS-open). */
+export async function checkYoutubeVideo(id: string): Promise<YoutubeCheckResult> {
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return { ok: false, error: '유효한 YouTube ID 형식이 아닙니다.' }
+  try {
+    const response = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}&format=json`)
+    if (!response.ok) return { ok: false, error: '영상을 찾을 수 없거나 재생이 제한되어 있습니다.' }
+    const data = (await response.json()) as { title?: unknown }
+    return { ok: true, title: typeof data.title === 'string' ? data.title : undefined }
+  } catch {
+    return { ok: false, error: 'YouTube 확인 중 네트워크 오류가 발생했습니다.' }
+  }
+}
+
+export interface CommonsLookupResult {
+  ok: boolean
+  fileName?: string
+  originalUrl?: string
+  displayUrl?: string
+  creator?: string
+  license?: string
+  licenseUrl?: string
+  sourceUrl?: string
+  error?: string
+}
+
+const stripHtml = (value: string) => value.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+
+type CommonsImageInfo = { url?: string; thumburl?: string; extmetadata?: Record<string, { value?: unknown }> }
+
+async function fetchCommonsImageInfo(title: string): Promise<CommonsImageInfo | null> {
+  const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(`File:${title}`)}&prop=imageinfo&iiprop=extmetadata%7Curl&iiurlwidth=800&format=json&origin=*`
+  const response = await fetch(apiUrl)
+  if (!response.ok) return null
+  const data = await response.json() as { query?: { pages?: Record<string, { missing?: unknown; imageinfo?: CommonsImageInfo[] }> } }
+  const page = Object.values(data.query?.pages ?? {})[0]
+  const info = page?.imageinfo?.[0]
+  if (!page || page.missing !== undefined || !info) return null
+  return info
+}
+
+/** Gemini often guesses a close-but-not-exact filename (wrong dashes, spacing, date order); fall back to a Commons file search before giving up. */
+async function searchCommonsFileTitle(query: string): Promise<string | null> {
+  const searchUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(`${query} filetype:bitmap|drawing`)}&gsrnamespace=6&gsrlimit=1&format=json&origin=*`
+  const response = await fetch(searchUrl)
+  if (!response.ok) return null
+  const data = await response.json() as { query?: { pages?: Record<string, { title?: string }> } }
+  const hit = Object.values(data.query?.pages ?? {})[0]?.title
+  return hit ? hit.replace(/^File:/i, '') : null
+}
+
+const normalizeForMatch = (value: string) => value.toLocaleLowerCase().normalize('NFKC').replace(/[^a-z0-9가-힣]+/g, '')
+
+/** Pulls the real file URL, creator and license straight from the Wikimedia Commons API, so operators never have to type rights fields by hand.
+ *  `bandName`, when given, gates the result: a license lookup only confirms the file's rights are real, never that the photo is actually of this band — so if the resolved title doesn't even contain the band's name, we refuse rather than silently attaching an unrelated photo. */
+export async function lookupCommonsImage(input: string, bandName?: string): Promise<CommonsLookupResult> {
+  const raw = stripMarkdownToUrl(input).trim()
+  if (!raw) return { ok: false, error: '이미지 파일명 또는 Commons 주소가 없습니다.' }
+  const fileMatch = /File:([^?#]+)/i.exec(raw)
+  const requestedTitle = decodeURIComponent(fileMatch ? fileMatch[1] : raw.replace(/^File:/i, '')).replace(/_/g, ' ')
+  try {
+    let title = requestedTitle
+    let info = await fetchCommonsImageInfo(title)
+    if (!info) {
+      const searchHit = await searchCommonsFileTitle(requestedTitle)
+      if (searchHit) { title = searchHit; info = await fetchCommonsImageInfo(title) }
+    }
+    if (!info) return { ok: false, error: `Commons에서 "${requestedTitle}" 파일을 찾지 못했습니다.` }
+    if (bandName && !normalizeForMatch(title).includes(normalizeForMatch(bandName))) {
+      return { ok: false, error: `찾은 파일("${title}")이 밴드 이름과 관련 없어 보여 자동 확인을 중단했습니다. 사진이 맞는지 직접 확인해주세요.` }
+    }
+    const meta = info.extmetadata ?? {}
+    const metaText = (key: string) => { const value = meta[key]?.value; return typeof value === 'string' ? stripHtml(value) : undefined }
+    const creator = metaText('Artist')
+    const licenseShort = metaText('LicenseShortName')
+    const licenseUrl = metaText('LicenseUrl')
+    const usageTerms = metaText('UsageTerms')
+    const licenseLabel = licenseShort || usageTerms
+    const isPublicDomain = /public domain|pd-/i.test(licenseLabel ?? '')
+    const fileName = `File:${title}`
+    return {
+      ok: true,
+      fileName,
+      originalUrl: info.url,
+      displayUrl: info.thumburl ?? info.url,
+      creator,
+      license: isPublicDomain ? 'Public domain' : licenseLabel,
+      licenseUrl: isPublicDomain ? undefined : licenseUrl,
+      sourceUrl: `https://commons.wikimedia.org/wiki/${fileName}`,
+    }
+  } catch {
+    return { ok: false, error: 'Commons 조회 중 네트워크 오류가 발생했습니다.' }
+  }
+}
+
 export function extractJson(textValue: string): unknown {
   const trimmed = textValue.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '')
   try { return JSON.parse(trimmed) } catch { /* try to recover JSON from surrounding prose */ }
@@ -281,7 +430,13 @@ export function extractJson(textValue: string): unknown {
   return JSON.parse(trimmed.slice(start, end + 1))
 }
 
-export function inspectBandIntake(rawText: string, existingBands: Band[]): IntakeResult {
+/** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'reviewed'. */
+const reviewBlockingCodes = new Set([
+  'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
+  'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable',
+])
+
+export async function inspectBandIntake(rawText: string, existingBands: Band[]): Promise<IntakeResult> {
   const globalIssues: IntakeIssue[] = []
   let payload: unknown
   try { payload = extractJson(rawText) } catch (error) {
@@ -331,7 +486,7 @@ export function inspectBandIntake(rawText: string, existingBands: Band[]): Intak
     const removedRelations = band.relations.filter((relation) => !knownIds.has(relation.targetBandId) || relation.targetBandId === band.id)
     if (removedRelations.length) {
       band.relations = band.relations.filter((relation) => knownIds.has(relation.targetBandId) && relation.targetBandId !== band.id)
-      issues.push({ severity: 'warning', code: 'removed-relations', message: `등록되지 않은 대상 또는 자기 관계 ${removedRelations.length}건을 자동 제외했습니다.` })
+      issues.push({ severity: 'warning', code: 'removed-relations', message: `아직 카탈로그에 없는 밴드를 가리키는 관계를 자동 제외했습니다: ${removedRelations.map((relation) => relation.targetBandId).join(', ')} (해당 밴드를 먼저 추가하면 이후 검사에서 자동으로 연결됩니다)` })
     }
     if (band.summary.length < 30) issues.push({ severity: 'warning', code: 'short-summary', message: '업적·발자취 소개가 짧습니다. 30자 이상을 권장합니다.' })
     if (band.style.length < 40) issues.push({ severity: 'warning', code: 'short-style', message: '음악 설명이 짧습니다. 소리와 구성을 40자 이상 적는 것을 권장합니다.' })
@@ -339,30 +494,84 @@ export function inspectBandIntake(rawText: string, existingBands: Band[]): Intak
     if (!Object.keys(band.taxonomyV2?.moodScores ?? {}).length) issues.push({ severity: 'warning', code: 'no-moods', message: '분위기 점수가 없어 분위기로 찾기 결과에 잘 나타나지 않습니다.' })
     if (!band.sources.some((source) => source.publisher === 'Wikidata' && source.externalId)) issues.push({ severity: 'warning', code: 'no-wikidata', message: 'Wikidata ID가 없습니다.' })
     if (!band.sources.some((source) => source.publisher === 'MusicBrainz' && source.externalId)) issues.push({ severity: 'warning', code: 'no-musicbrainz', message: 'MusicBrainz ID가 없습니다.' })
-    if (band.image.credit.reviewStatus !== 'verified') issues.push({ severity: 'info', code: 'image-review', message: '이미지는 권리 확인 전까지 자동으로 미승인 상태입니다.' })
+    if (!band.sources.some((source) => source.publisher === 'Wikipedia' && source.url)) issues.push({ severity: 'warning', code: 'no-wikipedia', message: 'Wikipedia 출처가 없습니다.' })
+    if (!band.members.length) issues.push({ severity: 'warning', code: 'no-members', message: '멤버 정보가 없습니다.' })
+    if (!band.sources.some((source) => source.publisher === 'YouTube' && source.official)) issues.push({ severity: 'warning', code: 'no-official-channel', message: '공식 YouTube 채널 링크가 없습니다. JSON에 youtubeChannelUrl을 포함하면 자동으로 채워집니다.' })
+    if (!band.image.credit.sourceUrl) issues.push({ severity: 'warning', code: 'no-image', message: '밴드 사진이 없습니다. JSON의 image.commonsFile에 Commons 파일명을 넣으면 자동으로 채워집니다.' })
     seenIds.add(band.id)
     if (nameKey) seenNames.add(nameKey)
     band.sources.forEach((source) => { if (source.externalId) seenExternalIds.add(source.externalId) })
     return [{ key: `${band.id}-${index}`, band, issues, canApprove: !issues.some((item) => item.severity === 'error') }]
   })
+
+  await Promise.all(candidates.map((candidate) => enrichCandidate(candidate)))
   return { candidates, globalIssues }
 }
 
-export function forceIntakeDraft(band: Band): Band {
-  return {
-    ...structuredClone(band),
-    reviewStatus: 'draft',
-    reviewedAt: undefined,
-    reviewedBy: undefined,
-    tracks: band.tracks.map((track) => ({ ...track, reviewStatus: 'draft', reviewedAt: undefined, reviewedBy: undefined })),
-    relations: band.relations.map((relation) => ({ ...relation, reviewStatus: 'draft', reviewedAt: undefined, reviewedBy: undefined })),
-    taxonomyV2: band.taxonomyV2 ? { ...band.taxonomyV2, reviewStatus: 'draft' } : undefined,
-    image: { ...band.image, credit: { ...band.image.credit, reviewStatus: 'needs-review', reviewedAt: undefined } },
+/** Runs the network-backed auto-verification (YouTube existence, Commons rights lookup) and elevates a band straight to 'reviewed' once every automatable check is clean. */
+async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
+  if (!candidate.canApprove) return
+  const band = candidate.band
+
+  await Promise.all(band.tracks.map(async (track, index) => {
+    const check = await checkYoutubeVideo(track.youtubeId)
+    if (!check.ok) {
+      candidate.issues.push({ severity: 'warning', code: 'youtube-unreachable', message: `${track.title || `트랙 ${index + 1}`}: YouTube 확인 실패 — ${check.error} (밴드는 추가되지만 이 곡은 검수 완료로 자동 승격되지 않습니다. Studio에서 링크를 직접 확인해주세요.)` })
+    } else {
+      band.tracks[index] = { ...track, reviewStatus: 'reviewed', reviewedBy: '자동 검수 (AI)', reviewedAt: new Date().toISOString() }
+      candidate.issues.push({ severity: 'info', code: 'youtube-verified', message: `${track.title}: YouTube 영상 확인 완료${check.title ? ` (${check.title})` : ''}` })
+    }
+  }))
+
+  const imageHint = band.image.credit.sourceUrl
+  if (imageHint) {
+    const lookup = await lookupCommonsImage(imageHint, band.name)
+    const usable = lookup.ok && lookup.originalUrl && lookup.sourceUrl && lookup.license && (lookup.license === 'Public domain' || lookup.licenseUrl)
+    if (usable) {
+      band.image = {
+        ...band.image,
+        fileName: lookup.fileName,
+        originalUrl: lookup.originalUrl,
+        displayUrl: lookup.displayUrl ?? lookup.originalUrl,
+        credit: {
+          sourceUrl: lookup.sourceUrl!,
+          creator: lookup.creator,
+          license: lookup.license!,
+          licenseUrl: lookup.licenseUrl,
+          reviewStatus: 'verified',
+          reviewedAt: new Date().toISOString(),
+        },
+      }
+      if (!band.sources.some((source) => source.publisher === 'Wikimedia Commons' && source.url === lookup.sourceUrl)) {
+        band.sources = [...band.sources, { label: `${band.name} — Wikimedia Commons`, url: lookup.sourceUrl!, publisher: 'Wikimedia Commons', note: 'Commons API로 자동 확인한 이미지 출처' }]
+      }
+      candidate.issues.push({ severity: 'info', code: 'image-verified', message: `이미지 라이선스를 Commons에서 자동 확인했습니다: ${lookup.license}` })
+    } else {
+      candidate.issues.push({ severity: 'warning', code: 'image-lookup-failed', message: `이미지 자동 확인 실패: ${lookup.error ?? '라이선스 정보가 불완전합니다'} — 수동 확인이 필요합니다.` })
+    }
   }
+
+  const hasError = candidate.issues.some((issue) => issue.severity === 'error')
+  const hasBlockingWarning = candidate.issues.some((issue) => issue.severity === 'warning' && reviewBlockingCodes.has(issue.code))
+  candidate.canApprove = !hasError
+  if (!hasError && !hasBlockingWarning) {
+    band.reviewStatus = 'reviewed'
+    band.reviewedBy = '자동 검수 (AI)'
+    band.reviewedAt = new Date().toISOString()
+    if (band.taxonomyV2) band.taxonomyV2 = { ...band.taxonomyV2, reviewStatus: 'reviewed' }
+    candidate.issues.push({ severity: 'info', code: 'auto-reviewed', message: '자동 검사를 모두 통과해 검수 완료 상태로 추가됩니다. 공개 전 최종 확인만 하면 됩니다.' })
+  }
+}
+
+/** Safety clamp applied right before a candidate is merged into the catalog — intake can promote a band to 'reviewed' but never straight to 'published'. */
+export function finalizeIntakeBand(band: Band): Band {
+  const clone = structuredClone(band)
+  if (clone.reviewStatus === 'published') clone.reviewStatus = 'reviewed'
+  return clone
 }
 
 export function buildGeminiResearchPrompt() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
   const moodIdsText = taxonomyMoods.map((mood) => mood.id).join(', ')
-  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운, 코드펜스는 금지한다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다. 소개와 음악 설명은 한국어로 쓴다.\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["통용되는 한국어 또는 영문 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점 한 문장","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://..."}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다. 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
+  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운(링크 표기 포함), 코드펜스는 금지하고 URL은 항상 순수 주소만 쓴다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다. 소개와 음악 설명은 한국어로 쓴다.\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["통용되는 한국어 또는 영문 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점 한 문장","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"https://www.youtube.com/@공식채널 형태의 실제 채널 주소","image":{"commonsFile":"Wikimedia Commons의 실제 File: 파일명 (예: Dream_Theater_live_2019.jpg), 확실하지 않으면 빈 값"}}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다(watch?v= 뒤 11자리 ID가 실제 존재하는 영상이어야 한다). 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. commonsFile은 Wikimedia Commons에 실제로 존재하는 파일명만 쓰고, 확실하지 않으면 빈 문자열로 둔다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
 }

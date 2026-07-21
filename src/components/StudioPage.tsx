@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
-import { ArrowLeft, Check, Download, ExternalLink, FileUp, Link2, Plus, Save, Search, Sparkles } from 'lucide-react'
+import { ArrowLeft, Check, Download, ExternalLink, FileUp, Link2, Loader2, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { eras } from '../data/eras'
 import { genres as initialGenres } from '../data/genres'
@@ -8,7 +8,7 @@ import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySub
 import type { Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
 import type { GenreTaxonomyId, MoodGroupId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
-import { forceIntakeDraft } from '../lib/bandIntake'
+import { finalizeIntakeBand, lookupCommonsImage, type CommonsLookupResult } from '../lib/bandIntake'
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
@@ -212,6 +212,31 @@ function updateYoutubeSource(band: Band, url: string): Band {
   return { ...band, sources }
 }
 
+function applyCommonsLookup(band: Band, lookup: CommonsLookupResult): Band {
+  if (!lookup.ok || !lookup.originalUrl || !lookup.sourceUrl) return band
+  const verified = Boolean(lookup.license && (lookup.license === 'Public domain' || lookup.licenseUrl))
+  const sources = band.sources.filter((source) => !(source.publisher === 'Wikimedia Commons' && source.url !== lookup.sourceUrl))
+  const hasSource = sources.some((source) => source.publisher === 'Wikimedia Commons' && source.url === lookup.sourceUrl)
+  return {
+    ...band,
+    image: {
+      ...band.image,
+      fileName: lookup.fileName ?? band.image.fileName,
+      originalUrl: lookup.originalUrl,
+      displayUrl: lookup.displayUrl ?? lookup.originalUrl,
+      credit: {
+        sourceUrl: lookup.sourceUrl,
+        creator: lookup.creator ?? band.image.credit.creator,
+        license: lookup.license ?? band.image.credit.license,
+        licenseUrl: lookup.license === 'Public domain' ? undefined : lookup.licenseUrl,
+        reviewStatus: verified ? 'verified' : 'needs-review',
+        reviewedAt: verified ? new Date().toISOString() : undefined,
+      },
+    },
+    sources: hasSource ? sources : [...sources, { label: `${band.name} — Wikimedia Commons`, url: lookup.sourceUrl, publisher: 'Wikimedia Commons', note: 'Commons API로 자동 확인한 이미지 출처' }],
+  }
+}
+
 function updateExternalSource(band: Band, publisher: 'Wikidata' | 'MusicBrainz', externalId: string): Band {
   const sources = [...band.sources]
   const index = sources.findIndex((source) => source.publisher === publisher)
@@ -268,6 +293,8 @@ export function StudioPage() {
   const [query, setQuery] = useState('')
   const [message, setMessage] = useState('카탈로그를 불러왔습니다.')
   const [dirty, setDirty] = useState(false)
+  const [commonsBusy, setCommonsBusy] = useState(false)
+  const [commonsMessage, setCommonsMessage] = useState('')
   const [catalogDirty, setCatalogDirty] = useState(false)
   const [siteDraft, setSiteDraft] = useState<SiteContent>(() => clone(siteContent))
   const [siteDirty, setSiteDirty] = useState(false)
@@ -388,6 +415,24 @@ export function StudioPage() {
     setMessage(`${publisher} 후보 ${candidate.name}을(를) 연결했습니다. MusicBrainz 후보는 결성지·국가·활동연도도 반영됩니다.`)
   }
 
+  const runCommonsLookup = async () => {
+    const hint = draft.image.credit.sourceUrl.trim() || draft.image.fileName?.trim() || ''
+    if (!hint) { setCommonsMessage('Commons 파일 페이지 주소 또는 파일명을 먼저 입력하세요.'); return }
+    setCommonsBusy(true)
+    setCommonsMessage('Wikimedia Commons에서 저작자·라이선스를 조회하는 중…')
+    const lookup = await lookupCommonsImage(hint, draft.name)
+    if (lookup.ok) {
+      setDraft((current) => applyCommonsLookup(current, lookup))
+      setDirty(true)
+      setCommonsMessage(lookup.license === 'Public domain' || lookup.licenseUrl
+        ? `자동 확인 완료: ${lookup.license}. 권리 검수가 자동으로 '검수 완료'로 바뀌었습니다.`
+        : '파일은 찾았지만 라이선스 URL이 없어 자동 검수하지 못했습니다. 직접 확인해주세요.')
+    } else {
+      setCommonsMessage(`자동 확인 실패: ${lookup.error ?? '알 수 없는 오류'}`)
+    }
+    setCommonsBusy(false)
+  }
+
   const saveSiteContent = async () => {
     try {
       const response = await fetch('/api/studio/site-content', {
@@ -490,7 +535,7 @@ export function StudioPage() {
     setCatalogBands((current) => {
       const ids = new Set(current.map((band) => band.id))
       const names = new Set(current.map((band) => band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')))
-      const safeDrafts = newBands.map(forceIntakeDraft).filter((band) => {
+      const safeDrafts = newBands.map(finalizeIntakeBand).filter((band) => {
         const nameKey = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
         if (!band.id || !band.name || ids.has(band.id) || names.has(nameKey)) return false
         ids.add(band.id); names.add(nameKey)
@@ -710,7 +755,11 @@ export function StudioPage() {
               <label>MusicBrainz ID<input value={sourceId(draft, 'MusicBrainz')} onChange={(event) => { setDraft((current) => updateExternalSource(current, 'MusicBrainz', event.target.value.trim())); setDirty(true) }} /></label>
               <label className="studio-grid-span">공식 YouTube 채널 URL<input value={sourceUrl(draft, 'YouTube')} onChange={(event) => { setDraft((current) => updateYoutubeSource(current, event.target.value.trim())); setDirty(true) }} placeholder="https://www.youtube.com/@official-channel" /><small>곡별 링크와 함께 상세 화면 하단의 공식 채널 바로가기에 사용됩니다.</small></label>
               <label className="studio-grid-span">표시 이미지 URL<input value={draft.image.displayUrl ?? ''} onChange={(event) => change({ image: { ...draft.image, displayUrl: event.target.value } })} /></label>
-              <label className="studio-grid-span">Commons 원본 페이지<input value={draft.image.credit.sourceUrl} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, sourceUrl: event.target.value } } })} /></label>
+              <label className="studio-grid-span">Commons 원본 페이지 또는 파일명<input value={draft.image.credit.sourceUrl} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, sourceUrl: event.target.value } } })} placeholder="https://commons.wikimedia.org/wiki/File:... 또는 Example.jpg" /></label>
+              <div className="studio-grid-span studio-inline-actions">
+                <button type="button" disabled={commonsBusy || !draft.image.credit.sourceUrl.trim()} onClick={() => void runCommonsLookup()}>{commonsBusy ? <Loader2 size={15} className="is-spinning" /> : <Wand2 size={15} />} Commons에서 자동 채우기</button>
+                {commonsMessage && <small>{commonsMessage}</small>}
+              </div>
               <label>촬영자·제작자<input value={draft.image.credit.creator ?? ''} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, creator: event.target.value } } })} /></label>
               <label>라이선스<input value={draft.image.credit.license} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, license: event.target.value } } })} /></label>
               <label>라이선스 URL<input value={draft.image.credit.licenseUrl ?? ''} onChange={(event) => change({ image: { ...draft.image, credit: { ...draft.image.credit, licenseUrl: event.target.value } } })} /></label>
