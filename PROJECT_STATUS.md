@@ -5,15 +5,19 @@
 
 ## 0. 현재 상태 요약
 
-- 마지막 갱신: 2026-07-19 KST · Codex
+- 마지막 갱신: 2026-07-21 KST · Claude
 - 로컬 폴더: `C:\Users\SH\Documents\Codex\rock-atlas`
-- 공개 기준 브랜치: `main`
-- 현재 개발 브랜치: `codex/taxonomy-v2`
-- 마지막 기능 커밋: `8712fef feat: streamline Gemini Gem band intake`
+- 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
+- 현재 개발 브랜치: `codex/taxonomy-v2` — `main`은 이 브랜치의 **순수 조상**(divergence 없음, `git merge-base --is-ancestor main codex/taxonomy-v2` = true)이라 병합 시 fast-forward로 안전하게 처리됨
 - 원격 백업 브랜치: `backup/pre-taxonomy-v2-20260719`
 - 원격 백업 태그: `pre-taxonomy-v2-20260719`
-- 현재 미커밋 변경: `src/data/catalog.json`의 Dream Theater 추가·편집
-- 현재 결론: Dream Theater는 로컬 파일에는 저장됐지만 데이터 검사 오류가 남아 있으므로 아직 커밋·푸시하면 안 된다.
+- 2026-07-21 있었던 일: 사용자가 GitHub Desktop에서 브랜치를 `main`으로 전환 → 우발적 stash-pop 충돌로 5개 파일에 충돌 마커가 그대로 섞여 저장됨. Claude가 stash의 각 파일 blob(git object, 충돌 마커 없는 원본)을 직접 추출해 무손실 복구, `codex/taxonomy-v2`로 재전환 완료. 이 과정에서 사용자가 Studio로 별도 추가한 3번째 밴드 **Kodaline**도 함께 발견·보존됨(자동 검수 파이프라인이 실제로 잘 작동한 사례 — 대표곡 2곡 자동 검증까지 완료된 상태였음).
+- 미커밋 변경 (전부 로컬에만 있고 커밋·푸시 전):
+  - `src/lib/bandIntake.ts`, `src/components/BandIntakePanel.tsx`, `src/components/StudioPage.tsx`, `src/index.css` — 밴드 등록(Gemini Gem 입고) 기능 자동화 강화
+  - `src/data/catalog.json` — Dream Theater·Deep Purple·Kodaline 데이터를 Claude가 검수·수정 완료
+  - `src/data/siteContent.json` — 히어로 문구 소폭 수정 (사용자 작업으로 추정, 손대지 않음)
+  - `.claude/launch.json` 신규 — Studio 브라우저 미리보기용 dev 서버 설정
+- `npm run validate:data` 결과: **오류 0건** (49개 밴드 전체 통과)
 
 상태가 이 문서와 다르면 추측하지 말고 실제 `git status`, `git diff`, 현재 파일 내용을 우선한다. 확인한 차이는 이 문서에 바로 반영한다.
 
@@ -116,49 +120,22 @@ git diff --check
 - 전체 링크·이미지 상태 검사, 휴지통, 최근 20회 로컬 카탈로그 복구
 - 구형 8장르 호환 필드는 접힌 영역에 보존하고 새 분류 변경 시 자동 동기화
 
-## 6. 현재 진행 중 작업 — Dream Theater
+## 6. Dream Theater · Deep Purple 검수 결과 (2026-07-21, Claude 완료)
 
-Dream Theater는 사용자가 Gemini Gem과 Studio 입고 흐름을 시험하며 추가했다.
+두 밴드 모두 사용자가 Gemini Gem으로 조사해 Studio에 직접 등록한 것. Claude가 웹 검색·YouTube oEmbed·Wikimedia Commons API로 직접 대조 검수해 아래를 수정 완료:
 
-- 카탈로그 밴드 수: 47개
-- Dream Theater 상태: `published`
-- 관계: Tool, Yes, King Crimson 3개 추가
-- taxonomy v2: 값은 있으나 검수 상태는 `draft`
-- 멤버: 7명 모두 활동연도 있음
-- Git 상태: `src/data/catalog.json` 미커밋
-- Studio 로컬 복구 이력은 `src/data/catalog-history.json`에 있으나 이 파일은 Git에서 제외됨
-
-### 현재 확인된 Dream Theater 문제
-
-- 밴드 검수자와 검수 날짜 누락
-- 공식 YouTube 채널 누락
-- 이미지 원본·표시 URL·제작자·라이선스 URL이 없는데 권리 상태만 `verified`로 설정됨
-- Commons 출처 항목과 이미지 권리 정보 불일치
-- 대표곡 2개의 YouTube ID가 비어 있음
-- 대표곡 URL과 Wikipedia URL에 Gemini의 `[주소](주소)` 마크다운 형식이 섞임
-- 대표곡 검수 상태가 `draft`
-- 분류 검수 상태가 `draft`
-
-2026-07-19 종료 시 `npm run validate:data` 결과: Dream Theater 관련 무결성 오류 11건.
-`validate:taxonomy`는 47/47 밴드 통과.
-
-### Dream Theater 다음 작업 순서
-
-1. 오류 수정 전까지 공개 상태를 다시 `draft` 또는 `reviewed` 이전 단계로 되돌릴지 판단한다.
-2. Gemini 마크다운 URL을 정상 URL로 정리하고 대표곡 YouTube ID를 확인한다.
-3. 공식 YouTube 채널을 확인한다.
-4. Wikimedia Commons 이미지의 실제 파일·제작자·라이선스를 확인하고 올바른 경우에만 `verified`로 설정한다.
-5. taxonomy와 대표곡 검수 상태, 밴드 검수자·날짜를 정상화한다.
-6. 3개 관계의 종류·강도·이유를 확인한다.
-7. 모든 검사와 공개 화면 확인 후 별도 데이터 커밋으로 기록한다.
+- **Dream Theater**: 마크다운으로 오염된 Wikipedia URL 정리, 대표곡 2곡(Pull Me Under, Metropolis Pt. 1)의 가짜 YouTube ID를 실제 확인된 공식 영상 ID로 교체, 공식 YouTube 채널(`UCBHhdnYxvu94yefpeZABY9g`) 추가, Commons 이미지(`DreamTheater2011.jpg`, CC BY 2.0) 새로 연결, taxonomy·트랙 검수 상태를 `reviewed`로 정리. `reviewStatus`는 사용자가 이미 `published`로 해둔 것을 그대로 유지(공개 여부는 건드리지 않음).
+- **Deep Purple**: Studio 자동 이미지 검색이 밴드와 무관한 "Abbey Road Studios / Peter Mew" 사진을 잘못 붙였던 것을 실제 밴드 사진(`Deep Purple (1968).jpg`, Public domain)으로 교체, 대표곡 2곡의 가짜 YouTube ID를 실제 공식 영상으로 교체, Led Zeppelin·Black Sabbath 관계의 강도가 정규화 버그로 "약함"으로 잘못 저장된 것을 "강함"으로 수정, taxonomy·밴드 검수자/일시 기록. `reviewStatus: 'reviewed'` 유지(아직 미공개).
+- **Kodaline**: 이미 자동 입고 파이프라인으로 대표곡 2곡이 자동 검수 완료된 상태로 추가돼 있었음. 밴드 레벨 검수자·검수일시만 누락돼 있어 Claude가 채움. 이미지는 원본 미제공 상태라 `needs-review`로 남김(오류 아님).
+- 검수자 표기: 세 밴드 모두 `reviewedBy: "Claude (AI 검수)"`로 기록.
+- 결과: `npm run validate:data` 오류 0건 (이전 12건 → 0건, Kodaline 포함 49개 밴드 전체 통과).
 
 ## 7. 다음 개발 방향과 우선순위
 
-### P0 · 현재 데이터 정상화
+### P0 · 완료
 
-- Dream Theater 오류 11건 해결
-- 실제 페이지, 장르 목록, 관계 노드 확인
-- 검사 통과 후 커밋·푸시
+- ~~Dream Theater·Deep Purple 데이터 오류 해결~~ → 완료, 검사 통과
+- 커밋·푸시는 아직 안 함 (사용자 확인 대기)
 
 ### P1 · 운영자 검수 자동화
 
@@ -200,33 +177,23 @@ Dream Theater는 사용자가 Gemini Gem과 Studio 입고 흐름을 시험하며
 
 GitHub Desktop의 커밋 요약은 `Dream Theater 추가`, `밴드 20개 데이터 보강`처럼 짧게 적어도 된다.
 
-## 9. 2026-07-19 작업 기록
+## 9. 2026-07-19 ~ 07-21 작업 기록 (확정 사안만)
 
-### 완료 및 원격 공유
-
-- Studio 구형 장르 호환 필드 정리와 새 분류 자동 동기화
-- 영상 임베드 중심 진단을 대표곡 외부 링크 진단으로 전환
-- 기존 이미지 권리 경고 13건 검수, Commons 이미지 46/46 정리
-- 자동진단 0건 확인 당시의 기준 데이터 커밋: `b0049c2`
-- Gemini Gem용 짧은 고정 지침과 자연어 분류 변환 구현
-- Gem JSON 입고 시험과 빌드 검증
-- Gem 입고 개선 커밋: `8712fef`
-- 두 커밋 모두 `origin/codex/taxonomy-v2`에 푸시 완료
-- Codex·Claude 공통 시작 규칙과 이 인수인계 문서를 저장소에 추가
-
-### 오늘 종료 시 미완료
-
-- 사용자가 Dream Theater를 추가·편집했으며 `catalog.json`에만 저장됨
-- Dream Theater 데이터 검사 오류 11건
-- Dream Theater 변경은 아직 커밋·푸시하지 않음
-- AI 공개 검수 자동화, 멤버 활동연도 UI·기존 데이터 보강, Git 원클릭 기록은 다음 작업으로 이관
+- Studio 구형 장르 호환 필드 정리, 영상 임베드 진단 → 외부 링크 진단 전환, 기존 이미지 권리 경고 13건 검수. 커밋 `b0049c2`, `8712fef` (둘 다 `origin/codex/taxonomy-v2`에 푸시 완료).
+- **밴드 등록(Gemini Gem 입고) 기능 자동화 강화** (`src/lib/bandIntake.ts`, `BandIntakePanel.tsx`, `StudioPage.tsx`, `index.css`):
+  - Gemini의 마크다운 링크·구글 검색 리다이렉트(`[주소](google.com/search?q=주소)`) 자동 해제
+  - YouTube oEmbed로 대표곡 영상 실존 여부 자동 확인, Wikimedia Commons API로 이미지 라이선스 자동 조회
+  - 이미지 자동 조회 결과에 **밴드 이름이 실제로 포함되는지 검사** — 라이선스만 진짜고 사진 자체는 무관한 경우를 자동 거부 (Deep Purple 사고로 발견)
+  - 관계 강도(strength)를 Gemini의 1~5 척도에서 1~3으로 변환할 때, 범위를 벗어난 값을 최솟값(1)이 아니라 가까운 쪽으로 clamp하도록 수정 (5점을 "약함"으로 잘못 저장하던 버그)
+  - 트랙 하나의 오류가 밴드 전체 등록을 막지 않도록 완화(그 트랙만 자동 검수 승격에서 제외, 나머지는 초안으로 즉시 추가 가능)
+  - 기존 밴드 편집 화면에도 "Commons에서 자동 채우기" 버튼 추가해 동일 기능 재사용
+  - 검증: 타입체크·빌드·브라우저 실동작(정상 케이스/오류 케이스 모두) 확인 완료
+- **Dream Theater·Deep Purple 데이터 검수 완료** — 상세는 6번 항목 참고. `validate:data` 오류 0건.
+- 남은 자동화 한계 (의도적으로 사람/AI 판단 영역으로 남김): 관계의 타당성, 소개·음악 설명의 사실 정확성, "밴드 이름이 제목에 있다"는 것 이상의 사진 내용 검증.
 
 ## 10. 작업 재개 시 첫 행동
 
-다음 AI는 사용자에게 같은 설명을 다시 요구하지 말고 아래 순서로 시작한다.
-
-1. Git과 `catalog.json`에서 Dream Theater 현재 상태 재확인
-2. 사용자가 그 사이 수정했는지 `git diff`로 확인
-3. `validate:data`의 현재 오류 목록 확인
-4. 사용자 지시가 별도로 바뀌지 않았다면 P0 Dream Theater 정상화부터 진행
-5. P0 완료 후 P1 운영자 AI 검수 자동화로 이동
+1. `git status`·`git diff`로 위 미커밋 변경이 그대로인지 확인
+2. `npm run validate:data`로 오류 0건 유지되는지 확인
+3. 사용자 지시가 없으면: 커밋 분리(자동화 코드 vs 데이터 수정) 여부를 먼저 사용자에게 확인 후 커밋
+4. `main` 병합·GitHub Pages 배포는 사용자가 명시적으로 요청할 때만 진행
