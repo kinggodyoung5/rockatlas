@@ -3,10 +3,34 @@ import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
-import type { Band, Track } from '../types/music'
+import type { Band, BandEraTag, Track } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
 import { BandImage } from './BandImage'
 import { RelationMap } from './RelationMap'
+
+const LATEST_ERA = '2020s'
+
+/** Collapses consecutive eras with the same subgenre/genre mix into one range row, so a genre that never changed doesn't repeat itself every decade. */
+function groupEraTags(eraTags: BandEraTag[]) {
+  const groups: { startEra: BandEraTag['era']; endEra: BandEraTag['era']; subgenres: string[]; note?: string }[] = []
+  for (const tag of eraTags) {
+    const last = groups.at(-1)
+    const sameAsLast = last && JSON.stringify(last.subgenres) === JSON.stringify(tag.subgenres)
+    if (sameAsLast) {
+      last.endEra = tag.era
+      if (tag.note) last.note = last.note ? `${last.note} ${tag.note}` : tag.note
+    } else {
+      groups.push({ startEra: tag.era, endEra: tag.era, subgenres: tag.subgenres, note: tag.note })
+    }
+  }
+  return groups.map((group) => {
+    const startLabel = eraById[group.startEra].label
+    const endLabel = eraById[group.endEra].label
+    const isOngoing = group.endEra === LATEST_ERA && group.startEra !== group.endEra
+    const label = group.startEra === group.endEra ? startLabel : isOngoing ? `${startLabel}~` : `${startLabel}~${endLabel}`
+    return { key: `${group.startEra}-${group.endEra}`, label, subgenres: group.subgenres, note: group.note }
+  })
+}
 
 interface BandDetailProps {
   band: Band
@@ -87,10 +111,12 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           <h2>어떤 음악을 하나요?</h2>
           <p>{band.style}</p>
           <div className="sound-facts">
-            <div><span>귀에 먼저 잡히는 요소</span><strong>{band.tags.join(' · ') || '편집 대기'}</strong></div>
-            <div><span>세부 장르</span><strong>{taxonomySubgenres.join(' · ') || band.subgenres.join(' · ') || taxonomyGenre?.displayName || genre.name}</strong></div>
-            {topMoods.length > 0 && <div><span>대표 분위기</span><strong>{topMoods.join(' · ')}</strong></div>}
-            <div><span>대표 음반</span><strong>{albums.join(' · ') || '편집 대기'}</strong></div>
+            <div><span>귀에 먼저 잡히는 요소</span>{band.tags.length ? band.tags.map((tag) => <strong key={tag}>{tag}</strong>) : <strong>편집 대기</strong>}</div>
+            <div><span>세부 장르</span>{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).length
+              ? (taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((item) => <strong key={item}>{item}</strong>)
+              : <strong>{taxonomyGenre?.displayName || genre.name}</strong>}</div>
+            {topMoods.length > 0 && <div><span>대표 분위기</span>{topMoods.map((mood) => <strong key={mood}>{mood}</strong>)}</div>}
+            <div><span>대표 음반</span>{albums.length ? albums.map((album) => <strong key={album}>{album}</strong>) : <strong>편집 대기</strong>}</div>
           </div>
           <div className="genre-crossings">
             <span>장르 교차점</span>
@@ -99,11 +125,11 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
               : band.genreIds.map((id) => <strong key={id}>{genreById[id].name}</strong>)}
           </div>
           <div className="era-timeline" aria-label="시대별 장르 변화">
-            {band.eraTags.map((eraTag) => (
-              <div key={eraTag.era}>
-                <strong>{eraById[eraTag.era].label}</strong>
-                <span>{eraTag.subgenres.join(' · ')}</span>
-                {eraTag.note && <small>{eraTag.note}</small>}
+            {groupEraTags(band.eraTags).map((group) => (
+              <div key={group.key}>
+                <strong>{group.label}</strong>
+                <span>{group.subgenres.map((item) => <em key={item}>{item}</em>)}</span>
+                {group.note && <small>{group.note}</small>}
               </div>
             ))}
           </div>

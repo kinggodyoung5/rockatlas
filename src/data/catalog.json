@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T10:39:37.612Z",
+  "updatedAt": "2026-07-21T10:59:13.145Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -10892,19 +10892,17 @@
             "heavy-metal"
           ],
           "subgenres": [
-            "Progressive Metal",
-            "Technical Metal",
-            "Progressive Rock",
             "프로그레시브 메탈",
+            "테크니컬 메탈",
             "프로그레시브 록"
           ]
         }
       ],
       "tags": [
-        "Progressive Metal",
-        "Technical Metal",
-        "Concept Album",
-        "Virtuoso"
+        "프로그레시브 메탈",
+        "테크니컬 메탈",
+        "콘셉트 앨범",
+        "비르투오소"
       ],
       "summary": "탁월한 연주력과 극적인 곡 구성을 바탕으로 프로그레시브 메탈의 상업적·평론적 전성기를 이끈 선구적인 밴드. 그래미 어워드 수상을 통해 장르를 넘어선 대중적 성과와 음악적 영향력을 입증.",
       "style": "변박과 복잡한 당김음이 교차하는 정교한 리듬 섹션 위에 스피디한 기타와 키보드의 유기적인 유니즌 플레이, 화려한 기타 솔로가 돋보인다. 하이톤의 서사적인 보컬과 극적인 기승전결을 가진 롱폼(Long-form) 악곡 구성, 그리고 정교한 스튜디오 프로덕션이 특징이다.",
@@ -11086,7 +11084,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T10:36:03.268Z"
+      "reviewedAt": "2026-07-21T10:59:13.145Z"
     },
     {
       "id": "deep-purple",
@@ -11114,20 +11112,18 @@
             "heavy-metal"
           ],
           "subgenres": [
-            "Hard Rock",
-            "Heavy Metal",
-            "Proto-Metal",
             "하드 록",
+            "헤비 메탈",
             "프로토 메탈"
           ]
         }
       ],
       "tags": [
-        "Hard Rock",
-        "Heavy Metal",
-        "Progressive Rock",
-        "Proto-Metal",
-        "Classic Rock"
+        "하드 록",
+        "헤비 메탈",
+        "프로그레시브 록",
+        "프로토 메탈",
+        "클래식 록"
       ],
       "summary": "1968년 영국에서 결성되어 하드 록과 헤비메탈의 기틀을 다진 전설적인 록 밴드. 강력한 딥 퍼플 특유의 리프와 클래식 요소를 결합하여 세계적으로 거대한 상업적 성공과 음악적 영향을 남겼다.",
       "style": "강렬한 오르간과 기타의 듀얼 리프, 리치 블랙모어의 화려한 솔로 연주가 특징입니다. 이안 길런의 폭발적인 고음 보컬과 정교한 라이브 전개가 신나는 록 사운드를 완성한다.",
@@ -11302,7 +11298,7 @@
       },
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T08:42:40.279Z"
+      "reviewedAt": "2026-07-21T10:59:13.145Z"
     },
     {
       "id": "kodaline",
@@ -11328,20 +11324,18 @@
             "britpop-indie"
           ],
           "subgenres": [
-            "Indie Folk",
-            "Indie Rock",
-            "Pop Rock",
+            "인디 포크",
             "인디 록",
             "팝 록"
           ]
         }
       ],
       "tags": [
-        "Indie Rock",
-        "Indie Folk",
-        "Pop Rock",
-        "Alternative Rock",
-        "Irish"
+        "인디 록",
+        "인디 포크",
+        "팝 록",
+        "얼터너티브 록",
+        "아이리시"
       ],
       "summary": "서정적이고 감성적인 포크 팝 사운드로 글로벌 인디 씬에서 큰 사랑을 받았다. 1집 In A Perfect World는 제2의 콜드플레이라는 평을 받게 했다.",
       "style": "피아노와 어쿠스틱 기타를 바탕으로 감성적인 멜로디라인을 펼쳐냅니다. 호소력 짙은 보컬과 후반부로 갈수록 고조되는 웅장한 코러스 합주가 특징입니다.",
@@ -11485,7 +11479,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T10:36:03.268Z"
+      "reviewedAt": "2026-07-21T10:59:13.145Z"
     }
   ]
 }

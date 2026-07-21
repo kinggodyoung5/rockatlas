@@ -241,6 +241,8 @@ img { display: block; max-width: 100%; }
 .era-timeline > div { display: grid; grid-template-columns: 70px 1fr; gap: 5px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
 .era-timeline strong { color: var(--genre-color); font-size: 12px; }
 .era-timeline span { color: #aaa8aa; font-size: 13px; }
+.era-timeline span em { display: block; font-style: normal; }
+.era-timeline span em + em { margin-top: 3px; }
 .era-timeline small { grid-column: 2; color: #777579; font-size: 12px; line-height: 1.55; }
 .track-list { border-top: 1px solid var(--line); }
 .track-row { width: 100%; display: grid; grid-template-columns: 38px 1fr auto; align-items: center; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; padding: 16px 3px; cursor: pointer; }
@@ -357,6 +359,7 @@ img { display: block; max-width: 100%; }
 .sound-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 30px; background: var(--line); border: 1px solid var(--line); }
 .sound-facts > div { min-width: 0; padding: 16px; background: #111114; }
 .sound-facts span, .sound-facts strong { display: block; }
+.sound-facts strong + strong { margin-top: 3px; }
 .sound-facts span { margin-bottom: 8px; color: var(--genre-color); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
 .sound-facts strong { color: #d0cdcd; font-size: 13px; line-height: 1.6; word-break: keep-all; }
 .career-timeline { position: relative; margin: 4px 0 28px; }
