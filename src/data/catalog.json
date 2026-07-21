@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T10:59:13.145Z",
+  "updatedAt": "2026-07-21T12:02:30.660Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -4344,8 +4344,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T12:00:54.378Z",
       "image": {
         "wikipediaTitle": "Pearl Jam",
         "fileName": "Pearl_Jam_2016.jpg",
@@ -4412,7 +4412,8 @@
         "subgenreIds": [
           "grunge",
           "alternative-rock",
-          "hard-rock"
+          "hard-rock",
+          "classic-rock"
         ],
         "moodScores": {
           "hopeful-uplifting": 3,
@@ -8523,8 +8524,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T12:00:54.378Z",
       "image": {
         "wikipediaTitle": "Travis",
         "fileName": "Travis_band_zz.jpg",
@@ -8589,7 +8590,8 @@
         "subgenreIds": [
           "post-britpop",
           "pop-rock",
-          "alternative-rock"
+          "alternative-rock",
+          "britpop"
         ],
         "moodScores": {
           "melancholic-lonely": 4,
@@ -9102,8 +9104,8 @@
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T12:00:54.378Z",
       "image": {
         "wikipediaTitle": "Queen (band)",
         "fileName": "Queen 1984 011.jpg",
@@ -9170,7 +9172,8 @@
           "hard-rock",
           "traditional-heavy-metal",
           "arena-rock",
-          "pop-rock"
+          "pop-rock",
+          "glam-rock"
         ],
         "moodScores": {
           "bright-upbeat": 4,
@@ -11283,7 +11286,9 @@
         ],
         "subgenreIds": [
           "hard-rock",
-          "proto-metal"
+          "proto-metal",
+          "progressive-rock",
+          "traditional-heavy-metal"
         ],
         "moodScores": {
           "aggressive-heavy": 3,
@@ -11298,7 +11303,7 @@
       },
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T10:59:13.145Z"
+      "reviewedAt": "2026-07-21T12:00:54.378Z"
     },
     {
       "id": "kodaline",
@@ -11480,6 +11485,228 @@
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:59:13.145Z"
+    },
+    {
+      "id": "avenged-sevenfold",
+      "name": "Avenged Sevenfold",
+      "formed": 1999,
+      "origin": "Huntington Beach, California, United States",
+      "countryCode": "US",
+      "activeYears": "1999–present",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "hard-rock"
+      ],
+      "subgenres": [
+        "메탈코어",
+        "얼터너티브 메탈",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal",
+            "hard-rock"
+          ],
+          "subgenres": [
+            "헤비메탈",
+            "메탈코어"
+          ]
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal",
+            "hard-rock"
+          ],
+          "subgenres": [
+            "헤비메탈",
+            "팝메탈",
+            "모던메탈",
+            "하드락"
+          ]
+        }
+      ],
+      "tags": [
+        "헤비메탈",
+        "메탈코어"
+      ],
+      "summary": "1999년 미국 캘리포니아에서 결성되어 2000년대 이후 현대 메탈 씬을 이끈 대표적인 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 밴드. 극적인 곡 구성과 화려한 악기 연주로 그래미 후보에 오르고 세계적인 록 페스티벌 헤드라이너로 자리매김했다.",
+      "style": "트윈 기타의 정교하고 화려한 하모니와 공격적인 드럼 리듬이 사운드의 핵심. M. 섀도우스의 거친 스크리밍과 호소력 있는 클린 보컬을 넘나드는 가창에 진보적인 곡 구조.",
+      "image": {
+        "wikipediaTitle": "Avenged Sevenfold",
+        "alt": "Avenged Sevenfold 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avenged-Sevenfold-BergenCalling-2011-Christian Misje-5503.jpg",
+          "creator": "Christian Misje",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-21T12:02:30.660Z"
+        },
+        "fileName": "File:Avenged-Sevenfold-BergenCalling-2011-Christian Misje-5503.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Avenged-Sevenfold-BergenCalling-2011-Christian_Misje-5503.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Avenged-Sevenfold-BergenCalling-2011-Christian_Misje-5503.jpg"
+      },
+      "members": [
+        {
+          "name": "M. Shadows",
+          "role": "Lead Vocals",
+          "status": "current",
+          "activeYears": "1999–present"
+        },
+        {
+          "name": "Zacky Vengeance",
+          "role": "Rhythm Guitar, Backing Vocals",
+          "status": "current",
+          "activeYears": "1999–present"
+        },
+        {
+          "name": "Synyster Gates",
+          "role": "Lead Guitar, Backing Vocals",
+          "status": "current",
+          "activeYears": "2001–present"
+        },
+        {
+          "name": "Johnny Christ",
+          "role": "Bass, Backing Vocals",
+          "status": "current",
+          "activeYears": "2002–present"
+        },
+        {
+          "name": "Brooks Wackerman",
+          "role": "Drums",
+          "status": "current",
+          "activeYears": "2015–present"
+        },
+        {
+          "name": "The Rev",
+          "role": "Drums, Vocals",
+          "status": "former",
+          "activeYears": "1999–2009"
+        },
+        {
+          "name": "Mike Portnoy",
+          "role": "Drums",
+          "status": "former",
+          "activeYears": "2010"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "hail-to-the-king",
+          "title": "Hail to the King",
+          "year": 2013,
+          "album": "Hail to the King",
+          "guide": "묵직한 헤비메탈 리프와 정통 록의 직선적인 에너지가 돋보이는 밴드의 시그니처 트랙입니다.",
+          "youtubeId": "DelhLppPSxY",
+          "source": {
+            "label": "Avenged Sevenfold — Hail to the King",
+            "url": "https://www.youtube.com/watch?v=DelhLppPSxY",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-21T11:09:30.891Z"
+        },
+        {
+          "id": "bat-country",
+          "title": "Bat Country",
+          "year": 2005,
+          "album": "City of Evil",
+          "guide": "화려한 트윈 기타 솔로와 질주하는 리듬 패턴이 펼쳐지는 명곡입니다.",
+          "youtubeId": "IHS3qJXpWDg",
+          "source": {
+            "label": "Avenged Sevenfold — Bat Country",
+            "url": "https://www.youtube.com/watch?v=IHS3qJXpWDg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "웅장한 헤비메탈 리프와 곡 구성 측면에서 큰 음악적 영향을 받았습니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "특유의 트윈 기타 하모니 솔로 스타일 형성에 결정적인 영향을 주었습니다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Avenged Sevenfold — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q165193",
+          "publisher": "Wikidata",
+          "externalId": "Q165193",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Avenged Sevenfold — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/24ec43ac-f872-4d89-80de-34062a420859",
+          "publisher": "MusicBrainz",
+          "externalId": "24ec43ac-f872-4d89-80de-34062a420859",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Avenged Sevenfold — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Avenged_Sevenfold",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Avenged Sevenfold — 공식 YouTube",
+          "url": "https://www.youtube.com/@avengedsevenfold",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@avengedsevenfold",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Avenged Sevenfold — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Avenged-Sevenfold-BergenCalling-2011-Christian Misje-5503.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "metalcore",
+          "alternative-metal",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "fast-driving": 4,
+          "epic-cinematic": 5,
+          "riff-solo-driven": 5,
+          "technical-complex": 4,
+          "experimental-weird": 2
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-21T12:02:30.660Z"
     }
   ]
 }
