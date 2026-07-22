@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-22T11:52:49.941Z",
+  "updatedAt": "2026-07-22T11:56:15.069Z",
   "bands": [
     {
       "id": "rage-against-the-machine",
@@ -621,7 +621,8 @@
           "post-grunge",
           "hard-rock",
           "alternative-rock",
-          "radio-rock"
+          "radio-rock",
+          "pop-rock"
         ],
         "moodScores": {
           "romantic-emotional": 5,
@@ -635,7 +636,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-22T11:43:20.546Z"
+      "reviewedAt": "2026-07-22T11:56:15.069Z"
     },
     {
       "id": "red-hot-chili-peppers",
@@ -2397,8 +2398,8 @@
         {
           "name": "David Gilmour",
           "role": "기타·보컬",
-          "status": "current",
-          "activeYears": "1967–present"
+          "status": "former",
+          "activeYears": "1967–2014"
         },
         {
           "name": "Roger Waters",
@@ -2415,8 +2416,8 @@
         {
           "name": "Nick Mason",
           "role": "드럼",
-          "status": "current",
-          "activeYears": "1965–present"
+          "status": "former",
+          "activeYears": "1965–2014"
         }
       ],
       "tracks": [
@@ -2519,7 +2520,7 @@
       ],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-22T11:46:36.840Z",
+      "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
         "wikipediaTitle": "Pink Floyd",
         "fileName": "Pink Floyd 1967 with Syd Barrett.jpg",
@@ -2656,19 +2657,19 @@
         {
           "name": "Robert Fripp",
           "role": "기타",
-          "status": "current",
-          "activeYears": "1969–present"
+          "status": "former",
+          "activeYears": "1969–2021"
         },
         {
           "name": "Mel Collins",
           "role": "색소폰·플루트",
-          "status": "current",
+          "status": "former",
           "activeYears": "1970–1972, 2013–2021"
         },
         {
           "name": "Tony Levin",
           "role": "베이스",
-          "status": "current",
+          "status": "former",
           "activeYears": "1981–1984, 1994–1997, 2013–2021"
         },
         {
@@ -2778,7 +2779,7 @@
       ],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T09:50:40.249Z",
+      "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
         "wikipediaTitle": "King Crimson",
         "fileName": "King_Crimson,_De_vereeniging_te_Nijmegen_-_48113112087_(cropped).jpg",
@@ -4138,22 +4139,26 @@
         {
           "name": "Thom Yorke",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–present"
         },
         {
           "name": "Jonny Greenwood",
           "role": "기타·키보드",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–present"
         },
         {
           "name": "Colin Greenwood",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–present"
         },
         {
           "name": "Philip Selway",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1985–present"
         }
       ],
       "tracks": [
@@ -4177,7 +4182,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "여러 개의 곡 파트가 이어지는 6분 이상의 구성으로, 조니 그린우드의 실험적인 기타 톤과 톰 요크의 절제된 보컬이 대비를 이룬다."
         },
         {
           "id": "no-surprises",
@@ -4199,7 +4205,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "차분한 글로켄슈필 멜로디와 대조적으로 체념적인 가사가 담긴, 밴드의 서정적인 면모를 대표하는 곡이다."
         }
       ],
       "relations": [
@@ -4269,8 +4276,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:54:41.346Z",
       "image": {
         "wikipediaTitle": "Radiohead",
         "fileName": "RadioheadO2211125_composite.jpg",
@@ -6630,7 +6637,7 @@
       "formed": 1981,
       "origin": "헌팅턴파크, 미국",
       "countryCode": "US",
-      "activeYears": "1981–2019",
+      "activeYears": "1981–2019, 2024–present",
       "primaryGenre": "extreme-metal",
       "genreIds": [
         "extreme-metal",
@@ -6796,7 +6803,7 @@
       ],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-22T11:49:24.757Z",
+      "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
         "wikipediaTitle": "Slayer",
         "fileName": "Slayer,_The_Fields_of_Rock,_2007.jpg",
@@ -8120,7 +8127,7 @@
       "formed": 1971,
       "origin": "애넌데일온허드슨, 미국",
       "countryCode": "US",
-      "activeYears": "1971–1981, 1993–2026",
+      "activeYears": "1971–1981, 1993–present",
       "primaryGenre": "classic-rock",
       "genreIds": [
         "classic-rock",
@@ -8275,7 +8282,7 @@
       ],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-22T11:49:24.757Z",
+      "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
         "wikipediaTitle": "Steely Dan",
         "fileName": "Becker & Fagen of Steely Dan at Pori Jazz 2007.jpg",
@@ -12888,7 +12895,8 @@
         "subgenreIds": [
           "pop-rock",
           "alternative-rock",
-          "indie-rock"
+          "indie-rock",
+          "soft-rock"
         ],
         "moodScores": {
           "romantic-emotional": 5,
@@ -12902,7 +12910,7 @@
       },
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-22T09:36:35.682Z"
+      "reviewedAt": "2026-07-22T11:56:15.069Z"
     }
   ]
 }
