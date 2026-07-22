@@ -526,7 +526,7 @@ export function StudioPage() {
       return
     }
     const nextDraft = { ...draft, id: normalizedId, image: { ...draft.image, alt: draft.image.alt || `${draft.name} 밴드 사진` } }
-    const nextBands = isExisting ? catalogBands.map((band) => band.id === selectedId ? nextDraft : band) : [...catalogBands, nextDraft]
+    const nextBands = isExisting ? catalogBands.map((band) => band.id === selectedId ? nextDraft : band) : [nextDraft, ...catalogBands]
     try {
       const result = await persistBands(nextBands, changeNote)
       setSelectedId(normalizedId)
@@ -548,7 +548,7 @@ export function StudioPage() {
         ids.add(band.id); names.add(nameKey)
         return true
       })
-      return [...current, ...safeDrafts]
+      return [...safeDrafts, ...current]
     })
     setCatalogDirty(true)
     setMessage(`${newBands.length}개 초안을 추가했습니다. 변경 저장을 눌러 적용하세요.`)
