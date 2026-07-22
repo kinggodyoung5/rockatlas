@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-19T00:00:00.000Z",
+  "updatedAt": "2026-07-22T09:50:34.845Z",
   "genres": [
     {
       "id": "classic-roots-rock",
@@ -13,8 +13,21 @@
       "color": "#b66a3c",
       "accent": "230 126 75",
       "iconKey": "guitar",
-      "subgenreIds": ["classic-rock", "blues-rock", "folk-rock", "country-rock", "southern-rock", "roots-rock", "mod-rock", "rock-opera"],
-      "quickMoodIds": ["acoustic-organic", "warm-comforting", "riff-solo-driven"],
+      "subgenreIds": [
+        "classic-rock",
+        "blues-rock",
+        "folk-rock",
+        "country-rock",
+        "southern-rock",
+        "roots-rock",
+        "mod-rock",
+        "rock-opera"
+      ],
+      "quickMoodIds": [
+        "acoustic-organic",
+        "warm-comforting",
+        "riff-solo-driven"
+      ],
       "featuredBandIds": []
     },
     {
@@ -28,8 +41,20 @@
       "color": "#d05032",
       "accent": "239 82 52",
       "iconKey": "zap",
-      "subgenreIds": ["hard-rock", "glam-rock", "glam-metal", "hair-metal", "arena-rock", "sleaze-rock", "proto-metal"],
-      "quickMoodIds": ["riff-solo-driven", "anthemic-live", "massive-heavy"],
+      "subgenreIds": [
+        "hard-rock",
+        "glam-rock",
+        "glam-metal",
+        "hair-metal",
+        "arena-rock",
+        "sleaze-rock",
+        "proto-metal"
+      ],
+      "quickMoodIds": [
+        "riff-solo-driven",
+        "anthemic-live",
+        "massive-heavy"
+      ],
       "featuredBandIds": []
     },
     {
@@ -43,8 +68,25 @@
       "color": "#d47d91",
       "accent": "244 114 182",
       "iconKey": "radio",
-      "subgenreIds": ["pop-rock", "soft-rock", "aor", "piano-rock", "synth-rock", "electronic-rock", "radio-rock", "adult-oriented-rock", "jazz-rock", "post-britpop", "electropop", "synthpop"],
-      "quickMoodIds": ["bright-upbeat", "hopeful-uplifting", "anthemic-live"],
+      "subgenreIds": [
+        "pop-rock",
+        "soft-rock",
+        "aor",
+        "piano-rock",
+        "synth-rock",
+        "electronic-rock",
+        "radio-rock",
+        "adult-oriented-rock",
+        "jazz-rock",
+        "post-britpop",
+        "electropop",
+        "synthpop"
+      ],
+      "quickMoodIds": [
+        "bright-upbeat",
+        "hopeful-uplifting",
+        "anthemic-live"
+      ],
       "featuredBandIds": []
     },
     {
@@ -58,8 +100,25 @@
       "color": "#6655a5",
       "accent": "139 92 246",
       "iconKey": "orbit",
-      "subgenreIds": ["progressive-rock", "art-rock", "progressive-metal", "psychedelic-rock", "neo-psychedelia", "space-rock", "stoner-rock", "experimental-rock", "symphonic-prog", "neo-prog", "post-prog", "art-metal"],
-      "quickMoodIds": ["technical-complex", "cosmic-psychedelic", "long-form-immersive"],
+      "subgenreIds": [
+        "progressive-rock",
+        "art-rock",
+        "progressive-metal",
+        "psychedelic-rock",
+        "neo-psychedelia",
+        "space-rock",
+        "stoner-rock",
+        "experimental-rock",
+        "symphonic-prog",
+        "neo-prog",
+        "post-prog",
+        "art-metal"
+      ],
+      "quickMoodIds": [
+        "technical-complex",
+        "cosmic-psychedelic",
+        "long-form-immersive"
+      ],
       "featuredBandIds": []
     },
     {
@@ -73,8 +132,23 @@
       "color": "#cf3653",
       "accent": "244 63 94",
       "iconKey": "megaphone",
-      "subgenreIds": ["punk-rock", "hardcore-punk", "pop-punk", "emo", "post-hardcore", "skate-punk", "ska-punk", "garage-punk", "anarcho-punk", "reggae-rock"],
-      "quickMoodIds": ["fast-driving", "youth-rebellious", "aggressive-heavy"],
+      "subgenreIds": [
+        "punk-rock",
+        "hardcore-punk",
+        "pop-punk",
+        "emo",
+        "post-hardcore",
+        "skate-punk",
+        "ska-punk",
+        "garage-punk",
+        "anarcho-punk",
+        "reggae-rock"
+      ],
+      "quickMoodIds": [
+        "fast-driving",
+        "youth-rebellious",
+        "aggressive-heavy"
+      ],
       "featuredBandIds": []
     },
     {
@@ -88,8 +162,20 @@
       "color": "#8b7652",
       "accent": "202 138 4",
       "iconKey": "disc3",
-      "subgenreIds": ["indie-rock", "britpop", "garage-rock-revival", "jangle-pop", "indie-pop", "dance-rock", "dance-punk"],
-      "quickMoodIds": ["groovy-danceable", "bright-upbeat", "cold-urban"],
+      "subgenreIds": [
+        "indie-rock",
+        "britpop",
+        "garage-rock-revival",
+        "jangle-pop",
+        "indie-pop",
+        "dance-rock",
+        "dance-punk"
+      ],
+      "quickMoodIds": [
+        "groovy-danceable",
+        "bright-upbeat",
+        "cold-urban"
+      ],
       "featuredBandIds": []
     },
     {
@@ -103,8 +189,20 @@
       "color": "#42516c",
       "accent": "100 116 139",
       "iconKey": "moon",
-      "subgenreIds": ["post-punk", "gothic-rock", "new-wave", "darkwave", "coldwave", "post-punk-revival", "no-wave"],
-      "quickMoodIds": ["cold-urban", "dark-gloomy", "electronic-synth"],
+      "subgenreIds": [
+        "post-punk",
+        "gothic-rock",
+        "new-wave",
+        "darkwave",
+        "coldwave",
+        "post-punk-revival",
+        "no-wave"
+      ],
+      "quickMoodIds": [
+        "cold-urban",
+        "dark-gloomy",
+        "electronic-synth"
+      ],
       "featuredBandIds": []
     },
     {
@@ -118,8 +216,22 @@
       "color": "#3f8b78",
       "accent": "45 212 191",
       "iconKey": "waves",
-      "subgenreIds": ["alternative-rock", "grunge", "post-grunge", "noise-rock", "noise-pop", "college-rock", "funk-rock", "experimental-alternative", "sludge-metal"],
-      "quickMoodIds": ["melancholic-lonely", "noisy-wall", "experimental-weird"],
+      "subgenreIds": [
+        "alternative-rock",
+        "grunge",
+        "post-grunge",
+        "noise-rock",
+        "noise-pop",
+        "college-rock",
+        "funk-rock",
+        "experimental-alternative",
+        "sludge-metal"
+      ],
+      "quickMoodIds": [
+        "melancholic-lonely",
+        "noisy-wall",
+        "experimental-weird"
+      ],
       "featuredBandIds": []
     },
     {
@@ -133,8 +245,20 @@
       "color": "#657da2",
       "accent": "125 160 202",
       "iconKey": "cloud",
-      "subgenreIds": ["shoegaze", "dream-pop", "post-rock", "slowcore", "ambient-rock", "math-rock", "instrumental-rock"],
-      "quickMoodIds": ["dreamy-ethereal", "noisy-wall", "long-form-immersive"],
+      "subgenreIds": [
+        "shoegaze",
+        "dream-pop",
+        "post-rock",
+        "slowcore",
+        "ambient-rock",
+        "math-rock",
+        "instrumental-rock"
+      ],
+      "quickMoodIds": [
+        "dreamy-ethereal",
+        "noisy-wall",
+        "long-form-immersive"
+      ],
       "featuredBandIds": []
     },
     {
@@ -148,8 +272,20 @@
       "color": "#777d86",
       "accent": "203 213 225",
       "iconKey": "shield",
-      "subgenreIds": ["traditional-heavy-metal", "nwobhm", "power-metal", "speed-metal", "thrash-metal", "groove-metal", "neoclassical-metal"],
-      "quickMoodIds": ["fast-driving", "riff-solo-driven", "aggressive-heavy"],
+      "subgenreIds": [
+        "traditional-heavy-metal",
+        "nwobhm",
+        "power-metal",
+        "speed-metal",
+        "thrash-metal",
+        "groove-metal",
+        "neoclassical-metal"
+      ],
+      "quickMoodIds": [
+        "fast-driving",
+        "riff-solo-driven",
+        "aggressive-heavy"
+      ],
       "featuredBandIds": []
     },
     {
@@ -163,8 +299,19 @@
       "color": "#6f7840",
       "accent": "163 177 75",
       "iconKey": "trees",
-      "subgenreIds": ["folk-metal", "viking-metal", "pagan-metal", "celtic-metal", "symphonic-metal", "gothic-metal"],
-      "quickMoodIds": ["epic-cinematic", "acoustic-organic", "anthemic-live"],
+      "subgenreIds": [
+        "folk-metal",
+        "viking-metal",
+        "pagan-metal",
+        "celtic-metal",
+        "symphonic-metal",
+        "gothic-metal"
+      ],
+      "quickMoodIds": [
+        "epic-cinematic",
+        "acoustic-organic",
+        "anthemic-live"
+      ],
       "featuredBandIds": []
     },
     {
@@ -178,8 +325,22 @@
       "color": "#652b32",
       "accent": "248 113 113",
       "iconKey": "skull",
-      "subgenreIds": ["death-metal", "melodic-death-metal", "black-metal", "doom-metal", "death-doom", "grindcore", "blackened-death-metal", "technical-death-metal", "progressive-death-metal"],
-      "quickMoodIds": ["aggressive-heavy", "dark-gloomy", "massive-heavy"],
+      "subgenreIds": [
+        "death-metal",
+        "melodic-death-metal",
+        "black-metal",
+        "doom-metal",
+        "death-doom",
+        "grindcore",
+        "blackened-death-metal",
+        "technical-death-metal",
+        "progressive-death-metal"
+      ],
+      "quickMoodIds": [
+        "aggressive-heavy",
+        "dark-gloomy",
+        "massive-heavy"
+      ],
       "featuredBandIds": []
     },
     {
@@ -193,147 +354,769 @@
       "color": "#62516f",
       "accent": "192 132 252",
       "iconKey": "cpu",
-      "subgenreIds": ["nu-metal", "alternative-metal", "metalcore", "deathcore", "industrial-metal", "industrial-rock", "electronicore", "rap-metal", "neue-deutsche-harte"],
-      "quickMoodIds": ["aggressive-heavy", "electronic-synth", "youth-rebellious"],
+      "subgenreIds": [
+        "nu-metal",
+        "alternative-metal",
+        "metalcore",
+        "deathcore",
+        "industrial-metal",
+        "industrial-rock",
+        "electronicore",
+        "rap-metal",
+        "neue-deutsche-harte"
+      ],
+      "quickMoodIds": [
+        "aggressive-heavy",
+        "electronic-synth",
+        "youth-rebellious"
+      ],
       "featuredBandIds": []
     }
   ],
   "subgenres": [
-    { "id": "classic-rock", "name": "클래식 록", "englishName": "Classic Rock" },
-    { "id": "blues-rock", "name": "블루스 록", "englishName": "Blues Rock" },
-    { "id": "folk-rock", "name": "포크 록", "englishName": "Folk Rock" },
-    { "id": "country-rock", "name": "컨트리 록", "englishName": "Country Rock" },
-    { "id": "southern-rock", "name": "서던 록", "englishName": "Southern Rock" },
-    { "id": "roots-rock", "name": "루츠 록", "englishName": "Roots Rock" },
-    { "id": "mod-rock", "name": "모드 록", "englishName": "Mod Rock" },
-    { "id": "rock-opera", "name": "록 오페라", "englishName": "Rock Opera" },
-    { "id": "hard-rock", "name": "하드 록", "englishName": "Hard Rock" },
-    { "id": "glam-rock", "name": "글램 록", "englishName": "Glam Rock" },
-    { "id": "glam-metal", "name": "글램 메탈", "englishName": "Glam Metal" },
-    { "id": "hair-metal", "name": "헤어 메탈", "englishName": "Hair Metal" },
-    { "id": "arena-rock", "name": "아레나 록", "englishName": "Arena Rock" },
-    { "id": "sleaze-rock", "name": "슬리즈 록", "englishName": "Sleaze Rock" },
-    { "id": "proto-metal", "name": "프로토 메탈", "englishName": "Proto-Metal" },
-    { "id": "pop-rock", "name": "팝 록", "englishName": "Pop Rock" },
-    { "id": "soft-rock", "name": "소프트 록", "englishName": "Soft Rock" },
-    { "id": "aor", "name": "AOR", "englishName": "Album-Oriented Rock" },
-    { "id": "piano-rock", "name": "피아노 록", "englishName": "Piano Rock" },
-    { "id": "synth-rock", "name": "신스 록", "englishName": "Synth Rock" },
-    { "id": "electronic-rock", "name": "전자 록", "englishName": "Electronic Rock" },
-    { "id": "radio-rock", "name": "라디오 록", "englishName": "Radio Rock" },
-    { "id": "adult-oriented-rock", "name": "성인 지향 록", "englishName": "Adult-Oriented Rock" },
-    { "id": "jazz-rock", "name": "재즈 록", "englishName": "Jazz Rock" },
-    { "id": "post-britpop", "name": "포스트 브릿팝", "englishName": "Post-Britpop" },
-    { "id": "electropop", "name": "일렉트로팝", "englishName": "Electropop" },
-    { "id": "synthpop", "name": "신스팝", "englishName": "Synthpop" },
-    { "id": "progressive-rock", "name": "프로그레시브 록", "englishName": "Progressive Rock" },
-    { "id": "art-rock", "name": "아트 록", "englishName": "Art Rock" },
-    { "id": "progressive-metal", "name": "프로그레시브 메탈", "englishName": "Progressive Metal" },
-    { "id": "psychedelic-rock", "name": "사이키델릭 록", "englishName": "Psychedelic Rock" },
-    { "id": "neo-psychedelia", "name": "네오사이키델리아", "englishName": "Neo-Psychedelia" },
-    { "id": "space-rock", "name": "스페이스 록", "englishName": "Space Rock" },
-    { "id": "stoner-rock", "name": "스토너 록", "englishName": "Stoner Rock" },
-    { "id": "experimental-rock", "name": "익스페리멘털 록", "englishName": "Experimental Rock" },
-    { "id": "symphonic-prog", "name": "심포닉 프로그", "englishName": "Symphonic Progressive Rock" },
-    { "id": "neo-prog", "name": "네오 프로그", "englishName": "Neo-Prog" },
-    { "id": "post-prog", "name": "포스트 프로그", "englishName": "Post-Progressive" },
-    { "id": "art-metal", "name": "아트 메탈", "englishName": "Art Metal" },
-    { "id": "punk-rock", "name": "펑크 록", "englishName": "Punk Rock" },
-    { "id": "hardcore-punk", "name": "하드코어 펑크", "englishName": "Hardcore Punk" },
-    { "id": "pop-punk", "name": "팝펑크", "englishName": "Pop Punk" },
-    { "id": "emo", "name": "이모", "englishName": "Emo" },
-    { "id": "post-hardcore", "name": "포스트하드코어", "englishName": "Post-Hardcore" },
-    { "id": "skate-punk", "name": "스케이트 펑크", "englishName": "Skate Punk" },
-    { "id": "ska-punk", "name": "스카 펑크", "englishName": "Ska Punk" },
-    { "id": "garage-punk", "name": "개러지 펑크", "englishName": "Garage Punk" },
-    { "id": "anarcho-punk", "name": "아나키 펑크", "englishName": "Anarcho-Punk" },
-    { "id": "reggae-rock", "name": "레게 록", "englishName": "Reggae Rock" },
-    { "id": "indie-rock", "name": "인디 록", "englishName": "Indie Rock" },
-    { "id": "britpop", "name": "브릿팝", "englishName": "Britpop" },
-    { "id": "garage-rock-revival", "name": "가라지 록 리바이벌", "englishName": "Garage Rock Revival" },
-    { "id": "jangle-pop", "name": "쟁글 팝", "englishName": "Jangle Pop" },
-    { "id": "indie-pop", "name": "인디 팝", "englishName": "Indie Pop" },
-    { "id": "dance-rock", "name": "댄스 록", "englishName": "Dance Rock" },
-    { "id": "dance-punk", "name": "댄스 펑크", "englishName": "Dance-Punk" },
-    { "id": "post-punk", "name": "포스트펑크", "englishName": "Post-Punk" },
-    { "id": "gothic-rock", "name": "고딕 록", "englishName": "Gothic Rock" },
-    { "id": "new-wave", "name": "뉴웨이브", "englishName": "New Wave" },
-    { "id": "darkwave", "name": "다크웨이브", "englishName": "Darkwave" },
-    { "id": "coldwave", "name": "콜드웨이브", "englishName": "Coldwave" },
-    { "id": "post-punk-revival", "name": "포스트펑크 리바이벌", "englishName": "Post-Punk Revival" },
-    { "id": "no-wave", "name": "노웨이브", "englishName": "No Wave" },
-    { "id": "alternative-rock", "name": "얼터너티브 록", "englishName": "Alternative Rock" },
-    { "id": "grunge", "name": "그런지", "englishName": "Grunge" },
-    { "id": "post-grunge", "name": "포스트그런지", "englishName": "Post-Grunge" },
-    { "id": "noise-rock", "name": "노이즈 록", "englishName": "Noise Rock" },
-    { "id": "noise-pop", "name": "노이즈 팝", "englishName": "Noise Pop" },
-    { "id": "college-rock", "name": "컬리지 록", "englishName": "College Rock" },
-    { "id": "funk-rock", "name": "펑크 록(Funk)", "englishName": "Funk Rock" },
-    { "id": "experimental-alternative", "name": "실험적 얼터너티브", "englishName": "Experimental Alternative" },
-    { "id": "sludge-metal", "name": "슬러지 메탈", "englishName": "Sludge Metal" },
-    { "id": "shoegaze", "name": "슈게이즈", "englishName": "Shoegaze" },
-    { "id": "dream-pop", "name": "드림 팝", "englishName": "Dream Pop" },
-    { "id": "post-rock", "name": "포스트록", "englishName": "Post-Rock" },
-    { "id": "slowcore", "name": "슬로코어", "englishName": "Slowcore" },
-    { "id": "ambient-rock", "name": "앰비언트 록", "englishName": "Ambient Rock" },
-    { "id": "math-rock", "name": "매스록", "englishName": "Math Rock" },
-    { "id": "instrumental-rock", "name": "인스트루멘털 록", "englishName": "Instrumental Rock" },
-    { "id": "traditional-heavy-metal", "name": "전통 헤비메탈", "englishName": "Traditional Heavy Metal" },
-    { "id": "nwobhm", "name": "NWOBHM", "englishName": "NWOBHM" },
-    { "id": "power-metal", "name": "파워 메탈", "englishName": "Power Metal" },
-    { "id": "speed-metal", "name": "스피드 메탈", "englishName": "Speed Metal" },
-    { "id": "thrash-metal", "name": "스래시 메탈", "englishName": "Thrash Metal" },
-    { "id": "groove-metal", "name": "그루브 메탈", "englishName": "Groove Metal" },
-    { "id": "neoclassical-metal", "name": "네오클래시컬 메탈", "englishName": "Neoclassical Metal" },
-    { "id": "folk-metal", "name": "포크 메탈", "englishName": "Folk Metal" },
-    { "id": "viking-metal", "name": "바이킹 메탈", "englishName": "Viking Metal" },
-    { "id": "pagan-metal", "name": "페이건 메탈", "englishName": "Pagan Metal" },
-    { "id": "celtic-metal", "name": "켈틱 메탈", "englishName": "Celtic Metal" },
-    { "id": "symphonic-metal", "name": "심포닉 메탈", "englishName": "Symphonic Metal" },
-    { "id": "gothic-metal", "name": "고딕 메탈", "englishName": "Gothic Metal" },
-    { "id": "death-metal", "name": "데스 메탈", "englishName": "Death Metal" },
-    { "id": "melodic-death-metal", "name": "멜로딕 데스 메탈", "englishName": "Melodic Death Metal" },
-    { "id": "black-metal", "name": "블랙 메탈", "englishName": "Black Metal" },
-    { "id": "doom-metal", "name": "둠 메탈", "englishName": "Doom Metal" },
-    { "id": "death-doom", "name": "데스둠", "englishName": "Death-Doom" },
-    { "id": "grindcore", "name": "그라인드코어", "englishName": "Grindcore" },
-    { "id": "blackened-death-metal", "name": "블랙큰드 데스 메탈", "englishName": "Blackened Death Metal" },
-    { "id": "technical-death-metal", "name": "테크니컬 데스 메탈", "englishName": "Technical Death Metal" },
-    { "id": "progressive-death-metal", "name": "프로그레시브 데스 메탈", "englishName": "Progressive Death Metal" },
-    { "id": "nu-metal", "name": "뉴 메탈", "englishName": "Nu Metal" },
-    { "id": "alternative-metal", "name": "얼터너티브 메탈", "englishName": "Alternative Metal" },
-    { "id": "metalcore", "name": "메탈코어", "englishName": "Metalcore" },
-    { "id": "deathcore", "name": "데스코어", "englishName": "Deathcore" },
-    { "id": "industrial-metal", "name": "인더스트리얼 메탈", "englishName": "Industrial Metal" },
-    { "id": "industrial-rock", "name": "인더스트리얼 록", "englishName": "Industrial Rock" },
-    { "id": "electronicore", "name": "일렉트로닉코어", "englishName": "Electronicore" },
-    { "id": "rap-metal", "name": "랩 메탈", "englishName": "Rap Metal" },
-    { "id": "neue-deutsche-harte", "name": "노이에 도이체 헤르테", "englishName": "Neue Deutsche Härte" }
+    {
+      "id": "classic-rock",
+      "name": "클래식 록",
+      "englishName": "Classic Rock"
+    },
+    {
+      "id": "blues-rock",
+      "name": "블루스 록",
+      "englishName": "Blues Rock"
+    },
+    {
+      "id": "folk-rock",
+      "name": "포크 록",
+      "englishName": "Folk Rock"
+    },
+    {
+      "id": "country-rock",
+      "name": "컨트리 록",
+      "englishName": "Country Rock"
+    },
+    {
+      "id": "southern-rock",
+      "name": "서던 록",
+      "englishName": "Southern Rock"
+    },
+    {
+      "id": "roots-rock",
+      "name": "루츠 록",
+      "englishName": "Roots Rock"
+    },
+    {
+      "id": "mod-rock",
+      "name": "모드 록",
+      "englishName": "Mod Rock"
+    },
+    {
+      "id": "rock-opera",
+      "name": "록 오페라",
+      "englishName": "Rock Opera"
+    },
+    {
+      "id": "hard-rock",
+      "name": "하드 록",
+      "englishName": "Hard Rock"
+    },
+    {
+      "id": "glam-rock",
+      "name": "글램 록",
+      "englishName": "Glam Rock"
+    },
+    {
+      "id": "glam-metal",
+      "name": "글램 메탈",
+      "englishName": "Glam Metal"
+    },
+    {
+      "id": "hair-metal",
+      "name": "헤어 메탈",
+      "englishName": "Hair Metal"
+    },
+    {
+      "id": "arena-rock",
+      "name": "아레나 록",
+      "englishName": "Arena Rock"
+    },
+    {
+      "id": "sleaze-rock",
+      "name": "슬리즈 록",
+      "englishName": "Sleaze Rock"
+    },
+    {
+      "id": "proto-metal",
+      "name": "프로토 메탈",
+      "englishName": "Proto-Metal"
+    },
+    {
+      "id": "pop-rock",
+      "name": "팝 록",
+      "englishName": "Pop Rock"
+    },
+    {
+      "id": "soft-rock",
+      "name": "소프트 록",
+      "englishName": "Soft Rock"
+    },
+    {
+      "id": "aor",
+      "name": "AOR",
+      "englishName": "Album-Oriented Rock"
+    },
+    {
+      "id": "piano-rock",
+      "name": "피아노 록",
+      "englishName": "Piano Rock"
+    },
+    {
+      "id": "synth-rock",
+      "name": "신스 록",
+      "englishName": "Synth Rock"
+    },
+    {
+      "id": "electronic-rock",
+      "name": "전자 록",
+      "englishName": "Electronic Rock"
+    },
+    {
+      "id": "radio-rock",
+      "name": "라디오 록",
+      "englishName": "Radio Rock"
+    },
+    {
+      "id": "adult-oriented-rock",
+      "name": "성인 지향 록",
+      "englishName": "Adult-Oriented Rock"
+    },
+    {
+      "id": "jazz-rock",
+      "name": "재즈 록",
+      "englishName": "Jazz Rock"
+    },
+    {
+      "id": "post-britpop",
+      "name": "포스트 브릿팝",
+      "englishName": "Post-Britpop"
+    },
+    {
+      "id": "electropop",
+      "name": "일렉트로팝",
+      "englishName": "Electropop"
+    },
+    {
+      "id": "synthpop",
+      "name": "신스팝",
+      "englishName": "Synthpop"
+    },
+    {
+      "id": "progressive-rock",
+      "name": "프로그레시브 록",
+      "englishName": "Progressive Rock"
+    },
+    {
+      "id": "art-rock",
+      "name": "아트 록",
+      "englishName": "Art Rock"
+    },
+    {
+      "id": "progressive-metal",
+      "name": "프로그레시브 메탈",
+      "englishName": "Progressive Metal"
+    },
+    {
+      "id": "psychedelic-rock",
+      "name": "사이키델릭 록",
+      "englishName": "Psychedelic Rock"
+    },
+    {
+      "id": "neo-psychedelia",
+      "name": "네오사이키델리아",
+      "englishName": "Neo-Psychedelia"
+    },
+    {
+      "id": "space-rock",
+      "name": "스페이스 록",
+      "englishName": "Space Rock"
+    },
+    {
+      "id": "stoner-rock",
+      "name": "스토너 록",
+      "englishName": "Stoner Rock"
+    },
+    {
+      "id": "experimental-rock",
+      "name": "익스페리멘털 록",
+      "englishName": "Experimental Rock"
+    },
+    {
+      "id": "symphonic-prog",
+      "name": "심포닉 프로그",
+      "englishName": "Symphonic Progressive Rock"
+    },
+    {
+      "id": "neo-prog",
+      "name": "네오 프로그",
+      "englishName": "Neo-Prog"
+    },
+    {
+      "id": "post-prog",
+      "name": "포스트 프로그",
+      "englishName": "Post-Progressive"
+    },
+    {
+      "id": "art-metal",
+      "name": "아트 메탈",
+      "englishName": "Art Metal"
+    },
+    {
+      "id": "punk-rock",
+      "name": "펑크 록",
+      "englishName": "Punk Rock"
+    },
+    {
+      "id": "hardcore-punk",
+      "name": "하드코어 펑크",
+      "englishName": "Hardcore Punk"
+    },
+    {
+      "id": "pop-punk",
+      "name": "팝펑크",
+      "englishName": "Pop Punk"
+    },
+    {
+      "id": "emo",
+      "name": "이모",
+      "englishName": "Emo"
+    },
+    {
+      "id": "post-hardcore",
+      "name": "포스트하드코어",
+      "englishName": "Post-Hardcore"
+    },
+    {
+      "id": "skate-punk",
+      "name": "스케이트 펑크",
+      "englishName": "Skate Punk"
+    },
+    {
+      "id": "ska-punk",
+      "name": "스카 펑크",
+      "englishName": "Ska Punk"
+    },
+    {
+      "id": "garage-punk",
+      "name": "개러지 펑크",
+      "englishName": "Garage Punk"
+    },
+    {
+      "id": "anarcho-punk",
+      "name": "아나키 펑크",
+      "englishName": "Anarcho-Punk"
+    },
+    {
+      "id": "reggae-rock",
+      "name": "레게 록",
+      "englishName": "Reggae Rock"
+    },
+    {
+      "id": "indie-rock",
+      "name": "인디 록",
+      "englishName": "Indie Rock"
+    },
+    {
+      "id": "britpop",
+      "name": "브릿팝",
+      "englishName": "Britpop"
+    },
+    {
+      "id": "garage-rock-revival",
+      "name": "가라지 록 리바이벌",
+      "englishName": "Garage Rock Revival"
+    },
+    {
+      "id": "jangle-pop",
+      "name": "쟁글 팝",
+      "englishName": "Jangle Pop"
+    },
+    {
+      "id": "indie-pop",
+      "name": "인디 팝",
+      "englishName": "Indie Pop"
+    },
+    {
+      "id": "dance-rock",
+      "name": "댄스 록",
+      "englishName": "Dance Rock"
+    },
+    {
+      "id": "dance-punk",
+      "name": "댄스 펑크",
+      "englishName": "Dance-Punk"
+    },
+    {
+      "id": "post-punk",
+      "name": "포스트펑크",
+      "englishName": "Post-Punk"
+    },
+    {
+      "id": "gothic-rock",
+      "name": "고딕 록",
+      "englishName": "Gothic Rock"
+    },
+    {
+      "id": "new-wave",
+      "name": "뉴웨이브",
+      "englishName": "New Wave"
+    },
+    {
+      "id": "darkwave",
+      "name": "다크웨이브",
+      "englishName": "Darkwave"
+    },
+    {
+      "id": "coldwave",
+      "name": "콜드웨이브",
+      "englishName": "Coldwave"
+    },
+    {
+      "id": "post-punk-revival",
+      "name": "포스트펑크 리바이벌",
+      "englishName": "Post-Punk Revival"
+    },
+    {
+      "id": "no-wave",
+      "name": "노웨이브",
+      "englishName": "No Wave"
+    },
+    {
+      "id": "alternative-rock",
+      "name": "얼터너티브 록",
+      "englishName": "Alternative Rock"
+    },
+    {
+      "id": "grunge",
+      "name": "그런지",
+      "englishName": "Grunge"
+    },
+    {
+      "id": "post-grunge",
+      "name": "포스트그런지",
+      "englishName": "Post-Grunge"
+    },
+    {
+      "id": "noise-rock",
+      "name": "노이즈 록",
+      "englishName": "Noise Rock"
+    },
+    {
+      "id": "noise-pop",
+      "name": "노이즈 팝",
+      "englishName": "Noise Pop"
+    },
+    {
+      "id": "college-rock",
+      "name": "컬리지 록",
+      "englishName": "College Rock"
+    },
+    {
+      "id": "funk-rock",
+      "name": "훵크 록",
+      "englishName": "Funk Rock"
+    },
+    {
+      "id": "experimental-alternative",
+      "name": "실험적 얼터너티브",
+      "englishName": "Experimental Alternative"
+    },
+    {
+      "id": "sludge-metal",
+      "name": "슬러지 메탈",
+      "englishName": "Sludge Metal"
+    },
+    {
+      "id": "shoegaze",
+      "name": "슈게이즈",
+      "englishName": "Shoegaze"
+    },
+    {
+      "id": "dream-pop",
+      "name": "드림 팝",
+      "englishName": "Dream Pop"
+    },
+    {
+      "id": "post-rock",
+      "name": "포스트록",
+      "englishName": "Post-Rock"
+    },
+    {
+      "id": "slowcore",
+      "name": "슬로코어",
+      "englishName": "Slowcore"
+    },
+    {
+      "id": "ambient-rock",
+      "name": "앰비언트 록",
+      "englishName": "Ambient Rock"
+    },
+    {
+      "id": "math-rock",
+      "name": "매스록",
+      "englishName": "Math Rock"
+    },
+    {
+      "id": "instrumental-rock",
+      "name": "인스트루멘털 록",
+      "englishName": "Instrumental Rock"
+    },
+    {
+      "id": "traditional-heavy-metal",
+      "name": "전통 헤비메탈",
+      "englishName": "Traditional Heavy Metal"
+    },
+    {
+      "id": "nwobhm",
+      "name": "NWOBHM",
+      "englishName": "NWOBHM"
+    },
+    {
+      "id": "power-metal",
+      "name": "파워 메탈",
+      "englishName": "Power Metal"
+    },
+    {
+      "id": "speed-metal",
+      "name": "스피드 메탈",
+      "englishName": "Speed Metal"
+    },
+    {
+      "id": "thrash-metal",
+      "name": "스래시 메탈",
+      "englishName": "Thrash Metal"
+    },
+    {
+      "id": "groove-metal",
+      "name": "그루브 메탈",
+      "englishName": "Groove Metal"
+    },
+    {
+      "id": "neoclassical-metal",
+      "name": "네오클래시컬 메탈",
+      "englishName": "Neoclassical Metal"
+    },
+    {
+      "id": "folk-metal",
+      "name": "포크 메탈",
+      "englishName": "Folk Metal"
+    },
+    {
+      "id": "viking-metal",
+      "name": "바이킹 메탈",
+      "englishName": "Viking Metal"
+    },
+    {
+      "id": "pagan-metal",
+      "name": "페이건 메탈",
+      "englishName": "Pagan Metal"
+    },
+    {
+      "id": "celtic-metal",
+      "name": "켈틱 메탈",
+      "englishName": "Celtic Metal"
+    },
+    {
+      "id": "symphonic-metal",
+      "name": "심포닉 메탈",
+      "englishName": "Symphonic Metal"
+    },
+    {
+      "id": "gothic-metal",
+      "name": "고딕 메탈",
+      "englishName": "Gothic Metal"
+    },
+    {
+      "id": "death-metal",
+      "name": "데스 메탈",
+      "englishName": "Death Metal"
+    },
+    {
+      "id": "melodic-death-metal",
+      "name": "멜로딕 데스 메탈",
+      "englishName": "Melodic Death Metal"
+    },
+    {
+      "id": "black-metal",
+      "name": "블랙 메탈",
+      "englishName": "Black Metal"
+    },
+    {
+      "id": "doom-metal",
+      "name": "둠 메탈",
+      "englishName": "Doom Metal"
+    },
+    {
+      "id": "death-doom",
+      "name": "데스둠",
+      "englishName": "Death-Doom"
+    },
+    {
+      "id": "grindcore",
+      "name": "그라인드코어",
+      "englishName": "Grindcore"
+    },
+    {
+      "id": "blackened-death-metal",
+      "name": "블랙큰드 데스 메탈",
+      "englishName": "Blackened Death Metal"
+    },
+    {
+      "id": "technical-death-metal",
+      "name": "테크니컬 데스 메탈",
+      "englishName": "Technical Death Metal"
+    },
+    {
+      "id": "progressive-death-metal",
+      "name": "프로그레시브 데스 메탈",
+      "englishName": "Progressive Death Metal"
+    },
+    {
+      "id": "nu-metal",
+      "name": "뉴 메탈",
+      "englishName": "Nu Metal"
+    },
+    {
+      "id": "alternative-metal",
+      "name": "얼터너티브 메탈",
+      "englishName": "Alternative Metal"
+    },
+    {
+      "id": "metalcore",
+      "name": "메탈코어",
+      "englishName": "Metalcore"
+    },
+    {
+      "id": "deathcore",
+      "name": "데스코어",
+      "englishName": "Deathcore"
+    },
+    {
+      "id": "industrial-metal",
+      "name": "인더스트리얼 메탈",
+      "englishName": "Industrial Metal"
+    },
+    {
+      "id": "industrial-rock",
+      "name": "인더스트리얼 록",
+      "englishName": "Industrial Rock"
+    },
+    {
+      "id": "electronicore",
+      "name": "일렉트로닉코어",
+      "englishName": "Electronicore"
+    },
+    {
+      "id": "rap-metal",
+      "name": "랩 메탈",
+      "englishName": "Rap Metal"
+    },
+    {
+      "id": "neue-deutsche-harte",
+      "name": "노이에 도이체 헤르테",
+      "englishName": "Neue Deutsche Härte"
+    }
   ],
   "moods": [
-    { "id": "bright-upbeat", "groupId": "energy", "name": "밝고 신나는", "description": "경쾌하고 긍정적이며 쉽게 즐길 수 있는 음악.", "order": 1, "iconKey": "sun" },
-    { "id": "fast-driving", "groupId": "energy", "name": "빠르고 질주하는", "description": "빠른 템포와 추진력이 강한 음악.", "order": 2, "iconKey": "gauge" },
-    { "id": "groovy-danceable", "groupId": "energy", "name": "춤추기 좋고 그루비한", "description": "리듬과 베이스가 강하고 몸을 움직이기 좋은 음악.", "order": 3, "iconKey": "audio-waveform" },
-    { "id": "aggressive-heavy", "groupId": "energy", "name": "강렬하고 공격적인", "description": "분노, 강한 타격감과 공격적인 연주가 중심인 음악.", "order": 4, "iconKey": "flame" },
-    { "id": "massive-heavy", "groupId": "energy", "name": "묵직하고 압도적인", "description": "느리거나 중간 템포지만 두껍고 무거운 사운드.", "order": 5, "iconKey": "mountain" },
-    { "id": "slow-calm", "groupId": "energy", "name": "잔잔하고 느린", "description": "자극이 적고 느린 템포로 편안하게 듣는 음악.", "order": 6, "iconKey": "feather" },
-    { "id": "melancholic-lonely", "groupId": "emotion", "name": "우울하고 쓸쓸한", "description": "고독, 상실감과 쓸쓸함이 느껴지는 음악.", "order": 7, "iconKey": "cloud-rain" },
-    { "id": "dark-gloomy", "groupId": "emotion", "name": "어둡고 음울한", "description": "어둡고 불길하거나 음산한 분위기의 음악.", "order": 8, "iconKey": "moon" },
-    { "id": "warm-comforting", "groupId": "emotion", "name": "따뜻하고 편안한", "description": "부드럽고 자연스러우며 안정감을 주는 음악.", "order": 9, "iconKey": "coffee" },
-    { "id": "romantic-emotional", "groupId": "emotion", "name": "낭만적이고 감성적인", "description": "서정적이고 감정적인 보컬과 멜로디가 중심인 음악.", "order": 10, "iconKey": "heart" },
-    { "id": "youth-rebellious", "groupId": "emotion", "name": "청춘과 반항", "description": "청춘, 자유, 반항과 폭발적인 감정을 담은 음악.", "order": 11, "iconKey": "sparkles" },
-    { "id": "hopeful-uplifting", "groupId": "emotion", "name": "희망적이고 벅찬", "description": "후렴이 크게 상승하며 긍정적이고 벅찬 느낌을 주는 음악.", "order": 12, "iconKey": "sunrise" },
-    { "id": "dreamy-ethereal", "groupId": "texture", "name": "몽환적이고 흐릿한", "description": "잔향이 많고 꿈속처럼 흐릿한 사운드.", "order": 13, "iconKey": "cloud" },
-    { "id": "cold-urban", "groupId": "texture", "name": "차갑고 도시적인", "description": "절제된 리듬과 차가운 음색, 도시의 밤 같은 분위기.", "order": 14, "iconKey": "building2" },
-    { "id": "cosmic-psychedelic", "groupId": "texture", "name": "우주적이고 환각적인", "description": "비현실적이고 환각적이며 우주적인 공간감을 가진 음악.", "order": 15, "iconKey": "orbit" },
-    { "id": "noisy-wall", "groupId": "texture", "name": "노이즈와 사운드의 벽", "description": "기타 노이즈와 겹겹이 쌓인 두꺼운 음향이 중심인 음악.", "order": 16, "iconKey": "waves" },
-    { "id": "acoustic-organic", "groupId": "texture", "name": "어쿠스틱하고 자연스러운", "description": "어쿠스틱 악기와 자연스러운 연주가 중심인 음악.", "order": 17, "iconKey": "leaf" },
-    { "id": "electronic-synth", "groupId": "texture", "name": "전자음과 신스가 많은", "description": "신시사이저, 프로그래밍과 전자음의 비중이 큰 음악.", "order": 18, "iconKey": "cpu" },
-    { "id": "epic-cinematic", "groupId": "listening", "name": "웅장하고 영화적인", "description": "오케스트라, 합창, 거대한 전개와 서사적 분위기의 음악.", "order": 19, "iconKey": "clapperboard" },
-    { "id": "technical-complex", "groupId": "listening", "name": "복잡하고 테크니컬", "description": "변박, 복잡한 구성과 높은 연주력이 중심인 음악.", "order": 20, "iconKey": "binary" },
-    { "id": "experimental-weird", "groupId": "listening", "name": "실험적이고 기묘한", "description": "일반적인 곡 구조와 음색을 벗어난 독특한 음악.", "order": 21, "iconKey": "flask-conical" },
-    { "id": "long-form-immersive", "groupId": "listening", "name": "긴 곡에 몰입하는", "description": "긴 전개와 반복을 따라 깊이 몰입하는 음악.", "order": 22, "iconKey": "timer" },
-    { "id": "riff-solo-driven", "groupId": "listening", "name": "기타 리프와 솔로 중심", "description": "인상적인 기타 리프와 솔로가 중심인 음악.", "order": 23, "iconKey": "guitar" },
-    { "id": "anthemic-live", "groupId": "listening", "name": "떼창하고 싶은 공연장형", "description": "크고 기억하기 쉬운 후렴과 라이브 공연의 에너지가 강한 음악.", "order": 24, "iconKey": "mic2" }
+    {
+      "id": "bright-upbeat",
+      "groupId": "energy",
+      "name": "밝고 신나는",
+      "description": "경쾌하고 긍정적이며 쉽게 즐길 수 있는 음악.",
+      "order": 1,
+      "iconKey": "sun"
+    },
+    {
+      "id": "fast-driving",
+      "groupId": "energy",
+      "name": "빠르고 질주하는",
+      "description": "빠른 템포와 추진력이 강한 음악.",
+      "order": 2,
+      "iconKey": "gauge"
+    },
+    {
+      "id": "groovy-danceable",
+      "groupId": "energy",
+      "name": "춤추기 좋고 그루비한",
+      "description": "리듬과 베이스가 강하고 몸을 움직이기 좋은 음악.",
+      "order": 3,
+      "iconKey": "audio-waveform"
+    },
+    {
+      "id": "aggressive-heavy",
+      "groupId": "energy",
+      "name": "강렬하고 공격적인",
+      "description": "분노, 강한 타격감과 공격적인 연주가 중심인 음악.",
+      "order": 4,
+      "iconKey": "flame"
+    },
+    {
+      "id": "massive-heavy",
+      "groupId": "energy",
+      "name": "묵직하고 압도적인",
+      "description": "느리거나 중간 템포지만 두껍고 무거운 사운드.",
+      "order": 5,
+      "iconKey": "mountain"
+    },
+    {
+      "id": "slow-calm",
+      "groupId": "energy",
+      "name": "잔잔하고 느린",
+      "description": "자극이 적고 느린 템포로 편안하게 듣는 음악.",
+      "order": 6,
+      "iconKey": "feather"
+    },
+    {
+      "id": "melancholic-lonely",
+      "groupId": "emotion",
+      "name": "우울하고 쓸쓸한",
+      "description": "고독, 상실감과 쓸쓸함이 느껴지는 음악.",
+      "order": 7,
+      "iconKey": "cloud-rain"
+    },
+    {
+      "id": "dark-gloomy",
+      "groupId": "emotion",
+      "name": "어둡고 음울한",
+      "description": "어둡고 불길하거나 음산한 분위기의 음악.",
+      "order": 8,
+      "iconKey": "moon"
+    },
+    {
+      "id": "warm-comforting",
+      "groupId": "emotion",
+      "name": "따뜻하고 편안한",
+      "description": "부드럽고 자연스러우며 안정감을 주는 음악.",
+      "order": 9,
+      "iconKey": "coffee"
+    },
+    {
+      "id": "romantic-emotional",
+      "groupId": "emotion",
+      "name": "낭만적이고 감성적인",
+      "description": "서정적이고 감정적인 보컬과 멜로디가 중심인 음악.",
+      "order": 10,
+      "iconKey": "heart"
+    },
+    {
+      "id": "youth-rebellious",
+      "groupId": "emotion",
+      "name": "청춘과 반항",
+      "description": "청춘, 자유, 반항과 폭발적인 감정을 담은 음악.",
+      "order": 11,
+      "iconKey": "sparkles"
+    },
+    {
+      "id": "hopeful-uplifting",
+      "groupId": "emotion",
+      "name": "희망적이고 벅찬",
+      "description": "후렴이 크게 상승하며 긍정적이고 벅찬 느낌을 주는 음악.",
+      "order": 12,
+      "iconKey": "sunrise"
+    },
+    {
+      "id": "dreamy-ethereal",
+      "groupId": "texture",
+      "name": "몽환적이고 흐릿한",
+      "description": "잔향이 많고 꿈속처럼 흐릿한 사운드.",
+      "order": 13,
+      "iconKey": "cloud"
+    },
+    {
+      "id": "cold-urban",
+      "groupId": "texture",
+      "name": "차갑고 도시적인",
+      "description": "절제된 리듬과 차가운 음색, 도시의 밤 같은 분위기.",
+      "order": 14,
+      "iconKey": "building2"
+    },
+    {
+      "id": "cosmic-psychedelic",
+      "groupId": "texture",
+      "name": "우주적이고 환각적인",
+      "description": "비현실적이고 환각적이며 우주적인 공간감을 가진 음악.",
+      "order": 15,
+      "iconKey": "orbit"
+    },
+    {
+      "id": "noisy-wall",
+      "groupId": "texture",
+      "name": "노이즈와 사운드의 벽",
+      "description": "기타 노이즈와 겹겹이 쌓인 두꺼운 음향이 중심인 음악.",
+      "order": 16,
+      "iconKey": "waves"
+    },
+    {
+      "id": "acoustic-organic",
+      "groupId": "texture",
+      "name": "어쿠스틱하고 자연스러운",
+      "description": "어쿠스틱 악기와 자연스러운 연주가 중심인 음악.",
+      "order": 17,
+      "iconKey": "leaf"
+    },
+    {
+      "id": "electronic-synth",
+      "groupId": "texture",
+      "name": "전자음과 신스가 많은",
+      "description": "신시사이저, 프로그래밍과 전자음의 비중이 큰 음악.",
+      "order": 18,
+      "iconKey": "cpu"
+    },
+    {
+      "id": "epic-cinematic",
+      "groupId": "listening",
+      "name": "웅장하고 영화적인",
+      "description": "오케스트라, 합창, 거대한 전개와 서사적 분위기의 음악.",
+      "order": 19,
+      "iconKey": "clapperboard"
+    },
+    {
+      "id": "technical-complex",
+      "groupId": "listening",
+      "name": "복잡하고 테크니컬",
+      "description": "변박, 복잡한 구성과 높은 연주력이 중심인 음악.",
+      "order": 20,
+      "iconKey": "binary"
+    },
+    {
+      "id": "experimental-weird",
+      "groupId": "listening",
+      "name": "실험적이고 기묘한",
+      "description": "일반적인 곡 구조와 음색을 벗어난 독특한 음악.",
+      "order": 21,
+      "iconKey": "flask-conical"
+    },
+    {
+      "id": "long-form-immersive",
+      "groupId": "listening",
+      "name": "긴 곡에 몰입하는",
+      "description": "긴 전개와 반복을 따라 깊이 몰입하는 음악.",
+      "order": 22,
+      "iconKey": "timer"
+    },
+    {
+      "id": "riff-solo-driven",
+      "groupId": "listening",
+      "name": "기타 리프와 솔로 중심",
+      "description": "인상적인 기타 리프와 솔로가 중심인 음악.",
+      "order": 23,
+      "iconKey": "guitar"
+    },
+    {
+      "id": "anthemic-live",
+      "groupId": "listening",
+      "name": "떼창하고 싶은 공연장형",
+      "description": "크고 기억하기 쉬운 후렴과 라이브 공연의 에너지가 강한 음악.",
+      "order": 24,
+      "iconKey": "mic2"
+    }
   ]
 }
