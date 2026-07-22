@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-22T11:43:20.546Z",
+  "updatedAt": "2026-07-22T11:46:36.840Z",
   "bands": [
     {
       "id": "rage-against-the-machine",
@@ -2379,22 +2379,26 @@
         {
           "name": "David Gilmour",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1967–present"
         },
         {
           "name": "Roger Waters",
           "role": "베이스·보컬",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1965–1985"
         },
         {
           "name": "Richard Wright",
           "role": "키보드",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1965–1981, 1987–2008"
         },
         {
           "name": "Nick Mason",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1965–present"
         }
       ],
       "tracks": [
@@ -2418,7 +2422,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "시계 소리로 시작해 시간의 덧없음을 노래하는 가사와 데이비드 길모어의 절제된 기타 솔로가 특징인 앨범 수록곡이다."
         },
         {
           "id": "wish-you-here",
@@ -2440,7 +2445,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "어쿠스틱 기타 인트로와 라디오 잡음 효과로 시작하는, 초기 멤버 시드 바렛을 향한 헌사로 알려진 곡이다."
         }
       ],
       "relations": [
@@ -2494,8 +2500,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Pink Floyd",
         "fileName": "Pink Floyd 1967 with Syd Barrett.jpg",
@@ -3122,17 +3128,20 @@
         {
           "name": "Steven Wilson",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1987–present"
         },
         {
           "name": "Richard Barbieri",
           "role": "키보드",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1993–present"
         },
         {
           "name": "Gavin Harrison",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2002–present"
         }
       ],
       "tracks": [
@@ -3156,7 +3165,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "어쿠스틱 기타로 시작해 후반부에 헤비한 기타 톤으로 전환되는 구성으로, 밴드의 팝적인 면모와 헤비함을 동시에 보여준다."
         },
         {
           "id": "anesthetize",
@@ -3178,7 +3188,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "17분에 이르는 대곡으로, 개빈 해리슨의 정교한 드러밍과 여러 곡 파트가 유기적으로 이어지는 프로그레시브 록의 정수를 보여준다."
         }
       ],
       "relations": [
@@ -3232,8 +3243,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Porcupine Tree",
         "fileName": "Porcupine_Tree_-_Live_at_Auditorium_Parco_della_Musica,_Rome_(June_24,_2023)_-_9012_(cropped).jpg",
@@ -4344,22 +4355,26 @@
         {
           "name": "Black Francis",
           "role": "보컬·기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1986–1993, 2004–present"
         },
         {
           "name": "Joey Santiago",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1986–1993, 2004–present"
         },
         {
           "name": "David Lovering",
           "role": "드럼",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1986–1993, 2004–present"
         },
         {
           "name": "Kim Deal",
           "role": "베이스",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1986–1993, 2004–2013"
         }
       ],
       "tracks": [
@@ -4383,7 +4398,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "잔잔한 벌스와 폭발적인 후렴구가 대비되는 곡으로, 훗날 얼터너티브 록 전반에 영향을 준 다이내믹스의 원형이다."
         },
         {
           "id": "debaser",
@@ -4405,7 +4421,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "블랙 프란시스의 절규하는 보컬과 김 딜의 백보컬이 대비되는, 초현실주의 영화에서 제목을 딴 곡이다."
         }
       ],
       "relations": [
@@ -4459,8 +4476,8 @@
         }
       ],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-17",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Pixies_(band)",
         "fileName": "Pixies_KTF_March_2024_(cropped).jpg",
@@ -5079,22 +5096,26 @@
         {
           "name": "Eddie Vedder",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1990–present"
         },
         {
           "name": "Mike McCready",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1990–present"
         },
         {
           "name": "Stone Gossard",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1990–present"
         },
         {
           "name": "Jeff Ament",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1990–present"
         }
       ],
       "tracks": [
@@ -5118,7 +5139,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "에디 베더의 절박한 보컬과 마이크 매크레디의 폭발적인 기타 솔로가 어우러진, 그런지의 정서를 대표하는 데뷔 싱글이다."
         },
         {
           "id": "even-flow",
@@ -5140,7 +5162,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-07-17",
+          "guide": "스톤 고사드의 묵직한 리프 위로 즉흥적인 기타 솔로가 이어지는, 라이브에서 특히 확장되는 곡으로 유명하다."
         }
       ],
       "relations": [
@@ -5195,7 +5218,7 @@
       ],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T12:00:54.378Z",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Pearl Jam",
         "fileName": "Pearl_Jam_2016.jpg",
@@ -9693,32 +9716,38 @@
         {
           "name": "Liam Gallagher",
           "role": "보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1991–2009, 2024–present"
         },
         {
           "name": "Noel Gallagher",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1991–2009, 2024–present"
         },
         {
           "name": "Paul Arthurs",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1991–1999, 2024–present"
         },
         {
           "name": "Gem Archer",
           "role": "기타",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1999–2009, 2024–present"
         },
         {
           "name": "Andy Bell",
           "role": "베이스",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1999–2009, 2024–present"
         },
         {
           "name": "Joey Waronker",
           "role": "드럼",
-          "status": "touring"
+          "status": "touring",
+          "activeYears": "2024–present"
         }
       ],
       "tracks": [
@@ -9739,7 +9768,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "어쿠스틱 기타 아르페지오 위로 노엘 갤러거가 쓰고 리암 갤러거가 부른 보컬이 얹힌, 브릿팝을 상징하는 곡이다."
         },
         {
           "id": "dont-look-back-in-anger",
@@ -9758,13 +9788,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "노엘 갤러거가 직접 리드 보컬을 맡은 곡으로, 피아노 인트로와 대합창 후렴구가 스타디움 앤섬의 전형을 보여준다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Oasis (band)",
         "fileName": "Oasis_Noel_and_Liam_WF.jpg",
@@ -9896,22 +9927,26 @@
         {
           "name": "Freddie Mercury",
           "role": "보컬·피아노",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1970–1991"
         },
         {
           "name": "Brian May",
           "role": "기타·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1970–present"
         },
         {
           "name": "Roger Taylor",
           "role": "드럼·보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "1970–present"
         },
         {
           "name": "John Deacon",
           "role": "베이스",
-          "status": "former"
+          "status": "former",
+          "activeYears": "1970–1997"
         }
       ],
       "tracks": [
@@ -9931,7 +9966,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "발라드, 오페라, 하드록이 한 곡 안에서 전환되는 파격적인 구성으로 록 역사상 가장 독창적인 싱글 중 하나로 꼽힌다."
         },
         {
           "id": "we-will-rock-you",
@@ -9949,13 +9985,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "발 구르기와 손뼉 리듬만으로 만들어진 인트로가 특징이며, 스타디움에서 관중이 함께 참여하는 대표적인 떼창곡이다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
       "reviewedBy": "Claude (AI 검수)",
-      "reviewedAt": "2026-07-21T12:00:54.378Z",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "Queen (band)",
         "fileName": "Queen 1984 011.jpg",
@@ -10096,32 +10133,38 @@
         {
           "name": "Ryan Tedder",
           "role": "보컬·피아노·탬버린",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2002–present"
         },
         {
           "name": "Zach Filkins",
           "role": "리드 기타·비올라·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2002–present"
         },
         {
           "name": "Drew Brown",
           "role": "리듬 기타·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2002–present"
         },
         {
           "name": "Brent Kutzle",
           "role": "베이스 기타·첼로·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2007–present"
         },
         {
           "name": "Eddie Fisher",
           "role": "드럼·퍼커션·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2005–present"
         },
         {
           "name": "Brian Willett",
           "role": "키보드·신시사이저·바이올린·백보컬",
-          "status": "current"
+          "status": "current",
+          "activeYears": "2011–present"
         }
       ],
       "tracks": [
@@ -10141,7 +10184,8 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "팀발랜드의 리믹스로 세계적 히트를 기록한 곡으로, 현악 편곡과 절제된 피아노가 라이언 테더의 감정적인 보컬을 뒷받침한다."
         },
         {
           "id": "counting-stars",
@@ -10159,13 +10203,14 @@
           },
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18"
+          "reviewedAt": "2026-07-18",
+          "guide": "포크 팝 성향의 리듬과 갱스타일 코러스가 결합된 곡으로, 밴드의 가장 상업적으로 성공한 싱글이다."
         }
       ],
       "relations": [],
       "reviewStatus": "reviewed",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-07-18",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
         "wikipediaTitle": "OneRepublic",
         "fileName": "OneRepublic 2016.JPG",
