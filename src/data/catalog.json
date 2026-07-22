@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-21T12:02:30.660Z",
+  "updatedAt": "2026-07-22T09:36:35.682Z",
   "bands": [
     {
       "id": "the-beatles",
@@ -11707,6 +11707,212 @@
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T12:02:30.660Z"
+    },
+    {
+      "id": "the-script",
+      "name": "The Script",
+      "formed": 2001,
+      "origin": "Dublin, Ireland",
+      "countryCode": "IE",
+      "activeYears": "2001–present",
+      "primaryGenre": "classic-rock",
+      "genreIds": [
+        "classic-rock",
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "팝 록",
+        "얼터너티브 록",
+        "인디 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "classic-rock",
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "팝 록",
+            "얼터너티브 록",
+            "인디 록"
+          ]
+        }
+      ],
+      "tags": [
+        "팝 록",
+        "인디 록",
+        "아일랜드 팝",
+        "얼터너티브 록",
+        "소프트 록"
+      ],
+      "summary": "2001년 아일랜드 더블린에서 결성되어 R&B와 팝, 인디 록을 결합한 독창적인 음악 스타일로 글로벌 성공을 거둔 팝 록 밴드. 멀티 플래티넘 앨범 판매 기록과 함께 영국 및 아일랜드 차트를 석권하며 감성적인 메인스트림 록 씬을 대표한다.",
+      "style": "피아노와 비트감 넘치는 리듬 기반 위로 R&B 특유의 멜로디컬한 가창과 어쿠스틱 기타가 조화를 이룹니다. 서정적이면서도 웅장하게 고조되는 후렴구 떼창 요소와 진솔한 가사 전개가 특징입니다.",
+      "image": {
+        "wikipediaTitle": "The Script",
+        "fileName": "File:The Script (8639490569).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Script_%288639490569%29.jpg/960px-The_Script_%288639490569%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Script_%288639490569%29.jpg",
+        "alt": "The Script 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The Script (8639490569).jpg",
+          "creator": "Eva Rinaldi",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-22T09:28:49.061Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Danny O'Donoghue",
+          "role": "리드 보컬, 키보드, 기타",
+          "status": "current",
+          "activeYears": "2001–present"
+        },
+        {
+          "name": "Glen Power",
+          "role": "드럼, 백킹 보컬",
+          "status": "current",
+          "activeYears": "2001–present"
+        },
+        {
+          "name": "Benjamin Sargent",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2023–present"
+        },
+        {
+          "name": "Ben Parsons",
+          "role": "키보드",
+          "status": "current",
+          "activeYears": "2023–present"
+        },
+        {
+          "name": "Mark Sheehan",
+          "role": "기타, 보컬",
+          "status": "former",
+          "activeYears": "2001–2023"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "the-man-who-can-t-be-moved",
+          "title": "The Man Who Can't Be Moved",
+          "year": 2008,
+          "album": "The Script",
+          "guide": "애절한 어쿠스틱 멜로디와 서정적인 가사로 밴드를 세계적인 스타 반열에 올린 대표작입니다.",
+          "youtubeId": "gS9o1B3h5E8",
+          "source": {
+            "label": "The Script — The Man Who Can't Be Moved",
+            "url": "https://www.youtube.com/watch?v=gS9o1B3h5E8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "hall-of-fame-feat-will-i-am",
+          "title": "Hall of Fame (feat. will.i.am)",
+          "year": 2012,
+          "album": "#3",
+          "guide": "피아노 리프와 희망적인 가사가 돋보이며 빌보드 및 영국 차트 상위권을 기록한 시그니처 앤섬입니다.",
+          "youtubeId": "mk48xRzuNvA",
+          "source": {
+            "label": "The Script — Hall of Fame (feat. will.i.am)",
+            "url": "https://www.youtube.com/watch?v=mk48xRzuNvA",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T09:28:48.541Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "one-republic",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "피아노 팝 록 기반의 감성적인 후렴구와 앤섬 성향의 음악 스타일을 공유합니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kodaline",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "동시대 아일랜드 출신으로 서정적인 모던 록·팝 씬을 이끄는 동료 밴드입니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "coldplay",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "스타디움 규모의 웅장한 팝 록 사운드와 대중적인 멜로디 구성에 영향을 받았습니다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Script — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q459585",
+          "publisher": "Wikidata",
+          "externalId": "Q459585",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Script — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4c98aa1b-34eb-4336-987f-5e50aa059c00",
+          "publisher": "MusicBrainz",
+          "externalId": "4c98aa1b-34eb-4336-987f-5e50aa059c00",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Script — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Script",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Script — 공식 YouTube",
+          "url": "https://www.youtube.com/@TheScript",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@TheScript",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Script — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The Script (8639490569).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "pop-rock",
+          "alternative-rock",
+          "indie-rock"
+        ],
+        "moodScores": {
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 4,
+          "melancholic-lonely": 4,
+          "anthemic-live": 5,
+          "bright-upbeat": 2
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T09:36:35.682Z"
     }
   ]
 }
