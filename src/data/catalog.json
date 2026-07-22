@@ -1,7 +1,847 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-22T09:36:35.682Z",
+  "updatedAt": "2026-07-22T11:43:20.546Z",
   "bands": [
+    {
+      "id": "rage-against-the-machine",
+      "name": "Rage Against the Machine",
+      "formed": 1991,
+      "origin": "Los Angeles, California, United States",
+      "countryCode": "US",
+      "activeYears": "1991–2000, 2007–2011, 2019–2024",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "랩 메탈",
+        "얼터너티브 메탈",
+        "뉴 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "랩 메탈",
+            "얼터너티브 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "랩 메탈",
+        "얼터너티브 메탈",
+        "펑크 메탈",
+        "하드 록",
+        "랩 록"
+      ],
+      "summary": "1991년 미국 로스앤젤레스에서 결성된 밴드로, 힙합과 헤비메탈, 펑크를 결합한 랩 메탈 장르의 선구자다. 강력한 정치적·사회적 메시지와 독창적인 기타 사운드로 90년대 대중음악계에 거대한 충격을 안겼다.",
+      "style": "톰 모렐로의 턴테이블 효과음을 방불케 하는 독창적인 기타 연주와 잭 데 라 로차의 분노에 찬 정치적 랩 보컬이 사운드의 핵심이다. 팀 코머포드의 묵직한 베이스 라인과 브래드 윌크의 탄탄한 드럼이 어우러져 폭발적인 그루브를 만들어낸다.",
+      "image": {
+        "wikipediaTitle": "Rage Against the Machine",
+        "alt": "Rage Against the Machine 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rage_Against_The_Machine_at_Vegoose_2007_03.jpg",
+          "creator": "Scott Penner",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-22T11:43:20.546Z"
+        },
+        "fileName": "File:Rage_Against_The_Machine_at_Vegoose_2007_03.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Rage_Against_The_Machine_at_Vegoose_2007_03.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Rage_Against_The_Machine_at_Vegoose_2007_03.jpg/960px-Rage_Against_The_Machine_at_Vegoose_2007_03.jpg"
+      },
+      "members": [
+        {
+          "name": "Zack de la Rocha",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1991–2000, 2007–2011, 2022–2024"
+        },
+        {
+          "name": "Tom Morello",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1991–2000, 2007–2011, 2022–2024"
+        },
+        {
+          "name": "Tim Commerford",
+          "role": "베이스, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1991–2000, 2007–2011, 2022–2024"
+        },
+        {
+          "name": "Brad Wilk",
+          "role": "드럼, 퍼커션",
+          "status": "former",
+          "activeYears": "1991–2000, 2007–2011, 2022–2024"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "killing-in-the-name",
+          "title": "Killing in the Name",
+          "year": 1992,
+          "album": "Rage Against the Machine",
+          "guide": "인종차별과 공권력 남용에 항거하는 인상적인 리프와 폭발적인 후렴구가 특징인 밴드의 최대 대표곡이다.",
+          "youtubeId": "bWXazVhlyxQ",
+          "source": {
+            "label": "Rage Against the Machine — Killing in the Name",
+            "url": "https://www.youtube.com/watch?v=bWXazVhlyxQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T11:25:27.585Z"
+        },
+        {
+          "id": "bulls-on-parade",
+          "title": "Bulls on Parade",
+          "year": 1996,
+          "album": "Evil Empire",
+          "guide": "톰 모렐로 특유의 턴테이블 긁는 소리를 시뮬레이션한 기타 솔로와 강렬한 랩이 어우러진 명곡이다.",
+          "youtubeId": "3L8E11S1fM0",
+          "source": {
+            "label": "Rage Against the Machine — Bulls on Parade",
+            "url": "https://www.youtube.com/watch?v=3L8E11S1fM0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "red-hot-chili-peppers",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "90년대 힙합, 펑크, 록 요소를 결합하여 메인스트림을 이끈 얼터너티브 록 동료 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "linkin-park",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 랩 메탈 · 뉴 메탈, 강렬하고 공격적인 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rage Against the Machine — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q72092",
+          "publisher": "Wikidata",
+          "externalId": "Q72092",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rage Against the Machine — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/3798b104-01cb-484c-a3b0-56adc6399b80",
+          "publisher": "MusicBrainz",
+          "externalId": "3798b104-01cb-484c-a3b0-56adc6399b80",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rage Against the Machine — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rage_Against_the_Machine",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rage Against the Machine — 공식 YouTube",
+          "url": "https://www.youtube.com/@RATM",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@RATM",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rage Against the Machine — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Rage_Against_The_Machine_at_Vegoose_2007_03.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "rap-metal",
+          "alternative-metal",
+          "nu-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "fast-driving": 4,
+          "anthemic-live": 5,
+          "technical-complex": 4,
+          "youth-rebellious": 3
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:43:20.546Z"
+    },
+    {
+      "id": "linkin-park",
+      "name": "Linkin Park",
+      "formed": 1996,
+      "origin": "Agoura Hills, California, United States",
+      "countryCode": "US",
+      "activeYears": "1996–2017, 2023–present",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "뉴 메탈",
+        "얼터너티브 록",
+        "랩 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "뉴 메탈",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "뉴 메탈",
+        "얼터너티브 록",
+        "랩 록",
+        "일렉트로닉 록",
+        "하드 록"
+      ],
+      "summary": "1996년 미국 캘리포니아에서 결성된 밴드로, 2000년대 초반 뉴 메탈(Nu Metal)과 얼터너티브 록을 세계적 메인스트림으로 끌어올린 주역. 힙합, 일렉트로닉, 하드 록을 융합한 독창적인 사운드와 체스터 베닝턴의 절규하는 보컬로 전 세계적인 상업적·음악적 성공을 거두었다.",
+      "style": "마이크 시노다의 감각적인 랩과 힙합 비트, 일렉트로닉 샘플링 위로 묵직한 디스토션 기타와 체스터 베닝턴의 폭발적인 스크리밍 및 호소력 짙은 보컬이 조화를 이룬다. 극적인 곡 구조와 감정선이 명확한 멜로디가 특징.",
+      "image": {
+        "wikipediaTitle": "Linkin Park",
+        "alt": "Linkin Park 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg",
+          "creator": "Stefan Brending (2eight)",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-22T11:43:20.546Z"
+        },
+        "fileName": "File:Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg/960px-Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg"
+      },
+      "members": [
+        {
+          "name": "Mike Shinoda",
+          "role": "랩 보컬, 리듬 기타, 키보드, 프로듀싱",
+          "status": "current",
+          "activeYears": "1996–2017, 2023–present"
+        },
+        {
+          "name": "Brad Delson",
+          "role": "리드 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1996–2017, 2023–present"
+        },
+        {
+          "name": "Joe Hahn",
+          "role": "턴테이블, 턴테이블 샘플링, 프로그래밍",
+          "status": "current",
+          "activeYears": "1996–2017, 2023–present"
+        },
+        {
+          "name": "Phoenix (Dave Farrell)",
+          "role": "베이스, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1996–1999, 2000–2017, 2023–present"
+        },
+        {
+          "name": "Emily Armstrong",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2023–present"
+        },
+        {
+          "name": "Colin Brittain",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2023–present"
+        },
+        {
+          "name": "Chester Bennington",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1999–2017"
+        },
+        {
+          "name": "Rob Bourdon",
+          "role": "드럼, 퍼커션",
+          "status": "former",
+          "activeYears": "1996–2017"
+        },
+        {
+          "name": "Mark Wakefield",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1996–1998"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "in-the-end",
+          "title": "In the End",
+          "year": 2000,
+          "album": "Hybrid Theory",
+          "guide": "피아노 멜로디, 랩 라인, 절규하는 후렴구가 오가는 밴드의 역사적인 시그니처 트랙이다.",
+          "youtubeId": "eVTXPUF4Oz4",
+          "source": {
+            "label": "Linkin Park — In the End",
+            "url": "https://www.youtube.com/watch?v=eVTXPUF4Oz4",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T11:22:01.423Z"
+        },
+        {
+          "id": "numb",
+          "title": "Numb",
+          "year": 2003,
+          "album": "Meteora",
+          "guide": "전자음과 묵직한 기타 리프 위로 억압에 대한 갈등을 분출하는 대표적인 뉴 메탈 앤섬이다.",
+          "youtubeId": "kXYiU_JCYtU",
+          "source": {
+            "label": "Linkin Park — Numb",
+            "url": "https://www.youtube.com/watch?v=kXYiU_JCYtU",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T11:22:01.425Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "nine-inch-nails",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "인더스트리얼 일렉트로닉 사운드와 록 사운드의 결합 방식에 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "rage-against-the-machine",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 뉴 메탈 · 랩 메탈, 강렬하고 공격적인 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Linkin Park — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q481",
+          "publisher": "Wikidata",
+          "externalId": "Q481",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Linkin Park — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f59c5520-5f46-4d2c-b2c4-822eabf53419",
+          "publisher": "MusicBrainz",
+          "externalId": "f59c5520-5f46-4d2c-b2c4-822eabf53419",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Linkin Park — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Linkin_Park",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Linkin Park — 공식 YouTube",
+          "url": "https://www.youtube.com/@linkinpark",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@linkinpark",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Linkin Park — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Linkin_Park-Rock_im_Park_2014-_by_2eight_3SC0380.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "nu-metal",
+          "alternative-rock",
+          "rap-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "romantic-emotional": 4,
+          "melancholic-lonely": 5,
+          "fast-driving": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:43:20.546Z"
+    },
+    {
+      "id": "daughtry",
+      "name": "Daughtry",
+      "formed": 2006,
+      "origin": "McLeansville, North Carolina, United States",
+      "countryCode": "US",
+      "activeYears": "2006–present",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie",
+        "classic-rock",
+        "hard-rock"
+      ],
+      "subgenres": [
+        "포스트그런지",
+        "하드 록",
+        "얼터너티브 록",
+        "라디오 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie",
+            "classic-rock",
+            "hard-rock"
+          ],
+          "subgenres": [
+            "포스트그런지",
+            "하드 록",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트 그란지",
+        "하드 록",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "summary": "2006년 아메리칸 아이돌 시즌 5 출신의 파워풀한 보컬리스트 크리스 도트리(Chris Daughtry)가 결성한 미국의 록 밴드. 데뷔 앨범이 빌보드 200 차트 1위를 기록하며 선풍적인 인기를 얻었고, 2000년대 후반 메인스트림 포스트 그란지와 포스트 록 씬을 대표하는 밴드로 자리잡았다.",
+      "style": "크리스 도트리의 파워풀하고 허스키한 하이톤 보컬이 사운드의 중심을 이룬다. 캐치한 멜로디라인, 강렬한 디스토션 기타 리프, 그리고 감정적인 얼터너티브 록 발라드 곡 구성을 특징으로 한다.",
+      "image": {
+        "wikipediaTitle": "Daughtry",
+        "alt": "Daughtry 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daughtry_live_in_2012.jpg",
+          "creator": "Laura from Lakeville, MN",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-22T11:43:20.546Z"
+        },
+        "fileName": "File:Daughtry_live_in_2012.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Daughtry_live_in_2012.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Daughtry_live_in_2012.jpg/960px-Daughtry_live_in_2012.jpg"
+      },
+      "members": [
+        {
+          "name": "Chris Daughtry",
+          "role": "리드 보컬, 리듬 기타",
+          "status": "current",
+          "activeYears": "2006–present"
+        },
+        {
+          "name": "Josh Steely",
+          "role": "리드 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "2006–present"
+        },
+        {
+          "name": "Brian Craddock",
+          "role": "리듬 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "2007–present"
+        },
+        {
+          "name": "Elvio Fernandes",
+          "role": "키보드, 백킹 보컬, 앙상블 기타",
+          "status": "current",
+          "activeYears": "2011–present"
+        },
+        {
+          "name": "Marty O'Brien",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2022–present"
+        },
+        {
+          "name": "Jeremy Brady",
+          "role": "리듬 기타",
+          "status": "former",
+          "activeYears": "2006–2007"
+        },
+        {
+          "name": "Joey Barnes",
+          "role": "드럼, 백킹 보컬",
+          "status": "former",
+          "activeYears": "2006–2010"
+        },
+        {
+          "name": "Josh Paul",
+          "role": "베이스, 백킹 보컬",
+          "status": "former",
+          "activeYears": "2006–2012, 2013–2022"
+        },
+        {
+          "name": "Robin Diaz",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2010–2014"
+        },
+        {
+          "name": "Brandon Maclin",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2014–2023"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "it-s-not-over",
+          "title": "It's Not Over",
+          "year": 2006,
+          "album": "Daughtry",
+          "guide": "강렬한 기타 리프와 크리스 도트리의 폭발적인 보컬이 돋보이는 밴드의 데뷔 대표곡이다.",
+          "youtubeId": "UQ92eyxnxmE",
+          "source": {
+            "label": "Daughtry — It's Not Over",
+            "url": "https://www.youtube.com/watch?v=UQ92eyxnxmE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "over-you",
+          "title": "Over You",
+          "year": 2006,
+          "album": "Daughtry",
+          "guide": "이별의 감정을 직관적이고 시원하게 풀어낸 대중적인 포스트 그란지 히트곡이다.",
+          "youtubeId": "m02-RHN_hQE",
+          "source": {
+            "label": "Daughtry — Over You",
+            "url": "https://www.youtube.com/watch?v=m02-RHN_hQE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T10:16:02.273Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Daughtry — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q835422",
+          "publisher": "Wikidata",
+          "externalId": "Q835422",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Daughtry — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4a7aa958-f54f-4d92-bb91-c0a76be46c19",
+          "publisher": "MusicBrainz",
+          "externalId": "4a7aa958-f54f-4d92-bb91-c0a76be46c19",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Daughtry — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Daughtry_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Daughtry — 공식 YouTube",
+          "url": "https://www.youtube.com/@daughtry",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@daughtry",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Daughtry — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Daughtry_live_in_2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "post-grunge",
+          "hard-rock",
+          "alternative-rock",
+          "radio-rock"
+        ],
+        "moodScores": {
+          "romantic-emotional": 5,
+          "anthemic-live": 5,
+          "aggressive-heavy": 3,
+          "hopeful-uplifting": 4,
+          "melancholic-lonely": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:43:20.546Z"
+    },
+    {
+      "id": "red-hot-chili-peppers",
+      "name": "Red Hot Chili Peppers",
+      "formed": 1983,
+      "origin": "Los Angeles, California, United States",
+      "countryCode": "US",
+      "activeYears": "1983–present",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie",
+        "britpop-indie",
+        "classic-rock"
+      ],
+      "subgenres": [
+        "훵크 록",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "alternative-indie",
+            "britpop-indie",
+            "classic-rock"
+          ],
+          "subgenres": [
+            "훵크 록",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "펑크 록",
+        "얼터너티브 록",
+        "펑크 메탈",
+        "하드 록",
+        "캘리포니아 록"
+      ],
+      "summary": "1983년 미국 로스앤젤레스에서 결성된 록 밴드로, 펑크(Funk)와 펑크 록(Punk Rock)을 결합한 펑크 록(Funk Rock) 사운드를 세계적으로 대중화한 대표 주자다. 폭발적인 에너지를 가진 라이브 공연과 수많은 히트곡으로 록 음악 역사상 가장 성공한 밴드 중 하나로 평가받는다.",
+      "style": "플리의 독창적이고 그루브 넘치는 베이스 슬랩 연주와 존 프루시안테의 감성적이고 정교한 기타 리프가 사운드의 중심을 이룬다. 앤서니 키디스의 래핑과 멜로디컬한 가창을 오가는 보컬, 채드 스미스의 폭발적인 드럼 비트가 강력한 그루브를 만들어낸다.",
+      "image": {
+        "wikipediaTitle": "Red Hot Chili Peppers",
+        "fileName": "File:Red Hot Chili Peppers - Rock in Rio Madrid 2012 - 16.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Red_Hot_Chili_Peppers_-_Rock_in_Rio_Madrid_2012_-_16.jpg/960px-Red_Hot_Chili_Peppers_-_Rock_in_Rio_Madrid_2012_-_16.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Red_Hot_Chili_Peppers_-_Rock_in_Rio_Madrid_2012_-_16.jpg",
+        "alt": "Red Hot Chili Peppers 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red Hot Chili Peppers - Rock in Rio Madrid 2012 - 16.jpg",
+          "creator": "Carlos Delgado",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-22T10:01:41.809Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Anthony Kiedis",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1983–present"
+        },
+        {
+          "name": "Flea",
+          "role": "베이스, 트럼펫, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1983–present"
+        },
+        {
+          "name": "Chad Smith",
+          "role": "드럼, 퍼커션",
+          "status": "current",
+          "activeYears": "1988–present"
+        },
+        {
+          "name": "John Frusciante",
+          "role": "리드 기타, 백킹 보컬, 키보드",
+          "status": "current",
+          "activeYears": "1988–1992, 1998–2009, 2019–present"
+        },
+        {
+          "name": "Hillel Slovak",
+          "role": "기타, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1983, 1985–1988"
+        },
+        {
+          "name": "Jack Irons",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1983, 1986–1988"
+        },
+        {
+          "name": "Dave Navarro",
+          "role": "기타, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1993–1998"
+        },
+        {
+          "name": "Josh Klinghoffer",
+          "role": "기타, 키보드, 백킹 보컬",
+          "status": "former",
+          "activeYears": "2009–2019"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "californication",
+          "title": "Californication",
+          "year": 1999,
+          "album": "Californication",
+          "guide": "서정적인 기타 리프와 현대 사회 및 캘리포니아 문화에 대한 가사가 어우러진 시그니처 트랙이다.",
+          "youtubeId": "YlUKcNNmywk",
+          "source": {
+            "label": "Red Hot Chili Peppers — Californication",
+            "url": "https://www.youtube.com/watch?v=YlUKcNNmywk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-22T10:01:40.480Z"
+        },
+        {
+          "id": "can-t-stop",
+          "title": "Can't Stop",
+          "year": 2002,
+          "album": "By the Way",
+          "guide": "특유의 리드미컬한 기타 리프와 그루브 넘치는 베이스 라인이 돋보이는 대표적인 펑크 록 앤섬이다.",
+          "youtubeId": "BfOdWSiyWoc",
+          "source": {
+            "label": "Red Hot Chili Peppers — Can't Stop",
+            "url": "https://www.youtube.com/watch?v=BfOdWSiyWoc",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Red Hot Chili Peppers — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q10708",
+          "publisher": "Wikidata",
+          "externalId": "Q10708",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Red Hot Chili Peppers — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+          "publisher": "MusicBrainz",
+          "externalId": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Red Hot Chili Peppers — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Red Hot Chili Peppers — 공식 YouTube",
+          "url": "https://www.youtube.com/@redhotchilipeppers",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@redhotchilipeppers",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Red Hot Chili Peppers — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Red Hot Chili Peppers - Rock in Rio Madrid 2012 - 16.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "funk-rock",
+          "alternative-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 4,
+          "romantic-emotional": 4,
+          "hopeful-uplifting": 4,
+          "anthemic-live": 5,
+          "bright-upbeat": 2,
+          "groovy-danceable": 3
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Claude (AI 검수)",
+      "reviewedAt": "2026-07-22T11:43:20.546Z"
+    },
     {
       "id": "the-beatles",
       "name": "The Beatles",
@@ -1124,8 +1964,8 @@
           "targetBandId": "guns-n-roses",
           "kind": "influenced",
           "note": "직선적인 리프 중심 하드 록",
-          "strength": 2,
-          "reviewStatus": "reviewed",
+          "strength": 3,
+          "reviewStatus": "draft",
           "source": {
             "label": "Guns N' Roses — Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Guns_N%27_Roses",
@@ -1151,6 +1991,13 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "deep-purple",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 하드 / 글램 록, 하드 록, 기타 리프와 솔로 중심 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "reviewed",
@@ -1226,7 +2073,8 @@
           "fast-driving": 4,
           "groovy-danceable": 4,
           "riff-solo-driven": 5,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "bright-upbeat": 2
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -1473,7 +2321,9 @@
           "aggressive-heavy": 4,
           "romantic-emotional": 3,
           "riff-solo-driven": 5,
-          "anthemic-live": 4
+          "anthemic-live": 4,
+          "bright-upbeat": 2,
+          "fast-driving": 2
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -6967,7 +7817,7 @@
           ]
         }
       ],
-      "summary": "독일어의 단단한 리듬과 거대한 무대 연출로 인더스트리얼 메탈을 세계화한 밴드.",
+      "summary": "독일어의 단단한 리듬과 거대하고 때로는 기괴한 무대 연출로 인더스트리얼 메탈을 세계화한 밴드. 노이에 도이체 헤르테를 전세계에 각인시켰다.",
       "style": "기계처럼 반복되는 기타 리프, 행진하는 전자 비트, 저음 보컬과 극단적인 공연 미학이 특징이다.",
       "members": [
         {
