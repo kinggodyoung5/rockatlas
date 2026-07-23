@@ -46,7 +46,7 @@ const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
 }
 
 const clone = <T,>(value: T): T => structuredClone(value)
-const splitList = (value: string) => value.split(',').map((item) => item.trim()).filter(Boolean)
+const splitList = (value: string | undefined) => (value ?? '').split(',').map((item) => item.trim()).filter(Boolean)
 const slugify = (value: string) => value.toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const asEra = (year: number): EraId => {
   const decade = Math.floor(year / 10) * 10
@@ -103,8 +103,8 @@ function createDraftBand(): Band {
 
 const membersToText = (members: Member[]) => members.map((member) => [member.name, member.role, member.status, member.activeYears ?? ''].join(' | ')).join('\n')
 const tracksToText = (tracks: Track[]) => tracks.map((track) => [track.title, track.youtubeId, track.year ?? '', track.album ?? '', track.guide ?? ''].join(' | ')).join('\n')
-const youtubeIdFromInput = (value: string) => {
-  const trimmed = value.trim()
+const youtubeIdFromInput = (value: string | undefined) => {
+  const trimmed = (value ?? '').trim()
   if (!trimmed) return ''
   try {
     const url = new URL(trimmed)
@@ -472,16 +472,26 @@ export function StudioPage() {
     } catch (error) { setTaxonomyMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
   }
 
-  const chooseBand = (band: Band) => {
-    if (dirty && !window.confirm('저장하지 않은 변경사항을 버리고 다른 밴드로 이동할까요?')) return
+  const chooseBand = async (band: Band) => {
+    if (dirty) {
+      const saved = await saveCatalog()
+      if (!saved) {
+        if (!window.confirm('현재 밴드 저장에 실패했습니다. 변경사항을 버리고 다른 밴드로 이동할까요?')) return
+      }
+    }
     setSelectedId(band.id)
     setDraft(clone(band))
     setDirty(false)
     setMessage(`${band.name} 편집 중`)
   }
 
-  const addNewBand = () => {
-    if (dirty && !window.confirm('저장하지 않은 변경사항을 버리고 새 밴드를 만들까요?')) return
+  const addNewBand = async () => {
+    if (dirty) {
+      const saved = await saveCatalog()
+      if (!saved) {
+        if (!window.confirm('현재 밴드 저장에 실패했습니다. 변경사항을 버리고 새 밴드를 만들까요?')) return
+      }
+    }
     const next = createDraftBand()
     setSelectedId(next.id)
     setDraft(next)
@@ -529,7 +539,7 @@ export function StudioPage() {
     const normalizedId = slugify(draft.id)
     if (!normalizedId || (!isExisting && catalogBands.some((band) => band.id === normalizedId))) {
       setMessage('저장 실패: 밴드 ID가 비어 있거나 중복되었습니다.')
-      return
+      return false
     }
     const nextDraft = { ...draft, id: normalizedId, image: { ...draft.image, alt: draft.image.alt || `${draft.name} 밴드 사진` } }
     const nextBands = isExisting ? catalogBands.map((band) => band.id === selectedId ? nextDraft : band) : [nextDraft, ...catalogBands]
@@ -539,8 +549,10 @@ export function StudioPage() {
       setDraft(nextDraft)
       setDirty(false)
       setMessage(`${nextDraft.name} 저장 완료 · 전체 ${result.count}개 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
+      return true
     } catch (error) {
       setMessage(`저장 실패: ${error instanceof Error ? error.message : '로컬 Studio 서버를 확인하세요.'}`)
+      return false
     }
   }
 
