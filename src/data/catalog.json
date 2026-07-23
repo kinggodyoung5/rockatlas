@@ -1,7 +1,674 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-23T13:43:28.998Z",
+  "updatedAt": "2026-07-23T15:21:20.173Z",
   "bands": [
+    {
+      "id": "sum-41",
+      "name": "Sum 41",
+      "formed": 1996,
+      "origin": "Ajax, Ontario, Canada",
+      "countryCode": "CA",
+      "activeYears": "1996–2025",
+      "primaryGenre": "punk-rock",
+      "genreIds": [
+        "punk-rock",
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "팝펑크",
+        "얼터너티브 메탈",
+        "스케이트 펑크",
+        "스래시 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "punk-rock",
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "팝펑크",
+            "얼터너티브 메탈",
+            "스케이트 펑크"
+          ]
+        }
+      ],
+      "tags": [
+        "팝 펑크",
+        "얼터너티브 메탈",
+        "스래시 메탈",
+        "하드 록",
+        "스케이트 펑크"
+      ],
+      "summary": "2000년대 초반 질주감 넘치는 팝 펑크 멜로디에 스래시 메탈 스타일의 거친 기타 리프를 결합하여 세계적인 히트를 기록했으며, 2025년 해체 투어를 끝으로 정식 해체했다.",
+      "style": "팝 펑크 특유의 캐치한 훅과 데릭 위블리의 다채로운 가창, 데이브 바크시의 정교하고 빠르며 헤비한 메탈/스래시 기타 솔로가 조합된 사운드가 특징이다. 유쾌한 팝 펑크 앤섬부터 진지하고 공격적인 메탈코어/얼터너티브 메탈 접근까지 폭넓게 전개한다.",
+      "image": {
+        "wikipediaTitle": "Sum 41",
+        "alt": "Sum 41 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg",
+          "creator": "Stefan Brending (2eight)",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-23T15:19:04.203Z"
+        },
+        "fileName": "File:2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg/960px-2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg"
+      },
+      "members": [
+        {
+          "name": "Deryck Whibley",
+          "role": "리드 보컬, 리듬 기타, 키보드",
+          "status": "former",
+          "activeYears": "1996–2025"
+        },
+        {
+          "name": "Dave Baksh",
+          "role": "리드 기타, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1997–2006, 2015–2025"
+        },
+        {
+          "name": "Jason McCaslin",
+          "role": "베이스, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1999–2025"
+        },
+        {
+          "name": "Tom Thacker",
+          "role": "리드/리듬 기타, 키보드, 백킹 보컬",
+          "status": "former",
+          "activeYears": "2007–2025"
+        },
+        {
+          "name": "Frank Zummo",
+          "role": "드럼, 퍼커션",
+          "status": "former",
+          "activeYears": "2015–2025"
+        },
+        {
+          "name": "Steve Jocz",
+          "role": "드럼, 퍼커션, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1996–2013"
+        },
+        {
+          "name": "Mark Spicoluk",
+          "role": "베이스, 백킹 보컬",
+          "status": "former",
+          "activeYears": "1997–1999"
+        },
+        {
+          "name": "Marc Costanzo",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1996–1997"
+        },
+        {
+          "name": "Richard Roy",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1996–1997"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "in-too-deep",
+          "title": "In Too Deep",
+          "year": 2001,
+          "album": "All Killer No Filler",
+          "guide": "2000년대 팝 펑크 시대를 상징하는 유쾌하고 캐치한 히트곡이다.",
+          "youtubeId": "emGri7i8Y2Y",
+          "source": {
+            "label": "Sum 41 — In Too Deep",
+            "url": "https://www.youtube.com/watch?v=emGri7i8Y2Y",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        },
+        {
+          "id": "fat-lip",
+          "title": "Fat Lip",
+          "year": 2001,
+          "album": "All Killer No Filler",
+          "guide": "힙합 라이밍, 스케이트 펑크 리듬, 헤비메탈 리프가 섞인 밴드의 시그니처 앤섬이다.",
+          "youtubeId": "CMX2lPum_pg",
+          "source": {
+            "label": "Sum 41 — Fat Lip",
+            "url": "https://www.youtube.com/watch?v=CMX2lPum_pg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "green-day",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "90년대 팝 펑크의 대중화를 이루어 사운드적 영감을 제공한 선배 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "Sum 41 특유의 화려한 트윈 기타 리프 및 메탈적 요소 구축에 깊은 영감을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sum 41 — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q187148",
+          "publisher": "Wikidata",
+          "externalId": "Q187148",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sum 41 — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/1a337e73-b677-4952-8239-66eef40d4eb1",
+          "publisher": "MusicBrainz",
+          "externalId": "1a337e73-b677-4952-8239-66eef40d4eb1",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sum 41 — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sum_41",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sum 41 — 공식 YouTube",
+          "url": "https://www.youtube.com/@Sum41",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@Sum41",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sum 41 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:2017_RiP_-_Sum_41_-_by_2eight_-_8SC8161.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "pop-punk",
+          "alternative-metal",
+          "skate-punk",
+          "thrash-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "anthemic-live": 5,
+          "hopeful-uplifting": 4,
+          "bright-upbeat": 3
+        },
+        "reviewStatus": "reviewed"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-23T15:19:04.203Z"
+    },
+    {
+      "id": "skid-row",
+      "name": "Skid Row",
+      "formed": 1986,
+      "origin": "Toms River, New Jersey, United States",
+      "countryCode": "US",
+      "activeYears": "1986–present",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "글램 메탈",
+        "전통 헤비메탈",
+        "하드 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "글램 메탈",
+            "전통 헤비메탈",
+            "하드 록"
+          ]
+        }
+      ],
+      "tags": [
+        "글램 메탈",
+        "헤비메탈",
+        "하드 록",
+        "팝 메탈"
+      ],
+      "summary": "1980년대 후반부터 1990년대 초반까지 거친 헤비메탈 리프와 애절한 파워 발라드로 멀티 플래티넘을 기록하며 글램 메탈의 전성기 마지막을 화려하게 장식한 밴드.",
+      "style": "세바스찬 바크(Sebastian Bach)의 압도적인 스크리밍과 원숙한 고음 가창, Dave \"The Snake\" Sabo와 Scotti Hill의 날카롭고 거친 기타 리프가 사운드의 중심이다. 글램 메탈 특유의 캐치한 팝 감각과 포스트 스키드 로의 헤비한 스래시/하드 록 스타일이 공존한다.",
+      "image": {
+        "wikipediaTitle": "Skid Row",
+        "alt": "Skid Row 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_rock_band_Skid_Row.jpg",
+          "creator": "Chuck Arlund",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-23T15:19:04.203Z"
+        },
+        "fileName": "File:American_rock_band_Skid_Row.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/American_rock_band_Skid_Row.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/American_rock_band_Skid_Row.jpg/960px-American_rock_band_Skid_Row.jpg"
+      },
+      "members": [
+        {
+          "name": "Rachel Bolan",
+          "role": "베이스, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1986–present"
+        },
+        {
+          "name": "Dave \"The Snake\" Sabo",
+          "role": "리드/리듬 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1986–present"
+        },
+        {
+          "name": "Scotti Hill",
+          "role": "리듬/리드 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "1987–present"
+        },
+        {
+          "name": "Rob Hammersmith",
+          "role": "드럼, 퍼커션",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Sebastian Bach",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1987–1996"
+        },
+        {
+          "name": "Rob Affuso",
+          "role": "드럼, 퍼커션",
+          "status": "former",
+          "activeYears": "1987–1998"
+        },
+        {
+          "name": "Johnny Solinger",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1999–2015"
+        },
+        {
+          "name": "Tony Harnell",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "2015"
+        },
+        {
+          "name": "ZP Theart",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "2016–2022"
+        },
+        {
+          "name": "Erik Grönwall",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "2022–2024"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "18-and-life",
+          "title": "18 and Life",
+          "year": 1989,
+          "album": "Skid Row",
+          "guide": "세바스찬 바크의 소름 돋는 고음 샤우팅과 애절한 메탈 발라드 감성이 어우러진 대성공 대표작이다.",
+          "youtubeId": "Ghd2bkIadG4",
+          "source": {
+            "label": "Skid Row — 18 and Life",
+            "url": "https://www.youtube.com/watch?v=Ghd2bkIadG4",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        },
+        {
+          "id": "youth-gone-wild",
+          "title": "Youth Gone Wild",
+          "year": 1989,
+          "album": "Skid Row",
+          "guide": "반항적인 메시지와 캐치한 기타 리프가 돋보이는 밴드의 상징적인 80년대 글램 메탈 앤섬이다.",
+          "youtubeId": "9RIeycixkK8",
+          "source": {
+            "label": "Skid Row — Youth Gone Wild",
+            "url": "https://www.youtube.com/watch?v=9RIeycixkK8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "bon-jovi",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "뉴저지 고향 선배인 존 본 조비의 발굴과 지원으로 데뷔 및 세계적 스타덤에 올랐다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "guns-n-roses",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "거칠고 야성적인 하드 록 사운드와 강력한 프론트맨 중심의 에너지에서 많은 공통점을 보인다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Skid Row — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q463430",
+          "publisher": "Wikidata",
+          "externalId": "Q463430",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Skid Row — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/cdbc28a0-2f16-41fb-89f5-19e913a48e7e",
+          "publisher": "MusicBrainz",
+          "externalId": "cdbc28a0-2f16-41fb-89f5-19e913a48e7e",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Skid Row — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Skid_Row_(American_band)",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Skid Row — 공식 YouTube",
+          "url": "https://www.youtube.com/@skidrow",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@skidrow",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Skid Row — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:American_rock_band_Skid_Row.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "glam-metal",
+          "traditional-heavy-metal",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "romantic-emotional": 5,
+          "fast-driving": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "reviewed"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-23T15:19:04.203Z"
+    },
+    {
+      "id": "fall-out-boy",
+      "name": "Fall Out Boy",
+      "formed": 2001,
+      "origin": "Wilmette, Illinois, United States",
+      "countryCode": "US",
+      "activeYears": "2001–2009, 2013–present",
+      "primaryGenre": "punk-rock",
+      "genreIds": [
+        "punk-rock",
+        "classic-rock",
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "팝펑크",
+        "얼터너티브 록",
+        "신스 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "punk-rock",
+            "classic-rock",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "팝펑크",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "팝 펑크",
+        "이모 팝",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "summary": "2000년대 중반 이모(Emo) 및 팝 펑크 붐을 메인스트림 최정상으로 끌어올렸으며, 독창적이고 위트 있는 은유적 가사와 강렬한 훅으로 세계적인 대중성을 확보했다.",
+      "style": "패트릭 스텀프의 폭발적이고 Soulful한 가창력과 피트 웬츠의 감성적이고 위트 넘치는 가사가 중심을 이룬다. 팝 펑크의 질주감 넘치는 리프에 R&B, 신스팝, 아레나 록 요소를 자유롭게 결합한 개성 있는 사운드가 특징.",
+      "image": {
+        "wikipediaTitle": "Fall Out Boy",
+        "alt": "Fall Out Boy 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fall_Out_Boy_Rock_am_Ring_2014_(1).JPG",
+          "creator": "JoeJoeJoe93",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-23T15:19:04.203Z"
+        },
+        "fileName": "File:Fall_Out_Boy_Rock_am_Ring_2014_(1).JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Fall_Out_Boy_Rock_am_Ring_2014_%281%29.JPG",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Fall_Out_Boy_Rock_am_Ring_2014_%281%29.JPG/960px-Fall_Out_Boy_Rock_am_Ring_2014_%281%29.JPG"
+      },
+      "members": [
+        {
+          "name": "Patrick Stump",
+          "role": "리드 보컬, 리듬 기타, 피아노",
+          "status": "current",
+          "activeYears": "2001–2009, 2013–present"
+        },
+        {
+          "name": "Pete Wentz",
+          "role": "베이스, 백킹 보컬, 작사",
+          "status": "current",
+          "activeYears": "2001–2009, 2013–present"
+        },
+        {
+          "name": "Joe Trohman",
+          "role": "리드 기타, 백킹 보컬",
+          "status": "current",
+          "activeYears": "2001–2009, 2013–present"
+        },
+        {
+          "name": "Andy Hurley",
+          "role": "드럼, 퍼커션",
+          "status": "current",
+          "activeYears": "2003–2009, 2013–present"
+        },
+        {
+          "name": "TJ Kunasch",
+          "role": "리드 기타",
+          "status": "former",
+          "activeYears": "2001–2002"
+        },
+        {
+          "name": "Brandon Hamm",
+          "role": "리드 기타",
+          "status": "former",
+          "activeYears": "2002"
+        },
+        {
+          "name": "Ben Rose",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2001"
+        },
+        {
+          "name": "Mike Pareskuwicz",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2001–2003"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "sugar-we-re-goin-down",
+          "title": "Sugar, We're Goin Down",
+          "year": 2005,
+          "album": "From Under the Cork Tree",
+          "guide": "2000년대 팝 펑크/이모 씬의 시그니처 앤섬으로 밴드를 스타덤에 올린 대표 곡이다.",
+          "youtubeId": "uhG-vLZrb-g",
+          "source": {
+            "label": "Fall Out Boy — Sugar, We're Goin Down",
+            "url": "https://www.youtube.com/watch?v=uhG-vLZrb-g",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        },
+        {
+          "id": "centuries",
+          "title": "Centuries",
+          "year": 2014,
+          "album": "American Beauty/American Psycho",
+          "guide": "웅장한 샘플링과 스펙타클한 아레나 록 사운드가 돋보이는 세계적인 히트곡이다.",
+          "youtubeId": "LBr7kECsjcQ",
+          "source": {
+            "label": "Fall Out Boy — Centuries",
+            "url": "https://www.youtube.com/watch?v=LBr7kECsjcQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:17:49.440Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "green-day",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "90년대 팝 펑크의 전성기를 열며 음악적 영감을 준 직계 선배 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Fall Out Boy — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q28158",
+          "publisher": "Wikidata",
+          "externalId": "Q28158",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Fall Out Boy — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/516349c2-3e2b-4786-8800-4cb50302bf37",
+          "publisher": "MusicBrainz",
+          "externalId": "516349c2-3e2b-4786-8800-4cb50302bf37",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Fall Out Boy — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Fall_Out_Boy",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Fall Out Boy — 공식 YouTube",
+          "url": "https://www.youtube.com/@falloutboy",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@falloutboy",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Fall Out Boy — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Fall_Out_Boy_Rock_am_Ring_2014_(1).JPG",
+          "publisher": "Wikimedia Commons",
+          "note": "Claude가 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "pop-punk",
+          "alternative-rock",
+          "synth-rock"
+        ],
+        "moodScores": {
+          "anthemic-live": 5,
+          "fast-driving": 5,
+          "hopeful-uplifting": 4,
+          "romantic-emotional": 3,
+          "aggressive-heavy": 3,
+          "bright-upbeat": 3,
+          "youth-rebellious": 2
+        },
+        "reviewStatus": "reviewed"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-23T15:19:04.203Z"
+    },
     {
       "id": "ensiferum",
       "name": "Ensiferum",
@@ -638,7 +1305,7 @@
         "일렉트로닉 록",
         "하드 록"
       ],
-      "summary": "1996년 미국 캘리포니아에서 결성된 밴드로, 2000년대 초반 뉴 메탈(Nu Metal)과 얼터너티브 록을 세계적 메인스트림으로 끌어올린 주역. 힙합, 일렉트로닉, 하드 록을 융합한 독창적인 사운드와 체스터 베닝턴의 절규하는 보컬로 전 세계적인 상업적·음악적 성공을 거두었다.",
+      "summary": "2000년대 초반 뉴 메탈(Nu Metal)과 얼터너티브 록을 세계적 메인스트림으로 끌어올린 주역. 힙합, 일렉트로닉, 하드 록을 융합한 독창적인 사운드와 체스터 베닝턴의 절규하는 보컬로 전 세계적인 상업적·음악적 성공을 거두었다. 2023년 새로운 여성 보컬 에밀리 암스트롱을 영입하며 복귀했다.",
       "style": "마이크 시노다의 감각적인 랩과 힙합 비트, 일렉트로닉 샘플링 위로 묵직한 디스토션 기타와 체스터 베닝턴의 폭발적인 스크리밍 및 호소력 짙은 보컬이 조화를 이룬다. 극적인 곡 구조와 감정선이 명확한 멜로디가 특징.",
       "image": {
         "wikipediaTitle": "Linkin Park",
@@ -1083,7 +1750,7 @@
         "하드 록",
         "캘리포니아 록"
       ],
-      "summary": "1983년 미국 로스앤젤레스에서 결성된 록 밴드로, 펑크(Funk)와 펑크 록(Punk Rock)을 결합한 펑크 록(Funk Rock) 사운드를 세계적으로 대중화한 대표 주자다. 폭발적인 에너지를 가진 라이브 공연과 수많은 히트곡으로 록 음악 역사상 가장 성공한 밴드 중 하나로 평가받는다.",
+      "summary": "펑크(Funk)와 펑크 록(Punk Rock)을 결합한 펑크 록(Funk Rock) 사운드를 세계적으로 대중화한 대표 주자. 폭발적인 에너지를 가진 라이브 공연과 수많은 히트곡으로 록 음악 역사상 가장 성공한 밴드 중 하나로 평가받는다.",
       "style": "플리의 독창적이고 그루브 넘치는 베이스 슬랩 연주와 존 프루시안테의 감성적이고 정교한 기타 리프가 사운드의 중심을 이룬다. 앤서니 키디스의 래핑과 멜로디컬한 가창을 오가는 보컬, 채드 스미스의 폭발적인 드럼 비트가 강력한 그루브를 만들어낸다.",
       "image": {
         "wikipediaTitle": "Red Hot Chili Peppers",
@@ -1258,7 +1925,8 @@
       "activeYears": "1960–1970",
       "primaryGenre": "classic-rock",
       "genreIds": [
-        "classic-rock"
+        "classic-rock",
+        "progressive-art"
       ],
       "tags": [
         "멜로디",
@@ -1268,7 +1936,8 @@
       "subgenres": [
         "팝 록",
         "사이키델릭 록",
-        "아트 록"
+        "아트 록",
+        "클래식 록"
       ],
       "eraTags": [
         {
@@ -1284,8 +1953,8 @@
           "note": "라이브 중심 팝 록에서 스튜디오 실험과 아트 록으로 확장"
         }
       ],
-      "summary": "대중음악의 작곡법과 앨범 제작 방식을 함께 바꾼 1960년대 록의 출발점.",
-      "style": "초기의 간결한 팝 록에서 출발해 포크, 사이키델리아, 오케스트레이션과 스튜디오 실험으로 빠르게 확장했다.",
+      "summary": "대중음악의 작곡법과 앨범 제작 방식을 함께 바꾼 1960년대 록의 출발점. 록 음악의 기준이자 역사상 최고의 밴드로, 다양한 장르에서 족적을 남겼다.",
+      "style": "초기의 간결한 팝 록에서 출발해 포크, 사이키델리아, 오케스트레이션과 스튜디오 실험으로 빠르게 확장했다. 존 레논과 폴 매카트니의 대조적인 작곡 스타일과 조지 마틴의 프로듀싱이 앨범마다 다른 색깔을 만들었다.",
       "members": [
         {
           "name": "John Lennon",
@@ -1478,7 +2147,8 @@
         "subgenreIds": [
           "pop-rock",
           "psychedelic-rock",
-          "art-rock"
+          "art-rock",
+          "classic-rock"
         ],
         "moodScores": {
           "bright-upbeat": 4,
@@ -1535,8 +2205,8 @@
           ]
         }
       ],
-      "summary": "블루스의 거친 에너지와 록스타의 원형을 수십 년간 이어 온 밴드.",
-      "style": "리듬 앤 블루스의 스윙과 키스 리처즈의 개방현 리프, 믹 재거의 전면적인 퍼포먼스가 핵심이다.",
+      "summary": "블루스의 거친 에너지와 록스타의 원형을 수십 년간 이어 온 밴드. 60년이 넘는 세월 동안 라인업을 유지하며 세계에서 가장 오래 활동한 록 밴드로 남아 있다.",
+      "style": "리듬 앤 블루스의 스윙과 키스 리처즈의 개방현 리프, 믹 재거의 전면적인 퍼포먼스가 핵심이다. 컨트리, 디스코, 펑크까지 유행을 흡수하면서도 특유의 스윙감은 잃지 않았다.",
       "members": [
         {
           "name": "Mick Jagger",
@@ -1788,8 +2458,8 @@
           ]
         }
       ],
-      "summary": "파괴적인 라이브와 록 오페라의 서사성을 동시에 밀어붙인 영국 록의 개척자.",
-      "style": "강한 파워 코드, 공격적인 드럼, 극적인 보컬과 콘셉트 앨범 구조를 결합한다.",
+      "summary": "파괴적인 라이브와 록 오페라의 서사성을 동시에 밀어붙인 영국 록의 개척자. 악기를 부수는 무대 퍼포먼스로 록의 폭발적인 에너지를 시각적으로도 증명했다.",
+      "style": "강한 파워 코드, 공격적인 드럼, 극적인 보컬과 콘셉트 앨범 구조를 결합한다. 피트 타운젠드의 신시사이저 시퀀스 활용은 이후 록 사운드의 전자적 확장에 영향을 남겼다.",
       "members": [
         {
           "name": "Roger Daltrey",
@@ -2042,8 +2712,8 @@
           ]
         }
       ],
-      "summary": "블루스 록을 거대한 리프와 신화적인 스케일로 증폭한 하드 록의 기준점.",
-      "style": "지미 페이지의 다층 기타, 존 본햄의 육중한 그루브, 포크와 동양적 음계까지 넘나드는 대비가 특징이다.",
+      "summary": "블루스 록을 거대한 리프와 신화적인 스케일로 증폭한 하드 록의 기준점. 헤비메탈과 하드 록 장르 전체가 이 밴드의 사운드에서 갈라져 나왔다고 평가받는다.",
+      "style": "지미 페이지의 다층 기타, 존 본햄의 육중한 그루브, 포크와 동양적 음계까지 넘나드는 대비가 특징이다. 스튜디오 레이어링과 다이내믹스 조절로 부드러움과 폭발적인 헤비함을 한 곡 안에서 오간다.",
       "members": [
         {
           "name": "Robert Plant",
@@ -2292,8 +2962,8 @@
           ]
         }
       ],
-      "summary": "군더더기 없는 리프와 4/4박자의 추진력을 극한까지 정제한 하드 록 밴드.",
-      "style": "블루스 기반의 단단한 기타 리프와 반복적인 리듬, 즉각적인 후렴에 집중한다.",
+      "summary": "군더더기 없는 리프와 4/4박자의 추진력을 극한까지 정제한 하드 록 밴드. 보컬 교체와 멤버 변화 속에서도 결성 초기의 단순하고 강력한 정체성을 반세기 가까이 지켜왔다.",
+      "style": "블루스 기반의 단단한 기타 리프와 반복적인 리듬, 즉각적인 후렴에 집중한다. 화려한 기교 대신 리프 하나를 끝까지 밀어붙이는 미니멀한 접근이 오히려 강력한 무게감을 만든다.",
       "members": [
         {
           "name": "Angus Young",
@@ -2547,8 +3217,8 @@
           ]
         }
       ],
-      "summary": "1980년대 글램의 화려함에 1970년대 하드 록의 위험한 생동감을 되돌린 밴드.",
-      "style": "슬래시의 블루스 프레이징과 액슬 로즈의 넓은 음역, 펑크적인 불안정성이 공존한다.",
+      "summary": "1980년대 글램의 화려함에 1970년대 하드 록의 위험한 생동감을 되돌린 밴드. 데뷔 앨범만으로 하드 록 역사상 가장 많이 팔린 기록을 세우며 장르의 판도를 바꿨다.",
+      "style": "슬래시의 블루스 프레이징과 액슬 로즈의 넓은 음역, 펑크적인 불안정성이 공존한다. 피아노 발라드부터 거친 스트리트 록까지 넘나드는 폭넓은 스펙트럼도 초기작의 특징이다.",
       "members": [
         {
           "name": "Axl Rose",
@@ -2798,8 +3468,8 @@
           ]
         }
       ],
-      "summary": "사운드 디자인과 서사를 결합해 앨범 전체를 하나의 경험으로 만든 밴드.",
-      "style": "느린 전개, 공간계 이펙트, 철학적 가사와 치밀한 스튜디오 편집으로 몰입을 만든다.",
+      "summary": "사운드 디자인과 서사를 결합해 앨범 전체를 하나의 경험으로 만든 밴드. 시드 바렛의 초기 사이키델릭 실험에서 출발해 로저 워터스 시대의 개념적 대작으로 진화했다.",
+      "style": "느린 전개, 공간계 이펙트, 철학적 가사와 치밀한 스튜디오 편집으로 몰입을 만든다. 데이비드 길모어의 감정을 절제한 기타 솔로는 소리 하나하나에 여백과 무게를 함께 싣는다.",
       "members": [
         {
           "name": "David Gilmour",
@@ -3057,8 +3727,8 @@
           ]
         }
       ],
-      "summary": "프로그레시브 록의 문을 열고도 같은 공식을 반복하지 않은 실험 집단.",
-      "style": "재즈 즉흥, 현대음악의 긴장, 금속성 기타와 복잡한 리듬을 시대마다 새롭게 조합했다.",
+      "summary": "프로그레시브 록의 문을 열고도 같은 공식을 반복하지 않은 실험 집단. 로버트 프립을 중심으로 수십 년간 완전히 다른 라인업과 사운드로 여러 차례 재구성됐다.",
+      "style": "재즈 즉흥, 현대음악의 긴장, 금속성 기타와 복잡한 리듬을 시대마다 새롭게 조합했다. 예측 불가능한 박자 변화와 불협화음도 서슴지 않는 태도가 장르를 규정하기 어렵게 만든다.",
       "members": [
         {
           "name": "Robert Fripp",
@@ -3303,8 +3973,8 @@
           ]
         }
       ],
-      "summary": "복잡한 합주를 밝고 상승감 있는 사운드로 완성한 프로그레시브 록의 대표 주자.",
-      "style": "고음 보컬, 멜로디컬한 베이스, 클래식 영향의 키보드와 긴 형식의 곡 구성이 특징이다.",
+      "summary": "복잡한 합주를 밝고 상승감 있는 사운드로 완성한 프로그레시브 록의 대표 주자. 로저 딘의 신비로운 앨범 아트워크와 함께 프로그레시브 록의 시각적 이미지도 정립했다.",
+      "style": "고음 보컬, 멜로디컬한 베이스, 클래식 영향의 키보드와 긴 형식의 곡 구성이 특징이다. 크리스 스콰이어의 선율적인 베이스 라인은 리듬 악기를 멜로디 악기로 끌어올린 사례로 꼽힌다.",
       "members": [
         {
           "name": "Steve Howe",
@@ -3553,8 +4223,8 @@
           ]
         }
       ],
-      "summary": "사이키델릭한 공간감과 현대적 프로덕션, 메탈의 무게를 잇는 프로그 밴드.",
-      "style": "섬세한 음향 층과 우울한 멜로디 위에 긴 구성과 묵직한 리프를 절제해 배치한다.",
+      "summary": "사이키델릭한 공간감과 현대적 프로덕션, 메탈의 무게를 잇는 프로그 밴드. 원맨 프로젝트로 시작해 점차 정식 밴드 편성으로 발전하며 사운드의 무게감을 키워왔다.",
+      "style": "섬세한 음향 층과 우울한 멜로디 위에 긴 구성과 묵직한 리프를 절제해 배치한다. 팝적인 후렴과 극단적으로 무거운 브레이크다운을 한 곡 안에 자연스럽게 이어붙인다.",
       "members": [
         {
           "name": "Steven Wilson",
@@ -3788,8 +4458,8 @@
           ]
         }
       ],
-      "summary": "록을 가장 짧고 빠르고 단순한 형태로 되돌려 펑크의 기본 문법을 만든 밴드.",
-      "style": "왜곡된 다운스트로크 기타, 쉬지 않는 8비트와 팝 멜로디를 2분 안팎으로 압축한다.",
+      "summary": "록을 가장 짧고 빠르고 단순한 형태로 되돌려 펑크의 기본 문법을 만든 밴드. 가죽 재킷과 찢어진 청바지로 대표되는 펑크의 시각적 스타일도 이들로부터 시작됐다.",
+      "style": "왜곡된 다운스트로크 기타, 쉬지 않는 8비트와 팝 멜로디를 2분 안팎으로 압축한다. 곡과 곡 사이 침묵 없이 연달아 몰아치는 라이브 구성으로 속도감을 극대화했다.",
       "members": [
         {
           "name": "Joey Ramone",
@@ -4036,8 +4706,8 @@
           ]
         }
       ],
-      "summary": "펑크의 정치성과 레게·스카·록앤롤을 결합해 장르의 지평을 넓힌 밴드.",
-      "style": "직선적 펑크 리프를 기반으로 자메이카 리듬과 사회 비판적 가사를 적극 흡수한다.",
+      "summary": "펑크의 정치성과 레게·스카·록앤롤을 결합해 장르의 지평을 넓힌 밴드. 펑크가 하나의 사운드에 갇히지 않고 다양한 장르를 흡수할 수 있음을 스스로 증명했다.",
+      "style": "직선적 펑크 리프를 기반으로 자메이카 리듬과 사회 비판적 가사를 적극 흡수한다. 앨범이 거듭될수록 훵크, 힙합, 로커빌리까지 실험 범위를 넓혀 나갔다.",
       "members": [
         {
           "name": "Joe Strummer",
@@ -4274,8 +4944,8 @@
           ]
         }
       ],
-      "summary": "짧은 활동만으로 영국 사회와 대중문화에 펑크의 충격을 각인한 밴드.",
-      "style": "거친 기타와 냉소적인 보컬, 선동적인 가사로 음악보다 큰 문화적 사건을 만들었다.",
+      "summary": "짧은 활동만으로 영국 사회와 대중문화에 펑크의 충격을 각인한 밴드. 정식 활동 기간은 3년이 채 되지 않았지만 이후 등장한 수많은 펑크 밴드에 직접적인 영향을 남겼다.",
+      "style": "거친 기타와 냉소적인 보컬, 선동적인 가사로 음악보다 큰 문화적 사건을 만들었다. 정교한 연주보다 태도와 에너지 자체가 메시지가 되는 펑크 정신을 극단적으로 구현했다.",
       "members": [
         {
           "name": "Steve Jones",
@@ -4502,10 +5172,11 @@
       "origin": "애빙던, 잉글랜드",
       "countryCode": "GB",
       "activeYears": "1985–현재",
-      "primaryGenre": "alternative-indie",
+      "primaryGenre": "progressive-art",
       "genreIds": [
-        "alternative-indie",
-        "progressive-art"
+        "progressive-art",
+        "britpop-indie",
+        "alternative-indie"
       ],
       "tags": [
         "실험",
@@ -4521,6 +5192,8 @@
         {
           "era": "1990s",
           "genreIds": [
+            "progressive-art",
+            "britpop-indie",
             "alternative-indie"
           ],
           "subgenres": [
@@ -4530,8 +5203,9 @@
         {
           "era": "2000s",
           "genreIds": [
-            "alternative-indie",
-            "progressive-art"
+            "progressive-art",
+            "britpop-indie",
+            "alternative-indie"
           ],
           "subgenres": [
             "아트 록",
@@ -4539,8 +5213,8 @@
           ]
         }
       ],
-      "summary": "기타 록의 성공 이후 전자음악과 현대음악을 흡수하며 계속 형태를 바꾼 밴드.",
-      "style": "불안정한 화성, 섬세한 질감, 비대칭 리듬과 톰 요크의 취약한 보컬로 현대적 소외를 표현한다.",
+      "summary": "기타 록의 성공 이후 전자음악과 현대음악을 흡수하며 계속 형태를 바꾼 밴드. 앨범마다 이전 작품의 성공 공식을 스스로 버리고 새로운 사운드로 넘어가는 태도로 유명하다.",
+      "style": "불안정한 화성, 섬세한 질감, 비대칭 리듬과 톰 요크의 취약한 보컬로 현대적 소외를 표현한다. 기타 록 편성에 전자음악의 프로그래밍과 재즈적인 리듬 감각을 자연스럽게 녹여낸다.",
       "members": [
         {
           "name": "Thom Yorke",
@@ -4743,10 +5417,10 @@
         }
       ],
       "taxonomyV2": {
-        "primaryGenreId": "alternative-grunge",
+        "primaryGenreId": "progressive-art-psychedelic",
         "secondaryGenreIds": [
-          "progressive-art-psychedelic",
-          "shoegaze-dream-post"
+          "shoegaze-dream-post",
+          "alternative-grunge"
         ],
         "subgenreIds": [
           "alternative-rock",
@@ -4806,8 +5480,8 @@
           ]
         }
       ],
-      "summary": "조용한 벌스와 폭발하는 코러스의 대비로 1990년대 얼터너티브의 설계도를 그린 밴드.",
-      "style": "각진 기타, 서프 록의 질감, 블랙 프랜시스의 비명과 킴 딜의 담담한 멜로디가 교차한다.",
+      "summary": "조용한 벌스와 폭발하는 코러스의 대비로 1990년대 얼터너티브의 설계도를 그린 밴드. 너바나의 커트 코베인이 직접 영향을 받았다고 언급하며 얼터너티브 록의 숨은 시조로 재조명됐다.",
+      "style": "각진 기타, 서프 록의 질감, 블랙 프랜시스의 비명과 킴 딜의 담담한 멜로디가 교차한다. 초현실적이고 기괴한 가사와 담백한 연주가 대비를 이루며 독특한 긴장감을 만든다.",
       "members": [
         {
           "name": "Black Francis",
@@ -5056,8 +5730,8 @@
           ]
         }
       ],
-      "summary": "기타의 조율과 연주법 자체를 바꿔 노이즈를 새로운 록 어휘로 만든 밴드.",
-      "style": "변칙 튜닝, 드론, 피드백을 멜로디와 결합하며 실험음악과 인디 록을 연결한다.",
+      "summary": "기타의 조율과 연주법 자체를 바꿔 노이즈를 새로운 록 어휘로 만든 밴드. 인디 록과 실험음악, 언더그라운드와 메이저 신을 잇는 다리 역할을 오래 수행했다.",
+      "style": "변칙 튜닝, 드론, 피드백을 멜로디와 결합하며 실험음악과 인디 록을 연결한다. 드라이버로 기타 줄을 긁거나 물체를 끼워 넣는 등 파격적인 연주법도 자주 사용했다.",
       "members": [
         {
           "name": "Thurston Moore",
@@ -5307,8 +5981,8 @@
           ]
         }
       ],
-      "summary": "언더그라운드의 거친 소리와 강력한 팝 멜로디로 1990년대 록의 중심을 바꾼 밴드.",
-      "style": "펑크의 단순함, 금속성 디스토션, 속삭임과 폭발을 오가는 다이내믹으로 즉각적인 감정을 만든다.",
+      "summary": "언더그라운드의 거친 소리와 강력한 팝 멜로디로 1990년대 록의 중심을 바꾼 밴드. 단 세 장의 정규 앨범만으로 그런지를 주류 음악 시장의 중심으로 끌어올렸다.",
+      "style": "펑크의 단순함, 금속성 디스토션, 속삭임과 폭발을 오가는 다이내믹으로 즉각적인 감정을 만든다. 조용한 벌스에서 굉음의 후렴으로 넘어가는 낙차가 세대의 감정을 대변하는 사운드로 읽혔다.",
       "members": [
         {
           "name": "Kurt Cobain",
@@ -5553,8 +6227,8 @@
           ]
         }
       ],
-      "summary": "그런지의 시대정신을 클래식 록의 긴 호흡과 꾸준한 라이브 문화로 이어 온 밴드.",
-      "style": "에디 베더의 깊은 보컬과 두 기타의 유기적 합주, 진지한 서사와 공연 중심 태도가 특징이다.",
+      "summary": "그런지의 시대정신을 클래식 록의 긴 호흡과 꾸준한 라이브 문화로 이어 온 밴드. 티켓 판매 방식에 항의하며 대형 유통사와 맞선 일화로도 잘 알려져 있다.",
+      "style": "에디 베더의 깊은 보컬과 두 기타의 유기적 합주, 진지한 서사와 공연 중심 태도가 특징이다. 스튜디오 앨범 못지않게 즉흥적으로 확장되는 라이브 세트리스트로 명성을 쌓았다.",
       "members": [
         {
           "name": "Eddie Vedder",
@@ -5806,8 +6480,8 @@
           ]
         }
       ],
-      "summary": "그런지의 정서에 메탈의 무게와 불길한 화음을 깊게 결합한 밴드.",
-      "style": "반음계 리프와 느린 그루브, 레인 스테일리와 제리 캔트렐의 음울한 2성 화음이 중심이다.",
+      "summary": "그런지의 정서에 메탈의 무게와 불길한 화음을 깊게 결합한 밴드. 어쿠스틱 편성으로 발표한 앨범들에서도 특유의 음울한 정서를 그대로 유지했다.",
+      "style": "반음계 리프와 느린 그루브, 레인 스테일리와 제리 캔트렐의 음울한 2성 화음이 중심이다. 두 보컬이 반음 간격으로 쌓는 화음은 다른 밴드에서 보기 힘든 독보적인 색채를 만든다.",
       "members": [
         {
           "name": "Jerry Cantrell",
@@ -6057,8 +6731,8 @@
           ]
         }
       ],
-      "summary": "불길한 리프와 산업도시의 무게로 헤비 메탈의 핵심 어휘를 만든 밴드.",
-      "style": "낮게 조율된 기타, 삼전음, 느리고 무거운 리듬과 공포·전쟁을 다룬 가사가 근간이다.",
+      "summary": "불길한 리프와 산업도시의 무게로 헤비 메탈의 핵심 어휘를 만든 밴드. 버밍엄의 공장 노동 환경에서 비롯된 어둡고 무거운 정서가 사운드 전반에 짙게 배어 있다.",
+      "style": "낮게 조율된 기타, 삼전음, 느리고 무거운 리듬과 공포·전쟁을 다룬 가사가 근간이다. 토니 아이오미가 산업재해로 잃은 손가락 끝 때문에 개발한 낮은 튜닝이 장르의 표준이 됐다.",
       "members": [
         {
           "name": "Ozzy Osbourne",
@@ -6329,8 +7003,8 @@
           ]
         }
       ],
-      "summary": "질주하는 베이스와 트윈 기타, 역사적 서사로 전통 헤비 메탈을 세계화한 밴드.",
-      "style": "갤로핑 리듬, 화음을 이루는 두 기타, 오페라적인 고음 보컬과 긴 서사 구조가 특징이다.",
+      "summary": "질주하는 베이스와 트윈 기타, 역사적 서사로 전통 헤비 메탈을 세계화한 밴드. 마스코트 에디를 앞세운 강렬한 앨범 아트워크로 시각적 정체성까지 완성했다.",
+      "style": "갤로핑 리듬, 화음을 이루는 두 기타, 오페라적인 고음 보컬과 긴 서사 구조가 특징이다. 역사·문학·신화를 소재로 한 서사적인 가사가 곡의 극적인 전개와 맞물린다.",
       "members": [
         {
           "name": "Bruce Dickinson",
@@ -6578,8 +7252,8 @@
           ]
         }
       ],
-      "summary": "스래시 메탈의 속도와 복잡성을 대형 록의 스케일로 끌어올린 밴드.",
-      "style": "촘촘한 다운피킹 리프, 급격한 구성 전환과 묵직한 중속 그루브를 모두 구사한다.",
+      "summary": "스래시 메탈의 속도와 복잡성을 대형 록의 스케일로 끌어올린 밴드. 스래시 메탈을 언더그라운드에서 스타디움 규모의 주류 음악으로 끌어올린 대표 주자다.",
+      "style": "촘촘한 다운피킹 리프, 급격한 구성 전환과 묵직한 중속 그루브를 모두 구사한다. 앨범이 거듭될수록 스래시의 속도감과 대중적인 미드템포 록 사이를 오가며 스펙트럼을 넓혔다.",
       "members": [
         {
           "name": "James Hetfield",
@@ -6829,8 +7503,8 @@
           ]
         }
       ],
-      "summary": "복잡한 박자와 반복을 육체적인 헤비함으로 바꾼 프로그레시브 메탈 밴드.",
-      "style": "베이스 중심의 순환 리프, 다층적인 박자, 느린 긴장 축적과 상징적인 가사를 사용한다.",
+      "summary": "복잡한 박자와 반복을 육체적인 헤비함으로 바꾼 프로그레시브 메탈 밴드. 수학적인 박자 구조와 시각 예술적인 뮤직비디오로 독자적인 예술적 정체성을 구축했다.",
+      "style": "베이스 중심의 순환 리프, 다층적인 박자, 느린 긴장 축적과 상징적인 가사를 사용한다. 대니 캐리의 폴리리듬 드러밍은 곡 전체의 시간 감각을 뒤틀며 최면적인 몰입을 만든다.",
       "members": [
         {
           "name": "Maynard James Keenan",
@@ -7081,8 +7755,8 @@
           ]
         }
       ],
-      "summary": "스래시 메탈의 속도와 불협화음을 가장 극단적인 방향으로 몰아붙인 밴드.",
-      "style": "급가속하는 드럼, 반음계 리프, 혼돈스러운 솔로와 짧고 압축된 곡 구조가 특징이다.",
+      "summary": "스래시 메탈의 속도와 불협화음을 가장 극단적인 방향으로 몰아붙인 밴드. 종교와 전쟁, 폭력을 직설적으로 다룬 가사로 장르 내에서도 가장 논쟁적인 밴드로 꼽힌다.",
+      "style": "급가속하는 드럼, 반음계 리프, 혼돈스러운 솔로와 짧고 압축된 곡 구조가 특징이다. 조성을 벗어난 무질서한 기타 솔로가 오히려 혼돈스러운 폭력성을 있는 그대로 드러낸다.",
       "members": [
         {
           "name": "Tom Araya",
@@ -7330,8 +8004,8 @@
           ]
         }
       ],
-      "summary": "데스 메탈의 원형을 세운 뒤 기술적이고 철학적인 방향으로 장르를 진화시킨 밴드.",
-      "style": "거친 저음 보컬과 고속 리프에서 출발해 복잡한 박자, 재즈적 연주와 사유적인 가사로 확장했다.",
+      "summary": "데스 메탈의 원형을 세운 뒤 기술적이고 철학적인 방향으로 장르를 진화시킨 밴드. 척 슐다이너 한 사람의 비전을 중심으로 데스 메탈이라는 장르 자체가 형성됐다고 평가받는다.",
+      "style": "거친 저음 보컬과 고속 리프에서 출발해 복잡한 박자, 재즈적 연주와 사유적인 가사로 확장했다. 후기작으로 갈수록 테크니컬 데스 메탈과 프로그레시브 메탈의 경계를 허물었다.",
       "members": [
         {
           "name": "Chuck Schuldiner",
@@ -7576,8 +8250,8 @@
           ]
         }
       ],
-      "summary": "멜로딕 데스 메탈의 공격성에 화려한 기타·키보드 대결을 결합한 핀란드 밴드.",
-      "style": "거친 보컬과 빠른 리프 위에 네오클래시컬 솔로, 선명한 키보드 멜로디를 겹친다.",
+      "summary": "멜로딕 데스 메탈의 공격성에 화려한 기타·키보드 대결을 결합한 핀란드 밴드. 클래식 음악의 선율미를 극단적인 메탈 사운드에 대입한 접근으로 장르의 새로운 갈래를 열었다.",
+      "style": "거친 보컬과 빠른 리프 위에 네오클래시컬 솔로, 선명한 키보드 멜로디를 겹친다. 기타와 키보드가 번갈아 주고받는 유니즌 솔로 배틀이 곡의 클라이맥스를 이룬다.",
       "members": [
         {
           "name": "Alexi Laiho",
@@ -7833,8 +8507,8 @@
           ]
         }
       ],
-      "summary": "차갑고 깊은 고딕의 분위기와 빛나는 팝 멜로디를 한 밴드 안에 공존시킨 존재.",
-      "style": "코러스가 깊게 걸린 기타, 선명한 베이스 라인과 로버트 스미스의 흔들리는 보컬이 정서를 만든다.",
+      "summary": "차갑고 깊은 고딕의 분위기와 빛나는 팝 멜로디를 한 밴드 안에 공존시킨 존재. 포스트펑크의 음울함과 대중적인 팝 감성을 오가며 40년 넘게 라인업을 이끌어 왔다.",
+      "style": "코러스가 깊게 걸린 기타, 선명한 베이스 라인과 로버트 스미스의 흔들리는 보컬이 정서를 만든다. 같은 앨범 안에서도 극단적으로 어두운 곡과 밝은 팝 싱글이 공존하는 폭넓은 스펙트럼을 지녔다.",
       "members": [
         {
           "name": "Robert Smith",
@@ -8084,8 +8758,8 @@
           ]
         }
       ],
-      "summary": "산업 소음과 전자음악의 정밀함을 개인적인 분노와 취약성으로 바꾼 프로젝트.",
-      "style": "기계적인 비트, 왜곡된 샘플, 극단적인 음량 대비와 트렌트 레즈너의 내밀한 서사가 핵심이다.",
+      "summary": "산업 소음과 전자음악의 정밀함을 개인적인 분노와 취약성으로 바꾼 프로젝트. 사실상 트렌트 레즈너 한 사람의 스튜디오 프로젝트로 시작해 라이브 밴드로 확장됐다.",
+      "style": "기계적인 비트, 왜곡된 샘플, 극단적인 음량 대비와 트렌트 레즈너의 내밀한 서사가 핵심이다. 극도로 조용한 구간과 폭발적인 노이즈를 오가는 다이내믹스가 곡의 긴장을 지배한다.",
       "members": [
         {
           "name": "Trent Reznor",
@@ -8322,7 +8996,7 @@
         }
       ],
       "summary": "독일어의 단단한 리듬과 거대하고 때로는 기괴한 무대 연출로 인더스트리얼 메탈을 세계화한 밴드. 노이에 도이체 헤르테를 전세계에 각인시켰다.",
-      "style": "기계처럼 반복되는 기타 리프, 행진하는 전자 비트, 저음 보컬과 극단적인 공연 미학이 특징이다.",
+      "style": "기계처럼 반복되는 기타 리프, 행진하는 전자 비트, 저음 보컬과 극단적인 공연 미학이 특징이다. 화염과 폭발을 동반한 무대 연출은 음악만큼이나 밴드의 정체성을 규정하는 요소다.",
       "members": [
         {
           "name": "Till Lindemann",
@@ -8572,8 +9246,8 @@
           ]
         }
       ],
-      "summary": "재즈 화성과 정교한 스튜디오 연주, 냉소적인 서사를 록의 대중성 안에 결합한 듀오 중심 밴드.",
-      "style": "복잡한 코드 진행과 세션 연주자의 치밀한 테이크, 건조한 보컬과 비틀린 인물 묘사가 매끈한 프로덕션 아래 맞물린다.",
+      "summary": "재즈 화성과 정교한 스튜디오 연주, 냉소적인 서사를 록의 대중성 안에 결합한 듀오 중심 밴드. 도널드 페이건과 월터 베커는 라이브 투어 대신 스튜디오 완성도에 집중하는 전략을 택했다.",
+      "style": "복잡한 코드 진행과 세션 연주자의 치밀한 테이크, 건조한 보컬과 비틀린 인물 묘사가 매끈한 프로덕션 아래 맞물린다. 만족스러운 테이크를 위해 같은 곡을 수십 차례 재녹음하는 완벽주의로도 유명하다.",
       "members": [
         {
           "name": "Donald Fagen",
@@ -8821,7 +9495,7 @@
           ]
         }
       ],
-      "summary": "미국 남부의 블루스·컨트리 감각과 여러 대의 기타가 만드는 장대한 합주를 대표한 서던 록 밴드.",
+      "summary": "미국 남부의 블루스·컨트리 감각과 여러 대의 기타가 만드는 장대한 합주를 대표한 서던 록 밴드. 1977년 비행기 사고로 핵심 멤버를 잃는 비극을 겪고도 이후 활동을 이어간 것으로도 잘 알려져 있다.",
       "style": "담백한 남부 억양의 보컬, 슬라이드 기타와 세 대의 기타가 교차하는 긴 전개, 블루스 기반의 묵직한 그루브가 중심이다.",
       "members": [
         {
@@ -9078,8 +9752,8 @@
           ]
         }
       ],
-      "summary": "고요한 반복을 거대한 기타 소음으로 증폭하며 포스트 록의 감정적 다이내믹을 넓힌 글래스고 밴드.",
-      "style": "절제된 멜로디와 긴 축적, 갑작스러운 음량 변화, 이펙트로 번지는 기타 층이 보컬 없이도 선명한 서사를 만든다.",
+      "summary": "고요한 반복을 거대한 기타 소음으로 증폭하며 포스트 록의 감정적 다이내믹을 넓힌 글래스고 밴드. 보컬이 거의 없는 연주곡 위주 구성으로도 영화적인 서사와 감정을 전달한다.",
+      "style": "절제된 멜로디와 긴 축적, 갑작스러운 음량 변화, 이펙트로 번지는 기타 층이 보컬 없이도 선명한 서사를 만든다. 영화·다큐멘터리 사운드트랙 작업을 다수 병행하며 사운드의 영화적 스케일을 키워왔다.",
       "members": [
         {
           "name": "Stuart Braithwaite",
@@ -9328,7 +10002,7 @@
           ]
         }
       ],
-      "summary": "기타의 음정을 흔들고 소음을 겹쳐 멜로디와 질감의 경계를 흐린 슈게이즈의 결정적 밴드.",
+      "summary": "기타의 음정을 흔들고 소음을 겹쳐 멜로디와 질감의 경계를 흐린 슈게이즈의 결정적 밴드. 앨범 'Loveless' 하나로 슈게이즈라는 장르의 사운드적 기준 자체를 새로 세웠다는 평가를 받는다.",
       "style": "트레몰로 암과 역방향 리버브가 만든 출렁이는 기타 벽, 낮게 묻힌 보컬, 달콤한 멜로디가 거대한 음량 속에서 공존한다.",
       "members": [
         {
@@ -9579,8 +10253,8 @@
           ]
         }
       ],
-      "summary": "메탈리카에서 해고된 분노를 더 빠르고 더 정교한 스래시로 되돌려준 밴드.",
-      "style": "촘촘한 트윈 리드 기타와 급변하는 박자 위에 데이브 머스테인의 날 선 보컬과 전쟁·정치를 향한 가사가 얹힌다.",
+      "summary": "메탈리카에서 해고된 분노를 더 빠르고 더 정교한 스래시로 되돌려준 밴드. 메탈리카에 대한 라이벌 의식이 오히려 스래시 메탈 전체의 기술적 수준을 끌어올리는 원동력이 됐다.",
+      "style": "촘촘한 트윈 리드 기타와 급변하는 박자 위에 데이브 머스테인의 날 선 보컬과 전쟁·정치를 향한 가사가 얹힌다. 잦은 멤버 교체 속에서도 데이브 머스테인 특유의 냉소적인 정치·사회 비판 가사는 일관되게 유지됐다.",
       "members": [
         {
           "name": "Dave Mustaine",
@@ -9806,8 +10480,8 @@
           ]
         }
       ],
-      "summary": "감성적이고 따뜻한 멜로디로 2000년대 포스트 브릿팝의 전성기를 개척한 밴드.",
-      "style": "어쿠스틱한 기타 선율과 프란 힐리의 서정적이고 감미로운 보컬을 중심으로 편안한 사운드를 들려준다.",
+      "summary": "감성적이고 따뜻한 멜로디로 2000년대 포스트 브릿팝의 전성기를 개척한 밴드. 콜드플레이를 비롯한 후배 밴드들이 직접적인 영향을 받았다고 밝힌 스코틀랜드 출신 밴드다.",
+      "style": "어쿠스틱한 기타 선율과 프란 힐리의 서정적이고 감미로운 보컬을 중심으로 편안한 사운드를 들려준다. 화려한 기교보다 담백한 멜로디와 진솔한 가사로 잔잔한 울림을 만드는 데 집중한다.",
       "members": [
         {
           "name": "Fran Healy",
@@ -10018,8 +10692,8 @@
           ]
         }
       ],
-      "summary": "일렉트로닉 비트와 웅장한 아레나 록 사운드를 결합하여 2010년대 팝 록의 대중화를 이끈 밴드.",
-      "style": "강렬한 퍼커션 리듬, 전자음악 요소와 댄 레이놀즈의 폭발적이고 호소력 짙은 보컬 멜로디가 중심을 이룬다.",
+      "summary": "일렉트로닉 비트와 웅장한 아레나 록 사운드를 결합하여 2010년대 팝 록의 대중화를 이끈 밴드. 스트리밍 시대에 가장 많이 재생된 록 밴드 중 하나로 꼽히며 장르의 대중적 확장을 이끌었다.",
+      "style": "강렬한 퍼커션 리듬, 전자음악 요소와 댄 레이놀즈의 폭발적이고 호소력 짙은 보컬 멜로디가 중심을 이룬다. 록 밴드 편성에 힙합·전자음악의 프로듀싱 감각을 접목해 라디오 친화적인 사운드를 완성한다.",
       "members": [
         {
           "name": "Dan Reynolds",
@@ -10064,7 +10738,7 @@
         {
           "id": "demons",
           "title": "Demons",
-          "year": 2013,
+          "year": 2012,
           "album": "Night Visions",
           "youtubeId": "dDxpr3pgp60",
           "source": {
@@ -10207,7 +10881,7 @@
           ]
         }
       ],
-      "summary": "90년대 브릿팝 열풍의 중심이자, 영국의 시대정신을 대변했던 전설적인 록 밴드.",
+      "summary": "90년대 브릿팝 열풍의 중심이자, 영국의 시대정신을 대변했던 전설적인 록 밴드. 갤러거 형제의 불화와 화해 서사는 밴드의 음악만큼이나 대중적으로 회자되는 이야기다.",
       "style": "노엘 갤러거의 직관적이고 거대한 팝 멜로디와 리암 갤러거의 반항적이고 호소력 짙은 보컬, 묵직한 기타 레이어링이 특징이다.",
       "members": [
         {
@@ -10271,7 +10945,7 @@
         {
           "id": "dont-look-back-in-anger",
           "title": "Don't Look Back In Anger",
-          "year": 1996,
+          "year": 1995,
           "album": "(What's the Story) Morning Glory?",
           "youtubeId": "r8OipmKFDeM",
           "source": {
@@ -10418,7 +11092,7 @@
           ]
         }
       ],
-      "summary": "화려한 글램 감성과 프로그레시브 오페라 사운드를 결합해 아레나 록의 정점을 보여준 전설적인 밴드.",
+      "summary": "화려한 글램 감성과 프로그레시브 오페라 사운드를 결합해 아레나 록의 정점을 보여준 전설적인 밴드. 하드 록, 오페라, 디스코, 발라드를 한 앨범 안에서 오가는 폭넓은 장르 실험으로도 유명하다.",
       "style": "프레디 머큐리의 압도적인 보컬과 피아노, 브라이언 메이의 정교한 멀티 트랙 오케스트레이션 기타 레이어링 및 풍성한 보컬 화음이 중심을 이룬다.",
       "members": [
         {
@@ -10624,7 +11298,7 @@
           ]
         }
       ],
-      "summary": "세련된 팝 멜로디와 서정적인 록 사운드를 결합해 2000년대 후반부터 수많은 글로벌 히트곡을 탄생시킨 밴드.",
+      "summary": "세련된 팝 멜로디와 서정적인 록 사운드를 결합해 2000년대 후반부터 수많은 글로벌 히트곡을 탄생시킨 밴드. 리더 라이언 테더는 다른 아티스트의 히트곡을 다수 프로듀싱하며 밴드 밖에서도 영향력을 넓혔다.",
       "style": "라이언 테더의 감각적인 송라이팅과 보컬을 중심으로, 현악기 편성과 전자 비트를 조화롭게 융합한 스케일 큰 사운드가 특징이다.",
       "members": [
         {
@@ -10837,7 +11511,7 @@
           ]
         }
       ],
-      "summary": "우울하고 서정적인 멜로디와 감각적인 사운드로 북유럽 록 신을 평정했던 스웨덴의 국민 밴드.",
+      "summary": "우울하고 서정적인 멜로디와 감각적인 사운드로 북유럽 록 신을 평정했던 스웨덴의 국민 밴드. 영어 대신 스웨덴어 가사를 고수하면서도 자국을 넘어 북유럽 전역에서 폭넓은 사랑을 받았다.",
       "style": "초기의 시니컬하고 묵직한 얼터너티브 록 사운드에서 출발하여 점차 정교한 일렉트로닉 신스팝 요소와 대중적인 팝 멜로디를 유기적으로 융합했다.",
       "members": [
         {
@@ -11311,7 +11985,7 @@
           ]
         }
       ],
-      "summary": "가죽 의상과 스터드 패션을 도입하고 트윈 기타 시스템을 정립하여 정통 헤비메탈의 표준을 제시한 '메탈 갓'.",
+      "summary": "가죽 의상과 스터드 패션을 도입하고 트윈 기타 시스템을 정립하여 정통 헤비메탈의 표준을 제시한 '메탈 갓'. 이후 등장한 거의 모든 헤비메탈 밴드의 패션과 무대 이미지에 직접적인 영향을 남겼다.",
       "style": "롭 핼포드의 폭발적인 4옥타브 고음 보컬과 글렌 팁턴, 리치 포크너가 전개하는 정밀하고 날카로운 트윈 기타 리프 및 솔로 배틀이 핵심이다.",
       "members": [
         {
@@ -11537,7 +12211,7 @@
           ]
         }
       ],
-      "summary": "경쾌하고 중독성 있는 기타 리프와 신시사이저 비트를 결합해 2010년대 초반 댄서블 인디 록 열풍을 주도한 밴드.",
+      "summary": "경쾌하고 중독성 있는 기타 리프와 신시사이저 비트를 결합해 2010년대 초반 댄서블 인디 록 열풍을 주도한 밴드. 북아일랜드 출신 세 멤버가 학창 시절부터 함께한 인연으로 결성돼 오랜 호흡을 자랑한다.",
       "style": "알렉스 트림블의 깔끔한 보컬을 중심으로, 찰랑거리는 고음역대의 트윈 기타 사운드와 춤추기 좋은 업템포 일렉트로닉 리듬이 결합된 청량한 사운드가 특징이다.",
       "members": [
         {
@@ -11727,8 +12401,8 @@
           ]
         }
       ],
-      "summary": "90년대 팝 펑크의 대중화를 이끌고 2000년대 록 오페라로 시대를 정의한 펑크 록의 아이콘.",
-      "style": "Billie Joe의 시원한 파워 코드 플레이와 중독성 강한 멜로디 훅, Mike Dirnt의 선명한 핑거링 베이스가 조화를 이룬다.",
+      "summary": "90년대 팝 펑크의 대중화를 이끌고 2000년대 록 오페라로 시대를 정의한 펑크 록의 아이콘. 앨범 'American Idiot'으로 펑크 록에 정치적 콘셉트 앨범이라는 새로운 가능성을 증명했다.",
+      "style": "Billie Joe의 시원한 파워 코드 플레이와 중독성 강한 멜로디 훅, Mike Dirnt의 선명한 핑거링 베이스가 조화를 이룬다. 3인조라는 단출한 편성에도 스타디움을 채우는 폭발적인 라이브 에너지를 만들어낸다.",
       "members": [
         {
           "name": "Billie Joe Armstrong",
@@ -11912,8 +12586,8 @@
           ]
         }
       ],
-      "summary": "Nickelback의 차드 크로거가 발굴한, 2000년대 포스트 그런지 부흥을 이끈 캐나다 출신 하드 록 밴드.",
-      "style": "Tyler Connolly의 선명한 보컬과 포스트 그런지 특유의 묵직하고 리드미컬한 기타 리프가 중심을 이룬다.",
+      "summary": "Nickelback의 차드 크로거가 발굴한, 2000년대 포스트 그런지 부흥을 이끈 캐나다 출신 하드 록 밴드. 데뷔 초반부터 캐나다를 넘어 북미 록 차트 전반에서 꾸준한 성과를 이어왔다.",
+      "style": "Tyler Connolly의 선명한 보컬과 포스트 그런지 특유의 묵직하고 리드미컬한 기타 리프가 중심을 이룬다. 발라드성 싱글과 거친 하드 록 트랙을 오가며 라디오 친화적인 스펙트럼을 유지한다.",
       "members": [
         {
           "name": "Tyler Connolly",
@@ -12112,7 +12786,7 @@
           ]
         }
       ],
-      "summary": "대중적인 멜로디와 압도적인 스타디움 스케일로 80년대 글램 메탈과 아레나 록의 전성기를 이끈 주역.",
+      "summary": "대중적인 멜로디와 압도적인 스타디움 스케일로 80년대 글램 메탈과 아레나 록의 전성기를 이끈 주역. 40년 가까이 라인업의 큰 변화 없이 활동하며 아레나 록의 상업적 생명력을 증명해왔다.",
       "style": "Jon Bon Jovi의 시원한 보컬과 친숙한 팝 감각의 멜로디 훅, 화려하면서도 대중적인 기타 리프가 결합된 사운드가 특징이다.",
       "members": [
         {
