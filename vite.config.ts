@@ -353,7 +353,12 @@ function studioApi(): Plugin {
         }
         try {
           const payload = await readBody(request, 200_000)
-          const requiredStrings = ['brandSuffix', 'heroTitle', 'heroDescription', 'genreSectionLabel', 'genreSectionTitle', 'genreSectionDescription']
+          const requiredStrings = [
+            'brandSuffix', 'heroTitle', 'heroDescription', 'genreSectionLabel', 'genreSectionTitle', 'genreSectionDescription',
+            'manifestoLabel', 'manifestoTitle', 'manifestoButtonLabel',
+            'moodSectionLabel', 'moodSectionTitle', 'moodSectionDescription',
+            'allBandsSectionLabel', 'allBandsSectionTitle', 'allBandsSectionDescription',
+          ]
           if (payload.schemaVersion !== 1 || requiredStrings.some((key) => typeof payload[key] !== 'string')) throw new Error('지원하지 않는 사이트 설정 형식입니다.')
           if (!(payload.heroTitle as string).trim() || !(payload.genreSectionTitle as string).trim()) throw new Error('메인·장르 제목은 비워 둘 수 없습니다.')
           if (!payload.theme || !payload.sectionVisibility || !Array.isArray(payload.sectionOrder)) throw new Error('테마와 섹션 설정이 누락되었습니다.')

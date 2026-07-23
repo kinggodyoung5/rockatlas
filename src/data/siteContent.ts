@@ -9,6 +9,15 @@ export interface SiteContent {
   genreSectionLabel: string
   genreSectionTitle: string
   genreSectionDescription: string
+  manifestoLabel: string
+  manifestoTitle: string
+  manifestoButtonLabel: string
+  moodSectionLabel: string
+  moodSectionTitle: string
+  moodSectionDescription: string
+  allBandsSectionLabel: string
+  allBandsSectionTitle: string
+  allBandsSectionDescription: string
   theme: {
     fontPreset: 'modern' | 'classic' | 'editorial'
     customFontName: string

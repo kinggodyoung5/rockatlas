@@ -15,12 +15,15 @@ interface MoodFinderPageProps {
   eraId: EraId | 'all'
   countryCode: string | 'all'
   favoriteIds: string[]
+  sectionLabel: string
+  sectionTitle: string
+  sectionDescription: string
   onFilter: (patch: Partial<{ selectedMoodIds: MoodId[]; genreId: GenreTaxonomyId | 'all'; eraId: EraId | 'all'; countryCode: string | 'all' }>) => void
   onSelectBand: (band: Band) => void
   onToggleFavorite: (bandId: string) => void
 }
 
-export function MoodFinderPage({ bands, selectedMoodIds, genreId, eraId, countryCode, favoriteIds, onFilter, onSelectBand, onToggleFavorite }: MoodFinderPageProps) {
+export function MoodFinderPage({ bands, selectedMoodIds, genreId, eraId, countryCode, favoriteIds, sectionLabel, sectionTitle, sectionDescription, onFilter, onSelectBand, onToggleFavorite }: MoodFinderPageProps) {
   const countries = [...new Set(bands.map((band) => band.countryCode).filter(Boolean))].sort((a, b) => countryName(a).localeCompare(countryName(b), 'ko'))
   const toggleMood = (id: MoodId) => {
     if (selectedMoodIds.includes(id)) onFilter({ selectedMoodIds: selectedMoodIds.filter((item) => item !== id) })
@@ -40,7 +43,7 @@ export function MoodFinderPage({ bands, selectedMoodIds, genreId, eraId, country
     && match > 0).sort((a, b) => b.match - a.match || a.band.name.localeCompare(b.band.name, 'en'))
   return (
     <main id="top" className="catalog-page mood-page" tabIndex={-1}>
-      <section className="catalog-hero shell"><span className="section-no">MOOD FINDER</span><h1>느낌으로 찾기</h1><p>장르 이름을 몰라도 괜찮습니다. 지금 듣고 싶은 분위기를 최대 세 개 골라 비슷한 밴드를 찾아보세요.</p><strong>{selectedMoodIds.length}/3 선택</strong></section>
+      <section className="catalog-hero shell"><span className="section-no">{sectionLabel}</span><h1>{sectionTitle}</h1><p>{sectionDescription}</p><strong>{selectedMoodIds.length}/3 선택</strong></section>
       <section className="mood-browser shell">
         {(Object.keys(groupLabels) as MoodGroupId[]).map((groupId) => <div className="mood-group" key={groupId}><h2>{groupLabels[groupId]}</h2><div className="mood-card-grid">{taxonomyMoods.filter((mood) => mood.groupId === groupId).map((mood) => {
           const selected = selectedMoodIds.includes(mood.id)

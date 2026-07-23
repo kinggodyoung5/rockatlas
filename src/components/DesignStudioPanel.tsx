@@ -95,6 +95,18 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label>장르 구역 표기<input value={value.genreSectionLabel} onChange={(event) => onChange({ genreSectionLabel: event.target.value })} /></label>
             <label>장르 구역 제목<input value={value.genreSectionTitle} onChange={(event) => onChange({ genreSectionTitle: event.target.value })} /></label>
             <label className="studio-grid-span">장르 구역 설명<textarea value={value.genreSectionDescription} onChange={(event) => onChange({ genreSectionDescription: event.target.value })} rows={3} /></label>
+            <label>마무리 선언 표기<input value={value.manifestoLabel} onChange={(event) => onChange({ manifestoLabel: event.target.value })} /></label>
+            <label>마무리 선언 버튼 문구<input value={value.manifestoButtonLabel} onChange={(event) => onChange({ manifestoButtonLabel: event.target.value })} /></label>
+            <label className="studio-grid-span">마무리 선언 제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.manifestoTitle} onChange={(event) => onChange({ manifestoTitle: event.target.value })} rows={3} /></label>
+          </div></details>
+
+          <details><summary>느낌으로 찾기 · 모든 밴드 페이지 문구</summary><div className="studio-form-grid">
+            <label>느낌으로 찾기 구역 표기<input value={value.moodSectionLabel} onChange={(event) => onChange({ moodSectionLabel: event.target.value })} /></label>
+            <label>느낌으로 찾기 제목<input value={value.moodSectionTitle} onChange={(event) => onChange({ moodSectionTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">느낌으로 찾기 설명<textarea value={value.moodSectionDescription} onChange={(event) => onChange({ moodSectionDescription: event.target.value })} rows={2} /></label>
+            <label>모든 밴드 구역 표기<input value={value.allBandsSectionLabel} onChange={(event) => onChange({ allBandsSectionLabel: event.target.value })} /></label>
+            <label>모든 밴드 제목<input value={value.allBandsSectionTitle} onChange={(event) => onChange({ allBandsSectionTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">모든 밴드 설명 <small>실제 밴드 수 뒤에 "N개의 출발점을 (이 설명)" 형태로 이어서 표시됩니다.</small><textarea value={value.allBandsSectionDescription} onChange={(event) => onChange({ allBandsSectionDescription: event.target.value })} rows={2} /></label>
           </div></details>
 
           <details open><summary>폰트와 색상</summary><div className="studio-form-grid">

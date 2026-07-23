@@ -154,7 +154,7 @@ function ExplorerApp() {
     return <div className={`app-shell theme-${siteContent.theme.fontPreset}`} style={themeStyle}>{fontFaceRule && <style>{fontFaceRule}</style>}<BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} /></div>
   }
 
-  const manifesto = <section className="manifesto" key="manifesto"><div className="shell manifesto-inner"><span>NOT A RANKING</span><h2>순위를 매기지 않습니다.<br />다음 음악으로 가는 <em>길</em>을 만듭니다.</h2><button onClick={surpriseMe}>첫 번째 노드 선택하기 <ArrowRight /></button></div></section>
+  const manifesto = <section className="manifesto" key="manifesto"><div className="shell manifesto-inner"><span>{siteContent.manifestoLabel}</span><h2>{siteContent.manifestoTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h2><button onClick={surpriseMe}>{siteContent.manifestoButtonLabel} <ArrowRight /></button></div></section>
   const homeMain = (
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
@@ -175,8 +175,8 @@ function ExplorerApp() {
   const activeGenreId = route.genreId === 'all' ? taxonomyGenres[0].id : route.genreId
   const content = route.view === 'home' ? homeMain
     : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goBackToPreviousPage} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId }, true)} />
-      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
-        : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} sectionLabel={siteContent.allBandsSectionLabel} sectionTitle={siteContent.allBandsSectionTitle} sectionDescription={siteContent.allBandsSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+        : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} sectionLabel={siteContent.moodSectionLabel} sectionTitle={siteContent.moodSectionTitle} sectionDescription={siteContent.moodSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
   return (
