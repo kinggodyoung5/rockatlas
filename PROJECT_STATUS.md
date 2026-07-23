@@ -5,19 +5,15 @@
 
 ## 0. 현재 상태 요약
 
-- 마지막 갱신: 2026-07-21 KST · Claude
+- 마지막 갱신: 2026-07-23 KST · Claude
 - 로컬 폴더: `C:\Users\SH\Documents\Codex\rock-atlas`
 - 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
-- 현재 개발 브랜치: `codex/taxonomy-v2` — `main`은 이 브랜치의 **순수 조상**(divergence 없음)이라 병합 시 항상 fast-forward로 안전하게 처리됨. 지금까지 `main`은 이 세션 동안 매 확인 단계마다 `codex/taxonomy-v2`와 동일하게 fast-forward 배포되어 왔음.
+- 현재 개발 브랜치: `codex/taxonomy-v2` — `main`은 이 브랜치의 **순수 조상**(divergence 없음)이라 병합 시 항상 fast-forward로 안전하게 처리됨.
 - 원격 백업 브랜치·태그: `backup/pre-taxonomy-v2-20260719`
-- **밴드 수: 51개** (사용자가 Studio에서 Avenged Sevenfold·The Script를 직접 추가). 카탈로그에 E·F로 시작하는 밴드는 아직 없음.
-- **멤버 활동연도·대표곡 감상 안내 알파벳순 보강 — A~D, G~L, M~N 완료, 다음은 O부터** (11·13·15번 항목 참고).
-- 이번 세션에서 고친 재발성 버그(자세한 내용은 16·18번 항목): `BandDetail.tsx`의 `activeYears` 미표시, 태그/세부장르 표시방식 불일치, 시대별 장르 반복 표시, Gemini 입고 시 태그/역할 영어 잔재, **Gemini가 대표 장르를 못 찾거나 세부 장르가 거부되는 문제**(`resolveGenreId`가 세부 장르 이름으로도 상위 장르를 찾도록 보강 — 18번 항목), Studio 밴드 선택 시 자동 스크롤 없음, Gemini 문체를 존댓말에서 평서체(`~다`)로 강제.
-- **`reviewed`/`published` 구분 관련 사용자 결정(2026-07-22): 안 중요하다며 "그냥 공개로 통일"** — 실제로 이미 동일하게 동작 중이라(위 항목) 코드 변경 없이 현행 유지로 확정. 재질문 불필요.
-- **세부 장르 "훵크 록"(Funk Rock) 이름 수정** — 기존엔 "펑크 록(Funk)"이라 "펑크 록"(Punk Rock)과 거의 구분이 안 갔음(19번 항목).
-- **Studio: 새 밴드·초안 추가 시 왼쪽 목록 맨 위로 이동** — 기존엔 목록 끝에 추가돼 스크롤해야 보였음(19번 항목).
-- `npm run validate:data` 결과: **오류 0건** (51개 밴드 전체 통과)
-- 로컬 미커밋 변경 없음 (커밋 완료, `main` 배포는 다음 확인 후 진행)
+- **밴드 수: 61개**. 멤버 활동연도·대표곡 감상 안내 알파벳순 보강은 A~Y 전체 완료(과거 세션들, 자세한 배치별 기록은 11·13·15번 및 그 이후 커밋 로그 참고). 이후 사용자가 Studio로 직접 추가한 밴드(Kodaline, Avenged Sevenfold, Rage Against the Machine, Linkin Park, Daughtry, RHCP, Maroon 5, Ensiferum, Neon Trees, Sum 41, Skid Row, Fall Out Boy 등)는 매번 이미지 Commons 검증·YouTube oEmbed 검증·태그 정합성 확인을 거쳐 반영함.
+- **21번 항목(2026-07-23) 작업**: 신규 밴드 3개(Sum 41·Skid Row·Fall Out Boy) 이미지/유튜브 링크 검수 완료(6개 중 5개가 조작된 YouTube ID였음), summary/style이 65자 이하였던 45개 밴드에 문장 1개씩 보강 완료, 대표곡 중 제목만 있는 미완성 항목은 현재 없음(검사 완료), 같은 앨범 내 연도 불일치는 Two Door Cinema Club·Kodaline 2건만 남아있는데 각각 싱글 선공개 시점과 앨범 발매 연도가 달라 생기는 정상적인 현상으로 확인(오류 아님, 수정 보류).
+- `npm run validate:data` 결과: **오류 0건** (61개 밴드 전체 통과), `npm run build` 성공.
+- 로컬 미커밋 변경 없음 — `codex/taxonomy-v2` 커밋 후 `main`까지 fast-forward 푸시 완료.
 
 상태가 이 문서와 다르면 추측하지 말고 실제 `git status`, `git diff`, 현재 파일 내용을 우선한다. 확인한 차이는 이 문서에 바로 반영한다.
 
@@ -261,8 +257,16 @@ GitHub Desktop의 커밋 요약은 `Dream Theater 추가`, `밴드 20개 데이�
 
 ## 20. 작업 재개 시 첫 행동
 
-1. `git status`·`git diff`로 위 미커밋 변경이 그대로인지 확인
+1. `git status`·`git diff`로 미커밋 변경이 있는지 확인 (있다면 사용자 작업일 수 있으니 임의로 되돌리지 않음)
 2. `npm run validate:data`로 오류 0건 유지되는지 확인
-3. 다음 알파벳 배치(O부터, 51개 밴드 기준)를 이어서 진행 — 멤버 활동연도, 대표곡 감상 안내, 이미지 URL 실제 접속 확인, status·role 언어 오기재 여부, 태그-세부장르 정합성 확인
+3. 알파벳순 멤버 활동연도·감상 안내 보강은 A~Y 전 밴드 완료 상태. 사용자가 Studio에서 새 밴드를 추가했다면(가장 흔한 재개 시나리오) `git show HEAD:src/data/catalog.json`과 현재 파일의 밴드 수·id 목록을 비교해 신규 밴드를 찾아 이미지 Commons 검증·YouTube oEmbed 검증·태그/세부장르 정합성 확인부터 진행
 4. **데이터만 넣고 끝내지 말 것 — 실제 브라우저에서 상세 페이지를 열어 화면에 반영되는지 반드시 확인.**
-5. `main` 병합·GitHub Pages 배포는 사용자가 명시적으로 요청할 때만 진행(단, 이번 세션에서 사용자가 "최신 버전으로 반영해달라"고 명시했으므로 이후에도 유사한 요청이 있으면 동일하게 처리 가능)
+5. `main` 병합·GitHub Pages 배포는 사용자가 명시적으로 요청할 때만 진행(이 세션까지는 사용자가 매번 "반영해달라"는 취지로 명시했으므로 유사한 요청이 있으면 동일하게 처리 가능하나, 확실치 않으면 먼저 확인)
+
+## 21. 신규 밴드 3종 검수 + 짧은 설명 보강 + 트랙 점검 (2026-07-23, Claude)
+
+- **신규 밴드 검수**: `git diff` 기준 이전 커밋(58개) 대비 새로 생긴 Sum 41·Skid Row·Fall Out Boy 3개를 확인. 셋 다 이미지가 Commons 파일명만 있고 실제 URL/라이선스 미검증, YouTube ID 6개 중 5개가 oEmbed 404(조작된 값)였음 — WebSearch로 실제 공식 뮤직비디오 ID를 찾아 교체하고 oEmbed 200 확인, Commons API로 실제 사진 URL·라이선스(CC BY-SA 3.0/4.0)·저작자를 채워 `image.credit.reviewStatus: 'verified'`로 전환, `sources`의 Wikimedia Commons 항목도 함께 갱신. Skid Row의 Wikipedia 소스 URL이 괄호가 안 닫힌 채(`...American_band`) 저장돼 있던 것도 수정. `relations`는 근거 출처(source URL)가 없어 `reviewStatus: 'draft'`로 유지(무결성 검사가 `reviewed` 관계엔 `source` 필수).
+- **65자 이하 설명 보강**: `summary` 또는 `style`이 65자 이하인 밴드 45개(더 비틀즈, 롤링 스톤스, 레드 제플린, 메탈리카 등 초기 추가 밴드 다수 포함)에 각각 사실에 기반한 문장 1개씩 추가. 기존 평서체(`~다`) 톤 유지. 전부 65자 초과로 통과 확인.
+- **대표곡 title-only 점검**: `youtubeId`/`year`/`guide`/`album` 중 2개 이상 비어있는 트랙이 있는지 전수 검사 — 현재 없음(사용자가 우려한 "제목만 입력된 트랙"은 이미 이전 세션들에서 다 채워진 상태).
+- **같은 앨범 연도 불일치 조사**: `album`이 같은데 `year`가 다른 트랙을 전수 검사 → Two Door Cinema Club `Tourist History`(What You Know:2011, Undercover Martyn:2010), Kodaline `In a Perfect World`(All I Want:2012, High Hopes:2013) 2건만 남음. 둘 다 확인 결과 해당 곡이 앨범보다 먼저 싱글/EP로 선공개된 실제 발매 이력을 반영한 것으로, 데이터 오류가 아니라 각 트랙의 `year`가 앨범 연도가 아니라 "그 곡 자체의 최초 공개 연도"를 의미하기 때문에 생기는 정상적인 현상. 사용자가 이미 몇 건을 직접 고쳤다고 했으므로 남은 2건은 임의로 건드리지 않고 그대로 둠 — 만약 `year`를 "앨범 발매 연도로 통일"하는 규칙으로 바꾸고 싶다면 그건 데이터 정책 변경이라 사용자 확인 필요.
+- `npm run validate:data`·`npm run build` 통과 확인 후 `codex/taxonomy-v2`에 커밋, `main`까지 fast-forward 푸시 완료.
