@@ -61,7 +61,7 @@ Codex와 Claude 모두 새 작업 시작 시 아래 순서를 지킨다.
 - 대표 장르 한 곳, 보조 장르, 세부 장르, 분위기 점수
 - 분류 검수 상태가 `reviewed`인지 확인
 - 멤버 이름·역할·현재/과거 상태·활동연도
-- 대표곡 제목·앨범·연도·감상 안내·실제 외부 링크
+- **대표곡 중 제목만 있고 연도·앨범·감상 안내·YouTube ID가 비어 있는 항목이 있으면, 묻지 않고 항상 자동으로 조사해서 채운다** (WebSearch로 실제 공식 영상 확인 → oEmbed로 200 검증 → 연도·앨범·한 줄 감상 안내 작성). 사용자가 Studio에 제목만 입력해두는 것은 정상적인 워크플로우이며(22번 항목 버그 수정 이후 안전하게 저장됨), 검수할 때마다 `node -e` 스크립트로 `!youtubeId || !year || !guide || !album` 개수가 2개 이상인 트랙을 전수 검색해 확인한다.
 - Wikidata·MusicBrainz·Wikipedia 식별자와 정상 URL
 - Commons 원본, 제작자, 라이선스, 라이선스 URL, 실제 표시 이미지
 - 기존 밴드와의 관계 2~4개와 연결 이유
@@ -271,3 +271,10 @@ GitHub Desktop의 커밋 요약은 `Dream Theater 추가`, `밴드 20개 데이�
 - **대표곡 title-only 점검**: `youtubeId`/`year`/`guide`/`album` 중 2개 이상 비어있는 트랙이 있는지 전수 검사 — 현재 없음(사용자가 우려한 "제목만 입력된 트랙"은 이미 이전 세션들에서 다 채워진 상태).
 - **같은 앨범 연도 불일치 조사**: `album`이 같은데 `year`가 다른 트랙을 전수 검사 → Two Door Cinema Club `Tourist History`(What You Know:2011, Undercover Martyn:2010), Kodaline `In a Perfect World`(All I Want:2012, High Hopes:2013) 2건만 남음. 둘 다 확인 결과 해당 곡이 앨범보다 먼저 싱글/EP로 선공개된 실제 발매 이력을 반영한 것으로, 데이터 오류가 아니라 각 트랙의 `year`가 앨범 연도가 아니라 "그 곡 자체의 최초 공개 연도"를 의미하기 때문에 생기는 정상적인 현상. 사용자가 이미 몇 건을 직접 고쳤다고 했으므로 남은 2건은 임의로 건드리지 않고 그대로 둠 — 만약 `year`를 "앨범 발매 연도로 통일"하는 규칙으로 바꾸고 싶다면 그건 데이터 정책 변경이라 사용자 확인 필요.
 - `npm run validate:data`·`npm run build` 통과 확인 후 `codex/taxonomy-v2`에 커밋, `main`까지 fast-forward 푸시 완료.
+
+## 23. Sum 41 시험 트랙 2곡 보강 + "제목만 있는 곡 항상 자동 보강" 규칙 확정 (2026-07-23, Claude)
+
+- 사용자가 22번 항목의 버그 수정을 직접 시험해보려고 Sum 41에 제목만 있는 트랙 2개(Still Waiting, Screaming Bloody Murder)를 추가 → 이번엔 정상적으로 저장됨(버그 수정 확인).
+- Still Waiting: 2002년 · 2집 `Does This Look Infected?` 리드 싱글, 공식 채널(Sum41VEVO) 뮤직비디오 oEmbed 200 확인 후 반영.
+- Screaming Bloody Murder: 2011년 · 동명의 5집 타이틀곡. 공식 뮤직비디오는 실제로 미공개 상태(레이블과의 갈등으로 폐기)로 확인됐으나, 유출본으로 보이는 영상이 oEmbed 200으로 실제 재생 가능함을 확인하고 사용(기존 데이터 관례상 모든 대표곡 링크가 `official: false`로 표시되는 것과 동일 기준).
+- **표준 절차로 확정**: 앞으로 밴드 검수 중 대표곡에 제목만 있고 연도·앨범·감상 안내·YouTube ID가 빈 항목을 발견하면, 사용자에게 묻지 않고 항상 WebSearch로 실제 공식 영상을 찾아 oEmbed로 검증한 뒤 자동으로 채운다(3번 항목 체크리스트에 반영).

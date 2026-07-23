@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-23T15:44:22.664Z",
+  "updatedAt": "2026-07-23T15:53:01.608Z",
   "bands": [
     {
       "id": "sum-41",
@@ -150,6 +150,42 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-23T15:17:49.440Z"
+        },
+        {
+          "id": "still-waiting",
+          "title": "Still Waiting",
+          "youtubeId": "qO-mSLxih-c",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Sum 41 — Still Waiting",
+            "url": "https://www.youtube.com/watch?v=qO-mSLxih-c",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "year": 2002,
+          "album": "Does This Look Infected?",
+          "guide": "십대 시절의 반항심과 성장통을 짙은 펑크 에너지로 그려낸 2집 활동의 대표곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:53:01.608Z"
+        },
+        {
+          "id": "screaming-bloody-murder",
+          "title": "Screaming Bloody Murder",
+          "youtubeId": "cTlspynWI-o",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Sum 41 — Screaming Bloody Murder",
+            "url": "https://www.youtube.com/watch?v=cTlspynWI-o",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "year": 2011,
+          "album": "Screaming Bloody Murder",
+          "guide": "밴드가 활동 중단 위기를 딛고 돌아와 한층 무거워진 하드 록 사운드를 선보인 5집의 타이틀곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-23T15:53:01.608Z"
         }
       ],
       "relations": [
