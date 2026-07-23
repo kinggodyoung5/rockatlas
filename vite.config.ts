@@ -237,6 +237,16 @@ function studioApi(): Plugin {
           const payload = await readBody(request, 5_000_000)
           const bands = payload.bands as CatalogBandPayload[] | undefined
           if (![1, 2].includes(Number(payload.schemaVersion)) || !Array.isArray(bands)) throw new Error('지원하지 않는 카탈로그 형식입니다.')
+          // Optimistic concurrency check: the browser sends the updatedAt it last knew about. If the file
+          // on disk has since moved on (another save, a git checkout, a restored backup...), refuse to
+          // blindly overwrite it — this is exactly the class of bug that silently reverted a day's worth
+          // of edits when a long-stale Studio tab saved over newer committed data.
+          const currentOnDisk = JSON.parse(await readFile(catalogPath, 'utf8')) as JsonObject
+          if (typeof payload.updatedAt === 'string' && payload.updatedAt !== currentOnDisk.updatedAt) {
+            response.statusCode = 409
+            response.end('저장 충돌: 이 브라우저를 열어둔 사이 다른 곳에서 카탈로그가 이미 바뀌었습니다(다른 탭에서 저장했거나, Git 작업이 있었을 수 있습니다). 새로고침한 뒤 다시 편집·저장해주세요.')
+            return
+          }
           await validateCatalogBands(bands)
           await archiveCatalog(typeof payload.changeNote === 'string' ? payload.changeNote : 'Studio 저장')
           const nextCatalog = { schemaVersion: 2, updatedAt: new Date().toISOString(), bands }

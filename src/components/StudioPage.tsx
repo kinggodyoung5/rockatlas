@@ -303,6 +303,11 @@ export function StudioPage() {
   const [commonsBusy, setCommonsBusy] = useState(false)
   const [commonsMessage, setCommonsMessage] = useState('')
   const [catalogDirty, setCatalogDirty] = useState(false)
+  // Tracks the updatedAt this tab last confirmed matches disk — seeded from the bundle's load-time
+  // snapshot, then advanced after every successful save so same-session saves keep working normally.
+  // A long-idle tab whose bundle never reloaded will keep sending its stale value, which is exactly
+  // what lets the server detect "disk moved on without me" and refuse to overwrite it.
+  const [catalogBaseline, setCatalogBaseline] = useState(catalogFile.updatedAt)
   const [siteDraft, setSiteDraft] = useState<SiteContent>(() => clone(siteContent))
   const [siteDirty, setSiteDirty] = useState(false)
   const [siteMessage, setSiteMessage] = useState('현재 메인 화면 문구입니다.')
@@ -510,12 +515,13 @@ export function StudioPage() {
     const response = await fetch('/api/studio/catalog', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: catalogFile.updatedAt, bands: nextBands, changeNote }),
+      body: JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: catalogBaseline, bands: nextBands, changeNote }),
     })
     if (!response.ok) throw new Error(await response.text())
     const result = await response.json() as { updatedAt: string; count: number }
     setCatalogBands(nextBands)
     setCatalogDirty(false)
+    setCatalogBaseline(result.updatedAt)
     return result
   }
 
