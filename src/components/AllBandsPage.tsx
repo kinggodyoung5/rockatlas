@@ -4,6 +4,7 @@ import { taxonomyGenreById, taxonomyGenres, taxonomySubgenreById } from '../data
 import type { Band, EraId } from '../types/music'
 import type { GenreTaxonomyId } from '../types/taxonomy'
 import type { CatalogSort } from '../lib/explorerRoute'
+import { countryName } from '../lib/countryNames'
 import { BandCard } from './BandCard'
 
 interface AllBandsPageProps {
@@ -21,12 +22,12 @@ interface AllBandsPageProps {
 }
 
 export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, countryCode, sort, favoriteIds, onFilter, onSelectBand, onToggleFavorite }: AllBandsPageProps) {
-  const countries = [...new Set(bands.map((band) => band.countryCode).filter(Boolean))].sort()
+  const countries = [...new Set(bands.map((band) => band.countryCode).filter(Boolean))].sort((a, b) => countryName(a).localeCompare(countryName(b), 'ko'))
   const availableSubgenres = [...new Set(bands.flatMap((band) => band.taxonomyV2?.subgenreIds ?? []))].sort((a, b) => (taxonomySubgenreById[a]?.name ?? a).localeCompare(taxonomySubgenreById[b]?.name ?? b, 'ko'))
   const normalized = query.trim().toLocaleLowerCase()
   const visible = bands.filter((band) => {
     const taxonomy = band.taxonomyV2
-    const searchable = `${band.name} ${band.origin} ${band.tags.join(' ')} ${band.subgenres.join(' ')}`.toLocaleLowerCase()
+    const searchable = `${band.name} ${band.origin} ${band.tags.join(' ')} ${band.subgenres.join(' ')} ${band.members.map((member) => member.name).join(' ')}`.toLocaleLowerCase()
     return (!normalized || searchable.includes(normalized))
       && (genreId === 'all' || taxonomy?.primaryGenreId === genreId)
       && (subgenreId === 'all' || taxonomy?.subgenreIds.includes(subgenreId))
@@ -43,7 +44,7 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
           <label>대표 장르<select value={genreId} onChange={(event) => onFilter({ genreId: event.target.value as GenreTaxonomyId | 'all', subgenreId: 'all' })}><option value="all">모든 장르</option>{taxonomyGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.displayName}</option>)}</select></label>
           <label>세부 장르<select value={subgenreId} onChange={(event) => onFilter({ subgenreId: event.target.value })}><option value="all">모든 세부 장르</option>{availableSubgenres.map((id) => <option key={id} value={id}>{taxonomySubgenreById[id]?.name ?? id}</option>)}</select></label>
           <label>결성 시대<select value={eraId} onChange={(event) => onFilter({ eraId: event.target.value as EraId | 'all' })}><option value="all">모든 시대</option>{eras.map((era) => <option key={era.id} value={era.id}>{era.label}</option>)}</select></label>
-          <label>국가<select value={countryCode} onChange={(event) => onFilter({ countryCode: event.target.value })}><option value="all">모든 국가</option>{countries.map((code) => <option key={code} value={code}>{code}</option>)}</select></label>
+          <label>국가<select value={countryCode} onChange={(event) => onFilter({ countryCode: event.target.value })}><option value="all">모든 국가</option>{countries.map((code) => <option key={code} value={code}>{countryName(code)}</option>)}</select></label>
           <label>정렬<select value={sort} onChange={(event) => onFilter({ sort: event.target.value as CatalogSort })}><option value="name">이름순</option><option value="formed-asc">결성 연도 오래된 순</option><option value="formed-desc">결성 연도 최신 순</option></select></label>
         </div>
         <div className="catalog-control-summary"><span>{visible.length} / {bands.length} BANDS</span><button className="filter-reset" onClick={reset}><RotateCcw size={14} /> 전체 초기화</button></div>
