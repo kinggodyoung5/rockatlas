@@ -148,7 +148,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
           </div></details>
 
           <details open><summary>폰트와 색상</summary><div className="studio-form-grid">
-            <label>폰트 프리셋<select value={value.theme.fontPreset} onChange={(event) => changeTheme({ fontPreset: event.target.value as SiteContent['theme']['fontPreset'] })}><option value="modern">모던 산세리프</option><option value="classic">클래식 세리프</option><option value="editorial">에디토리얼 콘덴스드</option></select></label>
+            <label>폰트 프리셋<select value={value.theme.fontPreset} onChange={(event) => changeTheme({ fontPreset: event.target.value as SiteContent['theme']['fontPreset'] })}><option value="modern">모던 산세리프 (Pretendard)</option><option value="classic">클래식 세리프 (Georgia)</option><option value="editorial">에디토리얼 콘덴스드</option><option value="impact">임팩트 헤드라인 (Black Han Sans)</option></select></label>
             <label>업로드 폰트 적용 범위<select value={value.theme.customFontTarget} onChange={(event) => changeTheme({ customFontTarget: event.target.value as SiteContent['theme']['customFontTarget'] })} disabled={!value.theme.customFontUrl}><option value="all">본문과 제목 모두</option><option value="body">본문만</option><option value="heading">제목만</option></select></label>
             <label className="studio-grid-span">업로드 폰트 이름<input value={value.theme.customFontName} onChange={(event) => changeTheme({ customFontName: event.target.value })} placeholder="파일을 올리면 자동 입력됩니다." /></label>
             <button className="studio-upload-button studio-grid-span" onClick={() => fontUploadRef.current?.click()}><FileUp size={15} /> WOFF2·WOFF·TTF·OTF 폰트 업로드</button>

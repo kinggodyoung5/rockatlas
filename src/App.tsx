@@ -16,9 +16,10 @@ import type { Band } from './types/music'
 import type { GenreTaxonomyId, MoodId } from './types/taxonomy'
 
 const fontSets = {
-  modern: { body: 'Pretendard, "Noto Sans KR", Inter, Arial, sans-serif', heading: 'Arial, "Noto Sans KR", sans-serif' },
+  modern: { body: '"Pretendard Variable", Pretendard, "Noto Sans KR", Inter, Arial, sans-serif', heading: '"Pretendard Variable", Arial, "Noto Sans KR", sans-serif' },
   classic: { body: 'Georgia, "Noto Serif KR", serif', heading: 'Georgia, "Noto Serif KR", serif' },
   editorial: { body: 'Inter, Pretendard, sans-serif', heading: '"Arial Narrow", Impact, Pretendard, sans-serif' },
+  impact: { body: '"Pretendard Variable", Pretendard, "Noto Sans KR", Inter, Arial, sans-serif', heading: '"Black Han Sans", "Pretendard Variable", Arial, sans-serif' },
 }
 
 const StudioPage = lazy(() => import('./components/StudioPage').then((module) => ({ default: module.StudioPage })))
@@ -185,7 +186,7 @@ function ExplorerApp() {
       <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl ? <img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt="ROCK ATLAS" /> : <span><strong>ROCK ATLAS <i className="wordmark-by">{siteContent.brandSuffix}</i></strong><small>AMPLIFY YOUR TASTE</small></span>}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{isLocal && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {isLocal && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
-      <footer className="site-footer shell"><div className="wordmark"><span className="wordmark-mark">RA</span><span><strong>ROCK ATLAS</strong><small>BETA ARCHIVE</small></span></div><p>{bands.length}개 밴드를 수록했습니다. 각 밴드는 대표 장르 한 곳에 배치되고 세부 장르와 분위기로 다시 이어집니다.</p><span>SEOUL / 2026</span></footer>
+      <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl ? <img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt="ROCK ATLAS" /> : <span><strong>ROCK ATLAS</strong><small>BETA ARCHIVE</small></span>}</div><p>{bands.length}개 밴드를 수록했습니다. 각 밴드는 대표 장르 한 곳에 배치되고 세부 장르와 분위기로 다시 이어집니다.</p><span>SEOUL / 2026</span></footer>
       <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description={siteContent.heroTitle} onClose={() => setShareOpen(false)} />
     </div>
   )

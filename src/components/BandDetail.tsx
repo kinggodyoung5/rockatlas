@@ -111,7 +111,6 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           <h2>어떤 음악을 하나요?</h2>
           <p>{band.style}</p>
           <div className="sound-facts">
-            <div><span>귀에 먼저 잡히는 요소</span>{band.tags.length ? band.tags.map((tag) => <strong key={tag}>{tag}</strong>) : <strong>편집 대기</strong>}</div>
             <div><span>세부 장르</span>{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).length
               ? (taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((item) => <strong key={item}>{item}</strong>)
               : <strong>{taxonomyGenre?.displayName || genre.name}</strong>}</div>

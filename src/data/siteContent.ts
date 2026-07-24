@@ -19,7 +19,7 @@ export interface SiteContent {
   allBandsSectionTitle: string
   allBandsSectionDescription: string
   theme: {
-    fontPreset: 'modern' | 'classic' | 'editorial'
+    fontPreset: 'modern' | 'classic' | 'editorial' | 'impact'
     customFontName: string
     customFontUrl: string
     customFontFormat: 'woff2' | 'woff' | 'truetype' | 'opentype' | ''
