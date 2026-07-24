@@ -36,6 +36,10 @@ export interface SiteContent {
     heroArtMode: 'vinyl' | 'image' | 'none'
     heroImageUrl: string
     heroImagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    logoMode: 'mark' | 'image'
+    logoImageUrl: string
+    wordmarkMode: 'text' | 'image'
+    wordmarkImageUrl: string
   }
   sectionVisibility: Record<SiteSectionId, boolean>
   sectionOrder: SiteSectionId[]

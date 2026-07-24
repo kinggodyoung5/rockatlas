@@ -32,6 +32,8 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
   const uploadRef = useRef<HTMLInputElement>(null)
   const fontUploadRef = useRef<HTMLInputElement>(null)
+  const logoUploadRef = useRef<HTMLInputElement>(null)
+  const wordmarkUploadRef = useRef<HTMLInputElement>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
   const moveSection = (id: SiteSectionId, direction: -1 | 1) => {
     const order = [...value.sectionOrder]
@@ -62,6 +64,30 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     if (!response.ok) throw new Error(await response.text())
     const result = await response.json() as { url: string }
     changeTheme({ heroImageUrl: result.url, heroArtMode: 'image' })
+  }
+  const uploadLogo = async (file: File) => {
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(String(reader.result))
+      reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
+      reader.readAsDataURL(file)
+    })
+    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl }) })
+    if (!response.ok) throw new Error(await response.text())
+    const result = await response.json() as { url: string }
+    changeTheme({ logoImageUrl: result.url, logoMode: 'image' })
+  }
+  const uploadWordmark = async (file: File) => {
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(String(reader.result))
+      reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
+      reader.readAsDataURL(file)
+    })
+    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl }) })
+    if (!response.ok) throw new Error(await response.text())
+    const result = await response.json() as { url: string }
+    changeTheme({ wordmarkImageUrl: result.url, wordmarkMode: 'image' })
   }
   const uploadFont = async (file: File) => {
     setFontMessage('폰트 업로드 중…')
@@ -98,6 +124,18 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label>마무리 선언 표기<input value={value.manifestoLabel} onChange={(event) => onChange({ manifestoLabel: event.target.value })} /></label>
             <label>마무리 선언 버튼 문구<input value={value.manifestoButtonLabel} onChange={(event) => onChange({ manifestoButtonLabel: event.target.value })} /></label>
             <label className="studio-grid-span">마무리 선언 제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.manifestoTitle} onChange={(event) => onChange({ manifestoTitle: event.target.value })} rows={3} /></label>
+          </div></details>
+
+          <details><summary>왼쪽 위 로고와 워드마크</summary><div className="studio-form-grid">
+            <label>로고 표시 방식<select value={value.theme.logoMode} onChange={(event) => changeTheme({ logoMode: event.target.value as SiteContent['theme']['logoMode'] })}><option value="mark">기본 RA 마크</option><option value="image">업로드 이미지</option></select></label>
+            <label className="studio-grid-span">로고 이미지 URL<input value={value.theme.logoImageUrl} onChange={(event) => changeTheme({ logoImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => logoUploadRef.current?.click()}><ImagePlus size={15} /> 로고 이미지 업로드 (정사각형 권장)</button>
+            <input ref={logoUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadLogo(event.target.files[0])} />
+            <label>ROCK ATLAS 문구 표시 방식<select value={value.theme.wordmarkMode} onChange={(event) => changeTheme({ wordmarkMode: event.target.value as SiteContent['theme']['wordmarkMode'] })}><option value="text">텍스트 (아래 폰트 설정 적용)</option><option value="image">업로드 이미지</option></select></label>
+            {value.theme.wordmarkMode === 'text' && <p className="studio-upload-note studio-grid-span">텍스트로 표시할 때는 아래 "폰트와 색상"의 프리셋·업로드 폰트·제목 굵기 설정이 그대로 적용됩니다.</p>}
+            <label className="studio-grid-span">문구 이미지 URL<input value={value.theme.wordmarkImageUrl} onChange={(event) => changeTheme({ wordmarkImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => wordmarkUploadRef.current?.click()}><ImagePlus size={15} /> 문구 이미지 업로드 (가로형 권장)</button>
+            <input ref={wordmarkUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadWordmark(event.target.files[0])} />
           </div></details>
 
           <details><summary>느낌으로 찾기 · 모든 밴드 페이지 문구</summary><div className="studio-form-grid">
