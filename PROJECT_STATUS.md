@@ -8,12 +8,13 @@
 - 마지막 갱신: 2026-07-25 KST · Codex
 - 로컬 폴더: `C:\Users\SH\Documents\Codex\rock-atlas`
 - 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
-- 현재 개발 브랜치: `codex/taxonomy-v2` — `main`은 이 브랜치의 **순수 조상**(divergence 없음)이라 병합 시 항상 fast-forward로 안전하게 처리됨.
+- 현재 개발 브랜치: `codex/taxonomy-v2` — 디자인 구현 커밋 `b22592c`가 개발 브랜치와 `main`에 동일하게 반영됨.
 - 원격 백업 브랜치·태그: `backup/pre-taxonomy-v2-20260719`
 - **밴드 수: 64개.** 멤버 활동연도·대표곡 감상 안내 알파벳순 보강은 전 밴드 완료. 이후 사용자가 Studio로 직접 추가하는 밴드는 매번 이미지 Commons 검증·YouTube oEmbed 검증·태그 정합성 확인을 거쳐 반영한다(3번 항목 체크리스트 참고).
 - 2026-07-25 검증: `validate:data` 오류 0건(밴드 64 · 트랙 130 · 관계 139), `validate:taxonomy` 오류 0건(13장르 · 110 세부 장르 · 24 분위기), 프로덕션 빌드 성공, `git diff --check` 통과.
-- 현재 로컬에는 **사용자 검토 전 디자인 개편 미커밋 작업**이 있다. `main` 병합·원격 푸시·배포는 하지 않았다.
-- 작업 시작 전부터 있던 사용자 소유 변경: `src/data/catalog.json`의 `updatedAt`, `src/data/siteContent.json`의 에디토리얼 폰트·히어로 그림 숨김 설정, 미추적 `.claude/settings.local.json`. 되돌리거나 임의로 커밋하지 않는다.
+- 우주 테마·Studio 분리·장르 카드 삽화와 가독성 개편은 `b22592c`로 커밋·푸시·배포 완료.
+- GitHub Pages 배포 작업 `#32` 성공. 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
+- 남은 사용자 소유 미커밋 변경: `src/data/catalog.json`의 `updatedAt`만 변경된 상태와 미추적 `.claude/settings.local.json`. 되돌리거나 임의로 커밋하지 않는다.
 
 상태가 이 문서와 다르면 추측하지 말고 실제 `git status`, `git diff`, 현재 파일 내용을 우선한다. 확인한 차이는 이 문서에 바로 반영한다.
 
@@ -125,7 +126,7 @@ git diff --check
 - 디자인 작업실에서 우주 표현 강도·별 밀도·성운·움직임·배경 이미지, 장르 카드 열 수·간격·표현 방식을 편집한다.
 - 각 장르 카드의 한글명·영문명·설명·삽화 표시·이미지 URL/업로드·위치·투명도·확대 비율을 운영자가 코딩 없이 편집한다.
 
-### 2026-07-25 디자인 개편 완료 · 커밋/배포 진행 중
+### 2026-07-25 디자인 개편 완료 · 배포 완료
 
 - 원칙 문서 추가: `docs/DESIGN_AND_SERVER_PRINCIPLES.md`
 - 사이트 설정 스키마를 2로 확장하고 13개 장르 삽화 설정을 `genreVisuals`로 중앙 관리한다.
@@ -137,7 +138,7 @@ git diff --check
 - 이미지 위 문구는 카드 하단 안전 영역으로 묶고 하단 스크림을 강화했다. 제목 32–40px, 설명 17px, 세부 장르 15px로 확대했다.
 - 데스크톱과 390×844 모바일 실제 브라우저 검수 완료: 긴 장르명·펑크·메탈 카드 가독성 정상, 가로 넘침·누락된 이미지 대체문구·빈 버튼·콘솔 오류 없음.
 - `validate:data`, `validate:taxonomy`, 프로덕션 빌드, `git diff --check` 통과.
-- 사용자 요청에 따라 디자인 변경을 커밋하고 `main`에 푸시해 GitHub Pages 배포한다. 구현 커밋과 최종 배포 결과는 아래 Git 상태에 기록한다.
+- 구현 커밋 `b22592c`를 `codex/taxonomy-v2`와 `main`에 푸시했다. GitHub Pages 작업 `#32`가 성공했고 공개 페이지와 새 은하수 이미지가 모두 HTTP 200으로 응답하는 것을 확인했다.
 
 ## 6. 다음 개발 방향과 우선순위
 
