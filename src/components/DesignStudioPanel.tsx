@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Save, Smartphone } from 'lucide-react'
+import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Save, Smartphone, Sparkles } from 'lucide-react'
 import { useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
@@ -34,7 +34,13 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const fontUploadRef = useRef<HTMLInputElement>(null)
   const logoUploadRef = useRef<HTMLInputElement>(null)
   const wordmarkUploadRef = useRef<HTMLInputElement>(null)
+  const cosmicUploadRef = useRef<HTMLInputElement>(null)
+  const genreUploadRef = useRef<HTMLInputElement>(null)
+  const genreUploadTarget = useRef<TaxonomyGenre['id'] | null>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
+  const updateGenreVisual = (id: TaxonomyGenre['id'], patch: Partial<SiteContent['genreVisuals'][TaxonomyGenre['id']]>) => {
+    onChange({ genreVisuals: { ...value.genreVisuals, [id]: { ...value.genreVisuals[id], ...patch } } })
+  }
   const moveSection = (id: SiteSectionId, direction: -1 | 1) => {
     const order = [...value.sectionOrder]
     const index = order.indexOf(id)
@@ -53,41 +59,41 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     onGenresChange(next.map((genre, order) => ({ ...genre, order: order + 1 })))
   }
   const updateMood = (id: TaxonomyMood['id'], patch: Partial<TaxonomyMood>) => onMoodsChange(moods.map((mood) => mood.id === id ? { ...mood, ...patch } : mood))
-  const uploadHero = async (file: File) => {
+  const uploadImage = async (file: File, assetType: 'hero' | 'logo' | 'wordmark' | 'cosmic' | 'genre', assetKey = '') => {
     const dataUrl = await new Promise<string>((resolve, reject) => {
       const reader = new FileReader()
       reader.onload = () => resolve(String(reader.result))
       reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
       reader.readAsDataURL(file)
     })
-    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl }) })
+    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl, assetType, assetKey }) })
     if (!response.ok) throw new Error(await response.text())
     const result = await response.json() as { url: string }
-    changeTheme({ heroImageUrl: result.url, heroArtMode: 'image' })
+    return result.url
+  }
+  const uploadHero = async (file: File) => {
+    const url = await uploadImage(file, 'hero')
+    changeTheme({ heroImageUrl: url, heroArtMode: 'image' })
   }
   const uploadLogo = async (file: File) => {
-    const dataUrl = await new Promise<string>((resolve, reject) => {
-      const reader = new FileReader()
-      reader.onload = () => resolve(String(reader.result))
-      reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
-      reader.readAsDataURL(file)
-    })
-    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl }) })
-    if (!response.ok) throw new Error(await response.text())
-    const result = await response.json() as { url: string }
-    changeTheme({ logoImageUrl: result.url, logoMode: 'image' })
+    const url = await uploadImage(file, 'logo')
+    changeTheme({ logoImageUrl: url, logoMode: 'image' })
   }
   const uploadWordmark = async (file: File) => {
-    const dataUrl = await new Promise<string>((resolve, reject) => {
-      const reader = new FileReader()
-      reader.onload = () => resolve(String(reader.result))
-      reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
-      reader.readAsDataURL(file)
-    })
-    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl }) })
-    if (!response.ok) throw new Error(await response.text())
-    const result = await response.json() as { url: string }
-    changeTheme({ wordmarkImageUrl: result.url, wordmarkMode: 'image' })
+    const url = await uploadImage(file, 'wordmark')
+    changeTheme({ wordmarkImageUrl: url, wordmarkMode: 'image' })
+  }
+  const uploadCosmicBackground = async (file: File) => {
+    const url = await uploadImage(file, 'cosmic')
+    changeTheme({ cosmicBackgroundUrl: url, cosmicMode: value.theme.cosmicMode === 'off' ? 'subtle' : value.theme.cosmicMode })
+  }
+  const uploadGenreArt = async (file: File, id: TaxonomyGenre['id']) => {
+    const url = await uploadImage(file, 'genre', id)
+    updateGenreVisual(id, { imageUrl: url, artMode: 'image' })
+  }
+  const pickGenreArt = (id: TaxonomyGenre['id']) => {
+    genreUploadTarget.current = id
+    genreUploadRef.current?.click()
   }
   const uploadFont = async (file: File) => {
     setFontMessage('폰트 업로드 중…')
@@ -110,7 +116,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
   return (
     <section id="design" className="studio-site-settings design-studio-v2">
-      <div className="studio-section-heading"><span>UI</span><div><h3>디자인 Studio 2</h3><p>문구, 폰트, 색상, 히어로 이미지, 섹션과 장르 카드를 운영자가 직접 관리합니다.</p></div></div>
+      <div className="studio-section-heading"><span>UI</span><div><h3>사이트 디자인</h3><p>공개 화면의 문구, 폰트, 색상, 우주 배경과 장르 카드 삽화를 관리합니다. 밴드 데이터는 데이터 작업실에서 편집합니다.</p></div></div>
 
       <div className="studio-design-columns">
         <div className="studio-design-controls">
@@ -165,6 +171,26 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label>보조 글자색<input type="color" value={value.theme.mutedColor} onChange={(event) => changeTheme({ mutedColor: event.target.value })} /></label>
           </div></details>
 
+          <details open><summary><Orbit size={14} /> 우주 항해 테마</summary><div className="studio-form-grid">
+            <label>우주 표현<select value={value.theme.cosmicMode} onChange={(event) => changeTheme({ cosmicMode: event.target.value as SiteContent['theme']['cosmicMode'] })}><option value="off">사용하지 않음</option><option value="subtle">은은하게 · 권장</option><option value="deep">선명하게</option></select></label>
+            <label>우주 보조색<input type="color" value={value.theme.cosmicColor} onChange={(event) => changeTheme({ cosmicColor: event.target.value })} /></label>
+            <label>별 밀도 <small>{value.theme.starDensity}/5</small><input type="range" min="1" max="5" step="1" value={value.theme.starDensity} onChange={(event) => changeTheme({ starDensity: Number(event.target.value) })} /></label>
+            <label>성운 강도 <small>{Math.round(value.theme.nebulaIntensity * 100)}%</small><input type="range" min="0" max="0.8" step="0.05" value={value.theme.nebulaIntensity} onChange={(event) => changeTheme({ nebulaIntensity: Number(event.target.value) })} /></label>
+            <label>움직임 강도 <small>{Math.round(value.theme.motionIntensity * 100)}%</small><input type="range" min="0" max="1" step="0.05" value={value.theme.motionIntensity} onChange={(event) => changeTheme({ motionIntensity: Number(event.target.value) })} /></label>
+            <label>배경 이미지 투명도 <small>{Math.round(value.theme.cosmicBackgroundOpacity * 100)}%</small><input type="range" min="0" max="0.65" step="0.05" value={value.theme.cosmicBackgroundOpacity} onChange={(event) => changeTheme({ cosmicBackgroundOpacity: Number(event.target.value) })} /></label>
+            <label>배경 이미지 위치<select value={value.theme.cosmicBackgroundPosition} onChange={(event) => changeTheme({ cosmicBackgroundPosition: event.target.value as SiteContent['theme']['cosmicBackgroundPosition'] })}><option value="top">위</option><option value="center">가운데</option><option value="bottom">아래</option></select></label>
+            <label className="studio-grid-span">선택 배경 이미지 URL<input value={value.theme.cosmicBackgroundUrl} onChange={(event) => changeTheme({ cosmicBackgroundUrl: event.target.value })} placeholder="비워도 CSS 별과 성운이 표시됩니다." /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => cosmicUploadRef.current?.click()}><Sparkles size={15} /> 은하수·성운 배경 이미지 업로드</button>
+            <input ref={cosmicUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadCosmicBackground(event.target.files[0])} />
+            <p className="studio-upload-note studio-grid-span">배경 이미지는 선택 사항입니다. 업로드하지 않아도 가벼운 CSS 별과 궤도선이 표시됩니다. 움직임은 사용자의 모션 줄이기 설정에서 자동으로 꺼집니다.</p>
+          </div></details>
+
+          <details open><summary>장르 카드 배치</summary><div className="studio-form-grid">
+            <label>카드 표현<select value={value.theme.genreCardStyle} onChange={(event) => changeTheme({ genreCardStyle: event.target.value as SiteContent['theme']['genreCardStyle'] })}><option value="record">이미지 위 글자 · 권장</option><option value="minimal">미니멀 · 삽화 약하게</option></select></label>
+            <label>PC 열 수<select value={value.theme.genreCardColumns} onChange={(event) => changeTheme({ genreCardColumns: Number(event.target.value) as 3 | 4 })}><option value={3}>3열 · 권장</option><option value={4}>4열 · 더 촘촘하게</option></select></label>
+            <label className="studio-grid-span">카드 사이 간격 <small>{value.theme.genreCardGap}px</small><input type="range" min="12" max="40" step="2" value={value.theme.genreCardGap} onChange={(event) => changeTheme({ genreCardGap: Number(event.target.value) })} /></label>
+          </div></details>
+
           <details><summary>히어로 그림</summary><div className="studio-form-grid">
             <label>표시 방식<select value={value.theme.heroArtMode} onChange={(event) => changeTheme({ heroArtMode: event.target.value as SiteContent['theme']['heroArtMode'] })}><option value="vinyl">기본 레코드 그래픽</option><option value="image">업로드 이미지</option><option value="none">그림 숨김</option></select></label>
             <label>이미지 위치<select value={value.theme.heroImagePosition} onChange={(event) => changeTheme({ heroImagePosition: event.target.value as SiteContent['theme']['heroImagePosition'] })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
@@ -181,7 +207,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
         <div className={`studio-live-preview is-${previewMode}`} style={{ '--preview-bg': value.theme.backgroundColor, '--preview-paper': value.theme.surfaceColor, '--preview-accent': value.theme.accentColor } as React.CSSProperties}>
           {value.theme.customFontUrl && <style>{`@font-face{font-family:RockAtlasCustom;src:url("${value.theme.customFontUrl}") format("${value.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}`}</style>}
           <div className="studio-preview-toolbar"><span>실시간 미리보기</span><button className={previewMode === 'desktop' ? 'is-active' : ''} onClick={() => setPreviewMode('desktop')} aria-label="PC 미리보기"><Monitor size={14} /></button><button className={previewMode === 'mobile' ? 'is-active' : ''} onClick={() => setPreviewMode('mobile')} aria-label="모바일 미리보기"><Smartphone size={14} /></button></div>
-          <div className={`studio-preview-canvas font-${value.theme.fontPreset}`} style={{ fontSize: `${value.theme.baseFontScale}em`, fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'heading' ? 'RockAtlasCustom' : undefined, fontWeight: value.theme.bodyWeight, fontStyle: value.theme.bodyItalic ? 'italic' : 'normal' }}>
+          <div className={`studio-preview-canvas font-${value.theme.fontPreset} cosmic-${value.theme.cosmicMode}`} style={{ fontSize: `${value.theme.baseFontScale}em`, fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'heading' ? 'RockAtlasCustom' : undefined, fontWeight: value.theme.bodyWeight, fontStyle: value.theme.bodyItalic ? 'italic' : 'normal', '--preview-cosmic': value.theme.cosmicColor, '--preview-nebula': value.theme.nebulaIntensity, '--preview-stars': `${150 - value.theme.starDensity * 18}px` } as React.CSSProperties}>
             <header><strong>ROCK ATLAS <i>{value.brandSuffix}</i></strong><small>GENRE · BANDS · STUDIO</small></header>
             <main><span>WESTERN ROCK DISCOVERY ARCHIVE</span><h4 style={{ fontWeight: value.theme.headingWeight, fontStyle: value.theme.headingItalic ? 'italic' : 'normal', fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'body' ? 'RockAtlasCustom' : undefined }}>{value.heroTitle}</h4>{value.heroDescription && <p>{value.heroDescription}</p>}<button>장르부터 탐색</button><div className={`preview-art mode-${value.theme.heroArtMode}`} style={value.theme.heroArtMode === 'image' ? { backgroundImage: `url(${value.theme.heroImageUrl})`, backgroundPosition: value.theme.heroImagePosition } : undefined} /></main>
             {value.sectionVisibility.genres && <footer><small>{value.genreSectionLabel}</small><strong>{value.genreSectionTitle}</strong><p>{value.genreSectionDescription}</p></footer>}
@@ -191,18 +217,34 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
       <div className="studio-site-actions"><span className={dirty ? 'is-dirty' : ''}>{message}</span><a href="./" target="_blank" rel="noreferrer"><ExternalLink size={14} /> 실제 화면</a><button onClick={() => void onSave()}><Save size={15} /> 디자인 저장</button></div>
 
-      <details className="studio-genre-editor"><summary>13개 장르 카드 편집</summary><div className="studio-genre-editor-grid">
-        {genres.map((genre, index) => <details key={genre.id}><summary><span style={{ background: genre.color }} />{String(index + 1).padStart(2, '0')} · {genre.name}</summary><div>
+      <details className="studio-genre-editor" open><summary>13개 장르 카드 문구와 삽화</summary><div className="studio-genre-editor-grid">
+        {genres.map((genre, index) => {
+          const visual = value.genreVisuals[genre.id]
+          return <details key={genre.id}><summary><span style={{ background: genre.color }} />{String(index + 1).padStart(2, '0')} · {genre.name}</summary><div>
           <div className="studio-genre-order-actions studio-grid-span"><button onClick={() => moveGenre(genre.id, -1)} disabled={index === 0}><ArrowUp size={12} /> 위로</button><button onClick={() => moveGenre(genre.id, 1)} disabled={index === genres.length - 1}><ArrowDown size={12} /> 아래로</button></div>
           <label>정식 한국어 이름<input value={genre.name} onChange={(event) => updateGenre(genre.id, { name: event.target.value })} /></label>
-          <label>카드 표시 이름<input value={genre.displayName} onChange={(event) => updateGenre(genre.id, { displayName: event.target.value })} /></label>
-          <label>영문 이름<input value={genre.englishName} onChange={(event) => updateGenre(genre.id, { englishName: event.target.value })} /></label>
           <label>색상<input type="color" value={genre.color} onChange={(event) => updateGenre(genre.id, { color: event.target.value, accent: colorToAccent(event.target.value) })} /></label>
-          <label className="studio-grid-span">한 줄 분위기 설명<input value={genre.vibeDescription} onChange={(event) => updateGenre(genre.id, { vibeDescription: event.target.value })} /></label>
+          <label className="studio-grid-span">카드 표시 이름 <small>화면 너비에 맞춰 자연스럽게 줄바꿈됩니다.</small><textarea value={genre.displayName} onChange={(event) => updateGenre(genre.id, { displayName: event.target.value })} rows={2} /></label>
+          <label className="studio-grid-span">영문 이름<textarea value={genre.englishName} onChange={(event) => updateGenre(genre.id, { englishName: event.target.value })} rows={2} /></label>
+          <label className="studio-grid-span">한 줄 분위기 설명<textarea value={genre.vibeDescription} onChange={(event) => updateGenre(genre.id, { vibeDescription: event.target.value })} rows={3} /></label>
+          <label>삽화 표시<select value={visual.artMode} onChange={(event) => updateGenreVisual(genre.id, { artMode: event.target.value as typeof visual.artMode })}><option value="image">이미지 표시</option><option value="none">이미지 숨김</option></select></label>
+          <label>삽화 위치<select value={visual.imagePosition} onChange={(event) => updateGenreVisual(genre.id, { imagePosition: event.target.value as typeof visual.imagePosition })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
+          <label className="studio-grid-span">삽화 URL<input value={visual.imageUrl} onChange={(event) => updateGenreVisual(genre.id, { imageUrl: event.target.value })} /></label>
+          <label>삽화 투명도 <small>{Math.round(visual.imageOpacity * 100)}%</small><input type="range" min="0.2" max="1" step="0.05" value={visual.imageOpacity} onChange={(event) => updateGenreVisual(genre.id, { imageOpacity: Number(event.target.value) })} /></label>
+          <label>삽화 확대 <small>{Math.round(visual.imageScale * 100)}%</small><input type="range" min="0.8" max="1.5" step="0.05" value={visual.imageScale} onChange={(event) => updateGenreVisual(genre.id, { imageScale: Number(event.target.value) })} /></label>
+          <button className="studio-upload-button studio-grid-span" onClick={() => pickGenreArt(genre.id)}><ImagePlus size={14} /> 이 장르의 삽화 교체</button>
+          {visual.artMode === 'image' && visual.imageUrl && <div className="studio-genre-art-preview studio-grid-span" style={{ '--genre-preview-color': genre.color } as React.CSSProperties}><img src={visual.imageUrl} alt="" style={{ objectPosition: visual.imagePosition, opacity: visual.imageOpacity, transform: `scale(${visual.imageScale})` }} /><strong>{genre.displayName}</strong></div>}
           <label className="studio-grid-span">설명<textarea value={genre.description} onChange={(event) => updateGenre(genre.id, { description: event.target.value })} rows={3} /></label>
           <p className="studio-upload-note studio-grid-span">세부 장르 {genre.subgenreIds.length}개 · 빠른 분위기 {genre.quickMoodIds.length}개 · 고유 ID는 데이터 연결 보호를 위해 잠겨 있습니다.</p>
-        </div></details>)}
+        </div></details>
+        })}
       </div></details>
+      <input ref={genreUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => {
+        const file = event.target.files?.[0]
+        const id = genreUploadTarget.current
+        if (file && id) void uploadGenreArt(file, id)
+        event.target.value = ''
+      }} />
 
       <details className="studio-genre-editor"><summary>24개 분위기 카드 편집</summary><div className="studio-genre-editor-grid">
         {moods.map((mood) => <details key={mood.id}><summary>{String(mood.order).padStart(2, '0')} · {mood.name}</summary><div>

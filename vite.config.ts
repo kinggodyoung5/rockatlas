@@ -359,9 +359,10 @@ function studioApi(): Plugin {
             'moodSectionLabel', 'moodSectionTitle', 'moodSectionDescription',
             'allBandsSectionLabel', 'allBandsSectionTitle', 'allBandsSectionDescription',
           ]
-          if (payload.schemaVersion !== 1 || requiredStrings.some((key) => typeof payload[key] !== 'string')) throw new Error('지원하지 않는 사이트 설정 형식입니다.')
+          if (![1, 2].includes(Number(payload.schemaVersion)) || requiredStrings.some((key) => typeof payload[key] !== 'string')) throw new Error('지원하지 않는 사이트 설정 형식입니다.')
           if (!(payload.heroTitle as string).trim() || !(payload.genreSectionTitle as string).trim()) throw new Error('메인·장르 제목은 비워 둘 수 없습니다.')
           if (!payload.theme || !payload.sectionVisibility || !Array.isArray(payload.sectionOrder)) throw new Error('테마와 섹션 설정이 누락되었습니다.')
+          if (Number(payload.schemaVersion) >= 2 && (!payload.genreVisuals || typeof payload.genreVisuals !== 'object')) throw new Error('장르 카드 디자인 설정이 누락되었습니다.')
           const nextContent = { ...payload, updatedAt: new Date().toISOString() }
           await writeFile(siteContentPath, `${JSON.stringify(nextContent, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextContent.updatedAt })
@@ -386,7 +387,13 @@ function studioApi(): Plugin {
           const buffer = Buffer.from(match[2], 'base64')
           if (buffer.length > 5_000_000) throw new Error('이미지는 5MB 이하여야 합니다.')
           await mkdir(uploadsPath, { recursive: true })
-          const fileName = `hero-${Date.now()}.${extension}`
+          const assetType = typeof payload.assetType === 'string' && ['hero', 'logo', 'wordmark', 'cosmic', 'genre'].includes(payload.assetType)
+            ? payload.assetType
+            : 'image'
+          const assetKey = typeof payload.assetKey === 'string'
+            ? payload.assetKey.replace(/[^a-zA-Z0-9_-]+/g, '-').replace(/^-|-$/g, '').slice(0, 70)
+            : ''
+          const fileName = `${assetType}${assetKey ? `-${assetKey}` : ''}-${Date.now()}.${extension}`
           await writeFile(resolve(uploadsPath, fileName), buffer)
           json(response, { ok: true, url: `./uploads/${fileName}` })
         } catch (error) {

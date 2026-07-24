@@ -148,11 +148,22 @@ function ExplorerApp() {
     '--body-style': siteContent.theme.bodyItalic ? 'italic' : 'normal',
     '--heading-weight': siteContent.theme.headingWeight,
     '--heading-style': siteContent.theme.headingItalic ? 'italic' : 'normal',
+    '--cosmic-color': siteContent.theme.cosmicColor,
+    '--star-spacing': `${Math.max(68, 168 - siteContent.theme.starDensity * 18)}px`,
+    '--nebula-opacity': siteContent.theme.nebulaIntensity,
+    '--cosmic-motion': siteContent.theme.motionIntensity,
+    '--cosmic-drift-duration': `${Math.round(90 - siteContent.theme.motionIntensity * 58)}s`,
+    '--cosmic-background-image': siteContent.theme.cosmicBackgroundUrl ? `url("${siteContent.theme.cosmicBackgroundUrl}")` : 'none',
+    '--cosmic-background-position': siteContent.theme.cosmicBackgroundPosition,
+    '--cosmic-background-opacity': siteContent.theme.cosmicBackgroundOpacity,
+    '--genre-card-columns': siteContent.theme.genreCardColumns,
+    '--genre-card-gap': `${siteContent.theme.genreCardGap}px`,
   } as React.CSSProperties
   const fontFaceRule = hasCustomFont ? `@font-face{font-family:RockAtlasCustom;src:url("${siteContent.theme.customFontUrl}") format("${siteContent.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}` : ''
+  const appClassName = `app-shell theme-${siteContent.theme.fontPreset} cosmic-${siteContent.theme.cosmicMode} genre-card-style-${siteContent.theme.genreCardStyle}${siteContent.theme.motionIntensity === 0 ? ' cosmic-motion-off' : ''}`
 
   if (selectedBand) {
-    return <div className={`app-shell theme-${siteContent.theme.fontPreset}`} style={themeStyle}>{fontFaceRule && <style>{fontFaceRule}</style>}<BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} /></div>
+    return <div className={appClassName} style={themeStyle}>{fontFaceRule && <style>{fontFaceRule}</style>}<BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} /></div>
   }
 
   const manifesto = <section className="manifesto" key="manifesto"><div className="shell manifesto-inner"><span>{siteContent.manifestoLabel}</span><h2>{siteContent.manifestoTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h2><button onClick={surpriseMe}>{siteContent.manifestoButtonLabel} <ArrowRight /></button></div></section>
@@ -160,13 +171,14 @@ function ExplorerApp() {
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
         <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres">장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => setShareOpen(true)}><Share2 size={16} /> 지도 공유하기</button></div></div>
-        <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">{siteContent.theme.heroArtMode === 'vinyl' && <><div className="vinyl-ring ring-one" /><div className="vinyl-ring ring-two" /><div className="vinyl-ring ring-three" /></>}{siteContent.theme.heroArtMode === 'image' && siteContent.theme.heroImageUrl && <img className="hero-custom-image" src={siteContent.theme.heroImageUrl} alt="" style={{ objectPosition: siteContent.theme.heroImagePosition }} />}<div className="hero-stamp"><span>{bands.length}</span>CURATED<br />BANDS</div><div className="hero-label">PLAY LOUD<br />EXPLORE DEEP</div></div>
+        {siteContent.theme.cosmicMode !== 'off' && siteContent.theme.heroArtMode !== 'image' && <div className="cosmic-navigation-graphic" aria-hidden="true"><span className="cosmic-sun">RA</span><i className="orbit orbit-one"><b /></i><i className="orbit orbit-two"><b /></i><i className="orbit orbit-three"><b /></i><em>ROCK / DEEP SPACE / 13 SYSTEMS</em></div>}
+        <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">{siteContent.theme.heroArtMode === 'vinyl' && <><div className="vinyl-ring ring-one" /><div className="vinyl-ring ring-two" /><div className="vinyl-ring ring-three" /></>}{siteContent.theme.heroArtMode === 'image' && siteContent.theme.heroImageUrl && <img className="hero-custom-image" src={siteContent.theme.heroImageUrl} alt="" loading="eager" decoding="async" fetchPriority="high" style={{ objectPosition: siteContent.theme.heroImagePosition }} />}<div className="hero-stamp"><span>{bands.length}</span>CURATED<br />BANDS</div><div className="hero-label">PLAY LOUD<br />EXPLORE DEEP</div></div>
         <div className="hero-index" aria-hidden="true">VOL. 01 / 2026</div>
       </section>
       <div className="shell"><JourneyBar historyIds={historyIds} favoriteIds={favoriteIds} onSelect={openBand} onClearHistory={clearHistory} /></div>
       {siteContent.sectionOrder.map((sectionId) => {
         if (!siteContent.sectionVisibility[sectionId]) return null
-        if (sectionId === 'genres') return <DiscoveryHome key="genres" bands={bands} label={siteContent.genreSectionLabel} title={siteContent.genreSectionTitle} description={siteContent.genreSectionDescription} onGenre={goGenre} onAllBands={goBands} onMoods={goMoods} />
+        if (sectionId === 'genres') return <DiscoveryHome key="genres" bands={bands} label={siteContent.genreSectionLabel} title={siteContent.genreSectionTitle} description={siteContent.genreSectionDescription} genreVisuals={siteContent.genreVisuals} onGenre={goGenre} onAllBands={goBands} onMoods={goMoods} />
         if (sectionId === 'manifesto') return manifesto
         return null
       })}
@@ -181,7 +193,7 @@ function ExplorerApp() {
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
   return (
-    <div className={`app-shell theme-${siteContent.theme.fontPreset}`} style={themeStyle}>
+    <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
       <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl ? <img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt="ROCK ATLAS" /> : <span><strong>ROCK ATLAS <i className="wordmark-by">{siteContent.brandSuffix}</i></strong><small>AMPLIFY YOUR TASTE</small></span>}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{isLocal && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}

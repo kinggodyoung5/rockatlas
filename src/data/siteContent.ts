@@ -1,4 +1,13 @@
 import content from './siteContent.json' with { type: 'json' }
+import type { GenreTaxonomyId } from '../types/taxonomy'
+
+export interface GenreVisualSettings {
+  artMode: 'image' | 'none'
+  imageUrl: string
+  imagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+  imageOpacity: number
+  imageScale: number
+}
 
 export interface SiteContent {
   schemaVersion: number
@@ -40,7 +49,19 @@ export interface SiteContent {
     logoImageUrl: string
     wordmarkMode: 'text' | 'image'
     wordmarkImageUrl: string
+    cosmicMode: 'off' | 'subtle' | 'deep'
+    starDensity: number
+    nebulaIntensity: number
+    motionIntensity: number
+    cosmicColor: string
+    cosmicBackgroundUrl: string
+    cosmicBackgroundPosition: 'center' | 'top' | 'bottom'
+    cosmicBackgroundOpacity: number
+    genreCardStyle: 'record' | 'minimal'
+    genreCardColumns: 3 | 4
+    genreCardGap: number
   }
+  genreVisuals: Record<GenreTaxonomyId, GenreVisualSettings>
   sectionVisibility: Record<SiteSectionId, boolean>
   sectionOrder: SiteSectionId[]
 }

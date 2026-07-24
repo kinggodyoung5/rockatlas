@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-07-24T06:20:39.608Z",
+  "schemaVersion": 2,
+  "updatedAt": "2026-07-24T06:49:12.672Z",
   "brandSuffix": "by kinggodyoung",
   "heroTitle": "락의 세계를 여행하는 히치하이커를 위한 안내서",
   "heroDescription": "",
@@ -17,7 +17,7 @@
   "allBandsSectionTitle": "모든 밴드 보기",
   "allBandsSectionDescription": "이름, 시대, 국가와 장르로 좁혀보세요.",
   "theme": {
-    "fontPreset": "modern",
+    "fontPreset": "editorial",
     "customFontName": "",
     "customFontUrl": "",
     "customFontFormat": "",
@@ -31,13 +31,117 @@
     "surfaceColor": "#efeee9",
     "accentColor": "#e86335",
     "mutedColor": "#98979a",
-    "heroArtMode": "vinyl",
-    "heroImageUrl": "",
+    "heroArtMode": "image",
+    "heroImageUrl": "./assets/hero/rock-galaxy-v1.jpg",
     "heroImagePosition": "center",
     "logoMode": "mark",
     "logoImageUrl": "",
     "wordmarkMode": "text",
-    "wordmarkImageUrl": ""
+    "wordmarkImageUrl": "",
+    "cosmicMode": "subtle",
+    "starDensity": 3,
+    "nebulaIntensity": 0.38,
+    "motionIntensity": 0.18,
+    "cosmicColor": "#6655a5",
+    "cosmicBackgroundUrl": "",
+    "cosmicBackgroundPosition": "center",
+    "cosmicBackgroundOpacity": 0.22,
+    "genreCardStyle": "record",
+    "genreCardColumns": 3,
+    "genreCardGap": 24
+  },
+  "genreVisuals": {
+    "classic-roots-rock": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/classic-roots-rock.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    },
+    "hard-glam-rock": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/hard-glam-rock.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.86,
+      "imageScale": 1
+    },
+    "pop-soft-rock": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/pop-soft-rock.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.76,
+      "imageScale": 1
+    },
+    "progressive-art-psychedelic": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/progressive-art-psychedelic.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    },
+    "punk-emo": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/punk-emo.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    },
+    "indie-britpop-garage": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/indie-britpop-garage.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.78,
+      "imageScale": 1
+    },
+    "post-punk-goth-new-wave": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/post-punk-goth-new-wave.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.8,
+      "imageScale": 1
+    },
+    "alternative-grunge": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/alternative-grunge.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    },
+    "shoegaze-dream-post": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/shoegaze-dream-post.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.76,
+      "imageScale": 1
+    },
+    "traditional-power-thrash-metal": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/traditional-power-thrash-metal.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.84,
+      "imageScale": 1
+    },
+    "folk-symphonic-metal": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/folk-symphonic-metal.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.8,
+      "imageScale": 1
+    },
+    "extreme-metal": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/extreme-metal.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    },
+    "modern-alternative-metal": {
+      "artMode": "image",
+      "imageUrl": "./assets/genres/modern-alternative-metal.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.82,
+      "imageScale": 1
+    }
   },
   "sectionVisibility": {
     "genres": true,

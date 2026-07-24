@@ -1,5 +1,6 @@
 import { ArrowRight, AudioWaveform, Grid3X3 } from 'lucide-react'
 import { taxonomyGenres, taxonomySubgenreById } from '../data/taxonomy'
+import type { SiteContent } from '../data/siteContent'
 import type { Band } from '../types/music'
 import type { GenreTaxonomyId } from '../types/taxonomy'
 
@@ -8,12 +9,13 @@ interface DiscoveryHomeProps {
   label: string
   title: string
   description: string
+  genreVisuals: SiteContent['genreVisuals']
   onGenre: (genreId: GenreTaxonomyId) => void
   onAllBands: () => void
   onMoods: () => void
 }
 
-export function DiscoveryHome({ bands, label, title, description, onGenre, onAllBands, onMoods }: DiscoveryHomeProps) {
+export function DiscoveryHome({ bands, label, title, description, genreVisuals, onGenre, onAllBands, onMoods }: DiscoveryHomeProps) {
   return (
     <section id="genres" className="genre-section discovery-home">
       <div className="shell">
@@ -24,11 +26,13 @@ export function DiscoveryHome({ bands, label, title, description, onGenre, onAll
         <div className="genre-grid discovery-grid">
           {taxonomyGenres.map((genre, index) => {
             const count = bands.filter((band) => band.taxonomyV2?.primaryGenreId === genre.id).length
+            const visual = genreVisuals[genre.id]
             return (
-              <button key={genre.id} className="genre-card discovery-card" onClick={() => onGenre(genre.id)} style={{ '--genre-color': genre.color, '--genre-rgb': genre.accent } as React.CSSProperties}>
-                <span className="genre-index">{String(index + 1).padStart(2, '0')}</span><span className="genre-count">{count} BANDS</span>
-                <h3>{genre.displayName}</h3><strong>{genre.englishName}</strong><p>{genre.vibeDescription}</p>
-                <span className="folded-label">세부 장르</span><span className="folded-list">{genre.subgenreIds.slice(0, 3).map((id) => taxonomySubgenreById[id]?.name ?? id).join(' · ')}</span><span className="genre-arrow"><ArrowRight /></span>
+              <button key={genre.id} className={`genre-card discovery-card ${visual.artMode === 'image' && visual.imageUrl ? 'has-art' : ''}`} onClick={() => onGenre(genre.id)} style={{ '--genre-color': genre.color, '--genre-rgb': genre.accent, '--genre-art-opacity': visual.imageOpacity, '--genre-art-scale': visual.imageScale } as React.CSSProperties}>
+                {visual.artMode === 'image' && visual.imageUrl && <span className="genre-card-art" aria-hidden="true"><img src={visual.imageUrl} alt="" loading="lazy" decoding="async" style={{ objectPosition: visual.imagePosition }} /></span>}
+                <span className="genre-card-top"><span className="genre-index">{String(index + 1).padStart(2, '0')}</span><span className="genre-count">{count} BANDS</span></span>
+                <span className="genre-card-copy"><h3>{genre.displayName}</h3><strong>{genre.englishName}</strong><p>{genre.vibeDescription}</p></span>
+                <span className="genre-card-foot"><span><span className="folded-label">세부 장르</span><span className="folded-list">{genre.subgenreIds.slice(0, 3).map((id) => taxonomySubgenreById[id]?.name ?? id).join(' · ')}</span></span><span className="genre-arrow"><ArrowRight /></span></span>
               </button>
             )
           })}

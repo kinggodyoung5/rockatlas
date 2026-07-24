@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowLeft, Check, Download, ExternalLink, FileUp, Link2, Loader2, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
+import { ArrowLeft, Check, Database, Download, ExternalLink, FileUp, Link2, Loader2, Palette, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { eras } from '../data/eras'
 import { genres as initialGenres } from '../data/genres'
@@ -287,6 +287,7 @@ function suggestionScore(subject: Band, candidate: Band) {
 }
 
 export function StudioPage() {
+  const [workspace, setWorkspace] = useState<'design' | 'data'>(() => window.location.hash === '#design' ? 'design' : 'data')
   const [catalogBands, setCatalogBands] = useState<Band[]>(() => clone(initialBands))
   const [selectedId, setSelectedId] = useState(initialBands[0]?.id ?? '')
   const [draft, setDraft] = useState<Band>(() => clone(initialBands[0] ?? createDraftBand()))
@@ -319,6 +320,18 @@ export function StudioPage() {
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
   const importRef = useRef<HTMLInputElement>(null)
   const isExisting = catalogBands.some((band) => band.id === selectedId)
+
+  useEffect(() => {
+    const syncWorkspace = () => setWorkspace(window.location.hash === '#design' ? 'design' : 'data')
+    window.addEventListener('hashchange', syncWorkspace)
+    return () => window.removeEventListener('hashchange', syncWorkspace)
+  }, [])
+
+  const openWorkspace = (next: 'design' | 'data') => {
+    setWorkspace(next)
+    window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}#${next}`)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const filteredBands = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase()
@@ -602,9 +615,12 @@ export function StudioPage() {
   }
 
   const saveEverything = async () => {
-    await saveCatalog('Studio 전체 저장')
-    if (siteDirty) await saveSiteContent()
-    if (taxonomyDirty) await saveTaxonomyGenres()
+    if (workspace === 'design') {
+      if (siteDirty) await saveSiteContent()
+      if (taxonomyDirty) await saveTaxonomyGenres()
+      return
+    }
+    await saveCatalog('Studio 데이터 저장')
   }
 
   const exportCatalog = () => {
@@ -640,20 +656,25 @@ export function StudioPage() {
           <a href="./" className="studio-back"><ArrowLeft size={16} /> 공개 사이트</a>
           <span className="section-no">LOCAL CONTENT OPERATIONS</span>
           <h1>ROCK ATLAS <em>STUDIO</em></h1>
-          <p>밴드 콘텐츠·분류·관계를 코드 없이 편집하고, 초안부터 공개 준비까지 관리합니다.</p>
+          <p>{workspace === 'design' ? '공개 화면의 문구·우주 테마·장르 카드 삽화를 관리합니다.' : '밴드 추가·검수·분류·관계를 한곳에서 관리합니다.'}</p>
         </div>
         <div className="studio-header-actions">
-          <button onClick={exportCatalog}><Download size={16} /> JSON 백업</button>
-          <button onClick={() => importRef.current?.click()} title="전체 카탈로그 백업 복원용"><FileUp size={16} /> 전체 백업 복원</button>
-          <input ref={importRef} type="file" accept="application/json" hidden onChange={(event) => event.target.files?.[0] && void importCatalog(event.target.files[0])} />
+          {workspace === 'data' && <><button onClick={exportCatalog}><Download size={16} /> JSON 백업</button>
+            <button onClick={() => importRef.current?.click()} title="전체 카탈로그 백업 복원용"><FileUp size={16} /> 전체 백업 복원</button>
+            <input ref={importRef} type="file" accept="application/json" hidden onChange={(event) => event.target.files?.[0] && void importCatalog(event.target.files[0])} /></>}
           <button className="studio-save" onClick={() => void saveEverything()}><Save size={16} /> 전체 저장</button>
         </div>
       </header>
 
       <div className="studio-status"><span className={dirty || catalogDirty || siteDirty || taxonomyDirty ? 'is-dirty' : ''}>{dirty || catalogDirty || siteDirty || taxonomyDirty ? '저장되지 않은 변경' : '저장됨'}</span><p>{message}</p></div>
 
-      <div className="studio-layout">
-        <aside className="studio-sidebar">
+      <nav className="studio-workspace-nav" aria-label="Studio 작업 영역">
+        <button className={workspace === 'design' ? 'is-active' : ''} onClick={() => openWorkspace('design')}><Palette size={18} /><span><strong>디자인</strong><small>화면·문구·색상·우주 테마·장르 삽화</small></span></button>
+        <button className={workspace === 'data' ? 'is-active' : ''} onClick={() => openWorkspace('data')}><Database size={18} /><span><strong>데이터</strong><small>밴드 추가·검수·분류·관계·백업</small></span></button>
+      </nav>
+
+      <div className={`studio-layout ${workspace === 'design' ? 'is-design-workspace' : 'is-data-workspace'}`}>
+        {workspace === 'data' && <aside className="studio-sidebar">
           <div className="studio-sidebar-head">
             <strong>밴드 {catalogBands.length}</strong>
             <button onClick={addNewBand}><Plus size={15} /> 새 밴드</button>
@@ -667,11 +688,10 @@ export function StudioPage() {
               </button>
             ))}
           </div>
-        </aside>
+        </aside>}
 
         <div className="studio-editor">
-          <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} />
-
+          {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
@@ -797,6 +817,7 @@ export function StudioPage() {
             <ul>{checks.map((check) => <li key={check.label} className={check.passed ? 'is-passed' : ''}>{check.passed ? <Check size={14} /> : <span>○</span>}{check.label}</li>)}</ul>
             <div className="studio-final-actions"><a href={`./?studioPreview=1#band=${encodeURIComponent(draft.id)}`} target="_blank" rel="noreferrer"><ExternalLink size={15} /> 상세 화면 미리보기</a><button onClick={() => void saveCatalog()}><Save size={16} /> 저장</button></div>
           </section>
+          </>}
         </div>
       </div>
 
