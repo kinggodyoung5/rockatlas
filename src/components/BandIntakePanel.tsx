@@ -25,7 +25,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
 
   const inspect = async (nextRaw = raw) => {
     setBusy(true)
-    setMessage('JSON을 정리하고 YouTube·이미지 라이선스를 자동 확인하는 중…')
+    setMessage('JSON을 정리하고 분위기 표현·YouTube 곡명·이미지 라이선스를 자동 확인하는 중…')
     const next = await inspectBandIntake(nextRaw, bands)
     setResult(next)
     setSelectedKeys(new Set(next.candidates.filter((candidate) => candidate.canApprove).map((candidate) => candidate.key)))
@@ -40,7 +40,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
   const copyPrompt = async () => {
     try {
       await navigator.clipboard.writeText(buildGeminiResearchPrompt())
-      setMessage('Gem 지침을 복사했습니다. Gemini의 Gem 지침에 한 번만 붙여넣으세요. 이후 채팅에는 밴드 이름만 입력하면 됩니다.')
+      setMessage('Gem 지침 v3를 복사했습니다. 기존 Gem의 지침을 이 내용으로 교체하세요. 이후 채팅에는 밴드 이름만 입력하면 됩니다.')
     } catch {
       setMessage('복사 권한이 없어 실패했습니다. 브라우저의 클립보드 권한을 확인하세요.')
     }
@@ -84,16 +84,16 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
 
   return (
     <section id="intake" className="studio-form-section band-intake-panel">
-      <div className="studio-section-heading"><span><Inbox size={22} /></span><div><h3>새 밴드 검수함</h3><p>Gemini 조사 결과를 자동으로 정리하고, 중복·필수 정보·분류값은 물론 YouTube 영상 실존 여부와 이미지 라이선스까지 자동 확인한 뒤 추가합니다.</p></div></div>
+      <div className="studio-section-heading"><span><Inbox size={22} /></span><div><h3>새 밴드 검수함</h3><p>Gemini 조사 결과를 자동 정리하고, 비슷한 분위기 표현을 정식 ID로 바꾸며 YouTube 영상의 곡명·아티스트와 이미지 라이선스까지 확인합니다.</p></div></div>
 
       <ol className="intake-steps">
         <li><strong>1</strong><span><b>Gem 지침 최초 1회 등록</b>복사한 내용을 Gemini의 Gem 지침에 저장합니다.</span></li>
         <li><strong>2</strong><span><b>결과 붙여넣기</b>코드 블록이나 설명이 섞여 있어도 자동으로 JSON을 찾습니다.</span></li>
-        <li><strong>3</strong><span><b>자동 검사 후 추가</b>YouTube·이미지 라이선스까지 통과한 항목은 검수 완료로, 나머지는 비공개 초안으로 추가합니다.</span></li>
+        <li><strong>3</strong><span><b>자동 검사 후 추가</b>깨진·엉뚱한 영상은 안전한 검색 링크로 바꾸고, 자동 확인이 남은 항목은 비공개 초안으로 추가합니다.</span></li>
       </ol>
 
       <div className="intake-actions">
-        <button type="button" className="is-primary" onClick={() => void copyPrompt()}><Clipboard size={16} /> Gemini Gem 지침 복사</button>
+        <button type="button" className="is-primary" onClick={() => void copyPrompt()}><Clipboard size={16} /> Gemini Gem 지침 v3 복사</button>
         <button type="button" onClick={() => fileRef.current?.click()}><Upload size={16} /> JSON 파일 선택</button>
         <input ref={fileRef} hidden type="file" accept="application/json,.json,text/plain" onChange={(event) => event.target.files?.[0] && void loadFile(event.target.files[0])} />
         <button type="button" onClick={clear}><Trash2 size={15} /> 비우기</button>
@@ -127,7 +127,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
         </div>
       </div>}
 
-      <div className="intake-safety-note"><ShieldCheck size={18} /><p><strong>기존 밴드는 덮어쓰지 않습니다.</strong> 중복 ID·이름·외부 식별자는 차단합니다. YouTube 링크 실존 여부와 Commons 이미지 라이선스를 자동 확인해 모두 통과한 밴드만 검수 완료로 추가하고, 하나라도 자동 확인이 안 되면 비공개 초안으로 남겨 직접 확인을 요청합니다. 공개 전환은 항상 운영자가 직접 합니다.</p></div>
+      <div className="intake-safety-note"><ShieldCheck size={18} /><p><strong>기존 밴드는 덮어쓰지 않습니다.</strong> 중복 ID·이름·외부 식별자는 차단합니다. YouTube 링크는 영상 존재뿐 아니라 곡명·아티스트 일치까지 확인하고, 실패하면 깨진 링크를 남기지 않고 검색 링크로 바꿉니다. Commons 권리나 다른 자동 확인이 남으면 비공개 초안으로 추가합니다.</p></div>
     </section>
   )
 }

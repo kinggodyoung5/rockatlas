@@ -37,7 +37,7 @@ interface VideoResult {
   errorCode?: number
 }
 
-const allJobs = bands.flatMap((band) => band.tracks.map((track) => ({
+const allJobs = bands.flatMap((band) => band.tracks.filter((track) => Boolean(track.youtubeId)).map((track) => ({
   band: band.name,
   track: track.title,
   youtubeId: track.youtubeId,

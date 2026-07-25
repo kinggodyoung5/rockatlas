@@ -77,10 +77,15 @@ for (const band of bands) {
   for (const track of band.tracks) {
     if (trackIds.has(track.id)) errors.push(`${band.id}: 중복 트랙 ID ${track.id}`)
     trackIds.add(track.id)
-    if (!/^[A-Za-z0-9_-]{11}$/.test(track.youtubeId)) errors.push(`${band.id}/${track.id}: 잘못된 YouTube ID`)
-    if (track.source.url !== `https://www.youtube.com/watch?v=${track.youtubeId}`) errors.push(`${band.id}/${track.id}: YouTube ID와 출처 URL 불일치`)
-    if (youtubeIds.has(track.youtubeId)) warnings.push(`${band.id}/${track.id}: 같은 YouTube 링크가 다른 대표곡에도 사용됨 (${track.youtubeId})`)
-    youtubeIds.add(track.youtubeId)
+    if (!track.youtubeId) {
+      if (!track.source.url.startsWith('https://www.youtube.com/results?search_query=')) errors.push(`${band.id}/${track.id}: 직접 영상이 없으면 YouTube 검색 링크가 필요함`)
+      warnings.push(`${band.id}/${track.id}: 검증된 직접 영상 대신 YouTube 검색 링크 사용`)
+    } else {
+      if (!/^[A-Za-z0-9_-]{11}$/.test(track.youtubeId)) errors.push(`${band.id}/${track.id}: 잘못된 YouTube ID`)
+      if (track.source.url !== `https://www.youtube.com/watch?v=${track.youtubeId}`) errors.push(`${band.id}/${track.id}: YouTube ID와 출처 URL 불일치`)
+      if (youtubeIds.has(track.youtubeId)) warnings.push(`${band.id}/${track.id}: 같은 YouTube 링크가 다른 대표곡에도 사용됨 (${track.youtubeId})`)
+      youtubeIds.add(track.youtubeId)
+    }
   }
 
   const relationTargets = new Set<string>()

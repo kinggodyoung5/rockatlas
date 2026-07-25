@@ -5,17 +5,16 @@
 
 ## 0. 현재 상태 요약
 
-- 마지막 갱신: 2026-07-25 KST · Codex
+- 마지막 갱신: 2026-07-25 KST · Claude
 - 로컬 폴더: `C:\Users\SH\Documents\Codex\rock-atlas`
 - 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
-- 현재 개발 브랜치: `codex/taxonomy-v2` — 디자인 구현 커밋 `b22592c`가 개발 브랜치와 `main`에 동일하게 반영됨.
+- 현재 개발 브랜치: `codex/taxonomy-v2` — `main`과 항상 동일하게 fast-forward 배포됨.
 - 원격 백업 브랜치·태그: `backup/pre-taxonomy-v2-20260719`
-- **밴드 수: 64개.** 멤버 활동연도·대표곡 감상 안내 알파벳순 보강은 전 밴드 완료. 이후 사용자가 Studio로 직접 추가하는 밴드는 매번 이미지 Commons 검증·YouTube oEmbed 검증·태그 정합성 확인을 거쳐 반영한다(3번 항목 체크리스트 참고).
-- 2026-07-25 검증: `validate:data` 오류 0건(밴드 64 · 트랙 130 · 관계 139), `validate:taxonomy` 오류 0건(13장르 · 110 세부 장르 · 24 분위기), 프로덕션 빌드 성공, `git diff --check` 통과.
-- 우주 테마·Studio 분리·장르 카드 삽화와 가독성 개편은 `b22592c`로 커밋·푸시·배포 완료.
-- GitHub Pages 배포 작업 `#32` 성공. 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
-- 남은 사용자 소유 미커밋 변경: `src/data/catalog.json`의 `updatedAt`만 변경된 상태와 미추적 `.claude/settings.local.json`. 되돌리거나 임의로 커밋하지 않는다.
-- 2026-07-25 사용자 피드백에 따른 메인 이미지 v3·탐색 카드 삽화·모바일 압축 카드는 구현·검수·커밋·푸시·배포까지 완료했다. 세부 내용은 9번에 기록했다.
+- **밴드 수: 67개.** 코덱스가 작업 중지된 사이 남아있던 로컬 미커밋 변경(American Authors·blink-182 추가, 검수함 코드 개선, 우주 테마 디자인)을 Claude가 전부 검수해 커밋·배포까지 완료했다(10·11번 항목 참고).
+- 2026-07-25 최신 검증: `validate:data` 오류 0건·경고 0건(밴드 67 · 트랙 136 · 관계 144, Commons 검수 이미지 66/67 — Kodaline만 원본 미제공으로 이전부터 `needs-review`), `validate:taxonomy` 오류 0건, 프로덕션 빌드 성공, `git diff --check` 통과.
+- 우주 테마·Studio 분리·장르 카드 삽화와 가독성 개편은 `b22592c` 등으로 커밋·푸시·배포 완료.
+- GitHub Pages 배포 성공. 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
+- 로컬 미커밋 변경 없음 — 이 세션에서 전부 커밋·푸시·배포 완료.
 
 상태가 이 문서와 다르면 추측하지 말고 실제 `git status`, `git diff`, 현재 파일 내용을 우선한다. 확인한 차이는 이 문서에 바로 반영한다.
 
@@ -162,6 +161,7 @@ git diff --check
 
 - 배포된 실제 페이지에서 캐시가 갱신된 메인·장르 카드 최종 확인
 - 이후 사용자 피드백이 있으면 Studio의 카드 간격·이미지 위치·투명도 설정으로 우선 조정하고, 구조 변경은 필요한 경우에만 진행
+- ~~American Authors 이미지 권리·YouTube ID 검수~~ → 완료(11번 항목)
 
 ## 7. Git과 Studio 저장의 차이
 
@@ -189,4 +189,34 @@ git diff --check
 - 검증 완료: `validate:data` 오류 0건, `validate:taxonomy` 오류 0건, 프로덕션 빌드 성공, `git diff --check` 통과. 데스크톱 메인과 390×844 모바일 실제 화면에서 `ROCK ATLAS` 전체 문구, 가로 넘침 0px, 탐색 이미지 900px 정상 로드, Studio 새 편집 항목, 브라우저 콘솔 오류 없음 확인.
 - 구현 커밋 `f88d5e8`을 `codex/taxonomy-v2`와 `main`에 푸시했다. GitHub Pages 작업 `#34`가 성공했으며 공개 사이트와 `assets/hero/rock-galaxy-v3.jpg`가 모두 HTTP 200으로 응답한다.
 - 다음 단계는 추가 사용자 피드백이 없으면 이 디자인 상태를 기준으로 다음 기능 개발을 정하는 것이다.
-- 사용자 소유 변경 `src/data/catalog.json`의 `updatedAt`과 미추적 `.claude/settings.local.json`은 이번 작업과 분리해 계속 보존한다.
+- 당시 사용자 소유 변경이던 `src/data/catalog.json`의 `updatedAt`과 미추적 `.claude/settings.local.json`은 디자인 배포 커밋에서 분리해 보존했다.
+
+## 10. 2026-07-25 검수함 분류·YouTube·건너뛰기 링크 보완 (Codex 작업, Claude가 커밋·배포 완료)
+
+- 원인 확인: 검수함은 공백·구두점 차이만 정규화하고 분위기 의미 별칭은 거의 갖고 있지 않아 `groovy-funky`를 제외했다. 저장된 American Authors에는 별도 추천 경로로 `groovy-danceable`이 다시 들어가 있었으므로 데이터 유실은 없었다.
+- 24개 분위기에 대해 과거 ID와 의미가 하나로 확정되는 흔한 영어·한국어 표현만 보수적인 별칭으로 등록했다. 변환 시 `groovy-funky → groovy-danceable (춤추기 좋고 그루비한)`처럼 정보 메시지를 보여준다. 의미가 애매한 표현은 계속 경고로 남겨 자동 오분류를 막는다.
+- Gemini Gem 지침을 v3로 줄이고, 24개 분위기 ID 옆에 실제 한글 뜻을 붙였다. ID를 번역·조합·변형하지 말고 그대로 복사하도록 했으며, YouTube 링크는 실제 영상을 열어 곡명과 아티스트를 모두 확인하지 못하면 빈 문자열로 두게 했다. 기존 Gem은 Studio에서 v3 지침을 다시 복사해 교체해야 한다.
+- YouTube 자동 확인은 이제 단순 200 응답뿐 아니라 oEmbed 영상 제목과 채널명이 입력한 곡명·밴드명에 맞는지 확인한다. 404·비공개·제목 불일치면 깨진 직접 주소를 `밴드명 + 곡명` YouTube 검색 링크로 바꾸고 초안 상태를 유지한다. 네트워크 자체가 끊긴 경우에는 원래 주소를 보존하고 재검사 경고만 남긴다.
+- 공개 상세 화면은 대표곡이 아직 `draft`면 저장된 직접 주소를 신뢰하지 않고 YouTube 검색 링크를 사용한다. 따라서 이미 저장된 American Authors의 두 404 주소도 공개 화면에서는 노출되지 않는다.
+- Studio에서 영상 ID 없이 대표곡을 입력해도 같은 검색 링크를 생성하며, 카탈로그 검사와 구형 영상 검수 페이지도 이 상태를 정상 처리한다.
+- Studio의 사이트 표시 상태를 `검수됨/공개`로 바꿀 때 검수자·시각이 빠져 CLI 검사가 실패하던 문제를 수정했다. 이미 공개로 저장된 American Authors에는 당시 카탈로그 저장 시각을 검수 시각으로 보충했으며 다른 본문 데이터는 유지했다.
+- 왼쪽 위 `본문으로 건너뛰기`는 키보드·스크린리더 사용자가 긴 메뉴를 건너뛰는 접근성 기능이므로 삭제하지 않았다. 평소에는 1px·clip 처리로 완전히 숨기고, 키보드 포커스 때만 우주 테마의 어두운 버튼으로 표시되도록 수정했다.
+- 실제 검수함 QA: `groovy-funky`는 정식 분위기로 변환되었고, 제공된 두 YouTube ID는 모두 404로 판정되어 검색 링크 대체 메시지가 표시됐다. 브라우저 콘솔 오류 없음.
+- 검증: `validate:data` 오류 0건, `validate:taxonomy` 오류 0건, 프로덕션 빌드 성공, `git diff --check` 통과.
+- Git 상태: 아래 11번 항목에서 이 변경 전체(코덱스 코드 변경 + American Authors/blink-182 데이터)를 커밋·푸시·`main` 배포까지 완료했다.
+
+## 11. 신규 밴드 사진 8종 교체 + 코덱스 중지분 전체 마무리 (2026-07-25, Claude)
+
+사용자가 "코덱스는 현재 작업 중지 상태니까 지금까지 변경된 것들 너가 다 해결해"라고 요청 — 로컬 미커밋 상태였던 코덱스의 검수함 코드 개선(10번 항목)과 우주 테마 디자인, 그리고 그 안에 섞여 있던 신규 밴드 데이터를 전부 검수해 하나로 묶어 반영했다.
+
+- **사진이 밴드 식별이 안 되거나 잘못됐던 8개 밴드**를 실제로 이미지를 열어 확인하고 교체:
+  - OneRepublic(스타디움 원경 → 토론토 공연), Neon Trees(보컬 얼굴 클로즈업 → 4인 프로모 사진), Fall Out Boy(베이시스트 1인 → 밴드 로고+3인조 무대), Ensiferum(관중에 가려짐, **로고가 실제로 다른 밴드처럼 보여 오사진 의심** → Ensiferum 로고 배너가 보이는 정상 사진)
+  - Foo Fighters(완전히 무관한 롤라팔루자 무대 간판 사진이 잘못 달려 있었음 → Dave Grohl·Nate Mendel이 함께 보이는 사진), Nirvana(367×346 저해상도 → 같은 출처의 552×600 고화질 버전, Commons의 자유 라이선스 사진 자체가 이 한 장뿐이라 구조적 한계), Theory of a Deadman(어두워서 식별 곤란 → 4인 전원이 밝게 보이는 낮 공연 사진), Megadeth(기존도 4인 확인 가능했지만 더 선명한 1986년 프로모 흑백 사진으로 교체)
+  - 전부 Commons API로 라이선스·저작자 재확인, `displayUrl`이 실제로 200 응답하는지 확인 완료.
+- **코덱스가 중지된 시점에 남아있던 신규 밴드 3개(American Authors·blink-182·Nickelback)를 새 밴드 검수 체크리스트대로 마무리**:
+  - American Authors: 대표곡 2곡 YouTube ID가 모두 조작된 값(404)이었음 — WebSearch로 공식 VEVO 채널의 실제 영상 ID를 찾아 oEmbed 200 확인 후 교체(`Y66j_BUCsiY`→`Y66j_BUCBMY`, `p4v38s-i-Y4`→`DYj40-cZ5vI`). 이미지는 파일명만 있고 URL 미해결 상태였는데 Commons에서 밴드 전원이 보이는 사진을 찾아 검수 완료. taxonomyV2·트랙 검수 상태 정리, `reviewedBy`/`reviewedAt` 보충.
+  - blink-182: 대표곡 2곡 모두 자동 검사에 실패해 YouTube 검색 링크로 안전 대체돼 있던 상태(10번 항목의 새 기능이 정상 작동한 사례) — 실제 공식 영상을 찾아 직접 링크로 교체(oEmbed 200 확인). 이미지도 파일명만 있던 것을 Commons에서 멤버 3인 전원이 보이는 사진으로 해결.
+  - Nickelback: 이미 검수 완료 상태로 잘 반영돼 있어 YouTube ID·이미지만 재확인(정상).
+- `npm run validate:data`(오류 0건·경고 0건, 67개 밴드) · `validate:taxonomy`(오류 0건) · `npm run build` · `git diff --check` 전부 통과 확인.
+- 코덱스의 검수함 코드 개선(YouTube 제목·채널 일치 검사, 분위기 별칭 매핑, 검색 링크 폴백, Gem 지침 v3, 사이트 표시 상태 변경 시 검수자 자동 기록)은 전부 검증만 하고 로직은 그대로 유지 — 코드를 다시 작성하지 않았다.
+- 전체를 하나의 커밋으로 묶어 `codex/taxonomy-v2`에 커밋·푸시하고 `main`까지 fast-forward 배포 완료.

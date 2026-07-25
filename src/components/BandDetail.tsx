@@ -146,13 +146,19 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           <h3 className="listen-heading">대표곡 안내</h3>
           <p className="listen-description">곡의 위치를 먼저 읽고, 원할 때 외부 링크에서 감상하세요.</p>
           <div className="track-list track-guide-list">
-            {band.tracks.map((item, index) => (
-              <a key={item.id} className="track-row track-guide-row" href={item.source.url} target="_blank" rel="noreferrer">
-                <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
-                <span className="track-info"><strong>{item.title}</strong><small>{[item.album, item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
-                <span className="track-external"><small>YouTube</small><ExternalLink size={15} /></span>
-              </a>
-            ))}
+            {band.tracks.map((item, index) => {
+              const hasReviewedDirectLink = item.reviewStatus !== 'draft' && Boolean(item.youtubeId)
+              const href = hasReviewedDirectLink
+                ? item.source.url
+                : `https://www.youtube.com/results?search_query=${encodeURIComponent(`${band.name} ${item.title}`)}`
+              return (
+                <a key={item.id} className="track-row track-guide-row" href={href} target="_blank" rel="noreferrer">
+                  <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="track-info"><strong>{item.title}</strong><small>{[item.album, item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
+                  <span className="track-external"><small>{hasReviewedDirectLink ? 'YouTube' : 'YouTube 검색'}</small><ExternalLink size={15} /></span>
+                </a>
+              )
+            })}
           </div>
           {youtubeChannel && (
             <a className="youtube-channel-card" href={youtubeChannel.url} target="_blank" rel="noreferrer">

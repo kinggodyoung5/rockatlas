@@ -115,6 +115,9 @@ const youtubeIdFromInput = (value: string | undefined) => {
     return trimmed
   }
 }
+const youtubeTrackUrl = (bandName: string, trackTitle: string, youtubeId: string) => youtubeId
+  ? `https://www.youtube.com/watch?v=${youtubeId}`
+  : `https://www.youtube.com/results?search_query=${encodeURIComponent(`${bandName} ${trackTitle}`)}`
 const erasToText = (eraTags: BandEraTag[]) => eraTags.map((tag) => [tag.era, tag.subgenres.join(', '), tag.note ?? ''].join(' | ')).join('\n')
 
 function parseMembers(value: string): Member[] {
@@ -126,7 +129,7 @@ function parseMembers(value: string): Member[] {
   }))
 }
 
-function parseTracks(value: string, current: Track[]): Track[] {
+function parseTracks(value: string, current: Track[], bandName: string): Track[] {
   const usedIds = new Set<string>()
   return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([title]) => Boolean(title)).map(([title, youtubeInput, year, album, guide], index) => {
     const youtubeId = youtubeIdFromInput(youtubeInput)
@@ -137,7 +140,7 @@ function parseTracks(value: string, current: Track[]): Track[] {
     usedIds.add(id)
     if (existing) {
       const videoChanged = existing.youtubeId !== youtubeId
-      const youtubeUrl = youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : ''
+      const youtubeUrl = youtubeTrackUrl(bandName, title, youtubeId)
       return {
         ...existing,
         id,
@@ -169,10 +172,10 @@ function parseTracks(value: string, current: Track[]): Track[] {
       reviewStatus: 'draft',
       source: {
         label: `${title} — YouTube`,
-        url: youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : 'https://www.youtube.com/',
+        url: youtubeTrackUrl(bandName, title, youtubeId),
         publisher: 'YouTube',
         official: false,
-        note: 'Studio에서 추가한 대표곡 외부 링크 · 연결 대상 검수 필요',
+        note: youtubeId ? 'Studio에서 추가한 대표곡 외부 링크 · 연결 대상 검수 필요' : '직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다.',
       },
     }
   })
@@ -702,7 +705,14 @@ export function StudioPage() {
               <h2>{draft.name}</h2>
               <p>완성도 {passedChecks}/{checks.length} · ID {draft.id}</p>
             </div>
-            <label>사이트 표시 상태<select value={draft.reviewStatus} onChange={(event) => change({ reviewStatus: event.target.value as Band['reviewStatus'] })}><option value="draft">초안 · 사이트 숨김</option><option value="reviewed">검수됨 · 사이트 표시</option><option value="published">공개</option></select></label>
+            <label>사이트 표시 상태<select value={draft.reviewStatus} onChange={(event) => {
+              const reviewStatus = event.target.value as Band['reviewStatus']
+              change({
+                reviewStatus,
+                reviewedBy: reviewStatus === 'draft' ? undefined : 'Studio operator',
+                reviewedAt: reviewStatus === 'draft' ? undefined : new Date().toISOString(),
+              })
+            }}><option value="draft">초안 · 사이트 숨김</option><option value="reviewed">검수됨 · 사이트 표시</option><option value="published">공개</option></select></label>
           </section>
 
           <section className="studio-form-section">
@@ -768,7 +778,7 @@ export function StudioPage() {
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>
             <div className="studio-dual-fields">
               <label>멤버 <small>이름 | 역할 | current/former/touring | 활동연도</small><textarea key={`${selectedId}-members`} defaultValue={membersToText(draft.members)} onBlur={(event) => change({ members: parseMembers(event.target.value) })} rows={8} /></label>
-              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
+              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks, draft.name) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
             </div>
           </section>
 

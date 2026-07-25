@@ -128,6 +128,44 @@ const parentGenreIdBySubgenreId = new Map<string, GenreTaxonomyId>(
 const moodAliasMap = new Map<string, MoodId>(taxonomyMoods.flatMap((mood) =>
   [mood.id, mood.name].map((label) => [normalizeTaxonomyLabel(label), mood.id] as const),
 ))
+// Keep this list conservative: these are old prompt IDs and common rephrasings that carry the
+// same meaning as exactly one ROCK ATLAS mood. Ambiguous words should keep producing a warning
+// instead of being silently forced into the wrong mood.
+const extraMoodAliases: Partial<Record<MoodId, string[]>> = {
+  'bright-upbeat': ['upbeat-bright', 'bright-happy', 'happy-upbeat', '밝고 경쾌한', '유쾌하고 신나는'],
+  'fast-driving': ['driving-fast', 'fast-paced', 'energetic-driving', '질주감 있는', '빠르고 에너지 넘치는'],
+  'groovy-danceable': ['groovy-funky', 'funky-groovy', 'danceable-groovy', 'groovy', 'funky', '그루비-펑키', '펑키하고 그루비한', '춤추기 좋은', '댄서블'],
+  'aggressive-heavy': ['heavy-aggressive', 'aggressive-intense', '강하고 공격적인'],
+  'massive-heavy': ['heavy-massive', 'massive-powerful', '무겁고 압도적인'],
+  'slow-calm': ['calm-slow', 'slow-mellow', '느리고 잔잔한'],
+  'melancholic-lonely': ['lonely-melancholic', 'sad-lonely', '쓸쓸하고 우울한'],
+  'dark-gloomy': ['gloomy-dark', 'dark-ominous', '음울하고 어두운'],
+  'warm-comforting': ['comforting-warm', 'warm-gentle', '편안하고 따뜻한'],
+  'romantic-emotional': ['emotional-romantic', 'emotional-melodic', '감성적이고 낭만적인'],
+  'youth-rebellious': ['rebellious-youthful', 'youthful-rebellious', '젊고 반항적인'],
+  'hopeful-uplifting': ['uplifting-hopeful', 'positive-uplifting', '벅차고 희망적인'],
+  'dreamy-ethereal': ['ethereal-dreamy', 'dreamy-atmospheric', '몽환적이고 공간감 있는'],
+  'cold-urban': ['urban-cold', 'cold-modern', '도시적이고 차가운'],
+  'cosmic-psychedelic': ['psychedelic-cosmic', 'spacey-psychedelic', '환각적이고 우주적인'],
+  'noisy-wall': ['wall-of-sound', 'noise-wall', 'dense-noisy', '노이즈가 겹겹이 쌓인'],
+  'acoustic-organic': ['organic-acoustic', 'natural-acoustic', '자연스럽고 어쿠스틱한'],
+  'electronic-synth': ['synth-electronic', 'electronic-synthesizer', '신스와 전자음이 많은'],
+  'epic-cinematic': ['cinematic-epic', 'grand-cinematic', '영화적이고 웅장한'],
+  'technical-complex': ['complex-technical', 'technical-intricate', '테크니컬하고 복잡한'],
+  'experimental-weird': ['weird-experimental', 'experimental-unusual', '기묘하고 실험적인'],
+  'long-form-immersive': ['immersive-long-form', 'long-immersive', '긴 호흡에 몰입하는'],
+  'riff-solo-driven': ['guitar-driven', 'riff-driven', 'riff-and-solo', '리프와 솔로 중심'],
+  'anthemic-live': ['live-anthemic', 'arena-anthemic', 'singalong-live', '공연장 떼창형', '라이브 앤섬형'],
+}
+for (const [moodId, labels] of Object.entries(extraMoodAliases) as [MoodId, string[]][]) {
+  labels.forEach((label) => {
+    const key = normalizeTaxonomyLabel(label)
+    if (!moodAliasMap.has(key)) moodAliasMap.set(key, moodId)
+  })
+}
+const canonicalMoodKeys = new Set(taxonomyMoods.flatMap((mood) =>
+  [mood.id, mood.name].map((label) => normalizeTaxonomyLabel(label)),
+))
 
 const resolveGenreId = (value: unknown): GenreTaxonomyId | undefined => {
   const direct = genreAliasMap.get(normalizeTaxonomyLabel(value))
@@ -344,19 +382,47 @@ function unwrapBands(payload: unknown): unknown[] {
 export interface YoutubeCheckResult {
   ok: boolean
   title?: string
+  authorName?: string
+  reason?: 'format' | 'unavailable' | 'mismatch' | 'network'
   error?: string
 }
 
-/** Confirms a YouTube video actually exists and is embeddable, via the public oEmbed endpoint (no API key, CORS-open). */
-export async function checkYoutubeVideo(id: string): Promise<YoutubeCheckResult> {
-  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return { ok: false, error: '유효한 YouTube ID 형식이 아닙니다.' }
+const normalizeVideoMatchText = (value: string) => value
+  .toLocaleLowerCase()
+  .normalize('NFKD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9가-힣]+/g, '')
+
+const videoMatchesExpected = (actual: string, expected: string) => {
+  const actualKey = normalizeVideoMatchText(actual)
+  const expectedKey = normalizeVideoMatchText(expected)
+  return Boolean(expectedKey && actualKey.includes(expectedKey))
+}
+
+const youtubeSearchUrl = (bandName: string, trackTitle: string) =>
+  `https://www.youtube.com/results?search_query=${encodeURIComponent(`${bandName} ${trackTitle}`)}`
+
+/** Confirms a YouTube video exists and that its oEmbed title/author match the requested band and track. */
+export async function checkYoutubeVideo(id: string, expected?: { bandName: string; trackTitle: string }): Promise<YoutubeCheckResult> {
+  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return { ok: false, reason: 'format', error: '유효한 YouTube ID 형식이 아닙니다.' }
   try {
     const response = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}&format=json`)
-    if (!response.ok) return { ok: false, error: '영상을 찾을 수 없거나 재생이 제한되어 있습니다.' }
-    const data = (await response.json()) as { title?: unknown }
-    return { ok: true, title: typeof data.title === 'string' ? data.title : undefined }
+    if (!response.ok) return { ok: false, reason: 'unavailable', error: '영상을 찾을 수 없거나 공개 상태가 아닙니다.' }
+    const data = (await response.json()) as { title?: unknown; author_name?: unknown }
+    const title = typeof data.title === 'string' ? data.title : undefined
+    const authorName = typeof data.author_name === 'string' ? data.author_name : undefined
+    if (expected && (!title || !videoMatchesExpected(title, expected.trackTitle) || !videoMatchesExpected(`${title} ${authorName ?? ''}`, expected.bandName))) {
+      return {
+        ok: false,
+        reason: 'mismatch',
+        title,
+        authorName,
+        error: `영상 제목·채널이 "${expected.bandName} — ${expected.trackTitle}"과 일치하지 않습니다${title ? ` (확인된 제목: ${title})` : ''}.`,
+      }
+    }
+    return { ok: true, title, authorName }
   } catch {
-    return { ok: false, error: 'YouTube 확인 중 네트워크 오류가 발생했습니다.' }
+    return { ok: false, reason: 'network', error: 'YouTube 확인 중 네트워크 오류가 발생했습니다.' }
   }
 }
 
@@ -457,7 +523,7 @@ export function extractJson(textValue: string): unknown {
 /** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'reviewed'. */
 const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
-  'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable',
+  'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable', 'youtube-fallback',
   'english-tags', 'english-roles',
 ])
 
@@ -505,9 +571,16 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     const invalidSubgenres = stringList(originalTaxonomy.subgenreIds ?? originalTaxonomy.subgenres ?? original.subgenreIds ?? original.subgenres).filter((value) => !resolveSubgenreId(value))
     const originalMoods = isRecord(originalTaxonomy.moodScores) ? originalTaxonomy.moodScores : isRecord(originalTaxonomy.moods) ? originalTaxonomy.moods : isRecord(original.moodScores) ? original.moodScores : isRecord(original.moods) ? original.moods : {}
     const invalidMoods = Object.entries(originalMoods).filter(([label, value]) => !resolveMoodId(label) || !Number.isInteger(number(value)) || number(value) < 1 || number(value) > 5).map(([id]) => id)
+    const remappedMoods = Object.keys(originalMoods).flatMap((label) => {
+      const moodId = resolveMoodId(label)
+      return moodId && !canonicalMoodKeys.has(normalizeTaxonomyLabel(label))
+        ? [`${label} → ${moodId} (${taxonomyMoods.find((mood) => mood.id === moodId)?.name})`]
+        : []
+    })
     if (invalidSecondary.length) issues.push({ severity: 'warning', code: 'invalid-secondary-genres', message: `허용되지 않는 보조 장르를 자동 제외했습니다: ${invalidSecondary.join(', ')}` })
     if (invalidSubgenres.length) issues.push({ severity: 'warning', code: 'invalid-subgenres', message: `허용되지 않는 세부 장르를 자동 제외했습니다: ${invalidSubgenres.join(', ')}` })
     if (invalidMoods.length) issues.push({ severity: 'warning', code: 'invalid-moods', message: `허용되지 않는 분위기 ID 또는 점수를 자동 제외했습니다: ${invalidMoods.join(', ')}` })
+    if (remappedMoods.length) issues.push({ severity: 'info', code: 'remapped-moods', message: `같은 뜻의 분위기 표현을 정식 항목으로 바꿨습니다: ${remappedMoods.join(', ')}` })
     const removedRelations = band.relations.filter((relation) => !knownIds.has(relation.targetBandId) || relation.targetBandId === band.id)
     if (removedRelations.length) {
       band.relations = band.relations.filter((relation) => knownIds.has(relation.targetBandId) && relation.targetBandId !== band.id)
@@ -544,12 +617,30 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
   const band = candidate.band
 
   await Promise.all(band.tracks.map(async (track, index) => {
-    const check = await checkYoutubeVideo(track.youtubeId)
+    const check = await checkYoutubeVideo(track.youtubeId, { bandName: band.name, trackTitle: track.title })
     if (!check.ok) {
-      candidate.issues.push({ severity: 'warning', code: 'youtube-unreachable', message: `${track.title || `트랙 ${index + 1}`}: YouTube 확인 실패 — ${check.error} (밴드는 추가되지만 이 곡은 검수 완료로 자동 승격되지 않습니다. Studio에서 링크를 직접 확인해주세요.)` })
+      if (check.reason === 'network') {
+        candidate.issues.push({ severity: 'warning', code: 'youtube-unreachable', message: `${track.title || `트랙 ${index + 1}`}: ${check.error} 원래 링크를 보존했으며 나중에 다시 검사해야 합니다.` })
+      } else {
+        band.tracks[index] = {
+          ...track,
+          youtubeId: '',
+          source: {
+            ...track.source,
+            label: `${band.name} — ${track.title} YouTube 검색`,
+            url: youtubeSearchUrl(band.name, track.title),
+            official: false,
+            note: '직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다.',
+          },
+          reviewStatus: 'draft',
+          reviewedBy: undefined,
+          reviewedAt: undefined,
+        }
+        candidate.issues.push({ severity: 'warning', code: 'youtube-fallback', message: `${track.title || `트랙 ${index + 1}`}: ${check.error} 깨진 직접 링크 대신 정확한 밴드명·곡명의 YouTube 검색 링크로 바꿨습니다.` })
+      }
     } else {
       band.tracks[index] = { ...track, reviewStatus: 'reviewed', reviewedBy: '자동 검수 (AI)', reviewedAt: new Date().toISOString() }
-      candidate.issues.push({ severity: 'info', code: 'youtube-verified', message: `${track.title}: YouTube 영상 확인 완료${check.title ? ` (${check.title})` : ''}` })
+      candidate.issues.push({ severity: 'info', code: 'youtube-verified', message: `${track.title}: YouTube 영상·곡명·아티스트 확인 완료${check.title ? ` (${check.title})` : ''}` })
     }
   }))
 
@@ -602,6 +693,6 @@ export function finalizeIntakeBand(band: Band): Band {
 
 export function buildGeminiResearchPrompt() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
-  const moodIdsText = taxonomyMoods.map((mood) => mood.id).join(', ')
-  return `너는 ROCK ATLAS용 밴드 조사 JSON 생성기다. 사용자가 채팅에 밴드 이름만 입력하면 웹에서 사실을 확인하고 JSON만 출력한다. 설명, 인사, 마크다운(링크 표기 포함), 코드펜스는 금지하고 URL은 항상 순수 주소만 쓴다. 모르는 사실·ID·링크는 만들지 말고 빈 값으로 둔다.\n\nJSON의 모든 텍스트 값(소개·음악 설명·태그·멤버 역할·관계 근거·감상 안내 등)은 고유명사(밴드명·인명·앨범명·URL)를 제외하고 전부 한국어로 쓴다. 영어 밴드·장르 용어도 통용되는 한국어 표현으로 옮긴다(예: "Heavy Metal"이 아니라 "헤비메탈", "Lead Vocals"가 아니라 "리드 보컬", "Guitar"가 아니라 "기타"). 절대 영어 단어를 그대로 남기지 않는다.\n\n문장형 텍스트(summary·style·guide·note)는 항상 "~이다", "~다", "~밴드", "~트랙"처럼 명사형·평서형으로 끝나는 서술체로 쓴다. "~습니다", "~해요", "~됩니다" 같은 존댓말/구어체 종결은 절대 쓰지 않는다. 예: "그래미 어워드를 수상했다", "폭발적인 후렴구가 인상적인 곡이다" (○) / "수상했습니다", "인상적인 곡입니다" (×).\n\n항상 이 형식으로 출력:\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장(평서체)","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장(평서체)","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["정말 가까운 장르 ID만"],"subgenres":["한국어 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할(예: 리드 보컬·기타·베이스·드럼·키보드·백보컬)","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장(평서체)","url":"https://www.youtube.com/watch?v=..."}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"근거를 설명하는 한국어 한 문장(평서체)"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"https://www.youtube.com/@공식채널 형태의 실제 채널 주소","image":{"commonsFile":"Wikimedia Commons의 실제 File: 파일명 (예: Dream_Theater_live_2019.jpg), 확실하지 않으면 빈 값"}}]}\n\n규칙: 대표곡은 2곡만, 직접 열리는 YouTube watch 링크만 쓴다(watch?v= 뒤 11자리 ID가 실제 존재하는 영상이어야 한다). 멤버는 핵심 현재·전 멤버만 쓴다. 관계는 확실한 것 최대 3개만 쓴다. 분위기는 실제 대표곡을 기준으로 확실한 3~6개만 1~5점으로 쓴다. commonsFile은 Wikimedia Commons에 실제로 존재하는 파일명만 쓰고, 확실하지 않으면 빈 문자열로 둔다. 이미지 후보가 여러 개면 다음 우선순위로 고른다: 1) 현재 멤버 전원(또는 대부분)의 얼굴을 알아볼 수 있는 선명한 그룹 사진, 2) 그런 사진이 없으면 화질이 좋고 멤버 전원이 함께 나온 라이브 공연 사진. 멤버 일부만 나오거나 흐릿하거나 저해상도인 사진, 앨범 커버·로고·팬아트는 고르지 않는다. genre와 subgenres는 반드시 아래 장르 ID 목록 중에서 고르거나, 목록에 없으면 가장 가까운 세부 장르명을 쓴다(장르 ID 목록에 없는 임의의 영어 장르명을 만들어 쓰지 않는다). 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID: ${moodIdsText}`
+  const moodIdsText = taxonomyMoods.map((mood) => `${mood.id}=${mood.name}`).join(', ')
+  return `ROCK ATLAS GEM 지침 v3. 사용자가 밴드 이름만 입력하면 웹에서 사실을 확인하고 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지하며 모르는 사실·ID·링크는 추측하지 말고 빈 값으로 둔다.\n\n고유명사와 URL을 제외한 설명·태그·멤버 역할·관계 근거는 한국어 평서체(~다/~이다)로 쓴다. 영어 역할은 리드 보컬·기타·베이스·드럼·키보드·백보컬처럼 번역한다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장","url":"실제로 직접 연 YouTube watch URL, 확인 못 하면 빈 문자열"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"관계 근거 한국어 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"실제로 연 공식 채널 URL","image":{"commonsFile":"실제로 연 Wikimedia Commons File: 파일명, 확인 못 하면 빈 문자열"}}]}\n\n대표곡은 2곡, 핵심 현재·전 멤버만, 관계는 확실한 것 최대 3개만 쓴다. YouTube URL은 검색 결과 주소를 복사하지 말고 실제 영상을 연 뒤 곡명과 아티스트가 모두 맞는지 확인한다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 글자 하나도 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
 }
