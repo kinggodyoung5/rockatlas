@@ -8,7 +8,8 @@ import { JourneyBar } from './components/JourneyBar'
 import { MoodFinderPage } from './components/MoodFinderPage'
 import { SharePanel } from './components/SharePanel'
 import { bandById, publicBandById, publicBands as bands } from './data/bands'
-import { siteContent } from './data/siteContent'
+import { siteContent as staticSiteContent } from './data/siteContent'
+import type { SiteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
 import { defaultRoute, parseExplorerRoute, routeToSearch, type ExplorerRoute } from './lib/explorerRoute'
 import { useExplorerState } from './hooks/useExplorerState'
@@ -41,6 +42,19 @@ function ExplorerApp() {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const { favoriteIds, historyIds, toggleFavorite, recordVisit, clearHistory } = useExplorerState()
+  const isLivePreview = new URLSearchParams(window.location.search).get('livePreview') === '1'
+  const [previewOverride, setPreviewOverride] = useState<SiteContent | null>(null)
+  const siteContent = previewOverride ?? staticSiteContent
+
+  useEffect(() => {
+    if (!isLivePreview) return
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'rockatlas-preview' && event.data.siteContent) setPreviewOverride(event.data.siteContent as SiteContent)
+    }
+    window.addEventListener('message', handleMessage)
+    window.parent.postMessage({ type: 'rockatlas-preview-ready' }, '*')
+    return () => window.removeEventListener('message', handleMessage)
+  }, [isLivePreview])
 
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
@@ -100,6 +114,10 @@ function ExplorerApp() {
   }, [])
 
   const goHome = useCallback(() => updateRoute(defaultRoute()), [updateRoute])
+  const scrollToGenres = useCallback((event: React.MouseEvent) => {
+    event.preventDefault()
+    document.getElementById('genres')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [])
   const goGenre = useCallback((genreId: GenreTaxonomyId) => updateRoute({ ...defaultRoute(), view: 'genre', genreId }), [updateRoute])
   const goBands = useCallback(() => updateRoute({ ...defaultRoute(), view: 'bands' }), [updateRoute])
   const goMoods = useCallback(() => updateRoute({ ...defaultRoute(), view: 'moods' }), [updateRoute])
@@ -170,7 +188,7 @@ function ExplorerApp() {
   const homeMain = (
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
-        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres">장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => setShareOpen(true)}><Share2 size={16} /> 지도 공유하기</button></div></div>
+        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres" onClick={scrollToGenres}>장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => setShareOpen(true)}><Share2 size={16} /> 지도 공유하기</button></div></div>
         {siteContent.theme.cosmicMode !== 'off' && siteContent.theme.heroArtMode !== 'image' && <div className="cosmic-navigation-graphic" aria-hidden="true"><span className="cosmic-sun">RA</span><i className="orbit orbit-one"><b /></i><i className="orbit orbit-two"><b /></i><i className="orbit orbit-three"><b /></i><em>ROCK / DEEP SPACE / 13 SYSTEMS</em></div>}
         <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">{siteContent.theme.heroArtMode === 'vinyl' && <><div className="vinyl-ring ring-one" /><div className="vinyl-ring ring-two" /><div className="vinyl-ring ring-three" /></>}{siteContent.theme.heroArtMode === 'image' && siteContent.theme.heroImageUrl && <img className="hero-custom-image" src={siteContent.theme.heroImageUrl} alt="" loading="eager" decoding="async" fetchPriority="high" style={{ objectPosition: siteContent.theme.heroImagePosition }} />}<div className="hero-stamp"><span>{bands.length}</span>CURATED<br />BANDS</div><div className="hero-label">PLAY LOUD<br />EXPLORE DEEP</div></div>
         <div className="hero-index" aria-hidden="true">VOL. 01 / 2026</div>
@@ -192,13 +210,16 @@ function ExplorerApp() {
         : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} sectionLabel={siteContent.moodSectionLabel} sectionTitle={siteContent.moodSectionTitle} sectionDescription={siteContent.moodSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
+  const wordmarkText = (label: string, tagline: string, suffix?: string) => siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl
+    ? <span><span className="wordmark-image-row"><img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt={label} />{suffix && <i className="wordmark-by">{suffix}</i>}</span><small>{tagline}</small></span>
+    : <span><strong>{label} {suffix && <i className="wordmark-by">{suffix}</i>}</strong><small>{tagline}</small></span>
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl ? <img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt="ROCK ATLAS" /> : <span><strong>ROCK ATLAS <i className="wordmark-by">{siteContent.brandSuffix}</i></strong><small>{siteContent.headerTagline}</small></span>}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{isLocal && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{isLocal && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {isLocal && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
-      <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl ? <img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt="ROCK ATLAS" /> : <span><strong>ROCK ATLAS</strong><small>{siteContent.footerTagline}</small></span>}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
+      <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
       <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description={siteContent.heroTitle} onClose={() => setShareOpen(false)} />
     </div>
   )

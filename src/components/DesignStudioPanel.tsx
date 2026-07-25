@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Save, Smartphone, Sparkles } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
 
@@ -41,6 +41,16 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const genreUploadTarget = useRef<TaxonomyGenre['id'] | null>(null)
   const explorerUploadRef = useRef<HTMLInputElement>(null)
   const explorerUploadTarget = useRef<ExplorerVisualKey | null>(null)
+  const previewIframeRef = useRef<HTMLIFrameElement>(null)
+  const previewValueRef = useRef(value)
+  previewValueRef.current = value
+  const sendPreviewState = () => previewIframeRef.current?.contentWindow?.postMessage({ type: 'rockatlas-preview', siteContent: previewValueRef.current }, '*')
+  useEffect(() => { sendPreviewState() }, [value])
+  useEffect(() => {
+    const handleReady = (event: MessageEvent) => { if (event.data?.type === 'rockatlas-preview-ready') sendPreviewState() }
+    window.addEventListener('message', handleReady)
+    return () => window.removeEventListener('message', handleReady)
+  }, [])
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
   const updateGenreVisual = (id: TaxonomyGenre['id'], patch: Partial<SiteContent['genreVisuals'][TaxonomyGenre['id']]>) => {
     onChange({ genreVisuals: { ...value.genreVisuals, [id]: { ...value.genreVisuals[id], ...patch } } })
@@ -195,7 +205,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
           <p className="studio-page-group-heading">🏠 홈 화면</p>
           <details><summary>첫 화면·장르 구역 문구</summary><div className="studio-form-grid">
-            <label>중앙 제목<input value={value.heroTitle} onChange={(event) => onChange({ heroTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">중앙 제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.heroTitle} onChange={(event) => onChange({ heroTitle: event.target.value })} rows={3} /></label>
             <label className="studio-grid-span">부가설명 <small>비우면 숨깁니다.</small><textarea value={value.heroDescription} onChange={(event) => onChange({ heroDescription: event.target.value })} rows={3} /></label>
             <label>장르 구역 표기<input value={value.genreSectionLabel} onChange={(event) => onChange({ genreSectionLabel: event.target.value })} /></label>
             <label>장르 구역 제목<input value={value.genreSectionTitle} onChange={(event) => onChange({ genreSectionTitle: event.target.value })} /></label>
@@ -250,13 +260,10 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
           </div></details>
         </div>
 
-        <div className={`studio-live-preview is-${previewMode}`} style={{ '--preview-bg': value.theme.backgroundColor, '--preview-paper': value.theme.surfaceColor, '--preview-accent': value.theme.accentColor } as React.CSSProperties}>
-          {value.theme.customFontUrl && <style>{`@font-face{font-family:RockAtlasCustom;src:url("${value.theme.customFontUrl}") format("${value.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}`}</style>}
-          <div className="studio-preview-toolbar"><span>실시간 미리보기</span><button className={previewMode === 'desktop' ? 'is-active' : ''} onClick={() => setPreviewMode('desktop')} aria-label="PC 미리보기"><Monitor size={14} /></button><button className={previewMode === 'mobile' ? 'is-active' : ''} onClick={() => setPreviewMode('mobile')} aria-label="모바일 미리보기"><Smartphone size={14} /></button></div>
-          <div className={`studio-preview-canvas font-${value.theme.fontPreset} cosmic-${value.theme.cosmicMode}`} style={{ fontSize: `${value.theme.baseFontScale}em`, fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'heading' ? 'RockAtlasCustom' : undefined, fontWeight: value.theme.bodyWeight, fontStyle: value.theme.bodyItalic ? 'italic' : 'normal', '--preview-cosmic': value.theme.cosmicColor, '--preview-nebula': value.theme.nebulaIntensity, '--preview-stars': `${150 - value.theme.starDensity * 18}px` } as React.CSSProperties}>
-            <header><strong>ROCK ATLAS <i>{value.brandSuffix}</i></strong><small>GENRE · BANDS · STUDIO</small></header>
-            <main><span>WESTERN ROCK DISCOVERY ARCHIVE</span><h4 style={{ fontWeight: value.theme.headingWeight, fontStyle: value.theme.headingItalic ? 'italic' : 'normal', fontFamily: value.theme.customFontUrl && value.theme.customFontTarget !== 'body' ? 'RockAtlasCustom' : undefined }}>{value.heroTitle}</h4>{value.heroDescription && <p>{value.heroDescription}</p>}<button>장르부터 탐색</button><div className={`preview-art mode-${value.theme.heroArtMode}`} style={value.theme.heroArtMode === 'image' ? { backgroundImage: `url(${value.theme.heroImageUrl})`, backgroundPosition: value.theme.heroImagePosition } : undefined} /></main>
-            {value.sectionVisibility.genres && <footer><small>{value.genreSectionLabel}</small><strong>{value.genreSectionTitle}</strong><p>{value.genreSectionDescription}</p></footer>}
+        <div className={`studio-live-preview-frame is-${previewMode}`}>
+          <div className="studio-preview-toolbar"><span>실시간 미리보기 · 실제 화면과 동일합니다</span><button className={previewMode === 'desktop' ? 'is-active' : ''} onClick={() => setPreviewMode('desktop')} aria-label="PC 미리보기"><Monitor size={14} /></button><button className={previewMode === 'mobile' ? 'is-active' : ''} onClick={() => setPreviewMode('mobile')} aria-label="모바일 미리보기"><Smartphone size={14} /></button></div>
+          <div className="studio-live-preview-viewport">
+            <iframe ref={previewIframeRef} className="studio-live-preview-iframe" src="./?livePreview=1" title="실시간 미리보기" onLoad={sendPreviewState} />
           </div>
         </div>
       </div>
