@@ -27,6 +27,10 @@ export interface SiteContent {
   allBandsSectionLabel: string
   allBandsSectionTitle: string
   allBandsSectionDescription: string
+  headerTagline: string
+  footerTagline: string
+  footerDescription: string
+  footerLocation: string
   theme: {
     fontPreset: 'modern' | 'classic' | 'editorial' | 'impact'
     customFontName: string
@@ -60,6 +64,10 @@ export interface SiteContent {
     genreCardStyle: 'record' | 'minimal'
     genreCardColumns: 3 | 4
     genreCardGap: number
+    manifestoBackgroundMode: 'accent' | 'image'
+    manifestoImageUrl: string
+    manifestoImagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    manifestoOverlayOpacity: number
   }
   genreVisuals: Record<GenreTaxonomyId, GenreVisualSettings>
   explorerVisuals: {
@@ -70,6 +78,6 @@ export interface SiteContent {
   sectionOrder: SiteSectionId[]
 }
 
-export type SiteSectionId = 'genres' | 'bands' | 'manifesto'
+export type SiteSectionId = 'genres' | 'manifesto'
 
 export const siteContent = content as SiteContent

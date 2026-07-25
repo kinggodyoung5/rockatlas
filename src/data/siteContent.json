@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-25T03:33:46.817Z",
+  "updatedAt": "2026-07-25T05:48:13.680Z",
   "brandSuffix": "by kinggodyoung",
   "heroTitle": "락의 세계를 여행하는 히치하이커를 위한 안내서",
   "heroDescription": "",
@@ -16,6 +16,10 @@
   "allBandsSectionLabel": "THE COMPLETE INDEX",
   "allBandsSectionTitle": "모든 밴드 보기",
   "allBandsSectionDescription": "이름, 시대, 국가와 장르로 좁혀보세요.",
+  "headerTagline": "AMPLIFY YOUR TASTE",
+  "footerTagline": "BETA ARCHIVE",
+  "footerDescription": "각 밴드는 대표 장르 한 곳에 배치되고 세부 장르와 분위기로 다시 이어집니다.",
+  "footerLocation": "SEOUL / 2026",
   "theme": {
     "fontPreset": "editorial",
     "customFontName": "",
@@ -29,7 +33,7 @@
     "headingItalic": false,
     "backgroundColor": "#0b0b0d",
     "surfaceColor": "#efeee9",
-    "accentColor": "#e86335",
+    "accentColor": "#ea744d",
     "mutedColor": "#98979a",
     "heroArtMode": "image",
     "heroImageUrl": "./assets/hero/rock-galaxy-v3.jpg",
@@ -48,7 +52,11 @@
     "cosmicBackgroundOpacity": 0.22,
     "genreCardStyle": "record",
     "genreCardColumns": 3,
-    "genreCardGap": 24
+    "genreCardGap": 24,
+    "manifestoBackgroundMode": "accent",
+    "manifestoImageUrl": "",
+    "manifestoImagePosition": "center",
+    "manifestoOverlayOpacity": 0.55
   },
   "genreVisuals": {
     "classic-roots-rock": {
@@ -161,12 +169,10 @@
   },
   "sectionVisibility": {
     "genres": true,
-    "bands": true,
     "manifesto": true
   },
   "sectionOrder": [
     "genres",
-    "manifesto",
-    "bands"
+    "manifesto"
   ]
 }

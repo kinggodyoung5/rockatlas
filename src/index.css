@@ -210,8 +210,10 @@ img { display: block; max-width: 100%; }
 .mood-match strong { color: var(--orange); font-size: 13px; }
 .mood-match span { color: #929095; font-size: 12px; }
 
-.manifesto { background: var(--orange); color: white; }
-.manifesto-inner { min-height: 480px; display: grid; align-content: center; position: relative; }
+.manifesto { background: var(--orange); color: white; position: relative; overflow: hidden; }
+.manifesto-bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.manifesto-bg-overlay { position: absolute; inset: 0; background: #000; z-index: 1; }
+.manifesto-inner { min-height: 480px; display: grid; align-content: center; position: relative; z-index: 2; }
 .manifesto-inner > span { font: 800 12px/1 Arial; letter-spacing: .17em; }
 .manifesto h2 { margin: 25px 0 42px; font: 800 clamp(40px, 5.2vw, 76px)/1.03 Arial; letter-spacing: -.06em; }
 .manifesto h2 em { font-family: Georgia, serif; font-weight: 400; }
@@ -711,6 +713,8 @@ img { display: block; max-width: 100%; }
 .design-studio-v2 { scroll-margin-top: 150px; }
 .studio-design-columns { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); gap: 18px; }
 .studio-design-controls { display: grid; gap: 8px; }
+.studio-page-group-heading { margin: 18px 0 2px; padding: 0 2px; font-size: 11px; font-weight: 900; letter-spacing: .08em; color: var(--orange); text-transform: uppercase; }
+.studio-page-group-heading:first-child { margin-top: 0; }
 .studio-design-controls > details, .studio-genre-editor, .studio-manager-grid > details { border: 1px solid #29282d; background: #0d0d0f; }
 .studio-design-controls summary, .studio-genre-editor > summary, .studio-manager-grid > details > summary { display: flex; align-items: center; gap: 7px; padding: 13px 15px; color: #aaa8aa; cursor: pointer; font-size: 10px; font-weight: 900; list-style: none; }
 .studio-design-controls summary::-webkit-details-marker, .studio-genre-editor summary::-webkit-details-marker, .studio-manager-grid summary::-webkit-details-marker { display: none; }

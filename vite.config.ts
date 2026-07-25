@@ -358,6 +358,7 @@ function studioApi(): Plugin {
             'manifestoLabel', 'manifestoTitle', 'manifestoButtonLabel',
             'moodSectionLabel', 'moodSectionTitle', 'moodSectionDescription',
             'allBandsSectionLabel', 'allBandsSectionTitle', 'allBandsSectionDescription',
+            'headerTagline', 'footerTagline', 'footerDescription', 'footerLocation',
           ]
           if (![1, 2].includes(Number(payload.schemaVersion)) || requiredStrings.some((key) => typeof payload[key] !== 'string')) throw new Error('지원하지 않는 사이트 설정 형식입니다.')
           if (!(payload.heroTitle as string).trim() || !(payload.genreSectionTitle as string).trim()) throw new Error('메인·장르 제목은 비워 둘 수 없습니다.')

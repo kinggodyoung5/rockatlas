@@ -18,7 +18,7 @@ interface DesignStudioPanelProps {
   onSaveGenres: () => Promise<void>
 }
 
-const sectionNames: Record<SiteSectionId, string> = { genres: '장르 탐색', bands: '밴드 목록', manifesto: '마무리 선언' }
+const sectionNames: Record<SiteSectionId, string> = { genres: '장르 탐색', manifesto: '마무리 선언' }
 const moodGroupNames: Record<MoodGroupId, string> = { energy: '에너지와 속도', emotion: '감정과 정서', texture: '공간감과 음색', listening: '구성과 감상 방식' }
 type ExplorerVisualKey = keyof SiteContent['explorerVisuals']
 
@@ -36,6 +36,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const logoUploadRef = useRef<HTMLInputElement>(null)
   const wordmarkUploadRef = useRef<HTMLInputElement>(null)
   const cosmicUploadRef = useRef<HTMLInputElement>(null)
+  const manifestoUploadRef = useRef<HTMLInputElement>(null)
   const genreUploadRef = useRef<HTMLInputElement>(null)
   const genreUploadTarget = useRef<TaxonomyGenre['id'] | null>(null)
   const explorerUploadRef = useRef<HTMLInputElement>(null)
@@ -93,6 +94,10 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     const url = await uploadImage(file, 'cosmic')
     changeTheme({ cosmicBackgroundUrl: url, cosmicMode: value.theme.cosmicMode === 'off' ? 'subtle' : value.theme.cosmicMode })
   }
+  const uploadManifestoBackground = async (file: File) => {
+    const url = await uploadImage(file, 'cosmic', 'manifesto')
+    changeTheme({ manifestoImageUrl: url, manifestoBackgroundMode: 'image' })
+  }
   const uploadGenreArt = async (file: File, id: TaxonomyGenre['id']) => {
     const url = await uploadImage(file, 'genre', id)
     updateGenreVisual(id, { imageUrl: url, artMode: 'image' })
@@ -130,23 +135,13 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
   return (
     <section id="design" className="studio-site-settings design-studio-v2">
-      <div className="studio-section-heading"><span>UI</span><div><h3>사이트 디자인</h3><p>공개 화면의 문구, 폰트, 색상, 우주 배경과 장르 카드 삽화를 관리합니다. 밴드 데이터는 데이터 작업실에서 편집합니다.</p></div></div>
+      <div className="studio-section-heading"><span>UI</span><div><h3>사이트 디자인</h3><p>페이지별로 나눠서 편집합니다. 전체 공통 설정(로고·폰트·색상·우주 배경)은 모든 페이지에 적용되고, 그 아래는 홈 → 마무리 선언 → 느낌으로 찾기 → 모든 밴드 순서로 각 페이지의 문구·그림만 모여 있습니다.</p></div></div>
 
       <div className="studio-design-columns">
         <div className="studio-design-controls">
-          <details open><summary>브랜드와 첫 화면 문구</summary><div className="studio-form-grid">
+          <p className="studio-page-group-heading">🌐 전체 공통 — 모든 페이지에 적용</p>
+          <details><summary>왼쪽 위 로고·워드마크, ROCK ATLAS 뒤 문구</summary><div className="studio-form-grid">
             <label>ROCK ATLAS 뒤 문구<input value={value.brandSuffix} onChange={(event) => onChange({ brandSuffix: event.target.value })} /></label>
-            <label>중앙 제목<input value={value.heroTitle} onChange={(event) => onChange({ heroTitle: event.target.value })} /></label>
-            <label className="studio-grid-span">부가설명 <small>비우면 숨깁니다.</small><textarea value={value.heroDescription} onChange={(event) => onChange({ heroDescription: event.target.value })} rows={3} /></label>
-            <label>장르 구역 표기<input value={value.genreSectionLabel} onChange={(event) => onChange({ genreSectionLabel: event.target.value })} /></label>
-            <label>장르 구역 제목<input value={value.genreSectionTitle} onChange={(event) => onChange({ genreSectionTitle: event.target.value })} /></label>
-            <label className="studio-grid-span">장르 구역 설명<textarea value={value.genreSectionDescription} onChange={(event) => onChange({ genreSectionDescription: event.target.value })} rows={3} /></label>
-            <label>마무리 선언 표기<input value={value.manifestoLabel} onChange={(event) => onChange({ manifestoLabel: event.target.value })} /></label>
-            <label>마무리 선언 버튼 문구<input value={value.manifestoButtonLabel} onChange={(event) => onChange({ manifestoButtonLabel: event.target.value })} /></label>
-            <label className="studio-grid-span">마무리 선언 제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.manifestoTitle} onChange={(event) => onChange({ manifestoTitle: event.target.value })} rows={3} /></label>
-          </div></details>
-
-          <details><summary>왼쪽 위 로고와 워드마크</summary><div className="studio-form-grid">
             <label>로고 표시 방식<select value={value.theme.logoMode} onChange={(event) => changeTheme({ logoMode: event.target.value as SiteContent['theme']['logoMode'] })}><option value="mark">기본 RA 마크</option><option value="image">업로드 이미지</option></select></label>
             <label className="studio-grid-span">로고 이미지 URL<input value={value.theme.logoImageUrl} onChange={(event) => changeTheme({ logoImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
             <button className="studio-upload-button studio-grid-span" onClick={() => logoUploadRef.current?.click()}><ImagePlus size={15} /> 로고 이미지 업로드 (정사각형 권장)</button>
@@ -156,15 +151,14 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label className="studio-grid-span">문구 이미지 URL<input value={value.theme.wordmarkImageUrl} onChange={(event) => changeTheme({ wordmarkImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
             <button className="studio-upload-button studio-grid-span" onClick={() => wordmarkUploadRef.current?.click()}><ImagePlus size={15} /> 문구 이미지 업로드 (가로형 권장)</button>
             <input ref={wordmarkUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadWordmark(event.target.files[0])} />
+            <p className="studio-upload-note studio-grid-span">헤더 로고·워드마크를 바꾸면 페이지 맨 아래 푸터도 같은 설정을 그대로 따라갑니다.</p>
           </div></details>
 
-          <details><summary>느낌으로 찾기 · 모든 밴드 페이지 문구</summary><div className="studio-form-grid">
-            <label>느낌으로 찾기 구역 표기<input value={value.moodSectionLabel} onChange={(event) => onChange({ moodSectionLabel: event.target.value })} /></label>
-            <label>느낌으로 찾기 제목<input value={value.moodSectionTitle} onChange={(event) => onChange({ moodSectionTitle: event.target.value })} /></label>
-            <label className="studio-grid-span">느낌으로 찾기 설명<textarea value={value.moodSectionDescription} onChange={(event) => onChange({ moodSectionDescription: event.target.value })} rows={2} /></label>
-            <label>모든 밴드 구역 표기<input value={value.allBandsSectionLabel} onChange={(event) => onChange({ allBandsSectionLabel: event.target.value })} /></label>
-            <label>모든 밴드 제목<input value={value.allBandsSectionTitle} onChange={(event) => onChange({ allBandsSectionTitle: event.target.value })} /></label>
-            <label className="studio-grid-span">모든 밴드 설명 <small>실제 밴드 수 뒤에 "N개의 출발점을 (이 설명)" 형태로 이어서 표시됩니다.</small><textarea value={value.allBandsSectionDescription} onChange={(event) => onChange({ allBandsSectionDescription: event.target.value })} rows={2} /></label>
+          <details><summary>헤더·푸터 문구</summary><div className="studio-form-grid">
+            <label>헤더 워드마크 아래 태그라인<input value={value.headerTagline} onChange={(event) => onChange({ headerTagline: event.target.value })} placeholder="AMPLIFY YOUR TASTE" /></label>
+            <label>푸터 태그라인<input value={value.footerTagline} onChange={(event) => onChange({ footerTagline: event.target.value })} placeholder="BETA ARCHIVE" /></label>
+            <label>푸터 위치·연도 표기<input value={value.footerLocation} onChange={(event) => onChange({ footerLocation: event.target.value })} placeholder="SEOUL / 2026" /></label>
+            <label className="studio-grid-span">푸터 설명 <small>"N개 밴드를 수록했습니다." 뒤에 이어서 표시됩니다.</small><textarea value={value.footerDescription} onChange={(event) => onChange({ footerDescription: event.target.value })} rows={2} /></label>
           </div></details>
 
           <details open><summary>폰트와 색상</summary><div className="studio-form-grid">
@@ -199,6 +193,15 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <p className="studio-upload-note studio-grid-span">배경 이미지는 선택 사항입니다. 업로드하지 않아도 가벼운 CSS 별과 궤도선이 표시됩니다. 움직임은 사용자의 모션 줄이기 설정에서 자동으로 꺼집니다.</p>
           </div></details>
 
+          <p className="studio-page-group-heading">🏠 홈 화면</p>
+          <details><summary>첫 화면·장르 구역 문구</summary><div className="studio-form-grid">
+            <label>중앙 제목<input value={value.heroTitle} onChange={(event) => onChange({ heroTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">부가설명 <small>비우면 숨깁니다.</small><textarea value={value.heroDescription} onChange={(event) => onChange({ heroDescription: event.target.value })} rows={3} /></label>
+            <label>장르 구역 표기<input value={value.genreSectionLabel} onChange={(event) => onChange({ genreSectionLabel: event.target.value })} /></label>
+            <label>장르 구역 제목<input value={value.genreSectionTitle} onChange={(event) => onChange({ genreSectionTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">장르 구역 설명<textarea value={value.genreSectionDescription} onChange={(event) => onChange({ genreSectionDescription: event.target.value })} rows={3} /></label>
+          </div></details>
+
           <details open><summary>장르 카드 배치</summary><div className="studio-form-grid">
             <label>카드 표현<select value={value.theme.genreCardStyle} onChange={(event) => changeTheme({ genreCardStyle: event.target.value as SiteContent['theme']['genreCardStyle'] })}><option value="record">이미지 위 글자 · 권장</option><option value="minimal">미니멀 · 삽화 약하게</option></select></label>
             <label>PC 열 수<select value={value.theme.genreCardColumns} onChange={(event) => changeTheme({ genreCardColumns: Number(event.target.value) as 3 | 4 })}><option value={3}>3열 · 권장</option><option value={4}>4열 · 더 촘촘하게</option></select></label>
@@ -213,8 +216,37 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <input ref={uploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadHero(event.target.files[0])} />
           </div></details>
 
-          <details><summary>섹션 표시와 순서</summary><div className="studio-section-order">
+          <details><summary>홈 화면 구역 표시와 순서</summary><div className="studio-section-order">
             {value.sectionOrder.map((id, index) => <div key={id}><label><input type="checkbox" checked={value.sectionVisibility[id]} onChange={(event) => onChange({ sectionVisibility: { ...value.sectionVisibility, [id]: event.target.checked } })} />{sectionNames[id]}</label><span><button onClick={() => moveSection(id, -1)} disabled={index === 0} aria-label={`${sectionNames[id]} 위로`}><ArrowUp size={13} /></button><button onClick={() => moveSection(id, 1)} disabled={index === value.sectionOrder.length - 1} aria-label={`${sectionNames[id]} 아래로`}><ArrowDown size={13} /></button></span></div>)}
+          </div></details>
+
+          <p className="studio-page-group-heading">📢 마무리 선언 페이지</p>
+          <details><summary>문구와 배경</summary><div className="studio-form-grid">
+            <label>표기<input value={value.manifestoLabel} onChange={(event) => onChange({ manifestoLabel: event.target.value })} /></label>
+            <label>버튼 문구<input value={value.manifestoButtonLabel} onChange={(event) => onChange({ manifestoButtonLabel: event.target.value })} /></label>
+            <label className="studio-grid-span">제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.manifestoTitle} onChange={(event) => onChange({ manifestoTitle: event.target.value })} rows={3} /></label>
+            <label>배경 표시 방식<select value={value.theme.manifestoBackgroundMode} onChange={(event) => changeTheme({ manifestoBackgroundMode: event.target.value as SiteContent['theme']['manifestoBackgroundMode'] })}><option value="accent">강조색 단색 · 기본</option><option value="image">업로드 이미지</option></select></label>
+            {value.theme.manifestoBackgroundMode === 'image' && <>
+              <label>이미지 위치<select value={value.theme.manifestoImagePosition} onChange={(event) => changeTheme({ manifestoImagePosition: event.target.value as SiteContent['theme']['manifestoImagePosition'] })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
+              <label className="studio-grid-span">이미지 URL<input value={value.theme.manifestoImageUrl} onChange={(event) => changeTheme({ manifestoImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+              <button className="studio-upload-button studio-grid-span" onClick={() => manifestoUploadRef.current?.click()}><ImagePlus size={15} /> 배경 이미지 업로드</button>
+              <input ref={manifestoUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadManifestoBackground(event.target.files[0])} />
+              <label className="studio-grid-span">어둡게 덮기 <small>{Math.round(value.theme.manifestoOverlayOpacity * 100)}% · 글자 가독성용</small><input type="range" min="0" max="0.85" step="0.05" value={value.theme.manifestoOverlayOpacity} onChange={(event) => changeTheme({ manifestoOverlayOpacity: Number(event.target.value) })} /></label>
+            </>}
+          </div></details>
+
+          <p className="studio-page-group-heading">🎧 느낌으로 찾기 페이지</p>
+          <details><summary>문구</summary><div className="studio-form-grid">
+            <label>구역 표기<input value={value.moodSectionLabel} onChange={(event) => onChange({ moodSectionLabel: event.target.value })} /></label>
+            <label>제목<input value={value.moodSectionTitle} onChange={(event) => onChange({ moodSectionTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">설명<textarea value={value.moodSectionDescription} onChange={(event) => onChange({ moodSectionDescription: event.target.value })} rows={2} /></label>
+          </div></details>
+
+          <p className="studio-page-group-heading">📀 모든 밴드 페이지</p>
+          <details><summary>문구</summary><div className="studio-form-grid">
+            <label>구역 표기<input value={value.allBandsSectionLabel} onChange={(event) => onChange({ allBandsSectionLabel: event.target.value })} /></label>
+            <label>제목<input value={value.allBandsSectionTitle} onChange={(event) => onChange({ allBandsSectionTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">설명 <small>실제 밴드 수 뒤에 "N개의 출발점을 (이 설명)" 형태로 이어서 표시됩니다.</small><textarea value={value.allBandsSectionDescription} onChange={(event) => onChange({ allBandsSectionDescription: event.target.value })} rows={2} /></label>
           </div></details>
         </div>
 
@@ -231,6 +263,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
       <div className="studio-site-actions"><span className={dirty ? 'is-dirty' : ''}>{message}</span><a href="./" target="_blank" rel="noreferrer"><ExternalLink size={14} /> 실제 화면</a><button onClick={() => void onSave()}><Save size={15} /> 디자인 저장</button></div>
 
+      <p className="studio-page-group-heading">🏠 홈 화면 — 13개 장르 카드</p>
       <details className="studio-genre-editor" open><summary>13개 장르 카드 문구와 삽화</summary><div className="studio-genre-editor-grid">
         {genres.map((genre, index) => {
           const visual = value.genreVisuals[genre.id]
@@ -260,13 +293,10 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
         event.target.value = ''
       }} />
 
-      <details className="studio-genre-editor"><summary>모든 밴드 · 느낌으로 찾기 카드 삽화</summary><div className="studio-genre-editor-grid">
-        {([
-          ['allBands', '모든 밴드 보기', '#7d72bf'],
-          ['moods', '느낌으로 찾기', '#e86335'],
-        ] as const).map(([id, label, color]) => {
+      {(() => {
+        const renderExplorerVisual = (id: ExplorerVisualKey, label: string, color: string) => {
           const visual = value.explorerVisuals[id]
-          return <details key={id} open><summary><span style={{ background: color }} />{label}</summary><div>
+          return <details key={id} open><summary><span style={{ background: color }} />{label} 히어로 삽화</summary><div>
             <label>삽화 표시<select value={visual.artMode} onChange={(event) => updateExplorerVisual(id, { artMode: event.target.value as typeof visual.artMode })}><option value="image">이미지 표시</option><option value="none">이미지 숨김</option></select></label>
             <label>삽화 위치<select value={visual.imagePosition} onChange={(event) => updateExplorerVisual(id, { imagePosition: event.target.value as typeof visual.imagePosition })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
             <label className="studio-grid-span">삽화 URL<input value={visual.imageUrl} onChange={(event) => updateExplorerVisual(id, { imageUrl: event.target.value })} /></label>
@@ -275,8 +305,19 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <button className="studio-upload-button studio-grid-span" onClick={() => pickExplorerArt(id)}><ImagePlus size={14} /> 이 탐색 카드의 삽화 교체</button>
             {visual.artMode === 'image' && visual.imageUrl && <div className="studio-genre-art-preview studio-grid-span" style={{ '--genre-preview-color': color } as React.CSSProperties}><img src={visual.imageUrl} alt="" style={{ objectPosition: visual.imagePosition, opacity: visual.imageOpacity, transform: `scale(${visual.imageScale})` }} /><strong>{label}</strong></div>}
           </div></details>
-        })}
-      </div></details>
+        }
+        return <>
+          <p className="studio-page-group-heading">📀 모든 밴드 페이지</p>
+          <details className="studio-genre-editor" open><summary>모든 밴드 페이지 삽화</summary><div className="studio-genre-editor-grid">
+            {renderExplorerVisual('allBands', '모든 밴드 보기', '#7d72bf')}
+          </div></details>
+
+          <p className="studio-page-group-heading">🎧 느낌으로 찾기 페이지 — 히어로 삽화·24개 분위기 카드</p>
+          <details className="studio-genre-editor" open><summary>느낌으로 찾기 페이지 삽화</summary><div className="studio-genre-editor-grid">
+            {renderExplorerVisual('moods', '느낌으로 찾기', '#e86335')}
+          </div></details>
+        </>
+      })()}
       <input ref={explorerUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => {
         const file = event.target.files?.[0]
         const id = explorerUploadTarget.current
