@@ -22,6 +22,7 @@
     "collect:review": "node --experimental-strip-types scripts/collect-review-candidates.ts",
     "validate:data": "node --experimental-strip-types scripts/validate-catalog.ts",
     "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
+    "validate:uploads": "node --experimental-strip-types scripts/validate-uploads.ts",
     "review": "node --experimental-strip-types scripts/review-report.ts",
     "review:strict": "node --experimental-strip-types scripts/review-report.ts --strict"
   },
