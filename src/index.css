@@ -669,25 +669,17 @@ img { display: block; max-width: 100%; }
 .discovery-card:hover .genre-arrow { color: white; background: var(--genre-color); transform: translateX(3px); }
 .genre-card-style-minimal .genre-card-art { opacity: .52; }
 .genre-card-style-minimal .discovery-card { min-height: 450px; box-shadow: none; }
-.explorer-card { display: block; min-height: 420px; padding: 28px; border-color: #565260; color: #f3f0ea; background: linear-gradient(145deg, #292633, #121117 74%); }
-.explorer-card > * { z-index: 2; }
-.explorer-card::after { background: radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--genre-color) 28%, transparent), transparent 42%); }
-.explorer-card::before { display: block; z-index: -1; height: 5px; }
-.explorer-card:hover::before { height: 100%; }
-.explorer-card:hover { color: white; background: #202126; }
-.explorer-card p,
-.explorer-card > strong,
+.explorer-card { min-height: 530px; color: #f3f0ea; background: #14131a; }
+.explorer-card::after {
+  background:
+    linear-gradient(180deg, rgba(7,7,11,.02) 0%, rgba(7,7,11,.07) 30%, rgba(8,7,12,.72) 53%, rgba(8,7,12,.96) 72%, #09080d 100%),
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--genre-color) 20%, transparent), transparent 42%);
+}
+.explorer-card .genre-card-copy h3 { margin: 0 0 10px; font-size: clamp(32px, 2.65vw, 40px); }
+.explorer-card .genre-card-copy p,
 .explorer-card .genre-count,
-.explorer-card .explorer-badge { color: rgba(255,255,255,.76); }
-.explorer-card:hover p,
-.explorer-card:hover > strong,
-.explorer-card:hover .genre-count,
-.explorer-card:hover .explorer-badge { color: rgba(255,255,255,.78); }
-.explorer-card h3 { margin-top: 22px; font-size: 34px; text-wrap: balance; }
-.explorer-card p { min-height: 0; font-size: 16px; line-height: 1.65; }
-.explorer-card .genre-arrow { position: absolute; right: 28px; bottom: 28px; opacity: 1; transform: none; }
-.mood-explorer-card { color: #f1efe9; background: #161619; border-color: #e86335; }
-.mood-explorer-card:hover { background: var(--orange); }
+.explorer-card .explorer-badge { color: rgba(255,255,255,.88); }
+.mood-explorer-card { border-color: #e86335; }
 
 .cosmic-subtle .catalog-page,
 .cosmic-deep .catalog-page,
@@ -991,7 +983,7 @@ img { display: block; max-width: 100%; }
   .hero-art { position: absolute; width: 430px; right: -190px; top: 110px; opacity: .28; }
   .hero-art.hero-art-image { inset: 0; width: 100%; height: 100%; transform: none; opacity: .58; }
   .hero-art-image::after { background: linear-gradient(180deg, rgba(11,11,13,.64) 0%, rgba(11,11,13,.42) 54%, rgba(11,11,13,.72) 100%); }
-  .hero-art-image .hero-custom-image { object-position: 44% center !important; }
+  .hero-art-image .hero-custom-image { object-position: 62% center !important; }
   .hero-stamp, .hero-label { display: none; }
   .hero-index { display: none; }
   .journey-bar { grid-template-columns: 1fr; gap: 16px; padding-block: 22px; }
@@ -1001,9 +993,26 @@ img { display: block; max-width: 100%; }
   .section-heading .section-no { display: block; margin-bottom: 28px; }
   .section-heading h2, .bands-toolbar h2 { font-size: 40px; }
   .genre-grid, .band-grid { grid-template-columns: 1fr; }
-  .discovery-grid { grid-template-columns: 1fr; }
-  .discovery-card { min-height: 520px; }
+  .discovery-grid { grid-template-columns: 1fr; gap: 14px; }
+  .discovery-card,
+  .explorer-card { min-height: 252px; }
   .discovery-card.has-art .genre-card-art { height: 100%; }
+  .discovery-card::after,
+  .explorer-card::after {
+    background:
+      linear-gradient(180deg, rgba(7,7,11,.05) 0%, rgba(7,7,11,.12) 31%, rgba(8,7,12,.78) 54%, rgba(8,7,12,.97) 76%, #09080d 100%),
+      linear-gradient(90deg, rgba(8,7,12,.18), transparent 58%);
+  }
+  .genre-card-top { top: 11px; left: 12px; right: 12px; }
+  .genre-card-top > span { padding: 5px 7px; font-size: 11px; }
+  .genre-card-copy { padding: 78px 16px 52px; }
+  .genre-card-copy h3,
+  .explorer-card .genre-card-copy h3 { margin-bottom: 6px; max-width: 100%; font-size: clamp(25px, 7.5vw, 31px); line-height: .98; }
+  .genre-card-copy > strong { font-size: 11px; line-height: 1.3; }
+  .genre-card-copy p { display: none; }
+  .genre-card-foot { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; justify-content: flex-end; padding: 0 14px 13px; }
+  .genre-card-foot > span:first-child { display: none; }
+  .genre-card-foot .genre-arrow { flex-basis: 36px; width: 36px; height: 36px; }
   .cosmic-navigation-graphic { right: -42%; top: 41%; width: 540px; opacity: .26; }
   .catalog-hero { padding-top: 70px; }
   .catalog-hero h1 { font-size: 50px; }
@@ -1074,5 +1083,6 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 480px) {
   .discovery-grid, .mood-card-grid { grid-template-columns: 1fr; }
-  .discovery-card { min-height: 520px; }
+  .discovery-card,
+  .explorer-card { min-height: 252px; }
 }

@@ -1,4 +1,4 @@
-import { ArrowRight, AudioWaveform, Grid3X3 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { taxonomyGenres, taxonomySubgenreById } from '../data/taxonomy'
 import type { SiteContent } from '../data/siteContent'
 import type { Band } from '../types/music'
@@ -10,12 +10,16 @@ interface DiscoveryHomeProps {
   title: string
   description: string
   genreVisuals: SiteContent['genreVisuals']
+  explorerVisuals: SiteContent['explorerVisuals']
   onGenre: (genreId: GenreTaxonomyId) => void
   onAllBands: () => void
   onMoods: () => void
 }
 
-export function DiscoveryHome({ bands, label, title, description, genreVisuals, onGenre, onAllBands, onMoods }: DiscoveryHomeProps) {
+export function DiscoveryHome({ bands, label, title, description, genreVisuals, explorerVisuals, onGenre, onAllBands, onMoods }: DiscoveryHomeProps) {
+  const allBandsVisual = explorerVisuals.allBands
+  const moodsVisual = explorerVisuals.moods
+
   return (
     <section id="genres" className="genre-section discovery-home">
       <div className="shell">
@@ -36,11 +40,17 @@ export function DiscoveryHome({ bands, label, title, description, genreVisuals, 
               </button>
             )
           })}
-          <button className="genre-card discovery-card explorer-card" onClick={onAllBands} style={{ '--genre-color': '#202126' } as React.CSSProperties}>
-            <span className="explorer-badge">EXPLORER</span><Grid3X3 size={25} /><h3>모든 밴드 보기</h3><strong>ALL BANDS</strong><p>이름, 시대, 국가, 장르와 세부 장르로 전체 목록을 살펴봅니다.</p><span className="genre-count">{bands.length} BANDS</span><span className="genre-arrow"><ArrowRight /></span>
+          <button className={`genre-card discovery-card explorer-card ${allBandsVisual.artMode === 'image' && allBandsVisual.imageUrl ? 'has-art' : ''}`} onClick={onAllBands} style={{ '--genre-color': '#7d72bf', '--genre-art-opacity': allBandsVisual.imageOpacity, '--genre-art-scale': allBandsVisual.imageScale } as React.CSSProperties}>
+            {allBandsVisual.artMode === 'image' && allBandsVisual.imageUrl && <span className="genre-card-art" aria-hidden="true"><img src={allBandsVisual.imageUrl} alt="" loading="lazy" decoding="async" style={{ objectPosition: allBandsVisual.imagePosition }} /></span>}
+            <span className="genre-card-top"><span className="explorer-badge">EXPLORER</span><span className="genre-count">{bands.length} BANDS</span></span>
+            <span className="genre-card-copy"><h3>모든 밴드 보기</h3><strong>ALL BANDS</strong><p>이름, 시대, 국가, 장르와 세부 장르로 전체 목록을 살펴봅니다.</p></span>
+            <span className="genre-card-foot"><span><span className="folded-label">전체 아카이브</span><span className="folded-list">13 장르 · {bands.length} 밴드</span></span><span className="genre-arrow"><ArrowRight /></span></span>
           </button>
-          <button className="genre-card discovery-card explorer-card mood-explorer-card" onClick={onMoods} style={{ '--genre-color': '#e86335' } as React.CSSProperties}>
-            <span className="explorer-badge">EXPLORER</span><AudioWaveform size={25} /><h3>느낌으로 찾기</h3><strong>MOOD FINDER</strong><p>장르 이름을 몰라도 지금 듣고 싶은 분위기로 밴드를 발견합니다.</p><span className="genre-count">24 MOODS</span><span className="genre-arrow"><ArrowRight /></span>
+          <button className={`genre-card discovery-card explorer-card mood-explorer-card ${moodsVisual.artMode === 'image' && moodsVisual.imageUrl ? 'has-art' : ''}`} onClick={onMoods} style={{ '--genre-color': '#e86335', '--genre-art-opacity': moodsVisual.imageOpacity, '--genre-art-scale': moodsVisual.imageScale } as React.CSSProperties}>
+            {moodsVisual.artMode === 'image' && moodsVisual.imageUrl && <span className="genre-card-art" aria-hidden="true"><img src={moodsVisual.imageUrl} alt="" loading="lazy" decoding="async" style={{ objectPosition: moodsVisual.imagePosition }} /></span>}
+            <span className="genre-card-top"><span className="explorer-badge">EXPLORER</span><span className="genre-count">24 MOODS</span></span>
+            <span className="genre-card-copy"><h3>느낌으로 찾기</h3><strong>MOOD FINDER</strong><p>장르 이름을 몰라도 지금 듣고 싶은 분위기로 밴드를 발견합니다.</p></span>
+            <span className="genre-card-foot"><span><span className="folded-label">분위기 탐색</span><span className="folded-list">4 그룹 · 24 분위기</span></span><span className="genre-arrow"><ArrowRight /></span></span>
           </button>
         </div>
       </div>

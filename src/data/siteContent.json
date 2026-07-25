@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-24T06:49:12.672Z",
+  "updatedAt": "2026-07-25T02:50:47.471Z",
   "brandSuffix": "by kinggodyoung",
   "heroTitle": "락의 세계를 여행하는 히치하이커를 위한 안내서",
   "heroDescription": "",
@@ -32,8 +32,8 @@
     "accentColor": "#e86335",
     "mutedColor": "#98979a",
     "heroArtMode": "image",
-    "heroImageUrl": "./assets/hero/rock-galaxy-v1.jpg",
-    "heroImagePosition": "center",
+    "heroImageUrl": "./assets/hero/rock-galaxy-v3.jpg",
+    "heroImagePosition": "bottom",
     "logoMode": "mark",
     "logoImageUrl": "",
     "wordmarkMode": "text",
@@ -140,6 +140,22 @@
       "imageUrl": "./assets/genres/modern-alternative-metal.jpg",
       "imagePosition": "center",
       "imageOpacity": 0.82,
+      "imageScale": 1
+    }
+  },
+  "explorerVisuals": {
+    "allBands": {
+      "artMode": "image",
+      "imageUrl": "./assets/explorers/all-bands.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.9,
+      "imageScale": 1
+    },
+    "moods": {
+      "artMode": "image",
+      "imageUrl": "./assets/explorers/moods.jpg",
+      "imagePosition": "center",
+      "imageOpacity": 0.9,
       "imageScale": 1
     }
   },

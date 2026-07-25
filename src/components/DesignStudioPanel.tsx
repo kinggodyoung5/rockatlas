@@ -20,6 +20,7 @@ interface DesignStudioPanelProps {
 
 const sectionNames: Record<SiteSectionId, string> = { genres: '장르 탐색', bands: '밴드 목록', manifesto: '마무리 선언' }
 const moodGroupNames: Record<MoodGroupId, string> = { energy: '에너지와 속도', emotion: '감정과 정서', texture: '공간감과 음색', listening: '구성과 감상 방식' }
+type ExplorerVisualKey = keyof SiteContent['explorerVisuals']
 
 function colorToAccent(hex: string) {
   const normalized = hex.replace('#', '')
@@ -37,9 +38,14 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const cosmicUploadRef = useRef<HTMLInputElement>(null)
   const genreUploadRef = useRef<HTMLInputElement>(null)
   const genreUploadTarget = useRef<TaxonomyGenre['id'] | null>(null)
+  const explorerUploadRef = useRef<HTMLInputElement>(null)
+  const explorerUploadTarget = useRef<ExplorerVisualKey | null>(null)
   const changeTheme = (patch: Partial<SiteContent['theme']>) => onChange({ theme: { ...value.theme, ...patch } })
   const updateGenreVisual = (id: TaxonomyGenre['id'], patch: Partial<SiteContent['genreVisuals'][TaxonomyGenre['id']]>) => {
     onChange({ genreVisuals: { ...value.genreVisuals, [id]: { ...value.genreVisuals[id], ...patch } } })
+  }
+  const updateExplorerVisual = (id: ExplorerVisualKey, patch: Partial<SiteContent['explorerVisuals'][ExplorerVisualKey]>) => {
+    onChange({ explorerVisuals: { ...value.explorerVisuals, [id]: { ...value.explorerVisuals[id], ...patch } } })
   }
   const moveSection = (id: SiteSectionId, direction: -1 | 1) => {
     const order = [...value.sectionOrder]
@@ -94,6 +100,14 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const pickGenreArt = (id: TaxonomyGenre['id']) => {
     genreUploadTarget.current = id
     genreUploadRef.current?.click()
+  }
+  const uploadExplorerArt = async (file: File, id: ExplorerVisualKey) => {
+    const url = await uploadImage(file, 'genre', `explorer-${id}`)
+    updateExplorerVisual(id, { imageUrl: url, artMode: 'image' })
+  }
+  const pickExplorerArt = (id: ExplorerVisualKey) => {
+    explorerUploadTarget.current = id
+    explorerUploadRef.current?.click()
   }
   const uploadFont = async (file: File) => {
     setFontMessage('폰트 업로드 중…')
@@ -243,6 +257,30 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
         const file = event.target.files?.[0]
         const id = genreUploadTarget.current
         if (file && id) void uploadGenreArt(file, id)
+        event.target.value = ''
+      }} />
+
+      <details className="studio-genre-editor"><summary>모든 밴드 · 느낌으로 찾기 카드 삽화</summary><div className="studio-genre-editor-grid">
+        {([
+          ['allBands', '모든 밴드 보기', '#7d72bf'],
+          ['moods', '느낌으로 찾기', '#e86335'],
+        ] as const).map(([id, label, color]) => {
+          const visual = value.explorerVisuals[id]
+          return <details key={id} open><summary><span style={{ background: color }} />{label}</summary><div>
+            <label>삽화 표시<select value={visual.artMode} onChange={(event) => updateExplorerVisual(id, { artMode: event.target.value as typeof visual.artMode })}><option value="image">이미지 표시</option><option value="none">이미지 숨김</option></select></label>
+            <label>삽화 위치<select value={visual.imagePosition} onChange={(event) => updateExplorerVisual(id, { imagePosition: event.target.value as typeof visual.imagePosition })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
+            <label className="studio-grid-span">삽화 URL<input value={visual.imageUrl} onChange={(event) => updateExplorerVisual(id, { imageUrl: event.target.value })} /></label>
+            <label>삽화 투명도 <small>{Math.round(visual.imageOpacity * 100)}%</small><input type="range" min="0.2" max="1" step="0.05" value={visual.imageOpacity} onChange={(event) => updateExplorerVisual(id, { imageOpacity: Number(event.target.value) })} /></label>
+            <label>삽화 확대 <small>{Math.round(visual.imageScale * 100)}%</small><input type="range" min="0.8" max="1.5" step="0.05" value={visual.imageScale} onChange={(event) => updateExplorerVisual(id, { imageScale: Number(event.target.value) })} /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => pickExplorerArt(id)}><ImagePlus size={14} /> 이 탐색 카드의 삽화 교체</button>
+            {visual.artMode === 'image' && visual.imageUrl && <div className="studio-genre-art-preview studio-grid-span" style={{ '--genre-preview-color': color } as React.CSSProperties}><img src={visual.imageUrl} alt="" style={{ objectPosition: visual.imagePosition, opacity: visual.imageOpacity, transform: `scale(${visual.imageScale})` }} /><strong>{label}</strong></div>}
+          </div></details>
+        })}
+      </div></details>
+      <input ref={explorerUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => {
+        const file = event.target.files?.[0]
+        const id = explorerUploadTarget.current
+        if (file && id) void uploadExplorerArt(file, id)
         event.target.value = ''
       }} />
 

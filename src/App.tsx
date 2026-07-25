@@ -178,7 +178,7 @@ function ExplorerApp() {
       <div className="shell"><JourneyBar historyIds={historyIds} favoriteIds={favoriteIds} onSelect={openBand} onClearHistory={clearHistory} /></div>
       {siteContent.sectionOrder.map((sectionId) => {
         if (!siteContent.sectionVisibility[sectionId]) return null
-        if (sectionId === 'genres') return <DiscoveryHome key="genres" bands={bands} label={siteContent.genreSectionLabel} title={siteContent.genreSectionTitle} description={siteContent.genreSectionDescription} genreVisuals={siteContent.genreVisuals} onGenre={goGenre} onAllBands={goBands} onMoods={goMoods} />
+        if (sectionId === 'genres') return <DiscoveryHome key="genres" bands={bands} label={siteContent.genreSectionLabel} title={siteContent.genreSectionTitle} description={siteContent.genreSectionDescription} genreVisuals={siteContent.genreVisuals} explorerVisuals={siteContent.explorerVisuals} onGenre={goGenre} onAllBands={goBands} onMoods={goMoods} />
         if (sectionId === 'manifesto') return manifesto
         return null
       })}

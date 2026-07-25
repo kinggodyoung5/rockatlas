@@ -363,6 +363,7 @@ function studioApi(): Plugin {
           if (!(payload.heroTitle as string).trim() || !(payload.genreSectionTitle as string).trim()) throw new Error('메인·장르 제목은 비워 둘 수 없습니다.')
           if (!payload.theme || !payload.sectionVisibility || !Array.isArray(payload.sectionOrder)) throw new Error('테마와 섹션 설정이 누락되었습니다.')
           if (Number(payload.schemaVersion) >= 2 && (!payload.genreVisuals || typeof payload.genreVisuals !== 'object')) throw new Error('장르 카드 디자인 설정이 누락되었습니다.')
+          if (Number(payload.schemaVersion) >= 2 && (!payload.explorerVisuals || typeof payload.explorerVisuals !== 'object')) throw new Error('탐색 카드 디자인 설정이 누락되었습니다.')
           const nextContent = { ...payload, updatedAt: new Date().toISOString() }
           await writeFile(siteContentPath, `${JSON.stringify(nextContent, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextContent.updatedAt })

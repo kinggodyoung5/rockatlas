@@ -62,6 +62,10 @@ export interface SiteContent {
     genreCardGap: number
   }
   genreVisuals: Record<GenreTaxonomyId, GenreVisualSettings>
+  explorerVisuals: {
+    allBands: GenreVisualSettings
+    moods: GenreVisualSettings
+  }
   sectionVisibility: Record<SiteSectionId, boolean>
   sectionOrder: SiteSectionId[]
 }
