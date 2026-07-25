@@ -10,10 +10,12 @@
 - 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
 - 현재 개발 브랜치: `codex/taxonomy-v2` — `main`과 항상 동일하게 fast-forward 배포됨.
 - 원격 백업 브랜치·태그: `backup/pre-taxonomy-v2-20260719`
-- **밴드 수: 67개.** 코덱스가 작업 중지된 사이 남아있던 로컬 미커밋 변경(American Authors·blink-182 추가, 검수함 코드 개선, 우주 테마 디자인)을 Claude가 전부 검수해 커밋·배포까지 완료했다(10·11번 항목 참고).
-- 2026-07-25 최신 검증: `validate:data` 오류 0건·경고 0건(밴드 67 · 트랙 136 · 관계 144, Commons 검수 이미지 66/67 — Kodaline만 원본 미제공으로 이전부터 `needs-review`), `validate:taxonomy` 오류 0건, 프로덕션 빌드 성공, `git diff --check` 통과.
-- 우주 테마·Studio 분리·장르 카드 삽화와 가독성 개편은 `b22592c` 등으로 커밋·푸시·배포 완료.
-- **디자인 Studio를 페이지별로 전면 재구성**(전체 공통 → 홈 → 마무리 선언 → 느낌으로 찾기 → 모든 밴드), 마무리 선언 배경 이미지 기능 신규 추가, 헤더/푸터 태그라인 등 편집 불가능하던 문구 4곳 추가, 아무 효과 없던 "밴드 목록" 섹션 토글 제거(12번 항목 참고).
+- **밴드 수: 73개.** The Fray·The Calling·The Fratellis·Keane 추가 + 실제 업로드된 로고/워드마크 이미지(`public/uploads/logo-1784972716795.png`, `wordmark-1784972730924.png`) + 줄바꿈 있는 히어로 문구를 커밋 `1f9fcde`로 배포 완료.
+- 2026-07-25 최신 검증: `validate:data` 오류 0건·경고 6건(밴드 73 · 트랙 148 · 관계 158, Commons 검수 이미지 69/73, YouTube 검색 링크 대체 6건 — the-fray/the-calling/the-fratellis/keane 곡 일부), `validate:taxonomy` 오류 0건, `validate:uploads` 통과, 프로덕션 빌드 성공.
+- **Studio 실시간 미리보기를 iframe+postMessage 기반으로 전면 교체**(`?livePreview=1` 라우트) — 기존 손으로 만든 목업 미리보기가 실제 화면과 어긋나던 구조적 원인을 제거. 히어로 문구 줄바꿈 textarea 지원, 로고/워드마크 확대, 이미지 모드에서도 곁문구(태그라인·brandSuffix) 유지, "장르부터 탐색" 스크롤 버그 수정 (커밋 `649dc3e`).
+- 모바일 미리보기에서 "by kinggodyoung" 문구가 두 줄로 깨지던 버그와 로고 이미지 대비 세로 정렬이 어긋나던 문제 수정 (`nowrap`+`flex-wrap`, `align-items:center`) — 커밋 `1f9fcde`.
+- **중요 발견**: 사용자가 겪은 "미리보기와 실제 웹이 다르다 / 줄바꿈이 반영 안 된다" 현상의 실제 원인은 코드 버그가 아니라 **배포 지연**이었다 — Studio에서 로컬에 저장한 새 밴드·이미지·줄바꿈 문구가 이번 세션 전까지 `main`에 커밋된 적이 없어 실제 배포된 GitHub Pages는 계속 예전 데이터를 보여주고 있었음. 이번 커밋으로 해소됨.
+- **Git 커밋 정책 변경**: 사용자가 커밋 메시지의 `Co-Authored-By: Claude Sonnet 5` 트레일러를 명시적으로 중단 요청. 이번 커밋(`1f9fcde`)부터 트레일러 없이 커밋함. 이전에 이미 푸시된 커밋들은 히스토리 재작성 없이 그대로 유지하기로 사용자가 결정(강제 푸시의 위험성 설명 후 "당분간 유지" 선택).
 - GitHub Pages 배포 성공. 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
 - 로컬 미커밋 변경 없음 — 이 세션에서 전부 커밋·푸시·배포 완료.
 
