@@ -43,9 +43,9 @@ img { display: block; max-width: 100%; }
 .wordmark-mark-image { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; }
 .wordmark > span:last-child { display: grid; gap: 3px; }
 .wordmark strong { font: 800 18px/1 Arial; letter-spacing: .06em; }
-.wordmark-by { margin-left: 6px; color: var(--orange); font: 500 14px/1 Georgia, serif; letter-spacing: .01em; text-transform: none; }
-.wordmark small { color: var(--muted); font: 700 13px/1 Arial; letter-spacing: .13em; }
-.wordmark-image-row { display: flex; align-items: baseline; gap: 8px; }
+.wordmark-by { margin-left: 6px; color: var(--orange); font: 500 14px/1 Georgia, serif; letter-spacing: .01em; text-transform: none; white-space: nowrap; }
+.wordmark small { color: var(--muted); font: 700 13px/1 Arial; letter-spacing: .13em; white-space: nowrap; }
+.wordmark-image-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .wordmark-text-image { height: 64px; max-width: 320px; object-fit: contain; object-position: left center; }
 .main-nav { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 700; }
 .main-nav a { color: #bdbcc0; transition: color .2s; }
@@ -948,6 +948,13 @@ img { display: block; max-width: 100%; }
   .external-search-bar, .external-candidate-columns { grid-template-columns: 1fr; }
   .shell { width: min(100% - 28px, 1240px); }
   .site-header { height: 70px; }
+  .wordmark { gap: 10px; }
+  .wordmark-mark, .wordmark-mark-image { width: 36px; height: 36px; }
+  .wordmark strong { font-size: 15px; }
+  .wordmark-text-image { height: 34px; max-width: 130px; }
+  .wordmark-image-row { flex-wrap: wrap; gap: 2px 8px; }
+  .wordmark-by { margin-left: 0; font-size: 11px; }
+  .wordmark small { font-size: 10px; }
   .menu-button { width: 44px; height: 44px; display: grid; place-items: center; }
   .main-nav { display: none; position: absolute; left: 0; right: 0; top: 69px; background: #111114; border: 1px solid var(--line); padding: 18px; align-items: stretch; flex-direction: column; gap: 0; }
   .main-nav.is-open { display: flex; }

@@ -1,7 +1,1168 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-25T05:12:38.805Z",
+  "updatedAt": "2026-07-25T09:57:37.589Z",
   "bands": [
+    {
+      "id": "the-fray",
+      "name": "The Fray",
+      "formed": 2002,
+      "origin": "덴버, 미국",
+      "countryCode": "US",
+      "activeYears": "2002–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "피아노 록",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "피아노 록",
+            "얼터너티브 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "피아노록",
+        "얼터너티브록",
+        "미국록",
+        "감성록",
+        "팝록"
+      ],
+      "summary": "2000년대 중반 피아노 중심의 감성적인 얼터너티브 록과 팝 록 사운드로 글로벌 차트에서 거대한 상업적 성공을 거둔 미국 출신의 4인조 밴드. 데뷔 앨범의 히트 싱글 'How to Save a Life'와 'Over My Head (Cable Car)'가 빌보드 상위권에 오르며 멀티 플래티넘을 기록했다.",
+      "style": "피아노 리프를 사운드의 골격으로 삼고 호소력 짙은 보컬 멜로디와 서정적인 어쿠스틱/일렉 기타를 조합하는 것이 특징. 후반부로 갈수록 감정이 고조되며 웅장하게 터지는 드라마틱한 곡 전개를 보여준다.",
+      "image": {
+        "wikipediaTitle": "The Fray",
+        "alt": "The Fray 밴드 사진",
+        "credit": {
+          "sourceUrl": "File:The Fray (2014).jpg",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Joe King",
+          "role": "기타·리드 보컬",
+          "status": "current",
+          "activeYears": "2002–현재"
+        },
+        {
+          "name": "Dave Welsh",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2002–현재"
+        },
+        {
+          "name": "Ben Wysocki",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2003–현재"
+        },
+        {
+          "name": "Isaac Slade",
+          "role": "리드 보컬·피아노",
+          "status": "former",
+          "activeYears": "2002–2022"
+        },
+        {
+          "name": "Dan Battenhouse",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2002–2004"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "how-to-save-a-life",
+          "title": "How to Save a Life",
+          "year": 2005,
+          "album": "How to Save a Life",
+          "guide": "특유의 반복적인 피아노 오프닝 리프와 감정이 고조되는 보컬 클라이맥스.",
+          "youtubeId": "cjVQ36NhbMk",
+          "source": {
+            "label": "The Fray — How to Save a Life",
+            "url": "https://www.youtube.com/watch?v=cjVQ36NhbMk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T09:00:38.644Z"
+        },
+        {
+          "id": "over-my-head-cable-car",
+          "title": "Over My Head (Cable Car)",
+          "year": 2005,
+          "album": "How to Save a Life",
+          "guide": "경쾌한 피아노 리듬과 캐치한 후렴구 훅이 만들어내는 캐치한 멜로디라인.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Fray — Over My Head (Cable Car) YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Fray%20Over%20My%20Head%20(Cable%20Car)",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "one-republic",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중후반 피아노와 팝 록 멜로디를 전면에 내세워 빌보드 메인스트림 차트를 점령한 동시대 라이벌이자 동료 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "keane",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "기타보다 피아노 리프를 중심에 두고 서정적이고 감성적인 록 사운드를 구현하는 음악적 스타일을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-calling",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 미국 메인스트림 씬에서 감성적인 라디오 친화적 얼터너티브 록 유행을 이끈 그룹이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "daughtry",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 얼터너티브 / 그런지, 얼터너티브 록 · 팝 록, 낭만적이고 감성적인 · 우울하고 쓸쓸한",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Fray — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q271513",
+          "publisher": "Wikidata",
+          "externalId": "Q271513",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fray — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c1432f7a-8f55-46eb-8e2b-e7b39912be21",
+          "publisher": "MusicBrainz",
+          "externalId": "c1432f7a-8f55-46eb-8e2b-e7b39912be21",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fray — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Fray",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fray — 공식 YouTube",
+          "url": "https://www.youtube.com/user/TheFrayVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "piano-rock",
+          "alternative-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 4,
+          "warm-comforting": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T09:57:36.384Z"
+    },
+    {
+      "id": "the-calling",
+      "name": "The Calling",
+      "formed": 1996,
+      "origin": "로스앤젤레스, 미국",
+      "countryCode": "US",
+      "activeYears": "1996–2005, 2013–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "포스트그런지",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "포스트그런지",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "얼터너티브록",
+        "포스트그랑지",
+        "미국록",
+        "팝록",
+        "감성록"
+      ],
+      "summary": "2000년대 초반 데뷔곡 'Wherever You Will Go'로 빌보드 차트와 전 세계 음악 차트를 상권하며 대중적 성공을 거둔 미국 출신의 얼터너티브 록 밴드. 감성적인 멜로디와 호소력 짙은 보컬을 바탕으로 2000년대 포스트 그런지 및 포스트 브릿팝 유행의 중심에서 큰 사랑을 받았다.",
+      "style": "알렉스 반드의 중저음 중심의 탁성 보컬과 서정적인 어쿠스틱 기타 리프가 음악의 중심을 이룬다. 후반부로 갈수록 묵직한 하드 록 사운드로 폭발하는 드라마틱한 곡 전개 구조가 특징이다.",
+      "image": {
+        "wikipediaTitle": "The Calling",
+        "alt": "The Calling 밴드 사진",
+        "credit": {
+          "sourceUrl": "File:The Calling Band.jpg",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Alex Band",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1996–2005, 2013–현재"
+        },
+        {
+          "name": "Daniel Damico",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2020–현재"
+        },
+        {
+          "name": "Daniel Thompson",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2020–현재"
+        },
+        {
+          "name": "Aaron Kamin",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1996–2005"
+        },
+        {
+          "name": "Billy Mohler",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2001–2002"
+        },
+        {
+          "name": "Nate Wood",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2001–2002"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "wherever-you-will-go",
+          "title": "Wherever You Will Go",
+          "year": 2001,
+          "album": "Camino Palmero",
+          "guide": "차분한 어쿠스틱 오프닝 후 폭발하는 후렴구.",
+          "youtubeId": "iAP9AF6DCu4",
+          "source": {
+            "label": "The Calling — Wherever You Will Go",
+            "url": "https://www.youtube.com/watch?v=iAP9AF6DCu4",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T08:27:39.768Z"
+        },
+        {
+          "id": "adrienne",
+          "title": "Adrienne",
+          "year": 2002,
+          "album": "Camino Palmero",
+          "guide": "드라마틱하게 고조되는 기타 리프와 감정선이 돋보이는 멜로디라인.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Calling — Adrienne YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Calling%20Adrienne",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "The Calling — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q463870",
+          "publisher": "Wikidata",
+          "externalId": "Q463870",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Calling — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/45f14e7a-9bbd-46ee-876a-93f8cfb7e651",
+          "publisher": "MusicBrainz",
+          "externalId": "45f14e7a-9bbd-46ee-876a-93f8cfb7e651",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Calling — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Calling",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Calling — 공식 YouTube",
+          "url": "https://www.youtube.com/user/TheCallingVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "post-grunge",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "romantic-emotional": 5,
+          "melancholic-lonely": 4,
+          "anthemic-live": 4,
+          "warm-comforting": 3,
+          "riff-solo-driven": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T08:29:34.450Z"
+    },
+    {
+      "id": "the-fratellis",
+      "name": "The Fratellis",
+      "formed": 2005,
+      "origin": "글래스고, 영국",
+      "countryCode": "GB",
+      "activeYears": "2005–2009, 2012–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "가라지 록 리바이벌",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "가라지 록 리바이벌",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "인디록",
+        "가라지록",
+        "영국록",
+        "스카펑크",
+        "3인조"
+      ],
+      "summary": "2000년대 중반 인디 록 부흥기에 등장하여 캐치한 훅과 유쾌한 에너지로 영국 음악 차트를 사로잡은 스코틀랜드 출신의 3인조 인디 록 밴드. 데뷔 앨범 'Costello Music'이 영국 앨범 차트 2위에 오르며 브릿 어워드 수상과 함께 글로벌 스타덤에 올랐다.",
+      "style": "경쾌한 중독성을 가진 기타 리프와 중독적인 후렴구 떼창 훅이 음악의 핵심을 이룬다. 60년대 록앤롤과 글램 록, 가라지 록을 결합한 스피디하고 리드미컬한 트랙 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "The Fratellis",
+        "alt": "The Fratellis 밴드 사진",
+        "credit": {
+          "sourceUrl": "File:The Fratellis at Belladrum 2014.jpg",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Jon Fratelli",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2005–2009, 2012–현재"
+        },
+        {
+          "name": "Barry Fratelli",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2005–2009, 2012–현재"
+        },
+        {
+          "name": "Mince Fratelli",
+          "role": "드럼·백보컬",
+          "status": "current",
+          "activeYears": "2005–2009, 2012–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "chelsea-dagger",
+          "title": "Chelsea Dagger",
+          "year": 2006,
+          "album": "Costello Music",
+          "guide": "각종 스포츠 경기장과 축제에서 떼창으로 유명한 중독성 강한 후렴구 멜로디.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Fratellis — Chelsea Dagger YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Fratellis%20Chelsea%20Dagger",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "flathead",
+          "title": "Flathead",
+          "year": 2006,
+          "album": "Costello Music",
+          "guide": "빠르고 사납게 쏟아지는 기타 리프와 유쾌하게 질주하는 보컬 라인.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Fratellis — Flathead YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Fratellis%20Flathead",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "two-door-cinema-club",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 인디 / 브릿팝 / 개러지, 인디 록, 밝고 신나는 · 빠르고 질주하는",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "american-authors",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "neon-trees",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Fratellis — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q913070",
+          "publisher": "Wikidata",
+          "externalId": "Q913070",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fratellis — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4f08e4aa-e500-4b53-9388-b7787355da4b",
+          "publisher": "MusicBrainz",
+          "externalId": "4f08e4aa-e500-4b53-9388-b7787355da4b",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fratellis — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Fratellis",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fratellis — 공식 YouTube",
+          "url": "https://www.youtube.com/user/TheFratellisVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "punk-emo"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "garage-rock-revival",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 5,
+          "groovy-danceable": 4,
+          "youth-rebellious": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T08:25:42.957Z"
+    },
+    {
+      "id": "muse",
+      "name": "Muse",
+      "formed": 1994,
+      "origin": "틴머스, 영국",
+      "countryCode": "GB",
+      "activeYears": "1994–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "프로그레시브 록",
+        "스페이스 록",
+        "아트 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "프로그레시브 록",
+            "스페이스 록",
+            "아트 록"
+          ]
+        }
+      ],
+      "tags": [
+        "프로그레시브록",
+        "얼터너티브록",
+        "영국록",
+        "3인조",
+        "스페이스록"
+      ],
+      "summary": "2000년대 이후 서정적인 얼터너티브 록과 클래식, 엘렉트로니카를 결합해 독보적인 위치를 구축한 영국의 3인조 록 밴드. 압도적인 스케일의 라이브 퍼포먼스와 메이저 앨범들의 연이은 성공으로 그래미 어워드를 수상하며 21세기 대표 메가 밴드로 자리잡았다.",
+      "style": "매튜 벨라미의 화려한 클래식풍 피아노 연주와 독특한 가성 보컬, 강렬한 파즈 베이스 Riff가 사운드의 핵심이다. 드라마틱한 곡 전개와 웅장한 아르페지오 신시사이저를 더해 집단적이고 압도적인 사운드스케이프를 연출한다.",
+      "image": {
+        "wikipediaTitle": "Muse",
+        "fileName": "File:MuseO2140919-51 (48736141162).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/MuseO2140919-51_%2848736141162%29.jpg/960px-MuseO2140919-51_%2848736141162%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/MuseO2140919-51_%2848736141162%29.jpg",
+        "alt": "Muse 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:MuseO2140919-51 (48736141162).jpg",
+          "creator": "Raph_PH",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-25T07:44:51.133Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Matt Bellamy",
+          "role": "리드 보컬·기타·키보드",
+          "status": "current",
+          "activeYears": "1994–현재"
+        },
+        {
+          "name": "Chris Wolstenholme",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "1994–현재"
+        },
+        {
+          "name": "Dominic Howard",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1994–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "plug-in-baby",
+          "title": "Plug In Baby",
+          "year": 2001,
+          "album": "Origin of Symmetry",
+          "guide": "밴드를 상징하는 화려하고 공격적인 클래식풍 기타 오프닝 리프와 고음 보컬.",
+          "youtubeId": "dbB-mICjkQM",
+          "source": {
+            "label": "Muse — Plug In Baby",
+            "url": "https://www.youtube.com/watch?v=dbB-mICjkQM",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T07:44:49.528Z"
+        },
+        {
+          "id": "supermassive-black-hole",
+          "title": "Supermassive Black Hole",
+          "year": 2006,
+          "album": "Black Holes and Revelations",
+          "guide": "댄서블한 리듬 위에 얹힌 묵직하고 그루비한 파즈 베이스 리프와 차가운 가성 보컬의 조화가 돋보인다.",
+          "youtubeId": "Xsp3_a-PMTw",
+          "source": {
+            "label": "Muse — Supermassive Black Hole",
+            "url": "https://www.youtube.com/watch?v=Xsp3_a-PMTw",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T07:44:49.528Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "radiohead",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "초기 Muse의 보컬 스타일과 어두운 얼터너티브 정서 형성에 깊은 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "queen",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "보컬 다층 녹음과 웅장한 오페라틱 록 구성 및 클래식과의 결합 방식에서 거대한 음악적 영향을 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Muse — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q22151",
+          "publisher": "Wikidata",
+          "externalId": "Q22151",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Muse — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+          "publisher": "MusicBrainz",
+          "externalId": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Muse — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Muse_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Muse — 공식 YouTube",
+          "url": "https://www.youtube.com/user/muse",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Muse — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:MuseO2140919-51 (48736141162).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "progressive-rock",
+          "space-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "epic-cinematic": 5,
+          "anthemic-live": 5,
+          "cosmic-psychedelic": 4,
+          "riff-solo-driven": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "reviewed",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-25T07:44:51.133Z"
+    },
+    {
+      "id": "keane",
+      "name": "Keane",
+      "formed": 1995,
+      "origin": "바틀, 영국",
+      "countryCode": "GB",
+      "activeYears": "1995–2014, 2019–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie",
+        "classic-rock",
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "포스트 브릿팝",
+        "피아노 록",
+        "얼터너티브 록",
+        "인디 록",
+        "브릿팝"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie",
+            "classic-rock",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "포스트 브릿팝",
+            "피아노 록",
+            "얼터너티브 록",
+            "인디 록"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트브릿팝",
+        "피아노록",
+        "영국록",
+        "감성록",
+        "인디록"
+      ],
+      "summary": "2000년대 중반 피아노 중심의 감성적인 포스트 브릿팝 음악으로 영국과 글로벌 음악 차트를 석권한 록 밴드이다. 데뷔 앨범 'Hopes and Fears'로 영국 앨범 차트 1위 및 멀티 플래티넘을 기록하며 평단과 대중의 큰 사랑을 받았다.",
+      "style": "기타를 배제하고 피아노와 핑키한 키보드 사운드를 메인 악기로 채택하여 투명하고 웅장한 사운드스케이프를 연출한다. 호소력 짙고 맑은 고음 보컬과 서정적인 건반 리프가 어우러져 극적인 드라마를 만들어낸다.",
+      "image": {
+        "wikipediaTitle": "Keane",
+        "fileName": "File:Keane Toronto 2009.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Keane_Toronto_2009.jpg/960px-Keane_Toronto_2009.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Keane_Toronto_2009.jpg",
+        "alt": "Keane 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keane Toronto 2009.jpg",
+          "creator": "Madchester (talk)",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-25T07:02:54.623Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Tom Chaplin",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "1997–2014, 2019–현재"
+        },
+        {
+          "name": "Tim Rice-Oxley",
+          "role": "키보드·백보컬",
+          "status": "current",
+          "activeYears": "1995–2014, 2019–현재"
+        },
+        {
+          "name": "Richard Hughes",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1995–2014, 2019–현재"
+        },
+        {
+          "name": "Jesse Quin",
+          "role": "베이스·키보드",
+          "status": "current",
+          "activeYears": "2011–2014, 2019–현재"
+        },
+        {
+          "name": "Dominic Scott",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1995–2001"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "somewhere-only-we-know",
+          "title": "Somewhere Only We Know",
+          "year": 2004,
+          "album": "Hopes and Fears",
+          "guide": "감성을 자극하는 리드미컬한 피아노 리프와 호소력 넘치는 보컬 클라이맥스.",
+          "youtubeId": "",
+          "source": {
+            "label": "Keane — Somewhere Only We Know YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Keane%20Somewhere%20Only%20We%20Know",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "everybody-s-changing",
+          "title": "Everybody's Changing",
+          "year": 2004,
+          "album": "Hopes and Fears",
+          "guide": "경쾌한 신시사이저/피아노 패턴과 멜랑콜리한 가사가 선명한 대비를 이루는 멜로디라인.",
+          "youtubeId": "",
+          "source": {
+            "label": "Keane — Everybody's Changing YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Keane%20Everybody's%20Changing",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "coldplay",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초중반 피아노와 감수성 짙은 멜로디를 전면에 내세워 포스트 브릿팝 전성기를 함께 구축한 동시대 대표 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "snow-patrol",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "서정적이고 드라마틱하게 고조되는 보컬 및 멜랑콜리한 록 발라드 정서를 공유하는 동시대 영국/아일랜드 씬의 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "travis",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "1990년대 후반 따뜻하고 감성적인 포스트 브릿팝 사운드의 틀을 잡아 Keane의 초기 음악적 방향성에 깊은 영향을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Keane — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q484311",
+          "publisher": "Wikidata",
+          "externalId": "Q484311",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Keane — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c3131336-d249-41e9-92db-aef38139eb3b",
+          "publisher": "MusicBrainz",
+          "externalId": "c3131336-d249-41e9-92db-aef38139eb3b",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Keane — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Keane_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Keane — 공식 YouTube",
+          "url": "https://www.youtube.com/user/keaneofficial",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Keane — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Keane Toronto 2009.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "post-britpop",
+          "piano-rock",
+          "alternative-rock",
+          "indie-rock",
+          "britpop"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 4,
+          "anthemic-live": 4,
+          "warm-comforting": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T07:04:36.159Z"
+    },
+    {
+      "id": "snow-patrol",
+      "name": "Snow Patrol",
+      "formed": 1994,
+      "origin": "던디, 영국",
+      "countryCode": "GB",
+      "activeYears": "1994–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "포스트 브릿팝",
+        "인디 록",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "포스트 브릿팝",
+            "인디 록",
+            "얼터너티브 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트브릿팝",
+        "얼터너티브록",
+        "인디록",
+        "영국록",
+        "감성록"
+      ],
+      "summary": "2000년대 중반 감성적인 포스트 브릿팝 사운드와 서정적인 록 발라드로 전 세계적인 대중적 성공을 거둔 밴드. 대표곡 'Chasing Cars'와 'Run'을 바탕으로 멀티 플래티넘 판매고를 기록하며 세계적인 대형 아티스트로 자리매김했다.",
+      "style": "게리 라이트바디의 섬세하고 호소력 있는 보컬과 차분하게 시작되어 후반부로 갈수록 서정적으로 폭발하는 클라이맥스 전개가 특징이다. 어쿠스틱 기타와 웅장한 피아노, 스트링 세션이 가미되어 특유의 멜랑콜리한 사운드를 완성한다.",
+      "image": {
+        "wikipediaTitle": "Snow Patrol",
+        "fileName": "File:Snow Patrol 2012 concert.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Snow_Patrol_2012_concert.jpg/960px-Snow_Patrol_2012_concert.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Snow_Patrol_2012_concert.jpg",
+        "alt": "Snow Patrol 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snow Patrol 2012 concert.jpg",
+          "creator": "nullrend",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-25T06:59:31.655Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Gary Lightbody",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "1994–현재"
+        },
+        {
+          "name": "Nathan Connolly",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2002–현재"
+        },
+        {
+          "name": "Johnny McDaid",
+          "role": "키보드·기타·백보컬",
+          "status": "current",
+          "activeYears": "2011–현재"
+        },
+        {
+          "name": "Jonny Quinn",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1997–2023"
+        },
+        {
+          "name": "Paul Wilson",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "2005–2023"
+        },
+        {
+          "name": "Mark McClelland",
+          "role": "베이스·키보드",
+          "status": "former",
+          "activeYears": "1994–2005"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "chasing-cars",
+          "title": "Chasing Cars",
+          "year": 2006,
+          "album": "Eyes Open",
+          "guide": "차분하게 시작해 감정이 점차 고조되는 서정적인 멜로디와 애절한 보컬이 돋보인다.",
+          "youtubeId": "GemKqzILV4w",
+          "source": {
+            "label": "Snow Patrol — Chasing Cars",
+            "url": "https://www.youtube.com/watch?v=GemKqzILV4w",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T06:59:31.021Z"
+        },
+        {
+          "id": "run",
+          "title": "Run",
+          "year": 2003,
+          "album": "Final Straw",
+          "guide": "고요한 인트로 이후 후반부 폭발적인 기타 연주와 함께 펼쳐지는 웅장한 후렴구 클라이맥스.",
+          "youtubeId": "AOBs8dU4Pb8",
+          "source": {
+            "label": "Snow Patrol — Run",
+            "url": "https://www.youtube.com/watch?v=AOBs8dU4Pb8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T06:59:31.024Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "coldplay",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중후반 서정적인 록 발라드로 메인스트림 차트를 점령하며 감성적인 포스트 브릿팝 유행을 함께 이끈 동시대 대표 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "travis",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "1990년대 후반 감수성 짙은 어쿠스틱 포스트 브릿팝의 길을 열어 Snow Patrol의 초기 사운드 형성 및 정서에 직간접적 영향을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Snow Patrol — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q188407",
+          "publisher": "Wikidata",
+          "externalId": "Q188407",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Snow Patrol — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a66999a7-ae5c-460e-ba94-1a01143ae847",
+          "publisher": "MusicBrainz",
+          "externalId": "a66999a7-ae5c-460e-ba94-1a01143ae847",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Snow Patrol — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Snow_Patrol",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Snow Patrol — 공식 YouTube",
+          "url": "https://www.youtube.com/user/snowpatrol",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Snow Patrol — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Snow Patrol 2012 concert.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "post-britpop",
+          "indie-rock",
+          "alternative-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 5,
+          "anthemic-live": 4,
+          "hopeful-uplifting": 4,
+          "warm-comforting": 3
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "reviewed",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-25T06:59:31.655Z"
+    },
     {
       "id": "nickelback",
       "name": "Nickelback",
