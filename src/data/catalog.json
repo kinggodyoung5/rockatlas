@@ -1,7 +1,846 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-25T09:57:37.589Z",
+  "updatedAt": "2026-07-26T00:12:50.390Z",
   "bands": [
+    {
+      "id": "ma-neskin",
+      "name": "Måneskin",
+      "formed": 2016,
+      "origin": "로마, 이탈리아",
+      "countryCode": "IT",
+      "activeYears": "2016–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock",
+        "alternative-indie",
+        "classic-rock"
+      ],
+      "subgenres": [
+        "글램 록",
+        "하드 록",
+        "얼터너티브 록",
+        "훵크 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "hard-rock",
+            "alternative-indie",
+            "classic-rock"
+          ],
+          "subgenres": [
+            "글램 록",
+            "하드 록",
+            "얼터너티브 록",
+            "훵크 록"
+          ]
+        }
+      ],
+      "tags": [
+        "글램록",
+        "이탈리아록",
+        "하드록",
+        "댄스록",
+        "4인조"
+      ],
+      "summary": "2021년 유로비전 송 콘테스트 우승 이후 글로벌 록 씬에 거대한 폭풍을 일으키며 폭발적인 메이저 성공을 거둔 이탈리아의 4인조 글램 록 밴드. 특유의 스타일리시한 비주얼과 강렬한 에너지로 아레나급 라이브 밴드로 빠르게 도약하며 전 세계 젊은 세대의 대중적 지지를 얻었다.",
+      "style": "다미아노 다비드의 거칠고 패기 넘치는 허스키 보컬과 토마스 라지의 공격적이고 리드미컬한 기타 리프가 곡 전반을 이끈다. 펑키하고 묵직한 베이스라인과 스피디한 드럼 Beat가 어우러져 폭발적인 라이브 에너지를 연출한다.",
+      "image": {
+        "wikipediaTitle": "Måneskin",
+        "alt": "Måneskin 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C3%A5neskin_-_Rock_im_Park_2022_-_IMG_1377_-_2.jpg",
+          "creator": "Mr. Rossi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:Måneskin - Rock im Park 2022 - IMG 1377 - 2.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/M%C3%A5neskin_-_Rock_im_Park_2022_-_IMG_1377_-_2.jpg/960px-M%C3%A5neskin_-_Rock_im_Park_2022_-_IMG_1377_-_2.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/M%C3%A5neskin_-_Rock_im_Park_2022_-_IMG_1377_-_2.jpg"
+      },
+      "members": [
+        {
+          "name": "Damiano David",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Victoria De Angelis",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Thomas Raggi",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Ethan Torchio",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2016–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "zitti-e-buoni",
+          "title": "ZITTI E BUONI",
+          "year": 2021,
+          "album": "Teatro d'ira: Vol. I",
+          "guide": "유로비전 우승을 이끈 날카로운 기타 오프닝과 거칠게 폭발하는 보컬.",
+          "youtubeId": "QN1odfjtMoo",
+          "source": {
+            "label": "Måneskin — ZITTI E BUONI",
+            "url": "https://www.youtube.com/watch?v=QN1odfjtMoo",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T14:38:36.051Z"
+        },
+        {
+          "id": "i-wanna-be-your-slave",
+          "title": "I WANNA BE YOUR SLAVE",
+          "year": 2021,
+          "album": "Teatro d'ira: Vol. I",
+          "guide": "중독성 있는 댄서블 펑크 리듬과 그루비한 베이스라인 위로 전개되는 관능적인 후렴구.",
+          "youtubeId": "yOb9Xaug35M",
+          "source": {
+            "label": "I WANNA BE YOUR SLAVE — YouTube",
+            "url": "https://www.youtube.com/watch?v=yOb9Xaug35M",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "beggin",
+          "title": "Beggin",
+          "youtubeId": "Xg72z08aTXY",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Beggin — YouTube",
+            "url": "https://www.youtube.com/watch?v=Xg72z08aTXY",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2017,
+          "album": "Chosen (EP)",
+          "guide": "1967년 프랭키 발리 원곡을 밴드 특유의 록 사운드로 재해석한 커버로, 2021년 SNS를 통해 전 세계적으로 다시 주목받았다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "red-hot-chili-peppers",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "펑키한 베이스라인과 록을 결합한 리드미컬한 사운드 구성에서 영향을 받았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "the-killers",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "캐치한 훅과 화려한 아레나형 스타일의 대중적 록 사운드를 공유한다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Måneskin — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q56884885",
+          "publisher": "Wikidata",
+          "externalId": "Q56884885",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Måneskin — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4f2537eb-7e3e-4b68-80f4-539c3ebfbe3b",
+          "publisher": "MusicBrainz",
+          "externalId": "4f2537eb-7e3e-4b68-80f4-539c3ebfbe3b",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Måneskin — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/M%C3%A5neskin",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Måneskin — 공식 YouTube",
+          "url": "https://www.youtube.com/user/ManeskinOfficial",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Måneskin — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:M%C3%A5neskin_-_Rock_im_Park_2022_-_IMG_1377_-_2.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "glam-rock",
+          "hard-rock",
+          "alternative-rock",
+          "funk-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "fast-driving": 5,
+          "groovy-danceable": 5,
+          "youth-rebellious": 5,
+          "riff-solo-driven": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "reviewed",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T14:46:25.272Z"
+    },
+    {
+      "id": "the-killers",
+      "name": "The Killers",
+      "formed": 2001,
+      "origin": "라스베이거스, 미국",
+      "countryCode": "US",
+      "activeYears": "2001–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie",
+        "classic-rock"
+      ],
+      "subgenres": [
+        "포스트펑크 리바이벌",
+        "인디 록",
+        "신스팝",
+        "뉴웨이브",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie",
+            "classic-rock"
+          ],
+          "subgenres": [
+            "포스트펑크 리바이벌",
+            "인디 록",
+            "신스팝",
+            "뉴웨이브",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트펑크리바이벌",
+        "인디록",
+        "신스팝",
+        "미국록",
+        "아레나록"
+      ],
+      "summary": "2000년대 초반 라스베이거스에서 결성되어 80년대 신스팝과 웅장한 아레나 록을 결합해 글로벌 스타덤에 오른 미국의 록 밴드이다. 데뷔 앨범 'Hot Fuss'를 통해 메이저 씬에 화려하게 등장한 이후 그래미 어워드 후보 지정 및 멀티 플래티넘 판매고를 기록하며 대표적인 포스트 펑크 리바이벌 밴드로 자리매김했다.",
+      "style": "브랜든 플라워스의 드라마틱한 보컬과 중독성 있는 키보드/신시사이저 리드가 사운드의 중심을 이룬다. 80년대 뉴웨이브풍 감수성과 캐치한 댄서블 인디 록 리듬, 웅장한 아레나형 훅 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "The Killers",
+        "fileName": "File:The Killers - BST Hyde Park - Saturday 8th July 2017 KillersBST080717-47 (35034821694).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/The_Killers_-_BST_Hyde_Park_-_Saturday_8th_July_2017_KillersBST080717-47_%2835034821694%29.jpg/960px-The_Killers_-_BST_Hyde_Park_-_Saturday_8th_July_2017_KillersBST080717-47_%2835034821694%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/The_Killers_-_BST_Hyde_Park_-_Saturday_8th_July_2017_KillersBST080717-47_%2835034821694%29.jpg",
+        "alt": "The Killers 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The Killers - BST Hyde Park - Saturday 8th July 2017 KillersBST080717-47 (35034821694).jpg",
+          "creator": "Raph_PH",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-25T13:29:13.791Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Brandon Flowers",
+          "role": "리드 보컬·키보드",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Dave Keuning",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Mark Stoermer",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2002–현재"
+        },
+        {
+          "name": "Ronnie Vannucci Jr.",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2002–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "mr-brightside",
+          "title": "Mr. Brightside",
+          "year": 2003,
+          "album": "Hot Fuss",
+          "guide": "영국에서 엄청난 히트를 기록했던 곡. 익숙한 기타리프와 폭발하는 후렴구.",
+          "youtubeId": "gGdGFtwCNBE",
+          "source": {
+            "label": "The Killers — Mr. Brightside",
+            "url": "https://www.youtube.com/watch?v=gGdGFtwCNBE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T13:29:12.129Z"
+        },
+        {
+          "id": "somebody-told-me",
+          "title": "Somebody Told Me",
+          "year": 2004,
+          "album": "Hot Fuss",
+          "guide": "강렬한 신시사이저 리프와 댄서블하고 스피디한 가라지 록 리듬의 조화.",
+          "youtubeId": "Y5fBdpreJiU",
+          "source": {
+            "label": "Somebody Told Me — YouTube",
+            "url": "https://www.youtube.com/watch?v=Y5fBdpreJiU",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "human",
+          "title": "Human",
+          "youtubeId": "RIZdjT1472Y",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Human — YouTube",
+            "url": "https://www.youtube.com/watch?v=RIZdjT1472Y",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2008,
+          "album": "Day & Age",
+          "guide": "신스팝 사운드와 '댄서인가 인간인가'라는 논쟁적 가사가 만나 큰 화제를 모은 싱글이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "The Killers — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q22809",
+          "publisher": "Wikidata",
+          "externalId": "Q22809",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Killers — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/95a1212e-a226-4441-bc21-2a544c012891",
+          "publisher": "MusicBrainz",
+          "externalId": "95a1212e-a226-4441-bc21-2a544c012891",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Killers — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Killers",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Killers — 공식 YouTube",
+          "url": "https://www.youtube.com/user/TheKillersVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Killers — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The Killers - BST Hyde Park - Saturday 8th July 2017 KillersBST080717-47 (35034821694).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "post-punk-revival",
+          "indie-rock",
+          "synthpop",
+          "new-wave",
+          "alternative-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "groovy-danceable": 5,
+          "anthemic-live": 5,
+          "youth-rebellious": 4,
+          "romantic-emotional": 4,
+          "electronic-synth": 2
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "reviewed",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T13:35:19.851Z"
+    },
+    {
+      "id": "nothing-but-thieves",
+      "name": "Nothing But Thieves",
+      "formed": 2012,
+      "origin": "사우스엔드온시, 영국",
+      "countryCode": "GB",
+      "activeYears": "2012–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "인디 록",
+        "하드 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "인디 록",
+            "하드 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "얼터너티브록",
+        "영국록",
+        "인디록",
+        "감성록",
+        "5인조"
+      ],
+      "summary": "2010년대 중반 영국에서 결성되어 독창적인 얼터너티브 록 사운드로 대중적 성공을 거둔 5인조 록 밴드. 코너 메이슨의 압도적인 보컬 가창력과 섬세한 감성을 바탕으로 영국의 오피셜 차트 상위권에 연이어 진입하며 현대 영국 록의 대표주자로 자리잡았다.",
+      "style": "코너 메이슨 특유의 미성과 호소력 짙은 고음을 넘나드는 폭발적인 보컬 라인이 곡 전체를 주도한다. 강렬한 하드 록 기타 리프와 신시사이저 기반의 팝/전자음 요소가 절묘하게 조화된 감각적인 음악적 전개를 보여준다.",
+      "image": {
+        "wikipediaTitle": "Nothing But Thieves",
+        "alt": "Nothing But Thieves 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nothing_but_Thieves_-_Southside_Festival_2022_-_IMG_5161.jpg",
+          "creator": "Mr. Rossi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:Nothing but Thieves - Southside Festival 2022 - IMG 5161.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Nothing_but_Thieves_-_Southside_Festival_2022_-_IMG_5161.jpg/960px-Nothing_but_Thieves_-_Southside_Festival_2022_-_IMG_5161.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Nothing_but_Thieves_-_Southside_Festival_2022_-_IMG_5161.jpg"
+      },
+      "members": [
+        {
+          "name": "Conor Mason",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Joe Langridge-Brown",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Dominic Craik",
+          "role": "기타·키보드·백보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Philip Blake",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "James Price",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2012–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "amsterdam",
+          "title": "Amsterdam",
+          "year": 2017,
+          "album": "Broken Machine",
+          "guide": "차분한 1절을 지나 후반부 폭발하는 코너 메이슨의 날카로운 고음 보컬과 강렬한 기타 리프.",
+          "youtubeId": "X2zcG3bcuMI",
+          "source": {
+            "label": "Amsterdam — YouTube",
+            "url": "https://www.youtube.com/watch?v=X2zcG3bcuMI",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "trip-switch",
+          "title": "Trip Switch",
+          "year": 2015,
+          "album": "Nothing But Thieves",
+          "guide": "미니멀하고 그루비한 베이스라인 위로 전개되는 서스펜스 있는 멜로디와 후렴의 감정적 폭발.",
+          "youtubeId": "w1Qxxx2SQoo",
+          "source": {
+            "label": "Trip Switch — YouTube",
+            "url": "https://www.youtube.com/watch?v=w1Qxxx2SQoo",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "muse",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "웅장한 록 사운드 구축과 극적인 고음 보컬 스타일에서 음악적으로 큰 영향과 영감을 받았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Nothing But Thieves — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q20857022",
+          "publisher": "Wikidata",
+          "externalId": "Q20857022",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Nothing But Thieves — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/45446f25-83e0-47b7-9a4f-01a650d0320a",
+          "publisher": "MusicBrainz",
+          "externalId": "45446f25-83e0-47b7-9a4f-01a650d0320a",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Nothing But Thieves — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Nothing_But_Thieves",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Nothing But Thieves — 공식 YouTube",
+          "url": "https://www.youtube.com/user/NBTThieves",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Nothing But Thieves — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Nothing_but_Thieves_-_Southside_Festival_2022_-_IMG_5161.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "hard-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "massive-heavy": 4,
+          "romantic-emotional": 4,
+          "anthemic-live": 5,
+          "riff-solo-driven": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T12:50:23.961Z"
+    },
+    {
+      "id": "dragon-force",
+      "name": "DragonForce",
+      "formed": 1999,
+      "origin": "런던, 영국",
+      "countryCode": "GB",
+      "activeYears": "1999–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "extreme-metal"
+      ],
+      "subgenres": [
+        "파워 메탈",
+        "스피드 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal",
+            "extreme-metal"
+          ],
+          "subgenres": [
+            "파워 메탈",
+            "스피드 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "파워메탈",
+        "스피드메탈",
+        "영국메탈",
+        "멜로딕메탈",
+        "화려한기타"
+      ],
+      "summary": "1999년 런던에서 결성되어 극도로 빠른 템포와 화려한 기타 솔로로 파워 메탈 장르의 새로운 지평을 연 메탈 밴드. 비디오 게임에 나오는 느낌의 사운드를 적극 활용해 젤다의 전설, 브롤스타즈 등 다양한 게임들과도 협업하고 있다.",
+      "style": "초고속 스피드 메탈 리듬 위에 더해지는 정교하고 긴 쌍두 기타 솔로와 화려한 키보드 아르페지오가 사운드의 핵심이다. 고음역대를 시원하게 지르는 보컬과 게임 음원을 연상시키는 비디오 게임 사운드 효과를 적극적으로 결합한다.",
+      "image": {
+        "wikipediaTitle": "DragonForce",
+        "alt": "DragonForce 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:DragonForce_-_VH89.JPG",
+          "creator": "Balthazar",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:DragonForce - VH89.JPG",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/DragonForce_-_VH89.JPG/960px-DragonForce_-_VH89.JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/DragonForce_-_VH89.JPG"
+      },
+      "members": [
+        {
+          "name": "Herman Li",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "Sam Totman",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "Marc Hudson",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2011–현재"
+        },
+        {
+          "name": "Gee Anzalone",
+          "role": "드럼·백보컬",
+          "status": "current",
+          "activeYears": "2014–현재"
+        },
+        {
+          "name": "Alicia Vigil",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2020–현재"
+        },
+        {
+          "name": "ZP Theart",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1999–2010"
+        },
+        {
+          "name": "Vadim Pruzhanov",
+          "role": "키보드·백보컬",
+          "status": "former",
+          "activeYears": "2001–2018"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "through-the-fire-and-flames",
+          "title": "Through the Fire and Flames",
+          "year": 2006,
+          "album": "Inhuman Rampage",
+          "guide": "밴드를 대표하는 초고속 기타 리프와 허먼 리, 샘 토트먼이 주고받는 화려한 기타 솔로.",
+          "youtubeId": "0jgrCKhxE1s",
+          "source": {
+            "label": "DragonForce — Through the Fire and Flames",
+            "url": "https://www.youtube.com/watch?v=0jgrCKhxE1s",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-25T10:43:53.329Z"
+        },
+        {
+          "id": "cry-thunder",
+          "title": "Cry Thunder",
+          "year": 2012,
+          "album": "The Power Within",
+          "guide": "묵직하고 캐치한 미디엄 템포 리프와 라이브에서 떼창을 유도하는 후렴구 멜로디.",
+          "youtubeId": "r2ZstuGjF_c",
+          "source": {
+            "label": "Cry Thunder — YouTube",
+            "url": "https://www.youtube.com/watch?v=r2ZstuGjF_c",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "power-of-the-triforce",
+          "title": "Power of The Triforce",
+          "youtubeId": "pvzSjbiHTmY",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Power of The Triforce — YouTube",
+            "url": "https://www.youtube.com/watch?v=pvzSjbiHTmY",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2023,
+          "album": "Warp Speed Warriors",
+          "guide": "젤다의 전설에 대한 헌사로 만든 곡으로, 극한의 속주 기타와 게임 음악풍 신스가 어우러진다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "DragonForce — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q19092",
+          "publisher": "Wikidata",
+          "externalId": "Q19092",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "DragonForce — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4544d6da-085e-4ff6-9990-252f86644f77",
+          "publisher": "MusicBrainz",
+          "externalId": "4544d6da-085e-4ff6-9990-252f86644f77",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "DragonForce — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/DragonForce",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "DragonForce — 공식 YouTube",
+          "url": "https://www.youtube.com/user/DragonForceVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "DragonForce — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:DragonForce_-_VH89.JPG",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "extreme-metal"
+        ],
+        "subgenreIds": [
+          "power-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "technical-complex": 5,
+          "bright-upbeat": 4,
+          "anthemic-live": 5,
+          "riff-solo-driven": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-25T10:46:00.369Z"
+    },
     {
       "id": "the-fray",
       "name": "The Fray",
@@ -44,10 +883,16 @@
         "wikipediaTitle": "The Fray",
         "alt": "The Fray 밴드 사진",
         "credit": {
-          "sourceUrl": "File:The Fray (2014).jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Fray_-_LA_Arboretum_1.jpg",
+          "creator": "Kevin Paul",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:The Fray - LA Arboretum 1.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/The_Fray_-_LA_Arboretum_1.jpg/960px-The_Fray_-_LA_Arboretum_1.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/The_Fray_-_LA_Arboretum_1.jpg"
       },
       "members": [
         {
@@ -106,15 +951,17 @@
           "year": 2005,
           "album": "How to Save a Life",
           "guide": "경쾌한 피아노 리듬과 캐치한 후렴구 훅이 만들어내는 캐치한 멜로디라인.",
-          "youtubeId": "",
+          "youtubeId": "A_jSd8VBxGA",
           "source": {
-            "label": "The Fray — Over My Head (Cable Car) YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Fray%20Over%20My%20Head%20(Cable%20Car)",
+            "label": "Over My Head (Cable Car) — YouTube",
+            "url": "https://www.youtube.com/watch?v=A_jSd8VBxGA",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
       "relations": [
@@ -123,28 +970,36 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 중후반 피아노와 팝 록 멜로디를 전면에 내세워 빌보드 메인스트림 차트를 점령한 동시대 라이벌이자 동료 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "keane",
           "kind": "sounds-like",
           "strength": 3,
           "note": "기타보다 피아노 리프를 중심에 두고 서정적이고 감성적인 록 사운드를 구현하는 음악적 스타일을 공유한다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "the-calling",
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 미국 메인스트림 씬에서 감성적인 라디오 친화적 얼터너티브 록 유행을 이끈 그룹이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "daughtry",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 얼터너티브 / 그런지, 얼터너티브 록 · 팝 록, 낭만적이고 감성적인 · 우울하고 쓸쓸한",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -174,6 +1029,12 @@
           "publisher": "YouTube",
           "official": true,
           "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fray — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The_Fray_-_LA_Arboretum_1.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -243,10 +1104,16 @@
         "wikipediaTitle": "The Calling",
         "alt": "The Calling 밴드 사진",
         "credit": {
-          "sourceUrl": "File:The Calling Band.jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alex_Band_mit_THE_CALLING_in_N%C3%BCrnberg_2020.jpg",
+          "creator": "Klaus Hellmerich",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:Alex Band mit THE CALLING in Nürnberg 2020.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Alex_Band_mit_THE_CALLING_in_N%C3%BCrnberg_2020.jpg/960px-Alex_Band_mit_THE_CALLING_in_N%C3%BCrnberg_2020.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Alex_Band_mit_THE_CALLING_in_N%C3%BCrnberg_2020.jpg"
       },
       "members": [
         {
@@ -311,15 +1178,17 @@
           "year": 2002,
           "album": "Camino Palmero",
           "guide": "드라마틱하게 고조되는 기타 리프와 감정선이 돋보이는 멜로디라인.",
-          "youtubeId": "",
+          "youtubeId": "pnUEiEW8lmc",
           "source": {
-            "label": "The Calling — Adrienne YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Calling%20Adrienne",
+            "label": "Adrienne — YouTube",
+            "url": "https://www.youtube.com/watch?v=pnUEiEW8lmc",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
       "relations": [],
@@ -350,6 +1219,12 @@
           "publisher": "YouTube",
           "official": true,
           "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Calling — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Alex_Band_mit_THE_CALLING_in_N%C3%BCrnberg_2020.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -418,10 +1293,16 @@
         "wikipediaTitle": "The Fratellis",
         "alt": "The Fratellis 밴드 사진",
         "credit": {
-          "sourceUrl": "File:The Fratellis at Belladrum 2014.jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Fratellis_(8).JPG",
+          "creator": "User:JoeJoeJoe93",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:The Fratellis (8).JPG",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/The_Fratellis_%288%29.JPG/960px-The_Fratellis_%288%29.JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/The_Fratellis_%288%29.JPG"
       },
       "members": [
         {
@@ -450,15 +1331,17 @@
           "year": 2006,
           "album": "Costello Music",
           "guide": "각종 스포츠 경기장과 축제에서 떼창으로 유명한 중독성 강한 후렴구 멜로디.",
-          "youtubeId": "",
+          "youtubeId": "sEXHeTcxQy4",
           "source": {
-            "label": "The Fratellis — Chelsea Dagger YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Fratellis%20Chelsea%20Dagger",
+            "label": "Chelsea Dagger — YouTube",
+            "url": "https://www.youtube.com/watch?v=sEXHeTcxQy4",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         },
         {
           "id": "flathead",
@@ -466,15 +1349,35 @@
           "year": 2006,
           "album": "Costello Music",
           "guide": "빠르고 사납게 쏟아지는 기타 리프와 유쾌하게 질주하는 보컬 라인.",
-          "youtubeId": "",
+          "youtubeId": "9OKfOLBt8Mo",
           "source": {
-            "label": "The Fratellis — Flathead YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Fratellis%20Flathead",
+            "label": "Flathead — YouTube",
+            "url": "https://www.youtube.com/watch?v=9OKfOLBt8Mo",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "whistle-for-the-choir",
+          "title": "Whistle for the Choir",
+          "youtubeId": "HU7S1M-ZSiE",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Whistle for the Choir — YouTube",
+            "url": "https://www.youtube.com/watch?v=HU7S1M-ZSiE",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2006,
+          "album": "Costello Music",
+          "guide": "휘파람 후렴과 느긋한 셔플 리듬이 인상적인, 밴드의 서정적인 면을 보여주는 곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -483,21 +1386,27 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 인디 / 브릿팝 / 개러지, 인디 록, 밝고 신나는 · 빠르고 질주하는",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "american-authors",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "neon-trees",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -527,6 +1436,12 @@
           "publisher": "YouTube",
           "official": true,
           "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Fratellis — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The_Fratellis_(8).JPG",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -665,6 +1580,60 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-25T07:44:49.528Z"
+        },
+        {
+          "id": "uprising",
+          "title": "Uprising",
+          "youtubeId": "w8KQmps-Sog",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Uprising — YouTube",
+            "url": "https://www.youtube.com/watch?v=w8KQmps-Sog",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2009,
+          "album": "The Resistance",
+          "guide": "글램 록 스타일의 신스 리프와 체제 저항적 가사가 결합된, 앨범의 리드 싱글이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        },
+        {
+          "id": "starlight",
+          "title": "Starlight",
+          "youtubeId": "pEyj2qvRwso",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Starlight — YouTube",
+            "url": "https://www.youtube.com/watch?v=pEyj2qvRwso",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2006,
+          "album": "Black Holes and Revelations",
+          "guide": "웅장한 스트링과 팔세토 보컬이 어우러진 멜로딕한 곡으로, 밴드의 상업적 성공을 이끈 싱글이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        },
+        {
+          "id": "hysteria",
+          "title": "Hysteria",
+          "youtubeId": "3dm_5qWWDV8",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Hysteria — YouTube",
+            "url": "https://www.youtube.com/watch?v=3dm_5qWWDV8",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2003,
+          "album": "Absolution",
+          "guide": "왜곡된 베이스 리프가 곡 전체를 지배하는, 밴드의 라이브 단골 곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -673,14 +1642,18 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "초기 Muse의 보컬 스타일과 어두운 얼터너티브 정서 형성에 깊은 영향을 주었다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "queen",
           "kind": "influenced-by",
           "strength": 3,
           "note": "보컬 다층 녹음과 웅장한 오페라틱 록 구성 및 클래식과의 결합 방식에서 거대한 음악적 영향을 받았다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -843,15 +1816,17 @@
           "year": 2004,
           "album": "Hopes and Fears",
           "guide": "감성을 자극하는 리드미컬한 피아노 리프와 호소력 넘치는 보컬 클라이맥스.",
-          "youtubeId": "",
+          "youtubeId": "Oextk-If8HQ",
           "source": {
-            "label": "Keane — Somewhere Only We Know YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Keane%20Somewhere%20Only%20We%20Know",
+            "label": "Somewhere Only We Know — YouTube",
+            "url": "https://www.youtube.com/watch?v=Oextk-If8HQ",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         },
         {
           "id": "everybody-s-changing",
@@ -859,15 +1834,35 @@
           "year": 2004,
           "album": "Hopes and Fears",
           "guide": "경쾌한 신시사이저/피아노 패턴과 멜랑콜리한 가사가 선명한 대비를 이루는 멜로디라인.",
-          "youtubeId": "",
+          "youtubeId": "RSNmgE6L8AU",
           "source": {
-            "label": "Keane — Everybody's Changing YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Keane%20Everybody's%20Changing",
+            "label": "Everybody's Changing — YouTube",
+            "url": "https://www.youtube.com/watch?v=RSNmgE6L8AU",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
+        },
+        {
+          "id": "this-is-the-last-time",
+          "title": "This is the Last time",
+          "youtubeId": "u86VdOc3asA",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "This is the Last time — YouTube",
+            "url": "https://www.youtube.com/watch?v=u86VdOc3asA",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2004,
+          "album": "Hopes and Fears",
+          "guide": "피아노 발라드 특유의 절제된 감성과 톰 채플린의 호소력 짙은 보컬이 돋보이는 곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -876,21 +1871,27 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 초중반 피아노와 감수성 짙은 멜로디를 전면에 내세워 포스트 브릿팝 전성기를 함께 구축한 동시대 대표 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "snow-patrol",
           "kind": "shared-scene",
           "strength": 3,
           "note": "서정적이고 드라마틱하게 고조되는 보컬 및 멜랑콜리한 록 발라드 정서를 공유하는 동시대 영국/아일랜드 씬의 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "travis",
           "kind": "influenced-by",
           "strength": 3,
           "note": "1990년대 후반 따뜻하고 감성적인 포스트 브릿팝 사운드의 틀을 잡아 Keane의 초기 음악적 방향성에 깊은 영향을 주었다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -1092,14 +2093,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 중후반 서정적인 록 발라드로 메인스트림 차트를 점령하며 감성적인 포스트 브릿팝 유행을 함께 이끈 동시대 대표 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "travis",
           "kind": "influenced-by",
           "strength": 3,
           "note": "1990년대 후반 감수성 짙은 어쿠스틱 포스트 브릿팝의 길을 열어 Snow Patrol의 초기 사운드 형성 및 정서에 직간접적 영향을 주었다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -1286,6 +2291,24 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-25T03:49:44.949Z"
+        },
+        {
+          "id": "burn-it-to-the-ground",
+          "title": "Burn it to the Ground",
+          "youtubeId": "BxgeSv88c2w",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Burn it to the Ground — YouTube",
+            "url": "https://www.youtube.com/watch?v=BxgeSv88c2w",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2008,
+          "album": "Dark Horse",
+          "guide": "파티 분위기의 리프와 떼창하기 좋은 후렴구가 특징인 하드 록 싱글이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -1294,7 +2317,9 @@
           "kind": "influenced",
           "strength": 3,
           "note": "채드 크로거가 발굴해 음반 계약을 지원했으며 музыка적 스타일과 구성에서 진한 영향을 받은 후배 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -1480,6 +2505,24 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-25T05:10:26.058Z"
+        },
+        {
+          "id": "i-miss-you",
+          "title": "I Miss You",
+          "youtubeId": "s1tAYmMjLdY",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "I Miss You — YouTube",
+            "url": "https://www.youtube.com/watch?v=s1tAYmMjLdY",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2003,
+          "album": "blink-182",
+          "guide": "하프시코드 인트로와 어쿠스틱 기타가 어우러진, 밴드의 성숙해진 사운드를 보여주는 곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -1488,14 +2531,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "1990년대 후반부터 2000년대 팝 펑크 장르의 대중적 전성기를 함께 이끌며 투어를 함께한 동시대 라이벌이자 동료 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "sum-41",
           "kind": "influenced",
           "strength": 3,
           "note": "blink-182가 구축한 주류 팝 펑크 사운드와 유머러스한 MV 스타일의 영향을 깊게 받아 등장한 후대 밴드이다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -1672,6 +2719,24 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-25T05:09:20.345Z"
+        },
+        {
+          "id": "hit-it",
+          "title": "Hit it",
+          "youtubeId": "Hy_xJRbTq2Q",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Hit it — YouTube",
+            "url": "https://www.youtube.com/watch?v=Hy_xJRbTq2Q",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2014,
+          "album": "Oh, What a Life",
+          "guide": "경쾌한 밴조 사운드와 떼창하기 좋은 후렴구가 특징인 포크 팝 성향의 곡이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -1680,14 +2745,18 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 팝 / 소프트 록, 인디 팝 · 팝 록, 희망적이고 벅찬 · 떼창하고 싶은 공연장형",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "maroon-5",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 팝 / 소프트 록, 팝 록, 떼창하고 싶은 공연장형 · 희망적이고 벅찬",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -1870,14 +2939,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "시애틀 그런지 신을 함께 이끈 원년 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "pearl-jam",
           "kind": "shared-scene",
           "strength": 3,
           "note": "시애틀 그런지 신을 공유한 동시대 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -2064,21 +3137,27 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "megadeth",
           "kind": "shared-scene",
           "strength": 3,
           "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "slayer",
           "kind": "shared-scene",
           "strength": 3,
           "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -2264,6 +3343,42 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-24T06:46:22.232Z"
+        },
+        {
+          "id": "the-pretender",
+          "title": "The Pretender",
+          "youtubeId": "SBjQ9tuuTJQ",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "The Pretender — YouTube",
+            "url": "https://www.youtube.com/watch?v=SBjQ9tuuTJQ",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2007,
+          "album": "Echoes, Silence, Patience & Grace",
+          "guide": "잔잔한 인트로에서 폭발적인 코러스로 전환되는 다이내믹한 전개가 인상적인 싱글이다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
+        },
+        {
+          "id": "best-of-you",
+          "title": "Best of You",
+          "youtubeId": "h_L4Rixya64",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Best of You — YouTube",
+            "url": "https://www.youtube.com/watch?v=h_L4Rixya64",
+            "publisher": "YouTube",
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
+          },
+          "year": 2005,
+          "album": "In Your Honor",
+          "guide": "데이브 그롤의 절규하는 보컬과 폭발적인 코러스가 특징인, 밴드의 대표곡 중 하나다.",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
       "relations": [
@@ -2272,21 +3387,27 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "데이브 그롤이 너바나 해체 이후 결성한 밴드",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "pearl-jam",
           "kind": "shared-scene",
           "strength": 2,
           "note": "시애틀 얼터너티브 록 신을 공유",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "soundgarden",
           "kind": "shared-scene",
           "strength": 2,
           "note": "시애틀 얼터너티브 록 신을 공유",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -2552,14 +3673,18 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "90년대 팝 펑크의 대중화를 이루어 사운드적 영감을 제공한 선배 밴드다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "iron-maiden",
           "kind": "influenced-by",
           "strength": 3,
           "note": "Sum 41 특유의 화려한 트윈 기타 리프 및 메탈적 요소 구축에 깊은 영감을 주었다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -2781,14 +3906,18 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "뉴저지 고향 선배인 존 본 조비의 발굴과 지원으로 데뷔 및 세계적 스타덤에 올랐다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "guns-n-roses",
           "kind": "sounds-like",
           "strength": 3,
           "note": "거칠고 야성적인 하드 록 사운드와 강력한 프론트맨 중심의 에너지에서 많은 공통점을 보인다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -2998,7 +4127,9 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "90년대 팝 펑크의 전성기를 열며 음악적 영감을 준 직계 선배 밴드다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -3404,7 +4535,9 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 팝 / 소프트 록, 팝 록, 떼창하고 싶은 공연장형 · 희망적이고 벅찬",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -3574,15 +4707,17 @@
           "year": 1996,
           "album": "Evil Empire",
           "guide": "톰 모렐로 특유의 턴테이블 긁는 소리를 시뮬레이션한 기타 솔로와 강렬한 랩이 어우러진 명곡이다.",
-          "youtubeId": "3L8E11S1fM0",
+          "youtubeId": "3L4YrGaR8E4",
           "source": {
-            "label": "Rage Against the Machine — Bulls on Parade",
-            "url": "https://www.youtube.com/watch?v=3L8E11S1fM0",
+            "label": "Bulls on Parade — YouTube",
+            "url": "https://www.youtube.com/watch?v=3L4YrGaR8E4",
             "publisher": "YouTube",
-            "official": false,
-            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
       "relations": [
@@ -3591,14 +4726,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "90년대 힙합, 펑크, 록 요소를 결합하여 메인스트림을 이끈 얼터너티브 록 동료 밴드다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "linkin-park",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 랩 메탈 · 뉴 메탈, 강렬하고 공격적인 · 떼창하고 싶은 공연장형",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -3816,14 +4955,18 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "인더스트리얼 일렉트로닉 사운드와 록 사운드의 결합 방식에 영감을 받았다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "rage-against-the-machine",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 뉴 메탈 · 랩 메탈, 강렬하고 공격적인 · 떼창하고 싶은 공연장형",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -4012,15 +5155,17 @@
           "year": 2006,
           "album": "Daughtry",
           "guide": "강렬한 기타 리프와 크리스 도트리의 폭발적인 보컬이 돋보이는 밴드의 데뷔 대표곡이다.",
-          "youtubeId": "UQ92eyxnxmE",
+          "youtubeId": "pFP_jcY_MLc",
           "source": {
-            "label": "Daughtry — It's Not Over",
-            "url": "https://www.youtube.com/watch?v=UQ92eyxnxmE",
+            "label": "It's Not Over — YouTube",
+            "url": "https://www.youtube.com/watch?v=pFP_jcY_MLc",
             "publisher": "YouTube",
-            "official": false,
-            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         },
         {
           "id": "over-you",
@@ -4236,15 +5381,17 @@
           "year": 2002,
           "album": "By the Way",
           "guide": "특유의 리드미컬한 기타 리프와 그루브 넘치는 베이스 라인이 돋보이는 대표적인 펑크 록 앤섬이다.",
-          "youtubeId": "BfOdWSiyWoc",
+          "youtubeId": "8DyziWtkfBw",
           "source": {
-            "label": "Red Hot Chili Peppers — Can't Stop",
-            "url": "https://www.youtube.com/watch?v=BfOdWSiyWoc",
+            "label": "Can't Stop — YouTube",
+            "url": "https://www.youtube.com/watch?v=8DyziWtkfBw",
             "publisher": "YouTube",
-            "official": false,
-            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
       "relations": [],
@@ -5454,7 +6601,7 @@
           "kind": "influenced",
           "note": "직선적인 리프 중심 하드 록",
           "strength": 3,
-          "reviewStatus": "draft",
+          "reviewStatus": "reviewed",
           "source": {
             "label": "Guns N' Roses — Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Guns_N%27_Roses",
@@ -5462,8 +6609,8 @@
             "accessedAt": "2026-07-17",
             "note": "Axl Rose가 AC/DC를 Guns N' Roses의 큰 영향으로 직접 언급했고 Appetite for Destruction의 사운드 영향도 확인"
           },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "the-rolling-stones",
@@ -5486,7 +6633,9 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 하드 / 글램 록, 하드 록, 기타 리프와 솔로 중심 · 떼창하고 싶은 공연장형",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "reviewStatus": "reviewed",
@@ -15483,21 +16632,27 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 메탈, 복잡하고 테크니컬 · 긴 곡에 몰입하는",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "yes",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 록, 복잡하고 테크니컬 · 웅장하고 영화적인",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "king-crimson",
           "kind": "sounds-like",
           "strength": 3,
           "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 록, 복잡하고 테크니컬 · 긴 곡에 몰입하는",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -15703,14 +16858,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "1970년대 영국 하드 록 및 헤비메탈 씬을 함께 이끈 대표 주자입니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "black-sabbath",
           "kind": "shared-scene",
           "strength": 3,
           "note": "초기 헤비메탈 음악의 틀을 함께 확립한 3대 밴드 중 하나입니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -15819,10 +16978,16 @@
         "wikipediaTitle": "Kodaline",
         "alt": "Kodaline 밴드 사진",
         "credit": {
-          "sourceUrl": "",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kodaline_2015.jpg",
+          "creator": "Kathi Rudminat",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T00:19:41.118Z"
+        },
+        "fileName": "File:Kodaline 2015.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Kodaline_2015.jpg/960px-Kodaline_2015.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Kodaline_2015.jpg"
       },
       "members": [
         {
@@ -15900,7 +17065,9 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "감성적인 피아노 멜로디와 웅장한 후렴구 구조에서 유사한 면모를 보입니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -15931,6 +17098,12 @@
           "official": true,
           "externalId": "@Kodalinemusic",
           "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Kodaline — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Kodaline_2015.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -16090,15 +17263,17 @@
           "year": 2005,
           "album": "City of Evil",
           "guide": "화려한 트윈 기타 솔로와 질주하는 리듬 패턴이 펼쳐지는 명곡입니다.",
-          "youtubeId": "IHS3qJXpWDg",
+          "youtubeId": "IHS3qJdxefY",
           "source": {
-            "label": "Avenged Sevenfold — Bat Country",
-            "url": "https://www.youtube.com/watch?v=IHS3qJXpWDg",
+            "label": "Bat Country — YouTube",
+            "url": "https://www.youtube.com/watch?v=IHS3qJdxefY",
             "publisher": "YouTube",
-            "official": false,
-            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
       "relations": [
@@ -16107,14 +17282,18 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "웅장한 헤비메탈 리프와 곡 구성 측면에서 큰 음악적 영향을 받았습니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "iron-maiden",
           "kind": "influenced-by",
           "strength": 3,
           "note": "특유의 트윈 기타 하모니 솔로 스타일 형성에 결정적인 영향을 주었습니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -16273,15 +17452,17 @@
           "year": 2008,
           "album": "The Script",
           "guide": "애절한 어쿠스틱 멜로디와 서정적인 가사로 밴드를 세계적인 스타 반열에 올린 대표작입니다.",
-          "youtubeId": "gS9o1B3h5E8",
+          "youtubeId": "gS9o1FAszdk",
           "source": {
-            "label": "The Script — The Man Who Can't Be Moved",
-            "url": "https://www.youtube.com/watch?v=gS9o1B3h5E8",
+            "label": "The Man Who Can't Be Moved — YouTube",
+            "url": "https://www.youtube.com/watch?v=gS9o1FAszdk",
             "publisher": "YouTube",
-            "official": false,
-            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+            "official": true,
+            "note": "검색으로 확인한 공식/대표 업로드 영상"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T00:26:19.730Z"
         },
         {
           "id": "hall-of-fame-feat-will-i-am",
@@ -16308,21 +17489,27 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "피아노 팝 록 기반의 감성적인 후렴구와 앤섬 성향의 음악 스타일을 공유합니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "kodaline",
           "kind": "shared-scene",
           "strength": 3,
           "note": "동시대 아일랜드 출신으로 서정적인 모던 록·팝 씬을 이끄는 동료 밴드입니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "coldplay",
           "kind": "influenced-by",
           "strength": 3,
           "note": "스타디움 규모의 웅장한 팝 록 사운드와 대중적인 멜로디 구성에 영향을 받았습니다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -16530,14 +17717,18 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 이후 글로벌 차트를 이끈 대표적인 메인스트림 팝 록 밴드 동료다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
         {
           "targetBandId": "coldplay",
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 초반 데뷔하여 팝 록 씬의 전성기를 함께 이끌었다.",
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [

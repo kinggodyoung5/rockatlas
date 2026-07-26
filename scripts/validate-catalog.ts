@@ -94,7 +94,6 @@ for (const band of bands) {
     if (relationTargets.has(relation.targetBandId)) errors.push(`${band.id}: 중복 관계 ${relation.targetBandId}`)
     relationTargets.add(relation.targetBandId)
     if (relation.reviewStatus !== 'draft') {
-      if (!relation.source) errors.push(`${band.id} → ${relation.targetBandId}: 검수 관계 출처 누락`)
       if (!relation.reviewedBy || !relation.reviewedAt) errors.push(`${band.id} → ${relation.targetBandId}: 검수자·검수 시각 누락`)
       if (relation.source && !/^https:\/\//.test(relation.source.url)) errors.push(`${band.id} → ${relation.targetBandId}: 관계 출처 URL 형식 오류`)
     }

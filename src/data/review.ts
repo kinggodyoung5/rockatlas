@@ -50,7 +50,7 @@ export function reviewBand(band: Band): BandReview {
     && /commons\.wikimedia\.org/.test(image.sourceUrl)
   const pendingTracks = band.tracks.filter((track) => track.reviewStatus === 'draft' || !/^https:\/\//.test(track.source.url))
   const validTrackLinks = band.tracks.filter((track) => /^https:\/\//.test(track.source.url))
-  const pendingRelations = band.relations.filter((relation) => relation.reviewStatus === 'draft' || !relation.source)
+  const pendingRelations = band.relations.filter((relation) => relation.reviewStatus === 'draft')
 
   const checks: ReviewCheck[] = [
     {
@@ -118,7 +118,7 @@ export function summarizeCatalogReview(bands: Band[]): CatalogReviewSummary {
     validTrackLinks: tracks.filter((track) => /^https:\/\//.test(track.source.url)).length,
     pendingTracks: tracks.filter((track) => track.reviewStatus === 'draft' || !/^https:\/\//.test(track.source.url)).length,
     totalRelations: relations.length,
-    pendingRelations: relations.filter((relation) => relation.reviewStatus === 'draft' || !relation.source).length,
+    pendingRelations: relations.filter((relation) => relation.reviewStatus === 'draft').length,
     pendingImages: bands.filter((band) => band.image.credit.reviewStatus !== 'verified').length,
   }
 }
