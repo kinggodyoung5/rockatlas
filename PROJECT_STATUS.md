@@ -5,13 +5,14 @@
 
 ## 0. 현재 상태 요약
 
-- 마지막 갱신: 2026-07-25 KST · Claude
+- 마지막 갱신: 2026-07-26 KST · Claude
 - 로컬 폴더: `C:\Users\SH\Documents\Codex\rock-atlas`
 - 공개 기준 브랜치: `main` (GitHub Pages는 `main` 푸시 시 GitHub Actions로 자동 배포 — `.github/workflows/deploy-pages.yml`)
 - 현재 개발 브랜치: `codex/taxonomy-v2` — `main`과 항상 동일하게 fast-forward 배포됨.
 - 원격 백업 브랜치·태그: `backup/pre-taxonomy-v2-20260719`
-- **밴드 수: 73개.** The Fray·The Calling·The Fratellis·Keane 추가 + 실제 업로드된 로고/워드마크 이미지(`public/uploads/logo-1784972716795.png`, `wordmark-1784972730924.png`) + 줄바꿈 있는 히어로 문구를 커밋 `1f9fcde`로 배포 완료.
-- 2026-07-25 최신 검증: `validate:data` 오류 0건·경고 6건(밴드 73 · 트랙 148 · 관계 158, Commons 검수 이미지 69/73, YouTube 검색 링크 대체 6건 — the-fray/the-calling/the-fratellis/keane 곡 일부), `validate:taxonomy` 오류 0건, `validate:uploads` 통과, 프로덕션 빌드 성공.
+- **밴드 77개 전원 이미지·대표곡·관계 검수 완료 (커밋 `d271227`)**: 곡 제목만 있던 30개 밴드 56곡에 연도·앨범·감상평·실제 유튜브 링크를 채움(검색으로 개별 확인, 공식 MV가 없는 5곡은 공식 채널 오디오로 대체하고 `official:false` 표기). `validate:data` 경고 0건 달성 (밴드 77 · 트랙 225 · 관계 161, 전부 검증됨). Gemini 리서치 프롬프트(`buildGeminiResearchPrompt` in `src/lib/bandIntake.ts` — Studio "Gem 지침 v3 복사" 버튼이 실제로 복사하는 그 함수, `docs/GEMINI_*.md`는 7/18 이후 갱신 안 된 옛 스냅샷이라 무시할 것)를 대표곡 2곡→3곡으로 늘리고, 선정 기준을 "차트 성적·스트리밍 조회수 등 대중적 인지도 높은 순"으로 명시.
+- **밴드 수: 77개.** The Fray·The Calling·The Fratellis·Keane·Måneskin·The Killers·Nothing But Thieves·DragonForce 추가 + 실제 업로드된 로고/워드마크 이미지(`public/uploads/logo-1784972716795.png`, `wordmark-1784972730924.png`) + 줄바꿈 있는 히어로 문구 배포 완료.
+- 2026-07-26 최신 검증: `validate:data` 오류 0건·경고 0건(밴드 77 · 트랙 225 · 관계 161, Commons 검수 이미지 77/77), `validate:taxonomy` 오류 0건, `validate:uploads` 통과, 프로덕션 빌드 성공.
 - **Studio 실시간 미리보기를 iframe+postMessage 기반으로 전면 교체**(`?livePreview=1` 라우트) — 기존 손으로 만든 목업 미리보기가 실제 화면과 어긋나던 구조적 원인을 제거. 히어로 문구 줄바꿈 textarea 지원, 로고/워드마크 확대, 이미지 모드에서도 곁문구(태그라인·brandSuffix) 유지, "장르부터 탐색" 스크롤 버그 수정 (커밋 `649dc3e`).
 - 모바일 미리보기에서 "by kinggodyoung" 문구가 두 줄로 깨지던 버그와 로고 이미지 대비 세로 정렬이 어긋나던 문제 수정 (`nowrap`+`flex-wrap`, `align-items:center`) — 커밋 `1f9fcde`.
 - **중요 발견**: 사용자가 겪은 "미리보기와 실제 웹이 다르다 / 줄바꿈이 반영 안 된다" 현상의 실제 원인은 코드 버그가 아니라 **배포 지연**이었다 — Studio에서 로컬에 저장한 새 밴드·이미지·줄바꿈 문구가 이번 세션 전까지 `main`에 커밋된 적이 없어 실제 배포된 GitHub Pages는 계속 예전 데이터를 보여주고 있었음. 이번 커밋으로 해소됨.
