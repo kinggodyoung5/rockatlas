@@ -30,7 +30,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
     setResult(next)
     setSelectedKeys(new Set(next.candidates.filter((candidate) => candidate.canApprove).map((candidate) => candidate.key)))
     const valid = next.candidates.filter((candidate) => candidate.canApprove).length
-    const readyToPublish = next.candidates.filter((candidate) => candidate.band.reviewStatus === 'reviewed').length
+    const readyToPublish = next.candidates.filter((candidate) => candidate.band.reviewStatus === 'published').length
     setMessage(next.globalIssues.length
       ? 'JSON을 읽는 중 문제가 발견됐습니다.'
       : `${next.candidates.length}개를 읽었습니다. ${valid}개는 초안 추가가 가능하고, 그중 ${readyToPublish}개는 자동 검수까지 완료됐습니다.`)
@@ -61,7 +61,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
     }
     const approvedIds = new Set(approved.map((candidate) => candidate.band.id))
     const existingIds = new Set(bands.map((band) => band.id))
-    const reviewedCount = approved.filter((candidate) => candidate.band.reviewStatus === 'reviewed').length
+    const reviewedCount = approved.filter((candidate) => candidate.band.reviewStatus === 'published').length
     onAddBands(approved.map((candidate) => {
       const finalized = finalizeIntakeBand(candidate.band)
       return { ...finalized, relations: finalized.relations.filter((relation) => existingIds.has(relation.targetBandId) || approvedIds.has(relation.targetBandId)) }
@@ -118,7 +118,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
             const errors = candidate.issues.filter((issue) => issue.severity === 'error')
             const warnings = candidate.issues.filter((issue) => issue.severity === 'warning')
             return <article key={candidate.key} data-status={candidate.canApprove ? 'ready' : 'blocked'}>
-              <label className="intake-candidate-head"><input type="checkbox" disabled={!candidate.canApprove} checked={selectedKeys.has(candidate.key)} onChange={() => setSelectedKeys((current) => { const next = new Set(current); if (next.has(candidate.key)) next.delete(candidate.key); else next.add(candidate.key); return next })} /><span><strong>{candidate.band.name || '이름 없음'}</strong><small>{candidate.band.id} · {candidate.band.formed} · {candidate.band.countryCode || '국가 미입력'}</small></span><em>{candidate.canApprove ? (candidate.band.reviewStatus === 'reviewed' ? <><ShieldCheck size={15} /> 자동 검수 완료</> : <><CheckCircle2 size={15} /> 초안 추가 가능</>) : `수정 필요 ${errors.length}`}</em></label>
+              <label className="intake-candidate-head"><input type="checkbox" disabled={!candidate.canApprove} checked={selectedKeys.has(candidate.key)} onChange={() => setSelectedKeys((current) => { const next = new Set(current); if (next.has(candidate.key)) next.delete(candidate.key); else next.add(candidate.key); return next })} /><span><strong>{candidate.band.name || '이름 없음'}</strong><small>{candidate.band.id} · {candidate.band.formed} · {candidate.band.countryCode || '국가 미입력'}</small></span><em>{candidate.canApprove ? (candidate.band.reviewStatus === 'published' ? <><ShieldCheck size={15} /> 자동 검수 완료</> : <><CheckCircle2 size={15} /> 초안 추가 가능</>) : `수정 필요 ${errors.length}`}</em></label>
               <div className="intake-candidate-summary"><span>대표 장르 <b>{candidate.band.taxonomyV2?.primaryGenreId}</b></span><span>세부 장르 <b>{candidate.band.taxonomyV2?.subgenreIds.length ?? 0}</b></span><span>분위기 <b>{Object.keys(candidate.band.taxonomyV2?.moodScores ?? {}).length}</b></span><span>출처 <b>{candidate.band.sources.length}</b></span></div>
               {candidate.issues.length > 0 && <ul>{candidate.issues.map((issue, index) => <li key={`${issue.code}-${index}`} data-severity={issue.severity}>{issue.message}</li>)}</ul>}
               {!errors.length && warnings.length > 0 && <p>경고는 초안 추가를 막지 않습니다. 추가 후 왼쪽 밴드 목록에서 내용을 보완할 수 있습니다.</p>}

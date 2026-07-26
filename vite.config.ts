@@ -77,7 +77,7 @@ async function validateCatalogBands(bands: CatalogBandPayload[]) {
   bands.forEach((band, index) => {
     const label = names[index] || ids[index] || `${index + 1}번째 밴드`
     if (!Number.isInteger(band.formed) || Number(band.formed) < 1900 || Number(band.formed) > new Date().getFullYear()) errors.push(`${label}: 결성 연도가 올바르지 않습니다.`)
-    if (!['draft', 'reviewed', 'published'].includes(String(band.reviewStatus))) errors.push(`${label}: 공개 상태 값이 올바르지 않습니다.`)
+    if (!['draft', 'published'].includes(String(band.reviewStatus))) errors.push(`${label}: 공개 상태 값이 올바르지 않습니다.`)
     if (!Array.isArray(band.relations)) errors.push(`${label}: 관계 목록 형식이 올바르지 않습니다.`)
     else band.relations.forEach((relation) => {
       if (!relation || typeof relation !== 'object') return errors.push(`${label}: 관계 항목 형식이 올바르지 않습니다.`)

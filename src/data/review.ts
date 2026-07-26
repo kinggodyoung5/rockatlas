@@ -1,4 +1,4 @@
-import type { Band, ReviewStatus, SourceRef } from '../types/music'
+import type { Band, BandReviewStatus, SourceRef } from '../types/music'
 
 export type ReviewCheckId = 'editorial' | 'identifiers' | 'image-rights' | 'track-links' | 'relations'
 
@@ -11,7 +11,7 @@ export interface ReviewCheck {
 
 export interface BandReview {
   bandId: string
-  status: ReviewStatus
+  status: BandReviewStatus
   checks: ReviewCheck[]
   passedChecks: number
   totalChecks: number
@@ -21,7 +21,6 @@ export interface BandReview {
 export interface CatalogReviewSummary {
   totalBands: number
   draftBands: number
-  reviewedBands: number
   publishedBands: number
   readyBands: number
   totalTracks: number
@@ -110,7 +109,6 @@ export function summarizeCatalogReview(bands: Band[]): CatalogReviewSummary {
   return {
     totalBands: bands.length,
     draftBands: bands.filter((band) => band.reviewStatus === 'draft').length,
-    reviewedBands: bands.filter((band) => band.reviewStatus === 'reviewed').length,
     publishedBands: bands.filter((band) => band.reviewStatus === 'published').length,
     readyBands: reviews.filter((review) => review.readyToPublish).length,
     totalTracks: tracks.length,

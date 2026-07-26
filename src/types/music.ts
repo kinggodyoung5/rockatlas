@@ -19,6 +19,10 @@ export type RelationKind =
 
 export type ReviewStatus = 'draft' | 'reviewed' | 'published'
 
+/** Band-level visibility only has two real states on the public site — a 'reviewed' band was always shown
+ *  identically to a 'published' one, so that middle state was pure UI confusion with no behavioral difference. */
+export type BandReviewStatus = 'draft' | 'published'
+
 export type EraId = '1960s' | '1970s' | '1980s' | '1990s' | '2000s' | '2010s' | '2020s'
 
 export interface BandEraTag {
@@ -110,7 +114,8 @@ export interface BandTaxonomyV2 {
   reviewNote?: string
 }
 
-export interface Band extends ReviewRecord {
+export interface Band extends Omit<ReviewRecord, 'reviewStatus'> {
+  reviewStatus: BandReviewStatus
   id: string
   name: string
   formed: number

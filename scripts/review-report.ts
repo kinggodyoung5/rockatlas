@@ -5,7 +5,7 @@ const summary = summarizeCatalogReview(bands)
 const strict = process.argv.includes('--strict')
 
 console.log('ROCK ATLAS 데이터 검수 리포트')
-console.log(`밴드: ${summary.totalBands}개 (초안 ${summary.draftBands} · 검수 ${summary.reviewedBands} · 공개 ${summary.publishedBands})`)
+console.log(`밴드: ${summary.totalBands}개 (초안 ${summary.draftBands} · 공개 ${summary.publishedBands})`)
 console.log(`공개 준비 완료: ${summary.readyBands}/${summary.totalBands}`)
 console.log(`미확인 이미지: ${summary.pendingImages}/${summary.totalBands}`)
 console.log(`검수된 대표곡: ${summary.reviewedTracks}/${summary.totalTracks}`)

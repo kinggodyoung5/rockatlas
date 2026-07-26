@@ -402,6 +402,9 @@ const videoMatchesExpected = (actual: string, expected: string) => {
 const youtubeSearchUrl = (bandName: string, trackTitle: string) =>
   `https://www.youtube.com/results?search_query=${encodeURIComponent(`${bandName} ${trackTitle}`)}`
 
+const commonsSearchUrl = (bandName: string) =>
+  `https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(bandName)}&title=Special:MediaSearch&type=image`
+
 /** Confirms a YouTube video exists and that its oEmbed title/author match the requested band and track. */
 export async function checkYoutubeVideo(id: string, expected?: { bandName: string; trackTitle: string }): Promise<YoutubeCheckResult> {
   if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return { ok: false, reason: 'format', error: '유효한 YouTube ID 형식이 아닙니다.' }
@@ -520,7 +523,7 @@ export function extractJson(textValue: string): unknown {
   return JSON.parse(trimmed.slice(start, end + 1))
 }
 
-/** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'reviewed'. */
+/** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'published'. */
 const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
   'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable', 'youtube-fallback',
@@ -611,7 +614,7 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
   return { candidates, globalIssues }
 }
 
-/** Runs the network-backed auto-verification (YouTube existence, Commons rights lookup) and elevates a band straight to 'reviewed' once every automatable check is clean. */
+/** Runs the network-backed auto-verification (YouTube existence, Commons rights lookup) and elevates a band straight to 'published' once every automatable check is clean. */
 async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
   if (!candidate.canApprove) return
   const band = candidate.band
@@ -668,7 +671,22 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
       }
       candidate.issues.push({ severity: 'info', code: 'image-verified', message: `이미지 라이선스를 Commons에서 자동 확인했습니다: ${lookup.license}` })
     } else {
-      candidate.issues.push({ severity: 'warning', code: 'image-lookup-failed', message: `이미지 자동 확인 실패: ${lookup.error ?? '라이선스 정보가 불완전합니다'} — 수동 확인이 필요합니다.` })
+      // Gemini가 지어낸 파일명(존재하지 않는 File:...)이 그대로 sourceUrl에 남으면 실제 사진처럼 보이는 허위 참조가 된다.
+      // YouTube 검색 링크 대체와 동일하게, 검증 실패 시 사람이 직접 찾아볼 수 있는 Commons 검색 링크로 바꿔치기한다.
+      band.image = {
+        ...band.image,
+        fileName: undefined,
+        originalUrl: undefined,
+        displayUrl: undefined,
+        credit: {
+          sourceUrl: commonsSearchUrl(band.name),
+          creator: undefined,
+          license: '검토 필요',
+          licenseUrl: undefined,
+          reviewStatus: 'needs-review',
+        },
+      }
+      candidate.issues.push({ severity: 'warning', code: 'image-lookup-failed', message: `이미지 자동 확인 실패: ${lookup.error ?? '라이선스 정보가 불완전합니다'} — 존재하지 않을 수 있는 파일명 대신 Commons 검색 링크로 대체했습니다. 실제 사진은 수동으로 찾아 넣어야 합니다.` })
     }
   }
 
@@ -676,19 +694,18 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
   const hasBlockingWarning = candidate.issues.some((issue) => issue.severity === 'warning' && reviewBlockingCodes.has(issue.code))
   candidate.canApprove = !hasError
   if (!hasError && !hasBlockingWarning) {
-    band.reviewStatus = 'reviewed'
+    band.reviewStatus = 'published'
     band.reviewedBy = '자동 검수 (AI)'
     band.reviewedAt = new Date().toISOString()
     if (band.taxonomyV2) band.taxonomyV2 = { ...band.taxonomyV2, reviewStatus: 'reviewed' }
-    candidate.issues.push({ severity: 'info', code: 'auto-reviewed', message: '자동 검사를 모두 통과해 검수 완료 상태로 추가됩니다. 공개 전 최종 확인만 하면 됩니다.' })
+    candidate.issues.push({ severity: 'info', code: 'auto-reviewed', message: '자동 검사를 모두 통과해 공개 상태로 추가됩니다.' })
   }
 }
 
-/** Safety clamp applied right before a candidate is merged into the catalog — intake can promote a band to 'reviewed' but never straight to 'published'. */
+/** Deep-clones a candidate right before it's merged into the catalog. Band review status is only ever 'draft' or
+ *  'published' now, and intake's auto-verification is already the gate for reaching 'published' — no clamp needed. */
 export function finalizeIntakeBand(band: Band): Band {
-  const clone = structuredClone(band)
-  if (clone.reviewStatus === 'published') clone.reviewStatus = 'reviewed'
-  return clone
+  return structuredClone(band)
 }
 
 export function buildGeminiResearchPrompt() {

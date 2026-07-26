@@ -223,7 +223,7 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Studio operator",
       "reviewedAt": "2026-07-25T14:46:25.272Z"
     },
@@ -429,7 +429,7 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Studio operator",
       "reviewedAt": "2026-07-25T13:35:19.851Z"
     },
@@ -1713,7 +1713,7 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-25T07:44:51.133Z"
     },
@@ -2164,7 +2164,7 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-25T06:59:31.655Z"
     },
@@ -2380,7 +2380,7 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-25T03:49:45.528Z"
     },
@@ -3021,7 +3021,7 @@
         },
         "reviewStatus": "reviewed"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-24T06:46:22.232Z"
     },
@@ -3226,7 +3226,7 @@
         },
         "reviewStatus": "reviewed"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-24T06:46:22.232Z"
     },
@@ -3477,7 +3477,7 @@
         },
         "reviewStatus": "reviewed"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "자동 검수 (AI)",
       "reviewedAt": "2026-07-24T06:46:22.232Z"
     },
@@ -5619,7 +5619,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -5872,7 +5872,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -6125,7 +6125,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -6379,7 +6379,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -6638,7 +6638,7 @@
           "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -6886,7 +6886,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -7137,7 +7137,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
@@ -7396,7 +7396,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
@@ -7642,7 +7642,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -7886,7 +7886,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -8127,7 +8127,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:49:24.757Z",
       "image": {
@@ -8375,7 +8375,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -8624,7 +8624,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:49:24.757Z",
       "image": {
@@ -8898,7 +8898,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:54:41.346Z",
       "image": {
@@ -9149,7 +9149,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -9399,7 +9399,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:49:24.757Z",
       "image": {
@@ -9644,7 +9644,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -9896,7 +9896,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -10149,7 +10149,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -10416,7 +10416,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -10672,7 +10672,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -10921,7 +10921,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -11172,7 +11172,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -11424,7 +11424,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
@@ -11667,7 +11667,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -11919,7 +11919,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -12176,7 +12176,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -12415,7 +12415,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -12664,7 +12664,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:49:24.757Z",
       "image": {
@@ -12903,7 +12903,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:55:43.913Z",
       "image": {
@@ -13170,7 +13170,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -13421,7 +13421,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -13671,7 +13671,7 @@
           "reviewedAt": "2026-07-17"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -13900,7 +13900,7 @@
           }
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T10:39:37.612Z",
       "image": {
@@ -14110,7 +14110,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -14300,7 +14300,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -14507,7 +14507,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -14704,7 +14704,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -14922,7 +14922,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
       "image": {
@@ -15140,7 +15140,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -15375,7 +15375,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -15620,7 +15620,7 @@
           "reviewedAt": "2026-07-19"
         }
       ],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -15817,7 +15817,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -16007,7 +16007,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
       "image": {
@@ -16198,7 +16198,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
       "image": {
@@ -16404,7 +16404,7 @@
         }
       ],
       "relations": [],
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
@@ -16931,7 +16931,7 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "reviewed",
+      "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T12:00:54.378Z"
     },

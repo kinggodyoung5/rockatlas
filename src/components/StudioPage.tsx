@@ -687,7 +687,7 @@ export function StudioPage() {
             {filteredBands.map((band) => (
               <button key={band.id} className={band.id === selectedId ? 'is-active' : ''} onClick={() => chooseBand(band)}>
                 <span>{band.name}<small>{band.primaryGenre} · {band.formed}</small></span>
-                <em data-status={band.reviewStatus}>{band.reviewStatus === 'draft' ? '초안' : band.reviewStatus === 'published' ? '공개' : '표시'}</em>
+                <em data-status={band.reviewStatus}>{band.reviewStatus === 'draft' ? '초안' : '공개'}</em>
               </button>
             ))}
           </div>
@@ -712,7 +712,7 @@ export function StudioPage() {
                 reviewedBy: reviewStatus === 'draft' ? undefined : 'Studio operator',
                 reviewedAt: reviewStatus === 'draft' ? undefined : new Date().toISOString(),
               })
-            }}><option value="draft">초안 · 사이트 숨김</option><option value="reviewed">검수됨 · 사이트 표시</option><option value="published">공개</option></select></label>
+            }}><option value="draft">초안 · 사이트 숨김</option><option value="published">공개 · 사이트 표시</option></select></label>
           </section>
 
           <section className="studio-form-section">

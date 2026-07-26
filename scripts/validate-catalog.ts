@@ -60,6 +60,9 @@ for (const band of bands) {
 
   const image = band.image
   const credit = image.credit
+  if (band.reviewStatus === 'published' && credit.reviewStatus !== 'verified') {
+    errors.push(`${band.id}: 이미지 권리 검수가 끝나지 않았는데 공개 상태입니다.`)
+  }
   if (credit.reviewStatus === 'verified') {
     if (!image.fileName || !image.displayUrl || !image.originalUrl) errors.push(`${band.id}: 검수 이미지 파일 URL 누락`)
     if (!credit.creator || !credit.license) errors.push(`${band.id}: 검수 이미지 저작자·라이선스 누락`)
