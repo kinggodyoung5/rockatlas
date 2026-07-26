@@ -468,6 +468,68 @@ async function searchCommonsFileTitle(query: string): Promise<string | null> {
 
 const normalizeForMatch = (value: string) => value.toLocaleLowerCase().normalize('NFKC').replace(/[^a-z0-9가-힣]+/g, '')
 
+export interface IdentifierCheckResult {
+  ok: boolean
+  label?: string
+  error?: string
+}
+
+/** Confirms a Wikidata QID actually exists and its label/aliases plausibly name this band. Gemini frequently cites
+ *  a syntactically valid but completely unrelated QID (a building, a category page, a random article) as if it had
+ *  verified it — this catches that instead of trusting the string at face value. */
+export async function checkWikidataEntity(qid: string, bandName: string): Promise<IdentifierCheckResult> {
+  if (!/^Q\d+$/.test(qid)) return { ok: false, error: '유효한 Wikidata ID 형식이 아닙니다.' }
+  try {
+    const url = `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${qid}&props=labels%7Caliases&languages=en%7Cko&format=json&origin=*`
+    const response = await fetch(url)
+    if (!response.ok) return { ok: false, error: 'Wikidata 조회에 실패했습니다.' }
+    const data = await response.json() as {
+      entities?: Record<string, {
+        missing?: unknown
+        labels?: Record<string, { value?: string }>
+        aliases?: Record<string, Array<{ value?: string }>>
+      }>
+    }
+    const entity = data.entities?.[qid]
+    if (!entity || entity.missing !== undefined) return { ok: false, error: `Wikidata에 ${qid} 항목이 존재하지 않습니다.` }
+    const candidates = [
+      entity.labels?.en?.value,
+      entity.labels?.ko?.value,
+      ...(entity.aliases?.en ?? []).map((item) => item.value),
+      ...(entity.aliases?.ko ?? []).map((item) => item.value),
+    ].filter((value): value is string => Boolean(value))
+    const matches = candidates.some((label) => normalizeForMatch(label).includes(normalizeForMatch(bandName)) || normalizeForMatch(bandName).includes(normalizeForMatch(label)))
+    if (!matches) return { ok: false, label: candidates[0], error: `${qid}은(는) "${candidates[0] ?? '알 수 없음'}" 항목이라 밴드 이름과 관련 없어 보입니다.` }
+    return { ok: true, label: candidates[0] }
+  } catch {
+    return { ok: false, error: 'Wikidata 조회 중 네트워크 오류가 발생했습니다.' }
+  }
+}
+
+/** Confirms a MusicBrainz artist MBID actually resolves and its name plausibly matches this band. Gemini frequently
+ *  fabricates a syntactically valid UUID that doesn't correspond to any real MusicBrainz artist at all. */
+export async function checkMusicBrainzArtist(mbid: string, bandName: string): Promise<IdentifierCheckResult> {
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(mbid)) return { ok: false, error: '유효한 MusicBrainz ID 형식이 아닙니다.' }
+  try {
+    const response = await fetch(`https://musicbrainz.org/ws/2/artist/${mbid}?fmt=json`, { headers: { 'User-Agent': 'RockAtlasIntake/0.1 (contact: studio-operator)' } })
+    if (response.status === 404) return { ok: false, error: `MusicBrainz에 ${mbid} 아티스트가 존재하지 않습니다.` }
+    if (!response.ok) return { ok: false, error: 'MusicBrainz 조회에 실패했습니다.' }
+    const data = await response.json() as { name?: string }
+    if (!data.name) return { ok: false, error: 'MusicBrainz 응답에서 이름을 찾지 못했습니다.' }
+    const matches = normalizeForMatch(data.name).includes(normalizeForMatch(bandName)) || normalizeForMatch(bandName).includes(normalizeForMatch(data.name))
+    if (!matches) return { ok: false, label: data.name, error: `${mbid}은(는) "${data.name}" 아티스트라 밴드 이름과 관련 없어 보입니다.` }
+    return { ok: true, label: data.name }
+  } catch {
+    return { ok: false, error: 'MusicBrainz 조회 중 네트워크 오류가 발생했습니다.' }
+  }
+}
+
+const wikidataSearchUrl = (bandName: string) =>
+  `https://www.wikidata.org/w/index.php?search=${encodeURIComponent(bandName)}&title=Special:Search`
+
+const musicBrainzSearchUrl = (bandName: string) =>
+  `https://musicbrainz.org/search?query=${encodeURIComponent(bandName)}&type=artist`
+
 /** Pulls the real file URL, creator and license straight from the Wikimedia Commons API, so operators never have to type rights fields by hand.
  *  `bandName`, when given, gates the result: a license lookup only confirms the file's rights are real, never that the photo is actually of this band — so if the resolved title doesn't even contain the band's name, we refuse rather than silently attaching an unrelated photo. */
 export async function lookupCommonsImage(input: string, bandName?: string): Promise<CommonsLookupResult> {
@@ -527,7 +589,7 @@ export function extractJson(textValue: string): unknown {
 const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
   'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable', 'youtube-fallback',
-  'english-tags', 'english-roles',
+  'english-tags', 'english-roles', 'wikidata-mismatch', 'musicbrainz-mismatch',
 ])
 
 export async function inspectBandIntake(rawText: string, existingBands: Band[]): Promise<IntakeResult> {
@@ -687,6 +749,34 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
         },
       }
       candidate.issues.push({ severity: 'warning', code: 'image-lookup-failed', message: `이미지 자동 확인 실패: ${lookup.error ?? '라이선스 정보가 불완전합니다'} — 존재하지 않을 수 있는 파일명 대신 Commons 검색 링크로 대체했습니다. 실제 사진은 수동으로 찾아 넣어야 합니다.` })
+    }
+  }
+
+  const wikidataSource = band.sources.find((source) => source.publisher === 'Wikidata' && source.externalId)
+  if (wikidataSource?.externalId) {
+    const check = await checkWikidataEntity(wikidataSource.externalId, band.name)
+    if (!check.ok) {
+      // Gemini는 형식만 맞는 엉뚱한 QID(관련 없는 건물·카테고리 문서 등)를 실제로 확인한 것처럼 적어 내는 경우가 흔하다.
+      // 잘못된 ID를 그대로 두면 사이트에서 방문자가 클릭했을 때 엉뚱한 페이지로 연결되고, 다른 밴드의 진짜 ID와 충돌할 수도 있다.
+      band.sources = band.sources.map((source) => source === wikidataSource
+        ? { label: `${band.name} — Wikidata`, url: wikidataSearchUrl(band.name), publisher: 'Wikidata', note: '자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요' }
+        : source)
+      candidate.issues.push({ severity: 'warning', code: 'wikidata-mismatch', message: `Wikidata 확인 실패: ${check.error} 검색 링크로 대체했습니다.` })
+    } else {
+      candidate.issues.push({ severity: 'info', code: 'wikidata-verified', message: `Wikidata 항목을 확인했습니다: ${check.label}` })
+    }
+  }
+
+  const musicBrainzSource = band.sources.find((source) => source.publisher === 'MusicBrainz' && source.externalId)
+  if (musicBrainzSource?.externalId) {
+    const check = await checkMusicBrainzArtist(musicBrainzSource.externalId, band.name)
+    if (!check.ok) {
+      band.sources = band.sources.map((source) => source === musicBrainzSource
+        ? { label: `${band.name} — MusicBrainz`, url: musicBrainzSearchUrl(band.name), publisher: 'MusicBrainz', note: '자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요' }
+        : source)
+      candidate.issues.push({ severity: 'warning', code: 'musicbrainz-mismatch', message: `MusicBrainz 확인 실패: ${check.error} 검색 링크로 대체했습니다.` })
+    } else {
+      candidate.issues.push({ severity: 'info', code: 'musicbrainz-verified', message: `MusicBrainz 아티스트를 확인했습니다: ${check.label}` })
     }
   }
 

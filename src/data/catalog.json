@@ -1,7 +1,873 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-26T08:37:44.456Z",
+  "updatedAt": "2026-07-26T13:57:06.161Z",
   "bands": [
+    {
+      "id": "rhapsody",
+      "name": "Rhapsody",
+      "formed": 1993,
+      "origin": "Trieste, Italy",
+      "countryCode": "IT",
+      "activeYears": "1993–2006",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "심포닉 메탈",
+        "파워 메탈",
+        "네오클래시컬 메탈",
+        "스피드 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "심포닉 메탈",
+            "파워 메탈",
+            "네오클래시컬 메탈",
+            "스피드 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "심포닉 메탈",
+        "파워 메탈",
+        "네오클래시컬 메탈",
+        "이탈리아 록",
+        "판타지 메탈"
+      ],
+      "summary": "1990년대 클래식 음악 요소를 고도의 헤비메탈과 결합하여 심포닉 파워 메탈 장르의 새로운 지평을 연 이탈리아의 대표 밴드. 클래식 오케스트레이션과 판타지 서사를 결합한 'Hollywood Metal' 개념을 창시하여 수많은 후대 밴드들에게 큰 영향을 미쳤다.",
+      "style": "빠르고 정교한 더블 베이스 드럼 리듬과 루카 투릴리의 압도적인 기타 네오클래시컬 솔로가 축을 이룬다. 파비오 리오네의 하이톤 보컬과 웅장한 합창, 클래식 현악 배치가 결합되어 영화음악 같은 극적인 곡 전개를 보여준다.",
+      "image": {
+        "wikipediaTitle": "Rhapsody",
+        "alt": "Rhapsody 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhapsody_Of_Fire_(7491314086).jpg",
+          "creator": "Bruno Bergamini",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T14:05:54.230Z"
+        },
+        "fileName": "File:Rhapsody Of Fire (7491314086).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Rhapsody_Of_Fire_%287491314086%29.jpg/960px-Rhapsody_Of_Fire_%287491314086%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Rhapsody_Of_Fire_%287491314086%29.jpg"
+      },
+      "members": [
+        {
+          "name": "Fabio Lione",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1995–2006"
+        },
+        {
+          "name": "Luca Turilli",
+          "role": "기타·키보드",
+          "status": "former",
+          "activeYears": "1993–2006"
+        },
+        {
+          "name": "Alex Staropoli",
+          "role": "키보드",
+          "status": "current",
+          "activeYears": "1993–2006"
+        },
+        {
+          "name": "Patrice Guers",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2002–2006"
+        },
+        {
+          "name": "Alex Holzwarth",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2000–2006"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "emerald-sword",
+          "title": "Emerald Sword",
+          "year": 1998,
+          "album": "Symphony of Enchanted Lands",
+          "guide": "질주하는 파워 메탈 비트와 폭발적인 합창 떼창 훅이 정점을 이루는 클라이맥스.",
+          "youtubeId": "WTmQjRIb-N0",
+          "source": {
+            "label": "Rhapsody — Emerald Sword",
+            "url": "https://www.youtube.com/watch?v=WTmQjRIb-N0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T13:52:32.592Z"
+        },
+        {
+          "id": "dawn-of-victory",
+          "title": "Dawn of Victory",
+          "year": 2000,
+          "album": "Dawn of Victory",
+          "guide": "웅장한 합창 서곡에 이어 전개되는 강렬한 기타 리프와 파비오 리오네의 고음 보컬.",
+          "youtubeId": "",
+          "source": {
+            "label": "Rhapsody — Dawn of Victory YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Rhapsody%20Dawn%20of%20Victory",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "symphony-of-enchanted-lands",
+          "title": "Symphony of Enchanted Lands",
+          "year": 1998,
+          "album": "Symphony of Enchanted Lands",
+          "guide": "대서사시적인 오케스트라 구성과 다채로운 파트 변화가 몰입감을 더하는 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Rhapsody — Symphony of Enchanted Lands YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Rhapsody%20Symphony%20of%20Enchanted%20Lands",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "holy-thunderforce",
+          "title": "Holy Thunderforce",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "Holy Thunderforce — YouTube",
+            "url": "https://www.youtube.com/results?search_query=Rhapsody%20Holy%20Thunderforce",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Rhapsody — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q192867",
+          "publisher": "Wikidata",
+          "externalId": "Q192867",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rhapsody — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4f253a60-9ba2-4a0b-a178-5a4848d57578",
+          "publisher": "MusicBrainz",
+          "externalId": "4f253a60-9ba2-4a0b-a178-5a4848d57578",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rhapsody — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rhapsody_of_Fire",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rhapsody — 공식 YouTube",
+          "url": "https://www.youtube.com/@rhapsodyoffireofficial",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@rhapsodyoffireofficial",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Rhapsody — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Rhapsody_Of_Fire_(7491314086).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "folk-symphonic-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "symphonic-metal",
+          "power-metal",
+          "neoclassical-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "epic-cinematic": 5,
+          "fast-driving": 5,
+          "technical-complex": 4,
+          "anthemic-live": 4,
+          "aggressive-heavy": 2
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-26T13:57:04.559Z"
+    },
+    {
+      "id": "the-cranberries",
+      "name": "The Cranberries",
+      "formed": 1989,
+      "origin": "Limerick, Ireland",
+      "countryCode": "IE",
+      "activeYears": "1989–2003, 2009–2019",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "팝 록",
+        "인디 팝"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "팝 록",
+            "인디 팝"
+          ]
+        }
+      ],
+      "tags": [
+        "아일랜드 록",
+        "알터너티브 록",
+        "인디 팝",
+        "포크 록",
+        "90년대 록"
+      ],
+      "summary": "1990년대 전 세계적인 인기를 얻은 아일랜드 록 밴드로, 'Zombie'와 'Linger' 등의 히트곡으로 수천만 장의 음반 판매고를 기록했다. 리드 보컬 돌로레스 오리어던의 독창적인 요들풍 음색과 대중적이면서도 민족적인 사운드로 큰 족적을 남겼다.",
+      "style": "아일랜드 전통 음악의 요소가 가미된 어쿠스틱 리듬과 아르페지오 기타 연주가 특징이다. 돌로레스 오리어던의 호소력 짙고 특이한 꺾기 보컬과 서정적이고 멜랑콜리한 멜로디 라인이 조화를 이룬다.",
+      "image": {
+        "wikipediaTitle": "The Cranberries",
+        "fileName": "File:The-Cranberries-Paris-31-mai-2010 IMG 7720.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/The-Cranberries-Paris-31-mai-2010_IMG_7720.jpg/960px-The-Cranberries-Paris-31-mai-2010_IMG_7720.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/The-Cranberries-Paris-31-mai-2010_IMG_7720.jpg",
+        "alt": "The Cranberries 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The-Cranberries-Paris-31-mai-2010 IMG 7720.jpg",
+          "creator": "Poudou99",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T09:24:10.670Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Dolores O'Riordan",
+          "role": "리드 보컬·키보드",
+          "status": "former",
+          "activeYears": "1990–2003, 2009–2018"
+        },
+        {
+          "name": "Noel Hogan",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "1989–2003, 2009–2019"
+        },
+        {
+          "name": "Mike Hogan",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1989–2003, 2009–2019"
+        },
+        {
+          "name": "Fergal Lawler",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1989–2003, 2009–2019"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "zombie",
+          "title": "Zombie",
+          "year": 1994,
+          "album": "No Need to Argue",
+          "guide": "묵직한 디스토션 기타와 돌로레스 오리어던의 절규하는 듯한 보컬이 분출하는 하이라이트를 감상할 수 있다.",
+          "youtubeId": "6Ejga4kJUts",
+          "source": {
+            "label": "The Cranberries — Zombie",
+            "url": "https://www.youtube.com/watch?v=6Ejga4kJUts",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:24:09.604Z"
+        },
+        {
+          "id": "linger",
+          "title": "Linger",
+          "year": 1993,
+          "album": "Everybody Else Is Doing It, So Why Can't We?",
+          "guide": "감수성 어린 현악 보컬과 아르페지오 기타가 어우러져 아련하고 서정적인 분위기를 연출한다.",
+          "youtubeId": "G6Kspj3OO0s",
+          "source": {
+            "label": "The Cranberries — Linger",
+            "url": "https://www.youtube.com/watch?v=G6Kspj3OO0s",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:24:09.589Z"
+        },
+        {
+          "id": "dreams",
+          "title": "Dreams",
+          "year": 1992,
+          "album": "Everybody Else Is Doing It, So Why Can't We?",
+          "guide": "벅차오르는 기타 사운드와 특유의 요들 꺾기 보컬 코러스가 절정을 이루는 리듬을 선사한다.",
+          "youtubeId": "Yam5uK6e-bQ",
+          "source": {
+            "label": "The Cranberries — Dreams",
+            "url": "https://www.youtube.com/watch?v=Yam5uK6e-bQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:24:09.594Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "The Cranberries — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q483810",
+          "publisher": "Wikidata",
+          "externalId": "Q483810",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Cranberries — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+          "publisher": "MusicBrainz",
+          "externalId": "c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
+        },
+        {
+          "label": "The Cranberries — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Cranberries",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Cranberries — 공식 YouTube",
+          "url": "https://www.youtube.com/user/TheCranberriesVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Cranberries — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The-Cranberries-Paris-31-mai-2010 IMG 7720.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "pop-rock",
+          "indie-pop"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "romantic-emotional": 4,
+          "youth-rebellious": 4,
+          "aggressive-heavy": 3,
+          "hopeful-uplifting": 3
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "자동 검수 (AI)",
+      "reviewedAt": "2026-07-26T09:24:10.670Z"
+    },
+    {
+      "id": "blur",
+      "name": "Blur",
+      "formed": 1988,
+      "origin": "London, England",
+      "countryCode": "GB",
+      "activeYears": "1988–present",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "브릿팝",
+        "얼터너티브 록",
+        "인디 록",
+        "아트 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "브릿팝",
+            "얼터너티브 록",
+            "인디 록",
+            "아트 록"
+          ]
+        }
+      ],
+      "tags": [
+        "브릿팝",
+        "알터너티브 록",
+        "인디 록",
+        "영국 록",
+        "아트 록"
+      ],
+      "summary": "1990년대 브릿팝 열풍을 이끈 대표적인 영국 록 밴드로, 'Parklife'와 'Blur' 등의 앨범으로 영국 차트 정상과 세계적인 명성을 얻었다. 대중적인 인디 팝부터 실험적인 알터너티브 록과 아트 록까지 넘나들며 대중음악사에 깊은 영향을 남겼다.",
+      "style": "통쾌하고 캐치한 기타 리프와 위트 있는 사운드 전개가 특징이다. 리드 보컬 데이먼 알반의 다채로운 음색과 그레이엄 콕슨의 노이즈 섞인 창의적인 기타 연주가 조화를 이룬다.",
+      "image": {
+        "wikipediaTitle": "Blur",
+        "alt": "Blur 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Provinssirock_20130614_-_Blur_-_22.jpg",
+          "creator": "Cecil",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T14:05:54.230Z"
+        },
+        "fileName": "File:Provinssirock 20130614 - Blur - 22.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Provinssirock_20130614_-_Blur_-_22.jpg/960px-Provinssirock_20130614_-_Blur_-_22.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Provinssirock_20130614_-_Blur_-_22.jpg"
+      },
+      "members": [
+        {
+          "name": "Damon Albarn",
+          "role": "리드 보컬·키보드",
+          "status": "current",
+          "activeYears": "1988–present"
+        },
+        {
+          "name": "Graham Coxon",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "1988–2002, 2008–present"
+        },
+        {
+          "name": "Alex James",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1988–present"
+        },
+        {
+          "name": "Dave Rowntree",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1988–present"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "song-2",
+          "title": "Song 2",
+          "year": 1997,
+          "album": "Blur",
+          "guide": "강렬한 기타 리프와 중독성 있는 보컬 추임새가 폭발하는 하이라이트를 감상할 수 있다.",
+          "youtubeId": "SSbBvKaM6sk",
+          "source": {
+            "label": "Blur — Song 2",
+            "url": "https://www.youtube.com/watch?v=SSbBvKaM6sk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:01:53.048Z"
+        },
+        {
+          "id": "parklife",
+          "title": "Parklife",
+          "year": 1994,
+          "album": "Parklife",
+          "guide": "영국적인 유머와 풍자가 담긴 내레이션과 신나는 브릿팝 리듬이 돋보이는 곡이다.",
+          "youtubeId": "YSuHrTfcikU",
+          "source": {
+            "label": "Blur — Parklife",
+            "url": "https://www.youtube.com/watch?v=YSuHrTfcikU",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:01:53.065Z"
+        },
+        {
+          "id": "girls-boys",
+          "title": "Girls & Boys",
+          "year": 1994,
+          "album": "Parklife",
+          "guide": "디스코풍의 베이스 라인과 중독성 있는 신시사이저 리듬이 어우러진 댄서블한 록 트랙이다.",
+          "youtubeId": "WhcaI9MJ2wo",
+          "source": {
+            "label": "Blur — Girls & Boys",
+            "url": "https://www.youtube.com/watch?v=WhcaI9MJ2wo",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-26T09:01:53.048Z"
+        },
+        {
+          "id": "coffee-tv",
+          "title": "Coffee & TV",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "Coffee & TV — YouTube",
+            "url": "https://www.youtube.com/results?search_query=Blur%20Coffee%20%26%20TV",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "oasis",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 브릿팝 라이벌 구도를 형성하며 전 세계적인 브릿팝 붐을 이끌었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Blur — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q485820",
+          "publisher": "Wikidata",
+          "externalId": "Q485820",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Blur — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/ba853904-ae25-4ebb-89d6-c44cfbd71bd2",
+          "publisher": "MusicBrainz",
+          "externalId": "ba853904-ae25-4ebb-89d6-c44cfbd71bd2",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
+        },
+        {
+          "label": "Blur — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Blur_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Blur — 공식 YouTube",
+          "url": "https://www.youtube.com/user/blur",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Blur — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Provinssirock_20130614_-_Blur_-_22.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "britpop",
+          "alternative-rock",
+          "indie-rock",
+          "art-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 4,
+          "youth-rebellious": 4,
+          "melancholic-lonely": 3,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-26T09:25:27.533Z"
+    },
+    {
+      "id": "kaiser-chiefs",
+      "name": "Kaiser Chiefs",
+      "formed": 2000,
+      "origin": "리즈, 영국",
+      "countryCode": "GB",
+      "activeYears": "2000–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie",
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "포스트펑크 리바이벌",
+        "뉴웨이브",
+        "얼터너티브 록",
+        "브릿팝",
+        "댄스 펑크"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "alternative-indie",
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "포스트펑크 리바이벌",
+            "가라지 록 리바이벌",
+            "뉴웨이브"
+          ]
+        }
+      ],
+      "tags": [
+        "인디록",
+        "포스트펑크리바이벌",
+        "영국록",
+        "가라지록",
+        "뉴웨이브"
+      ],
+      "summary": "2000년대 중반 포스트 펑크/인디 록 리바이벌 붐 속에서 중독성 넘치는 훅과 관중 유도형 라이브 퍼포먼스로 영국 음악 차트를 장악한 5인조 인디 록 밴드이다. 데뷔 앨범 'Employment'로 브릿 어워드 3관왕을 차지하며 동시대 영국 록 씬을 대표하는 주자로 자리매김했다.",
+      "style": "리키 윌슨의 에너지 넘치는 보컬과 관중 떼창을 유도하는 직관적인 후렴구 훅이 전면에 내세워진다. 뉴웨이브풍 신시사이저 사운드와 경쾌하고 빠르게 질주하는 가라지 기타 리프가 만드는 리드미컬한 트랙 구성이 핵심이다.",
+      "image": {
+        "wikipediaTitle": "Kaiser Chiefs",
+        "alt": "Kaiser Chiefs 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaiser_Chiefs,_Brighton_Centre_(47397008932).jpg",
+          "creator": "Drew de F Fawkes",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-26T14:05:54.230Z"
+        },
+        "fileName": "File:Kaiser Chiefs, Brighton Centre (47397008932).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Kaiser_Chiefs%2C_Brighton_Centre_%2847397008932%29.jpg/960px-Kaiser_Chiefs%2C_Brighton_Centre_%2847397008932%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Kaiser_Chiefs%2C_Brighton_Centre_%2847397008932%29.jpg"
+      },
+      "members": [
+        {
+          "name": "Ricky Wilson",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2000–현재"
+        },
+        {
+          "name": "Andrew 'Whitey' White",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2000–현재"
+        },
+        {
+          "name": "Simon Rix",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2000–현재"
+        },
+        {
+          "name": "Nick 'Peanut' Baines",
+          "role": "키보드·신시사이저",
+          "status": "current",
+          "activeYears": "2000–현재"
+        },
+        {
+          "name": "Vijay Mistry",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2013–현재"
+        },
+        {
+          "name": "Nick Hodgson",
+          "role": "드럼·보컬",
+          "status": "former",
+          "activeYears": "2000–2012"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "i-predict-a-riot",
+          "title": "I Predict a Riot",
+          "year": 2004,
+          "album": "Employment",
+          "guide": "밴드의 대표곡으로 스피디한 기타 리프와 라이브 무대에서 폭발하는 후렴구 떼창에 집중해 들으면 좋다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Kaiser Chiefs — I Predict a Riot YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Kaiser%20Chiefs%20I%20Predict%20a%20Riot",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "ruby",
+          "title": "Ruby",
+          "year": 2007,
+          "album": "Yours Truly, Angry Mob",
+          "guide": "영국 싱글 차트 1위를 기록한 곡으로 중독성 있는 'Ruby Ruby Ruby' 후렴 훅과 경쾌한 리듬감이 일품이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Kaiser Chiefs — Ruby YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Kaiser%20Chiefs%20Ruby",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "everyday-i-love-you-less-and-less",
+          "title": "Everyday I Love You Less And Less",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "Everyday I Love You Less And Less — YouTube",
+            "url": "https://www.youtube.com/results?search_query=Kaiser%20Chiefs%20Everyday%20I%20Love%20You%20Less%20And%20Less",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
+        },
+        {
+          "id": "coming-home",
+          "title": "Coming Home",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "Coming Home — YouTube",
+            "url": "https://www.youtube.com/results?search_query=Kaiser%20Chiefs%20Coming%20Home",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-fratellis",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "유쾌하고 경쾌한 후렴구 훅과 축제 분위기의 인디 록 사운드를 공유했던 동시대 영국 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-killers",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 포스트펑크 / 고딕 / 뉴웨이브, 인디 록 · 포스트펑크 리바이벌, 밝고 신나는 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Kaiser Chiefs — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q192308",
+          "publisher": "Wikidata",
+          "externalId": "Q192308",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Kaiser Chiefs — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/90218af4-4d58-4821-8d41-2ee295ebbe21",
+          "publisher": "MusicBrainz",
+          "externalId": "90218af4-4d58-4821-8d41-2ee295ebbe21",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
+        },
+        {
+          "label": "Kaiser Chiefs — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Kaiser_Chiefs",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Kaiser Chiefs — 공식 YouTube",
+          "url": "https://www.youtube.com/user/kaiserchiefs",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Kaiser Chiefs — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Kaiser_Chiefs,_Brighton_Centre_(47397008932).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "post-punk-revival",
+          "new-wave",
+          "alternative-rock",
+          "britpop",
+          "dance-punk"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "youth-rebellious": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-26T09:24:22.058Z"
+    },
     {
       "id": "ma-neskin",
       "name": "Måneskin",
@@ -167,17 +1033,17 @@
       "sources": [
         {
           "label": "Måneskin — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q56884885",
+          "url": "https://www.wikidata.org/wiki/Q56884561",
           "publisher": "Wikidata",
-          "externalId": "Q56884885",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q56884561",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Måneskin — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/4f2537eb-7e3e-4b68-80f4-539c3ebfbe3b",
+          "url": "https://musicbrainz.org/artist/3862342a-43c4-4cdb-8250-bfdbfb5e1419",
           "publisher": "MusicBrainz",
-          "externalId": "4f2537eb-7e3e-4b68-80f4-539c3ebfbe3b",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "3862342a-43c4-4cdb-8250-bfdbfb5e1419",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Måneskin — Wikipedia",
@@ -373,17 +1239,17 @@
       "sources": [
         {
           "label": "The Killers — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q22809",
+          "url": "https://www.wikidata.org/wiki/Q220730",
           "publisher": "Wikidata",
-          "externalId": "Q22809",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q220730",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Killers — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/95a1212e-a226-4441-bc21-2a544c012891",
+          "url": "https://musicbrainz.org/artist/95e1ead9-4d31-4808-a7ac-32c3614c116b",
           "publisher": "MusicBrainz",
-          "externalId": "95a1212e-a226-4441-bc21-2a544c012891",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "95e1ead9-4d31-4808-a7ac-32c3614c116b",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Killers — Wikipedia",
@@ -572,17 +1438,17 @@
       "sources": [
         {
           "label": "Nothing But Thieves — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q20857022",
+          "url": "https://www.wikidata.org/wiki/Q20684996",
           "publisher": "Wikidata",
-          "externalId": "Q20857022",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q20684996",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Nothing But Thieves — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/45446f25-83e0-47b7-9a4f-01a650d0320a",
+          "url": "https://musicbrainz.org/artist/7e2e4e3a-4e85-4d5a-b78e-5e4afd467a3e",
           "publisher": "MusicBrainz",
-          "externalId": "45446f25-83e0-47b7-9a4f-01a650d0320a",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "7e2e4e3a-4e85-4d5a-b78e-5e4afd467a3e",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Nothing But Thieves — Wikipedia",
@@ -786,17 +1652,17 @@
       "sources": [
         {
           "label": "DragonForce — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q19092",
+          "url": "https://www.wikidata.org/wiki/Q212715",
           "publisher": "Wikidata",
-          "externalId": "Q19092",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q212715",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "DragonForce — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/4544d6da-085e-4ff6-9990-252f86644f77",
+          "url": "https://musicbrainz.org/artist/ef58d4c9-0d40-42ba-bfab-9186c1483edd",
           "publisher": "MusicBrainz",
-          "externalId": "4544d6da-085e-4ff6-9990-252f86644f77",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "ef58d4c9-0d40-42ba-bfab-9186c1483edd",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "DragonForce — Wikipedia",
@@ -1012,10 +1878,10 @@
         },
         {
           "label": "The Fray — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/c1432f7a-8f55-46eb-8e2b-e7b39912be21",
+          "url": "https://musicbrainz.org/artist/2ddd167f-5b8a-4372-b350-6ad50493bac0",
           "publisher": "MusicBrainz",
-          "externalId": "c1432f7a-8f55-46eb-8e2b-e7b39912be21",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "2ddd167f-5b8a-4372-b350-6ad50493bac0",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Fray — Wikipedia",
@@ -1195,17 +2061,17 @@
       "sources": [
         {
           "label": "The Calling — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q463870",
+          "url": "https://www.wikidata.org/wiki/Q523449",
           "publisher": "Wikidata",
-          "externalId": "Q463870",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q523449",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Calling — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/45f14e7a-9bbd-46ee-876a-93f8cfb7e651",
+          "url": "https://musicbrainz.org/artist/29eb4497-0bd8-4126-abdf-d8007326ee8b",
           "publisher": "MusicBrainz",
-          "externalId": "45f14e7a-9bbd-46ee-876a-93f8cfb7e651",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "29eb4497-0bd8-4126-abdf-d8007326ee8b",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Calling — Wikipedia",
@@ -1412,17 +2278,17 @@
       "sources": [
         {
           "label": "The Fratellis — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q913070",
+          "url": "https://www.wikidata.org/wiki/Q1127565",
           "publisher": "Wikidata",
-          "externalId": "Q913070",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q1127565",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Fratellis — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/4f08e4aa-e500-4b53-9388-b7787355da4b",
+          "url": "https://musicbrainz.org/artist/f4ad883e-9a92-45ed-a540-a49c2d1c36dd",
           "publisher": "MusicBrainz",
-          "externalId": "4f08e4aa-e500-4b53-9388-b7787355da4b",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "f4ad883e-9a92-45ed-a540-a49c2d1c36dd",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "The Fratellis — Wikipedia",
@@ -1904,10 +2770,10 @@
         },
         {
           "label": "Keane — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/c3131336-d249-41e9-92db-aef38139eb3b",
+          "url": "https://musicbrainz.org/artist/c7020c6d-cae9-4db3-92a7-e5c561cbad50",
           "publisher": "MusicBrainz",
-          "externalId": "c3131336-d249-41e9-92db-aef38139eb3b",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "c7020c6d-cae9-4db3-92a7-e5c561cbad50",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Keane — Wikipedia",
@@ -2762,17 +3628,17 @@
       "sources": [
         {
           "label": "American Authors — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q15080277",
+          "url": "https://www.wikidata.org/wiki/Q15044381",
           "publisher": "Wikidata",
-          "externalId": "Q15080277",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q15044381",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "American Authors — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/65b53e77-5058-4ee0-8eb7-9159074d49a3",
+          "url": "https://musicbrainz.org/artist/9ce0515d-cc88-4df6-8a2e-d231c13cb2c2",
           "publisher": "MusicBrainz",
-          "externalId": "65b53e77-5058-4ee0-8eb7-9159074d49a3",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "9ce0515d-cc88-4df6-8a2e-d231c13cb2c2",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "American Authors — Wikipedia",
@@ -3690,17 +4556,17 @@
       "sources": [
         {
           "label": "Sum 41 — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q187148",
+          "url": "https://www.wikidata.org/wiki/Q483558",
           "publisher": "Wikidata",
-          "externalId": "Q187148",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q483558",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Sum 41 — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/1a337e73-b677-4952-8239-66eef40d4eb1",
+          "url": "https://musicbrainz.org/artist/f2eef649-a6d5-4114-afba-e50ab26254d2",
           "publisher": "MusicBrainz",
-          "externalId": "1a337e73-b677-4952-8239-66eef40d4eb1",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "f2eef649-a6d5-4114-afba-e50ab26254d2",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Sum 41 — Wikipedia",
@@ -3941,17 +4807,17 @@
       "sources": [
         {
           "label": "Skid Row — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q463430",
+          "url": "https://www.wikidata.org/wiki/Q461269",
           "publisher": "Wikidata",
-          "externalId": "Q463430",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q461269",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Skid Row — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/cdbc28a0-2f16-41fb-89f5-19e913a48e7e",
+          "url": "https://musicbrainz.org/artist/6da0515e-a27d-449d-84cc-00713c38a140",
           "publisher": "MusicBrainz",
-          "externalId": "cdbc28a0-2f16-41fb-89f5-19e913a48e7e",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "6da0515e-a27d-449d-84cc-00713c38a140",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Skid Row — Wikipedia",
@@ -4190,17 +5056,17 @@
       "sources": [
         {
           "label": "Fall Out Boy — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q28158",
+          "url": "https://www.wikidata.org/wiki/Q485811",
           "publisher": "Wikidata",
-          "externalId": "Q28158",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q485811",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Fall Out Boy — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/516349c2-3e2b-4786-8800-4cb50302bf37",
+          "url": "https://musicbrainz.org/artist/516cef4d-0718-4007-9939-f9b38af3f784",
           "publisher": "MusicBrainz",
-          "externalId": "516349c2-3e2b-4786-8800-4cb50302bf37",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "516cef4d-0718-4007-9939-f9b38af3f784",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Fall Out Boy — Wikipedia",
@@ -4443,17 +5309,17 @@
       "sources": [
         {
           "label": "Ensiferum — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q201083",
+          "url": "https://www.wikidata.org/wiki/Q218178",
           "publisher": "Wikidata",
-          "externalId": "Q201083",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q218178",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Ensiferum — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/6f287477-8e6f-4029-a1c2-19e3d48ef2d9",
+          "url": "https://musicbrainz.org/artist/6e64cbfa-1a60-450e-81f4-c044c868ab24",
           "publisher": "MusicBrainz",
-          "externalId": "6f287477-8e6f-4029-a1c2-19e3d48ef2d9",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "6e64cbfa-1a60-450e-81f4-c044c868ab24",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Ensiferum — Wikipedia",
@@ -4653,17 +5519,17 @@
       "sources": [
         {
           "label": "Neon Trees — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q1025501",
+          "url": "https://www.wikidata.org/wiki/Q1508269",
           "publisher": "Wikidata",
-          "externalId": "Q1025501",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q1508269",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Neon Trees — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/0352efdf-56e6-4d76-b631-c0e7b952a121",
+          "url": "https://musicbrainz.org/artist/16243662-8538-4746-a0fb-0d15b5828b8e",
           "publisher": "MusicBrainz",
-          "externalId": "0352efdf-56e6-4d76-b631-c0e7b952a121",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "16243662-8538-4746-a0fb-0d15b5828b8e",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Neon Trees — Wikipedia",
@@ -5100,10 +5966,10 @@
       "sources": [
         {
           "label": "Linkin Park — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q481",
+          "url": "https://www.wikidata.org/wiki/Q261",
           "publisher": "Wikidata",
-          "externalId": "Q481",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q261",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Linkin Park — MusicBrainz",
@@ -5336,17 +6202,17 @@
       "sources": [
         {
           "label": "Daughtry — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q835422",
+          "url": "https://www.wikidata.org/wiki/Q873413",
           "publisher": "Wikidata",
-          "externalId": "Q835422",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q873413",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Daughtry — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/4a7aa958-f54f-4d92-bb91-c0a76be46c19",
+          "url": "https://musicbrainz.org/artist/21e3292e-dac8-4609-b57d-402f926aa41f",
           "publisher": "MusicBrainz",
-          "externalId": "4a7aa958-f54f-4d92-bb91-c0a76be46c19",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "21e3292e-dac8-4609-b57d-402f926aa41f",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Daughtry — Wikipedia",
@@ -17496,17 +18362,17 @@
       "sources": [
         {
           "label": "Dream Theater — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q25577",
+          "url": "https://www.wikidata.org/wiki/Q162586",
           "publisher": "Wikidata",
-          "externalId": "Q25577",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q162586",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Dream Theater — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/c14b036f-576e-4fe1-9653-ff39b752943a",
+          "url": "https://musicbrainz.org/artist/28503ab7-8bf2-4666-a7bd-2644bfc7cb1d",
           "publisher": "MusicBrainz",
-          "externalId": "c14b036f-576e-4fe1-9653-ff39b752943a",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "28503ab7-8bf2-4666-a7bd-2644bfc7cb1d",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Dream Theater — Wikipedia",
@@ -17749,17 +18615,17 @@
       "sources": [
         {
           "label": "Deep Purple — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q80162",
+          "url": "https://www.wikidata.org/wiki/Q101505",
           "publisher": "Wikidata",
-          "externalId": "Q80162",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "Q101505",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Deep Purple — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/79448238-4b2b-4038-a28a-f5e6a9dc5a5d",
+          "url": "https://musicbrainz.org/artist/79491354-3d83-40e3-9d8e-7592d58d790a",
           "publisher": "MusicBrainz",
-          "externalId": "79448238-4b2b-4038-a28a-f5e6a9dc5a5d",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "79491354-3d83-40e3-9d8e-7592d58d790a",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Deep Purple — Wikipedia",
@@ -18252,10 +19118,10 @@
         },
         {
           "label": "Avenged Sevenfold — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/24ec43ac-f872-4d89-80de-34062a420859",
+          "url": "https://musicbrainz.org/artist/24e1b53c-3085-4581-8472-0b0088d2508c",
           "publisher": "MusicBrainz",
-          "externalId": "24ec43ac-f872-4d89-80de-34062a420859",
-          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+          "externalId": "24e1b53c-3085-4581-8472-0b0088d2508c",
+          "note": "검색으로 재확인한 정확한 식별자 (기존 값이 존재하지 않거나 다른 대상을 가리키고 있었음)"
         },
         {
           "label": "Avenged Sevenfold — Wikipedia",
