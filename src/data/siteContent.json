@@ -76,7 +76,7 @@
     "pop-soft-rock": {
       "artMode": "image",
       "imageUrl": "./assets/genres/pop-soft-rock.jpg",
-      "imagePosition": "center",
+      "imagePosition": "center 80%",
       "imageOpacity": 0.76,
       "imageScale": 1
     },

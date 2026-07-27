@@ -61,11 +61,9 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
   const review = reviewBand(band)
   const imageCredit = band.image.credit
   const datedTracks = band.tracks.filter((track): track is Track & { year: number } => typeof track.year === 'number').sort((a, b) => a.year - b.year)
+  const orderedTracks = [...band.tracks].sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity))
   const albums = [...new Set(band.tracks.map((track) => track.album).filter((album): album is string => Boolean(album)))]
   const youtubeChannel = band.sources.find((source) => source.publisher === 'YouTube' && source.official)
-  const firstTrackYear = datedTracks.at(0)?.year
-  const lastTrackYear = datedTracks.at(-1)?.year
-  const representativeSpan = firstTrackYear ? (firstTrackYear === lastTrackYear ? `${firstTrackYear}` : `${firstTrackYear}–${lastTrackYear}`) : '연도 확인 중'
 
   return (
     <main className="detail-page" style={{ '--genre-color': genreColor } as React.CSSProperties}>
@@ -75,6 +73,10 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
       </div>
 
       <section className="detail-hero shell">
+        <div className="detail-heading">
+          <span className="eyebrow" style={{ color: genreColor }}>{taxonomyGenre?.displayName ?? genre.name} / EST. {band.formed}</span>
+          <h1>{band.name}</h1>
+        </div>
         <div className="detail-portrait">
           <BandImage band={band} eager />
           <a href={imageCredit.sourceUrl} target="_blank" rel="noreferrer" className="image-credit" title={imageCredit.creator ? `${imageCredit.creator} · ${imageCredit.license}` : undefined}>
@@ -82,26 +84,18 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
           </a>
         </div>
         <div className="detail-intro">
-          <span className="eyebrow" style={{ color: genreColor }}>{taxonomyGenre?.displayName ?? genre.name} / EST. {band.formed}</span>
-          <h1>{band.name}</h1>
           <button className={`favorite-button detail-favorite ${isFavorite ? 'is-active' : ''}`} onClick={() => onToggleFavorite(band.id)} aria-pressed={isFavorite}>
             <Heart size={16} fill={isFavorite ? 'currentColor' : 'none'} />
             {isFavorite ? '저장됨' : '이 밴드 저장'}
           </button>
           <span className="detail-kicker">핵심 발자취</span>
           <p className="detail-summary">{band.summary}</p>
-          <div className="career-stats" aria-label="밴드 핵심 지표">
-            <span><strong>{band.formed}</strong><small>결성</small></span>
-            <span><strong>{representativeSpan}</strong><small>대표곡 연대</small></span>
-            <span><strong>{albums.length}</strong><small>대표 음반</small></span>
-            <span><strong>{band.relations.length}</strong><small>연결 관계</small></span>
-          </div>
-          <div className="detail-facts">
+          <div className="detail-facts detail-facts-emphasis">
             <span><MapPin size={17} />{band.origin}</span>
             <span><CalendarDays size={17} />{band.activeYears}</span>
             <span><Users size={17} />주요 멤버 {band.members.length}명</span>
           </div>
-          <div className="tag-list">{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((tag) => <span key={tag}>#{tag}</span>)}</div>
+          <div className="tag-list tag-list-emphasis">{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((tag) => <span key={tag}>#{tag}</span>)}</div>
         </div>
       </section>
 
@@ -143,10 +137,9 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
               <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? '싱글·수록 음반 정보 확인 중'}</small></span></div>
             ))}
           </div>
-          <h3 className="listen-heading">대표곡 안내</h3>
-          <p className="listen-description">곡의 위치를 먼저 읽고, 원할 때 외부 링크에서 감상하세요.</p>
+          <h3 className="listen-heading">대표곡</h3>
           <div className="track-list track-guide-list">
-            {band.tracks.map((item, index) => {
+            {orderedTracks.map((item, index) => {
               const hasReviewedDirectLink = item.reviewStatus !== 'draft' && Boolean(item.youtubeId)
               const href = hasReviewedDirectLink
                 ? item.source.url
