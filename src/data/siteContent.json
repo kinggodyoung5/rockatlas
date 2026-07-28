@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-28T02:57:17.291Z",
+  "updatedAt": "2026-07-28T14:46:52.262Z",
   "brandSuffix": "by kinggodyoung",
   "heroTitle": "락의 세계를 여행하는 \n히치하이커를 위한 \n안내서",
   "heroDescription": "",
@@ -8,7 +8,7 @@
   "genreSectionTitle": "어디서 시작할까요?",
   "genreSectionDescription": "13개의 큰 장르와 세부 장르, 분위기를 따라 락의 세계를 탐험하세요",
   "manifestoLabel": "Hitch a Ride on Our Algorithm",
-  "manifestoTitle": "히치하이킹을 통해 \n새로운 취향을 찾아보세요.",
+  "manifestoTitle": "히치하이킹을 통해 \n새로운 취향을 \n찾아보세요.",
   "manifestoButtonLabel": "첫 번째 노드 선택하기",
   "moodSectionLabel": "MOOD FINDER",
   "moodSectionTitle": "느낌으로 찾기",
@@ -62,7 +62,7 @@
     "classic-roots-rock": {
       "artMode": "image",
       "imageUrl": "./assets/genres/classic-roots-rock.jpg",
-      "imagePosition": "center",
+      "imagePosition": "50% 42%",
       "imageOpacity": 0.82,
       "imageScale": 1
     },
