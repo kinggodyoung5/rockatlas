@@ -2,6 +2,7 @@ import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Sa
 import { useEffect, useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
+import { formatFileSize, optimizeImageUpload, type StudioImageAssetType } from '../lib/imageUpload'
 import { ImagePositionPicker } from './ImagePositionPicker'
 
 interface DesignStudioPanelProps {
@@ -32,6 +33,7 @@ function colorToAccent(hex: string) {
 export function DesignStudioPanel({ value, dirty, message, genres, moods, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
+  const [imageMessage, setImageMessage] = useState('이미지는 용도에 맞게 자동 축소·압축되며 결과 용량을 여기에 표시합니다.')
   const uploadRef = useRef<HTMLInputElement>(null)
   const fontUploadRef = useRef<HTMLInputElement>(null)
   const logoUploadRef = useRef<HTMLInputElement>(null)
@@ -77,17 +79,19 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     onGenresChange(next.map((genre, order) => ({ ...genre, order: order + 1 })))
   }
   const updateMood = (id: TaxonomyMood['id'], patch: Partial<TaxonomyMood>) => onMoodsChange(moods.map((mood) => mood.id === id ? { ...mood, ...patch } : mood))
-  const uploadImage = async (file: File, assetType: 'hero' | 'logo' | 'wordmark' | 'cosmic' | 'genre', assetKey = '') => {
-    const dataUrl = await new Promise<string>((resolve, reject) => {
-      const reader = new FileReader()
-      reader.onload = () => resolve(String(reader.result))
-      reader.onerror = () => reject(new Error('이미지를 읽지 못했습니다.'))
-      reader.readAsDataURL(file)
-    })
-    const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl, assetType, assetKey }) })
-    if (!response.ok) throw new Error(await response.text())
-    const result = await response.json() as { url: string }
-    return result.url
+  const uploadImage = async (file: File, assetType: StudioImageAssetType, assetKey = '') => {
+    setImageMessage(`${file.name} 최적화 중…`)
+    try {
+      const optimized = await optimizeImageUpload(file, assetType)
+      const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl: optimized.dataUrl, assetType, assetKey }) })
+      if (!response.ok) throw new Error(await response.text())
+      const result = await response.json() as { url: string }
+      setImageMessage(`${file.name} · ${optimized.width}×${optimized.height} · ${formatFileSize(optimized.originalBytes)} → ${formatFileSize(optimized.storedBytes)}${optimized.optimized ? '로 최적화' : ' · 원본이 이미 충분히 작아 그대로 저장'} · 디자인 저장을 눌러 확정하세요.`)
+      return result.url
+    } catch (error) {
+      setImageMessage(error instanceof Error ? error.message : '이미지 업로드에 실패했습니다.')
+      throw error
+    }
   }
   const uploadHero = async (file: File) => {
     const url = await uploadImage(file, 'hero')
@@ -147,6 +151,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   return (
     <section id="design" className="studio-site-settings design-studio-v2">
       <div className="studio-section-heading"><span>UI</span><div><h3>사이트 디자인</h3><p>페이지별로 나눠서 편집합니다. 전체 공통 설정(로고·폰트·색상·우주 배경)은 모든 페이지에 적용되고, 그 아래는 홈 → 마무리 선언 → 느낌으로 찾기 → 모든 밴드 순서로 각 페이지의 문구·그림만 모여 있습니다.</p></div></div>
+      <p className="studio-upload-note" role="status" aria-live="polite">{imageMessage}</p>
 
       <div className="studio-design-columns">
         <div className="studio-design-controls">

@@ -1,5 +1,5 @@
 import { Clock3, Heart, RotateCcw } from 'lucide-react'
-import { publicBandById as bandById } from '../data/bands'
+import { publicBandById as bandById } from '../data/publicBands'
 import type { Band } from '../types/music'
 
 interface JourneyBarProps {

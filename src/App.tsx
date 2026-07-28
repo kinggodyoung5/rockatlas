@@ -7,7 +7,7 @@ import { GenreExplorerPage } from './components/GenreExplorerPage'
 import { JourneyBar } from './components/JourneyBar'
 import { MoodFinderPage } from './components/MoodFinderPage'
 import { SharePanel } from './components/SharePanel'
-import { bandById, publicBandById, publicBands as bands } from './data/bands'
+import { loadPublicBand, publicBandById, publicBands as bands } from './data/publicBands'
 import { siteContent as staticSiteContent } from './data/siteContent'
 import type { SiteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
@@ -27,25 +27,55 @@ const fontSets = {
 const StudioPage = lazy(() => import('./components/StudioPage').then((module) => ({ default: module.StudioPage })))
 const VideoReviewPage = lazy(() => import('./components/VideoReviewPage').then((module) => ({ default: module.VideoReviewPage })))
 
-function getBandFromHash() {
+function getBandIdFromHash() {
   const match = window.location.hash.match(/^#band=(.+)$/)
   if (!match) return null
-  const id = decodeURIComponent(match[1])
-  const studioPreview = new URLSearchParams(window.location.search).get('studioPreview') === '1'
-  const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
-  return studioPreview && isLocal ? bandById[id] ?? null : publicBandById[id] ?? null
+  return decodeURIComponent(match[1])
 }
 
 function ExplorerApp() {
   const [route, setRoute] = useState<ExplorerRoute>(() => parseExplorerRoute())
   const routeRef = useRef(route)
-  const [selectedBand, setSelectedBand] = useState<Band | null>(() => getBandFromHash())
+  const initialBandId = getBandIdFromHash()
+  const [selectedBandId, setSelectedBandId] = useState<string | null>(initialBandId)
+  const [selectedBand, setSelectedBand] = useState<Band | null>(() => initialBandId ? publicBandById[initialBandId] ?? null : null)
+  const [bandLoading, setBandLoading] = useState(Boolean(initialBandId))
+  const [bandLoadError, setBandLoadError] = useState('')
   const [mobileMenu, setMobileMenu] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
+  const [shareBand, setShareBand] = useState<Band | null>(null)
   const { favoriteIds, historyIds, toggleFavorite, recordVisit, clearHistory } = useExplorerState()
   const isLivePreview = new URLSearchParams(window.location.search).get('livePreview') === '1'
   const [previewOverride, setPreviewOverride] = useState<SiteContent | null>(null)
   const siteContent = previewOverride ?? staticSiteContent
+  const studioPreview = new URLSearchParams(window.location.search).get('studioPreview') === '1'
+  const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+
+  useEffect(() => {
+    if (!selectedBandId) {
+      setBandLoading(false)
+      setBandLoadError('')
+      return
+    }
+    let cancelled = false
+    setBandLoading(true)
+    setBandLoadError('')
+    const load = studioPreview && isLocal
+      ? import('./data/bands').then(({ bandById }) => {
+          const band = bandById[selectedBandId]
+          if (!band) throw new Error('스튜디오에 저장된 밴드를 찾지 못했습니다.')
+          return band
+        })
+      : loadPublicBand(selectedBandId)
+    void load.then((band) => {
+      if (!cancelled) setSelectedBand(band)
+    }).catch((error) => {
+      if (!cancelled) setBandLoadError(error instanceof Error ? error.message : '밴드 상세 정보를 불러오지 못했습니다.')
+    }).finally(() => {
+      if (!cancelled) setBandLoading(false)
+    })
+    return () => { cancelled = true }
+  }, [isLocal, selectedBandId, studioPreview])
 
   useEffect(() => {
     if (!isLivePreview) return
@@ -63,7 +93,9 @@ function ExplorerApp() {
       const nextRoute = parseExplorerRoute()
       routeRef.current = nextRoute
       setRoute(nextRoute)
-      setSelectedBand(getBandFromHash())
+      const nextBandId = getBandIdFromHash()
+      setSelectedBandId(nextBandId)
+      setSelectedBand(nextBandId ? publicBandById[nextBandId] ?? null : null)
       const savedScrollY = typeof event.state?.rockAtlasScrollY === 'number' ? event.state.rockAtlasScrollY : 0
       const restoreScroll = () => {
         const previousBehavior = document.documentElement.style.scrollBehavior
@@ -110,6 +142,7 @@ function ExplorerApp() {
     const state = replace ? window.history.state : { rockAtlasNavigation: true, rockAtlasScrollY: 0 }
     window.history[replace ? 'replaceState' : 'pushState'](state, '', url)
     setRoute(next)
+    setSelectedBandId(null)
     setSelectedBand(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -133,6 +166,7 @@ function ExplorerApp() {
   const openBand = useCallback((band: Band) => {
     window.history.replaceState({ ...window.history.state, rockAtlasScrollY: window.scrollY }, '', window.location.href)
     window.history.pushState({ rockAtlasNavigation: true, rockAtlasScrollY: 0, bandId: band.id }, '', `${window.location.pathname}${window.location.search}#band=${encodeURIComponent(band.id)}`)
+    setSelectedBandId(band.id)
     setSelectedBand(band)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
@@ -143,12 +177,15 @@ function ExplorerApp() {
       return
     }
     window.history.replaceState({}, '', `${window.location.pathname}${window.location.search}`)
+    setSelectedBandId(null)
     setSelectedBand(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
   const surpriseMe = () => openBand(bands[Math.floor(Math.random() * bands.length)])
-  const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  const shareBandUrl = shareBand
+    ? new URL(`bands/${encodeURIComponent(shareBand.id)}/`, `${window.location.origin}${window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname.replace(/[^/]*$/, '')}`).toString()
+    : undefined
   const presetFonts = fontSets[siteContent.theme.fontPreset]
   const hasCustomFont = Boolean(siteContent.theme.customFontUrl)
   const fonts = {
@@ -181,15 +218,27 @@ function ExplorerApp() {
   const fontFaceRule = hasCustomFont ? `@font-face{font-family:RockAtlasCustom;src:url("${siteContent.theme.customFontUrl}") format("${siteContent.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}` : ''
   const appClassName = `app-shell theme-${siteContent.theme.fontPreset} cosmic-${siteContent.theme.cosmicMode} genre-card-style-${siteContent.theme.genreCardStyle}${siteContent.theme.motionIntensity === 0 ? ' cosmic-motion-off' : ''}`
 
+  if (selectedBandId && bandLoading) {
+    return <main className="route-loading" aria-live="polite">밴드 항해 기록을 불러오는 중입니다…</main>
+  }
+
+  if (selectedBandId && bandLoadError) {
+    return <main className="route-loading"><p>{bandLoadError}</p><button onClick={closeBand}>이전 페이지</button></main>
+  }
+
   if (selectedBand) {
-    return <div className={appClassName} style={themeStyle}>{fontFaceRule && <style>{fontFaceRule}</style>}<BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} /></div>
+    return <div className={appClassName} style={themeStyle}>
+      {fontFaceRule && <style>{fontFaceRule}</style>}
+      <BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} onShare={() => { setShareBand(selectedBand); setShareOpen(true) }} />
+      <SharePanel open={shareOpen} title={`${selectedBand.name} — ROCK ATLAS`} description={`${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`} url={shareBandUrl} onClose={() => setShareOpen(false)} />
+    </div>
   }
 
   const manifesto = <section className={`manifesto manifesto-bg-${siteContent.theme.manifestoBackgroundMode}`} key="manifesto">{siteContent.theme.manifestoBackgroundMode === 'image' && siteContent.theme.manifestoImageUrl && <img className="manifesto-bg-image" src={siteContent.theme.manifestoImageUrl} alt="" style={positionStyle(siteContent.theme.manifestoImagePosition, siteContent.theme.manifestoImagePositionMobile)} />}{siteContent.theme.manifestoBackgroundMode === 'image' && <div className="manifesto-bg-overlay" style={{ opacity: siteContent.theme.manifestoOverlayOpacity }} />}<div className="shell manifesto-inner"><span>{siteContent.manifestoLabel}</span><h2>{siteContent.manifestoTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h2><button onClick={surpriseMe}>{siteContent.manifestoButtonLabel} <ArrowRight /></button></div></section>
   const homeMain = (
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
-        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres" onClick={scrollToGenres}>장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => setShareOpen(true)}><Share2 size={16} /> 지도 공유하기</button></div></div>
+        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres" onClick={scrollToGenres}>장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => { setShareBand(null); setShareOpen(true) }}><Share2 size={16} /> 지도 공유하기</button></div></div>
         {siteContent.theme.cosmicMode !== 'off' && siteContent.theme.heroArtMode !== 'image' && <div className="cosmic-navigation-graphic" aria-hidden="true"><span className="cosmic-sun">RA</span><i className="orbit orbit-one"><b /></i><i className="orbit orbit-two"><b /></i><i className="orbit orbit-three"><b /></i><em>ROCK / DEEP SPACE / 13 SYSTEMS</em></div>}
         <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">{siteContent.theme.heroArtMode === 'vinyl' && <><div className="vinyl-ring ring-one" /><div className="vinyl-ring ring-two" /><div className="vinyl-ring ring-three" /></>}{siteContent.theme.heroArtMode === 'image' && siteContent.theme.heroImageUrl && <img className="hero-custom-image" src={siteContent.theme.heroImageUrl} alt="" loading="eager" decoding="async" fetchPriority="high" style={positionStyle(siteContent.theme.heroImagePosition, siteContent.theme.heroImagePositionMobile)} />}<div className="hero-stamp"><span>{bands.length}</span>CURATED<br />BANDS</div><div className="hero-label">PLAY LOUD<br />EXPLORE DEEP</div></div>
         <div className="hero-index" aria-hidden="true">VOL. 01 / 2026</div>
@@ -221,7 +270,7 @@ function ExplorerApp() {
       {content}
       {isLocal && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
       <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
-      <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description={siteContent.heroTitle} onClose={() => setShareOpen(false)} />
+      <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description="락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요." onClose={() => setShareOpen(false)} />
     </div>
   )
 }

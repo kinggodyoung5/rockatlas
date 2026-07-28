@@ -1,5 +1,5 @@
 import { AlertTriangle, CheckCircle2, ExternalLink, Image, Link2, LoaderCircle, RefreshCw } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { siteContent } from '../data/siteContent'
 import type { Band } from '../types/music'
 
@@ -25,6 +25,7 @@ export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
   const [loading, setLoading] = useState(false)
   const [filter, setFilter] = useState<'issues' | HealthStatus | 'all'>('issues')
   const [message, setMessage] = useState('공개 링크와 이미지 파일이 실제로 응답하는지 한 번에 확인합니다.')
+  const activeCheck = useRef<AbortController | null>(null)
 
   const entries = useMemo(() => {
     const next: HealthEntry[] = []
@@ -42,18 +43,41 @@ export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
   }, [bands])
 
   const runCheck = async () => {
+    const controller = new AbortController()
+    activeCheck.current?.abort()
+    activeCheck.current = controller
     setLoading(true)
-    setMessage(`${entries.length}개 항목을 검사하고 있습니다. 외부 사이트 응답에 따라 수 분 걸릴 수 있습니다.`)
+    setResults([])
+    setMessage(`${entries.length}개 항목 검사를 시작합니다. 외부 사이트 응답에 따라 수 분 걸릴 수 있습니다.`)
     try {
-      const response = await fetch('/api/studio/health-check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ entries }) })
-      if (!response.ok) throw new Error(await response.text())
-      const payload = await response.json() as { checkedAt: string; results: HealthResult[] }
-      setResults(payload.results)
-      const problems = payload.results.filter((item) => item.status === 'broken' || item.status === 'error').length
-      setMessage(`${new Date(payload.checkedAt).toLocaleString('ko-KR')} 검사 완료 · 수정이 필요한 항목 ${problems}개`)
+      const batchSize = 120
+      const collected: HealthResult[] = []
+      let checkedAt = new Date().toISOString()
+      for (let offset = 0; offset < entries.length; offset += batchSize) {
+        const batch = entries.slice(offset, offset + batchSize)
+        setMessage(`${entries.length}개 중 ${offset}개 확인 · 현재 ${offset + 1}–${Math.min(offset + batch.length, entries.length)}번째 검사 중`)
+        const response = await fetch('/api/studio/health-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ entries: batch }),
+          signal: controller.signal,
+        })
+        if (!response.ok) throw new Error(await response.text())
+        const payload = await response.json() as { checkedAt: string; results: HealthResult[] }
+        checkedAt = payload.checkedAt
+        collected.push(...payload.results)
+        setResults([...collected])
+      }
+      const problems = collected.filter((item) => item.status === 'broken' || item.status === 'error').length
+      setMessage(`${new Date(checkedAt).toLocaleString('ko-KR')} 검사 완료 · 수정이 필요한 항목 ${problems}개`)
     } catch (error) {
-      setMessage(`검사 실패: ${error instanceof Error ? error.message : '로컬 Studio 서버를 확인하세요.'}`)
-    } finally { setLoading(false) }
+      setMessage(error instanceof Error && error.name === 'AbortError'
+        ? '검사를 중단했습니다. 지금까지 확인한 결과는 아래에 남겨두었습니다.'
+        : `검사 실패: ${error instanceof Error ? error.message : '로컬 Studio 서버를 확인하세요.'}`)
+    } finally {
+      if (activeCheck.current === controller) activeCheck.current = null
+      setLoading(false)
+    }
   }
 
   const counts = results.reduce<Record<HealthStatus, number>>((summary, result) => ({ ...summary, [result.status]: summary[result.status] + 1 }), { ok: 0, redirected: 0, restricted: 0, broken: 0, error: 0 })
@@ -64,6 +88,7 @@ export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
       <div className="studio-section-heading"><span>URL</span><div><h3 id="health-title">전체 링크·이미지 상태</h3><p>출처, 대표곡, 밴드 이미지와 업로드 자산의 HTTP 응답과 파일 형식을 검사합니다.</p></div></div>
       <div className="health-actions">
         <button onClick={() => void runCheck()} disabled={loading}>{loading ? <LoaderCircle className="is-spinning" size={15} /> : <RefreshCw size={15} />} {loading ? '검사 중' : `${entries.length}개 전체 검사`}</button>
+        {loading && <button type="button" onClick={() => activeCheck.current?.abort()}>검사 중단</button>}
         <span role="status" aria-live="polite">{message}</span>
       </div>
       {results.length > 0 && <>

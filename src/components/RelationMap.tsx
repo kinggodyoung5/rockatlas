@@ -1,5 +1,5 @@
 import { ArrowRight, GitBranch } from 'lucide-react'
-import { publicBandById as bandById, publicBands } from '../data/bands'
+import { publicBandById as bandById, publicBands } from '../data/publicBands'
 import { similarBands } from '../lib/bandSimilarity'
 import type { Band, RelationKind } from '../types/music'
 

@@ -5,15 +5,16 @@ interface SharePanelProps {
   open: boolean
   title: string
   description: string
+  url?: string
   onClose: () => void
 }
 
-export function SharePanel({ open, title, description, onClose }: SharePanelProps) {
+export function SharePanel({ open, title, description, url: suppliedUrl, onClose }: SharePanelProps) {
   const [copied, setCopied] = useState(false)
   const [error, setError] = useState('')
   const closeRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLElement>(null)
-  const url = typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}`
+  const url = suppliedUrl ?? (typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}`)
 
   useEffect(() => {
     if (!open) return
@@ -64,13 +65,13 @@ export function SharePanel({ open, title, description, onClose }: SharePanelProp
         <button ref={closeRef} className="share-close" onClick={onClose} aria-label="공유 화면 닫기"><X size={19} /></button>
         <span className="section-no">SHARE THE MAP</span>
         <h2 id="share-title">ROCK ATLAS 공유하기</h2>
-        <p id="share-description">락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요.</p>
+        <p id="share-description">{description}</p>
         <label>공유 주소<input value={url} readOnly onFocus={(event) => event.currentTarget.select()} /></label>
         <div className="share-actions">
           <button className="primary-button" onClick={() => void share()}><Share2 size={16} /> 기기로 공유</button>
           <button onClick={() => void copyLink()}>{copied ? <Check size={16} /> : <Copy size={16} />}{copied ? '복사됨' : '링크 복사'}</button>
         </div>
-        <span className="share-status" role="status" aria-live="polite">{error || (copied ? '메인 화면 주소를 클립보드에 복사했습니다.' : '')}</span>
+        <span className="share-status" role="status" aria-live="polite">{error || (copied ? '공유 주소를 클립보드에 복사했습니다.' : '')}</span>
       </section>
     </div>
   )

@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, Check, Database, Download, ExternalLink, FileUp, Link2, Loader2, Palette, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
-import { eras } from '../data/eras'
 import { genres as initialGenres } from '../data/genres'
 import { siteContent, type SiteContent } from '../data/siteContent'
 import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
-import type { Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
-import type { GenreTaxonomyId, MoodGroupId, MoodId, MoodScore } from '../types/taxonomy'
+import type { Band, BandTaxonomyV2, GenreId, Relation, RelationKind, SourceRef } from '../types/music'
+import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
-import { finalizeIntakeBand, lookupCommonsImage, type CommonsLookupResult } from '../lib/bandIntake'
+import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
+import { clone, createDraftBand, createTaxonomyDraft, membersToText, parseEraTags, parseMembers, parseTracks, tracksToText } from '../lib/studioBandUtils'
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
@@ -16,6 +16,8 @@ import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFi
 import { YoutubeTrackFinder, type YoutubeCandidate } from './YoutubeTrackFinder'
 import { YoutubeChannelFinder, type YoutubeChannelCandidate } from './YoutubeChannelFinder'
 import { CommonsImageFinder, type CommonsImageCandidate } from './CommonsImageFinder'
+import { StudioBandBasics } from './StudioBandBasics'
+import { StudioTaxonomyEditor } from './StudioTaxonomyEditor'
 
 const relationLabels: Record<RelationKind, string> = {
   'sounds-like': '비슷한 소리',
@@ -23,13 +25,6 @@ const relationLabels: Record<RelationKind, string> = {
   influenced: '영향을 줌',
   'shared-scene': '같은 장면',
   evolution: '계보의 확장',
-}
-
-const moodGroupLabels: Record<MoodGroupId, string> = {
-  energy: '에너지와 속도',
-  emotion: '감정과 정서',
-  texture: '공간감과 음색',
-  listening: '구성과 감상 방식',
 }
 
 const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
@@ -46,151 +41,6 @@ const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
   'folk-symphonic-metal': 'heavy-metal',
   'extreme-metal': 'extreme-metal',
   'modern-alternative-metal': 'heavy-metal',
-}
-
-const clone = <T,>(value: T): T => structuredClone(value)
-const splitList = (value: string | undefined) => (value ?? '').split(',').map((item) => item.trim()).filter(Boolean)
-const slugify = (value: string) => value.toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-const asEra = (year: number): EraId => {
-  const decade = Math.floor(year / 10) * 10
-  const candidate = `${Math.min(2020, Math.max(1960, decade))}s` as EraId
-  return eras.some((era) => era.id === candidate) ? candidate : '2020s'
-}
-
-function createTaxonomyDraft(): BandTaxonomyV2 {
-  return {
-    primaryGenreId: 'classic-roots-rock',
-    secondaryGenreIds: [],
-    subgenreIds: [],
-    moodScores: {},
-    reviewStatus: 'draft',
-    reviewNote: 'Studio에서 생성한 taxonomy v2 초안',
-  }
-}
-
-function createDraftBand(): Band {
-  const year = new Date().getFullYear()
-  const name = '새 밴드'
-  return {
-    id: `new-band-${Date.now()}`,
-    name,
-    formed: year,
-    origin: '',
-    countryCode: '',
-    activeYears: `${year}–현재`,
-    primaryGenre: 'classic-rock',
-    genreIds: ['classic-rock'],
-    subgenres: [],
-    eraTags: [{ era: asEra(year), genreIds: ['classic-rock'], subgenres: [], note: '' }],
-    tags: [],
-    summary: '',
-    style: '',
-    image: {
-      wikipediaTitle: name,
-      alt: `${name} 밴드 사진`,
-      credit: { sourceUrl: '', license: '검토 필요', reviewStatus: 'needs-review' },
-    },
-    members: [],
-    tracks: [],
-    relations: [],
-    sources: [
-      { label: `${name} — Wikipedia`, url: 'https://en.wikipedia.org/', publisher: 'Wikipedia', note: 'Studio 신규 초안' },
-      { label: `${name} — Wikidata`, url: 'https://www.wikidata.org/', publisher: 'Wikidata', note: '식별자 연결 대기' },
-      { label: `${name} — MusicBrainz`, url: 'https://musicbrainz.org/', publisher: 'MusicBrainz', note: '식별자 연결 대기' },
-      { label: `${name} — 공식 YouTube`, url: 'https://www.youtube.com/', publisher: 'YouTube', official: false, note: '공식 채널 연결 대기' },
-    ],
-    taxonomyV2: createTaxonomyDraft(),
-    reviewStatus: 'draft',
-  }
-}
-
-const membersToText = (members: Member[]) => members.map((member) => [member.name, member.role, member.status, member.activeYears ?? ''].join(' | ')).join('\n')
-const tracksToText = (tracks: Track[]) => tracks.map((track) => [track.title, track.youtubeId, track.year ?? '', track.album ?? '', track.guide ?? ''].join(' | ')).join('\n')
-const youtubeIdFromInput = (value: string | undefined) => {
-  const trimmed = (value ?? '').trim()
-  if (!trimmed) return ''
-  try {
-    const url = new URL(trimmed)
-    if (url.hostname === 'youtu.be') return url.pathname.slice(1).split('/')[0]
-    if (url.pathname.startsWith('/shorts/') || url.pathname.startsWith('/embed/')) return url.pathname.split('/')[2] ?? ''
-    return url.searchParams.get('v') ?? trimmed
-  } catch {
-    return trimmed
-  }
-}
-const youtubeTrackUrl = (bandName: string, trackTitle: string, youtubeId: string) => youtubeId
-  ? `https://www.youtube.com/watch?v=${youtubeId}`
-  : `https://www.youtube.com/results?search_query=${encodeURIComponent(`${bandName} ${trackTitle}`)}`
-const erasToText = (eraTags: BandEraTag[]) => eraTags.map((tag) => [tag.era, tag.subgenres.join(', '), tag.note ?? ''].join(' | ')).join('\n')
-
-function parseMembers(value: string): Member[] {
-  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([name]) => Boolean(name)).map(([name, role, status, activeYears]) => ({
-    name,
-    role: role || '역할 미정',
-    status: status === 'former' || status === 'touring' ? status : 'current',
-    activeYears: activeYears || undefined,
-  }))
-}
-
-function parseTracks(value: string, current: Track[], bandName: string): Track[] {
-  const usedIds = new Set<string>()
-  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([title]) => Boolean(title)).map(([title, youtubeInput, year, album, guide], index) => {
-    const youtubeId = youtubeIdFromInput(youtubeInput)
-    const existing = current.find((track) => track.youtubeId === youtubeId && youtubeId) ?? current.find((track) => track.title === title)
-    const baseId = slugify(title) || `track-${index + 1}`
-    let id = existing?.id ?? baseId
-    while (usedIds.has(id)) id = `${baseId}-${index + 1}`
-    usedIds.add(id)
-    if (existing) {
-      const videoChanged = existing.youtubeId !== youtubeId
-      const youtubeUrl = youtubeTrackUrl(bandName, title, youtubeId)
-      return {
-        ...existing,
-        id,
-        title,
-        youtubeId,
-        year: Number(year) || undefined,
-        album: album || undefined,
-        guide: guide || undefined,
-        reviewStatus: videoChanged ? 'draft' : existing.reviewStatus,
-        source: videoChanged ? {
-          ...existing.source,
-          url: youtubeUrl,
-          official: false,
-          channelName: undefined,
-          channelType: undefined,
-          embedStatus: undefined,
-          embedCheckedAt: undefined,
-          note: '대표곡 외부 링크 변경됨 · 제목과 연결 대상 재검수 필요',
-        } : existing.source,
-      }
-    }
-    return {
-      id,
-      title,
-      youtubeId,
-      year: Number(year) || undefined,
-      album: album || undefined,
-      guide: guide || undefined,
-      reviewStatus: 'draft',
-      source: {
-        label: `${title} — YouTube`,
-        url: youtubeTrackUrl(bandName, title, youtubeId),
-        publisher: 'YouTube',
-        official: false,
-        note: youtubeId ? 'Studio에서 추가한 대표곡 외부 링크 · 연결 대상 검수 필요' : '직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다.',
-      },
-    }
-  })
-}
-
-function parseEraTags(value: string, genreIds: GenreId[], current: BandEraTag[]): BandEraTag[] {
-  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([era]) => eras.some((item) => item.id === era)).map(([era, subgenres, note]) => ({
-    era: era as EraId,
-    genreIds: current.find((item) => item.era === era)?.genreIds ?? genreIds,
-    subgenres: splitList(subgenres),
-    note: note || undefined,
-  }))
 }
 
 function sourceId(band: Band, publisher: SourceRef['publisher']) {
@@ -297,12 +147,11 @@ export function StudioPage() {
   const [catalogBands, setCatalogBands] = useState<Band[]>(() => clone(initialBands))
   const [selectedId, setSelectedId] = useState(initialBands[0]?.id ?? '')
   const [draft, setDraft] = useState<Band>(() => clone(initialBands[0] ?? createDraftBand()))
-  const editorTitleRef = useRef<HTMLElement>(null)
   const isFirstSelection = useRef(true)
 
   useEffect(() => {
     if (isFirstSelection.current) { isFirstSelection.current = false; return }
-    editorTitleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.getElementById('studio-band-editor-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [selectedId])
   const [query, setQuery] = useState('')
   const [message, setMessage] = useState('카탈로그를 불러왔습니다.')
@@ -747,80 +596,36 @@ export function StudioPage() {
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
 
-          <section className="studio-editor-title" ref={editorTitleRef}>
-            <div>
-              <span>{isExisting ? 'EDIT BAND' : 'NEW BAND'}</span>
-              <h2>{draft.name}</h2>
-              <p>완성도 {passedChecks}/{checks.length} · ID {draft.id}</p>
-            </div>
-            <label>사이트 표시 상태<select value={draft.reviewStatus} onChange={(event) => {
-              const reviewStatus = event.target.value as Band['reviewStatus']
-              change({
-                reviewStatus,
-                reviewedBy: reviewStatus === 'draft' ? undefined : 'Studio operator',
-                reviewedAt: reviewStatus === 'draft' ? undefined : new Date().toISOString(),
-              })
-            }}><option value="draft">초안 · 사이트 숨김</option><option value="published">공개 · 사이트 표시</option></select></label>
-          </section>
+          <StudioBandBasics
+            draft={draft}
+            selectedId={selectedId}
+            isExisting={isExisting}
+            passedChecks={passedChecks}
+            totalChecks={checks.length}
+            genres={studioGenres}
+            onChange={change}
+            onReviewStatus={(reviewStatus) => change({
+              reviewStatus,
+              reviewedBy: reviewStatus === 'draft' ? undefined : 'Studio operator',
+              reviewedAt: reviewStatus === 'draft' ? undefined : new Date().toISOString(),
+            })}
+            onEraText={(value) => parseEraTags(value, draft.genreIds, draft.eraTags)}
+            onPrimaryGenre={updatePrimaryGenre}
+            onToggleSecondaryGenre={toggleSecondaryGenre}
+          />
 
-          <section className="studio-form-section">
-            <div className="studio-section-heading"><span>01</span><div><h3>기본 정보와 소개</h3><p>목록 카드와 상세 첫 화면에 바로 반영됩니다.</p></div></div>
-            <div className="studio-form-grid">
-              <label>밴드 이름<input value={draft.name} onChange={(event) => change({ name: event.target.value })} /></label>
-              <label>고유 ID<input value={draft.id} readOnly={isExisting} onChange={(event) => change({ id: slugify(event.target.value) })} /><small>{isExisting ? '기존 관계 보호를 위해 ID는 잠겨 있습니다.' : '영문 소문자와 하이픈으로 저장됩니다.'}</small></label>
-              <label>결성 연도<input type="number" value={draft.formed} onChange={(event) => change({ formed: Number(event.target.value) })} /></label>
-              <label>활동 기간<input value={draft.activeYears} onChange={(event) => change({ activeYears: event.target.value })} placeholder="1960–1970" /></label>
-              <label>결성지<input value={draft.origin} onChange={(event) => change({ origin: event.target.value })} placeholder="리버풀, 잉글랜드" /></label>
-              <label>국가 코드<input value={draft.countryCode} maxLength={2} onChange={(event) => change({ countryCode: event.target.value.toUpperCase() })} placeholder="GB" /></label>
-            </div>
-            <label className="studio-wide-field">업적과 발자취 중심 소개<textarea value={draft.summary} onChange={(event) => change({ summary: event.target.value })} rows={4} placeholder="언제 등장해 무엇을 바꾸었고 어떤 계보를 남겼는지 구체적으로 적습니다." /><small>{draft.summary.length}자 · 30자 이상 권장</small></label>
-            <label className="studio-wide-field">어떤 음악을 하나요?<textarea value={draft.style} onChange={(event) => change({ style: event.target.value })} rows={5} placeholder="리듬, 기타, 보컬, 프로덕션과 곡 전개를 청자가 상상할 수 있게 적습니다." /><small>{draft.style.length}자 · 40자 이상 권장</small></label>
-          </section>
-
-          <section className="studio-form-section">
-            <div className="studio-section-heading"><span>02</span><div><h3>활동 시대와 핵심 태그</h3><p>시대별 변화는 상세 화면과 시대 필터에 계속 사용됩니다. 장르 분류는 바로 아래의 새 탐색 분류에서 관리하세요.</p></div></div>
-            <label className="studio-wide-field">핵심 태그<input value={draft.tags.join(', ')} onChange={(event) => change({ tags: splitList(event.target.value) })} placeholder="기타 질감, 변박, 스튜디오 실험" /></label>
-            <label className="studio-wide-field">시대별 분류 <small>한 줄에 시대 | 세부 장르 | 설명</small><textarea key={`${selectedId}-eras`} defaultValue={erasToText(draft.eraTags)} onBlur={(event) => change({ eraTags: parseEraTags(event.target.value, draft.genreIds, draft.eraTags) })} rows={4} placeholder="1990s | 얼터너티브 록, 아트 록 | 기타 중심에서 전자음향으로 확장" /></label>
-            <details className="legacy-taxonomy-fields"><summary>구형 8장르 호환 데이터 · 새 분류에서 자동 동기화됩니다</summary><div className="studio-form-grid">
-              <label>구형 주 장르<select value={draft.primaryGenre} onChange={(event) => updatePrimaryGenre(event.target.value as GenreId)}>{studioGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
-              <label>구형 표시용 세부 장르<input value={draft.subgenres.join(', ')} onChange={(event) => change({ subgenres: splitList(event.target.value) })} /></label>
-              <fieldset className="studio-checkboxes studio-grid-span"><legend>구형 장르 교차점</legend>{studioGenres.map((genre) => <label key={genre.id}><input type="checkbox" checked={draft.genreIds.includes(genre.id)} disabled={genre.id === draft.primaryGenre} onChange={() => toggleSecondaryGenre(genre.id)} />{genre.name}</label>)}</fieldset>
-            </div></details>
-          </section>
-
-          <section className="studio-form-section taxonomy-editor">
-            <div className="studio-section-heading"><span>02B</span><div><h3>새 장르·분위기 탐색 분류</h3><p>13개 장르 화면과 느낌으로 찾기에 사용될 v2 분류입니다. 기존 분류는 전환이 끝날 때까지 함께 보존됩니다.</p></div></div>
-            <div className="studio-form-grid">
-              <label>대표 장르<select value={taxonomyDraft.primaryGenreId} onChange={(event) => updateTaxonomyPrimary(event.target.value as GenreTaxonomyId)}>{taxonomyGenreDrafts.map((genre) => <option key={genre.id} value={genre.id}>{genre.name}</option>)}</select></label>
-              <label>분류 검수 상태<select value={taxonomyDraft.reviewStatus} onChange={(event) => changeTaxonomy({ reviewStatus: event.target.value as BandTaxonomyV2['reviewStatus'] })}><option value="draft">초안 · 검토 필요</option><option value="reviewed">운영자 검수 완료</option></select></label>
-            </div>
-            <fieldset className="studio-checkboxes taxonomy-genre-options"><legend>보조 상위 장르 · 기본 목록에는 중복 노출되지 않음</legend>{taxonomyGenreDrafts.map((genre) => <label key={genre.id}><input type="checkbox" checked={taxonomyDraft.secondaryGenreIds.includes(genre.id)} disabled={genre.id === taxonomyDraft.primaryGenreId} onChange={() => toggleTaxonomySecondary(genre.id)} />{genre.displayName}</label>)}</fieldset>
-
-            <div className="taxonomy-subgenre-panel">
-              <div><strong>관련 세부 장르</strong><small>대표·보조 장르에 속한 항목과 현재 선택된 교차 항목만 표시합니다.</small></div>
-              <div className="taxonomy-subgenre-grid">
-                {availableSubgenreIds.map((id) => {
-                  const subgenre = taxonomySubgenreById[id]
-                  if (!subgenre) return null
-                  const selected = taxonomyDraft.subgenreIds.includes(id)
-                  return <button type="button" key={id} className={selected ? 'is-selected' : ''} aria-pressed={selected} onClick={() => toggleTaxonomySubgenre(id)}>{subgenre.name}<small>{subgenre.englishName}</small></button>
-                })}
-              </div>
-            </div>
-
-            <div className="mood-score-editor">
-              <div className="mood-score-intro"><strong>분위기 점수</strong><small>0은 미지정, 3은 분명한 특징, 5는 핵심 정체성입니다. 의미 있는 분위기만 남기세요.</small></div>
-              {(Object.keys(moodGroupLabels) as MoodGroupId[]).map((groupId) => (
-                <fieldset key={groupId}><legend>{moodGroupLabels[groupId]}</legend><div className="mood-score-grid">
-                  {taxonomyMoodDrafts.filter((mood) => mood.groupId === groupId).map((mood) => {
-                    const score = taxonomyDraft.moodScores[mood.id] ?? 0
-                    return <label key={mood.id} className={score > 0 ? 'is-scored' : ''}><span><strong>{mood.name}</strong><em>{score}/5</em></span><small>{mood.description}</small><input type="range" min="0" max="5" step="1" value={score} onChange={(event) => updateMoodScore(mood.id, Number(event.target.value) as MoodScore)} aria-label={`${mood.name} 점수`} /></label>
-                  })}
-                </div></fieldset>
-              ))}
-            </div>
-            <label className="studio-wide-field">분류 검토 메모<textarea value={taxonomyDraft.reviewNote ?? ''} onChange={(event) => changeTaxonomy({ reviewNote: event.target.value })} rows={3} placeholder="대표 장르 선택 근거나 나중에 확인할 사항을 적습니다." /></label>
-          </section>
+          <StudioTaxonomyEditor
+            value={taxonomyDraft}
+            genres={taxonomyGenreDrafts}
+            moods={taxonomyMoodDrafts}
+            availableSubgenreIds={availableSubgenreIds}
+            onPrimary={updateTaxonomyPrimary}
+            onReviewStatus={(reviewStatus) => changeTaxonomy({ reviewStatus })}
+            onToggleSecondary={toggleTaxonomySecondary}
+            onToggleSubgenre={toggleTaxonomySubgenre}
+            onMoodScore={updateMoodScore}
+            onReviewNote={(reviewNote) => changeTaxonomy({ reviewNote })}
+          />
 
           <section className="studio-form-section">
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>

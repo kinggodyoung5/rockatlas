@@ -59,7 +59,13 @@ const isRecord = (value: unknown): value is UnknownRecord => Boolean(value) && t
 const text = (value: unknown) => typeof value === 'string' ? value.trim() : ''
 const number = (value: unknown) => typeof value === 'number' ? value : Number(value)
 const stringList = (value: unknown) => Array.isArray(value) ? value.map(text).filter(Boolean) : typeof value === 'string' ? value.split(/[,;|]/).map((item) => item.trim()).filter(Boolean) : []
-const slugify = (value: string) => value.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLocaleLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+export const slugify = (value: string) => value
+  .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+  .toLocaleLowerCase()
+  .normalize('NFKD')
+  .replace(/\p{Mark}+/gu, '')
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '')
 
 const markdownLinkPattern = /\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)/g
 
@@ -174,7 +180,7 @@ const resolveGenreId = (value: unknown): GenreTaxonomyId | undefined => {
   return viaSubgenre ? parentGenreIdBySubgenreId.get(viaSubgenre) : undefined
 }
 const resolveSubgenreId = (value: unknown) => subgenreAliasMap.get(normalizeTaxonomyLabel(value))
-const resolveMoodId = (value: unknown) => moodAliasMap.get(normalizeTaxonomyLabel(value))
+export const resolveMoodId = (value: unknown) => moodAliasMap.get(normalizeTaxonomyLabel(value))
 
 function eraFromYear(year: number): EraId {
   const candidate = `${Math.min(2020, Math.max(1960, Math.floor(year / 10) * 10))}s` as EraId
@@ -606,7 +612,19 @@ function repairUnescapedQuotes(text: string): string {
       let j = i + 1
       while (j < text.length && /\s/.test(text[j])) j += 1
       const next = text[j]
-      const isRealTerminator = next === undefined || ',:}]'.includes(next)
+      let isRealTerminator = next === undefined || ':}]'.includes(next)
+      if (next === ',') {
+        let afterComma = j + 1
+        while (afterComma < text.length && /\s/.test(text[afterComma])) afterComma += 1
+        const remainder = text.slice(afterComma)
+        isRealTerminator = remainder.startsWith('"')
+          || remainder.startsWith('{')
+          || remainder.startsWith('[')
+          || remainder.startsWith(']')
+          || remainder.startsWith('}')
+          || /^-?\d/.test(remainder)
+          || /^(?:true|false|null)(?:\s*[,}\]])/.test(remainder)
+      }
       if (isRealTerminator) {
         result += ch
         inString = false

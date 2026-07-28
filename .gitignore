@@ -4,3 +4,6 @@ dist
 *.local
 *.tsbuildinfo
 src/data/catalog-history.json
+src/data/generated/
+public/data/bands/
+public/bands/

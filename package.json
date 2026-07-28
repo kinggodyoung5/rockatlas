@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "vite",
     "studio": "vite --host 127.0.0.1",
+    "test": "vitest run --config vitest.config.ts",
+    "generate:public-data": "node --experimental-strip-types scripts/generate-public-data.ts",
+    "predev": "npm run generate:public-data",
+    "prestudio": "npm run generate:public-data",
+    "prebuild": "npm run generate:public-data",
     "build": "tsc -b && vite build",
+    "postbuild": "node --experimental-strip-types scripts/validate-build-output.ts",
     "preview": "vite preview",
     "collect:images": "node --experimental-strip-types scripts/collect-image-candidates.ts",
     "search:images": "node --experimental-strip-types scripts/search-commons-images.ts",
@@ -39,6 +45,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "typescript": "~5.8.3",
-    "vite": "^7.0.6"
+    "vite": "^7.0.6",
+    "vitest": "^4.1.10"
   }
 }

@@ -33,6 +33,8 @@ jobs:
         run: npm run validate:taxonomy
       - name: Validate uploaded assets are committed
         run: npm run validate:uploads
+      - name: Run regression tests
+        run: npm test
       - name: Build site
         run: npm run build
       - name: Configure Pages

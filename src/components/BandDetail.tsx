@@ -1,4 +1,4 @@
-import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Users } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Share2, Users } from 'lucide-react'
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
@@ -39,9 +39,10 @@ interface BandDetailProps {
   isFavorite: boolean
   onToggleFavorite: (bandId: string) => void
   visitedIds: string[]
+  onShare: () => void
 }
 
-export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFavorite, visitedIds }: BandDetailProps) {
+export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFavorite, visitedIds, onShare }: BandDetailProps) {
   const genre = genreById[band.primaryGenre]
   const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
   const genreColor = taxonomyGenre?.color ?? genre.color
@@ -70,6 +71,7 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
       <div className="detail-topbar shell">
         <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 이전 페이지</button>
         <span>ROCK ATLAS / {(taxonomyGenre?.englishName ?? genre.englishName).toUpperCase()}</span>
+        <button className="back-button" onClick={onShare}><Share2 size={16} /> 이 밴드 공유</button>
       </div>
 
       <section className="detail-hero shell">

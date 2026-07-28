@@ -53,7 +53,9 @@ for (const band of bands) {
   else musicBrainzIds.add(musicBrainzId)
 
   if (!youtubeChannel || !/^https:\/\/(www\.)?youtube\.com\//.test(youtubeChannel.url)) {
-    errors.push(`${band.id}: 공식 YouTube 채널 링크 누락`)
+    const message = `${band.id}: 공식 YouTube 채널 링크 누락`
+    if (band.reviewStatus === 'draft') warnings.push(message)
+    else errors.push(message)
   } else {
     officialChannels += 1
   }
