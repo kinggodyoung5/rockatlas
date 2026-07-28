@@ -579,9 +579,55 @@ export async function lookupCommonsImage(input: string, bandName?: string): Prom
   }
 }
 
+/** Gemini routinely writes plain quote marks around a nickname or quoted phrase inside a JSON string
+ *  value (e.g. "James "Munky" Shaffer") instead of escaping them, which is invalid JSON — the parser
+ *  reads the string as ending at the first inner quote and chokes on what follows.
+ *
+ *  Walks the text tracking whether we're inside a string, and for each quote encountered mid-string,
+ *  looks ahead (past whitespace) to see whether it's followed by a real JSON delimiter (`,` `}` `]` `:`
+ *  or end of input). If so it's a legitimate closing quote; if not, it's a literal quote that needs
+ *  escaping, so it's rewritten as `\"` and the string is treated as continuing. */
+function repairUnescapedQuotes(text: string): string {
+  let result = ''
+  let inString = false
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (!inString) {
+      result += ch
+      if (ch === '"') inString = true
+      continue
+    }
+    if (ch === '\\') {
+      result += ch + (text[i + 1] ?? '')
+      i += 1
+      continue
+    }
+    if (ch === '"') {
+      let j = i + 1
+      while (j < text.length && /\s/.test(text[j])) j += 1
+      const next = text[j]
+      const isRealTerminator = next === undefined || ',:}]'.includes(next)
+      if (isRealTerminator) {
+        result += ch
+        inString = false
+      } else {
+        result += '\\"'
+      }
+      continue
+    }
+    result += ch
+  }
+  return result
+}
+
+function parseLeniently(text: string): unknown {
+  try { return JSON.parse(text) } catch { /* fall through to the quote repair below */ }
+  return JSON.parse(repairUnescapedQuotes(text))
+}
+
 export function extractJson(textValue: string): unknown {
   const trimmed = textValue.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '')
-  try { return JSON.parse(trimmed) } catch { /* try to recover JSON from surrounding prose */ }
+  try { return parseLeniently(trimmed) } catch { /* try to recover JSON from surrounding prose */ }
   const objectStart = trimmed.indexOf('{')
   const arrayStart = trimmed.indexOf('[')
   const start = [objectStart, arrayStart].filter((item) => item >= 0).sort((a, b) => a - b)[0]
@@ -589,7 +635,7 @@ export function extractJson(textValue: string): unknown {
   const arrayEnd = trimmed.lastIndexOf(']')
   const end = Math.max(objectEnd, arrayEnd)
   if (start === undefined || end <= start) throw new Error('JSON 부분을 찾지 못했습니다. Gemini 답변 전체를 그대로 붙여넣어도 됩니다.')
-  return JSON.parse(trimmed.slice(start, end + 1))
+  return parseLeniently(trimmed.slice(start, end + 1))
 }
 
 /** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'published'. */
@@ -808,5 +854,5 @@ export function finalizeIntakeBand(band: Band): Band {
 export function buildGeminiResearchPrompt() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
   const moodIdsText = taxonomyMoods.map((mood) => `${mood.id}=${mood.name}`).join(', ')
-  return `ROCK ATLAS GEM 지침 v3. 사용자가 밴드 이름만 입력하면 웹에서 사실을 확인하고 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지하며 모르는 사실·ID·링크는 추측하지 말고 빈 값으로 둔다.\n\n고유명사와 URL을 제외한 설명·태그·멤버 역할·관계 근거는 한국어 평서체(~다/~이다)로 쓴다. 영어 역할은 리드 보컬·기타·베이스·드럼·키보드·백보컬처럼 번역한다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장","url":"실제로 직접 연 YouTube watch URL, 확인 못 하면 빈 문자열"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"관계 근거 한국어 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"실제로 연 공식 채널 URL","image":{"commonsFile":"실제로 연 Wikimedia Commons File: 파일명, 확인 못 하면 빈 문자열"}}]}\n\n대표곡은 히트 싱글·차트 진입·스트리밍 조회수 등 대중적 인지도가 가장 높은 순서로 3곡, 핵심 현재·전 멤버만, 관계는 확실한 것 최대 3개만 쓴다. YouTube URL은 검색 결과 주소를 복사하지 말고 실제 영상을 연 뒤 곡명과 아티스트가 모두 맞는지 확인한다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 글자 하나도 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
+  return `ROCK ATLAS GEM 지침 v3. 사용자가 밴드 이름만 입력하면 웹에서 사실을 확인하고 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지하며 모르는 사실·ID·링크는 추측하지 말고 빈 값으로 둔다. 문자열 값 안에 큰따옴표가 들어가면(별명, 인용구 등) 반드시 \"처럼 이스케이프한다. 예: "James \"Munky\" Shaffer".\n\n고유명사와 URL을 제외한 설명·태그·멤버 역할·관계 근거는 한국어 평서체(~다/~이다)로 쓴다. 영어 역할은 리드 보컬·기타·베이스·드럼·키보드·백보컬처럼 번역한다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장","url":"실제로 직접 연 YouTube watch URL, 확인 못 하면 빈 문자열"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"관계 근거 한국어 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"실제로 연 공식 채널 URL","image":{"commonsFile":"실제로 연 Wikimedia Commons File: 파일명, 확인 못 하면 빈 문자열"}}]}\n\n대표곡은 히트 싱글·차트 진입·스트리밍 조회수 등 대중적 인지도가 가장 높은 순서로 3곡, 핵심 현재·전 멤버만, 관계는 확실한 것 최대 3개만 쓴다. YouTube URL은 검색 결과 주소를 복사하지 말고 실제 영상을 연 뒤 곡명과 아티스트가 모두 맞는지 확인한다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 글자 하나도 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
 }

@@ -1,7 +1,231 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-28T03:17:42.269Z",
+  "updatedAt": "2026-07-28T10:34:23.415Z",
   "bands": [
+    {
+      "id": "aerosmith",
+      "name": "Aerosmith",
+      "formed": 1970,
+      "origin": "Boston",
+      "countryCode": "US",
+      "activeYears": "1970–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "블루스 록",
+        "글램 메탈",
+        "아레나 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "블루스 록",
+            "글램 메탈",
+            "아레나 록"
+          ]
+        }
+      ],
+      "tags": [
+        "미국 록",
+        "하드 록",
+        "글램 록",
+        "블루스 록",
+        "아레나 록"
+      ],
+      "summary": "1970년 미국 보스턴에서 결성되어 미국 하드 록의 역사에서 가장 큰 상업적 성공을 거둔 전설적인 밴드. 블루스 기반의 하드 록과 화려한 글램 미학을 접목하여 수많은 그래미 어워드 수상 및 명예의 전당 헌액 기록을 세웠다.",
+      "style": "스티븐 타일러의 폭발적이고 다채로운 보컬 스크리밍과 조 페리의 감각적이고 블루지한 기타 리프가 사운드의 중심을 이룬다. 리드미컬하고 캐치한 그루브 섹션과 웅장한 아레나 발라드 스타일을 오가는 탁월한 구성력을 보여준다.",
+      "image": {
+        "wikipediaTitle": "Aerosmith",
+        "fileName": "File:Aerosmith member.png",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Aerosmith_member.png/500px-Aerosmith_member.png",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Aerosmith_member.png",
+        "alt": "Aerosmith 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerosmith_member.png",
+          "creator": "https://www.flickr.com/photos/daigooliva/ https://www.flickr.com/photos/c32/ https://www.flickr.com/photos/edvill/ https://www.flickr.com/people/photo_grafitti/ https://www.flickr.com/photos/c32/",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-28T10:34:16.744Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Steven Tyler",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1970–2024"
+        },
+        {
+          "name": "Joe Perry",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1970–1979, 1984–2024"
+        },
+        {
+          "name": "Tom Hamilton",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1970–2024"
+        },
+        {
+          "name": "Joey Kramer",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1970–2024"
+        },
+        {
+          "name": "Brad Whitford",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1971–1981, 1984–2024"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "dream-on",
+          "title": "Dream On",
+          "year": 1973,
+          "album": "Aerosmith",
+          "guide": "서정적인 피아노 연주로 시작해 곡 후반부 스티븐 타일러의 샤우팅 보컬이 절정을 이루는 클라이맥스를 감상할 수 있다.",
+          "youtubeId": "iJDtukGW79Y",
+          "source": {
+            "label": "Aerosmith — Dream On YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=iJDtukGW79Y",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "HQVideoClassics"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T10:29:55.302Z"
+        },
+        {
+          "id": "walk-this-way",
+          "title": "Walk This Way",
+          "year": 1975,
+          "album": "Toys in the Attic",
+          "guide": "조 페리의 독창적인 펀치력 있는 기타 리프와 리드미컬하고 수다스러운 보컬 훅이 시원하게 전개된다.",
+          "youtubeId": "4c8O2n1Gfto",
+          "source": {
+            "label": "Aerosmith — Walk This Way YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=4c8O2n1Gfto",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "AerosmithVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T10:29:44.465Z"
+        },
+        {
+          "id": "i-don-t-want-to-miss-a-thing",
+          "title": "I Don't Want to Miss a Thing",
+          "year": 1998,
+          "album": "Armageddon OST",
+          "guide": "웅장한 오케스트라 현악 편곡 위에 호소력 짙은 보컬이 어우러지는 대작 록 발라드 사운드가 특징이다.",
+          "youtubeId": "JkK8g6FMEXE",
+          "source": {
+            "label": "Aerosmith — I Don't Want to Miss a Thing YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=JkK8g6FMEXE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "AerosmithVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T10:30:07.444Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "led-zeppelin",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "헤비한 블루스 록 리프와 폭발적인 무대 연출 방식에서 직접적인 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "guns-n-roses",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "1980년대 후반 하드 록 및 글램 메탈 신을 뒤흔든 뱅어 사운드와 악동 이미지 구축에 큰 영향을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Aerosmith — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q126826",
+          "publisher": "Wikidata",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "Q126826"
+        },
+        {
+          "label": "Aerosmith — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/3d2b98e5-556f-4451-a3ff-c50ea18d57cb",
+          "publisher": "MusicBrainz",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "3d2b98e5-556f-4451-a3ff-c50ea18d57cb"
+        },
+        {
+          "label": "Aerosmith — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Aerosmith",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Aerosmith — 공식 YouTube",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/@aerosmith",
+          "official": true,
+          "externalId": "@aerosmith",
+          "note": "외부 재생 제한 시 사용하는 공식 채널 링크"
+        },
+        {
+          "label": "Aerosmith — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Aerosmith_member.png",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "glam-metal",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "groovy-danceable": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5,
+          "youth-rebellious": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-28T10:26:57.489Z"
+    },
     {
       "id": "king-gizzard-the-lizard-wizard",
       "name": "King Gizzard & The Lizard Wizard",
