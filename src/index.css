@@ -770,6 +770,22 @@ img { display: block; max-width: 100%; }
 .youtube-channel-grid > article > a { grid-column: 3; grid-row: 1; color: #777579; }
 .youtube-channel-grid > article > button { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 28px; border: 1px solid #343238; color: #aaa8aa; background: #17171a; font-size: 8px; }
 .youtube-channel-grid > article > button:hover { color: var(--orange); border-color: var(--orange); }
+.image-position-picker { margin: 4px 0 2px; padding: 11px; border: 1px solid #2a292e; background: #0b0b0d; }
+.image-position-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
+.image-position-toolbar > span { color: #b6b4b6; font-size: 9px; font-weight: 700; }
+.image-position-toolbar small { color: #67656a; font-weight: 400; }
+.image-position-modes { display: flex; gap: 4px; }
+.image-position-modes button { display: inline-flex; align-items: center; gap: 4px; padding: 5px 8px; border: 1px solid #343238; color: #8b898e; background: #17171a; font-size: 8px; }
+.image-position-modes button.is-active { color: #0b0b0d; border-color: var(--orange); background: var(--orange); font-weight: 800; }
+.image-position-stage { position: relative; width: 100%; max-width: 300px; overflow: hidden; border: 1px solid #343238; background: #17171a; cursor: grab; touch-action: none; user-select: none; }
+.image-position-stage.is-dragging { cursor: grabbing; border-color: var(--orange); }
+.image-position-stage img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.image-position-crosshair { position: absolute; width: 13px; height: 13px; margin: -7px 0 0 -7px; border: 2px solid rgba(255,255,255,.9); border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.55); pointer-events: none; }
+.image-position-readout { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
+.image-position-readout > span { color: #8b898e; font-size: 9px; font-variant-numeric: tabular-nums; }
+.image-position-readout button { display: inline-flex; align-items: center; gap: 4px; padding: 5px 8px; border: 1px solid #343238; color: #8b898e; background: #17171a; font-size: 8px; }
+.image-position-readout button:disabled { opacity: .45; }
+.image-position-note { margin: 7px 0 0; color: #67656a; font-size: 8px; line-height: 1.5; }
 .is-spinning { animation: studio-spin .8s linear infinite; }
 @keyframes studio-spin { to { transform: rotate(360deg); } }
 .studio-section-order { display: grid; gap: 6px; padding: 5px 15px 16px; }
@@ -992,7 +1008,11 @@ img { display: block; max-width: 100%; }
   .hero-art { position: absolute; width: 430px; right: -190px; top: 110px; opacity: .28; }
   .hero-art.hero-art-image { inset: 0; width: 100%; height: 100%; transform: none; opacity: .58; }
   .hero-art-image::after { background: linear-gradient(180deg, rgba(11,11,13,.64) 0%, rgba(11,11,13,.42) 54%, rgba(11,11,13,.72) 100%); }
-  .hero-art-image .hero-custom-image { object-position: 62% center !important; }
+  /* Mobile art framing: the Studio's per-image mobile override wins when set, otherwise each image
+     keeps its previous hardcoded mobile default. See lib/imagePosition.ts. */
+  .hero-art-image .hero-custom-image { object-position: var(--art-position-mobile, 62% center); }
+  .genre-card-art img,
+  .manifesto-bg-image { object-position: var(--art-position-mobile, var(--art-position, 50% 50%)); }
   .hero-stamp, .hero-label { display: none; }
   .hero-index { display: none; }
   .journey-bar { grid-template-columns: 1fr; gap: 16px; padding-block: 22px; }

@@ -1,10 +1,18 @@
 import content from './siteContent.json' with { type: 'json' }
 import type { GenreTaxonomyId } from '../types/taxonomy'
 
+/** A CSS object-position value. Legacy presets ('center', 'top', …) still parse, but the Studio's drag
+ *  control now writes precise percentages ('50% 80%') so art can be framed exactly instead of snapped
+ *  to five coarse presets. */
+export type ImagePosition = string
+
 export interface GenreVisualSettings {
   artMode: 'image' | 'none'
   imageUrl: string
-  imagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+  imagePosition: ImagePosition
+  /** Optional separate framing for narrow screens — cards are far more cropped on mobile, so the
+   *  desktop framing frequently doesn't survive the aspect-ratio change. Falls back to imagePosition. */
+  imagePositionMobile?: ImagePosition
   imageOpacity: number
   imageScale: number
 }
@@ -48,7 +56,8 @@ export interface SiteContent {
     mutedColor: string
     heroArtMode: 'vinyl' | 'image' | 'none'
     heroImageUrl: string
-    heroImagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    heroImagePosition: ImagePosition
+    heroImagePositionMobile?: ImagePosition
     logoMode: 'mark' | 'image'
     logoImageUrl: string
     wordmarkMode: 'text' | 'image'
@@ -66,7 +75,8 @@ export interface SiteContent {
     genreCardGap: number
     manifestoBackgroundMode: 'accent' | 'image'
     manifestoImageUrl: string
-    manifestoImagePosition: 'center' | 'top' | 'bottom' | 'left' | 'right'
+    manifestoImagePosition: ImagePosition
+    manifestoImagePositionMobile?: ImagePosition
     manifestoOverlayOpacity: number
   }
   genreVisuals: Record<GenreTaxonomyId, GenreVisualSettings>

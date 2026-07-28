@@ -2,6 +2,7 @@ import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Sa
 import { useEffect, useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
+import { ImagePositionPicker } from './ImagePositionPicker'
 
 interface DesignStudioPanelProps {
   value: SiteContent
@@ -220,8 +221,8 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
 
           <details><summary>히어로 그림</summary><div className="studio-form-grid">
             <label>표시 방식<select value={value.theme.heroArtMode} onChange={(event) => changeTheme({ heroArtMode: event.target.value as SiteContent['theme']['heroArtMode'] })}><option value="vinyl">기본 레코드 그래픽</option><option value="image">업로드 이미지</option><option value="none">그림 숨김</option></select></label>
-            <label>이미지 위치<select value={value.theme.heroImagePosition} onChange={(event) => changeTheme({ heroImagePosition: event.target.value as SiteContent['theme']['heroImagePosition'] })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
             <label className="studio-grid-span">이미지 URL<input value={value.theme.heroImageUrl} onChange={(event) => changeTheme({ heroImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+            {value.theme.heroArtMode === 'image' && <ImagePositionPicker imageUrl={value.theme.heroImageUrl} desktopValue={value.theme.heroImagePosition} mobileValue={value.theme.heroImagePositionMobile} desktopAspect={16 / 9} mobileAspect={375 / 650} onChange={(patch) => changeTheme({ ...(patch.imagePosition !== undefined && { heroImagePosition: patch.imagePosition }), ...('imagePositionMobile' in patch && { heroImagePositionMobile: patch.imagePositionMobile }) })} />}
             <button className="studio-upload-button studio-grid-span" onClick={() => uploadRef.current?.click()}><ImagePlus size={15} /> PNG·JPG·WebP 업로드</button>
             <input ref={uploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadHero(event.target.files[0])} />
           </div></details>
@@ -237,8 +238,8 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label className="studio-grid-span">제목 <small>줄바꿈은 엔터로 구분합니다.</small><textarea value={value.manifestoTitle} onChange={(event) => onChange({ manifestoTitle: event.target.value })} rows={3} /></label>
             <label>배경 표시 방식<select value={value.theme.manifestoBackgroundMode} onChange={(event) => changeTheme({ manifestoBackgroundMode: event.target.value as SiteContent['theme']['manifestoBackgroundMode'] })}><option value="accent">강조색 단색 · 기본</option><option value="image">업로드 이미지</option></select></label>
             {value.theme.manifestoBackgroundMode === 'image' && <>
-              <label>이미지 위치<select value={value.theme.manifestoImagePosition} onChange={(event) => changeTheme({ manifestoImagePosition: event.target.value as SiteContent['theme']['manifestoImagePosition'] })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
               <label className="studio-grid-span">이미지 URL<input value={value.theme.manifestoImageUrl} onChange={(event) => changeTheme({ manifestoImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+              <ImagePositionPicker imageUrl={value.theme.manifestoImageUrl} desktopValue={value.theme.manifestoImagePosition} mobileValue={value.theme.manifestoImagePositionMobile} desktopAspect={21 / 9} mobileAspect={375 / 430} onChange={(patch) => changeTheme({ ...(patch.imagePosition !== undefined && { manifestoImagePosition: patch.imagePosition }), ...('imagePositionMobile' in patch && { manifestoImagePositionMobile: patch.imagePositionMobile }) })} />
               <button className="studio-upload-button studio-grid-span" onClick={() => manifestoUploadRef.current?.click()}><ImagePlus size={15} /> 배경 이미지 업로드</button>
               <input ref={manifestoUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadManifestoBackground(event.target.files[0])} />
               <label className="studio-grid-span">어둡게 덮기 <small>{Math.round(value.theme.manifestoOverlayOpacity * 100)}% · 글자 가독성용</small><input type="range" min="0" max="0.85" step="0.05" value={value.theme.manifestoOverlayOpacity} onChange={(event) => changeTheme({ manifestoOverlayOpacity: Number(event.target.value) })} /></label>
@@ -282,8 +283,8 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
           <label className="studio-grid-span">영문 이름<textarea value={genre.englishName} onChange={(event) => updateGenre(genre.id, { englishName: event.target.value })} rows={2} /></label>
           <label className="studio-grid-span">한 줄 분위기 설명<textarea value={genre.vibeDescription} onChange={(event) => updateGenre(genre.id, { vibeDescription: event.target.value })} rows={3} /></label>
           <label>삽화 표시<select value={visual.artMode} onChange={(event) => updateGenreVisual(genre.id, { artMode: event.target.value as typeof visual.artMode })}><option value="image">이미지 표시</option><option value="none">이미지 숨김</option></select></label>
-          <label>삽화 위치<select value={visual.imagePosition} onChange={(event) => updateGenreVisual(genre.id, { imagePosition: event.target.value as typeof visual.imagePosition })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
           <label className="studio-grid-span">삽화 URL<input value={visual.imageUrl} onChange={(event) => updateGenreVisual(genre.id, { imageUrl: event.target.value })} /></label>
+          {visual.artMode === 'image' && <ImagePositionPicker imageUrl={visual.imageUrl} desktopValue={visual.imagePosition} mobileValue={visual.imagePositionMobile} scale={visual.imageScale} opacity={visual.imageOpacity} onChange={(patch) => updateGenreVisual(genre.id, patch)} />}
           <label>삽화 투명도 <small>{Math.round(visual.imageOpacity * 100)}%</small><input type="range" min="0.2" max="1" step="0.05" value={visual.imageOpacity} onChange={(event) => updateGenreVisual(genre.id, { imageOpacity: Number(event.target.value) })} /></label>
           <label>삽화 확대 <small>{Math.round(visual.imageScale * 100)}%</small><input type="range" min="0.8" max="1.5" step="0.05" value={visual.imageScale} onChange={(event) => updateGenreVisual(genre.id, { imageScale: Number(event.target.value) })} /></label>
           <button className="studio-upload-button studio-grid-span" onClick={() => pickGenreArt(genre.id)}><ImagePlus size={14} /> 이 장르의 삽화 교체</button>
@@ -305,8 +306,8 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
           const visual = value.explorerVisuals[id]
           return <details key={id} open><summary><span style={{ background: color }} />{label} 히어로 삽화</summary><div>
             <label>삽화 표시<select value={visual.artMode} onChange={(event) => updateExplorerVisual(id, { artMode: event.target.value as typeof visual.artMode })}><option value="image">이미지 표시</option><option value="none">이미지 숨김</option></select></label>
-            <label>삽화 위치<select value={visual.imagePosition} onChange={(event) => updateExplorerVisual(id, { imagePosition: event.target.value as typeof visual.imagePosition })}><option value="center">가운데</option><option value="top">위</option><option value="bottom">아래</option><option value="left">왼쪽</option><option value="right">오른쪽</option></select></label>
             <label className="studio-grid-span">삽화 URL<input value={visual.imageUrl} onChange={(event) => updateExplorerVisual(id, { imageUrl: event.target.value })} /></label>
+            {visual.artMode === 'image' && <ImagePositionPicker imageUrl={visual.imageUrl} desktopValue={visual.imagePosition} mobileValue={visual.imagePositionMobile} scale={visual.imageScale} opacity={visual.imageOpacity} onChange={(patch) => updateExplorerVisual(id, patch)} />}
             <label>삽화 투명도 <small>{Math.round(visual.imageOpacity * 100)}%</small><input type="range" min="0.2" max="1" step="0.05" value={visual.imageOpacity} onChange={(event) => updateExplorerVisual(id, { imageOpacity: Number(event.target.value) })} /></label>
             <label>삽화 확대 <small>{Math.round(visual.imageScale * 100)}%</small><input type="range" min="0.8" max="1.5" step="0.05" value={visual.imageScale} onChange={(event) => updateExplorerVisual(id, { imageScale: Number(event.target.value) })} /></label>
             <button className="studio-upload-button studio-grid-span" onClick={() => pickExplorerArt(id)}><ImagePlus size={14} /> 이 탐색 카드의 삽화 교체</button>
