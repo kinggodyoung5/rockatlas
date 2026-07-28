@@ -1,5 +1,6 @@
 import { Check, ExternalLink, LoaderCircle, Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { studioFetchJson } from '../lib/studioApiClient'
 
 export interface ExternalCandidate {
   id: string
@@ -39,9 +40,7 @@ export function ExternalSourceFinder({ initialQuery, selectedWikidataId, selecte
     setMessage('Wikidata와 MusicBrainz에서 후보를 찾고 있습니다…')
     try {
       const request = async (provider: keyof SearchResults) => {
-        const response = await fetch(`/api/studio/external-search?provider=${provider}&q=${encodeURIComponent(normalized)}`)
-        if (!response.ok) throw new Error(await response.text())
-        return (await response.json() as { results: ExternalCandidate[] }).results
+        return (await studioFetchJson<{ results: ExternalCandidate[] }>(`/api/studio/external-search?provider=${provider}&q=${encodeURIComponent(normalized)}`)).results
       }
       const settled = await Promise.allSettled([request('wikidata'), request('musicbrainz')])
       const next = {

@@ -1,5 +1,6 @@
 import { Check, ExternalLink, LoaderCircle, Search } from 'lucide-react'
 import { useState } from 'react'
+import { studioFetchJson } from '../lib/studioApiClient'
 
 export interface CommonsImageCandidate {
   fileName: string
@@ -28,9 +29,7 @@ export function CommonsImageFinder({ initialQuery, onSelect }: CommonsImageFinde
     setLoading(true)
     setMessage('Wikimedia Commons에서 검색하는 중…')
     try {
-      const response = await fetch(`/api/studio/commons-image-search?q=${encodeURIComponent(q)}`)
-      if (!response.ok) throw new Error(await response.text())
-      const data = await response.json() as { results: CommonsImageCandidate[] }
+      const data = await studioFetchJson<{ results: CommonsImageCandidate[] }>(`/api/studio/commons-image-search?q=${encodeURIComponent(q)}`)
       setResults(data.results)
       setMessage(data.results.length ? `${data.results.length}개 후보를 찾았습니다. 라이선스를 확인하고 선택하세요.` : '검색 결과가 없습니다.')
     } catch (error) {

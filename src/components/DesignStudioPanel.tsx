@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import type { SiteContent, SiteSectionId } from '../data/siteContent'
 import { formatFileSize, optimizeImageUpload, type StudioImageAssetType } from '../lib/imageUpload'
+import { studioFetchJson } from '../lib/studioApiClient'
 import { ImagePositionPicker } from './ImagePositionPicker'
 
 interface DesignStudioPanelProps {
@@ -83,9 +84,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     setImageMessage(`${file.name} 최적화 중…`)
     try {
       const optimized = await optimizeImageUpload(file, assetType)
-      const response = await fetch('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl: optimized.dataUrl, assetType, assetKey }) })
-      if (!response.ok) throw new Error(await response.text())
-      const result = await response.json() as { url: string }
+      const result = await studioFetchJson<{ url: string }>('/api/studio/upload', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dataUrl: optimized.dataUrl, assetType, assetKey }) })
       setImageMessage(`${file.name} · ${optimized.width}×${optimized.height} · ${formatFileSize(optimized.originalBytes)} → ${formatFileSize(optimized.storedBytes)}${optimized.optimized ? '로 최적화' : ' · 원본이 이미 충분히 작아 그대로 저장'} · 디자인 저장을 눌러 확정하세요.`)
       return result.url
     } catch (error) {
@@ -138,9 +137,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
         reader.onerror = () => reject(new Error('폰트를 읽지 못했습니다.'))
         reader.readAsDataURL(file)
       })
-      const response = await fetch('/api/studio/upload-font', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fileName: file.name, dataUrl }) })
-      if (!response.ok) throw new Error(await response.text())
-      const result = await response.json() as { url: string; format: SiteContent['theme']['customFontFormat']; name: string }
+      const result = await studioFetchJson<{ url: string; format: SiteContent['theme']['customFontFormat']; name: string }>('/api/studio/upload-font', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fileName: file.name, dataUrl }) })
       changeTheme({ customFontName: result.name, customFontUrl: result.url, customFontFormat: result.format })
       setFontMessage(`${file.name} 업로드 완료 · 디자인 저장을 눌러 확정하세요.`)
     } catch (error) {

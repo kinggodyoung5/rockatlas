@@ -69,8 +69,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
     const remaining = result.candidates.filter((candidate) => !approved.some((item) => item.key === candidate.key))
     setResult({ ...result, candidates: remaining })
     setSelectedKeys(new Set())
-    if (!remaining.length) setRaw('')
-    setMessage(`${approved.length}개를 추가했습니다 (자동 검수 완료 ${reviewedCount}개 · 나머지는 비공개 초안). 상단의 ‘전체 저장’을 누르면 파일에 반영됩니다.`)
+    setMessage(`${approved.length}개를 추가했습니다 (자동 검수 완료 ${reviewedCount}개 · 나머지는 비공개 초안). 상단의 ‘전체 저장’이 성공할 때까지 원본 JSON은 이 입력칸과 브라우저에 보존됩니다.`)
   }
 
   const clear = () => {

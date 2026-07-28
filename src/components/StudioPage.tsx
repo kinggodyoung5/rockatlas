@@ -8,6 +8,7 @@ import type { Band, BandTaxonomyV2, GenreId, Relation, RelationKind, SourceRef }
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
+import { studioFetchJson } from '../lib/studioApiClient'
 import { clone, createDraftBand, createTaxonomyDraft, membersToText, parseEraTags, parseMembers, parseTracks, tracksToText } from '../lib/studioBandUtils'
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
@@ -25,6 +26,18 @@ const relationLabels: Record<RelationKind, string> = {
   influenced: '영향을 줌',
   'shared-scene': '같은 장면',
   evolution: '계보의 확장',
+}
+
+const recoveryKey = 'rock-atlas-studio-recovery-v1'
+type StudioRecovery = { version: 1; savedAt: string; bands: Band[]; selectedId: string; draft: Band }
+
+function readRecovery(): StudioRecovery | null {
+  try {
+    const value = JSON.parse(localStorage.getItem(recoveryKey) ?? 'null') as StudioRecovery | null
+    return value?.version === 1 && Array.isArray(value.bands) && value.bands.length > 0 && value.draft?.id ? value : null
+  } catch {
+    return null
+  }
 }
 
 const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
@@ -147,6 +160,7 @@ export function StudioPage() {
   const [catalogBands, setCatalogBands] = useState<Band[]>(() => clone(initialBands))
   const [selectedId, setSelectedId] = useState(initialBands[0]?.id ?? '')
   const [draft, setDraft] = useState<Band>(() => clone(initialBands[0] ?? createDraftBand()))
+  const [recovery, setRecovery] = useState<StudioRecovery | null>(() => readRecovery())
   const isFirstSelection = useRef(true)
 
   useEffect(() => {
@@ -176,6 +190,19 @@ export function StudioPage() {
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
   const importRef = useRef<HTMLInputElement>(null)
   const isExisting = catalogBands.some((band) => band.id === selectedId)
+
+  useEffect(() => {
+    if (!dirty && !catalogDirty) return
+    const timeout = window.setTimeout(() => {
+      const snapshot: StudioRecovery = { version: 1, savedAt: new Date().toISOString(), bands: catalogBands, selectedId, draft }
+      try {
+        localStorage.setItem(recoveryKey, JSON.stringify(snapshot))
+      } catch {
+        setMessage('경고: 브라우저 자동 복구본을 저장하지 못했습니다. 전체 백업 내보내기를 사용하세요.')
+      }
+    }, 600)
+    return () => window.clearTimeout(timeout)
+  }, [catalogBands, catalogDirty, dirty, draft, selectedId])
 
   useEffect(() => {
     const syncWorkspace = () => setWorkspace(window.location.hash === '#design' ? 'design' : 'data')
@@ -360,13 +387,11 @@ export function StudioPage() {
 
   const saveSiteContent = async () => {
     try {
-      const response = await fetch('/api/studio/site-content', {
+      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/site-content', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(siteDraft),
       })
-      if (!response.ok) throw new Error(await response.text())
-      const result = await response.json() as { updatedAt: string }
       setSiteDraft((current) => ({ ...current, updatedAt: result.updatedAt }))
       setSiteDirty(false)
       setSiteMessage(`사이트 문구 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
@@ -377,9 +402,7 @@ export function StudioPage() {
 
   const saveTaxonomyGenres = async () => {
     try {
-      const response = await fetch('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts }) })
-      if (!response.ok) throw new Error(await response.text())
-      const result = await response.json() as { updatedAt: string }
+      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts }) })
       setTaxonomyDirty(false)
       setTaxonomyMessage(`13장르 카드 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
     } catch (error) { setTaxonomyMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
@@ -435,16 +458,16 @@ export function StudioPage() {
   }
 
   const persistBands = async (nextBands: Band[], changeNote: string) => {
-    const response = await fetch('/api/studio/catalog', {
+    const result = await studioFetchJson<{ updatedAt: string; count: number }>('/api/studio/catalog', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: catalogBaseline, bands: nextBands, changeNote }),
     })
-    if (!response.ok) throw new Error(await response.text())
-    const result = await response.json() as { updatedAt: string; count: number }
     setCatalogBands(nextBands)
     setCatalogDirty(false)
     setCatalogBaseline(result.updatedAt)
+    localStorage.removeItem(recoveryKey)
+    setRecovery(null)
     return result
   }
 
@@ -549,6 +572,21 @@ export function StudioPage() {
     }
   }
 
+  const restoreRecovery = () => {
+    if (!recovery) return
+    setCatalogBands(clone(recovery.bands))
+    setSelectedId(recovery.selectedId)
+    setDraft(clone(recovery.draft))
+    setDirty(true)
+    setCatalogDirty(true)
+    setMessage(`자동 복구본 ${recovery.bands.length}개를 불러왔습니다. 내용을 확인하고 ‘전체 저장’을 누르세요.`)
+  }
+
+  const discardRecovery = () => {
+    localStorage.removeItem(recoveryKey)
+    setRecovery(null)
+  }
+
   return (
     <main className="studio-page">
       <header className="studio-header">
@@ -567,6 +605,12 @@ export function StudioPage() {
       </header>
 
       <div className="studio-status"><span className={dirty || catalogDirty || siteDirty || taxonomyDirty ? 'is-dirty' : ''}>{dirty || catalogDirty || siteDirty || taxonomyDirty ? '저장되지 않은 변경' : '저장됨'}</span><p>{message}</p></div>
+
+      {recovery && <section className="studio-recovery-banner">
+        <div><strong>저장 전 자동 복구본이 있습니다</strong><p>{new Date(recovery.savedAt).toLocaleString('ko-KR')} · 밴드 {recovery.bands.length}개. 브라우저나 서버가 꺼진 경우 여기서 작업 목록을 되살릴 수 있습니다.</p></div>
+        <button className="is-primary" onClick={restoreRecovery}>복구본 불러오기</button>
+        <button onClick={discardRecovery}>복구본 지우기</button>
+      </section>}
 
       <nav className="studio-workspace-nav" aria-label="Studio 작업 영역">
         <button className={workspace === 'design' ? 'is-active' : ''} onClick={() => openWorkspace('design')}><Palette size={18} /><span><strong>디자인</strong><small>화면·문구·색상·우주 테마·장르 삽화</small></span></button>

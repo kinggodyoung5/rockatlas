@@ -13,6 +13,7 @@ import type { SiteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
 import { defaultRoute, parseExplorerRoute, routeToSearch, type ExplorerRoute } from './lib/explorerRoute'
 import { positionStyle } from './lib/imagePosition'
+import { checkStudioAvailability, studioUnavailableMessage } from './lib/studioApiClient'
 import { useExplorerState } from './hooks/useExplorerState'
 import type { Band } from './types/music'
 import type { GenreTaxonomyId, MoodId } from './types/taxonomy'
@@ -26,6 +27,43 @@ const fontSets = {
 
 const StudioPage = lazy(() => import('./components/StudioPage').then((module) => ({ default: module.StudioPage })))
 const VideoReviewPage = lazy(() => import('./components/VideoReviewPage').then((module) => ({ default: module.VideoReviewPage })))
+
+function useStudioAvailability() {
+  const [available, setAvailable] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    void checkStudioAvailability().then((result) => {
+      if (!cancelled) setAvailable(result)
+    })
+    return () => { cancelled = true }
+  }, [])
+  return available
+}
+
+function StudioGate() {
+  const [status, setStatus] = useState<'checking' | 'available' | 'unavailable'>('checking')
+  useEffect(() => {
+    let cancelled = false
+    void checkStudioAvailability().then((available) => {
+      if (!cancelled) setStatus(available ? 'available' : 'unavailable')
+    })
+    return () => { cancelled = true }
+  }, [])
+
+  if (status === 'checking') return <main className="route-loading">저장 가능한 Studio인지 확인하는 중입니다…</main>
+  if (status === 'unavailable') {
+    return (
+      <main className="studio-unavailable-page">
+        <span>LOCAL STUDIO REQUIRED</span>
+        <h1>이 화면에서는 편집할 수 없습니다</h1>
+        <p>{studioUnavailableMessage}</p>
+        <p>브라우저 주소가 <strong>127.0.0.1:5173</strong>이고, Studio 실행 창이 열려 있어야 저장할 수 있습니다.</p>
+        <a href="./">공개 화면으로 돌아가기</a>
+      </main>
+    )
+  }
+  return <Suspense fallback={<main className="route-loading">Studio를 불러오는 중입니다…</main>}><StudioPage /></Suspense>
+}
 
 function getBandIdFromHash() {
   const match = window.location.hash.match(/^#band=(.+)$/)
@@ -50,6 +88,7 @@ function ExplorerApp() {
   const siteContent = previewOverride ?? staticSiteContent
   const studioPreview = new URLSearchParams(window.location.search).get('studioPreview') === '1'
   const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  const studioAvailable = useStudioAvailability()
 
   useEffect(() => {
     if (!selectedBandId) {
@@ -266,9 +305,9 @@ function ExplorerApp() {
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{isLocal && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
-      {isLocal && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
+      {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
       <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
       <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description="락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요." onClose={() => setShareOpen(false)} />
     </div>
@@ -276,7 +315,7 @@ function ExplorerApp() {
 }
 
 export default function App() {
-  if (new URLSearchParams(window.location.search).get('studio') === '1') return <Suspense fallback={<main className="route-loading">Studio를 불러오는 중입니다…</main>}><StudioPage /></Suspense>
+  if (new URLSearchParams(window.location.search).get('studio') === '1') return <StudioGate />
   if (new URLSearchParams(window.location.search).get('review') === 'videos') return <Suspense fallback={<main className="route-loading">검수 화면을 불러오는 중입니다…</main>}><VideoReviewPage /></Suspense>
   return <ExplorerApp />
 }

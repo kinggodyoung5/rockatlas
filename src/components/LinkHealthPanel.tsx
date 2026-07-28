@@ -1,6 +1,7 @@
 import { AlertTriangle, CheckCircle2, ExternalLink, Image, Link2, LoaderCircle, RefreshCw } from 'lucide-react'
 import { useMemo, useRef, useState } from 'react'
 import { siteContent } from '../data/siteContent'
+import { studioFetchJson } from '../lib/studioApiClient'
 import type { Band } from '../types/music'
 
 type HealthStatus = 'ok' | 'redirected' | 'restricted' | 'broken' | 'error'
@@ -56,14 +57,12 @@ export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
       for (let offset = 0; offset < entries.length; offset += batchSize) {
         const batch = entries.slice(offset, offset + batchSize)
         setMessage(`${entries.length}개 중 ${offset}개 확인 · 현재 ${offset + 1}–${Math.min(offset + batch.length, entries.length)}번째 검사 중`)
-        const response = await fetch('/api/studio/health-check', {
+        const payload = await studioFetchJson<{ checkedAt: string; results: HealthResult[] }>('/api/studio/health-check', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ entries: batch }),
           signal: controller.signal,
         })
-        if (!response.ok) throw new Error(await response.text())
-        const payload = await response.json() as { checkedAt: string; results: HealthResult[] }
         checkedAt = payload.checkedAt
         collected.push(...payload.results)
         setResults([...collected])

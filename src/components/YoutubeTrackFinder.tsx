@@ -1,5 +1,6 @@
 import { Check, ExternalLink, LoaderCircle, Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { studioFetchJson } from '../lib/studioApiClient'
 import type { Track } from '../types/music'
 
 export interface YoutubeCandidate {
@@ -36,9 +37,7 @@ export function YoutubeTrackFinder({ bandName, tracks, onSelect }: YoutubeTrackF
     setLoading(true)
     setMessage('YouTube에서 검색하는 중…')
     try {
-      const response = await fetch(`/api/studio/youtube-search?q=${encodeURIComponent(effectiveQuery)}`)
-      if (!response.ok) throw new Error(await response.text())
-      const data = await response.json() as { results: YoutubeCandidate[] }
+      const data = await studioFetchJson<{ results: YoutubeCandidate[] }>(`/api/studio/youtube-search?q=${encodeURIComponent(effectiveQuery)}`)
       setResults(data.results)
       setMessage(data.results.length ? `${data.results.length}개 후보를 찾았습니다.` : '검색 결과가 없습니다.')
     } catch (error) {

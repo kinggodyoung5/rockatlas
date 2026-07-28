@@ -147,6 +147,15 @@ export function studioApi(): Plugin {
   return {
     name: 'rock-atlas-studio-api',
     configureServer(server) {
+      server.middlewares.use('/api/studio/capability', (request, response, next) => {
+        if (request.method !== 'GET') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('Studio는 로컬에서만 사용할 수 있습니다.')
+        }
+        json(response, { available: true, canWrite: true, mode: 'local-studio' })
+      })
+
       server.middlewares.use('/api/studio/health-check', async (request, response, next) => {
         if (request.method !== 'POST') return next()
         if (!isLocalRequest(request.headers.origin ?? '')) {

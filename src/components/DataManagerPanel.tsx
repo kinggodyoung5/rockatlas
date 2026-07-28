@@ -2,6 +2,7 @@ import { AlertTriangle, FileDown, FileUp, History, RotateCcw, Save, ShieldCheck,
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
+import { studioFetchJson } from '../lib/studioApiClient'
 import type { Band, EraId, GenreId, Track } from '../types/music'
 import { LinkHealthPanel } from './LinkHealthPanel'
 
@@ -106,8 +107,11 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
   }, [bands])
 
   const loadHistory = async () => {
-    const response = await fetch('/api/studio/catalog-history')
-    if (response.ok) setHistory(((await response.json()) as { entries: HistoryEntry[] }).entries)
+    try {
+      setHistory((await studioFetchJson<{ entries: HistoryEntry[] }>('/api/studio/catalog-history')).entries)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '변경 이력을 불러오지 못했습니다.')
+    }
   }
   useEffect(() => { void loadHistory() }, [bands])
 
@@ -133,9 +137,12 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
   }
   const restoreHistory = async (entry: HistoryEntry) => {
     if (!window.confirm(`${new Date(entry.createdAt).toLocaleString('ko-KR')} 상태로 전체 카탈로그를 복구할까요? 현재 상태는 자동 백업됩니다.`)) return
-    const response = await fetch('/api/studio/catalog-history', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: entry.id }) })
-    if (!response.ok) return setMessage(`복구 실패: ${await response.text()}`)
-    window.location.reload()
+    try {
+      await studioFetchJson('/api/studio/catalog-history', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: entry.id }) })
+      window.location.reload()
+    } catch (error) {
+      setMessage(`복구 실패: ${error instanceof Error ? error.message : 'Studio 서버를 확인하세요.'}`)
+    }
   }
   const updateTrack = (trackId: string, patch: Partial<Track>) => {
     if (!selected) return

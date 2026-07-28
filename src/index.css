@@ -25,6 +25,12 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; min-height: 100vh; background: #0b0b0d; }
 .route-loading { min-height: 100vh; display: grid; place-items: center; color: #aaa8aa; background: #0b0b0d; font: 700 14px/1.5 Arial, sans-serif; }
+.studio-unavailable-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 32px; text-align: center; color: #eceae7; background: radial-gradient(circle at 50% 25%, #24203f 0, #0b0b0f 48%, #070709 100%); }
+.studio-unavailable-page > span { color: #f08354; font: 900 12px/1 Arial, sans-serif; letter-spacing: .18em; }
+.studio-unavailable-page h1 { margin: 0; font: 900 clamp(28px, 5vw, 52px)/1.1 Arial, sans-serif; }
+.studio-unavailable-page p { max-width: 680px; margin: 0; color: #bbb7bf; font-size: 15px; line-height: 1.75; }
+.studio-unavailable-page strong { color: #fff; }
+.studio-unavailable-page a { margin-top: 8px; padding: 12px 18px; border: 1px solid #f08354; color: #fff; font-weight: 800; text-decoration: none; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; }
@@ -412,6 +418,12 @@ img { display: block; max-width: 100%; }
 .studio-status span { color: #8fd3a0; font-weight: 900; letter-spacing: .08em; }
 .studio-status span.is-dirty { color: #ffb15c; }
 .studio-status p { margin: 0; }
+.studio-recovery-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 14px clamp(20px, 4vw, 60px); border-bottom: 1px solid #5c4321; background: #211a11; }
+.studio-recovery-banner > div { flex: 1; }
+.studio-recovery-banner strong { color: #ffd08a; font-size: 13px; }
+.studio-recovery-banner p { margin: 4px 0 0; color: #b9aa91; font-size: 12px; line-height: 1.5; }
+.studio-recovery-banner button { min-height: 36px; padding: 0 12px; border: 1px solid #5c4b35; color: #ddd2c1; background: #18140f; font-weight: 800; }
+.studio-recovery-banner button.is-primary { color: #120d08; border-color: #ffad58; background: #ffad58; }
 .studio-workspace-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 16px clamp(20px, 4vw, 60px); border-bottom: 1px solid var(--line); background: #0d0d10; }
 .studio-workspace-nav button { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 16px; border: 1px solid #29282e; color: #8e8b92; background: #131316; text-align: left; cursor: pointer; }
 .studio-workspace-nav button:hover { color: #e5e2df; border-color: #55515b; }
