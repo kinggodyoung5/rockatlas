@@ -1,7 +1,439 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-28T01:06:43.281Z",
+  "updatedAt": "2026-07-28T01:33:36.496Z",
   "bands": [
+    {
+      "id": "arctic-monkeys",
+      "name": "Arctic Monkeys",
+      "formed": 2002,
+      "origin": "High Green",
+      "countryCode": "GB",
+      "activeYears": "2002–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "포스트펑크 리바이벌",
+        "가라지 록 리바이벌",
+        "얼터너티브 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "포스트펑크 리바이벌",
+            "가라지 록 리바이벌",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "영국 록",
+        "인디 록",
+        "포스트 펑크 리바이벌",
+        "알터너티브 록",
+        "시필드"
+      ],
+      "summary": "2000년대 중반 인터넷을 통해 자발적으로 형성된 팬덤을 바탕으로 영국 록의 부흥을 이끈 시필드 출신의 대표적인 포스트 펑크 리바이벌 및 인디 록 밴드이다. 데뷔 앨범으로 영국 역사상 가장 빠르게 판매된 데뷔 기록을 세웠으며 2013년작 'AM'을 통해 전 세계적인 초대형 스타덤에 올랐다.",
+      "style": "초기에는 날카롭고 빠른 기타 리프와 알렉스 터너의 수다스러운 영문 가사 전달이 특징이었다. 후기에는 그루비하고 느린 템포의 라운지 팝과 사이케델릭 요소까지 적극 수용하며 세련된 프로덕션을 보여준다.",
+      "image": {
+        "wikipediaTitle": "Arctic Monkeys",
+        "alt": "Arctic Monkeys 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg",
+          "creator": "Bill Ebbesen",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-28T01:37:00.385Z"
+        },
+        "fileName": "File:Arctic Monkeys - Orange Stage - Roskilde Festival 2014.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg/960px-Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg"
+      },
+      "members": [
+        {
+          "name": "Alex Turner",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2002–present"
+        },
+        {
+          "name": "Jamie Cook",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2002–present"
+        },
+        {
+          "name": "Nick O'Malley",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2006–present"
+        },
+        {
+          "name": "Matt Helders",
+          "role": "드럼·백보컬",
+          "status": "current",
+          "activeYears": "2002–present"
+        },
+        {
+          "name": "Andy Nicholson",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2002–2006"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "do-i-wanna-know",
+          "title": "Do I Wanna Know?",
+          "year": 2013,
+          "album": "AM",
+          "guide": "묵직하게 울리는 캐치한 기타 리프와 알렉스 터너 특유의 고혹적인 보컬 훅이 절정을 이루는 지점을 감상할 수 있다.",
+          "youtubeId": "bpOSxM0rNPM",
+          "source": {
+            "label": "Arctic Monkeys — Do I Wanna Know?",
+            "url": "https://www.youtube.com/watch?v=bpOSxM0rNPM",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:25:19.599Z"
+        },
+        {
+          "id": "i-bet-you-look-good-on-the-dancefloor",
+          "title": "I Bet You Look Good on the Dancefloor",
+          "year": 2005,
+          "album": "Whatever People Say I Am, That's What I'm Not",
+          "guide": "질주하는 드럼 비트와 폭발적인 초기 포스트 펑크 에너지를 느낄 수 있다.",
+          "youtubeId": "pK7egZaT3hs",
+          "source": {
+            "label": "Arctic Monkeys — I Bet You Look Good on the Dancefloor",
+            "url": "https://www.youtube.com/watch?v=pK7egZaT3hs",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:25:19.593Z"
+        },
+        {
+          "id": "505",
+          "title": "505",
+          "year": 2007,
+          "album": "Favourite Worst Nightmare",
+          "guide": "잔잔한 오르간 사운드로 시작해 곡 후반부 폭발하는 록 사운드와 절규하는 보컬 클라이맥스가 돋보인다.",
+          "youtubeId": "qU9mHegkTc4",
+          "source": {
+            "label": "Arctic Monkeys — 505",
+            "url": "https://www.youtube.com/watch?v=qU9mHegkTc4",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:25:19.599Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Arctic Monkeys — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q170599",
+          "publisher": "Wikidata",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "Q170599"
+        },
+        {
+          "label": "Arctic Monkeys — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+          "publisher": "MusicBrainz",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a"
+        },
+        {
+          "label": "Arctic Monkeys — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Arctic_Monkeys",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Arctic Monkeys — 공식 YouTube",
+          "url": "https://www.youtube.com/user/ArcticMonkeys",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Arctic Monkeys — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "post-punk-revival",
+          "garage-rock-revival",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "youth-rebellious": 5,
+          "fast-driving": 4,
+          "groovy-danceable": 4,
+          "cold-urban": 4,
+          "melancholic-lonely": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-28T01:33:35.275Z"
+    },
+    {
+      "id": "u2",
+      "name": "U2",
+      "formed": 1976,
+      "origin": "Dublin, Ireland",
+      "countryCode": "IE",
+      "activeYears": "1976–present",
+      "primaryGenre": "classic-rock",
+      "genreIds": [
+        "classic-rock"
+      ],
+      "subgenres": [
+        "포스트펑크",
+        "아레나 록",
+        "얼터너티브 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "classic-rock"
+          ],
+          "subgenres": [
+            "포스트펑크",
+            "아레나 록",
+            "얼터너티브 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트펑크",
+        "아레나록",
+        "얼터너티브록",
+        "팝록",
+        "아일랜드록"
+      ],
+      "summary": "1976년 아일랜드 더블린에서 결성된 U2는 전 세계적으로 1억 7천만 장 이상의 음반 판매고와 22개의 그래미상을 수상한 세계적인 록 밴드다. 정치적·사회적 메시지를 담은 음악과 압도적인 라이브 스케일로 대중음악사에 깊은 족적을 남겼다.",
+      "style": "디레이 이펙트를 적극 활용한 특유의 기타 사운드와 지속적인 베이스라인이 곡의 분위기를 이끈다. 보노의 호소력 짙은 보컬과 메시지 중심의 곡 전개가 웅장한 아레나 록 사운드를 완성한다.",
+      "image": {
+        "wikipediaTitle": "U2",
+        "fileName": "File:U2 on Joshua Tree Tour 2017 Brussels 8-1-17.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/U2_on_Joshua_Tree_Tour_2017_Brussels_8-1-17.jpg/960px-U2_on_Joshua_Tree_Tour_2017_Brussels_8-1-17.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/U2_on_Joshua_Tree_Tour_2017_Brussels_8-1-17.jpg",
+        "alt": "U2 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:U2 on Joshua Tree Tour 2017 Brussels 8-1-17.jpg",
+          "creator": "Remy",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-28T01:22:09.179Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Bono",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1976–present"
+        },
+        {
+          "name": "The Edge",
+          "role": "기타·백보컬·키보드",
+          "status": "current",
+          "activeYears": "1976–present"
+        },
+        {
+          "name": "Adam Clayton",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1976–present"
+        },
+        {
+          "name": "Larry Mullen Jr.",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1976–present"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "with-or-without-you",
+          "title": "With or Without You",
+          "year": 1987,
+          "album": "The Joshua Tree",
+          "guide": "지속되는 베이스 리프와 에지의 크레센도 기타 연주가 선사하는 감정적 고조를 느낄 수 있다.",
+          "youtubeId": "yamxg2oCfwo",
+          "source": {
+            "label": "U2 — With or Without You",
+            "url": "https://www.youtube.com/watch?v=yamxg2oCfwo",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:22:08.019Z"
+        },
+        {
+          "id": "sunday-bloody-sunday",
+          "title": "Sunday Bloody Sunday",
+          "year": 1983,
+          "album": "War",
+          "guide": "군악대를 연상시키는 스네어 드럼 리듬과 정치적 메시지가 돋보이는 대표적인 저항가다.",
+          "youtubeId": "EM4vblG6BVQ",
+          "source": {
+            "label": "U2 — Sunday Bloody Sunday",
+            "url": "https://www.youtube.com/watch?v=EM4vblG6BVQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:22:08.020Z"
+        },
+        {
+          "id": "one",
+          "title": "One",
+          "year": 1991,
+          "album": "Achtung Baby",
+          "guide": "밴드의 해체 위기 속에서 탄생한 서정적이고 웅장한 발라드로 깊은 감동을 준다.",
+          "youtubeId": "GpsAy0kSiE8",
+          "source": {
+            "label": "U2 — One",
+            "url": "https://www.youtube.com/watch?v=GpsAy0kSiE8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-28T01:22:08.049Z"
+        },
+        {
+          "id": "i-still-haven-t-found-what-i-looking-for",
+          "title": "I Still Haven`t Found What I Looking For",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "I Still Haven`t Found What I Looking For — YouTube",
+            "url": "https://www.youtube.com/results?search_query=U2%20I%20Still%20Haven%60t%20Found%20What%20I%20Looking%20For",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "coldplay",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "U2 특유의 웅장한 아레나 록 사운드와 서정적인 멜로디는 콜드플레이의 음악적 방향성에 큰 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-clash",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "초기 U2는 더 클래시의 펑크 에너지와 사회 비판적인 가사 정신에 큰 영향을 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "U2 — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q396",
+          "publisher": "Wikidata",
+          "externalId": "Q396",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "U2 — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432",
+          "publisher": "MusicBrainz",
+          "note": "검색으로 재확인한 정확한 식별자",
+          "externalId": "a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432"
+        },
+        {
+          "label": "U2 — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/U2",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "U2 — 공식 YouTube",
+          "url": "https://www.youtube.com/user/U2Official",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "U2 — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:U2 on Joshua Tree Tour 2017 Brussels 8-1-17.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "post-punk",
+          "arena-rock",
+          "alternative-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "anthemic-live": 5,
+          "epic-cinematic": 5,
+          "hopeful-uplifting": 4,
+          "youth-rebellious": 4,
+          "romantic-emotional": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-28T01:24:15.490Z"
+    },
     {
       "id": "rhapsody",
       "name": "Rhapsody",

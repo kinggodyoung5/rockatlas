@@ -544,6 +544,13 @@ export async function lookupCommonsImage(input: string, bandName?: string): Prom
       const searchHit = await searchCommonsFileTitle(requestedTitle)
       if (searchHit) { title = searchHit; info = await fetchCommonsImageInfo(title) }
     }
+    // The requested title is often Gemini's fabricated filename, which can miss real Commons photos entirely
+    // if its wording doesn't overlap with any real file title. A plain search on just the band name is a
+    // meaningfully different query and catches a fair number of cases the first search missed.
+    if (!info && bandName && normalizeForMatch(requestedTitle) !== normalizeForMatch(bandName)) {
+      const searchHit = await searchCommonsFileTitle(bandName)
+      if (searchHit) { title = searchHit; info = await fetchCommonsImageInfo(title) }
+    }
     if (!info) return { ok: false, error: `Commons에서 "${requestedTitle}" 파일을 찾지 못했습니다.` }
     if (bandName && !normalizeForMatch(title).includes(normalizeForMatch(bandName))) {
       return { ok: false, error: `찾은 파일("${title}")이 밴드 이름과 관련 없어 보여 자동 확인을 중단했습니다. 사진이 맞는지 직접 확인해주세요.` }
