@@ -15,8 +15,8 @@
 
 - 갱신: 2026-07-28 KST · Codex
 - 작업 브랜치: `codex/taxonomy-v2`
-- 현재 HEAD: `f52165d`
-- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `f52165d`
+- 이번 구현 커밋: `3413fd6` (`Improve public loading, sharing, and studio safety`)
+- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `f52165d` (이번 구현은 아직 푸시하지 않음)
 - 로컬 `main`: 현재 작업 브랜치보다 26커밋 뒤이므로 “항상 동일”하다고 가정하지 않는다.
 - 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
 - GitHub Pages: `main` 푸시 시 `.github/workflows/deploy-pages.yml`로 자동 배포
@@ -35,7 +35,7 @@
 
 ## 4. 이번 구조 개선 완료 내용
 
-2026-07-28 구현과 로컬 검증을 완료했다. 아직 `main` 병합·배포하지 않았다.
+2026-07-28 구현과 로컬 검증을 완료하고 코드만 `3413fd6`으로 커밋했다. 아직 원격 푸시·`main` 병합·배포하지 않았다.
 
 - 링크·이미지 전체 검사:
   - 600개 단일 요청 실패 문제를 120개 배치, 진행률 표시, 중단 가능 방식으로 변경.
@@ -88,7 +88,7 @@
 
 1. `docs/PENDING_YOUTUBE_LINKS.md`의 직접 링크 후보 10개를 Studio에서 최종 확인한 뒤 사용자 데이터에 반영.
 2. Slipknot 초안의 Wikidata, MusicBrainz, 공식 YouTube 채널과 대표곡 링크를 보완한 뒤 공개 여부 결정.
-3. 이번 코드 개선은 `catalog.json`과 `.claude/settings.local.json`을 제외해 별도 커밋한다.
+3. 이번 코드 개선은 `catalog.json`과 `.claude/settings.local.json`을 제외해 `3413fd6`으로 커밋했다.
 4. 사용자 데이터는 동시 편집이 끝난 뒤 별도 검수·커밋한다.
 5. 사용자 승인 전에는 `main` 푸시와 배포 금지.
 
