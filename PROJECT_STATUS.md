@@ -17,7 +17,8 @@
 - 작업 브랜치: `codex/taxonomy-v2`
 - 이번 구현 커밋: `3413fd6` (`Improve public loading, sharing, and studio safety`)
 - 데이터 커밋: `5c56824` (`data: add Korn and Slipknot draft`)
-- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `5c56824`
+- Studio 안전 보완 커밋: `2aa3ffb` (`fix: block unsafe Studio sessions and preserve drafts`)
+- 원격 `origin/main`, `origin/codex/taxonomy-v2`에 `2aa3ffb`까지 반영
 - 로컬 `main`: 현재 작업 브랜치보다 26커밋 뒤이므로 “항상 동일”하다고 가정하지 않는다.
 - 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
 - GitHub Pages: `main` 푸시 시 `.github/workflows/deploy-pages.yml`로 자동 배포
@@ -102,6 +103,7 @@
 - 과거 `4174` 주소의 원문 복구를 위해 `이전-검수함-복구-4174.bat`을 추가했다.
 - 자동 이력과 다운로드 폴더 조사 결과 파일로 남은 최대 밴드 수는 89개다. 과거 원문이 `4174` 브라우저 저장공간에 남아 있는지가 마지막 복구 가능성이다.
 - 검증: Vitest 5파일·16테스트 통과, 프로덕션 빌드 통과, 5173/4174 Studio capability와 YouTube JSON 검색 정상.
+- GitHub Pages 실행 `30364120123`: 빌드·배포 성공, 공개 번들에 Studio 차단 안내 포함 확인.
 
 ## 8. 고정된 제품 방향
 
