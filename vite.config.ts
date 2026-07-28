@@ -233,6 +233,7 @@ function studioApi(): Plugin {
         }
         const requestUrl = new URL(request.url ?? '', 'http://localhost')
         const query = requestUrl.searchParams.get('q')?.trim() ?? ''
+        const searchType = requestUrl.searchParams.get('type') === 'channel' ? 'channel' : 'video'
         if (query.length < 2) {
           response.statusCode = 400
           return response.end('검색어를 두 글자 이상 입력하세요.')
@@ -241,14 +242,46 @@ function studioApi(): Plugin {
           const controller = new AbortController()
           const timeout = setTimeout(() => controller.abort(), 12_000)
           const searchUrl = new URL('https://www.googleapis.com/youtube/v3/search')
-          searchUrl.search = new URLSearchParams({ part: 'snippet', type: 'video', maxResults: '8', q: query, key: youtubeApiKey }).toString()
+          searchUrl.search = new URLSearchParams({ part: 'snippet', type: searchType, maxResults: '8', q: query, key: youtubeApiKey }).toString()
           const apiResponse = await fetch(searchUrl, { signal: controller.signal })
-          clearTimeout(timeout)
           const payload = await apiResponse.json() as {
             error?: { message?: string }
-            items?: Array<{ id?: { videoId?: string }; snippet?: { title?: string; channelTitle?: string; publishedAt?: string; thumbnails?: { medium?: { url?: string }; default?: { url?: string } } } }>
+            items?: Array<{
+              id?: { videoId?: string; channelId?: string }
+              snippet?: { title?: string; channelTitle?: string; channelId?: string; description?: string; publishedAt?: string; thumbnails?: { medium?: { url?: string }; default?: { url?: string } } }
+            }>
           }
           if (!apiResponse.ok) throw new Error(payload.error?.message ?? `YouTube API 오류 (${apiResponse.status})`)
+
+          if (searchType === 'channel') {
+            const channelIds = (payload.items ?? []).map((item) => item.id?.channelId).filter((id): id is string => Boolean(id))
+            let statsById: Record<string, { subscriberCount?: string; customUrl?: string }> = {}
+            if (channelIds.length) {
+              const statsUrl = new URL('https://www.googleapis.com/youtube/v3/channels')
+              statsUrl.search = new URLSearchParams({ part: 'snippet,statistics', id: channelIds.join(','), key: youtubeApiKey }).toString()
+              const statsResponse = await fetch(statsUrl, { signal: controller.signal })
+              const statsPayload = await statsResponse.json() as { items?: Array<{ id?: string; snippet?: { customUrl?: string }; statistics?: { subscriberCount?: string; hiddenSubscriberCount?: boolean } }> }
+              statsById = Object.fromEntries((statsPayload.items ?? []).filter((item) => item.id).map((item) => [item.id, { subscriberCount: item.statistics?.hiddenSubscriberCount ? undefined : item.statistics?.subscriberCount, customUrl: item.snippet?.customUrl }]))
+            }
+            clearTimeout(timeout)
+            const results = (payload.items ?? [])
+              .filter((item) => item.id?.channelId)
+              .map((item) => {
+                const channelId = item.id!.channelId!
+                const stats = statsById[channelId]
+                return {
+                  channelId,
+                  title: item.snippet?.title ?? '',
+                  description: item.snippet?.description ?? '',
+                  thumbnailUrl: item.snippet?.thumbnails?.medium?.url ?? item.snippet?.thumbnails?.default?.url ?? '',
+                  subscriberCount: stats?.subscriberCount ?? '',
+                  url: stats?.customUrl ? `https://www.youtube.com/${stats.customUrl}` : `https://www.youtube.com/channel/${channelId}`,
+                }
+              })
+            return json(response, { query, results })
+          }
+
+          clearTimeout(timeout)
           const results = (payload.items ?? [])
             .filter((item) => item.id?.videoId)
             .map((item) => ({
@@ -263,6 +296,58 @@ function studioApi(): Plugin {
         } catch (error) {
           response.statusCode = 502
           response.end(error instanceof Error && error.name === 'AbortError' ? 'YouTube 검색 시간이 초과되었습니다.' : error instanceof Error ? error.message : 'YouTube 검색 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/commons-image-search', async (request, response, next) => {
+        if (request.method !== 'GET') return next()
+        const requestUrl = new URL(request.url ?? '', 'http://localhost')
+        const query = requestUrl.searchParams.get('q')?.trim() ?? ''
+        if (query.length < 2) {
+          response.statusCode = 400
+          return response.end('검색어를 두 글자 이상 입력하세요.')
+        }
+        try {
+          const controller = new AbortController()
+          const timeout = setTimeout(() => controller.abort(), 12_000)
+          const searchUrl = new URL('https://commons.wikimedia.org/w/api.php')
+          searchUrl.search = new URLSearchParams({
+            action: 'query', format: 'json', origin: '*',
+            generator: 'search', gsrsearch: `${query} filetype:bitmap|drawing`, gsrnamespace: '6', gsrlimit: '12',
+            prop: 'imageinfo', iiprop: 'url|mime|extmetadata', iiurlwidth: '480',
+            iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl',
+          }).toString()
+          const apiResponse = await fetch(searchUrl, { signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
+          clearTimeout(timeout)
+          if (!apiResponse.ok) throw new Error(`Commons 응답 오류 (${apiResponse.status})`)
+          const payload = await apiResponse.json() as {
+            query?: { pages?: Record<string, {
+              title?: string
+              imageinfo?: Array<{ url?: string; thumburl?: string; mime?: string; descriptionurl?: string; extmetadata?: Record<string, { value?: string }> }>
+            }> }
+          }
+          const stripHtml = (value: string) => value.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+          const results = Object.values(payload.query?.pages ?? {})
+            .map((page) => ({ title: page.title ?? '', info: page.imageinfo?.[0] }))
+            .filter((entry): entry is { title: string; info: NonNullable<typeof entry.info> } => Boolean(entry.info && entry.info.mime?.startsWith('image/')))
+            .map((entry) => {
+              const meta = entry.info.extmetadata ?? {}
+              const licenseShort = meta.LicenseShortName?.value ? stripHtml(meta.LicenseShortName.value) : ''
+              return {
+                fileName: entry.title,
+                thumbUrl: entry.info.thumburl ?? entry.info.url ?? '',
+                originalUrl: entry.info.url ?? '',
+                sourceUrl: entry.info.descriptionurl ?? '',
+                creator: meta.Artist?.value ? stripHtml(meta.Artist.value) : '',
+                license: /public domain|pd-/i.test(licenseShort) ? 'Public domain' : licenseShort,
+                licenseUrl: meta.LicenseUrl?.value ?? '',
+              }
+            })
+            .filter((item) => item.originalUrl && item.sourceUrl)
+          json(response, { query, results })
+        } catch (error) {
+          response.statusCode = 502
+          response.end(error instanceof Error && error.name === 'AbortError' ? 'Commons 검색 시간이 초과되었습니다.' : error instanceof Error ? error.message : 'Commons 검색 실패')
         }
       })
 

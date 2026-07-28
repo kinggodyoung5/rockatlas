@@ -1,7 +1,452 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-28T02:56:10.074Z",
+  "updatedAt": "2026-07-28T03:17:42.269Z",
   "bands": [
+    {
+      "id": "king-gizzard-the-lizard-wizard",
+      "name": "King Gizzard & The Lizard Wizard",
+      "formed": 2010,
+      "origin": "Melbourne",
+      "countryCode": "AU",
+      "activeYears": "2010–현재",
+      "primaryGenre": "progressive-art",
+      "genreIds": [
+        "progressive-art",
+        "heavy-metal",
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "사이키델릭 록",
+        "프로그레시브 록",
+        "스래시 메탈",
+        "재즈 록",
+        "가라지 록 리바이벌"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "progressive-art",
+            "heavy-metal",
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "사이키델릭 록",
+            "프로그레시브 록",
+            "스래시 메탈",
+            "재즈 록"
+          ]
+        }
+      ],
+      "tags": [
+        "호주 록",
+        "사이키델릭 록",
+        "프로그레시브 록",
+        "가라지 록",
+        "실험적 록"
+      ],
+      "summary": "2010년 호주 멜버른에서 결성되어 다작과 파격적인 실험성으로 독보적인 위치를 구축한 글로벌 사이키델릭 록 밴드. 다채로운 컨셉 앨범과 장르를 넘나드는 왕성한 음악적 시도로 전 세계 평단과 마니아층의 열렬한 지지를 받고 있다.",
+      "style": "사이케델릭 록을 바탕으로 스래시 메탈, 제즈, 프로그레시브 록, 미분음 음악 등 앨범마다 한계를 두지 않는 가변적인 사운드를 전개한다. 정교하게 맞물리는 트윈 드럼 리듬과 난해한 타임 시그니처, 잼 밴드 특유의 유기적인 연주 호흡이 시그니처이다.",
+      "image": {
+        "wikipediaTitle": "King Gizzard & The Lizard Wizard",
+        "alt": "King Gizzard & The Lizard Wizard 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_Gizzard_%26_the_Lizard_Wizard.jpg",
+          "creator": "paul hudson",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-28T03:26:24.374Z"
+        },
+        "fileName": "File:King Gizzard & the Lizard Wizard.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/King_Gizzard_%26_the_Lizard_Wizard.jpg/960px-King_Gizzard_%26_the_Lizard_Wizard.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/King_Gizzard_%26_the_Lizard_Wizard.jpg"
+      },
+      "members": [
+        {
+          "name": "Stu Mackenzie",
+          "role": "리드 보컬·기타·플루트·키보드",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Ambrose Kenny-Smith",
+          "role": "보컬·하모니카·키보드",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Joey Walker",
+          "role": "기타·보컬",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Cook Craig",
+          "role": "기타·키보드·보컬",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Lucas Harwood",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Michael Cavanagh",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2010–present"
+        },
+        {
+          "name": "Eric Moore",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2010–2020"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "rattlesnake",
+          "title": "Rattlesnake",
+          "year": 2017,
+          "album": "Flying Microtonal Banana",
+          "guide": "미분음 기타의 독특한 음색과 반복적이고 중독적인 리프가 빚어내는 사이케델릭한 몰입감을 감상할 수 있다.",
+          "youtubeId": "Q-i1XZc8ZwA",
+          "source": {
+            "label": "King Gizzard & The Lizard Wizard — Rattlesnake YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Q-i1XZc8ZwA",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Flightless Records"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:15:48.455Z"
+        },
+        {
+          "id": "gila-monster",
+          "title": "Gila Monster",
+          "year": 2023,
+          "album": "PetroDragonic Apocalypse",
+          "guide": "강렬한 스래시 메탈 리프와 정교하고 묵직한 드럼 비트가 폭발하는 사운드를 자랑한다.",
+          "youtubeId": "YQX2CsMCB9M",
+          "source": {
+            "label": "King Gizzard & The Lizard Wizard — Gila Monster YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=YQX2CsMCB9M",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "KingGizzardVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:15:59.323Z"
+        },
+        {
+          "id": "gamma-knife",
+          "title": "Gamma Knife",
+          "year": 2016,
+          "album": "Nonagon Infinity",
+          "guide": "앨범 전체가 끊임없이 이어지는 무한 루프 구조 속에서 질주하는 변박자 드럼과 화려한 리프 전개가 인상적이다.",
+          "youtubeId": "nC7ii3Ir-no",
+          "source": {
+            "label": "King Gizzard & The Lizard Wizard — Gamma Knife YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=nC7ii3Ir-no",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Flightless Records"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:16:21.148Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "King Gizzard & The Lizard Wizard — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q19366461",
+          "publisher": "Wikidata",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "Q19366461"
+        },
+        {
+          "label": "King Gizzard & The Lizard Wizard — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+          "publisher": "MusicBrainz",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+        },
+        {
+          "label": "King Gizzard & The Lizard Wizard — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Gizzard_%26_the_Lizard_Wizard",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "King Gizzard & The Lizard Wizard — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:King_Gizzard_%26_the_Lizard_Wizard.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        },
+        {
+          "label": "King Gizzard & The Lizard Wizard — 공식 YouTube",
+          "url": "https://www.youtube.com/@kinggizzardandthelizardwizard",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "검색으로 확인한 공식 채널"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "psychedelic-rock",
+          "progressive-rock",
+          "thrash-metal",
+          "jazz-rock",
+          "garage-rock-revival"
+        ],
+        "moodScores": {
+          "cosmic-psychedelic": 5,
+          "experimental-weird": 5,
+          "technical-complex": 4,
+          "fast-driving": 4,
+          "long-form-immersive": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-28T03:17:40.817Z"
+    },
+    {
+      "id": "mo-tley-cru-e",
+      "name": "Mötley Crüe",
+      "formed": 1981,
+      "origin": "Los Angeles",
+      "countryCode": "US",
+      "activeYears": "1981–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "글램 메탈",
+        "전통 헤비메탈",
+        "하드 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "글램 메탈",
+            "전통 헤비메탈",
+            "하드 록"
+          ]
+        }
+      ],
+      "tags": [
+        "글램 메탈",
+        "헤비메탈",
+        "하드 록",
+        "LA 록",
+        "80년대 록"
+      ],
+      "summary": "1980년대 미국 로스앤젤레스에서 결성되어 헤비메탈 및 글램 메탈 신을 대표한 세계적인 록 밴드이다. 화려한 패션과 파격적인 라이브 퍼포먼스, 상업적 성공으로 MTV 시대를 풍미하며 글로벌 스타덤에 올랐다.",
+      "style": "강렬한 기타 리프와 중독성 있는 드럼 비트, 훅이 강한 멜로디 전개가 특징이다. 빈스 닐의 날카로운 보컬과 믹 화스의 중후한 리프 연주가 어우러져 폭발적인 에너지를 만들어낸다.",
+      "image": {
+        "wikipediaTitle": "Mötley Crüe",
+        "alt": "Mötley Crüe 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:M%C3%B6tley_Cr%C3%BCe,_Sweden_Rock_2012.jpg",
+          "creator": "Bjornsphoto",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-28T03:26:24.374Z"
+        },
+        "fileName": "File:Mötley Crüe, Sweden Rock 2012.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/M%C3%B6tley_Cr%C3%BCe%2C_Sweden_Rock_2012.jpg/960px-M%C3%B6tley_Cr%C3%BCe%2C_Sweden_Rock_2012.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/M%C3%B6tley_Cr%C3%BCe%2C_Sweden_Rock_2012.jpg"
+      },
+      "members": [
+        {
+          "name": "Vince Neil",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1981–1992, 1997–present"
+        },
+        {
+          "name": "Mick Mars",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1981–2022"
+        },
+        {
+          "name": "Nikki Sixx",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "1981–present"
+        },
+        {
+          "name": "Tommy Lee",
+          "role": "드럼·백보컬",
+          "status": "current",
+          "activeYears": "1981–1999, 2004–present"
+        },
+        {
+          "name": "John 5",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2022–present"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "kickstart-my-heart",
+          "title": "Kickstart My Heart",
+          "year": 1989,
+          "album": "Dr. Feelgood",
+          "guide": "사이렌 소리를 연상시키는 독특한 기타 와와 페달 도입부와 폭발적인 속도감을 감상할 수 있다.",
+          "youtubeId": "k0WHSYFY21w",
+          "source": {
+            "label": "Mötley Crüe — Kickstart My Heart YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=k0WHSYFY21w",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Mötley Crüe"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:11:35.842Z"
+        },
+        {
+          "id": "dr-feelgood",
+          "title": "Dr. Feelgood",
+          "year": 1989,
+          "album": "Dr. Feelgood",
+          "guide": "묵직하게 그루브를 타는 베이스 라인과 리드미컬한 기타 리프가 곡의 스웨그를 끌어올린다.",
+          "youtubeId": "trGX3ET3jTQ",
+          "source": {
+            "label": "Mötley Crüe — Dr. Feelgood YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=trGX3ET3jTQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Mötley Crüe"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:11:44.295Z"
+        },
+        {
+          "id": "girls-girls-girls",
+          "title": "Girls, Girls, Girls",
+          "year": 1987,
+          "album": "Girls, Girls, Girls",
+          "guide": "오토바이 시동 소리로 시작하는 화려하고 캐치한 글램 메탈 특유의 코러스가 시원하게 펼쳐진다.",
+          "youtubeId": "kwdxZz1PPNE",
+          "source": {
+            "label": "Mötley Crüe — Girls, Girls, Girls YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=kwdxZz1PPNE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Remastered videos"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-07-28T03:12:09.713Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "guns-n-roses",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 후반 LA 록 신에서 거대한 상업적 성공을 거두며 동시대 하드 록 붐을 함께 견인했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "skid-row",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 하드 / 글램 록, 글램 메탈 · 전통 헤비메탈, 빠르고 질주하는 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Mötley Crüe — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q486688",
+          "publisher": "Wikidata",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "Q486688"
+        },
+        {
+          "label": "Mötley Crüe — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/26f07661-e115-471d-a930-206f5c89d17c",
+          "publisher": "MusicBrainz",
+          "note": "Studio에서 연결한 외부 식별자",
+          "externalId": "26f07661-e115-471d-a930-206f5c89d17c"
+        },
+        {
+          "label": "Mötley Crüe — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/M%C3%B6tley_Cr%C3%BCe",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Mötley Crüe — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:M%C3%B6tley_Cr%C3%BCe,_Sweden_Rock_2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        },
+        {
+          "label": "Mötley Crüe — 공식 YouTube",
+          "url": "https://www.youtube.com/@motleycrue",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "검색으로 확인한 공식 채널"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "glam-metal",
+          "traditional-heavy-metal",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "youth-rebellious": 5,
+          "riff-solo-driven": 4,
+          "anthemic-live": 4,
+          "aggressive-heavy": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-28T03:12:37.038Z"
+    },
     {
       "id": "suede",
       "name": "Suede",

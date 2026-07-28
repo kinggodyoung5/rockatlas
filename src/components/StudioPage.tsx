@@ -14,6 +14,8 @@ import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
 import { YoutubeTrackFinder, type YoutubeCandidate } from './YoutubeTrackFinder'
+import { YoutubeChannelFinder, type YoutubeChannelCandidate } from './YoutubeChannelFinder'
+import { CommonsImageFinder, type CommonsImageCandidate } from './CommonsImageFinder'
 
 const relationLabels: Record<RelationKind, string> = {
   'sounds-like': '비슷한 소리',
@@ -485,6 +487,28 @@ export function StudioPage() {
     setTracksRevision((revision) => revision + 1)
   }
 
+  const selectYoutubeChannel = (candidate: YoutubeChannelCandidate) => {
+    setDraft((current) => updateYoutubeSource(current, candidate.url))
+    setDirty(true)
+  }
+
+  const selectCommonsImage = (candidate: CommonsImageCandidate) => {
+    setDraft((current) => applyCommonsLookup(current, {
+      ok: true,
+      fileName: candidate.fileName,
+      originalUrl: candidate.originalUrl,
+      displayUrl: candidate.thumbUrl,
+      sourceUrl: candidate.sourceUrl,
+      creator: candidate.creator || undefined,
+      license: candidate.license || undefined,
+      licenseUrl: candidate.licenseUrl || undefined,
+    }))
+    setDirty(true)
+    setCommonsMessage(candidate.license === 'Public domain' || candidate.licenseUrl
+      ? `선택한 사진을 적용했습니다: ${candidate.license}. 권리 검수가 자동으로 '검수 완료'로 바뀌었습니다.`
+      : '선택한 사진은 라이선스 URL이 없어 자동 검수하지 못했습니다. 직접 확인해주세요.')
+  }
+
   const saveSiteContent = async () => {
     try {
       const response = await fetch('/api/studio/site-content', {
@@ -830,6 +854,8 @@ export function StudioPage() {
           <section className="studio-form-section">
             <div className="studio-section-heading"><span>05</span><div><h3>이미지와 외부 식별자</h3><p>권리 검수 전에는 이미지가 공개 승인으로 처리되지 않습니다.</p></div></div>
             <ExternalSourceFinder key={selectedId} initialQuery={draft.name} selectedWikidataId={sourceId(draft, 'Wikidata')} selectedMusicBrainzId={sourceId(draft, 'MusicBrainz')} onSelect={selectExternalCandidate} />
+            <YoutubeChannelFinder key={`${selectedId}-channel`} initialQuery={draft.name} onSelect={selectYoutubeChannel} />
+            <CommonsImageFinder key={`${selectedId}-image`} initialQuery={draft.name} onSelect={selectCommonsImage} />
             <div className="studio-form-grid">
               <label>Wikidata ID<input value={sourceId(draft, 'Wikidata')} onChange={(event) => { setDraft((current) => updateExternalSource(current, 'Wikidata', event.target.value.trim())); setDirty(true) }} placeholder="Q1299" /></label>
               <label>MusicBrainz ID<input value={sourceId(draft, 'MusicBrainz')} onChange={(event) => { setDraft((current) => updateExternalSource(current, 'MusicBrainz', event.target.value.trim())); setDirty(true) }} /></label>
