@@ -643,17 +643,49 @@ function parseLeniently(text: string): unknown {
   return JSON.parse(repairUnescapedQuotes(text))
 }
 
+function balancedJsonEnd(textValue: string, start: number) {
+  const stack: string[] = []
+  let inString = false
+  let escaped = false
+  for (let index = start; index < textValue.length; index++) {
+    const character = textValue[index]
+    if (inString) {
+      if (escaped) escaped = false
+      else if (character === '\\') escaped = true
+      else if (character === '"') inString = false
+      continue
+    }
+    if (character === '"') {
+      inString = true
+      continue
+    }
+    if (character === '{' || character === '[') {
+      stack.push(character)
+      continue
+    }
+    if (character !== '}' && character !== ']') continue
+    const expectedOpen = character === '}' ? '{' : '['
+    if (stack.at(-1) !== expectedOpen) return -1
+    stack.pop()
+    if (!stack.length) return index
+  }
+  return -1
+}
+
 export function extractJson(textValue: string): unknown {
   const trimmed = textValue.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '')
   try { return parseLeniently(trimmed) } catch { /* try to recover JSON from surrounding prose */ }
-  const objectStart = trimmed.indexOf('{')
-  const arrayStart = trimmed.indexOf('[')
-  const start = [objectStart, arrayStart].filter((item) => item >= 0).sort((a, b) => a - b)[0]
-  const objectEnd = trimmed.lastIndexOf('}')
-  const arrayEnd = trimmed.lastIndexOf(']')
-  const end = Math.max(objectEnd, arrayEnd)
-  if (start === undefined || end <= start) throw new Error('JSON 부분을 찾지 못했습니다. Gemini 답변 전체를 그대로 붙여넣어도 됩니다.')
-  return parseLeniently(trimmed.slice(start, end + 1))
+  for (let start = 0; start < trimmed.length; start++) {
+    if (trimmed[start] !== '{' && trimmed[start] !== '[') continue
+    const end = balancedJsonEnd(trimmed, start)
+    if (end <= start) continue
+    try {
+      return parseLeniently(trimmed.slice(start, end + 1))
+    } catch {
+      start = end
+    }
+  }
+  throw new Error('JSON 부분을 찾지 못했습니다. Gemini 답변 전체를 그대로 붙여넣어도 됩니다.')
 }
 
 /** Warning codes that are fine for a plain draft but must be resolved before the auto-checker will elevate a band straight to 'published'. */

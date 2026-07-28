@@ -18,7 +18,7 @@
 - 이번 구현 커밋: `3413fd6` (`Improve public loading, sharing, and studio safety`)
 - 데이터 커밋: `5c56824` (`data: add Korn and Slipknot draft`)
 - Studio 안전 보완 커밋: `2aa3ffb` (`fix: block unsafe Studio sessions and preserve drafts`)
-- 원격 `origin/main`, `origin/codex/taxonomy-v2`에 `2aa3ffb`까지 반영
+- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `4c17f3d`
 - 로컬 `main`: 현재 작업 브랜치보다 26커밋 뒤이므로 “항상 동일”하다고 가정하지 않는다.
 - 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
 - GitHub Pages: `main` 푸시 시 `.github/workflows/deploy-pages.yml`로 자동 배포
@@ -26,7 +26,8 @@
 
 ## 3. 최신 데이터 상태
 
-- 현재 총 89개: 공개 88개, 초안 1개.
+- 2026-07-28 복구용 4174 Studio에서 과거 작업을 계속 되살리는 중이다. 마지막 확인 시 총 129개: 공개 90개, 초안 39개였으며 운영자 저장에 따라 계속 증가할 수 있으므로 실제 파일을 다시 확인한다.
+- `src/data/catalog.json`은 운영자가 계속 추가·검수 중인 미커밋 데이터다. 코드 작업에 포함하거나 덮어쓰지 않는다.
 - 이번에 추가·커밋한 밴드:
   - Korn: 공개
   - Slipknot: 초안
@@ -104,6 +105,7 @@
 - 자동 이력과 다운로드 폴더 조사 결과 파일로 남은 최대 밴드 수는 89개다. 과거 원문이 `4174` 브라우저 저장공간에 남아 있는지가 마지막 복구 가능성이다.
 - 검증: Vitest 5파일·16테스트 통과, 프로덕션 빌드 통과, 5173/4174 Studio capability와 YouTube JSON 검색 정상.
 - GitHub Pages 실행 `30364120123`: 빌드·배포 성공, 공개 번들에 Studio 차단 안내 포함 확인.
+- Gemini JSON 뒤에 마크다운 링크·설명이 붙으면 마지막 `]`까지 JSON으로 오인하던 파서 결함을 수정했다. 첫 번째 완성 JSON만 읽도록 변경했고 관련 회귀 테스트를 포함해 총 17테스트가 통과했다.
 
 ## 8. 고정된 제품 방향
 

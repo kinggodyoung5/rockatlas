@@ -19,6 +19,16 @@ describe('extractJson', () => {
   it('recovers JSON surrounded by prose', () => {
     expect(extractJson('결과입니다.\n{"name":"Test","formed":2000}\n확인하세요.')).toEqual({ name: 'Test', formed: 2000 })
   })
+
+  it('ignores a markdown link and explanation after the completed JSON', () => {
+    const input = '{"bands":[{"name":"Kings of Convenience","url":"[[https://www.youtube.com/watch?v=OczRpuGKTfY](https://www.youtube.com/watch?v=OczRpuGKTfY)](https://www.youtube.com/watch?v=OczRpuGKTfY)"}]}\n\n[[Kings Of Convenience](https://www.youtube.com/watch?v=OczRpuGKTfY)](https://www.youtube.com/watch?v=OczRpuGKTfY)\n추가 설명입니다.'
+    expect(extractJson(input)).toEqual({
+      bands: [{
+        name: 'Kings of Convenience',
+        url: '[[https://www.youtube.com/watch?v=OczRpuGKTfY](https://www.youtube.com/watch?v=OczRpuGKTfY)](https://www.youtube.com/watch?v=OczRpuGKTfY)',
+      }],
+    })
+  })
 })
 
 describe('intake aliases and IDs', () => {
