@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-25T10:14:05.168Z",
+  "updatedAt": "2026-07-28T02:57:17.291Z",
   "brandSuffix": "by kinggodyoung",
   "heroTitle": "락의 세계를 여행하는 \n히치하이커를 위한 \n안내서",
   "heroDescription": "",
@@ -76,7 +76,7 @@
     "pop-soft-rock": {
       "artMode": "image",
       "imageUrl": "./assets/genres/pop-soft-rock.jpg",
-      "imagePosition": "center 80%",
+      "imagePosition": "center",
       "imageOpacity": 0.76,
       "imageScale": 1
     },
