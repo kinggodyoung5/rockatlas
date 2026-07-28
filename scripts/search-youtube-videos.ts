@@ -1,4 +1,5 @@
 import { bands } from '../src/data/bands.ts'
+import { writeFile } from 'node:fs/promises'
 
 const args = process.argv.slice(2)
 const selectedBandId = args.find((arg) => arg.startsWith('--band='))?.split('=')[1]
@@ -7,10 +8,15 @@ const customQuery = args.find((arg) => arg.startsWith('--query='))?.slice('--que
 const asJson = args.includes('--json')
 const searchAll = args.includes('--all')
 const blockedOnly = args.includes('--blocked-only')
+const draftOnly = args.includes('--draft-only')
+const needsDirect = args.includes('--needs-direct')
 const officialOnly = args.includes('--official-only')
 const compactJson = args.includes('--compact')
+const outputPath = args.find((arg) => arg.startsWith('--output='))?.slice('--output='.length)
 const candidateLimit = Number(args.find((arg) => arg.startsWith('--limit='))?.split('=')[1] ?? 12)
-const selectedBands = searchAll ? bands : bands.filter((item) => item.id === selectedBandId)
+const selectedBands = searchAll
+  ? bands.filter((band) => !draftOnly || band.reviewStatus === 'draft')
+  : bands.filter((item) => item.id === selectedBandId)
 
 if (selectedBands.length === 0) {
   console.error('사용법: npm run search:videos -- --band=<band-id> [--track=<track-id>] 또는 --all')
@@ -123,11 +129,12 @@ for (const band of selectedBands) {
   const tracks = customQuery
     ? [{ id: 'custom-query', title: customQuery, source: {} }]
     : selectedTrackId ? band.tracks.filter((track) => track.id === selectedTrackId) : band.tracks
-  if (tracks.length === 0) {
+  const targetTracks = needsDirect ? tracks.filter((track) => !('youtubeId' in track) || !track.youtubeId) : tracks
+  if (targetTracks.length === 0 && (selectedTrackId || customQuery)) {
     console.error(`트랙을 찾을 수 없습니다: ${selectedTrackId}`)
     process.exit(1)
   }
-  for (const track of tracks) {
+  for (const track of targetTracks) {
     if (blockedOnly && 'embedStatus' in track.source && track.source.embedStatus === 'allowed') continue
     const currentYoutubeId = 'youtubeId' in track ? track.youtubeId : undefined
     if (queryCount > 0) await sleep(900)
@@ -149,12 +156,16 @@ for (const band of selectedBands) {
   }
 }
 
-if (asJson) {
+if (asJson || outputPath) {
   const output = compactJson ? results.map((result) => ({
     ...result,
     candidates: result.candidates.map(({ youtubeId, title, channelName, channelId }) => ({ youtubeId, title, channelName, channelId })),
   })) : results
-  console.log(JSON.stringify({ results: output }, null, compactJson ? 0 : 2))
+  const serialized = JSON.stringify({ results: output }, null, compactJson ? 0 : 2)
+  if (outputPath) {
+    await writeFile(outputPath, `${serialized}\n`, 'utf8')
+    console.log(`YouTube 후보 ${results.length}곡을 ${outputPath}에 저장했습니다.`)
+  } else console.log(serialized)
 } else {
   console.log(`ROCK ATLAS YouTube 공식 영상 검색 — ${searchAll ? `${selectedBands.length}개 밴드` : selectedBands[0].name}`)
   for (const result of results) {

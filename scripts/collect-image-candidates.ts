@@ -1,4 +1,5 @@
 import { bands } from '../src/data/bands.ts'
+import { writeFile } from 'node:fs/promises'
 
 interface MetadataValue {
   value?: string
@@ -21,7 +22,11 @@ interface ImageInfo {
 const args = process.argv.slice(2)
 const selectedBandId = args.find((arg) => arg.startsWith('--band='))?.split('=')[1]
 const asJson = args.includes('--json')
-const selectedBands = selectedBandId ? bands.filter((band) => band.id === selectedBandId) : bands
+const draftOnly = args.includes('--draft-only')
+const outputPath = args.find((arg) => arg.startsWith('--output='))?.slice('--output='.length)
+const selectedBands = selectedBandId
+  ? bands.filter((band) => band.id === selectedBandId)
+  : draftOnly ? bands.filter((band) => band.reviewStatus === 'draft') : bands
 
 if (selectedBands.length === 0) {
   console.error(`밴드를 찾을 수 없습니다: ${selectedBandId}`)
@@ -159,8 +164,12 @@ const results = selectedBands.map((band) => {
   }
 })
 
-if (asJson) {
-  console.log(JSON.stringify({ collectedAt: new Date().toISOString(), results }, null, 2))
+if (asJson || outputPath) {
+  const output = JSON.stringify({ collectedAt: new Date().toISOString(), results }, null, 2)
+  if (outputPath) {
+    await writeFile(outputPath, `${output}\n`, 'utf8')
+    console.log(`이미지 후보 ${results.length}개를 ${outputPath}에 저장했습니다.`)
+  } else console.log(output)
 } else {
   console.log('ROCK ATLAS Commons 이미지 후보')
   for (const item of results) {
