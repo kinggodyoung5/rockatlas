@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-26T13:57:06.161Z",
+  "updatedAt": "2026-07-28T01:06:43.281Z",
   "bands": [
     {
       "id": "rhapsody",
@@ -225,7 +225,9 @@
       "activeYears": "1989–2003, 2009–2019",
       "primaryGenre": "alternative-indie",
       "genreIds": [
-        "alternative-indie"
+        "alternative-indie",
+        "britpop-indie",
+        "classic-rock"
       ],
       "subgenres": [
         "얼터너티브 록",
@@ -236,7 +238,9 @@
         {
           "era": "1980s",
           "genreIds": [
-            "alternative-indie"
+            "alternative-indie",
+            "britpop-indie",
+            "classic-rock"
           ],
           "subgenres": [
             "얼터너티브 록",
@@ -349,6 +353,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-26T09:24:09.594Z"
+        },
+        {
+          "id": "odd-to-my-family",
+          "title": "Odd to My Family",
+          "youtubeId": "",
+          "reviewStatus": "draft",
+          "source": {
+            "label": "Odd to My Family — YouTube",
+            "url": "https://www.youtube.com/results?search_query=The%20Cranberries%20Odd%20to%20My%20Family",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상이 없어 밴드명·곡명 YouTube 검색 링크를 사용합니다."
+          }
         }
       ],
       "relations": [],
@@ -403,9 +420,10 @@
           "romantic-emotional": 4,
           "youth-rebellious": 4,
           "aggressive-heavy": 3,
-          "hopeful-uplifting": 3
+          "hopeful-uplifting": 3,
+          "dreamy-ethereal": 2
         },
-        "reviewStatus": "reviewed",
+        "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
       "reviewStatus": "published",
@@ -450,7 +468,7 @@
         "영국 록",
         "아트 록"
       ],
-      "summary": "1990년대 브릿팝 열풍을 이끈 대표적인 영국 록 밴드로, 'Parklife'와 'Blur' 등의 앨범으로 영국 차트 정상과 세계적인 명성을 얻었다. 대중적인 인디 팝부터 실험적인 알터너티브 록과 아트 록까지 넘나들며 대중음악사에 깊은 영향을 남겼다.",
+      "summary": "1990년대 브릿팝 열풍을 이끈 대표적인 영국 록 밴드. 오아시스와 벌였던 브릿팝 전쟁이 음악사에 남아있다. 대중적인 인디 팝부터 실험적인 알터너티브 록과 아트 록까지 넘나들며 대중음악사에 깊은 영향을 남겼다.",
       "style": "통쾌하고 캐치한 기타 리프와 위트 있는 사운드 전개가 특징이다. 리드 보컬 데이먼 알반의 다채로운 음색과 그레이엄 콕슨의 노이즈 섞인 창의적인 기타 연주가 조화를 이룬다.",
       "image": {
         "wikipediaTitle": "Blur",
@@ -19618,16 +19636,16 @@
       "sources": [
         {
           "label": "Maroon 5 — Wikidata",
-          "url": "https://www.wikidata.org/wiki/Q396",
+          "url": "https://www.wikidata.org/wiki/Q182223",
           "publisher": "Wikidata",
-          "externalId": "Q396",
+          "externalId": "Q182223",
           "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
         },
         {
           "label": "Maroon 5 — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/0ab49580-c84f-44d4-875f-470dff94dcf7",
+          "url": "https://musicbrainz.org/artist/0ab49580-c84f-44d4-875f-d83760ea2cfe",
           "publisher": "MusicBrainz",
-          "externalId": "0ab49580-c84f-44d4-875f-470dff94dcf7",
+          "externalId": "0ab49580-c84f-44d4-875f-d83760ea2cfe",
           "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
         },
         {
