@@ -16,26 +16,25 @@
 - 갱신: 2026-07-28 KST · Codex
 - 작업 브랜치: `codex/taxonomy-v2`
 - 이번 구현 커밋: `3413fd6` (`Improve public loading, sharing, and studio safety`)
-- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `f52165d` (이번 구현은 아직 푸시하지 않음)
+- 데이터 커밋: `5c56824` (`data: add Korn and Slipknot draft`)
+- 원격 `origin/main`, `origin/codex/taxonomy-v2`: `5c56824`
 - 로컬 `main`: 현재 작업 브랜치보다 26커밋 뒤이므로 “항상 동일”하다고 가정하지 않는다.
 - 공개 주소: `https://kinggodyoung5.github.io/rockatlas/`
 - GitHub Pages: `main` 푸시 시 `.github/workflows/deploy-pages.yml`로 자동 배포
 - 백업 기준: `backup/pre-taxonomy-v2-20260719`
 
-## 3. 사용자 소유 미커밋 데이터
+## 3. 최신 데이터 상태
 
-- `src/data/catalog.json`은 이번 Codex 작업 전에 이미 수정되기 시작했고, 작업 도중 Studio에서 데이터가 추가됐다.
 - 현재 총 89개: 공개 88개, 초안 1개.
-- HEAD 대비 신규 밴드:
+- 이번에 추가·커밋한 밴드:
   - Korn: 공개
   - Slipknot: 초안
-- 이 파일은 이번 구조 개선 작업에서 직접 편집하지 않았다.
-- 코드 커밋 시 `catalog.json`을 자동으로 함께 스테이징하지 않는다. 사용자가 데이터까지 함께 기록해 달라고 할 때만 별도 검수 후 포함한다.
-- Studio 저장과 동시에 카탈로그를 읽을 수 있으므로 최종 검증 전후 SHA-256이 다르면 최신 파일로 다시 생성·검증한다.
+- 구조 개선 중에는 파일을 편집하지 않았고, 최종 검증 후 `5c56824`로 별도 커밋했다.
+- `.claude/settings.local.json`은 개인 설정이므로 Git에서 제외했다.
 
 ## 4. 이번 구조 개선 완료 내용
 
-2026-07-28 구현과 로컬 검증을 완료하고 코드만 `3413fd6`으로 커밋했다. 아직 원격 푸시·`main` 병합·배포하지 않았다.
+2026-07-28 구현과 로컬 검증을 완료하고 `main`과 `codex/taxonomy-v2`에 푸시·배포했다.
 
 - 링크·이미지 전체 검사:
   - 600개 단일 요청 실패 문제를 120개 배치, 진행률 표시, 중단 가능 방식으로 변경.
@@ -83,14 +82,14 @@
 - `git diff --check`: 공백 오류 없음.
 - 최종 검증 전후 `catalog.json` SHA-256:
   `F0132707F049F98841BC8ECAE0C56FE9DFC761C1F1428264DD18F4AE3BAFD471`로 동일.
+- GitHub Pages 실행 `30361693781`: 성공.
+- 공개 홈과 `/bands/korn/`: HTTP 200, 새 OG 이미지·Korn 메타데이터 확인.
 
 ## 6. 남은 작업
 
 1. `docs/PENDING_YOUTUBE_LINKS.md`의 직접 링크 후보 10개를 Studio에서 최종 확인한 뒤 사용자 데이터에 반영.
 2. Slipknot 초안의 Wikidata, MusicBrainz, 공식 YouTube 채널과 대표곡 링크를 보완한 뒤 공개 여부 결정.
-3. 이번 코드 개선은 `catalog.json`과 `.claude/settings.local.json`을 제외해 `3413fd6`으로 커밋했다.
-4. 사용자 데이터는 동시 편집이 끝난 뒤 별도 검수·커밋한다.
-5. 사용자 승인 전에는 `main` 푸시와 배포 금지.
+3. Slipknot을 공개하기 전 불완전한 Wikipedia 주소와 외부 식별자·공식 채널·이미지 권리를 보완한다.
 
 ## 7. 고정된 제품 방향
 
