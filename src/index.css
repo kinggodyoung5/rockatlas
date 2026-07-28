@@ -745,6 +745,20 @@ img { display: block; max-width: 100%; }
 .external-candidate-list article > a { color: #777579; }
 .external-candidate-list article > button { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 28px; border: 1px solid #343238; color: #aaa8aa; background: #17171a; font-size: 8px; }
 .external-candidate-list article.is-selected > button { color: var(--orange); border-color: var(--orange); }
+
+.youtube-track-finder { margin: 14px 0 18px; padding: 15px; border: 1px solid #2a292e; background: #0b0b0d; }
+.youtube-track-finder .external-search-bar { grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr) auto; }
+.youtube-track-finder select { width: 100%; height: 40px; padding: 0 10px; border: 1px solid #343238; color: #d8d6d4; background: #17171a; font-size: 9px; }
+.youtube-candidate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.youtube-candidate-grid article { display: flex; flex-direction: column; border: 1px solid #252429; background: #111114; overflow: hidden; }
+.youtube-candidate-grid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #17171a; }
+.youtube-candidate-grid > article > div { min-width: 0; padding: 8px 9px 0; }
+.youtube-candidate-grid strong, .youtube-candidate-grid small { display: block; overflow: hidden; text-overflow: ellipsis; }
+.youtube-candidate-grid strong { font-size: 10px; line-height: 1.35; max-height: 2.7em; }
+.youtube-candidate-grid small { margin-top: 4px; color: #6e6c71; font-size: 8px; white-space: nowrap; }
+.youtube-candidate-grid > article > a { position: relative; top: -32px; left: 100%; transform: translateX(-24px); width: 20px; height: 20px; display: grid; place-items: center; color: #fff; background: rgba(8,7,12,.7); }
+.youtube-candidate-grid > article > button { margin: 9px; display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 28px; border: 1px solid #343238; color: #aaa8aa; background: #17171a; font-size: 8px; }
+.youtube-candidate-grid > article > button:hover { color: var(--orange); border-color: var(--orange); }
 .is-spinning { animation: studio-spin .8s linear infinite; }
 @keyframes studio-spin { to { transform: rotate(360deg); } }
 .studio-section-order { display: grid; gap: 6px; padding: 5px 15px 16px; }

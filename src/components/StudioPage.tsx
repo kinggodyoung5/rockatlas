@@ -13,6 +13,7 @@ import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
+import { YoutubeTrackFinder, type YoutubeCandidate } from './YoutubeTrackFinder'
 
 const relationLabels: Record<RelationKind, string> = {
   'sounds-like': '비슷한 소리',
@@ -306,6 +307,7 @@ export function StudioPage() {
   const [dirty, setDirty] = useState(false)
   const [commonsBusy, setCommonsBusy] = useState(false)
   const [commonsMessage, setCommonsMessage] = useState('')
+  const [tracksRevision, setTracksRevision] = useState(0)
   const [catalogDirty, setCatalogDirty] = useState(false)
   // Tracks the updatedAt this tab last confirmed matches disk — seeded from the bundle's load-time
   // snapshot, then advanced after every successful save so same-session saves keep working normally.
@@ -459,6 +461,28 @@ export function StudioPage() {
       setCommonsMessage(`자동 확인 실패: ${lookup.error ?? '알 수 없는 오류'}`)
     }
     setCommonsBusy(false)
+  }
+
+  const selectYoutubeCandidate = (trackId: string, candidate: YoutubeCandidate) => {
+    change({
+      tracks: draft.tracks.map((track) => track.id !== trackId ? track : {
+        ...track,
+        youtubeId: candidate.videoId,
+        reviewStatus: 'reviewed',
+        reviewedBy: 'Studio operator',
+        reviewedAt: new Date().toISOString(),
+        source: {
+          ...track.source,
+          url: candidate.url,
+          official: false,
+          channelName: candidate.channelTitle,
+          note: 'YouTube 검색 후보에서 운영자가 직접 선택한 영상',
+        },
+      }),
+    })
+    // The tracks textarea below is uncontrolled (defaultValue) so it won't pick up this change on its own —
+    // bumping the key forces it to remount with the freshly-picked video baked into its text.
+    setTracksRevision((revision) => revision + 1)
   }
 
   const saveSiteContent = async () => {
@@ -778,8 +802,9 @@ export function StudioPage() {
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>
             <div className="studio-dual-fields">
               <label>멤버 <small>이름 | 역할 | current/former/touring | 활동연도</small><textarea key={`${selectedId}-members`} defaultValue={membersToText(draft.members)} onBlur={(event) => change({ members: parseMembers(event.target.value) })} rows={8} /></label>
-              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks, draft.name) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
+              <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks-${tracksRevision}`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks, draft.name) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
             </div>
+            {draft.tracks.length > 0 && <YoutubeTrackFinder bandName={draft.name} tracks={draft.tracks} onSelect={selectYoutubeCandidate} />}
           </section>
 
           <section className="studio-form-section">

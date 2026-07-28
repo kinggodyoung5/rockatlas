@@ -1,8 +1,11 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+
+// Loaded from .env.local (gitignored — see *.local in .gitignore), never bundled into client code.
+const youtubeApiKey = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '').YOUTUBE_API_KEY
 
 const catalogPath = resolve('src/data/catalog.json')
 const catalogHistoryPath = resolve('src/data/catalog-history.json')
@@ -219,6 +222,47 @@ function studioApi(): Plugin {
         } catch (error) {
           response.statusCode = 502
           response.end(error instanceof Error && error.name === 'AbortError' ? '외부 검색 시간이 초과되었습니다.' : error instanceof Error ? error.message : '외부 검색 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/youtube-search', async (request, response, next) => {
+        if (request.method !== 'GET') return next()
+        if (!youtubeApiKey) {
+          response.statusCode = 501
+          return response.end('YOUTUBE_API_KEY가 설정되지 않았습니다. .env.local에 키를 추가하세요.')
+        }
+        const requestUrl = new URL(request.url ?? '', 'http://localhost')
+        const query = requestUrl.searchParams.get('q')?.trim() ?? ''
+        if (query.length < 2) {
+          response.statusCode = 400
+          return response.end('검색어를 두 글자 이상 입력하세요.')
+        }
+        try {
+          const controller = new AbortController()
+          const timeout = setTimeout(() => controller.abort(), 12_000)
+          const searchUrl = new URL('https://www.googleapis.com/youtube/v3/search')
+          searchUrl.search = new URLSearchParams({ part: 'snippet', type: 'video', maxResults: '8', q: query, key: youtubeApiKey }).toString()
+          const apiResponse = await fetch(searchUrl, { signal: controller.signal })
+          clearTimeout(timeout)
+          const payload = await apiResponse.json() as {
+            error?: { message?: string }
+            items?: Array<{ id?: { videoId?: string }; snippet?: { title?: string; channelTitle?: string; publishedAt?: string; thumbnails?: { medium?: { url?: string }; default?: { url?: string } } } }>
+          }
+          if (!apiResponse.ok) throw new Error(payload.error?.message ?? `YouTube API 오류 (${apiResponse.status})`)
+          const results = (payload.items ?? [])
+            .filter((item) => item.id?.videoId)
+            .map((item) => ({
+              videoId: item.id!.videoId!,
+              title: item.snippet?.title ?? '',
+              channelTitle: item.snippet?.channelTitle ?? '',
+              publishedAt: item.snippet?.publishedAt ?? '',
+              thumbnailUrl: item.snippet?.thumbnails?.medium?.url ?? item.snippet?.thumbnails?.default?.url ?? '',
+              url: `https://www.youtube.com/watch?v=${item.id!.videoId}`,
+            }))
+          json(response, { query, results })
+        } catch (error) {
+          response.statusCode = 502
+          response.end(error instanceof Error && error.name === 'AbortError' ? 'YouTube 검색 시간이 초과되었습니다.' : error instanceof Error ? error.message : 'YouTube 검색 실패')
         }
       })
 
