@@ -15,8 +15,8 @@
 
 - 갱신: 2026-07-28 KST · Codex
 - 작업 브랜치: `codex/taxonomy-v2`
-- 로컬 HEAD: `cd17886` (`fix: extract JSON before trailing Gemini commentary`)
-- 원격 `main`, `codex/taxonomy-v2`: `4c17f3d`
+- 카탈로그 검수 커밋: `9e4d28f` (`data: review and publish recovered band catalog`)
+- 원격 `main`, `codex/taxonomy-v2`: `9e4d28f`
 - 공개 주소: <https://kinggodyoung5.github.io/rockatlas/>
 - 배포: `main` 푸시 후 `.github/workflows/deploy-pages.yml`
 - 백업 기준: `backup/pre-taxonomy-v2-20260719`
@@ -60,14 +60,11 @@
 
 ## 6. 커밋·배포 상태
 
-- 아직 이번 대량 변경 커밋·푸시·배포 전이다.
-- 운영자가 이번 요청에서 커밋과 배포를 명시적으로 승인했다.
-- 다음 정확한 단계:
-  1. 사용자 개인 파일을 제외하고 변경사항 커밋.
-  2. 현재 HEAD를 `main`과 `codex/taxonomy-v2`에 푸시.
-  3. GitHub Pages 작업 완료 확인.
-  4. 공개 사이트에서 133개 목록과 신규 밴드 상세 페이지 확인.
-  5. 최종 커밋·배포 결과를 이 문서에 기록.
+- 카탈로그 검수 커밋 `9e4d28f`를 `main`과 `codex/taxonomy-v2`에 푸시했다.
+- GitHub Pages 실행 `30369179158`: 성공.
+- 공개 사이트에서 전체 133개 목록, Twin XL·Mamas Gun 노출, Twin XL 이미지와 3곡을 확인했다.
+- 이 상태 문서 갱신만 후속 문서 커밋으로 남기고 두 브랜치에 푸시한다.
+- 다음 정확한 단계: 새 운영자 요청이 들어오면 이 문서와 최신 Git 상태를 확인하고 시작한다.
 
 ## 7. 고정 제품 방향
 
