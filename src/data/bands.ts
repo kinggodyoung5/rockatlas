@@ -1,10 +1,11 @@
 import catalog from './catalog.json' with { type: 'json' }
-import type { Band, GenreId } from '../types/music'
+import type { Band, GenreId, PendingRelation } from '../types/music'
 
 export interface CatalogFile {
   schemaVersion: number
   updatedAt: string
   bands: Band[]
+  pendingRelations?: PendingRelation[]
 }
 
 export const catalogFile = catalog as CatalogFile

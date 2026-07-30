@@ -1,5 +1,5 @@
 import { taxonomyGenres, taxonomyMoods, taxonomySubgenres } from '../data/taxonomy'
-import type { Band, BandTaxonomyV2, EraId, GenreId, Member, Relation, RelationKind, SourceRef, Track } from '../types/music'
+import type { Band, BandTaxonomyV2, EraId, GenreId, Member, PendingRelation, Relation, RelationKind, SourceRef, Track } from '../types/music'
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 
 export type IntakeSeverity = 'error' | 'warning' | 'info'
@@ -15,6 +15,7 @@ export interface IntakeCandidate {
   band: Band
   issues: IntakeIssue[]
   canApprove: boolean
+  pendingRelations: PendingRelation[]
 }
 
 export interface IntakeResult {
@@ -804,7 +805,7 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
   const seenExternalIds = new Set<string>()
 
   const candidates = normalized.flatMap((band, index): IntakeCandidate[] => {
-    if (!band) return [{ key: `invalid-${index}`, band: normalizeBand({ name: '' }, index) as Band, issues: [{ severity: 'error', code: 'invalid-band', message: `${index + 1}번째 항목은 밴드 객체가 아닙니다.` }], canApprove: false }]
+    if (!band) return [{ key: `invalid-${index}`, band: normalizeBand({ name: '' }, index) as Band, issues: [{ severity: 'error', code: 'invalid-band', message: `${index + 1}번째 항목은 밴드 객체가 아닙니다.` }], canApprove: false, pendingRelations: [] }]
     const issues: IntakeIssue[] = []
     const nameKey = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
     if (!band.name) issues.push({ severity: 'error', code: 'missing-name', message: '밴드 이름이 없습니다.' })
@@ -838,11 +839,21 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     if (invalidSubgenres.length) issues.push({ severity: 'warning', code: 'invalid-subgenres', message: `허용되지 않는 세부 장르를 자동 제외했습니다: ${invalidSubgenres.join(', ')}` })
     if (invalidMoods.length) issues.push({ severity: 'warning', code: 'invalid-moods', message: `허용되지 않는 분위기 ID 또는 점수를 자동 제외했습니다: ${invalidMoods.join(', ')}` })
     if (remappedMoods.length) issues.push({ severity: 'info', code: 'remapped-moods', message: `같은 뜻의 분위기 표현을 정식 항목으로 바꿨습니다: ${remappedMoods.join(', ')}` })
-    const removedRelations = band.relations.filter((relation) => !knownIds.has(relation.targetBandId) || relation.targetBandId === band.id)
-    if (removedRelations.length) {
-      band.relations = band.relations.filter((relation) => knownIds.has(relation.targetBandId) && relation.targetBandId !== band.id)
-      issues.push({ severity: 'warning', code: 'removed-relations', message: `아직 카탈로그에 없는 밴드를 가리키는 관계를 자동 제외했습니다: ${removedRelations.map((relation) => relation.targetBandId).join(', ')} (해당 밴드를 먼저 추가하면 이후 검사에서 자동으로 연결됩니다)` })
-    }
+    const selfRelations = band.relations.filter((relation) => relation.targetBandId === band.id)
+    const unknownRelations = band.relations.filter((relation) => relation.targetBandId !== band.id && !knownIds.has(relation.targetBandId))
+    band.relations = band.relations.filter((relation) => relation.targetBandId !== band.id && knownIds.has(relation.targetBandId))
+    const pendingRelations: PendingRelation[] = unknownRelations.map((relation, relationIndex) => ({
+      id: `${band.id}->${relation.targetBandId}-${index}-${relationIndex}`,
+      sourceBandId: band.id,
+      sourceBandName: band.name,
+      targetBandId: relation.targetBandId,
+      kind: relation.kind,
+      strength: relation.strength,
+      note: relation.note,
+      createdAt: new Date().toISOString(),
+    }))
+    if (unknownRelations.length) issues.push({ severity: 'warning', code: 'pending-relations', message: `아직 카탈로그에 없는 밴드를 가리키는 관계를 보류함에 저장했습니다: ${unknownRelations.map((relation) => relation.targetBandId).join(', ')} (해당 밴드가 나중에 추가되면 저장 시 양쪽에 자동으로 연결됩니다)` })
+    if (selfRelations.length) issues.push({ severity: 'warning', code: 'self-relation-removed', message: '자기 자신을 가리키는 관계를 제외했습니다.' })
     if (band.summary.length < 30) issues.push({ severity: 'warning', code: 'short-summary', message: '업적·발자취 소개가 짧습니다. 30자 이상을 권장합니다.' })
     if (band.style.length < 40) issues.push({ severity: 'warning', code: 'short-style', message: '음악 설명이 짧습니다. 소리와 구성을 40자 이상 적는 것을 권장합니다.' })
     if (!band.taxonomyV2?.subgenreIds.length) issues.push({ severity: 'warning', code: 'no-subgenres', message: 'v2 세부 장르가 없어 대표 장르만 적용됩니다.' })
@@ -861,7 +872,7 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     seenIds.add(band.id)
     if (nameKey) seenNames.add(nameKey)
     band.sources.forEach((source) => { if (source.externalId) seenExternalIds.add(source.externalId) })
-    return [{ key: `${band.id}-${index}`, band, issues, canApprove: !issues.some((item) => item.severity === 'error') }]
+    return [{ key: `${band.id}-${index}`, band, issues, canApprove: !issues.some((item) => item.severity === 'error'), pendingRelations }]
   })
 
   await Promise.all(candidates.map((candidate) => enrichCandidate(candidate)))

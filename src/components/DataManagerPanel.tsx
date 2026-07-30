@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
 import { studioFetchJson } from '../lib/studioApiClient'
-import type { Band, EraId, GenreId, Track } from '../types/music'
+import type { Band, EraId, GenreId, PendingRelation, Track } from '../types/music'
 import { LinkHealthPanel } from './LinkHealthPanel'
 
 export interface DeletedBandRecord {
@@ -17,6 +17,7 @@ interface DataManagerPanelProps {
   bands: Band[]
   selectedBandId: string
   trash: DeletedBandRecord[]
+  pendingRelations: PendingRelation[]
   onSelectBand: (band: Band) => void
   onAddBands: (bands: Band[]) => void
   onDeleteBand: (bandId: string) => void
@@ -78,7 +79,7 @@ function csvBand(row: Record<string, string>, index: number): Band {
   }
 }
 
-export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, onAddBands, onDeleteBand, onRestoreBand, onUpdateBand, onPersist }: DataManagerPanelProps) {
+export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelations, onSelectBand, onAddBands, onDeleteBand, onRestoreBand, onUpdateBand, onPersist }: DataManagerPanelProps) {
   const [message, setMessage] = useState('CSV 입력, 휴지통, 이력 복구와 검수 상태를 관리합니다.')
   const [history, setHistory] = useState<HistoryEntry[]>([])
   const csvRef = useRef<HTMLInputElement>(null)
@@ -168,6 +169,8 @@ export function DataManagerPanel({ bands, selectedBandId, trash, onSelectBand, o
         </div></details>
 
         <details><summary><History size={14} /> 변경 이력 <em>{history.length}</em></summary><div className="studio-history-list">{history.length ? history.map((entry) => <div key={entry.id}><span><strong>{entry.label}</strong><small>{new Date(entry.createdAt).toLocaleString('ko-KR')} · {entry.count}개</small></span><button onClick={() => void restoreHistory(entry)}><RotateCcw size={13} /> 이 상태로 복구</button></div>) : <p>아직 저장 이력이 없습니다.</p>}</div></details>
+
+        <details><summary><AlertTriangle size={14} /> 보류 중인 관계 <em>{pendingRelations.length}</em></summary><div className="studio-warning-list">{pendingRelations.length ? pendingRelations.map((pending) => <button key={pending.id} data-severity="warning" onClick={() => { const band = bands.find((item) => item.id === pending.sourceBandId); if (band) onSelectBand(band) }}><strong>대기</strong><span>{pending.sourceBandName} → {pending.targetBandId} ({pending.note}) · {pending.targetBandId} 밴드가 추가되면 양쪽에 자동 연결됩니다.</span></button>) : <p>보류 중인 관계가 없습니다.</p>}</div></details>
 
         <details open><summary><ShieldCheck size={14} /> 출처·곡 링크 검수</summary>{selected ? <div className="studio-verification">
           <label>검수할 밴드<select value={selected.id} onChange={(event) => { const band = bands.find((item) => item.id === event.target.value); if (band) onSelectBand(band) }}>{bands.map((band) => <option key={band.id} value={band.id}>{band.name}</option>)}</select></label>

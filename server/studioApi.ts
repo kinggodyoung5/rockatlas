@@ -385,7 +385,8 @@ export function studioApi(): Plugin {
           }
           await validateCatalogBands(bands)
           await archiveCatalog(typeof payload.changeNote === 'string' ? payload.changeNote : 'Studio 저장')
-          const nextCatalog = { schemaVersion: 2, updatedAt: new Date().toISOString(), bands }
+          const pendingRelations = Array.isArray(payload.pendingRelations) ? payload.pendingRelations : (currentOnDisk.pendingRelations ?? [])
+          const nextCatalog = { schemaVersion: 2, updatedAt: new Date().toISOString(), bands, pendingRelations }
           await writeFile(catalogPath, `${JSON.stringify(nextCatalog, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextCatalog.updatedAt, count: bands.length })
         } catch (error) {

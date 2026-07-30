@@ -117,3 +117,19 @@ Codex의 공개 데이터 분리(`generate-public-data.ts`, `publicBands.ts`, �
 - 테스트 중 `catalog.json`에 남았던 임시 테스트 데이터(Twin XL → Jonas Brothers 관계)는 원래 관계(Twin XL → LANY, shared-scene)로 되돌렸다.
 
 **다음 단계**: 위 3건의 확인사항(개러지록 추가 여부, pending-relations 문구/기능 보완, 포스트펑크-고딕 그룹 재구성 여부)은 운영자 결정 대기 중. 커밋·배포는 운영자 승인 후 진행한다.
+
+## 11. 2026-07-30 확인사항 후속 조치 (운영자 결정 반영)
+
+운영자가 섹션 10의 확인사항 3건에 대해 결정을 내려 후속 구현을 완료했다.
+
+1. **개러지록 세부 장르 추가** — `taxonomy.v2.json`에 `garage-rock`(개러지 록)을 신설해 `indie-britpop-garage` 그룹의 `garage-rock-revival` 옆에 추가했다. 다른 상위 장르에도 "리바이벌/파생 장르는 있는데 기본 장르가 없는" 유사 공백이 있는지 110개 세부 장르 전체를 점검했고, `garage-rock` 외에는 발견되지 않았다(레거시 v1 `genres.json`에만 남아있던 "부기 록"은 현재 어떤 밴드도 사용하지 않아 제외).
+2. **자동 보류(pending relations) 시스템 구현** — 안내 문구만 있고 실제로는 관계 데이터를 버리던 기존 동작을 실제로 동작하는 시스템으로 교체했다.
+   - `src/types/music.ts`: `PendingRelation` 타입 추가.
+   - `src/lib/bandIntake.ts`: 대상 밴드가 아직 없는 관계를 버리지 않고 `IntakeCandidate.pendingRelations`로 보존.
+   - `src/components/StudioPage.tsx`: `resolvePendingRelations()`로 새 밴드가 추가될 때마다(일괄 검수함·CSV·수동 새 밴드 저장 모두) 보류 목록을 검사해 대상 밴드가 존재하면 양쪽에 정방향·역방향 관계를 자동 생성. 카탈로그 저장 시 `pendingRelations`를 `catalog.json` 최상위에 함께 저장.
+   - `src/components/DataManagerPanel.tsx`: "보류 중인 관계" 진단 패널 추가로 대기 중인 항목을 운영자가 볼 수 있게 함.
+   - `server/studioApi.ts`: `/api/studio/catalog` PUT이 `pendingRelations`도 함께 저장하도록 확장.
+   - 브라우저에서 A→B(B 미존재) 관계로 밴드 A를 먼저 추가 → "보류 중인 관계 1" 확인 → 밴드 B 추가 → 보류 0으로 감소, A는 `influenced-by → B`, B는 자동 생성된 `influenced ← A`를 정확히 보유함을 실제로 검증했다(테스트 데이터는 저장하지 않고 폐기).
+3. **포스트펑크/고딕/뉴웨이브 그룹 설명 수정** — 운영자가 제안한 문구로 교체: 카드 설명(`vibeDescription`) "80년대 감성의 스타일리시한 사운드, 세련된 도시의 록.", 상세 설명(`description`) "펑크의 거친 에너지에 전자음과 댄서블한 리듬을 얹어, 어두운 감성부터 신나는 팝 멜로디까지." 어둡고 음울한 서브장르(고딕 록·다크웨이브·콜드웨이브)와 밝고 신나는 포스트펑크 리바이벌(킬러스·카이저칩스 등)을 모두 포괄하는 문구로, 실제 포스트펑크 장르사(조이 디비전 계열의 음울함과 뉴웨이브 계열의 화려함이 공존)와도 부합한다.
+
+**검증 결과**: `tsc -b`, `npm test`(5개 파일 21개 통과), `validate:data`(133개 밴드 오류 없음), `validate:taxonomy`(111개 세부 장르, 오류 없음), `npm run build`(공개 목록·상세 JSON·공유 페이지 각 133개) 모두 통과. 브라우저에서 개러지록 세부 장르 노출, 포스트펑크 그룹 카드·상세 설명, 보류 관계 자동 연결을 모두 확인했다.

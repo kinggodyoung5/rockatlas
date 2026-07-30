@@ -1,11 +1,11 @@
 import { CheckCircle2, Clipboard, FileJson, Inbox, Loader2, ShieldCheck, Trash2, Upload } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { buildGeminiResearchPrompt, finalizeIntakeBand, inspectBandIntake, type IntakeResult } from '../lib/bandIntake'
-import type { Band } from '../types/music'
+import type { Band, PendingRelation } from '../types/music'
 
 interface BandIntakePanelProps {
   bands: Band[]
-  onAddBands: (bands: Band[]) => void
+  onAddBands: (bands: Band[], pendingRelations: PendingRelation[]) => void
 }
 
 const storageKey = 'rock-atlas-band-intake-v1'
@@ -62,14 +62,15 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
     const approvedIds = new Set(approved.map((candidate) => candidate.band.id))
     const existingIds = new Set(bands.map((band) => band.id))
     const reviewedCount = approved.filter((candidate) => candidate.band.reviewStatus === 'published').length
+    const pendingRelations = approved.flatMap((candidate) => candidate.pendingRelations)
     onAddBands(approved.map((candidate) => {
       const finalized = finalizeIntakeBand(candidate.band)
       return { ...finalized, relations: finalized.relations.filter((relation) => existingIds.has(relation.targetBandId) || approvedIds.has(relation.targetBandId)) }
-    }))
+    }), pendingRelations)
     const remaining = result.candidates.filter((candidate) => !approved.some((item) => item.key === candidate.key))
     setResult({ ...result, candidates: remaining })
     setSelectedKeys(new Set())
-    setMessage(`${approved.length}개를 추가했습니다 (자동 검수 완료 ${reviewedCount}개 · 나머지는 비공개 초안). 상단의 ‘전체 저장’이 성공할 때까지 원본 JSON은 이 입력칸과 브라우저에 보존됩니다.`)
+    setMessage(`${approved.length}개를 추가했습니다 (자동 검수 완료 ${reviewedCount}개 · 나머지는 비공개 초안)${pendingRelations.length ? ` · 보류 중인 관계 ${pendingRelations.length}개는 상대 밴드가 추가되면 자동으로 연결됩니다` : ''}. 상단의 ‘전체 저장’이 성공할 때까지 원본 JSON은 이 입력칸과 브라우저에 보존됩니다.`)
   }
 
   const clear = () => {

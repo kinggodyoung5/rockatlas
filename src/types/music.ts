@@ -100,6 +100,19 @@ export interface Relation extends ReviewRecord {
   mirroredFrom?: string
 }
 
+/** A relation dropped during intake because its target band doesn't exist in the catalog yet.
+ *  Kept until a band with a matching id is added, at which point both sides get connected automatically. */
+export interface PendingRelation {
+  id: string
+  sourceBandId: string
+  sourceBandName: string
+  targetBandId: string
+  kind: RelationKind
+  strength: 1 | 2 | 3
+  note: string
+  createdAt: string
+}
+
 export interface BandImage {
   wikipediaTitle: string
   fileName?: string

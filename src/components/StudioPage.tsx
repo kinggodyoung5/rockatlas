@@ -4,7 +4,7 @@ import { bands as initialBands, catalogFile } from '../data/bands'
 import { genres as initialGenres } from '../data/genres'
 import { siteContent, type SiteContent } from '../data/siteContent'
 import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
-import type { Band, BandTaxonomyV2, GenreId, Relation, RelationKind, SourceRef } from '../types/music'
+import type { Band, BandTaxonomyV2, GenreId, PendingRelation, Relation, RelationKind, SourceRef } from '../types/music'
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
@@ -33,6 +33,43 @@ const relationLabels: Record<RelationKind, string> = {
  *  band's side, so they mirror as themselves. */
 const inverseRelationKind = (kind: RelationKind): RelationKind =>
   kind === 'influenced-by' ? 'influenced' : kind === 'influenced' ? 'influenced-by' : kind
+
+/** Connects a batch of pending relations (saved when their target band didn't exist yet) against the
+ *  current band list: any pending relation whose target has since been added gets a real relation on
+ *  the source band plus an auto-mirrored one on the target, exactly like `syncMirroredRelation` does
+ *  for a live edit. Anything still unresolved (source or target missing) is carried over unchanged. */
+function resolvePendingRelations(bandsList: Band[], pendingList: PendingRelation[]) {
+  let bands = bandsList
+  const byId = () => new Map(bands.map((band) => [band.id, band]))
+  const remaining: PendingRelation[] = []
+  let resolvedCount = 0
+  for (const pending of pendingList) {
+    const index = byId()
+    const source = index.get(pending.sourceBandId)
+    const target = index.get(pending.targetBandId)
+    if (!source || !target || pending.sourceBandId === pending.targetBandId) {
+      remaining.push(pending)
+      continue
+    }
+    if (!source.relations.some((relation) => relation.targetBandId === pending.targetBandId)) {
+      const forward: Relation = { targetBandId: pending.targetBandId, kind: pending.kind, strength: pending.strength, note: pending.note, reviewStatus: 'draft' }
+      bands = bands.map((band) => band.id === source.id ? { ...band, relations: [...band.relations, forward] } : band)
+    }
+    if (!target.relations.some((relation) => relation.targetBandId === pending.sourceBandId)) {
+      const mirrored: Relation = {
+        targetBandId: pending.sourceBandId,
+        kind: inverseRelationKind(pending.kind),
+        strength: pending.strength,
+        note: `${pending.sourceBandName} 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)`,
+        reviewStatus: 'draft',
+        mirroredFrom: pending.sourceBandId,
+      }
+      bands = bands.map((band) => band.id === target.id ? { ...band, relations: [...band.relations, mirrored] } : band)
+    }
+    resolvedCount += 1
+  }
+  return { bands, remaining, resolvedCount }
+}
 
 const recoveryKey = 'rock-atlas-studio-recovery-v1'
 type StudioRecovery = { version: 1; savedAt: string; bands: Band[]; selectedId: string; draft: Band }
@@ -164,6 +201,7 @@ function suggestionScore(subject: Band, candidate: Band) {
 export function StudioPage() {
   const [workspace, setWorkspace] = useState<'design' | 'data'>(() => window.location.hash === '#design' ? 'design' : 'data')
   const [catalogBands, setCatalogBands] = useState<Band[]>(() => clone(initialBands))
+  const [pendingRelations, setPendingRelations] = useState<PendingRelation[]>(() => clone(catalogFile.pendingRelations ?? []))
   const [selectedId, setSelectedId] = useState(initialBands[0]?.id ?? '')
   const [draft, setDraft] = useState<Band>(() => clone(initialBands[0] ?? createDraftBand()))
   const [recovery, setRecovery] = useState<StudioRecovery | null>(() => readRecovery())
@@ -509,13 +547,14 @@ export function StudioPage() {
     syncMirroredRelation(draft.id, draft.name, undefined, newRelation)
   }
 
-  const persistBands = async (nextBands: Band[], changeNote: string) => {
+  const persistBands = async (nextBands: Band[], changeNote: string, nextPending: PendingRelation[] = pendingRelations) => {
     const result = await studioFetchJson<{ updatedAt: string; count: number }>('/api/studio/catalog', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: catalogBaseline, bands: nextBands, changeNote }),
+      body: JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: catalogBaseline, bands: nextBands, pendingRelations: nextPending, changeNote }),
     })
     setCatalogBands(nextBands)
+    setPendingRelations(nextPending)
     setCatalogDirty(false)
     setCatalogBaseline(result.updatedAt)
     localStorage.removeItem(recoveryKey)
@@ -530,13 +569,16 @@ export function StudioPage() {
       return false
     }
     const nextDraft = { ...draft, id: normalizedId, image: { ...draft.image, alt: draft.image.alt || `${draft.name} 밴드 사진` } }
-    const nextBands = isExisting ? catalogBands.map((band) => band.id === selectedId ? nextDraft : band) : [nextDraft, ...catalogBands]
+    const rawNextBands = isExisting ? catalogBands.map((band) => band.id === selectedId ? nextDraft : band) : [nextDraft, ...catalogBands]
+    const { bands: nextBands, remaining: nextPending, resolvedCount } = isExisting
+      ? { bands: rawNextBands, remaining: pendingRelations, resolvedCount: 0 }
+      : resolvePendingRelations(rawNextBands, pendingRelations)
     try {
-      const result = await persistBands(nextBands, changeNote)
+      const result = await persistBands(nextBands, changeNote, nextPending)
       setSelectedId(normalizedId)
-      setDraft(nextDraft)
+      setDraft(nextBands.find((band) => band.id === normalizedId) ?? nextDraft)
       setDirty(false)
-      setMessage(`${nextDraft.name} 저장 완료 · 전체 ${result.count}개 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
+      setMessage(`${nextDraft.name} 저장 완료 · 전체 ${result.count}개 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}${resolvedCount ? ` · 보류 중이던 관계 ${resolvedCount}개를 자동 연결했습니다` : ''}`)
       return true
     } catch (error) {
       setMessage(`저장 실패: ${error instanceof Error ? error.message : '로컬 Studio 서버를 확인하세요.'}`)
@@ -544,20 +586,21 @@ export function StudioPage() {
     }
   }
 
-  const addBands = (newBands: Band[]) => {
-    setCatalogBands((current) => {
-      const ids = new Set(current.map((band) => band.id))
-      const names = new Set(current.map((band) => band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')))
-      const safeDrafts = newBands.map(finalizeIntakeBand).filter((band) => {
-        const nameKey = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
-        if (!band.id || !band.name || ids.has(band.id) || names.has(nameKey)) return false
-        ids.add(band.id); names.add(nameKey)
-        return true
-      })
-      return [...safeDrafts, ...current]
+  const addBands = (newBands: Band[], newPending: PendingRelation[] = []) => {
+    const ids = new Set(catalogBands.map((band) => band.id))
+    const names = new Set(catalogBands.map((band) => band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')))
+    const safeDrafts = newBands.map(finalizeIntakeBand).filter((band) => {
+      const nameKey = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
+      if (!band.id || !band.name || ids.has(band.id) || names.has(nameKey)) return false
+      ids.add(band.id); names.add(nameKey)
+      return true
     })
+    const merged = [...safeDrafts, ...catalogBands]
+    const { bands: resolvedBands, remaining, resolvedCount } = resolvePendingRelations(merged, [...pendingRelations, ...newPending])
+    setCatalogBands(resolvedBands)
+    setPendingRelations(remaining)
     setCatalogDirty(true)
-    setMessage(`${newBands.length}개 초안을 추가했습니다. 변경 저장을 눌러 적용하세요.`)
+    setMessage(`${newBands.length}개 초안을 추가했습니다.${resolvedCount ? ` 보류 중이던 관계 ${resolvedCount}개를 자동 연결했습니다.` : ''} 변경 저장을 눌러 적용하세요.`)
   }
 
   const updateManagedBand = (band: Band) => {
@@ -573,6 +616,7 @@ export function StudioPage() {
     const nextBands = catalogBands.filter((item) => item.id !== bandId).map((item) => ({ ...item, relations: item.relations.filter((relation) => relation.targetBandId !== bandId) }))
     setTrash((current) => [{ band: clone(band), affectedRelations }, ...current.filter((record) => record.band.id !== bandId)])
     setCatalogBands(nextBands)
+    setPendingRelations((current) => current.filter((pending) => pending.sourceBandId !== bandId && pending.targetBandId !== bandId))
     setCatalogDirty(true)
     if (selectedId === bandId && nextBands[0]) { setSelectedId(nextBands[0].id); setDraft(clone(nextBands[0])); setDirty(false) }
     setMessage(`${band.name}을 휴지통으로 옮겼습니다. 저장 전 복구하거나 변경 저장으로 확정하세요.`)
@@ -599,7 +643,7 @@ export function StudioPage() {
   }
 
   const exportCatalog = () => {
-    const blob = new Blob([`${JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: new Date().toISOString(), bands: catalogBands }, null, 2)}\n`], { type: 'application/json' })
+    const blob = new Blob([`${JSON.stringify({ schemaVersion: catalogFile.schemaVersion, updatedAt: new Date().toISOString(), bands: catalogBands, pendingRelations }, null, 2)}\n`], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const anchor = document.createElement('a')
     anchor.href = url
@@ -610,10 +654,11 @@ export function StudioPage() {
 
   const importCatalog = async (file: File) => {
     try {
-      const payload = JSON.parse(await file.text()) as { schemaVersion?: number; bands?: Band[] }
+      const payload = JSON.parse(await file.text()) as { schemaVersion?: number; bands?: Band[]; pendingRelations?: PendingRelation[] }
       if (![1, 2].includes(payload.schemaVersion ?? 0) || !Array.isArray(payload.bands) || payload.bands.length === 0) throw new Error('지원하지 않는 파일입니다.')
       if (!window.confirm(`전체 백업 ${payload.bands.length}개로 현재 작업 목록을 교체할까요?\n\n새 밴드 추가에는 아래의 ‘새 밴드 검수함’을 사용하세요.`)) return
       setCatalogBands(payload.bands)
+      setPendingRelations(payload.pendingRelations ?? [])
       setSelectedId(payload.bands[0].id)
       setDraft(clone(payload.bands[0]))
       setDirty(false)
@@ -690,7 +735,7 @@ export function StudioPage() {
           {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
 
-          <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
+          <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} pendingRelations={pendingRelations} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
 
           <StudioBandBasics
             draft={draft}
