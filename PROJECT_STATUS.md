@@ -362,3 +362,6 @@ Codex의 공개 데이터 분리(`generate-public-data.ts`, `publicBands.ts`, �
   - `audit:moods`: 24개 분위기 모두 최소 커버리지 충족.
   - 프로덕션 빌드: 공개 밴드 134개와 밴드별 상세·공유 페이지 134개 생성, 전체 카탈로그 선로딩 없음 검증 통과.
 - `.claude/settings.local.json`은 개인 로컬 설정이므로 계속 커밋 대상에서 제외한다.
+- 첫 배포 실행은 GitHub의 깨끗한 Linux 환경에 `src/data/generated/`가 아직 없어서 회귀 테스트가 시작되지 못했다.
+  - `pretest`에서 공개 데이터를 먼저 생성하도록 고쳐, 새 PC·새 계정·GitHub Actions에서도 같은 순서로 재현 가능하게 했다.
+  - 수정 후 테스트 43개와 프로덕션 빌드를 다시 통과했다.

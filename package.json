@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "studio": "vite --host 127.0.0.1",
+    "pretest": "npm run generate:public-data",
     "test": "vitest run --config vitest.config.ts",
     "generate:public-data": "node --experimental-strip-types scripts/generate-public-data.ts",
     "predev": "npm run generate:public-data",
