@@ -42,3 +42,29 @@ describe('intake aliases and IDs', () => {
     expect(slugify('Måneskin')).toBe('maneskin')
   })
 })
+
+describe('fuzzy mood resolution', () => {
+  it('matches a mood phrase with its words reordered', () => {
+    expect(resolveMoodId('음울하고 어두운')).toBe('dark-gloomy')
+    expect(resolveMoodId('신나고 밝은')).toBeUndefined() // two 2-character words with different endings: below the confidence bar on purpose
+    expect(resolveMoodId('편안하고 따뜻한')).toBe('warm-comforting')
+    expect(resolveMoodId('감성적이고 낭만적인')).toBe('romantic-emotional')
+  })
+
+  it('matches a close synonym that is not in the curated alias list', () => {
+    expect(resolveMoodId('어둡고 음침한')).toBe('dark-gloomy')
+    expect(resolveMoodId('잔잔하고 차분한')).toBe('slow-calm')
+    expect(resolveMoodId('웅장하고 서사적인')).toBe('epic-cinematic')
+  })
+
+  it('does not force a match for genuinely unrelated text', () => {
+    expect(resolveMoodId('완전히 무관한 임의의 텍스트입니다')).toBeUndefined()
+  })
+
+  it('does not confuse two distinctly different moods for each other', () => {
+    expect(resolveMoodId('우주적이고 환각적인')).toBe('cosmic-psychedelic')
+    expect(resolveMoodId('우주적이고 환각적인')).not.toBe('dark-gloomy')
+    expect(resolveMoodId('빠르고 질주하는')).toBe('fast-driving')
+    expect(resolveMoodId('빠르고 질주하는')).not.toBe('dreamy-ethereal')
+  })
+})

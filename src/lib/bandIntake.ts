@@ -180,7 +180,96 @@ const resolveGenreId = (value: unknown): GenreTaxonomyId | undefined => {
   return viaSubgenre ? parentGenreIdBySubgenreId.get(viaSubgenre) : undefined
 }
 const resolveSubgenreId = (value: unknown) => subgenreAliasMap.get(normalizeTaxonomyLabel(value))
-export const resolveMoodId = (value: unknown) => moodAliasMap.get(normalizeTaxonomyLabel(value))
+
+/** Character-bigram Dice coefficient between two single words — similarity robust to conjugation
+ *  differences and small typos (e.g. Korean "음울한" vs "음울하고"). */
+function bigramSet(value: string): Map<string, number> {
+  const counts = new Map<string, number>()
+  for (let i = 0; i < value.length - 1; i += 1) {
+    const bigram = value.slice(i, i + 2)
+    counts.set(bigram, (counts.get(bigram) ?? 0) + 1)
+  }
+  return counts
+}
+function diceSimilarity(a: string, b: string): number {
+  if (a === b) return 1
+  if (a.length < 2 || b.length < 2) return 0
+  const bigramsA = bigramSet(a)
+  const bigramsB = bigramSet(b)
+  let overlap = 0
+  for (const [bigram, count] of bigramsA) overlap += Math.min(count, bigramsB.get(bigram) ?? 0)
+  const total = [...bigramsA.values()].reduce((sum, count) => sum + count, 0) + [...bigramsB.values()].reduce((sum, count) => sum + count, 0)
+  return total === 0 ? 0 : (2 * overlap) / total
+}
+
+/** Splits a mood phrase into its individual words (space/hyphen separated), each stripped down to
+ *  letters/digits/Hangul. Comparing word-by-word (rather than the whole phrase as one bigram blob) is
+ *  what makes word-order swaps ("어둡고 음울한" vs "음울하고 어두운") score as a match: bigrams that
+ *  straddle a word boundary all change when the words move, so comparing the full concatenated string
+ *  is order-sensitive in a way the underlying mood is not. */
+function tokenizeMoodLabel(value: string): string[] {
+  return value
+    .toLocaleLowerCase()
+    .normalize('NFKC')
+    .split(/[\s\-·,/&]+/)
+    .map((word) => word.replace(/[^a-z0-9가-힣]+/g, ''))
+    .filter((word) => word.length > 0)
+}
+
+/** Best-match word-set similarity between two tokenized phrases: each word finds its closest
+ *  counterpart on the other side, and the result is the harsher of the two directions' averages — so
+ *  leftover words unmatched on *either* side pull the score down, not just a partial one-way match. */
+function wordSetSimilarity(wordsA: string[], wordsB: string[]): number {
+  if (!wordsA.length || !wordsB.length) return 0
+  const bestMatchAverage = (source: string[], target: string[]) =>
+    source.reduce((sum, word) => sum + Math.max(...target.map((other) => diceSimilarity(word, other))), 0) / source.length
+  return Math.min(bestMatchAverage(wordsA, wordsB), bestMatchAverage(wordsB, wordsA))
+}
+
+/** Every known phrase for each mood (id, Korean name, curated aliases), each tokenized *separately* —
+ *  merging them into one big per-mood word pool would dilute the score for moods with many aliases
+ *  (a 2-word candidate mostly finds non-matches against a 15-word merged pool). Scoring against each
+ *  original phrase and taking the best keeps every comparison the same natural shape. */
+const moodVariantWordLists = new Map<MoodId, string[][]>(taxonomyMoods.map((mood) => [
+  mood.id,
+  [mood.id, mood.name, ...(extraMoodAliases[mood.id] ?? [])].map(tokenizeMoodLabel),
+]))
+
+/** Minimum similarity to accept a fuzzy match at all — below this, two mood phrases just aren't the
+ *  same idea. Tuned against real rewording/reordering cases plus a stress test of clearly-different
+ *  mood pairs (0 false positives at this threshold; lower starts risking short 2-syllable words like
+ *  "밝은" vs "밝고" matching the wrong neighbor). */
+const MOOD_FUZZY_THRESHOLD = 0.32
+/** Minimum lead the best match needs over the runner-up — protects against silently picking the wrong
+ *  mood when a rephrasing sits ambiguously between two of them. */
+const MOOD_FUZZY_MARGIN = 0.06
+
+/** Gemini reliably captures the *meaning* of a mood ("우울하고 조용한 곡") but frequently drifts from
+ *  the exact registered wording ("우울하고 쓸쓸한") — different word order, a close synonym, or an
+ *  English/Korean mix. Rather than growing extraMoodAliases forever to cover every rewording, fall
+ *  back to word-level similarity once the exact/curated lookup misses. */
+function fuzzyResolveMoodId(value: unknown): MoodId | undefined {
+  const words = tokenizeMoodLabel(text(value))
+  if (!words.length) return undefined
+  let bestId: MoodId | undefined
+  let bestScore = 0
+  let runnerUpScore = 0
+  for (const [id, variantWordLists] of moodVariantWordLists) {
+    const score = Math.max(...variantWordLists.map((variantWords) => wordSetSimilarity(words, variantWords)))
+    if (score > bestScore) {
+      runnerUpScore = bestScore
+      bestScore = score
+      bestId = id
+    } else if (score > runnerUpScore) {
+      runnerUpScore = score
+    }
+  }
+  if (!bestId || bestScore < MOOD_FUZZY_THRESHOLD) return undefined
+  if (bestScore - runnerUpScore < MOOD_FUZZY_MARGIN) return undefined
+  return bestId
+}
+
+export const resolveMoodId = (value: unknown) => moodAliasMap.get(normalizeTaxonomyLabel(value)) ?? fuzzyResolveMoodId(value)
 
 function eraFromYear(year: number): EraId {
   const candidate = `${Math.min(2020, Math.max(1960, Math.floor(year / 10) * 10))}s` as EraId

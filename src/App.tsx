@@ -129,6 +129,7 @@ function ExplorerApp() {
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
     const onPopState = (event: PopStateEvent) => {
+      setShareOpen(false)
       const nextRoute = parseExplorerRoute()
       routeRef.current = nextRoute
       setRoute(nextRoute)

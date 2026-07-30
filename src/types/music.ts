@@ -94,6 +94,10 @@ export interface Relation extends ReviewRecord {
   strength: 1 | 2 | 3
   note: string
   source?: SourceRef
+  /** Set only on a relation that Studio auto-created as the reverse side of another band's relation
+   *  (the value is that other band's id). Lets edits/deletes on the original keep this one in sync
+   *  without ever touching a relation an operator wrote by hand, which never has this field. */
+  mirroredFrom?: string
 }
 
 export interface BandImage {

@@ -28,6 +28,12 @@ const relationLabels: Record<RelationKind, string> = {
   evolution: '계보의 확장',
 }
 
+/** "A was influenced by B" read from B's side is "B influenced A" — the only two kinds with a real
+ *  direction. The rest (sounds-like, shared-scene, evolution) describe the same thing from either
+ *  band's side, so they mirror as themselves. */
+const inverseRelationKind = (kind: RelationKind): RelationKind =>
+  kind === 'influenced-by' ? 'influenced' : kind === 'influenced' ? 'influenced-by' : kind
+
 const recoveryKey = 'rock-atlas-studio-recovery-v1'
 type StudioRecovery = { version: 1; savedAt: string; bands: Band[]; selectedId: string; draft: Band }
 
@@ -446,15 +452,61 @@ export function StudioPage() {
     change({ genreIds })
   }
 
+  /** Keeps the "reverse side" of a relation in sync inside the OTHER band's own relations array —
+   *  called on every add/edit/delete so both bands' pages show the connection without an operator
+   *  having to open the other band and add it a second time. Never touches a relation an operator
+   *  wrote by hand: those never carry `mirroredFrom`, so only relations this same sync created are
+   *  ever removed or left alone (never overwritten). */
+  const syncMirroredRelation = (ownBandId: string, ownBandName: string, previous: Relation | undefined, next: Relation | undefined) => {
+    setCatalogBands((current) => {
+      let bands = current
+      let changed = false
+      if (previous) {
+        const oldTargetIndex = bands.findIndex((band) => band.id === previous.targetBandId)
+        if (oldTargetIndex >= 0) {
+          const target = bands[oldTargetIndex]
+          const filtered = target.relations.filter((relation) => !(relation.targetBandId === ownBandId && relation.mirroredFrom === ownBandId))
+          if (filtered.length !== target.relations.length) {
+            bands = bands.map((band, index) => index === oldTargetIndex ? { ...band, relations: filtered } : band)
+            changed = true
+          }
+        }
+      }
+      if (next && next.targetBandId !== ownBandId) {
+        const newTargetIndex = bands.findIndex((band) => band.id === next.targetBandId)
+        if (newTargetIndex >= 0 && !bands[newTargetIndex].relations.some((relation) => relation.targetBandId === ownBandId)) {
+          const mirrored: Relation = {
+            targetBandId: ownBandId,
+            kind: inverseRelationKind(next.kind),
+            strength: next.strength,
+            note: `${ownBandName} 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)`,
+            reviewStatus: 'draft',
+            mirroredFrom: ownBandId,
+          }
+          bands = bands.map((band, index) => index === newTargetIndex ? { ...band, relations: [...band.relations, mirrored] } : band)
+          changed = true
+        }
+      }
+      if (changed) setCatalogDirty(true)
+      return changed ? bands : current
+    })
+  }
+
   const updateRelation = (index: number, patch: Partial<Relation>) => {
+    const previous = draft.relations[index]
     const relations = draft.relations.map((relation, relationIndex) => relationIndex === index ? { ...relation, ...patch, reviewStatus: 'draft' as const } : relation)
     change({ relations })
+    if (patch.targetBandId !== undefined || patch.kind !== undefined || patch.strength !== undefined) {
+      syncMirroredRelation(draft.id, draft.name, previous, relations[index])
+    }
   }
 
   const addRelation = (targetBandId?: string, note?: string, score = 1) => {
     const target = targetBandId ?? catalogBands.find((band) => band.id !== draft.id && !draft.relations.some((relation) => relation.targetBandId === band.id))?.id
     if (!target) return
-    change({ relations: [...draft.relations, { targetBandId: target, kind: 'sounds-like', strength: score >= 10 ? 3 : score >= 6 ? 2 : 1, note: note ?? '연결 이유를 입력하세요.', reviewStatus: 'draft' }] })
+    const newRelation: Relation = { targetBandId: target, kind: 'sounds-like', strength: score >= 10 ? 3 : score >= 6 ? 2 : 1, note: note ?? '연결 이유를 입력하세요.', reviewStatus: 'draft' }
+    change({ relations: [...draft.relations, newRelation] })
+    syncMirroredRelation(draft.id, draft.name, undefined, newRelation)
   }
 
   const persistBands = async (nextBands: Band[], changeNote: string) => {
@@ -693,7 +745,11 @@ export function StudioPage() {
                   <select value={relation.kind} onChange={(event) => updateRelation(index, { kind: event.target.value as RelationKind })}>{Object.entries(relationLabels).map(([kind, label]) => <option key={kind} value={kind}>{label}</option>)}</select>
                   <select value={relation.strength} onChange={(event) => updateRelation(index, { strength: Number(event.target.value) as 1 | 2 | 3 })}><option value={1}>약함</option><option value={2}>중간</option><option value={3}>강함</option></select>
                   <input value={relation.note} onChange={(event) => updateRelation(index, { note: event.target.value })} aria-label="관계 이유" />
-                  <button aria-label="관계 삭제" onClick={() => change({ relations: draft.relations.filter((_, relationIndex) => relationIndex !== index) })}>×</button>
+                  <button aria-label="관계 삭제" onClick={() => {
+                    const removed = draft.relations[index]
+                    change({ relations: draft.relations.filter((_, relationIndex) => relationIndex !== index) })
+                    syncMirroredRelation(draft.id, draft.name, removed, undefined)
+                  }}>×</button>
                 </div>
               ))}
               <button className="studio-add-row" onClick={() => addRelation()}><Plus size={15} /> 직접 관계 추가</button>

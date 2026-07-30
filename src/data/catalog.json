@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-28T14:35:00.000Z",
+  "updatedAt": "2026-07-30T07:44:41.192Z",
   "bands": [
     {
       "id": "twin-xl",
@@ -5017,6 +5017,13 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "서정적인 피아노 멜로디와 호소력 짙은 멜랑콜리한 보컬 중심의 곡 구조를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "travis",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "스타세일러 음악의 뿌리로 트래비스를 언급했다.",
           "reviewStatus": "draft"
         }
       ],
@@ -14577,8 +14584,8 @@
           "targetBandId": "travis",
           "kind": "influenced-by",
           "strength": 3,
-          "note": "1990년대 후반 따뜻하고 감성적인 포스트 브릿팝 사운드의 틀을 잡아 Keane의 초기 음악적 방향성에 깊은 영향을 주었다.",
-          "reviewStatus": "reviewed",
+          "note": "Keane의 초기 음악적 방향성에 깊은 영향을 주었으며 킨은 트래비스의 오프닝 밴드 활동을 하며 이름을 알렸다.",
+          "reviewStatus": "draft",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
@@ -27234,6 +27241,27 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-19"
+        },
+        {
+          "targetBandId": "keane",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "킨은 신인 시절 트래비스 공연의 오프닝밴드로 발탁되어 이름을 알리게 되었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "starsailor",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "스타세일러 보컬은 트래비스를 본인 음악의 뿌리로 언급했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "snow-patrol",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 인디 / 브릿팝 / 개러지, 포스트 브릿팝 · 팝 록, 우울하고 쓸쓸한 · 낭만적이고 감성적인",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -28409,7 +28437,7 @@
           },
           "year": 2005,
           "album": "Du & jag döden",
-          "guide": "스웨덴어 가사로 노래하는 곡으로, 밴드 특유의 우울하고 서정적인 얼터너티브 록 사운드를 담고 있다.",
+          "guide": "밴드 특유의 우울하고 서정적인 얼터너티브 록 사운드와 감성적인 기타 솔로.",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         },
@@ -28540,8 +28568,9 @@
       "origin": "런던, 잉글랜드",
       "countryCode": "GB",
       "activeYears": "1997–현재",
-      "primaryGenre": "alternative-indie",
+      "primaryGenre": "classic-rock",
       "genreIds": [
+        "classic-rock",
         "alternative-indie"
       ],
       "tags": [
@@ -28552,13 +28581,13 @@
       "subgenres": [
         "얼터너티브 록",
         "팝 록",
-        "포스트 브릿팝",
-        "팝"
+        "포스트 브릿팝"
       ],
       "eraTags": [
         {
           "era": "1990s",
           "genreIds": [
+            "classic-rock",
             "alternative-indie"
           ],
           "subgenres": [
@@ -28568,6 +28597,7 @@
         {
           "era": "2000s",
           "genreIds": [
+            "classic-rock",
             "alternative-indie"
           ],
           "subgenres": [
@@ -28578,6 +28608,7 @@
         {
           "era": "2010s",
           "genreIds": [
+            "classic-rock",
             "alternative-indie"
           ],
           "subgenres": [
@@ -28588,6 +28619,7 @@
         {
           "era": "2020s",
           "genreIds": [
+            "classic-rock",
             "alternative-indie"
           ],
           "subgenres": [
@@ -28794,7 +28826,9 @@
           "warm-comforting": 4,
           "romantic-emotional": 5,
           "hopeful-uplifting": 5,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "bright-upbeat": 3,
+          "acoustic-organic": 2
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -28817,56 +28851,11 @@
         "가죽과 스터드"
       ],
       "subgenres": [
-        "헤비 메탈"
+        "전통 헤비메탈"
       ],
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -29071,7 +29060,8 @@
           "fast-driving": 4,
           "epic-cinematic": 4,
           "riff-solo-driven": 5,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "aggressive-heavy": 3
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -30130,7 +30120,7 @@
           },
           "year": 2005,
           "album": "Octavarium",
-          "guide": "24분에 달하는 대곡으로, 앨범 전체의 서사를 마무리 짓는 밴드의 프로그레시브 메탈 대표작이다.",
+          "guide": "24분에 달하는 대곡으로, 드림시어터 곡의 정수로 꼽힌다.",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         },
@@ -30739,19 +30729,23 @@
       "primaryGenre": "heavy-metal",
       "genreIds": [
         "heavy-metal",
-        "hard-rock"
+        "hard-rock",
+        "progressive-art"
       ],
       "subgenres": [
         "메탈코어",
         "얼터너티브 메탈",
-        "전통 헤비메탈"
+        "전통 헤비메탈",
+        "프로그레시브 메탈",
+        "하드 록"
       ],
       "eraTags": [
         {
           "era": "1990s",
           "genreIds": [
             "heavy-metal",
-            "hard-rock"
+            "hard-rock",
+            "progressive-art"
           ],
           "subgenres": [
             "헤비메탈",
@@ -30762,13 +30756,28 @@
           "era": "2000s",
           "genreIds": [
             "heavy-metal",
-            "hard-rock"
+            "hard-rock",
+            "progressive-art"
           ],
           "subgenres": [
             "헤비메탈",
             "팝메탈",
             "모던메탈",
             "하드락"
+          ]
+        },
+        {
+          "era": "2010s",
+          "genreIds": [
+            "heavy-metal",
+            "hard-rock",
+            "progressive-art"
+          ],
+          "subgenres": [
+            "팝메탈",
+            "모던메탈",
+            "하드락",
+            "프로그레시브메탈"
           ]
         }
       ],
@@ -30777,7 +30786,7 @@
         "메탈코어"
       ],
       "summary": "1999년 미국 캘리포니아에서 결성되어 2000년대 이후 현대 메탈 씬을 이끈 대표적인 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 밴드. 극적인 곡 구성과 화려한 악기 연주로 그래미 후보에 오르고 세계적인 록 페스티벌 헤드라이너로 자리매김했다.",
-      "style": "트윈 기타의 정교하고 화려한 하모니와 공격적인 드럼 리듬이 사운드의 핵심. M. 섀도우스의 거친 스크리밍과 호소력 있는 클린 보컬을 넘나드는 가창에 진보적인 곡 구조.",
+      "style": "트윈 기타의 정교하고 화려한 하모니와 공격적인 드럼 리듬이 사운드의 핵심. 실험적인 시도를 많이 하다가 7집을 기점으로 프로그레시브 메탈로 변모했다.",
       "image": {
         "wikipediaTitle": "Avenged Sevenfold",
         "alt": "Avenged Sevenfold 밴드 사진",
@@ -30843,7 +30852,7 @@
           "title": "Hail to the King",
           "year": 2013,
           "album": "Hail to the King",
-          "guide": "묵직한 헤비메탈 리프와 정통 록의 직선적인 에너지가 돋보이는 밴드의 시그니처 트랙입니다.",
+          "guide": "묵직한 헤비메탈 리프와 정통 록의 직선적인 에너지가 돋보이는 밴드의 시그니처 트랙.",
           "youtubeId": "DelhLppPSxY",
           "source": {
             "label": "Avenged Sevenfold — Hail to the King",
@@ -30861,7 +30870,7 @@
           "title": "Bat Country",
           "year": 2005,
           "album": "City of Evil",
-          "guide": "화려한 트윈 기타 솔로와 질주하는 리듬 패턴이 펼쳐지는 명곡입니다.",
+          "guide": "화려한 트윈 기타 솔로와 질주하는 리듬 패턴이 펼쳐지는 명곡.",
           "youtubeId": "IHS3qJdxefY",
           "source": {
             "label": "Bat Country — YouTube",
@@ -30888,7 +30897,7 @@
           },
           "year": 2007,
           "album": "Avenged Sevenfold",
-          "guide": "오케스트라와 합창, 그로울링 보컬이 뒤섞인 기괴하고 극적인 구성으로 유명한 곡이다.",
+          "guide": "오케스트라와 합창, 그로울링 보컬이 뒤섞인 기괴하고 극적인 구성으로 유명한 곡.",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         },
@@ -30971,12 +30980,15 @@
         "primaryGenreId": "modern-alternative-metal",
         "secondaryGenreIds": [
           "traditional-power-thrash-metal",
-          "hard-glam-rock"
+          "hard-glam-rock",
+          "progressive-art-psychedelic"
         ],
         "subgenreIds": [
           "metalcore",
           "alternative-metal",
-          "traditional-heavy-metal"
+          "traditional-heavy-metal",
+          "progressive-metal",
+          "hard-rock"
         ],
         "moodScores": {
           "aggressive-heavy": 5,
@@ -30984,9 +30996,10 @@
           "epic-cinematic": 5,
           "riff-solo-driven": 5,
           "technical-complex": 4,
-          "experimental-weird": 2
+          "experimental-weird": 2,
+          "anthemic-live": 3
         },
-        "reviewStatus": "reviewed",
+        "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
       "reviewStatus": "published",
@@ -31253,20 +31266,35 @@
       "activeYears": "2001–present",
       "primaryGenre": "classic-rock",
       "genreIds": [
-        "classic-rock"
+        "classic-rock",
+        "alternative-indie"
       ],
       "subgenres": [
         "팝 록",
-        "소프트 록"
+        "소프트 록",
+        "일렉트로팝",
+        "훵크 록"
       ],
       "eraTags": [
         {
           "era": "2000s",
           "genreIds": [
-            "classic-rock"
+            "classic-rock",
+            "alternative-indie"
           ],
           "subgenres": [
             "팝 록"
+          ],
+          "note": "펑크(Funk)록"
+        },
+        {
+          "era": "2010s",
+          "genreIds": [
+            "classic-rock",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "일렉트로팝"
           ]
         }
       ],
@@ -31277,7 +31305,7 @@
         "R&B",
         "댄스 팝"
       ],
-      "summary": "1994년 결성된 Kara's Flowers를 모태로 2001년 재결성된 미국의 팝 록 밴드다. R&B, 펑크, 팝 요소를 정교하게 결합한 독창적인 사운드와 애덤 리바인의 미성 보컬을 바탕으로 2000년대 이후 세계적인 대중적 성공을 거둔 21세기 대표 팝 록 그룹이다.",
+      "summary": "1994년 결성된 Kara's Flowers를 모태로 2001년 재결성된 미국의 팝 록 밴드다. R&B, 펑크, 팝 요소를 정교하게 결합한 독창적인 사운드와 애덤 리바인의 미성 보컬을 바탕으로 2000년대 이후 세계적인 대중적 성공을 거둔 21세기 대표 팝 록 그룹.",
       "style": "애덤 리바인 특유의 미성과 그루비한 피아노/기타 리프, 감각적인 댄스 팝 비트가 조화를 이룬다. 초기 디스코·펑크 성향의 팝 록에서 시작해 현대 메인스트림 팝 스타일로 스펙트럼을 확장했다.",
       "image": {
         "wikipediaTitle": "Maroon 5",
@@ -31476,18 +31504,23 @@
       ],
       "taxonomyV2": {
         "primaryGenreId": "pop-soft-rock",
-        "secondaryGenreIds": [],
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
         "subgenreIds": [
           "pop-rock",
-          "soft-rock"
+          "soft-rock",
+          "electropop",
+          "funk-rock"
         ],
         "moodScores": {
           "romantic-emotional": 5,
           "hopeful-uplifting": 4,
           "anthemic-live": 5,
-          "bright-upbeat": 4
+          "bright-upbeat": 5,
+          "electronic-synth": 2
         },
-        "reviewStatus": "reviewed",
+        "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
       "reviewStatus": "published",

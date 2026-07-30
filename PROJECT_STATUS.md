@@ -89,3 +89,31 @@
 - 운영자가 Studio에서 저장한 히치하이킹 문구 줄바꿈과 클래식/루츠 록 이미지 위치 변경을 보존했다.
 - 업로드 검사, Vitest 17개, 프로덕션 빌드와 공개 데이터 생성 검증이 통과했다.
 - 운영자가 이번 변경의 커밋·배포를 명시적으로 승인했다.
+
+## 10. 2026-07-30 Claude 점검·수정 (Codex 대규모 개편 이후)
+
+Codex의 공개 데이터 분리(`generate-public-data.ts`, `publicBands.ts`, 공유 페이지, Vitest 도입)와 133개 카탈로그 전면 검수 이후, 운영자가 제기한 3건의 확인사항과 3건의 수정사항을 처리했다.
+
+**확인사항 (조사만, 코드 변경 없음)**
+
+1. 개러지록(Garage Rock) 세부 장르가 없다 — `taxonomy.v2.json`에는 `garage-punk`, `garage-rock-revival`만 있고 순수 `garage-rock`은 존재하지 않는다. 실제 분류 공백이며, 추가 여부는 운영자 결정이 필요하다.
+2. "밴드가 나중에 등록되면 자동으로 연결됩니다" 안내는 실제로 동작하지 않는다 — `bandIntake.ts`가 존재하지 않는 타겟 밴드의 관계를 걸러낼 때 데이터를 어디에도 저장하지 않고, 유일한 후속 장치는 사람이 손으로 관리하는 `docs/PENDING_RELATIONS.md`뿐이다. 안내 문구가 과장돼 있다.
+3. 포스트펑크-고딕 장르 설명과 킬러스·카이저칩스 음악의 괴리 — 두 밴드가 속한 `post-punk-revival` 세부 장르가 `post-punk-goth-new-wave` 상위 그룹에 묶여 있는데, 그룹 설명 문구는 진짜 어둡고 음울한 나머지 세부 장르(고딕 록, 다크웨이브, 콜드웨이브)를 기준으로 쓰여 있다. 밴드 분류 자체는 정확하며, 상위 그룹 설명·묶음 구조의 문제다.
+
+**수정사항 (구현 완료)**
+
+1. 관계 양방향 자동 동기화 — `src/types/music.ts`에 `Relation.mirroredFrom?: string` 추가, `StudioPage.tsx`에 `syncMirroredRelation()`을 구현해 `addRelation`/`updateRelation`/관계 삭제 시 상대 밴드에 반대 방향 관계(`influenced-by` ↔ `influenced`, 나머지는 대칭)를 자동 생성·삭제한다. 운영자가 직접 입력한 관계(`mirroredFrom` 없음)는 절대 건드리지 않는다. 브라우저에서 Twin XL → Jonas Brothers 관계 추가/종류 변경 시 상대측에 자동 미러가 정확히 생성됨을 확인했다.
+2. 분위기(mood) 유사 표현 인식 개선 — `bandIntake.ts`의 기존 문자열 전체 바이그램 비교를 단어 단위 토큰화(`tokenizeMoodLabel`)와 단어별 최적 매칭(`wordSetSimilarity`)으로 교체해, 어순이 바뀌거나 표현만 다른 문구(예: "음울하고 어두운" ≈ "어둡고 음침한")를 더 잘 잡아낸다. `bandIntake.test.ts`에 관련 테스트 4건 추가, 전체 21개 테스트 통과.
+3. 모바일 지도 공유 후 뒤로가기 오류 수정 — `App.tsx`의 `popstate` 핸들러가 라우트만 갱신하고 공유 패널 상태(`shareOpen`)는 그대로 두던 문제였다. 밴드 페이지에서 공유 패널을 연 채로 브라우저 뒤로가기를 누르면 URL은 바뀌지만 `overflow:hidden` 오버레이가 화면에 남아 뒤로가기가 안 되는 것처럼 보였다. `onPopState`에 `setShareOpen(false)`를 추가해 해결. 브라우저에서 재현 후 수정을 확인했다.
+
+**검증 결과**
+
+- `npx tsc -b`: 통과.
+- `npm test`: Vitest 5개 파일, 21개 테스트 통과 (기존 17개 + 신규 분위기 테스트 4개).
+- `npm run validate:data`: 밴드 133, 트랙 402, 관계 227, 오류 없음.
+- `npm run validate:taxonomy`: 13개 상위 장르, 110개 세부 장르, 24개 분위기, 133/133 통과.
+- `npm run build`: 공개 목록 133개, 상세 JSON 133개, 공유 페이지 133개 생성 및 검증 통과.
+- 브라우저 확인: 양방향 관계 동기화, 지도 공유 후 뒤로가기 모두 실제 동작 확인.
+- 테스트 중 `catalog.json`에 남았던 임시 테스트 데이터(Twin XL → Jonas Brothers 관계)는 원래 관계(Twin XL → LANY, shared-scene)로 되돌렸다.
+
+**다음 단계**: 위 3건의 확인사항(개러지록 추가 여부, pending-relations 문구/기능 보완, 포스트펑크-고딕 그룹 재구성 여부)은 운영자 결정 대기 중. 커밋·배포는 운영자 승인 후 진행한다.
