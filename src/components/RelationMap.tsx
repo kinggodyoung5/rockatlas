@@ -1,6 +1,5 @@
 import { ArrowRight, GitBranch } from 'lucide-react'
-import { publicBandById as bandById, publicBands } from '../data/publicBands'
-import { similarBands } from '../lib/bandSimilarity'
+import { publicBandById as bandById } from '../data/publicBands'
 import type { Band, RelationKind } from '../types/music'
 
 const relationLabels: Record<RelationKind, string> = {
@@ -18,13 +17,12 @@ interface RelationMapProps {
 }
 
 export function RelationMap({ band, onSelect, visitedIds }: RelationMapProps) {
-  const relationTargets = new Set(band.relations.map((item) => item.targetBandId))
-  const recommendations = similarBands(band, publicBands).filter((item) => !relationTargets.has(item.band.id)).slice(0, Math.max(4, 8 - band.relations.length))
   return (
     <section className="relation-panel" aria-labelledby="relation-title">
       <div className="section-heading compact">
-        <span className="eyebrow"><GitBranch size={15} /> DISCOVERY MAP</span>
-        <h2 id="relation-title">다음 밴드는 어디로?</h2>
+        <span className="eyebrow"><GitBranch size={15} /> EDITORIAL CONNECTIONS</span>
+        <h2 id="relation-title">편집된 계보와 장면</h2>
+        <p>영향, 동료 장면, 세대 전환처럼 직접 검수한 연결입니다.</p>
       </div>
       <div className="relation-map">
         <div className="relation-core">
@@ -52,12 +50,6 @@ export function RelationMap({ band, onSelect, visitedIds }: RelationMapProps) {
           })}
         </div>
       </div>
-      {recommendations.length > 0 && (
-        <div className="similarity-panel">
-          <div><strong>자동 유사도 추천</strong></div>
-          <div className="similarity-grid">{recommendations.map((item) => <button key={item.band.id} onClick={() => onSelect(item.band)}><span>{item.score}% SIMILAR</span><strong>{item.band.name}</strong><p>{item.reasons.join(' · ') || '분위기와 활동 시기 교차'}</p><em>추천으로 이동 <ArrowRight size={13} /></em></button>)}</div>
-        </div>
-      )}
     </section>
   )
 }

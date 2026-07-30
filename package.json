@@ -19,6 +19,7 @@
     "collect:videos": "node --experimental-strip-types scripts/collect-video-candidates.ts",
     "review:videos": "node --experimental-strip-types scripts/collect-video-candidates.ts --strict",
     "audit:relations": "node --experimental-strip-types scripts/audit-relations.ts",
+    "audit:moods": "node --experimental-strip-types scripts/audit-mood-coverage.ts",
     "audit:facts": "node --experimental-strip-types scripts/audit-band-facts.ts",
     "audit:image-rights": "node --experimental-strip-types scripts/apply-image-rights-audit.ts",
     "collect:relations": "node --experimental-strip-types scripts/collect-relation-candidates.ts",

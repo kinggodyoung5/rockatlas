@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extractJson, resolveMoodId, slugify } from './bandIntake'
+import { buildGeminiResearchPrompt, extractJson, inspectBandIntake, resolveMoodId, slugify } from './bandIntake'
 
 describe('extractJson', () => {
   it('reads JSON from a markdown fence', () => {
@@ -41,6 +41,14 @@ describe('intake aliases and IDs', () => {
     expect(slugify('Mötley Crüe')).toBe('motley-crue')
     expect(slugify('Måneskin')).toBe('maneskin')
   })
+
+  it('keeps brittle external identifiers out of the Gemini role', () => {
+    const prompt = buildGeminiResearchPrompt()
+    expect(prompt).toContain('GEM 지침 v4')
+    expect(prompt).toContain('정확한 Wikidata·MusicBrainz ID')
+    expect(prompt).not.toContain('"wikidataId"')
+    expect(prompt).not.toContain('"youtubeChannelUrl"')
+  })
 })
 
 describe('fuzzy mood resolution', () => {
@@ -66,5 +74,39 @@ describe('fuzzy mood resolution', () => {
     expect(resolveMoodId('우주적이고 환각적인')).not.toBe('dark-gloomy')
     expect(resolveMoodId('빠르고 질주하는')).toBe('fast-driving')
     expect(resolveMoodId('빠르고 질주하는')).not.toBe('dreamy-ethereal')
+  })
+})
+
+describe('intake pipeline', () => {
+  it('표현이 다른 분위기를 정식 ID로 바꾸고 미등록 관계를 보류함에 보존한다', async () => {
+    const raw = JSON.stringify({
+      bands: [{
+        name: 'Pipeline Test',
+        formed: 2000,
+        origin: 'Test City, United States',
+        countryCode: 'US',
+        activeYears: '2000–present',
+        summary: '2000년 결성되어 독립 록 장면에서 꾸준히 활동해 온 테스트 밴드다.',
+        style: '기타와 드럼을 중심으로 선명하고 활기찬 합주와 기억하기 쉬운 후렴을 들려준다.',
+        tags: ['테스트'],
+        genre: 'alternative-grunge',
+        subgenres: ['alternative-rock'],
+        moods: { '음울하고 어두운': 4 },
+        members: [{ name: 'Test Member', role: '기타', status: 'current', activeYears: '2000–present' }],
+        representativeTracks: [],
+        relations: [{ targetBandName: 'Future Band', kind: 'shared-scene', strength: 2, note: '같은 지역 장면' }],
+        wikidataId: '',
+        musicBrainzId: '',
+        wikipediaUrl: '',
+        youtubeChannelUrl: '',
+        image: { commonsFile: '' },
+      }],
+    })
+    const result = await inspectBandIntake(raw, [])
+    expect(result.candidates).toHaveLength(1)
+    expect(result.candidates[0].band.taxonomyV2?.moodScores).toMatchObject({ 'dark-gloomy': 4 })
+    expect(result.candidates[0].pendingRelations).toHaveLength(1)
+    expect(result.candidates[0].pendingRelations[0]).toMatchObject({ sourceBandId: 'pipeline-test', targetBandId: 'future-band', kind: 'shared-scene' })
+    expect(result.candidates[0].band.relations).toEqual([])
   })
 })

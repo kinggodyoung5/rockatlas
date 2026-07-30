@@ -1,20 +1,9 @@
 import { Check, ExternalLink, LoaderCircle, Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import type { ExternalIdentityCandidate } from '../lib/intakeVerification'
 import { studioFetchJson } from '../lib/studioApiClient'
 
-export interface ExternalCandidate {
-  id: string
-  name: string
-  description: string
-  url: string
-  aliases?: string[]
-  score?: number
-  country?: string
-  area?: string
-  begin?: string
-  end?: string
-  ended?: boolean
-}
+export type ExternalCandidate = ExternalIdentityCandidate
 
 interface ExternalSourceFinderProps {
   initialQuery: string
@@ -74,7 +63,7 @@ export function ExternalSourceFinder({ initialQuery, selectedWikidataId, selecte
             <div className="external-candidate-list">
               {results[provider].map((candidate) => {
                 const selected = selectedId === candidate.id
-                const meta = [candidate.area, candidate.country, candidate.begin && `${candidate.begin}${candidate.end ? `–${candidate.end}` : ''}`].filter(Boolean).join(' · ')
+                const meta = [candidate.entityType, candidate.origin ?? candidate.area, candidate.country, candidate.formed ?? (candidate.begin && `${candidate.begin}${candidate.end ? `–${candidate.end}` : ''}`)].filter(Boolean).join(' · ')
                 return <article key={candidate.id} className={selected ? 'is-selected' : ''}>
                   <div><strong>{candidate.name}</strong><small>{candidate.description || meta || candidate.id}</small>{candidate.description && meta && <small>{meta}</small>}</div>
                   <a href={candidate.url} target="_blank" rel="noreferrer" aria-label={`${candidate.name} 원문 열기`}><ExternalLink size={13} /></a>

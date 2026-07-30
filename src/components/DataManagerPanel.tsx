@@ -3,8 +3,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
 import { studioFetchJson } from '../lib/studioApiClient'
+import { getStudioDiagnostics } from '../lib/studioDiagnostics'
 import type { Band, EraId, GenreId, PendingRelation, Track } from '../types/music'
-import { LinkHealthPanel } from './LinkHealthPanel'
+import { LinkHealthPanel, type LinkHealthSummary } from './LinkHealthPanel'
 
 export interface DeletedBandRecord {
   band: Band
@@ -24,6 +25,7 @@ interface DataManagerPanelProps {
   onRestoreBand: (record: DeletedBandRecord) => void
   onUpdateBand: (band: Band) => void
   onPersist: (note: string) => Promise<void>
+  onLinkHealthSummary?: (summary: LinkHealthSummary) => void
 }
 
 function parseCsv(text: string) {
@@ -79,33 +81,13 @@ function csvBand(row: Record<string, string>, index: number): Band {
   }
 }
 
-export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelations, onSelectBand, onAddBands, onDeleteBand, onRestoreBand, onUpdateBand, onPersist }: DataManagerPanelProps) {
+export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelations, onSelectBand, onAddBands, onDeleteBand, onRestoreBand, onUpdateBand, onPersist, onLinkHealthSummary }: DataManagerPanelProps) {
   const [message, setMessage] = useState('CSV 입력, 휴지통, 이력 복구와 검수 상태를 관리합니다.')
   const [history, setHistory] = useState<HistoryEntry[]>([])
   const csvRef = useRef<HTMLInputElement>(null)
   const selected = bands.find((band) => band.id === selectedBandId) ?? bands[0]
 
-  const warnings = useMemo(() => {
-    const issues: Array<{ bandId?: string; severity: 'error' | 'warning'; message: string }> = []
-    const nameGroups = new Map<string, Band[]>()
-    bands.forEach((band) => {
-      const key = band.name.toLocaleLowerCase().replace(/[^a-z0-9가-힣]/g, '')
-      nameGroups.set(key, [...(nameGroups.get(key) ?? []), band])
-      const relationTargets = new Set<string>()
-      band.relations.forEach((relation) => {
-        if (relation.targetBandId === band.id) issues.push({ bandId: band.id, severity: 'error', message: `${band.name}: 자기 자신을 관계 대상으로 지정했습니다.` })
-        if (!bands.some((candidate) => candidate.id === relation.targetBandId)) issues.push({ bandId: band.id, severity: 'error', message: `${band.name}: 존재하지 않는 관계 대상 ${relation.targetBandId}` })
-        if (relationTargets.has(relation.targetBandId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: ${relation.targetBandId} 관계가 중복됩니다.` })
-        relationTargets.add(relation.targetBandId)
-      })
-      if (band.reviewStatus !== 'draft' && band.tracks.some((track) => !/^https:\/\//.test(track.source.url))) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 열 수 없는 대표곡 외부 링크가 있습니다.` })
-      if (band.reviewStatus !== 'draft' && band.image.credit.reviewStatus !== 'verified') issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: 공개 상태지만 이미지 권리 검수가 필요합니다.` })
-      if (band.reviewStatus !== 'draft' && !band.sources.some((source) => source.publisher === 'Wikidata' && source.externalId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: Wikidata 식별자가 없습니다.` })
-      if (band.reviewStatus !== 'draft' && !band.sources.some((source) => source.publisher === 'MusicBrainz' && source.externalId)) issues.push({ bandId: band.id, severity: 'warning', message: `${band.name}: MusicBrainz 식별자가 없습니다.` })
-    })
-    nameGroups.forEach((group) => { if (group.length > 1) issues.push({ severity: 'error', message: `중복 밴드 이름: ${group.map((band) => band.name).join(', ')}` }) })
-    return issues
-  }, [bands])
+  const warnings = useMemo(() => getStudioDiagnostics(bands), [bands])
 
   const loadHistory = async () => {
     try {
@@ -178,7 +160,7 @@ export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelation
           <div className="studio-track-audit">{selected.tracks.map((track) => <div key={track.id}><span><strong>{track.title}</strong><small>{[track.album, track.year].filter(Boolean).join(' · ') || '곡 정보 확인 중'}</small></span><a href={track.source.url} target="_blank" rel="noreferrer">외부 링크 열기</a><select aria-label={`${track.title} 검수 상태`} value={track.reviewStatus} onChange={(event) => updateTrack(track.id, { reviewStatus: event.target.value as Track['reviewStatus'], reviewedAt: event.target.value === 'draft' ? undefined : new Date().toISOString().slice(0, 10), reviewedBy: event.target.value === 'draft' ? undefined : 'Studio operator' })}><option value="draft">초안</option><option value="reviewed">검수됨</option><option value="published">공개</option></select></div>)}</div>
         </div> : <p>검수할 밴드가 없습니다.</p>}</details>
       </div>
-      <LinkHealthPanel bands={bands} onSelectBand={onSelectBand} />
+      <LinkHealthPanel bands={bands} onSelectBand={onSelectBand} onSummaryChange={onLinkHealthSummary} />
     </section>
   )
 }

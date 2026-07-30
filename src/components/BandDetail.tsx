@@ -3,9 +3,12 @@ import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
+import type { HitchhikingDirectionId } from '../config/hitchhiking'
+import type { JourneyStep, JourneyVia } from '../lib/hitchhiking'
 import type { Band, BandEraTag, Track } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
 import { BandImage } from './BandImage'
+import { HitchhikingPanel } from './HitchhikingPanel'
 import { RelationMap } from './RelationMap'
 
 const LATEST_ERA = '2020s'
@@ -35,14 +38,28 @@ function groupEraTags(eraTags: BandEraTag[]) {
 interface BandDetailProps {
   band: Band
   onBack: () => void
-  onSelectBand: (band: Band) => void
   isFavorite: boolean
   onToggleFavorite: (bandId: string) => void
   visitedIds: string[]
+  journeySteps: JourneyStep[]
+  onTravelBand: (band: Band, via: JourneyVia) => void
+  onResetJourney: () => void
+  onShareJourney: () => void
   onShare: () => void
 }
 
-export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFavorite, visitedIds, onShare }: BandDetailProps) {
+export function BandDetail({
+  band,
+  onBack,
+  isFavorite,
+  onToggleFavorite,
+  visitedIds,
+  journeySteps,
+  onTravelBand,
+  onResetJourney,
+  onShareJourney,
+  onShare,
+}: BandDetailProps) {
   const genre = genreById[band.primaryGenre]
   const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
   const genreColor = taxonomyGenre?.color ?? genre.color
@@ -179,7 +196,17 @@ export function BandDetail({ band, onBack, onSelectBand, isFavorite, onToggleFav
         </section>
       </div>
 
-      <div className="shell"><RelationMap band={band} onSelect={onSelectBand} visitedIds={visitedIds} /></div>
+      <div className="shell">
+        <HitchhikingPanel
+          band={band}
+          visitedIds={visitedIds}
+          journeySteps={journeySteps}
+          onTravel={(target, direction: HitchhikingDirectionId) => onTravelBand(target, direction)}
+          onResetJourney={onResetJourney}
+          onShareJourney={onShareJourney}
+        />
+        <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} />
+      </div>
 
       <details className="sources-disclosure shell">
         <summary><span>출처 · 권리</span><small>검수 {review.passedChecks}/{review.totalChecks}</small></summary>

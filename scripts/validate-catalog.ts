@@ -1,4 +1,4 @@
-import { bands } from '../src/data/bands.ts'
+import { bands, catalogFile } from '../src/data/bands.ts'
 import { genres } from '../src/data/genres.ts'
 
 const errors: string[] = []
@@ -111,8 +111,19 @@ for (const band of bands) {
   }
 }
 
+const pendingIds = new Set<string>()
+for (const pending of catalogFile.pendingRelations ?? []) {
+  if (!pending.id || pendingIds.has(pending.id)) errors.push(`보류 관계 ID가 비어 있거나 중복됨: ${pending.id || '(빈 ID)'}`)
+  pendingIds.add(pending.id)
+  if (!bandIds.has(pending.sourceBandId)) errors.push(`${pending.id}: 보류 관계의 출발 밴드 ${pending.sourceBandId}가 없음`)
+  if (bandIds.has(pending.targetBandId)) errors.push(`${pending.id}: 대상 밴드 ${pending.targetBandId}가 이미 있으므로 즉시 관계로 변환해야 함`)
+  if (pending.sourceBandId === pending.targetBandId) errors.push(`${pending.id}: 자기 자신을 가리키는 보류 관계`)
+  if (!pending.sourceBandName.trim() || !pending.targetBandId.trim() || !pending.note.trim()) errors.push(`${pending.id}: 보류 관계 필수 설명 누락`)
+  if (!Number.isInteger(pending.strength) || pending.strength < 1 || pending.strength > 3) errors.push(`${pending.id}: 보류 관계 강도 범위 오류`)
+}
+
 console.log('ROCK ATLAS 카탈로그 무결성 검사')
-console.log(`밴드 ${bands.length} · 장르 ${genres.length} · 트랙 ${bands.flatMap((band) => band.tracks).length} · 관계 ${bands.flatMap((band) => band.relations).length}`)
+console.log(`밴드 ${bands.length} · 장르 ${genres.length} · 트랙 ${bands.flatMap((band) => band.tracks).length} · 관계 ${bands.flatMap((band) => band.relations).length} · 보류 관계 ${catalogFile.pendingRelations?.length ?? 0}`)
 console.log(`Wikidata ${wikidataIds.size}/${bands.length} · MusicBrainz ${musicBrainzIds.size}/${bands.length}`)
 console.log(`Commons 검수 이미지 ${imageFiles.size}/${bands.length}`)
 console.log(`대표곡 외부 링크 ${youtubeIds.size}/${bands.flatMap((band) => band.tracks).length}`)

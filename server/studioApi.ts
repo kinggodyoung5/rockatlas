@@ -1,5 +1,6 @@
+import { spawn } from 'node:child_process'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
 import { loadEnv, type Plugin } from 'vite'
 
 // Loaded from .env.local (gitignored — see *.local in .gitignore), never bundled into client code.
@@ -24,6 +25,30 @@ type CatalogBandPayload = {
   relations?: unknown
   taxonomyV2?: unknown
 }
+type CommandResult = { exitCode: number; output: string; durationMs: number }
+type ExternalSearchCandidate = {
+  id: string
+  name: string
+  description: string
+  url: string
+  aliases?: string[]
+  score?: number
+  entityType?: string
+  country?: string
+  origin?: string
+  area?: string
+  formed?: number
+  begin?: string
+  end?: string
+  ended?: boolean
+  musicBrainzId?: string
+  youtubeChannelId?: string
+  imageFile?: string
+  wikipediaUrl?: string
+}
+
+let preflightInProgress = false
+const externalSearchCache = new Map<string, { expiresAt: number; results: ExternalSearchCandidate[] }>()
 
 const isLocalRequest = (origin: string) => !origin || /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(origin)
 
@@ -103,9 +128,185 @@ async function validateCatalogBands(bands: CatalogBandPayload[]) {
   if (errors.length) throw new Error(`저장 전 안전 검사에서 ${errors.length}건을 발견했습니다.\n- ${errors.slice(0, 12).join('\n- ')}${errors.length > 12 ? `\n- 외 ${errors.length - 12}건` : ''}`)
 }
 
+function validatePendingRelations(pendingRelations: unknown[], bands: CatalogBandPayload[]) {
+  const errors: string[] = []
+  const bandIds = new Set(bands.map((band) => String(band.id ?? '')))
+  const pendingIds = new Set<string>()
+  pendingRelations.forEach((item, index) => {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) {
+      errors.push(`${index + 1}번째 보류 관계 형식이 올바르지 않습니다.`)
+      return
+    }
+    const pending = item as Record<string, unknown>
+    const id = String(pending.id ?? '')
+    const sourceBandId = String(pending.sourceBandId ?? '')
+    const targetBandId = String(pending.targetBandId ?? '')
+    if (!id || pendingIds.has(id)) errors.push(`보류 관계 ID가 비어 있거나 중복되었습니다: ${id || '(빈 ID)'}`)
+    pendingIds.add(id)
+    if (!bandIds.has(sourceBandId)) errors.push(`${id}: 출발 밴드 ${sourceBandId || '(빈 ID)'}가 없습니다.`)
+    if (bandIds.has(targetBandId)) errors.push(`${id}: 대상 밴드 ${targetBandId}가 이미 있으므로 먼저 자동 연결해야 합니다.`)
+    if (!targetBandId || sourceBandId === targetBandId) errors.push(`${id}: 대상 밴드 ID가 비어 있거나 자기 자신입니다.`)
+    if (!String(pending.sourceBandName ?? '').trim() || !String(pending.note ?? '').trim()) errors.push(`${id}: 밴드 이름 또는 관계 설명이 비어 있습니다.`)
+    if (!['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'evolution'].includes(String(pending.kind))) errors.push(`${id}: 관계 종류가 올바르지 않습니다.`)
+    if (![1, 2, 3].includes(Number(pending.strength))) errors.push(`${id}: 관계 강도는 1~3이어야 합니다.`)
+  })
+  if (errors.length) throw new Error(`보류 관계 안전 검사에서 ${errors.length}건을 발견했습니다.\n- ${errors.slice(0, 12).join('\n- ')}`)
+}
+
+async function runCommand(executable: string, args: string[]): Promise<CommandResult> {
+  const startedAt = Date.now()
+  return await new Promise((resolveCommand, rejectCommand) => {
+    const child = spawn(executable, args, {
+      cwd: process.cwd(),
+      windowsHide: true,
+      shell: false,
+      env: { ...process.env, GIT_CONFIG_GLOBAL: process.platform === 'win32' ? 'NUL' : '/dev/null' },
+    })
+    const chunks: Buffer[] = []
+    let bytes = 0
+    const collect = (chunk: Buffer) => {
+      bytes += chunk.length
+      if (bytes <= 2_000_000) chunks.push(chunk)
+    }
+    child.stdout.on('data', collect)
+    child.stderr.on('data', collect)
+    child.once('error', rejectCommand)
+    child.once('close', (code) => {
+      resolveCommand({
+        exitCode: code ?? 1,
+        output: Buffer.concat(chunks).toString('utf8').trim(),
+        durationMs: Date.now() - startedAt,
+      })
+    })
+  })
+}
+
+function commandSummary(output: string) {
+  const lines = output.split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
+  return lines.slice(-2).join(' · ').slice(0, 320) || '출력 없이 완료'
+}
+
 function json(response: { setHeader(name: string, value: string): void; end(body?: string): void }, payload: unknown) {
   response.setHeader('Content-Type', 'application/json; charset=utf-8')
   response.end(JSON.stringify(payload))
+}
+
+function wikidataClaimValue(entity: Record<string, unknown>, property: string) {
+  const claims = entity.claims as Record<string, Array<{ mainsnak?: { datavalue?: { value?: unknown } } }>> | undefined
+  return claims?.[property]?.[0]?.mainsnak?.datavalue?.value
+}
+
+function wikidataEntityId(entity: Record<string, unknown>, property: string) {
+  const value = wikidataClaimValue(entity, property)
+  return value && typeof value === 'object' && 'id' in value ? String((value as { id?: unknown }).id ?? '') : ''
+}
+
+function wikidataString(entity: Record<string, unknown>, property: string) {
+  const value = wikidataClaimValue(entity, property)
+  return typeof value === 'string' ? value : ''
+}
+
+function wikidataYear(entity: Record<string, unknown>, property: string) {
+  const value = wikidataClaimValue(entity, property)
+  const time = value && typeof value === 'object' && 'time' in value ? String((value as { time?: unknown }).time ?? '') : ''
+  const match = /^[+-](\d{4,})-/.exec(time)
+  return match ? Number(match[1]) : undefined
+}
+
+function wikidataLabel(entity: Record<string, unknown> | undefined) {
+  const labels = entity?.labels as Record<string, { value?: string }> | undefined
+  return labels?.ko?.value ?? labels?.en?.value ?? ''
+}
+
+async function fetchWikidataCandidates(query: string, signal: AbortSignal): Promise<ExternalSearchCandidate[]> {
+  const searchUrl = new URL('https://www.wikidata.org/w/api.php')
+  searchUrl.search = new URLSearchParams({
+    action: 'wbsearchentities',
+    search: query,
+    language: 'en',
+    uselang: 'ko',
+    type: 'item',
+    limit: '8',
+    format: 'json',
+    origin: '*',
+  }).toString()
+  const searchResponse = await fetch(searchUrl, { signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
+  if (!searchResponse.ok) throw new Error(`Wikidata 응답 오류 (${searchResponse.status})`)
+  const searchPayload = await searchResponse.json() as {
+    search?: Array<{ id: string; label?: string; description?: string; concepturi?: string; aliases?: string[] }>
+  }
+  const searchResults = searchPayload.search ?? []
+  if (!searchResults.length) return []
+
+  const entityUrl = new URL('https://www.wikidata.org/w/api.php')
+  entityUrl.search = new URLSearchParams({
+    action: 'wbgetentities',
+    ids: searchResults.map((item) => item.id).join('|'),
+    props: 'labels|aliases|claims|sitelinks',
+    languages: 'en|ko',
+    sitefilter: 'enwiki|kowiki',
+    format: 'json',
+    origin: '*',
+  }).toString()
+  const entityResponse = await fetch(entityUrl, { signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
+  if (!entityResponse.ok) throw new Error(`Wikidata 상세 응답 오류 (${entityResponse.status})`)
+  const entityPayload = await entityResponse.json() as { entities?: Record<string, Record<string, unknown>> }
+  const entities = entityPayload.entities ?? {}
+
+  const referencedIds = [...new Set(Object.values(entities).flatMap((entity) =>
+    [wikidataEntityId(entity, 'P31'), wikidataEntityId(entity, 'P495'), wikidataEntityId(entity, 'P740')].filter(Boolean),
+  ))]
+  let references: Record<string, Record<string, unknown>> = {}
+  if (referencedIds.length) {
+    const referenceUrl = new URL('https://www.wikidata.org/w/api.php')
+    referenceUrl.search = new URLSearchParams({
+      action: 'wbgetentities',
+      ids: referencedIds.join('|'),
+      props: 'labels',
+      languages: 'en|ko',
+      format: 'json',
+      origin: '*',
+    }).toString()
+    const referenceResponse = await fetch(referenceUrl, { signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
+    if (referenceResponse.ok) {
+      const referencePayload = await referenceResponse.json() as { entities?: Record<string, Record<string, unknown>> }
+      references = referencePayload.entities ?? {}
+    }
+  }
+
+  return searchResults.map((item) => {
+    const entity = entities[item.id] ?? {}
+    const aliases = entity.aliases as Record<string, Array<{ value?: string }>> | undefined
+    const sitelinks = entity.sitelinks as Record<string, { title?: string; url?: string }> | undefined
+    const enwiki = sitelinks?.enwiki
+    const kowiki = sitelinks?.kowiki
+    const wikipediaUrl = enwiki?.url
+      || (enwiki?.title ? `https://en.wikipedia.org/wiki/${encodeURIComponent(enwiki.title.replace(/ /g, '_'))}` : '')
+      || kowiki?.url
+      || (kowiki?.title ? `https://ko.wikipedia.org/wiki/${encodeURIComponent(kowiki.title.replace(/ /g, '_'))}` : '')
+    const entityTypeId = wikidataEntityId(entity, 'P31')
+    const countryId = wikidataEntityId(entity, 'P495')
+    const originId = wikidataEntityId(entity, 'P740')
+    return {
+      id: item.id,
+      name: wikidataLabel(entity) || item.label || item.id,
+      description: item.description ?? '',
+      url: item.concepturi ?? `https://www.wikidata.org/wiki/${item.id}`,
+      aliases: [
+        ...(item.aliases ?? []),
+        ...(aliases?.en ?? []).map((alias) => alias.value ?? ''),
+        ...(aliases?.ko ?? []).map((alias) => alias.value ?? ''),
+      ].filter(Boolean).slice(0, 8),
+      entityType: wikidataLabel(references[entityTypeId]),
+      country: wikidataLabel(references[countryId]),
+      origin: wikidataLabel(references[originId]),
+      formed: wikidataYear(entity, 'P571'),
+      musicBrainzId: wikidataString(entity, 'P434'),
+      youtubeChannelId: wikidataString(entity, 'P2397'),
+      imageFile: wikidataString(entity, 'P18'),
+      wikipediaUrl,
+    }
+  })
 }
 
 async function inspectUrl(entry: HealthEntry, localOrigin: string) {
@@ -156,6 +357,80 @@ export function studioApi(): Plugin {
         json(response, { available: true, canWrite: true, mode: 'local-studio' })
       })
 
+      server.middlewares.use('/api/studio/deploy-status', async (request, response, next) => {
+        if (request.method !== 'GET') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('배포 준비 상태는 로컬에서만 확인할 수 있습니다.')
+        }
+        try {
+          const gitPrefix = ['-c', `safe.directory=${process.cwd().replace(/\\/g, '/')}`]
+          const [branchResult, commitResult, statusResult] = await Promise.all([
+            runCommand('git', [...gitPrefix, 'branch', '--show-current']),
+            runCommand('git', [...gitPrefix, 'log', '-1', '--pretty=format:%h %s']),
+            runCommand('git', [...gitPrefix, 'status', '--short']),
+          ])
+          const failedResult = [branchResult, commitResult, statusResult].find((result) => result.exitCode !== 0)
+          if (failedResult) throw new Error(`Git 상태를 읽지 못했습니다. ${commandSummary(failedResult.output)}`)
+          const changes = statusResult.output.split(/\r?\n/)
+            .filter(Boolean)
+            .map((line) => ({ code: line.slice(0, 2).trim() || '?', file: line.slice(3).trim() }))
+            .filter((change) => change.file !== '.claude/settings.local.json')
+          json(response, {
+            branch: branchResult.output || '(브랜치 없음)',
+            latestCommit: commitResult.output || '커밋 기록 없음',
+            clean: changes.length === 0,
+            changes,
+            checkedAt: new Date().toISOString(),
+          })
+        } catch (error) {
+          response.statusCode = 500
+          response.end(error instanceof Error ? error.message : 'Git 변경 상태 확인 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/preflight', async (request, response, next) => {
+        if (request.method !== 'POST') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('배포 전 검사는 로컬에서만 실행할 수 있습니다.')
+        }
+        if (preflightInProgress) {
+          response.statusCode = 409
+          return response.end('이미 배포 전 검사가 실행 중입니다. 잠시 기다려주세요.')
+        }
+        preflightInProgress = true
+        const startedAt = new Date().toISOString()
+        const steps: Array<{ id: string; label: string; passed: boolean; durationMs: number; summary: string }> = []
+        const npmExecutable = process.platform === 'win32' ? process.execPath : 'npm'
+        const npmPrefix = process.platform === 'win32' ? [resolve(dirname(process.execPath), 'node_modules/npm/bin/npm-cli.js')] : []
+        const commands = [
+          { id: 'catalog', label: '밴드 데이터 검사', args: ['run', 'validate:data'] },
+          { id: 'taxonomy', label: '장르·분위기 검사', args: ['run', 'validate:taxonomy'] },
+          { id: 'moods', label: '분위기 커버리지 진단', args: ['run', 'audit:moods'] },
+          { id: 'tests', label: '자동 회귀 테스트', args: ['test'] },
+          { id: 'build', label: '프로덕션 빌드', args: ['run', 'build'] },
+        ]
+        try {
+          for (const command of commands) {
+            const result = await runCommand(npmExecutable, [...npmPrefix, ...command.args])
+            steps.push({ id: command.id, label: command.label, passed: result.exitCode === 0, durationMs: result.durationMs, summary: commandSummary(result.output) })
+            if (result.exitCode !== 0) break
+          }
+          json(response, {
+            passed: steps.length === commands.length && steps.every((step) => step.passed),
+            startedAt,
+            finishedAt: new Date().toISOString(),
+            steps,
+          })
+        } catch (error) {
+          response.statusCode = 500
+          response.end(error instanceof Error ? error.message : '배포 전 검사 실행 실패')
+        } finally {
+          preflightInProgress = false
+        }
+      })
+
       server.middlewares.use('/api/studio/health-check', async (request, response, next) => {
         if (request.method !== 'POST') return next()
         if (!isLocalRequest(request.headers.origin ?? '')) {
@@ -193,20 +468,18 @@ export function studioApi(): Plugin {
           response.statusCode = 400
           return response.end('검색어 두 글자 이상과 검색 제공자가 필요합니다.')
         }
+        const cacheKey = `${provider}:${query.toLocaleLowerCase()}`
+        const cached = externalSearchCache.get(cacheKey)
+        if (cached && cached.expiresAt > Date.now()) return json(response, { provider, query, results: cached.results, cached: true })
         try {
           const controller = new AbortController()
           const timeout = setTimeout(() => controller.abort(), 12_000)
-          let results: unknown[] = []
+          let results: ExternalSearchCandidate[] = []
           if (provider === 'wikidata') {
-            const url = new URL('https://www.wikidata.org/w/api.php')
-            url.search = new URLSearchParams({ action: 'wbsearchentities', search: query, language: 'ko', uselang: 'ko', type: 'item', limit: '8', format: 'json', origin: '*' }).toString()
-            const apiResponse = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor)' } })
-            if (!apiResponse.ok) throw new Error(`Wikidata 응답 오류 (${apiResponse.status})`)
-            const payload = await apiResponse.json() as { search?: Array<{ id: string; label?: string; description?: string; concepturi?: string; aliases?: string[] }> }
-            results = (payload.search ?? []).map((item) => ({ id: item.id, name: item.label ?? item.id, description: item.description ?? '', url: item.concepturi ?? `https://www.wikidata.org/wiki/${item.id}`, aliases: item.aliases ?? [] }))
+            results = await fetchWikidataCandidates(query, controller.signal)
           } else {
             const url = new URL('https://musicbrainz.org/ws/2/artist/')
-            url.search = new URLSearchParams({ query: `artist:${query}`, fmt: 'json', limit: '8' }).toString()
+            url.search = new URLSearchParams({ query: `artist:"${query.replace(/"/g, '')}"`, fmt: 'json', limit: '8' }).toString()
             const apiResponse = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'RockAtlasStudio/0.1 (local catalog editor; personal project)', Accept: 'application/json' } })
             if (!apiResponse.ok) throw new Error(`MusicBrainz 응답 오류 (${apiResponse.status})`)
             const payload = await apiResponse.json() as { artists?: Array<{ id: string; name: string; score?: number; type?: string; disambiguation?: string; country?: string; area?: { name?: string }; 'begin-area'?: { name?: string }; 'life-span'?: { begin?: string; end?: string; ended?: boolean }; aliases?: Array<{ name: string }> }> }
@@ -214,10 +487,13 @@ export function studioApi(): Plugin {
               id: item.id,
               name: item.name,
               description: [item.type, item.disambiguation].filter(Boolean).join(' · '),
+              entityType: item.type ?? '',
               url: `https://musicbrainz.org/artist/${item.id}`,
               score: item.score,
               country: item.country ?? '',
+              origin: item['begin-area']?.name ?? '',
               area: item['begin-area']?.name ?? item.area?.name ?? '',
+              formed: Number.parseInt(item['life-span']?.begin?.slice(0, 4) ?? '', 10) || undefined,
               begin: item['life-span']?.begin ?? '',
               end: item['life-span']?.end ?? '',
               ended: Boolean(item['life-span']?.ended),
@@ -225,6 +501,7 @@ export function studioApi(): Plugin {
             }))
           }
           clearTimeout(timeout)
+          externalSearchCache.set(cacheKey, { expiresAt: Date.now() + 60 * 60 * 1000, results })
           json(response, { provider, query, results })
         } catch (error) {
           response.statusCode = 502
@@ -384,8 +661,9 @@ export function studioApi(): Plugin {
             return
           }
           await validateCatalogBands(bands)
-          await archiveCatalog(typeof payload.changeNote === 'string' ? payload.changeNote : 'Studio 저장')
           const pendingRelations = Array.isArray(payload.pendingRelations) ? payload.pendingRelations : (currentOnDisk.pendingRelations ?? [])
+          validatePendingRelations(pendingRelations as unknown[], bands)
+          await archiveCatalog(typeof payload.changeNote === 'string' ? payload.changeNote : 'Studio 저장')
           const nextCatalog = { schemaVersion: 2, updatedAt: new Date().toISOString(), bands, pendingRelations }
           await writeFile(catalogPath, `${JSON.stringify(nextCatalog, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextCatalog.updatedAt, count: bands.length })

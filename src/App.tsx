@@ -12,6 +12,7 @@ import { siteContent as staticSiteContent } from './data/siteContent'
 import type { SiteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
 import { defaultRoute, parseExplorerRoute, routeToSearch, type ExplorerRoute } from './lib/explorerRoute'
+import { decodeJourney, encodeJourney, type JourneyStep, type JourneyVia } from './lib/hitchhiking'
 import { positionStyle } from './lib/imagePosition'
 import { checkStudioAvailability, studioUnavailableMessage } from './lib/studioApiClient'
 import { useExplorerState } from './hooks/useExplorerState'
@@ -82,7 +83,18 @@ function ExplorerApp() {
   const [mobileMenu, setMobileMenu] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const [shareBand, setShareBand] = useState<Band | null>(null)
-  const { favoriteIds, historyIds, toggleFavorite, recordVisit, clearHistory } = useExplorerState()
+  const [shareJourneyUrl, setShareJourneyUrl] = useState('')
+  const {
+    favoriteIds,
+    historyIds,
+    journeySteps,
+    toggleFavorite,
+    recordVisit,
+    clearHistory,
+    startJourney,
+    travelJourney,
+    restoreJourney,
+  } = useExplorerState()
   const isLivePreview = new URLSearchParams(window.location.search).get('livePreview') === '1'
   const [previewOverride, setPreviewOverride] = useState<SiteContent | null>(null)
   const siteContent = previewOverride ?? staticSiteContent
@@ -136,6 +148,8 @@ function ExplorerApp() {
       const nextBandId = getBandIdFromHash()
       setSelectedBandId(nextBandId)
       setSelectedBand(nextBandId ? publicBandById[nextBandId] ?? null : null)
+      const restoredJourney = decodeJourney(typeof event.state?.hitchJourney === 'string' ? event.state.hitchJourney : '')
+      if (nextBandId && restoredJourney.length) restoreJourney(restoredJourney)
       const savedScrollY = typeof event.state?.rockAtlasScrollY === 'number' ? event.state.rockAtlasScrollY : 0
       const restoreScroll = () => {
         const previousBehavior = document.documentElement.style.scrollBehavior
@@ -148,7 +162,7 @@ function ExplorerApp() {
     }
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
-  }, [])
+  }, [restoreJourney])
 
   useEffect(() => {
     if (selectedBand) recordVisit(selectedBand.id)
@@ -203,13 +217,27 @@ function ExplorerApp() {
     updateRoute(defaultRoute(), true)
   }, [updateRoute])
 
-  const openBand = useCallback((band: Band) => {
-    window.history.replaceState({ ...window.history.state, rockAtlasScrollY: window.scrollY }, '', window.location.href)
-    window.history.pushState({ rockAtlasNavigation: true, rockAtlasScrollY: 0, bandId: band.id }, '', `${window.location.pathname}${window.location.search}#band=${encodeURIComponent(band.id)}`)
+  const navigateToBand = useCallback((band: Band, currentJourney: JourneyStep[], nextJourney: JourneyStep[]) => {
+    window.history.replaceState({ ...window.history.state, rockAtlasScrollY: window.scrollY, hitchJourney: encodeJourney(currentJourney) }, '', window.location.href)
+    window.history.pushState({ rockAtlasNavigation: true, rockAtlasScrollY: 0, bandId: band.id, hitchJourney: encodeJourney(nextJourney) }, '', `${window.location.pathname}${window.location.search}#band=${encodeURIComponent(band.id)}`)
     setSelectedBandId(band.id)
     setSelectedBand(band)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
+
+  const openBand = useCallback((band: Band) => {
+    const nextJourney = [{ bandId: band.id }]
+    startJourney(band.id)
+    navigateToBand(band, journeySteps, nextJourney)
+  }, [journeySteps, navigateToBand, startJourney])
+
+  const travelToBand = useCallback((band: Band, via: JourneyVia) => {
+    const nextJourney = journeySteps.at(-1)?.bandId === band.id
+      ? journeySteps
+      : [...journeySteps, { bandId: band.id, via }].slice(-12)
+    travelJourney(band.id, via)
+    navigateToBand(band, journeySteps, nextJourney)
+  }, [journeySteps, navigateToBand, travelJourney])
 
   const closeBand = useCallback(() => {
     if (window.history.state?.rockAtlasNavigation) {
@@ -226,6 +254,17 @@ function ExplorerApp() {
   const shareBandUrl = shareBand
     ? new URL(`bands/${encodeURIComponent(shareBand.id)}/`, `${window.location.origin}${window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname.replace(/[^/]*$/, '')}`).toString()
     : undefined
+  const openJourneyShare = useCallback(() => {
+    if (!selectedBand || journeySteps.length < 2) return
+    const url = new URL(window.location.href)
+    url.searchParams.delete('studioPreview')
+    url.searchParams.delete('livePreview')
+    url.searchParams.set('journey', encodeJourney(journeySteps))
+    url.hash = `band=${encodeURIComponent(selectedBand.id)}`
+    setShareBand(null)
+    setShareJourneyUrl(url.toString())
+    setShareOpen(true)
+  }, [journeySteps, selectedBand])
   const presetFonts = fontSets[siteContent.theme.fontPreset]
   const hasCustomFont = Boolean(siteContent.theme.customFontUrl)
   const fonts = {
@@ -267,10 +306,34 @@ function ExplorerApp() {
   }
 
   if (selectedBand) {
+    const journeyNames = journeySteps
+      .map((step) => publicBandById[step.bandId]?.name)
+      .filter((name): name is string => Boolean(name))
     return <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}
-      <BandDetail band={selectedBand} onBack={closeBand} onSelectBand={openBand} isFavorite={favoriteIds.includes(selectedBand.id)} onToggleFavorite={toggleFavorite} visitedIds={historyIds} onShare={() => { setShareBand(selectedBand); setShareOpen(true) }} />
-      <SharePanel open={shareOpen} title={`${selectedBand.name} — ROCK ATLAS`} description={`${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`} url={shareBandUrl} onClose={() => setShareOpen(false)} />
+      <BandDetail
+        band={selectedBand}
+        onBack={closeBand}
+        isFavorite={favoriteIds.includes(selectedBand.id)}
+        onToggleFavorite={toggleFavorite}
+        visitedIds={historyIds}
+        journeySteps={journeySteps}
+        onTravelBand={travelToBand}
+        onResetJourney={() => startJourney(selectedBand.id)}
+        onShareJourney={openJourneyShare}
+        onShare={() => {
+          setShareJourneyUrl('')
+          setShareBand(selectedBand)
+          setShareOpen(true)
+        }}
+      />
+      <SharePanel
+        open={shareOpen}
+        title={shareJourneyUrl ? '나의 ROCK ATLAS 히치하이킹 여정' : `${selectedBand.name} — ROCK ATLAS`}
+        description={shareJourneyUrl ? journeyNames.join(' → ') : `${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`}
+        url={shareJourneyUrl || shareBandUrl}
+        onClose={() => setShareOpen(false)}
+      />
     </div>
   }
 
@@ -278,7 +341,7 @@ function ExplorerApp() {
   const homeMain = (
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
-        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres" onClick={scrollToGenres}>장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => { setShareBand(null); setShareOpen(true) }}><Share2 size={16} /> 지도 공유하기</button></div></div>
+        <div className="hero-copy"><span className="eyebrow"><Compass size={15} /> WESTERN ROCK DISCOVERY ARCHIVE</span><h1 className="hero-title-long">{siteContent.heroTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h1>{siteContent.heroDescription && <p>{siteContent.heroDescription}</p>}<div className="hero-actions"><a className="primary-button" href="#genres" onClick={scrollToGenres}>장르부터 탐색 <ArrowDown size={17} /></a><button className="text-button" onClick={surpriseMe}><Shuffle size={16} /> 아무 밴드나 만나기</button><button className="text-button" onClick={() => { setShareJourneyUrl(''); setShareBand(null); setShareOpen(true) }}><Share2 size={16} /> 지도 공유하기</button></div></div>
         {siteContent.theme.cosmicMode !== 'off' && siteContent.theme.heroArtMode !== 'image' && <div className="cosmic-navigation-graphic" aria-hidden="true"><span className="cosmic-sun">RA</span><i className="orbit orbit-one"><b /></i><i className="orbit orbit-two"><b /></i><i className="orbit orbit-three"><b /></i><em>ROCK / DEEP SPACE / 13 SYSTEMS</em></div>}
         <div className={`hero-art hero-art-${siteContent.theme.heroArtMode}`} aria-hidden="true">{siteContent.theme.heroArtMode === 'vinyl' && <><div className="vinyl-ring ring-one" /><div className="vinyl-ring ring-two" /><div className="vinyl-ring ring-three" /></>}{siteContent.theme.heroArtMode === 'image' && siteContent.theme.heroImageUrl && <img className="hero-custom-image" src={siteContent.theme.heroImageUrl} alt="" loading="eager" decoding="async" fetchPriority="high" style={positionStyle(siteContent.theme.heroImagePosition, siteContent.theme.heroImagePositionMobile)} />}<div className="hero-stamp"><span>{bands.length}</span>CURATED<br />BANDS</div><div className="hero-label">PLAY LOUD<br />EXPLORE DEEP</div></div>
         <div className="hero-index" aria-hidden="true">VOL. 01 / 2026</div>

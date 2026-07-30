@@ -377,7 +377,17 @@ function normalizeRelations(value: unknown): Relation[] {
     // Gemini often rates strength on its own 1-5 scale; clamp toward the nearer end instead of silently
     // collapsing an out-of-range "5" (meant as strongest) down to 1 (weakest).
     const strength = (Number.isFinite(rawStrength) ? Math.min(3, Math.max(1, rawStrength)) : 1) as 1 | 2 | 3
-    return [{ targetBandId, kind, strength, note: textProse(entry.note) || '외부 조사에서 제안된 관계 · 근거 확인 필요', reviewStatus: 'draft' }]
+    const evidenceUrl = textUrl(entry.evidenceUrl ?? entry.sourceUrl)
+    return [{
+      targetBandId,
+      kind,
+      strength,
+      note: textProse(entry.note) || '외부 조사에서 제안된 관계 · 근거 확인 필요',
+      reviewStatus: 'draft',
+      source: evidenceUrl
+        ? { label: '관계 근거', url: evidenceUrl, publisher: 'Editorial', note: 'Gemini가 제안한 근거 링크 · 운영자 확인 필요' }
+        : undefined,
+    }]
   })
 }
 
@@ -783,7 +793,23 @@ const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
   'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable', 'youtube-fallback',
   'english-tags', 'english-roles', 'wikidata-mismatch', 'musicbrainz-mismatch',
+  'unverified-influence-relation',
 ])
+
+export function refreshCandidateReviewState(candidate: IntakeCandidate, externalVerificationReady = false) {
+  const hasError = candidate.issues.some((issue) => issue.severity === 'error')
+  const hasBlockingWarning = candidate.issues.some((issue) => issue.severity === 'warning' && reviewBlockingCodes.has(issue.code))
+  candidate.canApprove = !hasError
+  candidate.band.reviewStatus = !hasError && !hasBlockingWarning && externalVerificationReady ? 'published' : 'draft'
+  candidate.band.reviewedBy = candidate.band.reviewStatus === 'published' ? 'Studio 자동 교차검증' : undefined
+  candidate.band.reviewedAt = candidate.band.reviewStatus === 'published' ? new Date().toISOString() : undefined
+  if (candidate.band.taxonomyV2) {
+    candidate.band.taxonomyV2 = {
+      ...candidate.band.taxonomyV2,
+      reviewStatus: candidate.band.reviewStatus === 'published' ? 'reviewed' : 'draft',
+    }
+  }
+}
 
 export async function inspectBandIntake(rawText: string, existingBands: Band[]): Promise<IntakeResult> {
   const globalIssues: IntakeIssue[] = []
@@ -854,6 +880,15 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     }))
     if (unknownRelations.length) issues.push({ severity: 'warning', code: 'pending-relations', message: `아직 카탈로그에 없는 밴드를 가리키는 관계를 보류함에 저장했습니다: ${unknownRelations.map((relation) => relation.targetBandId).join(', ')} (해당 밴드가 나중에 추가되면 저장 시 양쪽에 자동으로 연결됩니다)` })
     if (selfRelations.length) issues.push({ severity: 'warning', code: 'self-relation-removed', message: '자기 자신을 가리키는 관계를 제외했습니다.' })
+    const unverifiedInfluenceRelations = [...band.relations, ...unknownRelations]
+      .filter((relation) => ['influenced-by', 'influenced', 'evolution'].includes(relation.kind) && !relation.source?.url)
+    if (unverifiedInfluenceRelations.length) {
+      issues.push({
+        severity: 'warning',
+        code: 'unverified-influence-relation',
+        message: `영향·계보 관계 ${unverifiedInfluenceRelations.length}건은 근거 링크가 없어 공개 전 확인이 필요합니다. 비슷한 소리·같은 장면 제안과 달리 영향 관계는 자동 확정하지 않습니다.`,
+      })
+    }
     if (band.summary.length < 30) issues.push({ severity: 'warning', code: 'short-summary', message: '업적·발자취 소개가 짧습니다. 30자 이상을 권장합니다.' })
     if (band.style.length < 40) issues.push({ severity: 'warning', code: 'short-style', message: '음악 설명이 짧습니다. 소리와 구성을 40자 이상 적는 것을 권장합니다.' })
     if (!band.taxonomyV2?.subgenreIds.length) issues.push({ severity: 'warning', code: 'no-subgenres', message: 'v2 세부 장르가 없어 대표 장르만 적용됩니다.' })
@@ -885,6 +920,20 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
   const band = candidate.band
 
   await Promise.all(band.tracks.map(async (track, index) => {
+    if (!track.youtubeId) {
+      band.tracks[index] = {
+        ...track,
+        source: {
+          ...track.source,
+          label: `${band.name} — ${track.title} YouTube 검색`,
+          url: youtubeSearchUrl(band.name, track.title),
+          official: false,
+          note: 'Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다.',
+        },
+      }
+      candidate.issues.push({ severity: 'info', code: 'youtube-search-ready', message: `${track.title}: 곡 정보는 보존하고 안전한 YouTube 검색 링크를 준비했습니다.` })
+      return
+    }
     const check = await checkYoutubeVideo(track.youtubeId, { bandName: band.name, trackTitle: track.title })
     if (!check.ok) {
       if (check.reason === 'network') {
@@ -983,15 +1032,9 @@ async function enrichCandidate(candidate: IntakeCandidate): Promise<void> {
     }
   }
 
-  const hasError = candidate.issues.some((issue) => issue.severity === 'error')
-  const hasBlockingWarning = candidate.issues.some((issue) => issue.severity === 'warning' && reviewBlockingCodes.has(issue.code))
-  candidate.canApprove = !hasError
-  if (!hasError && !hasBlockingWarning) {
-    band.reviewStatus = 'published'
-    band.reviewedBy = '자동 검수 (AI)'
-    band.reviewedAt = new Date().toISOString()
-    if (band.taxonomyV2) band.taxonomyV2 = { ...band.taxonomyV2, reviewStatus: 'reviewed' }
-    candidate.issues.push({ severity: 'info', code: 'auto-reviewed', message: '자동 검사를 모두 통과해 공개 상태로 추가됩니다.' })
+  refreshCandidateReviewState(candidate, false)
+  if (!candidate.issues.some((issue) => issue.severity === 'error')) {
+    candidate.issues.push({ severity: 'info', code: 'baseline-reviewed', message: '구조·분류·링크 기본 검사를 마쳤습니다. Studio가 이어서 외부 데이터베이스를 교차 확인합니다.' })
   }
 }
 
@@ -1004,5 +1047,5 @@ export function finalizeIntakeBand(band: Band): Band {
 export function buildGeminiResearchPrompt() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
   const moodIdsText = taxonomyMoods.map((mood) => `${mood.id}=${mood.name}`).join(', ')
-  return `ROCK ATLAS GEM 지침 v3. 사용자가 밴드 이름만 입력하면 웹에서 사실을 확인하고 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지하며 모르는 사실·ID·링크는 추측하지 말고 빈 값으로 둔다. 문자열 값 안에 큰따옴표가 들어가면(별명, 인용구 등) 반드시 \"처럼 이스케이프한다. 예: "James \"Munky\" Shaffer".\n\n고유명사와 URL을 제외한 설명·태그·멤버 역할·관계 근거는 한국어 평서체(~다/~이다)로 쓴다. 영어 역할은 리드 보컬·기타·베이스·드럼·키보드·백보컬처럼 번역한다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"연도·성과·영향이 드러나는 한국어 2문장","style":"리듬·기타·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"들을 지점을 설명하는 한국어 한 문장","url":"실제로 직접 연 YouTube watch URL, 확인 못 하면 빈 문자열"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|influenced-by|influenced|shared-scene|evolution","strength":1,"note":"관계 근거 한국어 한 문장"}],"wikidataId":"Q숫자","musicBrainzId":"UUID","wikipediaUrl":"https://...","youtubeChannelUrl":"실제로 연 공식 채널 URL","image":{"commonsFile":"실제로 연 Wikimedia Commons File: 파일명, 확인 못 하면 빈 문자열"}}]}\n\n대표곡은 히트 싱글·차트 진입·스트리밍 조회수 등 대중적 인지도가 가장 높은 순서로 3곡, 핵심 현재·전 멤버만, 관계는 확실한 것 최대 3개만 쓴다. YouTube URL은 검색 결과 주소를 복사하지 말고 실제 영상을 연 뒤 곡명과 아티스트가 모두 맞는지 확인한다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 글자 하나도 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
+  return `ROCK ATLAS GEM 지침 v4. 사용자가 밴드 이름만 입력하면 웹에서 내용을 조사해 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지한다. 모르는 내용은 추측하지 말고 빈 값 또는 빈 배열로 둔다. 정확한 Wikidata·MusicBrainz ID, 이미지 파일명, YouTube 영상·채널 URL은 쓰지 않는다. 이것들은 ROCK ATLAS Studio가 직접 검색하고 교차 검증한다.\n\n고유명사를 제외한 설명·태그·멤버 역할·관계 이유는 한국어 평서체(~다/~이다)로 쓴다. 소개문에는 확인 가능한 연도·앨범·차트·수상처럼 구체적인 발자취만 쓰고, 확인하지 못한 판매량·최초·최고 같은 표현은 쓰지 않는다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"결성·주요 작품·성과·영향이 드러나는 한국어 2문장","style":"리듬·악기·보컬·프로덕션·곡 전개를 직관적으로 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"이 곡에서 들을 지점 한국어 한 문장"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|shared-scene","strength":1,"note":"비슷한 이유 또는 같은 장면인 이유 한국어 한 문장"}]}]}\n\n대표곡은 인지도가 높은 순서로 3곡, 핵심 현재·전 멤버만 쓴다. 관계는 확실한 sounds-like 또는 shared-scene 후보만 최대 2개 쓴다. influenced-by·influenced·evolution은 출처 검증이 필요하므로 출력하지 않는다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
 }

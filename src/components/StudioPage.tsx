@@ -8,11 +8,14 @@ import type { Band, BandTaxonomyV2, GenreId, PendingRelation, Relation, Relation
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
+import { resolvePendingRelations, syncMirroredRelation as syncMirroredRelationData } from '../lib/relationSync'
 import { studioFetchJson } from '../lib/studioApiClient'
 import { clone, createDraftBand, createTaxonomyDraft, membersToText, parseEraTags, parseMembers, parseTracks, tracksToText } from '../lib/studioBandUtils'
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
+import type { LinkHealthSummary } from './LinkHealthPanel'
+import { StudioOperationsDashboard } from './StudioOperationsDashboard'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
 import { YoutubeTrackFinder, type YoutubeCandidate } from './YoutubeTrackFinder'
 import { YoutubeChannelFinder, type YoutubeChannelCandidate } from './YoutubeChannelFinder'
@@ -26,49 +29,6 @@ const relationLabels: Record<RelationKind, string> = {
   influenced: '영향을 줌',
   'shared-scene': '같은 장면',
   evolution: '계보의 확장',
-}
-
-/** "A was influenced by B" read from B's side is "B influenced A" — the only two kinds with a real
- *  direction. The rest (sounds-like, shared-scene, evolution) describe the same thing from either
- *  band's side, so they mirror as themselves. */
-const inverseRelationKind = (kind: RelationKind): RelationKind =>
-  kind === 'influenced-by' ? 'influenced' : kind === 'influenced' ? 'influenced-by' : kind
-
-/** Connects a batch of pending relations (saved when their target band didn't exist yet) against the
- *  current band list: any pending relation whose target has since been added gets a real relation on
- *  the source band plus an auto-mirrored one on the target, exactly like `syncMirroredRelation` does
- *  for a live edit. Anything still unresolved (source or target missing) is carried over unchanged. */
-function resolvePendingRelations(bandsList: Band[], pendingList: PendingRelation[]) {
-  let bands = bandsList
-  const byId = () => new Map(bands.map((band) => [band.id, band]))
-  const remaining: PendingRelation[] = []
-  let resolvedCount = 0
-  for (const pending of pendingList) {
-    const index = byId()
-    const source = index.get(pending.sourceBandId)
-    const target = index.get(pending.targetBandId)
-    if (!source || !target || pending.sourceBandId === pending.targetBandId) {
-      remaining.push(pending)
-      continue
-    }
-    if (!source.relations.some((relation) => relation.targetBandId === pending.targetBandId)) {
-      const forward: Relation = { targetBandId: pending.targetBandId, kind: pending.kind, strength: pending.strength, note: pending.note, reviewStatus: 'draft' }
-      bands = bands.map((band) => band.id === source.id ? { ...band, relations: [...band.relations, forward] } : band)
-    }
-    if (!target.relations.some((relation) => relation.targetBandId === pending.sourceBandId)) {
-      const mirrored: Relation = {
-        targetBandId: pending.sourceBandId,
-        kind: inverseRelationKind(pending.kind),
-        strength: pending.strength,
-        note: `${pending.sourceBandName} 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)`,
-        reviewStatus: 'draft',
-        mirroredFrom: pending.sourceBandId,
-      }
-      bands = bands.map((band) => band.id === target.id ? { ...band, relations: [...band.relations, mirrored] } : band)
-    }
-    resolvedCount += 1
-  }
-  return { bands, remaining, resolvedCount }
 }
 
 const recoveryKey = 'rock-atlas-studio-recovery-v1'
@@ -232,6 +192,7 @@ export function StudioPage() {
   const [taxonomyDirty, setTaxonomyDirty] = useState(false)
   const [taxonomyMessage, setTaxonomyMessage] = useState('현재 13개 장르 카드입니다.')
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
+  const [linkHealth, setLinkHealth] = useState<LinkHealthSummary>({ checked: false, loading: false, total: 0, ok: 0, redirected: 0, restricted: 0, broken: 0, error: 0 })
   const importRef = useRef<HTMLInputElement>(null)
   const isExisting = catalogBands.some((band) => band.id === selectedId)
 
@@ -497,34 +458,7 @@ export function StudioPage() {
    *  ever removed or left alone (never overwritten). */
   const syncMirroredRelation = (ownBandId: string, ownBandName: string, previous: Relation | undefined, next: Relation | undefined) => {
     setCatalogBands((current) => {
-      let bands = current
-      let changed = false
-      if (previous) {
-        const oldTargetIndex = bands.findIndex((band) => band.id === previous.targetBandId)
-        if (oldTargetIndex >= 0) {
-          const target = bands[oldTargetIndex]
-          const filtered = target.relations.filter((relation) => !(relation.targetBandId === ownBandId && relation.mirroredFrom === ownBandId))
-          if (filtered.length !== target.relations.length) {
-            bands = bands.map((band, index) => index === oldTargetIndex ? { ...band, relations: filtered } : band)
-            changed = true
-          }
-        }
-      }
-      if (next && next.targetBandId !== ownBandId) {
-        const newTargetIndex = bands.findIndex((band) => band.id === next.targetBandId)
-        if (newTargetIndex >= 0 && !bands[newTargetIndex].relations.some((relation) => relation.targetBandId === ownBandId)) {
-          const mirrored: Relation = {
-            targetBandId: ownBandId,
-            kind: inverseRelationKind(next.kind),
-            strength: next.strength,
-            note: `${ownBandName} 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)`,
-            reviewStatus: 'draft',
-            mirroredFrom: ownBandId,
-          }
-          bands = bands.map((band, index) => index === newTargetIndex ? { ...band, relations: [...band.relations, mirrored] } : band)
-          changed = true
-        }
-      }
+      const { bands, changed } = syncMirroredRelationData(current, ownBandId, ownBandName, previous, next)
       if (changed) setCatalogDirty(true)
       return changed ? bands : current
     })
@@ -733,9 +667,11 @@ export function StudioPage() {
 
         <div className="studio-editor">
           {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
+          <StudioOperationsDashboard bands={catalogBands} pendingRelations={pendingRelations} hasUnsavedChanges={dirty || catalogDirty || siteDirty || taxonomyDirty} linkHealth={linkHealth} onSelectBand={chooseBand} />
+
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
 
-          <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} pendingRelations={pendingRelations} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} />
+          <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} pendingRelations={pendingRelations} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} onLinkHealthSummary={setLinkHealth} />
 
           <StudioBandBasics
             draft={draft}

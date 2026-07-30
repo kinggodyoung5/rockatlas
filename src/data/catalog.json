@@ -1,7 +1,3475 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-30T07:44:41.192Z",
+  "updatedAt": "2026-07-30T12:37:49.340Z",
   "bands": [
+    {
+      "id": "r-e-m",
+      "name": "R.E.M.",
+      "formed": 1980,
+      "origin": "아테네, 미국",
+      "countryCode": "US",
+      "activeYears": "1980-2011",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "쟁글 팝",
+        "컬리지 록",
+        "포크 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "쟁글 팝",
+            "컬리지 록",
+            "포크 록"
+          ]
+        }
+      ],
+      "tags": [
+        "얼터너티브록",
+        "컬리지록",
+        "쟁글팝",
+        "포크록",
+        "미국록"
+      ],
+      "summary": "1980년 미국 조지아주 아테네에서 결성되어 1980년대 인디·컬리지 록을 주도하고 1990년대 얼터너티브 록의 메인스트림화를 이끈 밴드다. 앨범 (1991)과 (1992) 등으로 세계적인 성공을 거두었으며 2007년 로큰롤 전당에 등재되었다.",
+      "style": "피터 벅의 아르페지오 쟁글 기타와 마이클 스타이프의 모호하면서도 서정적인 보컬이 특유의 정서를 형성한다. 포크의 멜로디 감성과 펑크의 에너지, 밀스-베리 리듬 섹션의 화음이 어우러져 독창적인 어쿠스틱·얼터너티브 사운드를 완성한다.",
+      "image": {
+        "wikipediaTitle": "R.E.M.",
+        "fileName": "File:R.E.M. at Stadio Euganeo, Padova, Italy, 2003-07-22 04.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/R.E.M._at_Stadio_Euganeo%2C_Padova%2C_Italy%2C_2003-07-22_04.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/R.E.M._at_Stadio_Euganeo%2C_Padova%2C_Italy%2C_2003-07-22_04.jpg",
+        "alt": "R.E.M. 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:R.E.M. at Stadio Euganeo, Padova, Italy, 2003-07-22 04.jpg",
+          "creator": "Stefano",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-30T12:36:39.745Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Michael Stipe",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "1980-2011"
+        },
+        {
+          "name": "Peter Buck",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1980-2011"
+        },
+        {
+          "name": "Mike Mills",
+          "role": "베이스, 키보드, 백보컬",
+          "status": "current",
+          "activeYears": "1980-2011"
+        },
+        {
+          "name": "Bill Berry",
+          "role": "드럼, 퍼커션",
+          "status": "former",
+          "activeYears": "1980-1997"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "losing-my-religion",
+          "title": "Losing My Religion",
+          "year": 1991,
+          "album": "Out of Time",
+          "guide": "만돌린 리프와 마이클 스타이프의 애절하고 절제된 보컬 연주에 집중한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "R.E.M. — Losing My Religion YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Losing%20My%20Religion",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "everybody-hurts",
+          "title": "Everybody Hurts",
+          "year": 1992,
+          "album": "Automatic for the People",
+          "guide": "서정적인 6/8 박자 피아노·스트링 편곡과 위로를 건네는 진정성 어린 보컬을 듣는다.",
+          "youtubeId": "",
+          "source": {
+            "label": "R.E.M. — Everybody Hurts YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Everybody%20Hurts",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "man-on-the-moon",
+          "title": "Man on the Moon",
+          "year": 1992,
+          "album": "Automatic for the People",
+          "guide": "후렴구로 치달을 때 전개되는 서부영화풍 슬라이드 기타와 앤디 카우프만 모티브의 후킹한 멜로디를 감상한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "R.E.M. — Man on the Moon YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Man%20on%20the%20Moon",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "u2",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 대학 라디오 및 포스트펑크/인디 씬에서 출발해 세계적인 메이저 록 밴드로 성장한 궤적을 함께한다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "R.E.M. — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q134969",
+          "publisher": "Wikidata",
+          "externalId": "Q134969",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "R.E.M. — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/R.E.M.",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "R.E.M. — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC7eaRqtonpyiYw0Pns0Au_g",
+          "publisher": "YouTube",
+          "externalId": "UC7eaRqtonpyiYw0Pns0Au_g",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "R.E.M. — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/ea4dfa26-f633-4da6-a52a-f49ea4897b58",
+          "publisher": "MusicBrainz",
+          "externalId": "ea4dfa26-f633-4da6-a52a-f49ea4897b58",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "R.E.M. — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:R.E.M. at Stadio Euganeo, Padova, Italy, 2003-07-22 04.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "jangle-pop",
+          "college-rock",
+          "folk-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 4,
+          "romantic-emotional": 4,
+          "acoustic-organic": 4,
+          "anthemic-live": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-07-30T12:37:21.182Z"
+    },
+    {
+      "id": "david-bowie",
+      "name": "David Bowie",
+      "formed": 1962,
+      "origin": "London, England",
+      "countryCode": "GB",
+      "activeYears": "1962–2016",
+      "primaryGenre": "progressive-art",
+      "genreIds": [
+        "progressive-art"
+      ],
+      "subgenres": [
+        "글램 록",
+        "아트 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1960s",
+          "genreIds": [
+            "progressive-art"
+          ],
+          "subgenres": [
+            "글램 록",
+            "아트 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "글램록",
+        "아트록",
+        "싱어송라이터",
+        "70년대록"
+      ],
+      "summary": "1962년 영국 런던에서 데뷔한 데이비드 보위는 글램 록, 아트 록, 소울, 일렉트로닉을 아우르며 카멜레온 같은 변신을 거듭한 록 역사상 가장 영향력 있는 싱어송라이터다. 지기 스타더스트(Ziggy Stardust) 등의 페르소나와 파격적인 음악적 실험으로 팝 문화 전반에 지대한 영향을 남기고 록 명예의 전당에 헌액되었다.",
+      "style": "글램 록의 화려한 디스토션 기타와 캐치한 팝 멜로디부터 아방가르드한 신디사이저 사운드스케이프까지 다채로운 영역을 넘나든다. 드라마틱한 보컬 연출과 연극적 페르소나, 시대를 앞서가는 감각적인 프로덕션이 음악의 핵심을 이룬다.",
+      "image": {
+        "wikipediaTitle": "David Bowie",
+        "alt": "David Bowie 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "David Bowie",
+          "role": "리드 보컬·기타·색소폰·키보드",
+          "status": "former",
+          "activeYears": "1962–2016"
+        },
+        {
+          "name": "Mick Ronson",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1970–1973"
+        },
+        {
+          "name": "Carlos Alomar",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1974–1987, 1995–2003"
+        },
+        {
+          "name": "Dennis Davis",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1974–1980"
+        },
+        {
+          "name": "George Murray",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1975–1980"
+        },
+        {
+          "name": "Gail Ann Dorsey",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "1995–2016"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "space-oddity",
+          "title": "Space Oddity",
+          "year": 1969,
+          "album": "David Bowie",
+          "guide": "우주에 고립된 소령 톰의 이야기를 서정적이고 몽환적인 스페이스 포크/록 사운드로 풀어낸 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "David Bowie — Space Oddity YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=David%20Bowie%20Space%20Oddity",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "heroes",
+          "title": "Heroes",
+          "year": 1977,
+          "album": "\"Heroes\"",
+          "guide": "로버트 프립의 지속음 기타 연주와 보위의 절규하는 듯한 파워풀한 보컬이 만들어내는 극적인 록 송가다.",
+          "youtubeId": "",
+          "source": {
+            "label": "David Bowie — Heroes YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=David%20Bowie%20Heroes",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "starman",
+          "title": "Starman",
+          "year": 1972,
+          "album": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+          "guide": "지기 스타더스트 페르소나의 시작을 알린 벅차오르는 클래식 글램 팝 록 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "David Bowie — Starman YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=David%20Bowie%20Starman",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-velvet-underground",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "루 리드의 파격적인 아방가르드 아트 록 스타일과 가사에 직접적인 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "queen",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 록 씬을 함께 이끌며 대형 히트 싱글 'Under Pressure'를 협업 제작했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "nine-inch-nails",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "실험적인 산업 음악 사운드와 페르소나 연출 면에서 보위의 영향을 크게 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "David Bowie — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q5383",
+          "publisher": "Wikidata",
+          "externalId": "Q5383",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "David Bowie — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5441c29d-3602-4898-b1a1-b77fa23b8e50",
+          "publisher": "MusicBrainz",
+          "externalId": "5441c29d-3602-4898-b1a1-b77fa23b8e50",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "David Bowie — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/David_Bowie",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "David Bowie — 공식 YouTube",
+          "url": "https://www.youtube.com/@davidbowie",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@davidbowie",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "hard-glam-rock",
+          "post-punk-goth-new-wave",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "glam-rock",
+          "art-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "cosmic-psychedelic": 5,
+          "romantic-emotional": 4,
+          "bright-upbeat": 4,
+          "experimental-weird": 4,
+          "cold-urban": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "the-velvet-underground",
+      "name": "The Velvet Underground",
+      "formed": 1964,
+      "origin": "New York City, USA",
+      "countryCode": "US",
+      "activeYears": "1964–1973, 1990, 1992–1993, 1996",
+      "primaryGenre": "progressive-art",
+      "genreIds": [
+        "progressive-art"
+      ],
+      "subgenres": [
+        "아트 록",
+        "익스페리멘털 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1960s",
+          "genreIds": [
+            "progressive-art"
+          ],
+          "subgenres": [
+            "아트 록",
+            "익스페리멘털 록"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "아방가르드록",
+        "프로토펑크",
+        "아트록",
+        "60년대록"
+      ],
+      "summary": "1964년 미국 뉴욕에서 루 리드와 존 케일을 중심으로 결성된 더 벨벳 언더그라운드는 얼터너티브 록과 아방가르드 록의 초석을 다진 전설적인 밴드다. 상업적 성공은 거두지 못했으나 펑크, 포스트 펑크, 인디 록 전반에 걸쳐 유례없는 음악적 영향력을 남겼다.",
+      "style": "실험적인 노이즈 디스토션과 아방가르드 비올라 연주, 단조롭고 반복적인 드럼 비트가 오버랩되는 사운드가 특징이다. 루 리드의 무심한 듯 읊조리는 보컬과 금기시되던 뉴욕의 도시 하층민 문화를 다룬 파격적인 가사 전개가 돋보인다.",
+      "image": {
+        "wikipediaTitle": "The Velvet Underground",
+        "alt": "The Velvet Underground 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Lou Reed",
+          "role": "리드 보컬·기타",
+          "status": "former",
+          "activeYears": "1964–1970, 1990, 1992–1993, 1996"
+        },
+        {
+          "name": "John Cale",
+          "role": "베이스·비올라·키보드",
+          "status": "former",
+          "activeYears": "1964–1968, 1990, 1992–1993, 1996"
+        },
+        {
+          "name": "Sterling Morrison",
+          "role": "기타·베이스·백보컬",
+          "status": "former",
+          "activeYears": "1964–1971, 1990, 1992–1993"
+        },
+        {
+          "name": "Maureen Tucker",
+          "role": "드럼·퍼커션",
+          "status": "former",
+          "activeYears": "1965–1971, 1990, 1992–1993, 1996"
+        },
+        {
+          "name": "Doug Yule",
+          "role": "리드 보컬·베이스·키보드",
+          "status": "former",
+          "activeYears": "1968–1973"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "i-m-waiting-for-the-man",
+          "title": "I'm Waiting for the Man",
+          "year": 1967,
+          "album": "The Velvet Underground & Nico",
+          "guide": "거친 디스토션 기타 타격음과 단조로운 드럼 비트 위로 피어나는 프로토 펑크의 정수를 감상할 수 있다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Velvet Underground — I'm Waiting for the Man YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Velvet%20Underground%20I'm%20Waiting%20for%20the%20Man",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "sunday-morning",
+          "title": "Sunday Morning",
+          "year": 1967,
+          "album": "The Velvet Underground & Nico",
+          "guide": "첼레스타의 아름다운 선율과 루 리드의 나른한 보컬이 어우러지는 드림 팝풍의 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Velvet Underground — Sunday Morning YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Velvet%20Underground%20Sunday%20Morning",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "heroin",
+          "title": "Heroin",
+          "year": 1967,
+          "album": "The Velvet Underground & Nico",
+          "guide": "비올라의 날카로운 소음과 템포가 가속되는 서사적 구성으로 압도적인 몰입감을 선사한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Velvet Underground — Heroin YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Velvet%20Underground%20Heroin",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "joy-division",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "어둡고 냉소적인 사운드 스케이프와 실험적인 곡 구성으로 포스트 펑크 형성에 큰 영향을 미쳤다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "david-bowie",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 파격적인 주제의식과 아방가르드 록 스타일로 다윗 보위의 음악 세계에 결정적인 영향을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Velvet Underground — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=The%20Velvet%20Underground&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Velvet Underground — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=The%20Velvet%20Underground&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Velvet Underground — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Velvet_Underground",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Velvet Underground — 공식 YouTube",
+          "url": "https://www.youtube.com/@TheVelvetUndergroundOfficial",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@TheVelvetUndergroundOfficial",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "progressive-art-psychedelic",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "post-punk-goth-new-wave",
+          "shoegaze-dream-post"
+        ],
+        "subgenreIds": [
+          "art-rock",
+          "experimental-rock"
+        ],
+        "moodScores": {
+          "dark-gloomy": 5,
+          "noisy-wall": 5,
+          "experimental-weird": 4,
+          "cold-urban": 4,
+          "cosmic-psychedelic": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "alter-bridge",
+      "name": "Alter Bridge",
+      "formed": 2004,
+      "origin": "Orlando, USA",
+      "countryCode": "US",
+      "activeYears": "2004–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "얼터너티브 메탈",
+        "하드 록",
+        "포스트그런지",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "얼터너티브 메탈",
+            "하드 록",
+            "포스트그런지",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "얼터너티브메탈",
+        "포스트그란지",
+        "2000년대록"
+      ],
+      "summary": "2004년 미국 플로리다주 올랜도에서 크리드(Creed) 출신의 멤버들과 마일스 케네디가 합류하여 결성된 하드 록 및 얼터너티브 메탈 밴드다. 뛰어난 음악성과 정교한 라이브 연주력을 바탕으로 평단과 대중 모두에게 큰 찬사를 받으며 현대 하드 록 신을 대표하는 위치에 올랐다.",
+      "style": "묵직하고 웅장한 디스토션 기타 리프와 화려한 메탈 솔로 연주가 안정적인 리듬 섹션 위에 구축된다. 여기에 마일스 케네디의 음역대가 넓고 호소력 깊은 보컬 훅이 가미되어 극적이고 서사적인 곡 전개를 보여준다.",
+      "image": {
+        "wikipediaTitle": "Alter Bridge",
+        "alt": "Alter Bridge 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Myles Kennedy",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Mark Tremonti",
+          "role": "리드 기타·백보컬",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Brian Marshall",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Scott Phillips",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2004–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "metalingus",
+          "title": "Metalingus",
+          "year": 2004,
+          "album": "One Day Remains",
+          "guide": "폭발적인 헤비메탈 리프와 질주하는 드럼 비트가 압도적인 에너지와 서사를 전달한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Alter Bridge — Metalingus YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Alter%20Bridge%20Metalingus",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "blackbird",
+          "title": "Blackbird",
+          "year": 2007,
+          "album": "Blackbird",
+          "guide": "서정적인 발라드로 시작해 두 기타리스트의 명품 솔로 연주로 이어지는 8분대의 대서사시 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Alter Bridge — Blackbird YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Alter%20Bridge%20Blackbird",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "isolation",
+          "title": "Isolation",
+          "year": 2010,
+          "album": "AB III",
+          "guide": "캐치하면서도 강렬한 메탈 리프와 고음 보컬이 유기적으로 어우러진 차트 1위 히트 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Alter Bridge — Isolation YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Alter%20Bridge%20Isolation",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "slash-feat-myles-kennedy-the-conspirators",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "프론트맨 마일스 케네디가 메인 보컬리스트로 병행 활동하는 프로젝트 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Alter Bridge — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Alter%20Bridge&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Alter Bridge — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Alter%20Bridge&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Alter Bridge — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Alter_Bridge",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Alter Bridge — 공식 YouTube",
+          "url": "https://www.youtube.com/@alterbridgeofficial",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@alterbridgeofficial",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "hard-glam-rock",
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "alternative-metal",
+          "hard-rock",
+          "post-grunge",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "anthemic-live": 5,
+          "massive-heavy": 4,
+          "hopeful-uplifting": 4,
+          "technical-complex": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "van-halen",
+      "name": "Van Halen",
+      "formed": 1972,
+      "origin": "Pasadena, USA",
+      "countryCode": "US",
+      "activeYears": "1972–2020",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "글램 메탈",
+        "아레나 록",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "글램 메탈",
+            "아레나 록",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "글램메탈",
+        "아레나록",
+        "80년대록"
+      ],
+      "summary": "1972년 미국 파사데나에서 결성된 반 헤일런은 70~80년대 하드 록 및 글램 메탈의 전성기를 이끈 대표적인 아레나 록 밴드다. 화려한 연주력과 파격적인 쇼맨십으로 멀티 플래티넘 판매고를 올리며 록 명예의 전당에 헌액되었다.",
+      "style": "에디 반 헤일런의 독보적인 라이트핸드 태핑 기타 기술과 캐치한 신디사이저 훅이 유기적으로 결합되어 있다. 데이비드 리 로스의 재치 있고 화려한 보컬 퍼포먼스 및 탄탄한 리듬 섹션이 에너제틱한 사운드를 완성한다.",
+      "image": {
+        "wikipediaTitle": "Van Halen",
+        "alt": "Van Halen 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Eddie Van Halen",
+          "role": "기타·키보드·백보컬",
+          "status": "former",
+          "activeYears": "1972–2020"
+        },
+        {
+          "name": "Alex Van Halen",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1972–2020"
+        },
+        {
+          "name": "David Lee Roth",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1974–1985, 1996, 2006–2020"
+        },
+        {
+          "name": "Michael Anthony",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "1974–2006"
+        },
+        {
+          "name": "Sammy Hagar",
+          "role": "리드 보컬·기타",
+          "status": "former",
+          "activeYears": "1985–1996, 2003–2005"
+        },
+        {
+          "name": "Wolfgang Van Halen",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "2006–2020"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "jump",
+          "title": "Jump",
+          "year": 1983,
+          "album": "1984",
+          "guide": "화려한 아이코닉 신디사이저 리프와 데이비드 리 로스의 밝고 경쾌한 보컬이 돋보이는 밴드 최대의 대중적 히트작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Van Halen — Jump YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Van%20Halen%20Jump",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "panama",
+          "title": "Panama",
+          "year": 1984,
+          "album": "1984",
+          "guide": "묵직한 디스토션 리프와 질주하는 하드 록 드라이브 에너지가 폭발하는 아레나 록의 정수를 보여준다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Van Halen — Panama YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Van%20Halen%20Panama",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "eruption",
+          "title": "Eruption",
+          "year": 1978,
+          "album": "Van Halen",
+          "guide": "에디 반 헤일런의 혁명적인 라이트핸드 태핑 기법이 집약된 록 역사상 가장 유명한 기타 솔로 인스트루멘털 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Van Halen — Eruption YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Van%20Halen%20Eruption",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "aerosmith",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반과 80년대 미국 하드 록 씬의 전성기를 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "chickenfoot",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "보컬 새미 해가와 베이시스트 마이클 앤소니가 반 헤일런 탈퇴 후 결성한 슈퍼그룹이다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Van Halen — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Van%20Halen&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Van Halen — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Van%20Halen&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Van Halen — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Van_Halen",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Van Halen — 공식 YouTube",
+          "url": "https://www.youtube.com/@vanhalen",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@vanhalen",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "glam-metal",
+          "arena-rock",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "bright-upbeat": 5,
+          "fast-driving": 4,
+          "anthemic-live": 5,
+          "youth-rebellious": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "racer-x",
+      "name": "Racer X",
+      "formed": 1985,
+      "origin": "Los Angeles, USA",
+      "countryCode": "US",
+      "activeYears": "1985–1989, 1999–2002",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "스피드 메탈",
+        "전통 헤비메탈",
+        "네오클래시컬 메탈",
+        "파워 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "스피드 메탈",
+            "전통 헤비메탈",
+            "네오클래시컬 메탈",
+            "파워 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "미국메탈",
+        "스피드메탈",
+        "헤비메탈",
+        "네오클래시컬메탈",
+        "80년대메탈"
+      ],
+      "summary": "1985년 미국 로스앤젤레스에서 결성된 레이서 엑스는 헤비메탈 씬에서 테크니컬 스피드 메탈의 정점을 선보인 4인조 밴드다. 기타 리치 폴 길버트와 브루스 부일렛의 압도적인 속주와 트윈 기타 하모니로 네오클래시컬 스피드 메탈 발전의 결정적인 초석을 다졌다.",
+      "style": "초음속 속주와 정교한 스위프 피킹, 완벽하게 조화된 트윈 기타 하모니 리프가 음악의 핵심을 이룬다. 네오클래시컬 메탈의 화려한 테크닉과 헤비메탈의 폭발적인 드라이브, 캐치한 보컬 훅이 유기적으로 결합되어 있다.",
+      "image": {
+        "wikipediaTitle": "Racer X",
+        "alt": "Racer X 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Paul Gilbert",
+          "role": "리드 기타·백보컬",
+          "status": "former",
+          "activeYears": "1985–1989, 1999–2002"
+        },
+        {
+          "name": "Jeff Martin",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1985–1989, 1999–2002"
+        },
+        {
+          "name": "John Alderete",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "1985–1989, 1999–2002"
+        },
+        {
+          "name": "Scott Travis",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1986–1989, 1999–2002"
+        },
+        {
+          "name": "Bruce Bouillet",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1986–1989"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "technical-difficulties",
+          "title": "Technical Difficulties",
+          "year": 1999,
+          "album": "Technical Difficulties",
+          "guide": "경악스러운 기타 연주 테크닉과 압도적인 질주감이 집약된 최고의 하드 메탈 인스트루멘털 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Racer X — Technical Difficulties YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Racer%20X%20Technical%20Difficulties",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "scarified",
+          "title": "Scarified",
+          "year": 1987,
+          "album": "Second Heat",
+          "guide": "폴 길버트와 브루스 부일렛의 경이로운 트윈 기타 속주 하모니가 빛나는 네오클래시컬 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Racer X — Scarified YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Racer%20X%20Scarified",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "street-lethal",
+          "title": "Street Lethal",
+          "year": 1986,
+          "album": "Street Lethal",
+          "guide": "80년대 스피드 메탈의 거친 에너지와 화려한 기타 솔로 연주를 고스란히 느낄 수 있는 대표작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Racer X — Street Lethal YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Racer%20X%20Street%20Lethal",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "mr-big",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "리드 기타리스트 폴 길버트가 레이서 엑스 해체 후 결성하여 세계적인 성공을 거둔 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "judas-priest",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "파워풀한 드러머 스콧 트래비스가 레이서 엑스 활동 후 주다스 프리스트의 정식 멤버로 합류했다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Racer X — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Racer%20X&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Racer X — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Racer%20X&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Racer X — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Racer_X_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "speed-metal",
+          "traditional-heavy-metal",
+          "neoclassical-metal",
+          "power-metal"
+        ],
+        "moodScores": {
+          "technical-complex": 5,
+          "fast-driving": 5,
+          "riff-solo-driven": 5,
+          "aggressive-heavy": 4,
+          "youth-rebellious": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "the-stone-roses",
+      "name": "The Stone Roses",
+      "formed": 1983,
+      "origin": "Manchester, England",
+      "countryCode": "GB",
+      "activeYears": "1983–1996, 2011–2017",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "브릿팝",
+        "네오사이키델리아"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "브릿팝",
+            "네오사이키델리아"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "인디록",
+        "매드체스터",
+        "브릿팝",
+        "80년대록"
+      ],
+      "summary": "1983년 영국 맨체스터에서 결성된 더 스톤 로지스는 1980년대 후반 매드체스터(Madchester) 운동을 최전선에서 이끈 영국의 전설적인 4인조 얼터너티브 록 밴드다. 1989년 발표한 동명의 데뷔 앨범 'The Stone Roses'는 댄서블한 인디 록의 이정표로 꼽히며 이후 브릿팝 부흥에 결정적인 영감을 주었다.",
+      "style": "60년대풍의 팝 멜로디와 సై키델릭 기타 선율에 그루비한 댄스 비트 리듬 섹션을 결합한 독창적인 사운드를 선보인다. 존 스콰이어의 화려한 아르페지오 및 와와 페달 기타 연주와 매니, 레니가 만들어내는 최면적인 백비트가 인상적이다.",
+      "image": {
+        "wikipediaTitle": "The Stone Roses",
+        "alt": "The Stone Roses 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Ian Brown",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1983–1996, 2011–2017"
+        },
+        {
+          "name": "John Squire",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1983–1996, 2011–2017"
+        },
+        {
+          "name": "Mani",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1987–1996, 2011–2017"
+        },
+        {
+          "name": "Reni",
+          "role": "드럼·백보컬",
+          "status": "former",
+          "activeYears": "1984–1995, 2011–2017"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "fools-gold",
+          "title": "Fools Gold",
+          "year": 1989,
+          "guide": "끝없이 넘실거리는 그루비한 펑키 리듬과 사이키델릭한 기타 와와 이펙트 연주가 빛나는 밴드의 대표작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Stone Roses — Fools Gold YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Stone%20Roses%20Fools%20Gold",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "i-wanna-be-adored",
+          "title": "I Wanna Be Adored",
+          "year": 1989,
+          "album": "The Stone Roses",
+          "guide": "몽환적인 베이스 라인 도입부로 시작해 서서히 고조되는 매혹적인 데뷔 앨범 오프닝 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Stone Roses — I Wanna Be Adored YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Stone%20Roses%20I%20Wanna%20Be%20Adored",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "waterfall",
+          "title": "Waterfall",
+          "year": 1989,
+          "album": "The Stone Roses",
+          "guide": "청량하고 흐르는 듯한 존 스콰이어의 멜로디컬한 기타 알페지오 연주가 일품인 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Stone Roses — Waterfall YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Stone%20Roses%20Waterfall",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "oasis",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 거만한 태도와 멜로디컬한 기타 팝 사운드로 90년대 브릿팝 열풍의 기반을 마련해 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Stone Roses — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=The%20Stone%20Roses&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Stone Roses — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=The%20Stone%20Roses&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Stone Roses — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Stone_Roses",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Stone Roses — 공식 YouTube",
+          "url": "https://www.youtube.com/@thestoneroses",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@thestoneroses",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "progressive-art-psychedelic",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "britpop",
+          "neo-psychedelia"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "cosmic-psychedelic": 4,
+          "bright-upbeat": 4,
+          "hopeful-uplifting": 4,
+          "youth-rebellious": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "equilibrium",
+      "name": "Equilibrium",
+      "formed": 2001,
+      "origin": "Starnberg, Germany",
+      "countryCode": "DE",
+      "activeYears": "2001–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "포크 메탈",
+        "심포닉 메탈",
+        "바이킹 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "포크 메탈",
+            "심포닉 메탈",
+            "바이킹 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "독일메탈",
+        "포크메탈",
+        "심포닉메탈",
+        "에픽메탈",
+        "2000년대메탈"
+      ],
+      "summary": "2001년 독일 슈타른베르크에서 결성된 에퀼리브리엄은 에픽 심포닉 에픽 포크 메탈을 대표하는 독일의 밴드다. 게르만 신화와 자연을 주제로 한 장대한 음악 세계를 선보이며 유럽 메탈 씬에서 독보적인 위치를 구축했다.",
+      "style": "질주하는 헤비메탈 리프 위에 브라스와 오케스트라 레이어를 차곡차곡 쌓아 올린 대서사시 사운드가 특징이다. 민속 악기 멜로디와 스크리밍 및 파워풀한 보컬이 어우러지며 극적인 고조를 만들어낸다.",
+      "image": {
+        "wikipediaTitle": "Equilibrium",
+        "alt": "Equilibrium 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "René Berthiaume",
+          "role": "기타·키보드",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Tuval 'One-Man-Army' Refaeli",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2010–현재"
+        },
+        {
+          "name": "Dom R. Crey",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2014–현재"
+        },
+        {
+          "name": "Skadi Rosehurst",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2019–현재"
+        },
+        {
+          "name": "Fabian Getto",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2023–현재"
+        },
+        {
+          "name": "Helge Stang",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "2001–2010"
+        },
+        {
+          "name": "Robert Dahn",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "2010–2022"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "blut-im-auge",
+          "title": "Blut im Auge",
+          "year": 2008,
+          "album": "Sagas",
+          "guide": "벅차오르는 키보드 멜로디 라인과 빠른 드럼 비트가 선사하는 밴드의 대표적인 메탈 송가다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Equilibrium — Blut im Auge YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Equilibrium%20Blut%20im%20Auge",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "unbesiegt",
+          "title": "Unbesiegt",
+          "year": 2008,
+          "album": "Sagas",
+          "guide": "남미 라틴 춤곡 리듬과 화려한 오케스트레이션이 어우러진 특색 있고 압도적인 대작 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Equilibrium — Unbesiegt YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Equilibrium%20Unbesiegt",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "born-to-be-epic",
+          "title": "Born to Be Epic",
+          "year": 2016,
+          "album": "Armageddon",
+          "guide": "일렉트로닉 댄스 요소와 심포닉 록 리프를 독창적으로 결합한 캐치한 수록곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Equilibrium — Born to Be Epic YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Equilibrium%20Born%20to%20Be%20Epic",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "ensiferum",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "스피디한 에픽 포크 메탈 리듬과 캐치한 멜로디성을 공유한다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Equilibrium — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Equilibrium&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Equilibrium — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Equilibrium&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Equilibrium — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Equilibrium_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Equilibrium — 공식 YouTube",
+          "url": "https://www.youtube.com/@EquilibriumBeat",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@EquilibriumBeat",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "folk-symphonic-metal",
+        "secondaryGenreIds": [
+          "extreme-metal",
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "folk-metal",
+          "symphonic-metal",
+          "viking-metal"
+        ],
+        "moodScores": {
+          "epic-cinematic": 5,
+          "fast-driving": 5,
+          "massive-heavy": 4,
+          "technical-complex": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "boston",
+      "name": "Boston",
+      "formed": 1975,
+      "origin": "Boston, USA",
+      "countryCode": "US",
+      "activeYears": "1975–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "아레나 록",
+        "클래식 록",
+        "프로그레시브 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "아레나 록",
+            "클래식 록",
+            "프로그레시브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "아레나록",
+        "70년대록",
+        "80년대록"
+      ],
+      "summary": "1975년 미국 보스턴에서 톰 숄즈를 중심으로 결성된 보스턴은 70~80년대를 풍미한 대표적인 아레나 록 밴드다. 1976년 데뷔 앨범 'Boston'은 1,700만 장 이상 판매되며 역사상 가장 성공적인 데뷔 음반 중 하나로 기록되었다.",
+      "style": "멀티트랙 오버다빙을 활용한 정교하고 풍성한 레이어드 기타 사운드와 화려한 화음 코러스가 핵심이다. 톰 숄즈의 아날로그 아날로그 이펙터 프로덕션과 브래드 델프의 폭발적인 고음 보컬이 어우러지며 아레나 록의 정석을 보여준다.",
+      "image": {
+        "wikipediaTitle": "Boston",
+        "alt": "Boston 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Tom Scholz",
+          "role": "기타·키보드·베이스",
+          "status": "current",
+          "activeYears": "1975–현재"
+        },
+        {
+          "name": "Gary Pihl",
+          "role": "기타·키보드·백보컬",
+          "status": "current",
+          "activeYears": "1985–현재"
+        },
+        {
+          "name": "Tracy Ferrie",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Jeff Neal",
+          "role": "드럼·퍼커션",
+          "status": "current",
+          "activeYears": "2002–현재"
+        },
+        {
+          "name": "Tommy DeCarlo",
+          "role": "리드 보컬·키보드",
+          "status": "current",
+          "activeYears": "2007–현재"
+        },
+        {
+          "name": "Brad Delp",
+          "role": "리드 보컬·기타",
+          "status": "former",
+          "activeYears": "1975–1989, 1994–2007"
+        },
+        {
+          "name": "Barry Goudreau",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1975–1981"
+        },
+        {
+          "name": "Sib Hashian",
+          "role": "드럼·백보컬",
+          "status": "former",
+          "activeYears": "1975–1986"
+        },
+        {
+          "name": "Fran Sheehan",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "1975–1980"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "more-than-a-feeling",
+          "title": "More Than a Feeling",
+          "year": 1976,
+          "album": "Boston",
+          "guide": "어쿠스틱 스트럼으로 시작해 폭발하는 전기 기타 리프와 브래드 델프의 소름 돋는 고음이 일품인 대표 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Boston — More Than a Feeling YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Boston%20More%20Than%20a%20Feeling",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "foreplay-long-time",
+          "title": "Foreplay / Long Time",
+          "year": 1976,
+          "album": "Boston",
+          "guide": "화려하고 현란한 키보드 인스트루멘털 오프닝(Foreplay) 이후 질주하는 정통 록 리프(Long Time)로 이어지는 대작이다.",
+          "youtubeId": "8qjp3P4cZAw",
+          "source": {
+            "label": "Boston — Foreplay / Long Time",
+            "url": "https://www.youtube.com/watch?v=8qjp3P4cZAw",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-30T11:31:16.124Z"
+        },
+        {
+          "id": "peace-of-mind",
+          "title": "Peace of Mind",
+          "year": 1976,
+          "album": "Boston",
+          "guide": "중독성 강한 트윈 기타 하모니 리프와 캐치한 코러스가 청량감을 선사하는 오프닝 수록곡이다.",
+          "youtubeId": "QPUIrU-Kn5Y",
+          "source": {
+            "label": "Boston — Peace of Mind",
+            "url": "https://www.youtube.com/watch?v=QPUIrU-Kn5Y",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-30T11:31:16.199Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Boston — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q204289",
+          "publisher": "Wikidata",
+          "externalId": "Q204289",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Boston — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/0d8b0d50-e4cf-4da4-965d-f24c58ec3268",
+          "publisher": "MusicBrainz",
+          "externalId": "0d8b0d50-e4cf-4da4-965d-f24c58ec3268",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Boston — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Boston_(band",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Boston — 공식 YouTube",
+          "url": "https://www.youtube.com/user/BostonVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "progressive-art-psychedelic",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "arena-rock",
+          "classic-rock",
+          "progressive-rock"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "hopeful-uplifting": 5,
+          "anthemic-live": 5,
+          "bright-upbeat": 4,
+          "fast-driving": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "chickenfoot",
+      "name": "Chickenfoot",
+      "formed": 2008,
+      "origin": "Los Angeles, USA",
+      "countryCode": "US",
+      "activeYears": "2008–2016",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "블루스 록",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "블루스 록",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "슈퍼그룹",
+        "블루스록",
+        "2000년대록"
+      ],
+      "summary": "2008년 미국 로스앤젤레스에서 결성된 치킨풋은 반 헤일런, 제프 백 그룹, 레드 핫 칠리 페퍼스를 거친 음악계의 거장들이 모인 하드 록 슈퍼그룹이다. 2009년 데뷔 앨범 'Chickenfoot'이 빌보드 200 차트 4위에 오르고 골드 인증을 받으며 대중적인 큰 성공을 거두었다.",
+      "style": "조 Satriani의 오센틱하면서도 테크니컬한 기타 드라이브 리프 위로 파워풀한 헤비 록 비트가 얹힌다. 새미 해가의 시원한 고음 샤우팅 보컬과 강렬한 라이브 에너지, 오가닉한 하드 록 프로덕션이 사운드의 핵심이다.",
+      "image": {
+        "wikipediaTitle": "Chickenfoot",
+        "alt": "Chickenfoot 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Sammy Hagar",
+          "role": "리드 보컬·기타",
+          "status": "former",
+          "activeYears": "2008–2016"
+        },
+        {
+          "name": "Joe Satriani",
+          "role": "리드 기타·키보드",
+          "status": "former",
+          "activeYears": "2008–2016"
+        },
+        {
+          "name": "Michael Anthony",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "2008–2016"
+        },
+        {
+          "name": "Chad Smith",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2008–2016"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "oh-yeah",
+          "title": "Oh Yeah",
+          "year": 2009,
+          "album": "Chickenfoot",
+          "guide": "묵직하고 그루비한 하드 록 리프와 새미 해가의 시원한 보컬 코러스 훅이 선명하게 대비되는 히트 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Chickenfoot — Oh Yeah YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Oh%20Yeah",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "big-foot",
+          "title": "Big Foot",
+          "year": 2011,
+          "album": "Chickenfoot III",
+          "guide": "질주하는 드럼 비트와 조 Satriani의 화려한 기타 솔로가 돋보이는 에너제틱한 대표작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Chickenfoot — Big Foot YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Big%20Foot",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "soap-on-a-rope",
+          "title": "Soap on a Rope",
+          "year": 2009,
+          "album": "Chickenfoot",
+          "guide": "강력한 블루스 록 리프와 오가닉한 밴드 앙상블이 선사하는 정통 하드 록 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Chickenfoot — Soap on a Rope YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Soap%20on%20a%20Rope",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "red-hot-chili-peppers",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "드러머 채드 스미스가 메인 멤버로 활동하는 대표적인 미국 얼터너티브 록 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "deep-purple",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "정통 하드 록의 리프 구성과 블루지한 테크니컬 연주 방식에서 커다란 음악적 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "van-halen",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "보컬 새미 해가와 베이시스트 마이클 앤소니가 중심이 되어 활약했던 전설적인 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Chickenfoot — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Chickenfoot&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Chickenfoot — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Chickenfoot&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Chickenfoot — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Chickenfoot",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Chickenfoot — 공식 YouTube",
+          "url": "https://www.youtube.com/@ChickenfootVEVO",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@ChickenfootVEVO",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "fast-driving": 4,
+          "anthemic-live": 4,
+          "youth-rebellious": 3,
+          "technical-complex": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "generation-axe",
+      "name": "Generation Axe",
+      "formed": 2016,
+      "origin": "로스앤젤레스, 미국",
+      "countryCode": "US",
+      "activeYears": "2016–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "전통 헤비메탈",
+        "네오클래시컬 메탈",
+        "프로그레시브 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "전통 헤비메탈",
+            "네오클래시컬 메탈",
+            "프로그레시브 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "헤비메탈",
+        "프로그레시브메탈",
+        "2010년대록"
+      ],
+      "summary": "2016년 스티브 바이를 필두로 결성된 제너레이션 액스는 세계 최정상급 기타리스트 5인이 모인 프로젝트 슈퍼그룹이다. 스티브 바이, 잉베이 맘스틴, 잭 와일드, 누노 베텐코트, 토신 아바시가 함께 무대에 올라 각자의 솔로 곡과 웅장한 5인 기타 합주 퍼포먼스를 선보였다.",
+      "style": "초음속 속주와 네오클래시컬 메탈, 묵직한 리프, 프로그레시브 연주가 어우러진 화려한 기타 사운드가 특징이다. 5명의 기타 거장이 펼치는 정교한 솔로와 겹겹이 쌓이는 기타 하모니가 압도적인 연주력을 과시한다.",
+      "image": {
+        "wikipediaTitle": "Generation Axe",
+        "alt": "Generation Axe 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Steve Vai",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Yngwie Malmsteen",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Zakk Wylde",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Nuno Bettencourt",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Tosin Abasi",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2016–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "highway-star",
+          "title": "Highway Star",
+          "year": 2019,
+          "album": "The Guitars That Destroyed The World: Live in China",
+          "guide": "딥 퍼플의 명곡을 5명의 기타 거장이 화려한 속주와 합주로 재해석한 대작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Generation Axe — Highway Star YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Generation%20Axe%20Highway%20Star",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "frankenstein",
+          "title": "Frankenstein",
+          "year": 2019,
+          "album": "The Guitars That Destroyed The World: Live in China",
+          "guide": "에드가 윈터 그룹의 인스트루멘털 트랙을 정교한 인터플레이와 하모니로 채운 라이브 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Generation Axe — Frankenstein YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Generation%20Axe%20Frankenstein",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "foreplay",
+          "title": "Foreplay",
+          "year": 2019,
+          "album": "The Guitars That Destroyed The World: Live in China",
+          "guide": "보스턴의 클래식 록 오프닝 트랙을 스펙터클한 기타 사운드로 연주한 대표 오프닝 곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Generation Axe — Foreplay YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Generation%20Axe%20Foreplay",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Generation Axe — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Generation_Axe",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "traditional-heavy-metal",
+          "neoclassical-metal",
+          "progressive-metal"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "technical-complex": 5,
+          "massive-heavy": 4,
+          "fast-driving": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "slash-feat-myles-kennedy-the-conspirators",
+      "name": "Slash feat. Myles Kennedy & The Conspirators",
+      "formed": 2012,
+      "origin": "Los Angeles, USA",
+      "countryCode": "US",
+      "activeYears": "2012–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "전통 헤비메탈",
+        "블루스 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "전통 헤비메탈",
+            "블루스 록"
+          ]
+        }
+      ],
+      "tags": [
+        "미국록",
+        "하드록",
+        "헤비메탈",
+        "블루스록",
+        "2010년대록"
+      ],
+      "summary": "건즈 앤 로지스의 전설적인 기타리스트 슬래시와 알터 브릿지의 보컬리스트 마일스 케네디가 결성한 슈퍼그룹 성격의 미국 하드 록 밴드다. 정교한 연주력과 완벽한 호흡을 바탕으로 수많은 월드 투어를 성료하며 현대 하드 록 씬의 대표주자로 자리매김했다.",
+      "style": "슬래시 특유의 블루지하면서도 강력한 깁슨 레스폴 기타 리프와 화려한 솔로 연주가 사운드의 중심을 잡는다. 여기에 마일스 케네디의 음역대가 넓고 호소력 짙은 리드 보컬이 어우러져 오센틱하면서도 현대적인 팝/하드 록 사운드를 선보인다.",
+      "image": {
+        "wikipediaTitle": "Slash feat. Myles Kennedy & The Conspirators",
+        "alt": "Slash feat. Myles Kennedy & The Conspirators 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Slash",
+          "role": "리드 기타",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Myles Kennedy",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Todd Kerns",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Brent Fitz",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Frank Sidoris",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "2012–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "anastasia",
+          "title": "Anastasia",
+          "year": 2012,
+          "album": "Apocalyptic Love",
+          "guide": "클래식한 아르페지오 오프닝 이후 질주하는 기타 리프와 마일스 케네디의 폭발적인 고음 보컬이 압권인 밴드의 결정적 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Slash feat. Myles Kennedy & The Conspirators — Anastasia YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Slash%20feat.%20Myles%20Kennedy%20%26%20The%20Conspirators%20Anastasia",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "world-on-fire",
+          "title": "World on Fire",
+          "year": 2014,
+          "album": "World on Fire",
+          "guide": "쉴 새 없이 몰아치는 빠른 하드 록 비트와 슬래시의 거친 디스토션 리프가 에너지를 전달한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Slash feat. Myles Kennedy & The Conspirators — World on Fire YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Slash%20feat.%20Myles%20Kennedy%20%26%20The%20Conspirators%20World%20on%20Fire",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "driving-rain",
+          "title": "Driving Rain",
+          "year": 2018,
+          "album": "Living the Dream",
+          "guide": "그루비한 블루스 록 베이스 라인과 캐치한 코러스 훅이 어우러지는 대중적인 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Slash feat. Myles Kennedy & The Conspirators — Driving Rain YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Slash%20feat.%20Myles%20Kennedy%20%26%20The%20Conspirators%20Driving%20Rain",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "guns-n-roses",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "리더이자 기타리스트인 슬래시가 메인 멤버로 활동하는 전설적인 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "alter-bridge",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "프론트맨 마일스 케네디가 보컬이자 기타리스트로 활동 중인 얼터너티브 메탈 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Slash feat. Myles Kennedy & The Conspirators — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Slash%20feat.%20Myles%20Kennedy%20%26%20The%20Conspirators&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Slash feat. Myles Kennedy & The Conspirators — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Slash%20feat.%20Myles%20Kennedy%20%26%20The%20Conspirators&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Slash feat. Myles Kennedy & The Conspirators — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Slash_featuring_Myles_Kennedy_and_The_Conspirators",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Slash feat. Myles Kennedy & The Conspirators — 공식 YouTube",
+          "url": "https://www.youtube.com/@SlashOfficial",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@SlashOfficial",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "traditional-heavy-metal",
+          "blues-rock"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "fast-driving": 4,
+          "anthemic-live": 4,
+          "aggressive-heavy": 3,
+          "youth-rebellious": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "noel-gallagher-s-high-flying-birds",
+      "name": "Noel Gallagher's High Flying Birds",
+      "formed": 2011,
+      "origin": "Manchester, England",
+      "countryCode": "GB",
+      "activeYears": "2011–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "브릿팝",
+        "사이키델릭 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "브릿팝",
+            "사이키델릭 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "인디록",
+        "브릿팝",
+        "사이키델릭록",
+        "2010년대록"
+      ],
+      "summary": "노엘 갤러거스 하이 플라잉 버즈는 오아시스(Oasis)의 메인 작곡가이자 기타리스트인 노엘 갤러거가 2011년 결성한 영국의 얼터너티브/인디 록 프로젝트 밴드다. 데뷔 앨범부터 연이어 영국 앨범 차트 1위를 기록하며 오아시스의 유산을 이어가는 동시에 독자적인 음악적 성취를 거두었다.",
+      "style": "오아시스 시절의 풍성한 기타 팝 멜로디를 바탕으로 오케스트레이션과 사이키델릭, 트립합 요소를 적극 수용한다. 노엘 갤러거 특유의 서정적이고 벅차오르는 보컬 훅과 멜로디컬한 아르페지오/스트럼 기타 프로덕션이 돋보인다.",
+      "image": {
+        "wikipediaTitle": "Noel Gallagher's High Flying Birds",
+        "alt": "Noel Gallagher's High Flying Birds 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Noel Gallagher",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2011–현재"
+        },
+        {
+          "name": "Mike Rowe",
+          "role": "키보드",
+          "status": "current",
+          "activeYears": "2011–현재"
+        },
+        {
+          "name": "Russell Pritchard",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "2011–현재"
+        },
+        {
+          "name": "Chris Sharrock",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2016–현재"
+        },
+        {
+          "name": "Gem Archer",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2017–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "if-i-had-a-gun",
+          "title": "If I Had a Gun...",
+          "year": 2011,
+          "album": "Noel Gallagher's High Flying Birds",
+          "guide": "서정적인 어쿠스틱 선율로 시작해 점차 웅장하게 고조되는 멜로디가 매력적인 대표 발라드 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Noel Gallagher's High Flying Birds — If I Had a Gun... YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Noel%20Gallagher's%20High%20Flying%20Birds%20If%20I%20Had%20a%20Gun...",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "aka-what-a-life",
+          "title": "AKA... What a Life!",
+          "year": 2011,
+          "album": "Noel Gallagher's High Flying Birds",
+          "guide": "경쾌한 피아노 리프와 질주하는 댄스 록 비트가 중독성을 선사하는 히트 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Noel Gallagher's High Flying Birds — AKA... What a Life! YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Noel%20Gallagher's%20High%20Flying%20Birds%20AKA...%20What%20a%20Life!",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "in-the-heat-of-the-moment",
+          "title": "In the Heat of the Moment",
+          "year": 2014,
+          "album": "Chasing Yesterday",
+          "guide": "캐치한 백보컬 훅과 세련된 사이키델릭 팝 록 프로덕션이 강한 인상을 남긴다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Noel Gallagher's High Flying Birds — In the Heat of the Moment YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Noel%20Gallagher's%20High%20Flying%20Birds%20In%20the%20Heat%20of%20the%20Moment",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "oasis",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "노엘 갤러거가 리더이자 메인 작곡가로 활약했던 전설적인 브릿팝 대표 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-beatles",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "곡 구성과 화음, 사이키델릭 팝 멜로디 전개 전반에서 가장 결정적인 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Noel Gallagher's High Flying Birds — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Noel%20Gallagher's%20High%20Flying%20Birds&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Noel Gallagher's High Flying Birds — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Noel%20Gallagher's%20High%20Flying%20Birds&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Noel Gallagher's High Flying Birds — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Noel_Gallagher's_High_Flying_Birds",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Noel Gallagher's High Flying Birds — 공식 YouTube",
+          "url": "https://www.youtube.com/@noelgallagher",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@noelgallagher",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "britpop",
+          "psychedelic-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "hopeful-uplifting": 5,
+          "anthemic-live": 5,
+          "romantic-emotional": 4,
+          "bright-upbeat": 4,
+          "cosmic-psychedelic": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "sting",
+      "name": "Sting",
+      "formed": 1985,
+      "origin": "뉴캐슬어폰타인, 영국",
+      "countryCode": "GB",
+      "activeYears": "1985-",
+      "primaryGenre": "classic-rock",
+      "genreIds": [
+        "classic-rock"
+      ],
+      "subgenres": [
+        "소프트 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "classic-rock"
+          ],
+          "subgenres": [
+            "소프트 록"
+          ]
+        }
+      ],
+      "tags": [
+        "재즈팝",
+        "싱어송라이터",
+        "베이스",
+        "뉴웨이브",
+        "스마트팝"
+      ],
+      "summary": "폴리스의 성공 이후 솔로 아티스트로 전환하여 라틴, 재즈, 월드 뮤직을 포크 및 팝과 유기적으로 접목하며 평단과 상업적 성과를 모두 거두었다. 솔로 데뷔 이래 수많은 그래미 어워드를 수상하며 거장의 반열에 올랐고 다채로운 음악적 실험을 이어오고 있다.",
+      "style": "세련된 베이스 라인과 미니멀하면서도 감각적인 아쿠스틱 및 전자기타 프레이즈가 어우러지는 섬세한 리듬 구성을 갖추었다. 특유의 지적이면서도 시적인 가사 전달력과 재즈 퓨전 풍의 감각적인 프로덕션이 돋보인다.",
+      "image": {
+        "wikipediaTitle": "Sting",
+        "fileName": "File:Sting in April 2018.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sting_in_April_2018.jpg/960px-Sting_in_April_2018.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Sting_in_April_2018.jpg",
+        "alt": "Sting 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sting in April 2018.jpg",
+          "creator": "Raph_PH",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-07-30T11:29:48.246Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Sting",
+          "role": "리드 보컬·베이스",
+          "status": "current",
+          "activeYears": "1985-"
+        },
+        {
+          "name": "Dominic Miller",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1991-"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "shape-of-my-heart",
+          "title": "Shape of My Heart",
+          "year": 1993,
+          "album": "Ten Summoner's Tales",
+          "guide": "도미닉 밀러의 감성적인 아르페지오 기타 선율 위에 얹힌 아련한 보컬을 들을 수 있다.",
+          "youtubeId": "NlwIDxCjL-8",
+          "source": {
+            "label": "Sting — Shape of My Heart",
+            "url": "https://www.youtube.com/watch?v=NlwIDxCjL-8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-30T11:29:45.797Z"
+        },
+        {
+          "id": "englishman-in-new-york",
+          "title": "Englishman in New York",
+          "year": 1987,
+          "album": "...Nothing Like the Sun",
+          "guide": "재즈 색소폰 선율과 정갈한 힙합풍 핏드럼 위로 유유히 흐르는 보컬이 인상적이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Sting — Englishman in New York YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Sting%20Englishman%20in%20New%20York",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "fields-of-gold",
+          "title": "Fields of Gold",
+          "year": 1993,
+          "album": "Ten Summoner's Tales",
+          "guide": "따뜻하고 고즈넉한 아쿠스틱 사운드와 서정적인 멜로디의 정수를 느낄 수 있다.",
+          "youtubeId": "KLVq0IAzh1A",
+          "source": {
+            "label": "Sting — Fields of Gold",
+            "url": "https://www.youtube.com/watch?v=KLVq0IAzh1A",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "곡 정보와 링크는 운영자 확인 전 초안입니다."
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "자동 검수 (AI)",
+          "reviewedAt": "2026-07-30T11:29:45.796Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-police",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "스팅이 솔로 데뷔 이전에 리더이자 베이시스트 및 프론트맨으로 활동했던 3인조 뉴웨이브/록 밴드이다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Sting — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q483203",
+          "publisher": "Wikidata",
+          "externalId": "Q483203",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sting — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/7944ed53-2a58-4035-9b93-140a71e41c34",
+          "publisher": "MusicBrainz",
+          "externalId": "7944ed53-2a58-4035-9b93-140a71e41c34",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sting — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sting_(musician",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sting — 공식 YouTube",
+          "url": "https://www.youtube.com/@theofficialsting",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@theofficialsting",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        },
+        {
+          "label": "Sting — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Sting in April 2018.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "soft-rock"
+        ],
+        "moodScores": {
+          "warm-comforting": 4,
+          "melancholic-lonely": 4,
+          "romantic-emotional": 5,
+          "groovy-danceable": 3,
+          "acoustic-organic": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "yungblud",
+      "name": "Yungblud",
+      "formed": 2017,
+      "origin": "Doncaster, England",
+      "countryCode": "GB",
+      "activeYears": "2017–현재",
+      "primaryGenre": "punk-rock",
+      "genreIds": [
+        "punk-rock"
+      ],
+      "subgenres": [
+        "팝펑크",
+        "얼터너티브 록",
+        "인디 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "punk-rock"
+          ],
+          "subgenres": [
+            "팝펑크",
+            "얼터너티브 록",
+            "인디 록"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "팝펑크",
+        "얼터너티브록",
+        "인디록",
+        "2010년대록"
+      ],
+      "summary": "2017년 영국 동카스터 출신의 도미닉 해리슨이 시작한 영블러드는 팝 펑크, 얼터너티브 록, 힙합을 아우르는 대표적인 젠지(Gen Z) 록 아이콘이다. 사회적 메세지와 파격적인 퍼포먼스로 전 세계 청소년 층의 폭발적인 지지를 얻으며 영국 앨범 차트 1위를 기록했다.",
+      "style": "질주하는 팝 펑크 기타 리프에 힙합 비트와 스카, 팝 훅을 거침없이 이종교배한 사운드가 특징이다. 영블러드 특유의 거친 요크셔 억양과 폭발적인 샤우팅, 강렬한 연극적 에너지의 보컬이 곡의 역동성을 극대화한다.",
+      "image": {
+        "wikipediaTitle": "Yungblud",
+        "alt": "Yungblud 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Yungblud",
+          "role": "리드 보컬·기타",
+          "status": "current",
+          "activeYears": "2017–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "11-minutes",
+          "title": "11 Minutes",
+          "year": 2019,
+          "album": "11 Minutes",
+          "guide": "할시(Halsey) 및 트래비스 바커(Travis Barker)와의 협업작으로 캐치한 얼터너티브 팝 펑크 훅이 돋보이는 대표 히트곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Yungblud — 11 Minutes YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Yungblud%2011%20Minutes",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "parents",
+          "title": "parents",
+          "year": 2019,
+          "album": "the underrated youth",
+          "guide": "기성세대에 대한 반항과 기발한 유머를 경쾌하고 빠른 펑크 비트에 담아낸 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Yungblud — parents YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Yungblud%20parents",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "cotton-candy",
+          "title": "cotton candy",
+          "year": 2020,
+          "album": "weird!",
+          "guide": "중독성 있는 디스코풍 베이스 라인과 밝은 팝 록 멜로디가 돋보이는 대중적인 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Yungblud — cotton candy YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Yungblud%20cotton%20candy",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "blink-182",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "특유의 장난스러우면서도 직관적인 팝 펑크 사운드 및 에너지에서 깊은 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-cure",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "특유의 메이크업 스타일과 서정적이면서도 어두운 포스트 펑크 감성 표현에 영감을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Yungblud — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Yungblud&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Yungblud — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Yungblud&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Yungblud — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Yungblud",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Yungblud — 공식 YouTube",
+          "url": "https://www.youtube.com/@yungblud",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@yungblud",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "pop-punk",
+          "alternative-rock",
+          "indie-rock"
+        ],
+        "moodScores": {
+          "youth-rebellious": 5,
+          "fast-driving": 5,
+          "bright-upbeat": 4,
+          "anthemic-live": 4,
+          "groovy-danceable": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "the-police",
+      "name": "The Police",
+      "formed": 1977,
+      "origin": "London, England",
+      "countryCode": "GB",
+      "activeYears": "1977–1986, 2007–2008",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "뉴웨이브",
+        "포스트펑크",
+        "레게 록",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "뉴웨이브",
+            "포스트펑크",
+            "레게 록",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "뉴웨이브",
+        "포스트펑크",
+        "레게록",
+        "80년대록"
+      ],
+      "summary": "1977년 영국 런던에서 결성된 더 폴리스는 뉴 웨이브와 포스트 펑크 씬을 이끌며 글로벌한 상업적 성공을 거둔 3인조 록 밴드다. 정규 5집 'Synchronicity'와 히트 싱글 'Every Breath You Take'로 그래미 어워드를 석권하고 록 명예의 전당에 헌액되었다.",
+      "style": "레게와 스카의 싱코페이션 리듬을 록 프로덕션과 팝 메인스트림 멜로디에 완벽하게 결합한 사운드가 특징이다. 앤디 서머스의 공간감 있는 이펙터 기타 연주, 스튜어트 코플랜드의 독창적인 하이햇 퍼커션, 스팅의 높은 음역대 보컬과 베이스 라인이 독보적인 3인조 앙상블을 이룬다.",
+      "image": {
+        "wikipediaTitle": "The Police",
+        "alt": "The Police 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Sting",
+          "role": "리드 보컬·베이스",
+          "status": "former",
+          "activeYears": "1977–1986, 2007–2008"
+        },
+        {
+          "name": "Andy Summers",
+          "role": "기타·백보컬",
+          "status": "former",
+          "activeYears": "1977–1986, 2007–2008"
+        },
+        {
+          "name": "Stewart Copeland",
+          "role": "드럼·백보컬",
+          "status": "former",
+          "activeYears": "1977–1986, 2007–2008"
+        },
+        {
+          "name": "Henry Padovani",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1977"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "every-breath-you-take",
+          "title": "Every Breath You Take",
+          "year": 1983,
+          "album": "Synchronicity",
+          "guide": "정교한 알페지오 기타 리프와 스팅의 집착 어린 보컬이 어우러지는 밴드 최대의 글로벌 히트곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Police — Every Breath You Take YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Police%20Every%20Breath%20You%20Take",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "roxanne",
+          "title": "Roxanne",
+          "year": 1978,
+          "album": "Outlandos d'Amour",
+          "guide": "스카/레게풍의 엇박자 리듬과 폭발적인 록 코러스 훅이 선명하게 대비되는 데뷔 대표작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Police — Roxanne YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Police%20Roxanne",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "message-in-a-bottle",
+          "title": "Message in a Bottle",
+          "year": 1979,
+          "album": "Reggatta de Blanc",
+          "guide": "질주하는 하이햇 리듬과 앤디 서머스의 대표적인 아르페지오 리프가 돋보이는 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "The Police — Message in a Bottle YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=The%20Police%20Message%20in%20a%20Bottle",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-clash",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반 영국 펑크/포스트 펑크 씬에서 레게 리듬을 록에 접목하는 경향을 함께 주도했다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Police — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=The%20Police&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Police — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=The%20Police&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Police — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Police",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "The Police — 공식 YouTube",
+          "url": "https://www.youtube.com/@thepolice",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@thepolice",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "new-wave",
+          "post-punk",
+          "reggae-rock",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 4,
+          "groovy-danceable": 4,
+          "romantic-emotional": 4,
+          "cold-urban": 3,
+          "youth-rebellious": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "papa-roach",
+      "name": "Papa Roach",
+      "formed": 1993,
+      "origin": "Vacaville, USA",
+      "countryCode": "US",
+      "activeYears": "1993–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "뉴 메탈",
+        "얼터너티브 메탈",
+        "하드 록",
+        "포스트그런지"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "뉴 메탈",
+            "얼터너티브 메탈",
+            "하드 록",
+            "포스트그런지"
+          ]
+        }
+      ],
+      "tags": [
+        "미국메탈",
+        "누메탈",
+        "얼터너티브메탈",
+        "하드록",
+        "2000년대록"
+      ],
+      "summary": "1993년 미국 카리포니아주 베이커빌에서 결성된 파파 로치는 2000년대 초반 누메탈 폭발을 이끈 멀티 플래티넘 얼터너티브 메탈 밴드다. 메이저 데뷔 앨범 'Infest'로 세계적인 상업적 히트를 기록한 이후에도 팝 펑크, 하드 록, 얼터너티브 요소를 적극 수용하며 장수하고 있다.",
+      "style": "강렬하게 넘실거리는 에너제틱한 기타 리프와 하드코어 펑크풍의 유기적인 드럼 리듬이 사운드의 기초를 이룬다. 프론트맨 자코비 새딕스의 랩과 멜로디컬한 샤우팅을 넘나드는 솔직하고 직관적인 보컬 퍼포먼스가 무대를 주도한다.",
+      "image": {
+        "wikipediaTitle": "Papa Roach",
+        "alt": "Papa Roach 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Jacoby Shaddix",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1993–현재"
+        },
+        {
+          "name": "Jerry Horton",
+          "role": "기타·백보컬",
+          "status": "current",
+          "activeYears": "1993–현재"
+        },
+        {
+          "name": "Tobin Esperance",
+          "role": "베이스·백보컬",
+          "status": "current",
+          "activeYears": "1996–현재"
+        },
+        {
+          "name": "Tony Palermo",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2007–현재"
+        },
+        {
+          "name": "Dave Buckner",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1993–2007"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "last-resort",
+          "title": "Last Resort",
+          "year": 2000,
+          "album": "Infest",
+          "guide": "중독성 있는 고속 기타 리프와 폭발적인 랩 메탈 코러스가 강렬한 인상을 남기는 최고의 명곡이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Papa Roach — Last Resort YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Papa%20Roach%20Last%20Resort",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "scars",
+          "title": "Scars",
+          "year": 2004,
+          "album": "Getting Away with Murder",
+          "guide": "서정적인 어쿠스틱/전기 기타 멜로디와 호소력 깊은 코러스 훅이 어우러지는 대중적 히트 싱글이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Papa Roach — Scars YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Papa%20Roach%20Scars",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "getting-away-with-murder",
+          "title": "Getting Away with Murder",
+          "year": 2004,
+          "album": "Getting Away with Murder",
+          "guide": "질주하는 묵직한 하드 록 리프와 자코비 새딕스의 거친 보컬 드라이브가 돋보인다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Papa Roach — Getting Away with Murder YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Papa%20Roach%20Getting%20Away%20with%20Murder",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "korn",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 누메탈 장르의 대중적 전성기를 이끌며 씬을 공유했다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Papa Roach — Wikidata",
+          "url": "https://www.wikidata.org/wiki/Q254371",
+          "publisher": "Wikidata",
+          "externalId": "Q254371",
+          "note": "외부 조사에서 가져온 식별자 · 운영자 확인 필요"
+        },
+        {
+          "label": "Papa Roach — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Papa%20Roach&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Papa Roach — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Papa_Roach",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Papa Roach — 공식 YouTube",
+          "url": "https://www.youtube.com/@paparoach",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@paparoach",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "punk-emo",
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "nu-metal",
+          "alternative-metal",
+          "hard-rock",
+          "post-grunge"
+        ],
+        "moodScores": {
+          "youth-rebellious": 5,
+          "aggressive-heavy": 5,
+          "fast-driving": 4,
+          "anthemic-live": 4,
+          "massive-heavy": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "joy-division",
+      "name": "Joy Division",
+      "formed": 1976,
+      "origin": "Manchester, England",
+      "countryCode": "GB",
+      "activeYears": "1976–1980",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "포스트펑크",
+        "고딕 록",
+        "뉴웨이브",
+        "콜드웨이브",
+        "다크웨이브"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "포스트펑크",
+            "고딕 록",
+            "뉴웨이브",
+            "콜드웨이브",
+            "다크웨이브"
+          ]
+        }
+      ],
+      "tags": [
+        "영국록",
+        "포스트펑크",
+        "고딕록",
+        "뉴웨이브",
+        "80년대록"
+      ],
+      "summary": "1976년 영국 맨체스터에서 결성된 조이 디비전은 펑크 록의 폭발력을 내면화하여 포스트 펑크라는 새로운 장르를 개척한 전설적인 록 밴드다. 정규 앨범 'Unknown Pleasures'와 'Closer' 단 두 장만으로 현대 인디 록과 얼터너티브 음악 전반에 불멸의 영향을 남겼다.",
+      "style": "마틴 해넷 프로듀서가 만들어낸 차갑고 절제된 공간감과 피터 훅의 메인 멜로디 베이스 라인이 곡을 주도한다. 프론트맨 이안 커티스의 중저음 보컬과 비극적인 내면을 다룬 가사가 특유의 어둡고 고독한 분위기를 완성한다.",
+      "image": {
+        "wikipediaTitle": "Joy Division",
+        "alt": "Joy Division 밴드 사진",
+        "credit": {
+          "sourceUrl": "",
+          "license": "검토 필요",
+          "reviewStatus": "needs-review"
+        }
+      },
+      "members": [
+        {
+          "name": "Ian Curtis",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1976–1980"
+        },
+        {
+          "name": "Bernard Sumner",
+          "role": "기타·키보드",
+          "status": "former",
+          "activeYears": "1976–1980"
+        },
+        {
+          "name": "Peter Hook",
+          "role": "베이스·백보컬",
+          "status": "former",
+          "activeYears": "1976–1980"
+        },
+        {
+          "name": "Stephen Morris",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1977–1980"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "love-will-tear-us-apart",
+          "title": "Love Will Tear Us Apart",
+          "year": 1980,
+          "guide": "슬프도록 아름다운 베이스/신스 선율과 이안 커티스의 솔직한 가사가 강한 울림을 주는 대표작이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Joy Division — Love Will Tear Us Apart YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Joy%20Division%20Love%20Will%20Tear%20Us%20Apart",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "disorder",
+          "title": "Disorder",
+          "year": 1979,
+          "album": "Unknown Pleasures",
+          "guide": "질주하는 신경질적인 드럼 비트와 어두운 베이스 라인이 선명하게 대비되는 데뷔 앨범 오프닝 트랙이다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Joy Division — Disorder YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Joy%20Division%20Disorder",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "atmosphere",
+          "title": "Atmosphere",
+          "year": 1980,
+          "guide": "웅장한 신디사이저 레이어와 절제된 퍼커션 연주가 차갑고 거대한 고독감을 극대화한다.",
+          "youtubeId": "",
+          "source": {
+            "label": "Joy Division — Atmosphere YouTube 검색",
+            "url": "https://www.youtube.com/results?search_query=Joy%20Division%20Atmosphere",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+          },
+          "reviewStatus": "draft"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-cure",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 말과 1980년대 초 영국 포스트 펑크 및 고딕 록 운동의 성장을 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-velvet-underground",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "어둡고 실험적인 사운드스케이프와 문학적인 가사에서 커다란 영감을 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Joy Division — Wikidata",
+          "url": "https://www.wikidata.org/w/index.php?search=Joy%20Division&title=Special:Search",
+          "publisher": "Wikidata",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Joy Division — MusicBrainz",
+          "url": "https://musicbrainz.org/search?query=Joy%20Division&type=artist",
+          "publisher": "MusicBrainz",
+          "note": "자동 검사 실패로 검색 링크로 대체함 · 운영자 확인 필요"
+        },
+        {
+          "label": "Joy Division — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Joy_Division",
+          "publisher": "Wikipedia",
+          "note": "외부 조사에서 가져온 출처 · 운영자 확인 필요"
+        },
+        {
+          "label": "Joy Division — 공식 YouTube",
+          "url": "https://www.youtube.com/@JoyDivisionOfficial",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "@JoyDivisionOfficial",
+          "note": "외부 조사에서 가져온 공식 채널 · 운영자 확인 필요"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "post-punk",
+          "gothic-rock",
+          "new-wave",
+          "coldwave",
+          "darkwave"
+        ],
+        "moodScores": {
+          "dark-gloomy": 5,
+          "melancholic-lonely": 5,
+          "cold-urban": 5,
+          "youth-rebellious": 4,
+          "noisy-wall": 3
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "draft"
+    },
     {
       "id": "twin-xl",
       "name": "Twin XL",
@@ -15012,7 +18480,7 @@
           "targetBandId": "theory-of-a-deadman",
           "kind": "influenced",
           "strength": 3,
-          "note": "채드 크로거가 발굴해 음반 계약을 지원했으며 музыка적 스타일과 구성에서 진한 영향을 받은 후배 밴드이다.",
+          "note": "채드 크로거가 발굴해 음반 계약을 지원했으며 음악적 스타일과 구성에서 진한 영향을 받은 후배 밴드이다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
@@ -27732,7 +31200,17 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "blur",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 브릿팝 주도권을 두고 벌인 치열한 라이벌 관계(Battle of Britpop, 1995).",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "기존 보류 관계 이관",
+          "reviewedAt": "2026-07-30"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
@@ -27965,7 +31443,15 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "david-bowie",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "Trident 스튜디오 시기 데이비드 보위와 스파이더스 프롬 마스의 공연에서 시각적·예술적 자극을 받은 동시대 연결 관계.",
+          "reviewStatus": "draft"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
@@ -29678,7 +33164,17 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "nickelback",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "채드 크로거가 발굴하고 604 Records와의 계약을 지원해 밴드의 초기 음악적 성장에 큰 영향을 주었다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "기존 보류 관계 이관",
+          "reviewedAt": "2026-07-30"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
@@ -31528,5 +35024,286 @@
       "reviewedAt": "2026-07-22T14:26:07.970Z"
     }
   ],
-  "pendingRelations": []
+  "pendingRelations": [
+    {
+      "id": "green-day->the-offspring-legacy",
+      "sourceBandId": "green-day",
+      "sourceBandName": "Green Day",
+      "targetBandId": "the-offspring",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1990년대 캘리포니아 펑크 록의 주류 부활과 대중화를 함께 이끈 동료 밴드.",
+      "createdAt": "2026-07-30T09:49:00.533Z"
+    },
+    {
+      "id": "green-day->rancid-legacy",
+      "sourceBandId": "green-day",
+      "sourceBandName": "Green Day",
+      "targetBandId": "rancid",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1990년대 캘리포니아 펑크 록의 주류 부활과 대중화를 함께 이끈 동료 밴드.",
+      "createdAt": "2026-07-30T09:49:00.533Z"
+    },
+    {
+      "id": "bon-jovi->bryan-adams-legacy",
+      "sourceBandId": "bon-jovi",
+      "sourceBandName": "Bon Jovi",
+      "targetBandId": "bryan-adams",
+      "kind": "shared-scene",
+      "strength": 1,
+      "note": "1990년대 북미 메인스트림 록에서 자주 함께 비교된 동시대 라이벌·동료 관계.",
+      "createdAt": "2026-07-30T09:49:00.533Z"
+    },
+    {
+      "id": "joy-division->new-order-0-1",
+      "sourceBandId": "joy-division",
+      "sourceBandName": "Joy Division",
+      "targetBandId": "new-order",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "보컬 이안 커티스의 사후 남은 멤버들이 새롭게 전열을 가다듬어 결성한 밴드다.",
+      "createdAt": "2026-07-30T11:21:56.532Z"
+    },
+    {
+      "id": "papa-roach->limp-bizkit-0-0",
+      "sourceBandId": "papa-roach",
+      "sourceBandName": "Papa Roach",
+      "targetBandId": "limp-bizkit",
+      "kind": "sounds-like",
+      "strength": 3,
+      "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다.",
+      "createdAt": "2026-07-30T11:22:17.837Z"
+    },
+    {
+      "id": "papa-roach->faith-no-more-0-1",
+      "sourceBandId": "papa-roach",
+      "sourceBandName": "Papa Roach",
+      "targetBandId": "faith-no-more",
+      "kind": "influenced-by",
+      "strength": 3,
+      "note": "다양한 장르의 혼합과 다이내믹한 록 보컬 스타일에 영향을 받았다.",
+      "createdAt": "2026-07-30T11:22:17.837Z"
+    },
+    {
+      "id": "the-police->rush-0-0",
+      "sourceBandId": "the-police",
+      "sourceBandName": "The Police",
+      "targetBandId": "rush",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "3인조 트리오 구성에서 정교한 테크닉과 뉴 웨이브 요소를 접목하는 시도를 공유했다.",
+      "createdAt": "2026-07-30T11:22:31.839Z"
+    },
+    {
+      "id": "the-police->bob-marley-and-the-wailers-0-1",
+      "sourceBandId": "the-police",
+      "sourceBandName": "The Police",
+      "targetBandId": "bob-marley-and-the-wailers",
+      "kind": "influenced-by",
+      "strength": 3,
+      "note": "레게 음악의 특유의 오프비트 리듬과 리듬 섹션 구성에서 결정적인 영감을 받았다.",
+      "createdAt": "2026-07-30T11:22:31.839Z"
+    },
+    {
+      "id": "yungblud->machine-gun-kelly-0-0",
+      "sourceBandId": "yungblud",
+      "sourceBandName": "Yungblud",
+      "targetBandId": "machine-gun-kelly",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "2020년대 팝 펑크 음악 및 모던 얼터너티브 씬의 부흥을 함께 이끌며 긴밀히 협업했다.",
+      "createdAt": "2026-07-30T11:22:46.354Z"
+    },
+    {
+      "id": "sting->eric-clapton-0-0",
+      "sourceBandId": "sting",
+      "sourceBandName": "Sting",
+      "targetBandId": "eric-clapton",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "영국 음악 씬의 동료로서 영화 '리썰 웨폰 3' 주제곡 등 다수의 콜라보레이션 작업을 함께 진행했다.",
+      "createdAt": "2026-07-30T11:29:45.404Z"
+    },
+    {
+      "id": "noel-gallagher-s-high-flying-birds->beady-eye-0-0",
+      "sourceBandId": "noel-gallagher-s-high-flying-birds",
+      "sourceBandName": "Noel Gallagher's High Flying Birds",
+      "targetBandId": "beady-eye",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "오아시스 해체 후 동생 리암 갤러거가 결성했던 밴드로 동시대 영국 록 신을 나눠 이끌었다.",
+      "createdAt": "2026-07-30T11:30:13.358Z"
+    },
+    {
+      "id": "slash-feat-myles-kennedy-the-conspirators->velvet-revolver-0-1",
+      "sourceBandId": "slash-feat-myles-kennedy-the-conspirators",
+      "sourceBandName": "Slash feat. Myles Kennedy & The Conspirators",
+      "targetBandId": "velvet-revolver",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "슬래시가 본 프로젝트 이전에 차려 글로벌한 상업적 성공을 거두었던 슈퍼그룹이다.",
+      "createdAt": "2026-07-30T11:30:28.019Z"
+    },
+    {
+      "id": "generation-axe->g3-0-0",
+      "sourceBandId": "generation-axe",
+      "sourceBandName": "Generation Axe",
+      "targetBandId": "g3",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "기타 거장들이 모여 투어와 연주를 펼치는 기타 중심 프로젝트의 대표적 선구자다.",
+      "createdAt": "2026-07-30T11:30:48.984Z"
+    },
+    {
+      "id": "generation-axe->extreme-0-1",
+      "sourceBandId": "generation-axe",
+      "sourceBandName": "Generation Axe",
+      "targetBandId": "extreme",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다.",
+      "createdAt": "2026-07-30T11:30:48.984Z"
+    },
+    {
+      "id": "generation-axe->animals-as-leaders-0-2",
+      "sourceBandId": "generation-axe",
+      "sourceBandName": "Generation Axe",
+      "targetBandId": "animals-as-leaders",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "멤버 토신 아바시가 이끄는 대표적인 차세대 인스트루멘털 프로그레시브 메탈 밴드다.",
+      "createdAt": "2026-07-30T11:30:48.984Z"
+    },
+    {
+      "id": "boston->journey-0-0",
+      "sourceBandId": "boston",
+      "sourceBandName": "Boston",
+      "targetBandId": "journey",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1970년대 후반과 1980년대 미국 아레나 록과 메인스트림 팝 록 전성기를 함께 이끌었다.",
+      "createdAt": "2026-07-30T11:31:15.886Z"
+    },
+    {
+      "id": "boston->foreigner-0-1",
+      "sourceBandId": "boston",
+      "sourceBandName": "Boston",
+      "targetBandId": "foreigner",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "대중적인 훅과 화려한 하드 록 기타 프로덕션을 결합한 음악 스타일을 공유한다.",
+      "createdAt": "2026-07-30T11:31:15.886Z"
+    },
+    {
+      "id": "boston->def-leppard-0-2",
+      "sourceBandId": "boston",
+      "sourceBandName": "Boston",
+      "targetBandId": "def-leppard",
+      "kind": "influenced",
+      "strength": 3,
+      "note": "정교한 오버다빙 기타 레이어링과 풍성한 코러스 화음 프로덕션 방식에서 보스턴의 큰 영향을 받았다.",
+      "createdAt": "2026-07-30T11:31:15.886Z"
+    },
+    {
+      "id": "equilibrium->finntroll-0-0",
+      "sourceBandId": "equilibrium",
+      "sourceBandName": "Equilibrium",
+      "targetBandId": "finntroll",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "2000년대 초반 유럽 포크 메탈 장르의 부흥을 함께 이끌었다.",
+      "createdAt": "2026-07-30T11:31:26.012Z"
+    },
+    {
+      "id": "equilibrium->eluveitie-0-1",
+      "sourceBandId": "equilibrium",
+      "sourceBandName": "Equilibrium",
+      "targetBandId": "eluveitie",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "유럽의 대표적인 포크/심포닉 메탈 밴드로 대형 페스티벌 무대를 자주 공유했다.",
+      "createdAt": "2026-07-30T11:31:26.012Z"
+    },
+    {
+      "id": "the-stone-roses->the-byrds-0-0",
+      "sourceBandId": "the-stone-roses",
+      "sourceBandName": "The Stone Roses",
+      "targetBandId": "the-byrds",
+      "kind": "influenced-by",
+      "strength": 3,
+      "note": "60년대 사이키델릭 징글쟁글 기타 팝 사운드와 화음 구성에서 직접적인 영감을 받았다.",
+      "createdAt": "2026-07-30T11:31:35.280Z"
+    },
+    {
+      "id": "the-stone-roses->primal-scream-0-1",
+      "sourceBandId": "the-stone-roses",
+      "sourceBandName": "The Stone Roses",
+      "targetBandId": "primal-scream",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다.",
+      "createdAt": "2026-07-30T11:31:35.280Z"
+    },
+    {
+      "id": "racer-x->cacophony-0-0",
+      "sourceBandId": "racer-x",
+      "sourceBandName": "Racer X",
+      "targetBandId": "cacophony",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1980년대 후반 트윈 기타 속주 시스템과 테크니컬 메탈 신을 함께 주도하며 경쟁했던 밴드다.",
+      "createdAt": "2026-07-30T11:31:48.224Z"
+    },
+    {
+      "id": "van-halen->extreme-0-0",
+      "sourceBandId": "van-halen",
+      "sourceBandName": "Van Halen",
+      "targetBandId": "extreme",
+      "kind": "influenced",
+      "strength": 3,
+      "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다.",
+      "createdAt": "2026-07-30T11:32:49.594Z"
+    },
+    {
+      "id": "alter-bridge->creed-0-0",
+      "sourceBandId": "alter-bridge",
+      "sourceBandName": "Alter Bridge",
+      "targetBandId": "creed",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "마크 트레몬티, 브라이언 마샬, 스콧 필립스가 알터 브릿지 형성 이전에 메인 멤버로 활약했던 포스트 그란지 밴드다.",
+      "createdAt": "2026-07-30T11:33:00.887Z"
+    },
+    {
+      "id": "alter-bridge->tremonti-0-1",
+      "sourceBandId": "alter-bridge",
+      "sourceBandName": "Alter Bridge",
+      "targetBandId": "tremonti",
+      "kind": "evolution",
+      "strength": 3,
+      "note": "기타리스트 마크 트레몬티가 자신의 리드 보컬과 더 헤비한 메탈 사운드를 선보이기 위해 결성한 솔로 프로젝트 밴드다.",
+      "createdAt": "2026-07-30T11:33:00.887Z"
+    },
+    {
+      "id": "the-velvet-underground->the-stooges-0-0",
+      "sourceBandId": "the-velvet-underground",
+      "sourceBandName": "The Velvet Underground",
+      "targetBandId": "the-stooges",
+      "kind": "shared-scene",
+      "strength": 3,
+      "note": "1960년대 후반 미국에서 노이즈와 반항적인 에너지를 바탕으로 프로토 펑크 씬을 이끌었다.",
+      "createdAt": "2026-07-30T11:33:16.226Z"
+    },
+    {
+      "id": "r-e-m->the-smiths-0-0",
+      "sourceBandId": "r-e-m",
+      "sourceBandName": "R.E.M.",
+      "targetBandId": "the-smiths",
+      "kind": "sounds-like",
+      "strength": 3,
+      "note": "1980년대 아르페지오 쟁글 기타 선율과 독특한 인디 팝 정서를 공유한다.",
+      "createdAt": "2026-07-30T12:36:37.096Z"
+    }
+  ]
 }

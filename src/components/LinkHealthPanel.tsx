@@ -1,5 +1,5 @@
 import { AlertTriangle, CheckCircle2, ExternalLink, Image, Link2, LoaderCircle, RefreshCw } from 'lucide-react'
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { siteContent } from '../data/siteContent'
 import { studioFetchJson } from '../lib/studioApiClient'
 import type { Band } from '../types/music'
@@ -7,10 +7,21 @@ import type { Band } from '../types/music'
 type HealthStatus = 'ok' | 'redirected' | 'restricted' | 'broken' | 'error'
 interface HealthEntry { id: string; label: string; url: string; kind: 'link' | 'image' | 'font'; bandId?: string }
 interface HealthResult extends HealthEntry { status: HealthStatus; httpStatus: number; finalUrl: string; contentType: string; durationMs: number; detail: string }
+export interface LinkHealthSummary {
+  checked: boolean
+  loading: boolean
+  total: number
+  ok: number
+  redirected: number
+  restricted: number
+  broken: number
+  error: number
+}
 
 interface LinkHealthPanelProps {
   bands: Band[]
   onSelectBand: (band: Band) => void
+  onSummaryChange?: (summary: LinkHealthSummary) => void
 }
 
 const statusLabels: Record<HealthStatus, string> = {
@@ -21,7 +32,7 @@ const statusLabels: Record<HealthStatus, string> = {
   error: '확인 실패',
 }
 
-export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
+export function LinkHealthPanel({ bands, onSelectBand, onSummaryChange }: LinkHealthPanelProps) {
   const [results, setResults] = useState<HealthResult[]>([])
   const [loading, setLoading] = useState(false)
   const [filter, setFilter] = useState<'issues' | HealthStatus | 'all'>('issues')
@@ -82,8 +93,12 @@ export function LinkHealthPanel({ bands, onSelectBand }: LinkHealthPanelProps) {
   const counts = results.reduce<Record<HealthStatus, number>>((summary, result) => ({ ...summary, [result.status]: summary[result.status] + 1 }), { ok: 0, redirected: 0, restricted: 0, broken: 0, error: 0 })
   const visible = results.filter((result) => filter === 'all' || filter === 'issues' ? filter === 'all' || result.status !== 'ok' : result.status === filter)
 
+  useEffect(() => {
+    onSummaryChange?.({ checked: results.length > 0, loading, total: entries.length, ...counts })
+  }, [counts.broken, counts.error, counts.ok, counts.redirected, counts.restricted, entries.length, loading, onSummaryChange, results.length])
+
   return (
-    <section className="studio-health-panel" aria-labelledby="health-title">
+    <section id="studio-link-health" className="studio-health-panel" aria-labelledby="health-title">
       <div className="studio-section-heading"><span>URL</span><div><h3 id="health-title">전체 링크·이미지 상태</h3><p>출처, 대표곡, 밴드 이미지와 업로드 자산의 HTTP 응답과 파일 형식을 검사합니다.</p></div></div>
       <div className="health-actions">
         <button onClick={() => void runCheck()} disabled={loading}>{loading ? <LoaderCircle className="is-spinning" size={15} /> : <RefreshCw size={15} />} {loading ? '검사 중' : `${entries.length}개 전체 검사`}</button>
