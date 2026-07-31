@@ -31,30 +31,6 @@
             "고딕 메탈",
             "데스 메탈"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "프로그레시브 메탈",
-            "고딕 메탈",
-            "데스 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "프로그레시브 메탈",
-            "고딕 메탈",
-            "데스 메탈"
-          ]
         }
       ],
       "tags": [
@@ -272,39 +248,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "멜로딕 데스 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "멜로딕 데스 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "멜로딕 데스 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "extreme-metal"
           ],
@@ -572,42 +515,6 @@
             "고딕 메탈",
             "프로그레시브 메탈"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "파워 메탈",
-            "고딕 메탈",
-            "프로그레시브 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "파워 메탈",
-            "고딕 메탈",
-            "프로그레시브 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "파워 메탈",
-            "고딕 메탈",
-            "프로그레시브 메탈"
-          ]
         }
       ],
       "tags": [
@@ -844,46 +751,6 @@
             "데스 메탈",
             "스래시 메탈"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "데스 메탈",
-            "스래시 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "데스 메탈",
-            "스래시 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "데스 메탈",
-            "스래시 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "extreme-metal"
-          ],
-          "subgenres": [
-            "데스 메탈",
-            "스래시 메탈"
-          ]
         }
       ],
       "tags": [
@@ -1091,39 +958,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -1369,42 +1203,6 @@
             "드림 팝",
             "아트 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "드림 팝",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "드림 팝",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트록",
-            "앰비언트 록",
-            "드림 팝",
-            "아트 록"
-          ]
         }
       ],
       "tags": [
@@ -1624,30 +1422,6 @@
             "인디 록",
             "얼터너티브 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "가라지 록 리바이벌",
-            "블루스 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "가라지 록 리바이벌",
-            "블루스 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
         }
       ],
       "tags": [
@@ -1838,66 +1612,6 @@
       "eraTags": [
         {
           "era": "1960s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 록",
-            "하드 록",
-            "프로그레시브 메탈",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "1970s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 록",
-            "하드 록",
-            "프로그레시브 메탈",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 록",
-            "하드 록",
-            "프로그레시브 메탈",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 록",
-            "하드 록",
-            "프로그레시브 메탈",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 록",
-            "하드 록",
-            "프로그레시브 메탈",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "2010s",
           "genreIds": [
             "progressive-art"
           ],
@@ -2123,39 +1837,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "스토너 록",
-            "얼터너티브 록",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "스토너 록",
-            "얼터너티브 록",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "스토너 록",
-            "얼터너티브 록",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -2409,71 +2090,6 @@
             "프로그레시브 록",
             "성인 지향 록"
           ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "하드 록",
-            "프로그레시브 록",
-            "성인 지향 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "하드 록",
-            "프로그레시브 록",
-            "성인 지향 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "하드 록",
-            "프로그레시브 록",
-            "성인 지향 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "하드 록",
-            "프로그레시브 록",
-            "성인 지향 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "하드 록",
-            "프로그레시브 록",
-            "성인 지향 록"
-          ]
         }
       ],
       "tags": [
@@ -2697,66 +2313,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "아레나 록",
-            "하드 록",
-            "소프트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "아레나 록",
-            "하드 록",
-            "소프트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "아레나 록",
-            "하드 록",
-            "소프트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "아레나 록",
-            "하드 록",
-            "소프트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "아레나 록",
-            "하드 록",
-            "소프트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -3006,61 +2562,6 @@
             "소프트 록",
             "서던 록"
           ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "컨트리 록",
-            "소프트 록",
-            "서던 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "컨트리 록",
-            "소프트 록",
-            "서던 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "컨트리 록",
-            "소프트 록",
-            "서던 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "컨트리 록",
-            "소프트 록",
-            "서던 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "컨트리 록",
-            "소프트 록",
-            "서던 록"
-          ]
         }
       ],
       "tags": [
@@ -3272,66 +2773,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 록",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 록",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 록",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 록",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 록",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -3586,18 +3027,6 @@
             "사이키델릭 록",
             "클래식 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "인디 록",
-            "사이키델릭 록",
-            "클래식 록"
-          ]
         }
       ],
       "tags": [
@@ -3843,42 +3272,6 @@
             "컬리지 록",
             "포크 록"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "쟁글 팝",
-            "컬리지 록",
-            "포크 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "쟁글 팝",
-            "컬리지 록",
-            "포크 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "쟁글 팝",
-            "컬리지 록",
-            "포크 록"
-          ]
         }
       ],
       "tags": [
@@ -4070,61 +3463,6 @@
       "eraTags": [
         {
           "era": "1960s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "글램 록",
-            "아트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1970s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "글램 록",
-            "아트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "글램 록",
-            "아트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "글램 록",
-            "아트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "글램 록",
-            "아트 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
           "genreIds": [
             "progressive-art"
           ],
@@ -4366,36 +3704,6 @@
             "아트 록",
             "익스페리멘털 록"
           ]
-        },
-        {
-          "era": "1970s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "아트 록",
-            "익스페리멘털 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "아트 록",
-            "익스페리멘털 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "아트 록",
-            "익스페리멘털 록"
-          ]
         }
       ],
       "tags": [
@@ -4618,30 +3926,6 @@
             "포스트그런지",
             "전통 헤비메탈"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "하드 록",
-            "포스트그런지",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "하드 록",
-            "포스트그런지",
-            "전통 헤비메탈"
-          ]
         }
       ],
       "tags": [
@@ -4844,54 +4128,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "아레나 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2010s",
           "genreIds": [
             "hard-rock"
           ],
@@ -5149,54 +4385,6 @@
             "네오클래시컬 메탈",
             "파워 메탈"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈",
-            "파워 메탈"
-          ]
         }
       ],
       "tags": [
@@ -5418,39 +4606,6 @@
             "브릿팝",
             "네오사이키델리아"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "브릿팝",
-            "네오사이키델리아"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "브릿팝",
-            "네오사이키델리아"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "브릿팝",
-            "네오사이키델리아"
-          ]
         }
       ],
       "tags": [
@@ -5651,28 +4806,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "심포닉 메탈",
-            "바이킹 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "심포닉 메탈",
-            "바이킹 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -5902,66 +5035,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "아레나 록",
-            "클래식 록",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "아레나 록",
-            "클래식 록",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "아레나 록",
-            "클래식 록",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "아레나 록",
-            "클래식 록",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "아레나 록",
-            "클래식 록",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -6209,28 +5282,6 @@
             "블루스 록",
             "전통 헤비메탈"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "전통 헤비메탈"
-          ]
         }
       ],
       "tags": [
@@ -6445,18 +5496,6 @@
             "네오클래시컬 메탈",
             "프로그레시브 메탈"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈",
-            "프로그레시브 메탈"
-          ]
         }
       ],
       "tags": [
@@ -6641,17 +5680,6 @@
       "eraTags": [
         {
           "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "전통 헤비메탈",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -6874,18 +5902,6 @@
       "eraTags": [
         {
           "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "브릿팝",
-            "사이키델릭 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -7128,54 +6144,6 @@
             "재즈 록",
             "레게 록"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "소프트 록",
-            "팝 록",
-            "재즈 록",
-            "레게 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "소프트 록",
-            "팝 록",
-            "재즈 록",
-            "레게 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "소프트 록",
-            "팝 록",
-            "재즈 록",
-            "레게 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "소프트 록",
-            "팝 록",
-            "재즈 록",
-            "레게 록"
-          ]
         }
       ],
       "tags": [
@@ -7363,17 +6331,6 @@
       "eraTags": [
         {
           "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "punk-rock"
           ],
@@ -7572,42 +6529,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "뉴웨이브",
-            "포스트펑크",
-            "레게 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "뉴웨이브",
-            "포스트펑크",
-            "레게 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "뉴웨이브",
-            "포스트펑크",
-            "레게 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -7839,45 +6760,6 @@
             "포스트그런지",
             "팝펑크"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "하드 록",
-            "포스트그런지",
-            "팝펑크"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "하드 록",
-            "포스트그런지",
-            "팝펑크"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "하드 록",
-            "포스트그런지",
-            "팝펑크"
-          ]
         }
       ],
       "tags": [
@@ -8088,19 +6970,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "고딕 록",
-            "뉴웨이브",
-            "콜드웨이브",
-            "다크웨이브"
-          ]
-        },
-        {
-          "era": "1980s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -8330,18 +7199,6 @@
             "팝 록",
             "얼터너티브 록"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "신스팝",
-            "팝 록",
-            "얼터너티브 록"
-          ]
         }
       ],
       "tags": [
@@ -8547,24 +7404,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -8783,39 +7622,6 @@
             "포크 팝",
             "챔버 팝"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 포크",
-            "포크 팝",
-            "챔버 팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 포크",
-            "포크 팝",
-            "챔버 팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 포크",
-            "포크 팝",
-            "챔버 팝"
-          ]
         }
       ],
       "tags": [
@@ -8996,18 +7802,6 @@
       "eraTags": [
         {
           "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "하드코어 펑크",
-            "얼터너티브 록",
-            "포스트하드코어",
-            "드림 팝"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -9249,45 +8043,6 @@
             "노이즈 팝",
             "브릿팝"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "슈게이즈",
-            "드림 팝",
-            "인디 록",
-            "노이즈 팝",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "슈게이즈",
-            "드림 팝",
-            "인디 록",
-            "노이즈 팝",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "슈게이즈",
-            "드림 팝",
-            "인디 록",
-            "노이즈 팝",
-            "브릿팝"
-          ]
         }
       ],
       "tags": [
@@ -9511,54 +8266,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "드림 팝",
-            "슈게이즈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "드림 팝",
-            "슈게이즈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "드림 팝",
-            "슈게이즈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "드림 팝",
-            "슈게이즈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -9815,28 +8522,6 @@
             "슬로코어",
             "인디 팝"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "드림 팝",
-            "슬로코어",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "드림 팝",
-            "슬로코어",
-            "인디 팝"
-          ]
         }
       ],
       "tags": [
@@ -10044,42 +8729,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "서던 록",
-            "가라지 록 리바이벌",
-            "얼터너티브 록",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "서던 록",
-            "가라지 록 리바이벌",
-            "얼터너티브 록",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "서던 록",
-            "가라지 록 리바이벌",
-            "얼터너티브 록",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -10301,54 +8950,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "소프트 록",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "소프트 록",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "소프트 록",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "글램 메탈",
-            "소프트 록",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -10591,28 +9192,6 @@
             "소프트 록",
             "인디 팝"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "소프트 록",
-            "인디 팝"
-          ]
         }
       ],
       "tags": [
@@ -10840,42 +9419,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "그루브 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "그루브 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "그루브 메탈",
-            "스래시 메탈",
-            "전통 헤비메탈",
-            "파워 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -11137,32 +9680,6 @@
             "포스트하드코어",
             "하드 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "이모",
-            "팝펑크",
-            "얼터너티브 록",
-            "포스트하드코어",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "이모",
-            "팝펑크",
-            "얼터너티브 록",
-            "포스트하드코어",
-            "하드 록"
-          ]
         }
       ],
       "tags": [
@@ -11405,39 +9922,6 @@
             "뉴 메탈",
             "하드코어 펑크"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "하드코어 펑크"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "하드코어 펑크"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "얼터너티브 메탈",
-            "뉴 메탈",
-            "하드코어 펑크"
-          ]
         }
       ],
       "tags": [
@@ -11665,28 +10149,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "포크 록",
-            "페이건 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "포크 록",
-            "페이건 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -11965,54 +10427,6 @@
             "포스트펑크",
             "하드 록"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "브릿팝",
-            "포스트펑크",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "브릿팝",
-            "포스트펑크",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "브릿팝",
-            "포스트펑크",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "브릿팝",
-            "포스트펑크",
-            "하드 록"
-          ]
         }
       ],
       "tags": [
@@ -12254,19 +10668,6 @@
             "팝 록",
             "일렉트로팝"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "신스팝",
-            "인디 팝",
-            "드림 팝",
-            "팝 록",
-            "일렉트로팝"
-          ]
         }
       ],
       "tags": [
@@ -12477,54 +10878,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈",
-            "전통 헤비메탈",
-            "네오클래시컬 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -12801,54 +11154,6 @@
             "네오클래시컬 메탈",
             "스피드 메탈"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "심포닉 메탈",
-            "네오클래시컬 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "심포닉 메탈",
-            "네오클래시컬 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "심포닉 메탈",
-            "네오클래시컬 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "심포닉 메탈",
-            "네오클래시컬 메탈",
-            "스피드 메탈"
-          ]
         }
       ],
       "tags": [
@@ -13096,24 +11401,6 @@
           "subgenres": [
             "팝 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -13347,45 +11634,6 @@
             "슈게이즈",
             "프로그레시브 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "드림 팝",
-            "인디 록",
-            "아트 록",
-            "슈게이즈",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "드림 팝",
-            "인디 록",
-            "아트 록",
-            "슈게이즈",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "드림 팝",
-            "인디 록",
-            "아트 록",
-            "슈게이즈",
-            "프로그레시브 록"
-          ]
         }
       ],
       "tags": [
@@ -13609,17 +11857,6 @@
             "인디 록",
             "쟁글 팝"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "인디 록",
-            "쟁글 팝"
-          ]
         }
       ],
       "tags": [
@@ -13827,32 +12064,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "인디 록",
-            "팝 록",
-            "소프트 록",
-            "피아노 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "인디 록",
-            "팝 록",
-            "소프트 록",
-            "피아노 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -14098,26 +12309,6 @@
             "포크 록",
             "인디 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포크 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포크 록",
-            "인디 록"
-          ]
         }
       ],
       "tags": [
@@ -14323,30 +12514,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "얼터너티브 메탈",
-            "하드 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "얼터너티브 메탈",
-            "하드 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -14583,30 +12750,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트펑크 리바이벌",
-            "인디 록",
-            "댄스 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트펑크 리바이벌",
-            "인디 록",
-            "댄스 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -14874,32 +13017,6 @@
             "팝 록",
             "일렉트로팝"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "신스팝",
-            "인디 록",
-            "팝 록",
-            "일렉트로팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "신스팝",
-            "인디 록",
-            "팝 록",
-            "일렉트로팝"
-          ]
         }
       ],
       "tags": [
@@ -15116,28 +13233,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -15367,39 +13462,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝펑크",
-            "이모"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝펑크",
-            "이모"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝펑크",
-            "이모"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -15643,39 +13705,6 @@
             "얼터너티브 록",
             "이모"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "이모"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "이모"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "이모"
-          ]
         }
       ],
       "tags": [
@@ -15888,26 +13917,6 @@
             "인디 록",
             "얼터너티브 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "얼터너티브 록"
-          ]
         }
       ],
       "tags": [
@@ -16108,30 +14117,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "팝 록",
-            "뉴웨이브"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "팝 록",
-            "뉴웨이브"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "punk-rock"
           ],
@@ -16356,28 +14341,6 @@
             "블루스 록",
             "인디 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "루츠 록",
-            "블루스 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "루츠 록",
-            "블루스 록",
-            "인디 록"
-          ]
         }
       ],
       "tags": [
@@ -16574,19 +14537,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트펑크 리바이벌",
-            "인디 록",
-            "뉴웨이브",
-            "댄스 록",
-            "신스 록"
-          ]
-        },
-        {
-          "era": "2010s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -16804,39 +14754,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "가라지 록 리바이벌",
-            "인디 록",
-            "포스트펑크 리바이벌"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "가라지 록 리바이벌",
-            "인디 록",
-            "포스트펑크 리바이벌"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "가라지 록 리바이벌",
-            "인디 록",
-            "포스트펑크 리바이벌"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -17078,39 +14995,6 @@
             "팝 록",
             "인디 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 록"
-          ]
         }
       ],
       "tags": [
@@ -17293,26 +15177,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -17512,18 +15376,6 @@
       "eraTags": [
         {
           "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "인디 록",
-            "신스팝",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -17750,28 +15602,6 @@
             "팝 록",
             "일렉트로팝"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "팝 록",
-            "일렉트로팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "팝 록",
-            "일렉트로팝"
-          ]
         }
       ],
       "tags": [
@@ -17960,45 +15790,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "댄스 록",
-            "얼터너티브 록",
-            "전자 록",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "댄스 록",
-            "얼터너티브 록",
-            "전자 록",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "댄스 록",
-            "얼터너티브 록",
-            "전자 록",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -18235,32 +16026,6 @@
             "댄스 록",
             "훵크 록"
           ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "뉴웨이브",
-            "포스트펑크",
-            "아트 록",
-            "댄스 록",
-            "훵크 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "뉴웨이브",
-            "포스트펑크",
-            "아트 록",
-            "댄스 록",
-            "훵크 록"
-          ]
         }
       ],
       "tags": [
@@ -18456,32 +16221,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "스페이스 록",
-            "얼터너티브 록",
-            "슈게이즈",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "스페이스 록",
-            "얼터너티브 록",
-            "슈게이즈",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2000s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -18700,42 +16439,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "루츠 록",
-            "소프트 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "루츠 록",
-            "소프트 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "루츠 록",
-            "소프트 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -18994,28 +16697,6 @@
             "얼터너티브 록",
             "블루스 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "얼터너티브 록",
-            "블루스 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "얼터너티브 록",
-            "블루스 록"
-          ]
         }
       ],
       "tags": [
@@ -19244,30 +16925,6 @@
             "인디 팝",
             "일렉트로팝"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 팝",
-            "일렉트로팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 팝",
-            "일렉트로팝"
-          ]
         }
       ],
       "tags": [
@@ -19476,42 +17133,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "그루브 메탈",
-            "메탈코어"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "그루브 메탈",
-            "메탈코어"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "그루브 메탈",
-            "메탈코어"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -19792,39 +17413,6 @@
             "얼터너티브 메탈",
             "인더스트리얼 메탈"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "인더스트리얼 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "인더스트리얼 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 메탈",
-            "인더스트리얼 메탈"
-          ]
         }
       ],
       "tags": [
@@ -20037,66 +17625,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "글램 메탈",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "글램 메탈",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "글램 메탈",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "글램 메탈",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "블루스 록",
-            "글램 메탈",
-            "아레나 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -20334,19 +17862,6 @@
             "재즈 록",
             "가라지 록 리바이벌"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "사이키델릭 록",
-            "프로그레시브 록",
-            "스래시 메탈",
-            "재즈 록",
-            "가라지 록 리바이벌"
-          ]
         }
       ],
       "tags": [
@@ -20558,50 +18073,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "hard-rock"
           ],
@@ -20824,54 +18295,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "글램 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "글램 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "글램 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "글램 록",
-            "인디 록",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -21129,30 +18552,6 @@
             "가라지 록 리바이벌",
             "얼터너티브 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "포스트펑크 리바이벌",
-            "가라지 록 리바이벌",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "포스트펑크 리바이벌",
-            "가라지 록 리바이벌",
-            "얼터너티브 록"
-          ]
         }
       ],
       "tags": [
@@ -21349,66 +18748,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "아레나 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "아레나 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "아레나 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "아레나 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "포스트펑크",
-            "아레나 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -21653,18 +18992,6 @@
             "네오클래시컬 메탈",
             "스피드 메탈"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "심포닉 메탈",
-            "파워 메탈",
-            "네오클래시컬 메탈",
-            "스피드 메탈"
-          ]
         }
       ],
       "tags": [
@@ -21897,39 +19224,6 @@
             "팝 록",
             "인디 팝"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "팝 록",
-            "인디 팝"
-          ]
         }
       ],
       "tags": [
@@ -22141,54 +19435,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "얼터너티브 록",
-            "인디 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "얼터너티브 록",
-            "인디 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "얼터너티브 록",
-            "인디 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "브릿팝",
-            "얼터너티브 록",
-            "인디 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -22420,34 +19666,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "포스트펑크 리바이벌",
-            "뉴웨이브",
-            "얼터너티브 록",
-            "브릿팝",
-            "댄스 펑크"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "포스트펑크 리바이벌",
-            "뉴웨이브",
-            "얼터너티브 록",
-            "브릿팝",
-            "댄스 펑크"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -22721,19 +19939,6 @@
             "훵크 록",
             "팝 록"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 록",
-            "하드 록",
-            "얼터너티브 록",
-            "훵크 록",
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -22959,34 +20164,6 @@
             "얼터너티브 록",
             "팝 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트펑크 리바이벌",
-            "인디 록",
-            "신스팝",
-            "뉴웨이브",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트펑크 리바이벌",
-            "인디 록",
-            "신스팝",
-            "뉴웨이브",
-            "얼터너티브 록",
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -23188,18 +20365,6 @@
             "하드 록",
             "팝 록"
           ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "인디 록",
-            "하드 록",
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -23386,36 +20551,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "파워 메탈",
-            "스피드 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -23627,28 +20762,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "피아노 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "피아노 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -23878,39 +20991,6 @@
             "포스트그런지",
             "팝 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "포스트그런지",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "포스트그런지",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "포스트그런지",
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -24092,28 +21172,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "가라지 록 리바이벌",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "인디 록",
-            "가라지 록 리바이벌",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "britpop-indie"
           ],
@@ -24333,42 +21391,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "프로그레시브 록",
-            "스페이스 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "프로그레시브 록",
-            "스페이스 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "얼터너티브 록",
-            "프로그레시브 록",
-            "스페이스 록",
-            "아트 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -24630,45 +21652,6 @@
             "인디 록",
             "브릿팝"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "피아노 록",
-            "얼터너티브 록",
-            "인디 록",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "피아노 록",
-            "얼터너티브 록",
-            "인디 록",
-            "브릿팝"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "피아노 록",
-            "얼터너티브 록",
-            "인디 록",
-            "브릿팝"
-          ]
         }
       ],
       "tags": [
@@ -24903,42 +21886,6 @@
             "얼터너티브 록",
             "팝 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "인디 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "인디 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "britpop-indie"
-          ],
-          "subgenres": [
-            "포스트 브릿팝",
-            "인디 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
         }
       ],
       "tags": [
@@ -25142,42 +22089,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "하드 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "하드 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "하드 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -25401,39 +22312,6 @@
             "스케이트 펑크",
             "얼터너티브 록"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "스케이트 펑크",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "스케이트 펑크",
-            "얼터너티브 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "스케이트 펑크",
-            "얼터너티브 록"
-          ]
         }
       ],
       "tags": [
@@ -25647,28 +22525,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "팝 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 팝",
-            "팝 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -26095,50 +22951,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스래시 메탈",
-            "스피드 메탈",
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스래시 메탈",
-            "스피드 메탈",
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스래시 메탈",
-            "스피드 메탈",
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "스래시 메탈",
-            "스피드 메탈",
-            "헤비 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -26601,42 +23413,6 @@
             "스케이트 펑크",
             "스래시 메탈"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 메탈",
-            "스케이트 펑크",
-            "스래시 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 메탈",
-            "스케이트 펑크",
-            "스래시 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 메탈",
-            "스케이트 펑크",
-            "스래시 메탈"
-          ]
         }
       ],
       "tags": [
@@ -26901,50 +23677,6 @@
             "전통 헤비메탈",
             "하드 록"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "글램 메탈",
-            "전통 헤비메탈",
-            "하드 록"
-          ]
         }
       ],
       "tags": [
@@ -27197,30 +23929,6 @@
             "신스 록",
             "이모"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "신스 록",
-            "이모"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "팝펑크",
-            "얼터너티브 록",
-            "신스 록",
-            "이모"
-          ]
         }
       ],
       "tags": [
@@ -27463,39 +24171,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "멜로딕 데스 메탈",
-            "바이킹 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "멜로딕 데스 메탈",
-            "바이킹 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "포크 메탈",
-            "멜로딕 데스 메탈",
-            "바이킹 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -27758,30 +24433,6 @@
             "뉴웨이브",
             "신스 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "팝 록",
-            "뉴웨이브",
-            "신스 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "팝 록",
-            "뉴웨이브",
-            "신스 록"
-          ]
         }
       ],
       "tags": [
@@ -27991,39 +24642,6 @@
             "얼터너티브 메탈",
             "뉴 메탈"
           ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "랩 메탈",
-            "얼터너티브 메탈",
-            "뉴 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "랩 메탈",
-            "얼터너티브 메탈",
-            "뉴 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "랩 메탈",
-            "얼터너티브 메탈",
-            "뉴 메탈"
-          ]
         }
       ],
       "tags": [
@@ -28215,39 +24833,6 @@
       "eraTags": [
         {
           "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 록",
-            "랩 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 록",
-            "랩 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "뉴 메탈",
-            "얼터너티브 록",
-            "랩 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "heavy-metal"
           ],
@@ -28505,30 +25090,6 @@
             "얼터너티브 록",
             "라디오 록"
           ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "하드 록",
-            "얼터너티브 록",
-            "라디오 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "포스트그런지",
-            "하드 록",
-            "얼터너티브 록",
-            "라디오 록"
-          ]
         }
       ],
       "tags": [
@@ -28757,50 +25318,6 @@
       "eraTags": [
         {
           "era": "1980s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "훵크 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "훵크 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "훵크 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "훵크 록",
-            "얼터너티브 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "alternative-indie"
           ],
@@ -29048,18 +25565,6 @@
       "eraTags": [
         {
           "era": "1960s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "사이키델릭 록",
-            "아트 록",
-            "클래식 록"
-          ]
-        },
-        {
-          "era": "1970s",
           "genreIds": [
             "classic-rock"
           ],
@@ -31650,28 +28155,6 @@
             "팝 펑크",
             "개러지 펑크"
           ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "펑크 록",
-            "팝 펑크",
-            "개러지 펑크"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "펑크 록",
-            "팝 펑크",
-            "개러지 펑크"
-          ]
         }
       ],
       "summary": "록을 가장 짧고 빠르고 단순한 형태로 되돌려 펑크의 기본 문법을 만든 밴드. 가죽 재킷과 찢어진 청바지로 대표되는 펑크의 시각적 스타일도 이들로부터 시작됐다.",
@@ -32152,36 +28635,6 @@
       "eraTags": [
         {
           "era": "1970s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "펑크 록",
-            "아나키 펑크"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "펑크 록",
-            "아나키 펑크"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "punk-rock"
-          ],
-          "subgenres": [
-            "펑크 록",
-            "아나키 펑크"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "punk-rock"
           ],
@@ -39636,60 +36089,6 @@
           "subgenres": [
             "전통 헤비메탈"
           ]
-        },
-        {
-          "era": "1970s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "heavy-metal"
-          ],
-          "subgenres": [
-            "전통 헤비메탈"
-          ]
         }
       ],
       "summary": "가죽 의상과 스터드 패션을 도입하고 트윈 기타 시스템을 정립하여 정통 헤비메탈의 표준을 제시한 '메탈 갓'. 이후 등장한 거의 모든 헤비메탈 밴드의 패션과 무대 이미지에 직접적인 영향을 남겼다.",
@@ -40836,46 +37235,6 @@
             "프로그레시브 메탈",
             "프로그레시브 록"
           ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 메탈",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 메탈",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 메탈",
-            "프로그레시브 록"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "progressive-art"
-          ],
-          "subgenres": [
-            "프로그레시브 메탈",
-            "프로그레시브 록"
-          ]
         }
       ],
       "tags": [
@@ -41135,66 +37494,6 @@
             "하드 록",
             "프로토 메탈"
           ]
-        },
-        {
-          "era": "1970s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
-        },
-        {
-          "era": "1980s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
-        },
-        {
-          "era": "1990s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
-        },
-        {
-          "era": "2000s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
-        },
-        {
-          "era": "2020s",
-          "genreIds": [
-            "hard-rock"
-          ],
-          "subgenres": [
-            "하드 록",
-            "프로토 메탈"
-          ]
         }
       ],
       "tags": [
@@ -41440,26 +37739,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "인디 록",
-            "팝 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],
@@ -41977,28 +38256,6 @@
       "eraTags": [
         {
           "era": "2000s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "얼터너티브 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2010s",
-          "genreIds": [
-            "classic-rock"
-          ],
-          "subgenres": [
-            "팝 록",
-            "얼터너티브 록",
-            "인디 록"
-          ]
-        },
-        {
-          "era": "2020s",
           "genreIds": [
             "classic-rock"
           ],

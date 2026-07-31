@@ -277,33 +277,6 @@ function eraFromYear(year: number): EraId {
   return eraIds.includes(candidate) ? candidate : '2020s'
 }
 
-/** Reads year ranges out of a free-text activeYears string ("1973–1987, 1995–현재") so a band active
- *  across several decades gets one era tag per decade instead of a single tag pinned to its formation year. */
-function parseActiveYearRanges(activeYears: string): Array<[number, number]> {
-  const currentYear = new Date().getFullYear()
-  return activeYears.split(',').flatMap((segment) => {
-    const range = segment.match(/(\d{4})\s*[-–—~]\s*(\d{4}|현재|present)?/i)
-    if (range) {
-      const start = Number(range[1])
-      const end = !range[2] || /현재|present/i.test(range[2]) ? currentYear : Number(range[2])
-      return end >= start ? [[start, end] as [number, number]] : []
-    }
-    const single = segment.match(/(\d{4})/)
-    return single ? [[Number(single[1]), Number(single[1])] as [number, number]] : []
-  })
-}
-
-export function eraTagsFromActiveYears(formed: number, activeYears: string, legacy: GenreId, subgenres: string[]): Band['eraTags'] {
-  const decades = new Set<number>()
-  for (const [start, end] of parseActiveYearRanges(activeYears)) {
-    for (let decade = Math.floor(start / 10) * 10; decade <= end; decade += 10) decades.add(decade)
-  }
-  const eras = [...decades]
-    .map((decade) => `${Math.min(2020, Math.max(1960, decade))}s` as EraId)
-    .filter((era, index, all) => eraIds.includes(era) && all.indexOf(era) === index)
-    .sort((a, b) => eraIds.indexOf(a) - eraIds.indexOf(b))
-  return (eras.length ? eras : [eraFromYear(formed)]).map((era) => ({ era, genreIds: [legacy], subgenres }))
-}
 
 function youtubeId(value: unknown) {
   const input = textUrl(value)
@@ -478,7 +451,7 @@ function normalizeBand(value: unknown, index: number): Band | null {
     primaryGenre: legacy,
     genreIds: [legacy],
     subgenres,
-    eraTags: eraTagsFromActiveYears(formed, activeYears, legacy, subgenres),
+    eraTags: [{ era: eraFromYear(formed), genreIds: [legacy], subgenres }],
     tags: stringList(value.tags),
     summary: textProse(value.summary ?? value.achievementSummary ?? value.introduction),
     style: textProse(value.style ?? value.soundDescription ?? value.musicDescription),
