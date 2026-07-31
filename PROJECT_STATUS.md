@@ -13,10 +13,10 @@
 
 ## 2. 현재 기준
 
-- 갱신: 2026-07-30 KST · Codex
+- 갱신: 2026-07-31 KST · Claude
 - 작업 브랜치: `codex/taxonomy-v2`
-- 카탈로그 검수 커밋: `9e4d28f` (`data: review and publish recovered band catalog`)
-- 원격 `main`, `codex/taxonomy-v2`: 카탈로그 검수 커밋과 이 상태 문서 커밋까지 동기화
+- 최신 커밋: `ce36736` (`feat: operator console UX, banner unification, and catalog data audit`)
+- 원격 `main`, `codex/taxonomy-v2`: 위 커밋까지 동기화 완료
 - 공개 주소: <https://kinggodyoung5.github.io/rockatlas/>
 - 배포: `main` 푸시 후 `.github/workflows/deploy-pages.yml`
 - 백업 기준: `backup/pre-taxonomy-v2-20260719`
