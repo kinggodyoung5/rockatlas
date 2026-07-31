@@ -61,7 +61,9 @@ describe('resolvePendingRelations', () => {
     expect(result.resolvedCount).toBe(1)
     expect(result.remaining).toEqual([])
     expect(result.bands.find((item) => item.id === 'alpha')?.relations[0]).toMatchObject({ targetBandId: 'beta', kind: 'influenced-by' })
-    expect(result.bands.find((item) => item.id === 'beta')?.relations[0]).toMatchObject({ targetBandId: 'alpha', kind: 'influenced', mirroredFrom: 'alpha' })
+    const mirrored = result.bands.find((item) => item.id === 'beta')?.relations[0]
+    expect(mirrored).toMatchObject({ targetBandId: 'alpha', kind: 'influenced', mirroredFrom: 'alpha' })
+    expect(mirrored?.note).toBe('명확한 영향 관계 (ALPHA 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)')
   })
 
   it('이미 존재하는 역방향 관계를 중복 생성하지 않는다', () => {
@@ -93,5 +95,17 @@ describe('syncMirroredRelation', () => {
     const result = syncMirroredRelation([band('alpha'), band('beta', [manualReverse])], 'alpha', 'ALPHA', forward, undefined)
     expect(result.changed).toBe(false)
     expect(result.bands.find((item) => item.id === 'beta')?.relations).toEqual([manualReverse])
+  })
+
+  it('원본 관계에 실제 근거가 있으면 미러 관계 문구에 그대로 재사용한다', () => {
+    const withReason: Relation = { targetBandId: 'beta', kind: 'shared-scene', strength: 2, note: '1990년대 같은 지역 언더그라운드 씬에서 함께 활동했다.', reviewStatus: 'draft' }
+    const result = syncMirroredRelation([band('alpha'), band('beta')], 'alpha', 'ALPHA', undefined, withReason)
+    expect(result.bands.find((item) => item.id === 'beta')?.relations[0].note).toBe('1990년대 같은 지역 언더그라운드 씬에서 함께 활동했다. (ALPHA 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)')
+  })
+
+  it('원본 관계에 근거가 비어있으면 일반 안내 문구로 대체한다', () => {
+    const blank: Relation = { targetBandId: 'beta', kind: 'sounds-like', strength: 1, note: '연결 이유를 입력하세요.', reviewStatus: 'draft' }
+    const result = syncMirroredRelation([band('alpha'), band('beta')], 'alpha', 'ALPHA', undefined, blank)
+    expect(result.bands.find((item) => item.id === 'beta')?.relations[0].note).toBe('ALPHA 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)')
   })
 })

@@ -77,6 +77,56 @@ describe('fuzzy mood resolution', () => {
   })
 })
 
+describe('era tags from activeYears', () => {
+  const baseBand = {
+    origin: 'Test City, United States',
+    countryCode: 'US',
+    summary: '결성 이후 여러 시대에 걸쳐 활동해 온 테스트 밴드다.',
+    style: '기타와 드럼을 중심으로 한 곡 전개를 들려준다.',
+    tags: ['테스트'],
+    genre: 'alternative-grunge',
+    subgenres: ['alternative-rock'],
+    moods: {},
+    members: [],
+    representativeTracks: [],
+    relations: [],
+    wikidataId: '', musicBrainzId: '', wikipediaUrl: '', youtubeChannelUrl: '', image: { commonsFile: '' },
+  }
+
+  it('활동 기간 전체에 걸쳐 시대별 태그를 하나씩 만든다 (한 연도에 고정하지 않는다)', async () => {
+    const raw = JSON.stringify({ bands: [{ ...baseBand, name: 'Long Runner', formed: 1968, activeYears: '1968–2018' }] })
+    const result = await inspectBandIntake(raw, [])
+    const eras = result.candidates[0].band.eraTags.map((tag) => tag.era)
+    expect(eras).toEqual(['1960s', '1970s', '1980s', '1990s', '2000s', '2010s'])
+  })
+
+  it('활동 중단이 있는 밴드도 실제 활동한 시대만 모두 포함한다', async () => {
+    const raw = JSON.stringify({ bands: [{ ...baseBand, name: 'Hiatus Band', formed: 1973, activeYears: '1973–1987, 1995–현재' }] })
+    const result = await inspectBandIntake(raw, [])
+    const eras = result.candidates[0].band.eraTags.map((tag) => tag.era)
+    const currentDecade = `${Math.floor(new Date().getFullYear() / 10) * 10}s`
+    expect(eras[0]).toBe('1970s')
+    expect(eras).toContain('1980s')
+    expect(eras).toContain('1990s')
+    expect(eras[eras.length - 1]).toBe(currentDecade)
+  })
+
+  it('활동 기간 문구를 읽을 수 없으면 결성 연도 기준 시대 하나로 안전하게 대체한다', async () => {
+    const raw = JSON.stringify({ bands: [{ ...baseBand, name: 'Unparseable Years', formed: 2005, activeYears: '결성 시기 불명' }] })
+    const result = await inspectBandIntake(raw, [])
+    expect(result.candidates[0].band.eraTags.map((tag) => tag.era)).toEqual(['2000s'])
+  })
+
+  it('활동 기간 문구가 아예 없으면 결성 연도부터 지금까지 걸친 시대를 모두 채운다', async () => {
+    const raw = JSON.stringify({ bands: [{ ...baseBand, name: 'No Active Years Text', formed: 2005, activeYears: '' }] })
+    const result = await inspectBandIntake(raw, [])
+    const eras = result.candidates[0].band.eraTags.map((tag) => tag.era)
+    const currentDecade = `${Math.floor(new Date().getFullYear() / 10) * 10}s`
+    expect(eras[0]).toBe('2000s')
+    expect(eras[eras.length - 1]).toBe(currentDecade)
+  })
+})
+
 describe('intake pipeline', () => {
   it('표현이 다른 분위기를 정식 ID로 바꾸고 미등록 관계를 보류함에 보존한다', async () => {
     const raw = JSON.stringify({

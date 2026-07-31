@@ -35,3 +35,21 @@ export function getStudioDiagnostics(bands: Band[]): StudioDiagnostic[] {
 
   return issues
 }
+
+export interface MissingTrackGuide {
+  bandId: string
+  bandName: string
+  trackId: string
+  trackTitle: string
+}
+
+/** Representative tracks whose "감상 안내" (what-to-listen-for) note is still empty. Kept separate from
+ *  `getStudioDiagnostics` so an operator can jump straight through just these, instead of wading through
+ *  every other diagnostic to find them. */
+export function getMissingTrackGuides(bands: Band[]): MissingTrackGuide[] {
+  return bands.flatMap((band) =>
+    band.tracks
+      .filter((track) => !track.guide || !track.guide.trim())
+      .map((track) => ({ bandId: band.id, bandName: band.name, trackId: track.id, trackTitle: track.title })),
+  )
+}

@@ -4,6 +4,7 @@ import { eraById } from '../data/eras'
 import { reviewBand } from '../data/review'
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { HitchhikingDirectionId } from '../config/hitchhiking'
+import type { BandDetailCopy } from '../data/siteContent'
 import type { JourneyStep, JourneyVia } from '../lib/hitchhiking'
 import type { Band, BandEraTag, Track } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
@@ -46,6 +47,7 @@ interface BandDetailProps {
   onResetJourney: () => void
   onShareJourney: () => void
   onShare: () => void
+  bandDetailCopy: BandDetailCopy
 }
 
 export function BandDetail({
@@ -59,6 +61,7 @@ export function BandDetail({
   onResetJourney,
   onShareJourney,
   onShare,
+  bandDetailCopy,
 }: BandDetailProps) {
   const genre = genreById[band.primaryGenre]
   const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
@@ -201,11 +204,12 @@ export function BandDetail({
           band={band}
           visitedIds={visitedIds}
           journeySteps={journeySteps}
+          copy={bandDetailCopy}
           onTravel={(target, direction: HitchhikingDirectionId) => onTravelBand(target, direction)}
           onResetJourney={onResetJourney}
           onShareJourney={onShareJourney}
         />
-        <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} />
+        <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} copy={bandDetailCopy} />
       </div>
 
       <details className="sources-disclosure shell">

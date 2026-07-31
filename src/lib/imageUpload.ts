@@ -1,8 +1,7 @@
-export type StudioImageAssetType = 'hero' | 'logo' | 'wordmark' | 'cosmic' | 'genre'
+export type StudioImageAssetType = 'hero' | 'wordmark' | 'cosmic' | 'genre'
 
 const imageLimits: Record<StudioImageAssetType, { width: number; height: number }> = {
   hero: { width: 1920, height: 1280 },
-  logo: { width: 512, height: 512 },
   wordmark: { width: 1600, height: 640 },
   cosmic: { width: 1920, height: 1280 },
   genre: { width: 1200, height: 1200 },

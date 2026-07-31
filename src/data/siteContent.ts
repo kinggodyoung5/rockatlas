@@ -17,6 +17,30 @@ export interface GenreVisualSettings {
   imageScale: number
 }
 
+export interface HitchhikingDirectionCopy {
+  label: string
+  description: string
+  resultLabel: string
+}
+
+export interface BandDetailCopy {
+  hitchhikingEyebrow: string
+  hitchhikingTitle: string
+  hitchhikingDescription: string
+  hitchhikingOtherCandidatesLabel: string
+  hitchhikingMoveLabel: string
+  hitchhikingJourneyLabel: string
+  hitchhikingJourneyHint: string
+  hitchhikingShareLabel: string
+  hitchhikingRestartLabel: string
+  /** Keyed by HitchhikingDirectionId (kept as a plain string here to avoid a config/ ↔ data/ import cycle). */
+  hitchhikingDirections: Record<string, HitchhikingDirectionCopy>
+  relationEyebrow: string
+  relationTitle: string
+  relationDescription: string
+  relationEmptyMessage: string
+}
+
 export interface SiteContent {
   schemaVersion: number
   updatedAt: string
@@ -58,10 +82,8 @@ export interface SiteContent {
     heroImageUrl: string
     heroImagePosition: ImagePosition
     heroImagePositionMobile?: ImagePosition
-    logoMode: 'mark' | 'image'
-    logoImageUrl: string
-    wordmarkMode: 'text' | 'image'
-    wordmarkImageUrl: string
+    /** Single header/footer banner image — replaces the old separate logo mark + wordmark text/image toggle. */
+    bannerImageUrl: string
     cosmicMode: 'off' | 'subtle' | 'deep'
     starDensity: number
     nebulaIntensity: number
@@ -86,6 +108,7 @@ export interface SiteContent {
   }
   sectionVisibility: Record<SiteSectionId, boolean>
   sectionOrder: SiteSectionId[]
+  bandDetailCopy: BandDetailCopy
 }
 
 export type SiteSectionId = 'genres' | 'manifesto'

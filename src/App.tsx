@@ -326,6 +326,7 @@ function ExplorerApp() {
           setShareBand(selectedBand)
           setShareOpen(true)
         }}
+        bandDetailCopy={siteContent.bandDetailCopy}
       />
       <SharePanel
         open={shareOpen}
@@ -363,16 +364,18 @@ function ExplorerApp() {
         : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} sectionLabel={siteContent.moodSectionLabel} sectionTitle={siteContent.moodSectionTitle} sectionDescription={siteContent.moodSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
-  const wordmarkText = (label: string, tagline: string, suffix?: string) => siteContent.theme.wordmarkMode === 'image' && siteContent.theme.wordmarkImageUrl
-    ? <span><span className="wordmark-image-row"><img className="wordmark-text-image" src={siteContent.theme.wordmarkImageUrl} alt={label} />{suffix && <i className="wordmark-by">{suffix}</i>}</span><small>{tagline}</small></span>
-    : <span><strong>{label} {suffix && <i className="wordmark-by">{suffix}</i>}</strong><small>{tagline}</small></span>
+  const siteBanner = (tagline: string, suffix?: string) => <>
+    <img className="site-banner" src={siteContent.theme.bannerImageUrl} alt="ROCK ATLAS" />
+    {suffix && <i className="site-banner-suffix">{suffix}</i>}
+    {tagline && <small className="site-banner-tagline">{tagline}</small>}
+  </>
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="wordmark" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
-      <footer className="site-footer shell"><div className="wordmark">{siteContent.theme.logoMode === 'image' && siteContent.theme.logoImageUrl ? <img className="wordmark-mark-image" src={siteContent.theme.logoImageUrl} alt="" /> : <span className="wordmark-mark">RA</span>}{wordmarkText('ROCK ATLAS', siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
+      <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
       <SharePanel open={shareOpen} title="ROCK ATLAS — 락의 세계를 여행하는 안내서" description="락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요." onClose={() => setShareOpen(false)} />
     </div>
   )

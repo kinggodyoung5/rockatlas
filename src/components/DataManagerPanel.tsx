@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
 import { studioFetchJson } from '../lib/studioApiClient'
-import { getStudioDiagnostics } from '../lib/studioDiagnostics'
+import { getMissingTrackGuides, getStudioDiagnostics } from '../lib/studioDiagnostics'
 import type { Band, EraId, GenreId, PendingRelation, Track } from '../types/music'
 import { LinkHealthPanel, type LinkHealthSummary } from './LinkHealthPanel'
 
@@ -88,6 +88,7 @@ export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelation
   const selected = bands.find((band) => band.id === selectedBandId) ?? bands[0]
 
   const warnings = useMemo(() => getStudioDiagnostics(bands), [bands])
+  const missingTrackGuides = useMemo(() => getMissingTrackGuides(bands), [bands])
 
   const loadHistory = async () => {
     try {
@@ -153,6 +154,8 @@ export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelation
         <details><summary><History size={14} /> 변경 이력 <em>{history.length}</em></summary><div className="studio-history-list">{history.length ? history.map((entry) => <div key={entry.id}><span><strong>{entry.label}</strong><small>{new Date(entry.createdAt).toLocaleString('ko-KR')} · {entry.count}개</small></span><button onClick={() => void restoreHistory(entry)}><RotateCcw size={13} /> 이 상태로 복구</button></div>) : <p>아직 저장 이력이 없습니다.</p>}</div></details>
 
         <details><summary><AlertTriangle size={14} /> 보류 중인 관계 <em>{pendingRelations.length}</em></summary><div className="studio-warning-list">{pendingRelations.length ? pendingRelations.map((pending) => <button key={pending.id} data-severity="warning" onClick={() => { const band = bands.find((item) => item.id === pending.sourceBandId); if (band) onSelectBand(band) }}><strong>대기</strong><span>{pending.sourceBandName} → {pending.targetBandId} ({pending.note}) · {pending.targetBandId} 밴드가 추가되면 양쪽에 자동 연결됩니다.</span></button>) : <p>보류 중인 관계가 없습니다.</p>}</div></details>
+
+        <details><summary><AlertTriangle size={14} /> 감상 안내 없는 대표곡 <em>{missingTrackGuides.length}</em></summary><div className="studio-warning-list">{missingTrackGuides.length ? missingTrackGuides.map((item) => <button key={`${item.bandId}-${item.trackId}`} data-severity="warning" onClick={() => { const band = bands.find((candidate) => candidate.id === item.bandId); if (band) onSelectBand(band) }}><strong>{item.bandName}</strong><span>{item.trackTitle} — 감상 안내가 비어 있습니다.</span></button>) : <p>감상 안내가 비어 있는 대표곡이 없습니다.</p>}</div></details>
 
         <details open><summary><ShieldCheck size={14} /> 출처·곡 링크 검수</summary>{selected ? <div className="studio-verification">
           <label>검수할 밴드<select value={selected.id} onChange={(event) => { const band = bands.find((item) => item.id === event.target.value); if (band) onSelectBand(band) }}>{bands.map((band) => <option key={band.id} value={band.id}>{band.name}</option>)}</select></label>

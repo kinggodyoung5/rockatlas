@@ -1,6 +1,7 @@
 import { ArrowRight, AudioWaveform, FlaskConical, Gauge, Mountain, MoonStar, Radio, RotateCcw, Route, Share2, Sparkles, SunMedium, Weight } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { hitchhikingDirectionById, type HitchhikingDirectionId } from '../config/hitchhiking'
+import type { BandDetailCopy } from '../data/siteContent'
 import { publicBandById, publicBands } from '../data/publicBands'
 import { availableHitchhikingDirections, recommendHitchhikingBands, type JourneyStep } from '../lib/hitchhiking'
 import type { Band } from '../types/music'
@@ -22,6 +23,7 @@ interface HitchhikingPanelProps {
   band: Band
   visitedIds: string[]
   journeySteps: JourneyStep[]
+  copy: BandDetailCopy
   onTravel: (band: Band, direction: HitchhikingDirectionId) => void
   onResetJourney: () => void
   onShareJourney: () => void
@@ -31,13 +33,15 @@ export function HitchhikingPanel({
   band,
   visitedIds,
   journeySteps,
+  copy,
   onTravel,
   onResetJourney,
   onShareJourney,
 }: HitchhikingPanelProps) {
   const [directionId, setDirectionId] = useState<HitchhikingDirectionId | null>(null)
   const [page, setPage] = useState(0)
-  const direction = directionId ? hitchhikingDirectionById[directionId] : null
+  const directionCopy = (id: HitchhikingDirectionId) => ({ ...hitchhikingDirectionById[id], ...copy.hitchhikingDirections[id] })
+  const direction = directionId ? directionCopy(directionId) : null
   const availableDirections = useMemo(
     () => availableHitchhikingDirections(band, publicBands),
     [band],
@@ -73,9 +77,9 @@ export function HitchhikingPanel({
     <section className="hitchhiking-panel" aria-labelledby="hitchhiking-title">
       <div className="hitchhiking-heading">
         <div>
-          <span className="eyebrow"><Route size={15} /> HITCHHIKING ROUTE 2.0</span>
-          <h2 id="hitchhiking-title">다음에는 어떤 소리로 갈까요?</h2>
-          <p>현재 밴드의 실제 성향에서 자연스럽게 이어지는 방향만 골라 보여줍니다.</p>
+          <span className="eyebrow"><Route size={15} /> {copy.hitchhikingEyebrow}</span>
+          <h2 id="hitchhiking-title">{copy.hitchhikingTitle}</h2>
+          <p>{copy.hitchhikingDescription}</p>
         </div>
         <div className="hitchhiking-current"><span>YOU ARE HERE</span><strong>{band.name}</strong></div>
       </div>
@@ -88,6 +92,7 @@ export function HitchhikingPanel({
         {availableDirections.map(({ direction: item, editorialBridge }) => {
           const Icon = directionIcons[item.iconKey]
           const active = item.id === directionId
+          const label = directionCopy(item.id)
           return (
             <button
               key={item.id}
@@ -98,8 +103,8 @@ export function HitchhikingPanel({
             >
               <Icon size={21} />
               <span>
-                <strong>{item.label}</strong>
-                <small>{item.description}</small>
+                <strong>{label.label}</strong>
+                <small>{label.description}</small>
                 {editorialBridge && <em>검수된 연결을 통한 경로</em>}
               </span>
               <ArrowRight size={17} />
@@ -112,7 +117,7 @@ export function HitchhikingPanel({
         <div className="hitchhiking-results" style={{ '--direction-color': direction.accent } as React.CSSProperties}>
           <div className="hitchhiking-results-heading">
             <div><span>SELECTED DIRECTION</span><strong>{direction.resultLabel}</strong></div>
-            <button onClick={showNextCandidates}>다른 후보 3개 <RotateCcw size={14} /></button>
+            <button onClick={showNextCandidates}>{copy.hitchhikingOtherCandidatesLabel} <RotateCcw size={14} /></button>
           </div>
           <div className="hitchhiking-candidates">
             {visibleRecommendations.map((item) => (
@@ -125,7 +130,7 @@ export function HitchhikingPanel({
                     <li>{item.reasons[0]}</li>
                     <li>{item.reasons[2]}</li>
                   </ul>
-                  <em>이 밴드로 이동 <ArrowRight size={14} /></em>
+                  <em>{copy.hitchhikingMoveLabel} <ArrowRight size={14} /></em>
                 </div>
               </button>
             ))}
@@ -134,19 +139,19 @@ export function HitchhikingPanel({
       )}
 
       <div className="hitchhiking-route">
-        <div className="hitchhiking-route-label"><Route size={15} /><span><strong>나의 여행 경로</strong><small>이 브라우저에 자동 저장됩니다.</small></span></div>
+        <div className="hitchhiking-route-label"><Route size={15} /><span><strong>{copy.hitchhikingJourneyLabel}</strong><small>{copy.hitchhikingJourneyHint}</small></span></div>
         <div className="hitchhiking-route-steps">
           {routeSteps.map((step, index) => (
             <span key={`${step.bandId}-${index}`}>
               {index > 0 && <ArrowRight size={12} />}
               <strong>{step.band.name}</strong>
-              {step.via && step.via !== 'connection' && <small>{hitchhikingDirectionById[step.via].label}</small>}
+              {step.via && step.via !== 'connection' && <small>{directionCopy(step.via).label}</small>}
             </span>
           ))}
         </div>
         <div className="hitchhiking-route-actions">
-          {journeySteps.length > 1 && <button onClick={onShareJourney}><Share2 size={14} /> 여정 공유</button>}
-          <button onClick={onResetJourney}><RotateCcw size={14} /> 여기서 새로 시작</button>
+          {journeySteps.length > 1 && <button onClick={onShareJourney}><Share2 size={14} /> {copy.hitchhikingShareLabel}</button>}
+          <button onClick={onResetJourney}><RotateCcw size={14} /> {copy.hitchhikingRestartLabel}</button>
         </div>
       </div>
     </section>

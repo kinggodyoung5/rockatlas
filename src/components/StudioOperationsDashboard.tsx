@@ -1,7 +1,7 @@
-import { AlertTriangle, CheckCircle2, CircleDashed, GitBranch, Link2, LoaderCircle, PackageCheck, RefreshCw, Rocket, Save, ShieldCheck } from 'lucide-react'
+import { AlertTriangle, CheckCircle2, CircleDashed, FileQuestion, GitBranch, Link2, LoaderCircle, PackageCheck, RefreshCw, Rocket, Save, ShieldCheck } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { studioFetchJson } from '../lib/studioApiClient'
-import { getStudioDiagnostics } from '../lib/studioDiagnostics'
+import { getMissingTrackGuides, getStudioDiagnostics } from '../lib/studioDiagnostics'
 import type { Band, PendingRelation } from '../types/music'
 import type { LinkHealthSummary } from './LinkHealthPanel'
 
@@ -52,6 +52,7 @@ export function StudioOperationsDashboard({ bands, pendingRelations, hasUnsavedC
   const [preflightRunning, setPreflightRunning] = useState(false)
   const [preflightMessage, setPreflightMessage] = useState('저장 후 검사를 실행하면 공개 가능한 상태인지 한 번에 확인합니다.')
   const diagnostics = useMemo(() => getStudioDiagnostics(bands), [bands])
+  const missingTrackGuides = useMemo(() => getMissingTrackGuides(bands), [bands])
   const drafts = useMemo(() => bands.filter((band) => band.reviewStatus === 'draft'), [bands])
   const errors = diagnostics.filter((item) => item.severity === 'error').length
   const warnings = diagnostics.length - errors
@@ -105,6 +106,9 @@ export function StudioOperationsDashboard({ bands, pendingRelations, hasUnsavedC
         </button>
         <button type="button" data-state={pendingRelations.length ? 'attention' : 'good'} onClick={() => scrollTo('data-manager')}>
           <Link2 size={19} /><span><strong>{pendingRelations.length}</strong><small>자동 연결 대기 관계</small></span>
+        </button>
+        <button type="button" data-state={missingTrackGuides.length ? 'attention' : 'good'} onClick={() => scrollTo('data-manager')}>
+          <FileQuestion size={19} /><span><strong>{missingTrackGuides.length}</strong><small>감상 안내 없는 대표곡</small></span>
         </button>
         <button type="button" data-state={!linkHealth.checked ? 'neutral' : linkProblems ? 'danger' : 'good'} onClick={() => scrollTo('studio-link-health')}>
           <ShieldCheck size={19} /><span><strong>{linkHealth.loading ? '검사 중' : linkHealth.checked ? linkProblems : '—'}</strong><small>{linkHealth.checked ? `링크 문제 · 전체 ${linkHealth.total}` : `링크 상태 미검사 · 전체 ${linkHealth.total}`}</small></span>

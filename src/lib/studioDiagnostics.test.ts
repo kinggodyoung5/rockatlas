@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import type { Band } from '../types/music'
-import { getStudioDiagnostics } from './studioDiagnostics'
+import type { Band, Track } from '../types/music'
+import { getMissingTrackGuides, getStudioDiagnostics } from './studioDiagnostics'
 
 function band(id: string, name: string, patch: Partial<Band> = {}): Band {
   return {
@@ -52,5 +52,37 @@ describe('getStudioDiagnostics', () => {
       sources: [],
     })
     expect(getStudioDiagnostics([draft])).toEqual([])
+  })
+})
+
+function track(id: string, title: string, patch: Partial<Track> = {}): Track {
+  return {
+    id,
+    title,
+    youtubeId: 'dQw4w9WgXcQ',
+    source: { label: title, url: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`, publisher: 'YouTube' },
+    reviewStatus: 'reviewed',
+    ...patch,
+  }
+}
+
+describe('getMissingTrackGuides', () => {
+  it('감상 안내가 있는 곡은 찾아내지 않는다', () => {
+    const withGuide = band('alpha', 'Alpha', { tracks: [track('t1', 'Track One', { guide: '중독성 있는 후렴구가 인상적이다.' })] })
+    expect(getMissingTrackGuides([withGuide])).toEqual([])
+  })
+
+  it('감상 안내가 비어있거나 없는 곡을 밴드·곡 정보와 함께 찾아낸다', () => {
+    const missing = band('beta', 'Beta', {
+      tracks: [
+        track('t1', 'No Guide Field'),
+        track('t2', 'Blank Guide', { guide: '   ' }),
+        track('t3', 'Has Guide', { guide: '실제 감상 안내.' }),
+      ],
+    })
+    expect(getMissingTrackGuides([missing])).toEqual([
+      { bandId: 'beta', bandName: 'Beta', trackId: 't1', trackTitle: 'No Guide Field' },
+      { bandId: 'beta', bandName: 'Beta', trackId: 't2', trackTitle: 'Blank Guide' },
+    ])
   })
 })

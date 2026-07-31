@@ -1,7 +1,8 @@
 import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Save, Smartphone, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
-import type { SiteContent, SiteSectionId } from '../data/siteContent'
+import { HITCHHIKING_DIRECTIONS } from '../config/hitchhiking'
+import type { BandDetailCopy, SiteContent, SiteSectionId } from '../data/siteContent'
 import { formatFileSize, optimizeImageUpload, type StudioImageAssetType } from '../lib/imageUpload'
 import { studioFetchJson } from '../lib/studioApiClient'
 import { ImagePositionPicker } from './ImagePositionPicker'
@@ -37,8 +38,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const [imageMessage, setImageMessage] = useState('이미지는 용도에 맞게 자동 축소·압축되며 결과 용량을 여기에 표시합니다.')
   const uploadRef = useRef<HTMLInputElement>(null)
   const fontUploadRef = useRef<HTMLInputElement>(null)
-  const logoUploadRef = useRef<HTMLInputElement>(null)
-  const wordmarkUploadRef = useRef<HTMLInputElement>(null)
+  const bannerUploadRef = useRef<HTMLInputElement>(null)
   const cosmicUploadRef = useRef<HTMLInputElement>(null)
   const manifestoUploadRef = useRef<HTMLInputElement>(null)
   const genreUploadRef = useRef<HTMLInputElement>(null)
@@ -61,6 +61,11 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   }
   const updateExplorerVisual = (id: ExplorerVisualKey, patch: Partial<SiteContent['explorerVisuals'][ExplorerVisualKey]>) => {
     onChange({ explorerVisuals: { ...value.explorerVisuals, [id]: { ...value.explorerVisuals[id], ...patch } } })
+  }
+  const changeBandDetailCopy = (patch: Partial<BandDetailCopy>) => onChange({ bandDetailCopy: { ...value.bandDetailCopy, ...patch } })
+  const updateDirectionCopy = (id: string, patch: Partial<BandDetailCopy['hitchhikingDirections'][string]>) => {
+    const current = value.bandDetailCopy.hitchhikingDirections[id] ?? HITCHHIKING_DIRECTIONS.find((direction) => direction.id === id)!
+    changeBandDetailCopy({ hitchhikingDirections: { ...value.bandDetailCopy.hitchhikingDirections, [id]: { ...current, ...patch } } })
   }
   const moveSection = (id: SiteSectionId, direction: -1 | 1) => {
     const order = [...value.sectionOrder]
@@ -96,13 +101,9 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     const url = await uploadImage(file, 'hero')
     changeTheme({ heroImageUrl: url, heroArtMode: 'image' })
   }
-  const uploadLogo = async (file: File) => {
-    const url = await uploadImage(file, 'logo')
-    changeTheme({ logoImageUrl: url, logoMode: 'image' })
-  }
-  const uploadWordmark = async (file: File) => {
+  const uploadBanner = async (file: File) => {
     const url = await uploadImage(file, 'wordmark')
-    changeTheme({ wordmarkImageUrl: url, wordmarkMode: 'image' })
+    changeTheme({ bannerImageUrl: url })
   }
   const uploadCosmicBackground = async (file: File) => {
     const url = await uploadImage(file, 'cosmic')
@@ -153,18 +154,12 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
       <div className="studio-design-columns">
         <div className="studio-design-controls">
           <p className="studio-page-group-heading">🌐 전체 공통 — 모든 페이지에 적용</p>
-          <details><summary>왼쪽 위 로고·워드마크, ROCK ATLAS 뒤 문구</summary><div className="studio-form-grid">
+          <details><summary>맨 위 배너, ROCK ATLAS 뒤 문구</summary><div className="studio-form-grid">
             <label>ROCK ATLAS 뒤 문구<input value={value.brandSuffix} onChange={(event) => onChange({ brandSuffix: event.target.value })} /></label>
-            <label>로고 표시 방식<select value={value.theme.logoMode} onChange={(event) => changeTheme({ logoMode: event.target.value as SiteContent['theme']['logoMode'] })}><option value="mark">기본 RA 마크</option><option value="image">업로드 이미지</option></select></label>
-            <label className="studio-grid-span">로고 이미지 URL<input value={value.theme.logoImageUrl} onChange={(event) => changeTheme({ logoImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
-            <button className="studio-upload-button studio-grid-span" onClick={() => logoUploadRef.current?.click()}><ImagePlus size={15} /> 로고 이미지 업로드 (정사각형 권장)</button>
-            <input ref={logoUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadLogo(event.target.files[0])} />
-            <label>ROCK ATLAS 문구 표시 방식<select value={value.theme.wordmarkMode} onChange={(event) => changeTheme({ wordmarkMode: event.target.value as SiteContent['theme']['wordmarkMode'] })}><option value="text">텍스트 (아래 폰트 설정 적용)</option><option value="image">업로드 이미지</option></select></label>
-            {value.theme.wordmarkMode === 'text' && <p className="studio-upload-note studio-grid-span">텍스트로 표시할 때는 아래 "폰트와 색상"의 프리셋·업로드 폰트·제목 굵기 설정이 그대로 적용됩니다.</p>}
-            <label className="studio-grid-span">문구 이미지 URL<input value={value.theme.wordmarkImageUrl} onChange={(event) => changeTheme({ wordmarkImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
-            <button className="studio-upload-button studio-grid-span" onClick={() => wordmarkUploadRef.current?.click()}><ImagePlus size={15} /> 문구 이미지 업로드 (가로형 권장)</button>
-            <input ref={wordmarkUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadWordmark(event.target.files[0])} />
-            <p className="studio-upload-note studio-grid-span">헤더 로고·워드마크를 바꾸면 페이지 맨 아래 푸터도 같은 설정을 그대로 따라갑니다.</p>
+            <label className="studio-grid-span">배너 이미지 URL<input value={value.theme.bannerImageUrl} onChange={(event) => changeTheme({ bannerImageUrl: event.target.value })} placeholder="https:// 또는 ./uploads/..." /></label>
+            <button className="studio-upload-button studio-grid-span" onClick={() => bannerUploadRef.current?.click()}><ImagePlus size={15} /> 배너 이미지 업로드 (가로형 권장)</button>
+            <input ref={bannerUploadRef} hidden type="file" accept="image/png,image/jpeg,image/webp" onChange={(event) => event.target.files?.[0] && void uploadBanner(event.target.files[0])} />
+            <p className="studio-upload-note studio-grid-span">헤더 배너를 바꾸면 페이지 맨 아래 푸터도 같은 이미지를 그대로 따라갑니다.</p>
           </div></details>
 
           <details><summary>헤더·푸터 문구</summary><div className="studio-form-grid">
@@ -260,6 +255,37 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label>구역 표기<input value={value.allBandsSectionLabel} onChange={(event) => onChange({ allBandsSectionLabel: event.target.value })} /></label>
             <label>제목<input value={value.allBandsSectionTitle} onChange={(event) => onChange({ allBandsSectionTitle: event.target.value })} /></label>
             <label className="studio-grid-span">설명 <small>실제 밴드 수 뒤에 "N개의 출발점을 (이 설명)" 형태로 이어서 표시됩니다.</small><textarea value={value.allBandsSectionDescription} onChange={(event) => onChange({ allBandsSectionDescription: event.target.value })} rows={2} /></label>
+          </div></details>
+
+          <p className="studio-page-group-heading">🧭 밴드 상세 — 히치하이킹·연결</p>
+          <details><summary>히치하이킹 문구</summary><div className="studio-form-grid">
+            <label>구역 표기<input value={value.bandDetailCopy.hitchhikingEyebrow} onChange={(event) => changeBandDetailCopy({ hitchhikingEyebrow: event.target.value })} /></label>
+            <label>제목<input value={value.bandDetailCopy.hitchhikingTitle} onChange={(event) => changeBandDetailCopy({ hitchhikingTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">설명<textarea value={value.bandDetailCopy.hitchhikingDescription} onChange={(event) => changeBandDetailCopy({ hitchhikingDescription: event.target.value })} rows={2} /></label>
+            <label>다른 후보 버튼 문구<input value={value.bandDetailCopy.hitchhikingOtherCandidatesLabel} onChange={(event) => changeBandDetailCopy({ hitchhikingOtherCandidatesLabel: event.target.value })} /></label>
+            <label>이동 버튼 문구<input value={value.bandDetailCopy.hitchhikingMoveLabel} onChange={(event) => changeBandDetailCopy({ hitchhikingMoveLabel: event.target.value })} /></label>
+            <label>여행 경로 표기<input value={value.bandDetailCopy.hitchhikingJourneyLabel} onChange={(event) => changeBandDetailCopy({ hitchhikingJourneyLabel: event.target.value })} /></label>
+            <label className="studio-grid-span">여행 경로 설명<input value={value.bandDetailCopy.hitchhikingJourneyHint} onChange={(event) => changeBandDetailCopy({ hitchhikingJourneyHint: event.target.value })} /></label>
+            <label>공유 버튼 문구<input value={value.bandDetailCopy.hitchhikingShareLabel} onChange={(event) => changeBandDetailCopy({ hitchhikingShareLabel: event.target.value })} /></label>
+            <label>다시 시작 버튼 문구<input value={value.bandDetailCopy.hitchhikingRestartLabel} onChange={(event) => changeBandDetailCopy({ hitchhikingRestartLabel: event.target.value })} /></label>
+          </div></details>
+
+          <details><summary>히치하이킹 방향 9개 문구</summary><div className="studio-genre-editor-grid">
+            {HITCHHIKING_DIRECTIONS.map((direction) => {
+              const current = value.bandDetailCopy.hitchhikingDirections[direction.id] ?? direction
+              return <details key={direction.id}><summary>{direction.label}</summary><div>
+                <label>방향 버튼 문구<input value={current.label} onChange={(event) => updateDirectionCopy(direction.id, { label: event.target.value })} /></label>
+                <label className="studio-grid-span">방향 버튼 설명<input value={current.description} onChange={(event) => updateDirectionCopy(direction.id, { description: event.target.value })} /></label>
+                <label className="studio-grid-span">선택 후 결과 문구<input value={current.resultLabel} onChange={(event) => updateDirectionCopy(direction.id, { resultLabel: event.target.value })} /></label>
+              </div></details>
+            })}
+          </div></details>
+
+          <details><summary>편집된 계보와 장면(에디토리얼 커넥션) 문구</summary><div className="studio-form-grid">
+            <label>구역 표기<input value={value.bandDetailCopy.relationEyebrow} onChange={(event) => changeBandDetailCopy({ relationEyebrow: event.target.value })} /></label>
+            <label>제목<input value={value.bandDetailCopy.relationTitle} onChange={(event) => changeBandDetailCopy({ relationTitle: event.target.value })} /></label>
+            <label className="studio-grid-span">설명<textarea value={value.bandDetailCopy.relationDescription} onChange={(event) => changeBandDetailCopy({ relationDescription: event.target.value })} rows={2} /></label>
+            <label className="studio-grid-span">검수된 연결이 없을 때 표시할 문구<textarea value={value.bandDetailCopy.relationEmptyMessage} onChange={(event) => changeBandDetailCopy({ relationEmptyMessage: event.target.value })} rows={2} /></label>
           </div></details>
         </div>
 

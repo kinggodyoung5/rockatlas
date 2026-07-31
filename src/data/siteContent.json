@@ -38,10 +38,7 @@
     "heroArtMode": "image",
     "heroImageUrl": "./assets/hero/rock-galaxy-v3-optimized.jpg",
     "heroImagePosition": "bottom",
-    "logoMode": "image",
-    "logoImageUrl": "./uploads/logo-rock-atlas-optimized-v1.png",
-    "wordmarkMode": "image",
-    "wordmarkImageUrl": "./uploads/wordmark-rock-atlas-optimized-v1.png",
+    "bannerImageUrl": "./uploads/wordmark-rock-atlas-optimized-v1.png",
     "cosmicMode": "subtle",
     "starDensity": 3,
     "nebulaIntensity": 0.38,
@@ -174,5 +171,31 @@
   "sectionOrder": [
     "genres",
     "manifesto"
-  ]
+  ],
+  "bandDetailCopy": {
+    "hitchhikingEyebrow": "HITCHHIKING ROUTE 2.0",
+    "hitchhikingTitle": "다음 차는 어디로 갈까요?",
+    "hitchhikingDescription": "이 밴드에서 자연스럽게 이어지는 방향으로만 태워드립니다.",
+    "hitchhikingOtherCandidatesLabel": "다른 후보 3개",
+    "hitchhikingMoveLabel": "이 밴드로 이동",
+    "hitchhikingJourneyLabel": "나의 여행 경로",
+    "hitchhikingJourneyHint": "이 브라우저에 자동 저장됩니다.",
+    "hitchhikingShareLabel": "여정 공유",
+    "hitchhikingRestartLabel": "여기서 새로 시작",
+    "hitchhikingDirections": {
+      "heavier": { "label": "더 무겁게", "description": "더 강한 리프와 압도적인 에너지 쪽으로", "resultLabel": "무게와 타격감을 따라" },
+      "dreamier": { "label": "더 몽환적으로", "description": "더 흐릿한 질감과 깊은 몰입감 쪽으로", "resultLabel": "잔향과 우주감을 따라" },
+      "accessible": { "label": "더 대중적으로", "description": "더 쉽게 꽂히는 멜로디와 후렴 쪽으로", "resultLabel": "선명한 멜로디를 따라" },
+      "experimental": { "label": "더 실험적으로", "description": "더 복잡하고 예측하기 어려운 소리 쪽으로", "resultLabel": "낯선 구조와 소리를 따라" },
+      "faster": { "label": "더 빠르게", "description": "더 빠른 비트와 질주하는 에너지 쪽으로", "resultLabel": "속도와 추진력을 따라" },
+      "darker": { "label": "더 어둡게", "description": "더 음울하고 차가운 정서의 소리 쪽으로", "resultLabel": "그늘진 정서와 긴장을 따라" },
+      "warmer": { "label": "더 따뜻하게", "description": "더 포근하고 어쿠스틱한 감촉의 소리 쪽으로", "resultLabel": "온기와 자연스러운 울림을 따라" },
+      "groovier": { "label": "더 그루비하게", "description": "더 리드미컬하고 몸이 반응하는 소리 쪽으로", "resultLabel": "리듬과 몸의 움직임을 따라" },
+      "grander": { "label": "더 웅장하게", "description": "더 거대하고 영화적인 울림의 소리 쪽으로", "resultLabel": "큰 스케일과 극적인 전개를 따라" }
+    },
+    "relationEyebrow": "EDITORIAL CONNECTIONS",
+    "relationTitle": "실제로 얽혀 있던 밴드들",
+    "relationDescription": "영향을 주고받았거나, 같은 무대에 섰거나, 시대를 이어받은 — 사실로 확인된 연결만 모았습니다.",
+    "relationEmptyMessage": "아직 검증된 연결이 없습니다. 위에서 다음 차를 잡아타고 계속 탐험해보세요."
+  }
 }

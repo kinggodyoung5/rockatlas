@@ -804,7 +804,7 @@ export function studioApi(): Plugin {
           const buffer = Buffer.from(match[2], 'base64')
           if (buffer.length > 5_000_000) throw new Error('이미지는 5MB 이하여야 합니다.')
           await mkdir(uploadsPath, { recursive: true })
-          const assetType = typeof payload.assetType === 'string' && ['hero', 'logo', 'wordmark', 'cosmic', 'genre'].includes(payload.assetType)
+          const assetType = typeof payload.assetType === 'string' && ['hero', 'wordmark', 'cosmic', 'genre'].includes(payload.assetType)
             ? payload.assetType
             : 'image'
           const assetKey = typeof payload.assetKey === 'string'
