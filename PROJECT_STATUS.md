@@ -563,3 +563,34 @@ Gemini가 같은 장르를 다른 음역·철자로 출력하면 곧바로 제�
 - 이 섹션까지의 누적 인테이크 검수함, Gemini Gem v7, 세부 장르 140개 확장, 데이터 수정, 히치하이킹/UI 변경을 한 커밋으로 main에 배포한다.
 - `.claude/settings.local.json`은 개인 설정 파일이므로 커밋에서 제외한다.
 - 다음 데이터 운영 단계는 검수 경고 117개 중 직접 영상 검색 링크 66곡, 공식 YouTube 채널 누락 4개, 이미지 검수 대기 3개, 장르 변화 설명 보완 대상을 Studio에서 순차 처리하는 것이다. 모두 현재 배포를 막는 오류는 아니다.
+
+## 23. 2026-08-02 관계 역방향 누락 전량 해소 · 종류 불일치 수정 · 트랙 영상 18곡 보완
+
+공개 전 데이터 감사에서 최우선으로 지목된 관계 그래프의 비대칭(역방향 누락 191건, 종류 불일치 6건)을 사실관계 확인을 거쳐 전량 해소했다. 기계적 미러링이 아니라 각 쌍의 실제 이력을 확인해 근거를 남겼다.
+
+**종류 불일치 6건 재분류**
+
+- `foo-fighters → nirvana`, `megadeth → metallica`, `beady-eye → oasis`, `new-order → joy-division`: `sounds-like`/`influenced-by` → `evolution`으로 정정. 모두 원 밴드 해체·멤버 이탈 후 남은 멤버가 새 밴드를 결성한 직접 후신 관계다.
+- `chickenfoot → red-hot-chili-peppers`(드러머 채드 스미스 겸업), `slash-feat-myles-kennedy-the-conspirators → alter-bridge`(보컬 마일스 케네디 겸업): `evolution` → `shared-scene`으로 정정. 두 경우 모두 멤버가 두 밴드에 동시 소속되어 있어 후신 관계가 아니다.
+- `travis → snow-patrol`: `sounds-like` → `influenced`로 정정 (Travis가 Snow Patrol 초기 사운드에 영향을 준 시기적 인과관계이지 상호 유사 관계가 아님).
+
+**판단이 갈릴 수 있는 케이스 — 사용자 확인 권장**
+
+- `slash-feat-myles-kennedy-the-conspirators → guns-n-roses`: 슬래시가 1996년 GNR을 탈퇴해 이후 다른 프로젝트(Slash's Snakepit, Velvet Revolver, 현 Conspirators)를 거쳤다가 2016년 GNR 재결합에 합류했고, 재결합 이후에도 Conspirators를 계속 병행 중이라는 점에 근거해 `evolution` 대신 `shared-scene`으로 판단했다. 이력이 복잡한 만큼 이 판단이 맞는지 검토를 원할 수 있다.
+- 나머지 185개 쌍은 기존 관계의 `kind`가 이미 정확했으므로 반대 방향에 `inverseKind()` 로직(`influenced-by`↔`influenced` 전환, 나머지 kind 동일 유지)으로 역방향만 채웠다. 이 중 13개 쌍(Racer X↔Mr. Big, Racer X↔Judas Priest, Oasis↔Noel Gallagher's High Flying Birds, The Police↔Sting, Oasis↔Ride 등)은 노트를 각 방향에 맞게 새로 작성했고, 나머지 172개 쌍은 원본 노트를 그대로 재사용했다(대칭적 서술이라 방향이 바뀌어도 사실관계가 동일하게 성립함을 확인).
+- 애매해서 보류한 쌍은 없다. 모든 항목을 사실 근거로 해소했다.
+
+**트랙 영상 링크 18곡 보완**
+
+- 공식 YouTube 채널 영상이 없어 검색 링크로 대체되어 있던 18곡(Massive Attack 3곡, Epica 3곡, Nightwish 3곡, Cannibal Corpse 3곡, R.E.M. 3곡, Chickenfoot 3곡)에 실제 공식 채널 영상 ID를 찾아 반영하고 `reviewStatus`를 갱신했다.
+
+**검증**
+
+- `npm run audit:relations`: 관계 520개(이전 대비 191개 증가), 출처 연결 137개, 역방향 누락 0 · 종류 불일치 0 (이전 191/6).
+- `npx tsc -b`, `npm test`(11개 파일 67개 테스트 통과), `npm run validate:taxonomy`(194/194 통과), `npm run validate:data`(무결성 오류 없음, 경고 44개 — 모두 이번 작업과 무관한 기존 장르 변화 설명 보완 권장), `npm run build`(공개 상세 193개·공유 페이지 193개 생성 검증 통과) 모두 통과.
+
+**Git 상태와 다음 단계**
+
+- 이 섹션의 관계 백필과 트랙 영상 수정을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 사용자에게 Slash/GNS 재분류 판단을 특히 알려 재검토 여부를 확인받는다.
+- 저장소 루트에 있던 분석용 스크래치 파일 `missing-relations.json`은 커밋 전 삭제했다.

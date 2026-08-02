@@ -2408,15 +2408,20 @@
           "year": 1998,
           "album": "Mezzanine",
           "guide": "심장 박동을 닮은 절제된 비트와 엘리자베스 프레이저의 아련한 보컬 선율에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "u7K72X4eo_s",
           "source": {
-            "label": "Massive Attack — Teardrop YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Massive%20Attack%20Teardrop",
+            "label": "Massive Attack — Teardrop",
+            "url": "https://www.youtube.com/watch?v=u7K72X4eo_s",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Massive Attack",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "unfinished-sympathy",
@@ -2424,15 +2429,20 @@
           "year": 1991,
           "album": "Blue Lines",
           "guide": "풍부한 현악 오케스트레이션 스트링 연주와 샤라 넬슨의 호소력 짙은 보컬을 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "cgyw6rDFYO8",
           "source": {
-            "label": "Massive Attack — Unfinished Sympathy YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Massive%20Attack%20Unfinished%20Sympathy",
+            "label": "Massive Attack — Unfinished Sympathy",
+            "url": "https://www.youtube.com/watch?v=cgyw6rDFYO8",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Massive Attack",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "angel",
@@ -2440,15 +2450,20 @@
           "year": 1998,
           "album": "Mezzanine",
           "guide": "낮게 깔리는 묵직한 베이스 라인에서 후반부 폭발하는 헤비한 기타 노이즈로 이어지는 전개를 들는다.",
-          "youtubeId": "",
+          "youtubeId": "hbe3CQamF8k",
           "source": {
-            "label": "Massive Attack — Angel YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Massive%20Attack%20Angel",
+            "label": "Massive Attack — Angel",
+            "url": "https://www.youtube.com/watch?v=hbe3CQamF8k",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Massive Attack",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [],
@@ -3777,6 +3792,13 @@
           "strength": 3,
           "note": "아코디언과 바이올린 등 전통 악기를 앞세워 경쾌하면서도 강렬한 포크 메탈 사운드를 구성한 점을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "alestorm",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 후반 유럽 포크/파워 메탈 페스티벌 씬에서 컨셉추얼한 메탈 음악으로 활약한 행보를 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -3997,9 +4019,9 @@
       "relations": [
         {
           "targetBandId": "joy-division",
-          "kind": "sounds-like",
+          "kind": "evolution",
           "strength": 3,
-          "note": "포스트 펑크 특유의 음울하고 특유한 베이스 중심 곡 구조와 분위기를 공유한다.",
+          "note": "보컬 이안 커티스의 사망 이후 남은 멤버들이 새롭게 결성한 후신 밴드다.",
           "reviewStatus": "draft"
         }
       ],
@@ -6634,15 +6656,20 @@
           "year": 2003,
           "album": "The Phantom Agony",
           "guide": "도입부 합창단 콰이어와 시몬 시몬스의 웅장한 오페라풍 보컬 연주에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "khzv9tcl_Jk",
           "source": {
-            "label": "Epica — Cry for the Moon YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Epica%20Cry%20for%20the%20Moon",
+            "label": "Epica — Cry for the Moon",
+            "url": "https://www.youtube.com/watch?v=khzv9tcl_Jk",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "EPICA",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "design-your-universe",
@@ -6650,15 +6677,20 @@
           "year": 2009,
           "album": "Design Your Universe",
           "guide": "속도감 있는 파워 메탈 리프 위에 펼쳐지는 거대한 오케스트레이션과 보컬의 절정을 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "zpMQ9uoW5F0",
           "source": {
-            "label": "Epica — Design Your Universe YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Epica%20Design%20Your%20Universe",
+            "label": "Epica — Design Your Universe",
+            "url": "https://www.youtube.com/watch?v=zpMQ9uoW5F0",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "EPICA",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "unleashed",
@@ -6666,15 +6698,20 @@
           "year": 2009,
           "album": "Design Your Universe",
           "guide": "캐치한 키보드 멜로디와 대중적인 후렴구 팝 감성을 어우르는 곡 전개를 듣는다.",
-          "youtubeId": "",
+          "youtubeId": "eNGzltK_tlc",
           "source": {
-            "label": "Epica — Unleashed YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Epica%20Unleashed",
+            "label": "Epica — Unleashed",
+            "url": "https://www.youtube.com/watch?v=eNGzltK_tlc",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "EPICA",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [
@@ -7153,15 +7190,20 @@
           "year": 2004,
           "album": "Once",
           "guide": "도입부 피아노 멜로디와 피크로 치닫는 풍성한 오케스트라 사운드의 폭발력을 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "kIBdpFJyFkc",
           "source": {
-            "label": "Nightwish — Nemo YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Nightwish%20Nemo",
+            "label": "Nightwish — Nemo",
+            "url": "https://www.youtube.com/watch?v=kIBdpFJyFkc",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Roadrunner Records",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "wish-i-had-an-angel",
@@ -7169,15 +7211,20 @@
           "year": 2004,
           "album": "Once",
           "guide": "전자음이 섞인 강렬한 메탈 리프와 마르코 히에탈라-타르야 투루넨의 대비되는 더블 보컬을 들는다.",
-          "youtubeId": "",
+          "youtubeId": "wEERFBI9eCg",
           "source": {
-            "label": "Nightwish — Wish I Had an Angel YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Nightwish%20Wish%20I%20Had%20an%20Angel",
+            "label": "Nightwish — Wish I Had an Angel",
+            "url": "https://www.youtube.com/watch?v=wEERFBI9eCg",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Nightwish",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "ghost-love-score",
@@ -7185,15 +7232,20 @@
           "year": 2004,
           "album": "Once",
           "guide": "10분이 넘는 상영 시간 동안 펼쳐지는 대서사적인 오케스트레이션과 보컬의 절정을 느낀다.",
-          "youtubeId": "",
+          "youtubeId": "aXYzFIdXeG8",
           "source": {
-            "label": "Nightwish — Ghost Love Score YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Nightwish%20Ghost%20Love%20Score",
+            "label": "Nightwish — Ghost Love Score",
+            "url": "https://www.youtube.com/watch?v=aXYzFIdXeG8",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Nightwish",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [
@@ -7377,15 +7429,20 @@
           "year": 1992,
           "album": "Tomb of the Mutilated",
           "guide": "도입부의 테크니컬한 베이스 브레이크와 폭발하는 블래스트 비트 연주에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "vlgiWBCbCJk",
           "source": {
-            "label": "Cannibal Corpse — Hammer Smashed Face YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Cannibal%20Corpse%20Hammer%20Smashed%20Face",
+            "label": "Cannibal Corpse — Hammer Smashed Face",
+            "url": "https://www.youtube.com/watch?v=vlgiWBCbCJk",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Metal Blade Records",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "scourge-of-iron",
@@ -7393,15 +7450,20 @@
           "year": 2012,
           "album": "Torture",
           "guide": "묵직하게 내려찍는 다운튜닝 기타 리프와 중저음 앤섬 보컬을 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "uaFzmZrKKKw",
           "source": {
-            "label": "Cannibal Corpse — Scourge of Iron YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Cannibal%20Corpse%20Scourge%20of%20Iron",
+            "label": "Cannibal Corpse — Scourge of Iron",
+            "url": "https://www.youtube.com/watch?v=uaFzmZrKKKw",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Cannibal Corpse",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "i-cum-blood",
@@ -7409,15 +7471,20 @@
           "year": 1992,
           "album": "Tomb of the Mutilated",
           "guide": "쉴 새 없이 몰아치는 빠른 트레몰로 리프와 급격한 박자 전환을 듣는다.",
-          "youtubeId": "",
+          "youtubeId": "ZpzEnDGzDhQ",
           "source": {
-            "label": "Cannibal Corpse — I Cum Blood YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Cannibal%20Corpse%20I%20Cum%20Blood",
+            "label": "Cannibal Corpse — I Cum Blood",
+            "url": "https://www.youtube.com/watch?v=ZpzEnDGzDhQ",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "Cannibal Corpse",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [],
@@ -7869,6 +7936,13 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "1990년대 후반과 2000년대 포스트 록 씬의 부흥을 이끌며 서사적인 시네마틱 록 사운드를 구축한 행보를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "godspeed-you-black-emperor",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "현악기 악상과 노이즈가 고조되며 극적인 사운드스케이프를 형성하는 장대성에서 상통한다.",
           "reviewStatus": "draft"
         }
       ],
@@ -9716,9 +9790,9 @@
       "relations": [
         {
           "targetBandId": "oasis",
-          "kind": "sounds-like",
+          "kind": "evolution",
           "strength": 3,
-          "note": "핵심 멤버진과 특유의 보컬 스타일 및 1960년대 스타일 록 음악 구조를 공유한다.",
+          "note": "오아시스 해체 후 리암 갤러거를 중심으로 남은 멤버들이 결성한 밴드다.",
           "reviewStatus": "draft"
         },
         {
@@ -9881,15 +9955,20 @@
           "year": 1991,
           "album": "Out of Time",
           "guide": "만돌린 리프와 마이클 스타이프의 애절하고 절제된 보컬 연주에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "xwtdhWltSIg",
           "source": {
-            "label": "R.E.M. — Losing My Religion YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Losing%20My%20Religion",
+            "label": "R.E.M. — Losing My Religion",
+            "url": "https://www.youtube.com/watch?v=xwtdhWltSIg",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "remhq",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "everybody-hurts",
@@ -9897,15 +9976,20 @@
           "year": 1992,
           "album": "Automatic for the People",
           "guide": "서정적인 6/8 박자 피아노·스트링 편곡과 위로를 건네는 진정성 어린 보컬을 듣는다.",
-          "youtubeId": "",
+          "youtubeId": "5rOiW_xY-kc",
           "source": {
-            "label": "R.E.M. — Everybody Hurts YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Everybody%20Hurts",
+            "label": "R.E.M. — Everybody Hurts",
+            "url": "https://www.youtube.com/watch?v=5rOiW_xY-kc",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "remhq",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "man-on-the-moon",
@@ -9913,15 +9997,20 @@
           "year": 1992,
           "album": "Automatic for the People",
           "guide": "후렴구로 치달을 때 전개되는 서부영화풍 슬라이드 기타와 앤디 카우프만 모티브의 후킹한 멜로디를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "dLxpNiF0YKs",
           "source": {
-            "label": "R.E.M. — Man on the Moon YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=R.E.M.%20Man%20on%20the%20Moon",
+            "label": "R.E.M. — Man on the Moon",
+            "url": "https://www.youtube.com/watch?v=dLxpNiF0YKs",
             "publisher": "YouTube",
-            "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "official": true,
+            "channelName": "remhq",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [
@@ -10447,6 +10536,13 @@
           "kind": "influenced",
           "strength": 3,
           "note": "특유의 파격적인 주제의식과 아방가르드 록 스타일로 다윗 보위의 음악 세계에 결정적인 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-doors",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1960년대 미국 아방가르드 및 사이케델릭 씬에서 어두운 예술성과 어두운 시적 감성을 제시한 행보를 공유한다.",
           "reviewStatus": "draft"
         }
       ],
@@ -11993,15 +12089,20 @@
           "year": 2009,
           "album": "Chickenfoot",
           "guide": "묵직하고 그루비한 하드 록 리프와 새미 해가의 시원한 보컬 코러스 훅이 선명하게 대비되는 히트 싱글이다.",
-          "youtubeId": "",
+          "youtubeId": "KKkxxLEBwBo",
           "source": {
-            "label": "Chickenfoot — Oh Yeah YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Oh%20Yeah",
+            "label": "Chickenfoot — Oh Yeah",
+            "url": "https://www.youtube.com/watch?v=KKkxxLEBwBo",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "channelName": "Chickenfoot",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "big-foot",
@@ -12009,15 +12110,20 @@
           "year": 2011,
           "album": "Chickenfoot III",
           "guide": "질주하는 드럼 비트와 조 Satriani의 화려한 기타 솔로가 돋보이는 에너제틱한 대표작이다.",
-          "youtubeId": "",
+          "youtubeId": "YtPEztmvRRA",
           "source": {
-            "label": "Chickenfoot — Big Foot YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Big%20Foot",
+            "label": "Chickenfoot — Big Foot",
+            "url": "https://www.youtube.com/watch?v=YtPEztmvRRA",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "channelName": "MNRK Music Group",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         },
         {
           "id": "soap-on-a-rope",
@@ -12025,23 +12131,28 @@
           "year": 2009,
           "album": "Chickenfoot",
           "guide": "강력한 블루스 록 리프와 오가닉한 밴드 앙상블이 선사하는 정통 하드 록 트랙이다.",
-          "youtubeId": "",
+          "youtubeId": "pHqA6HtVU70",
           "source": {
-            "label": "Chickenfoot — Soap on a Rope YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Chickenfoot%20Soap%20on%20a%20Rope",
+            "label": "Chickenfoot — Soap on a Rope",
+            "url": "https://www.youtube.com/watch?v=pHqA6HtVU70",
             "publisher": "YouTube",
-            "official": false,
-            "note": "직접 영상 링크가 자동 검사를 통과하지 못해 정확한 밴드명·곡명 검색 링크로 대체했습니다."
+            "official": true,
+            "channelName": "Chickenfoot",
+            "channelType": "artist",
+            "accessedAt": "2026-08-02",
+            "note": "공식 채널·레이블 업로드 영상 확인"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02"
         }
       ],
       "relations": [
         {
           "targetBandId": "red-hot-chili-peppers",
-          "kind": "evolution",
+          "kind": "shared-scene",
           "strength": 3,
-          "note": "드러머 채드 스미스가 메인 멤버로 활동하는 대표적인 미국 얼터너티브 록 밴드다.",
+          "note": "드러머 채드 스미스가 이 밴드와 병행하여 활동하는 슈퍼그룹 프로젝트 밴드다.",
           "reviewStatus": "draft"
         },
         {
@@ -12485,16 +12596,16 @@
       "relations": [
         {
           "targetBandId": "guns-n-roses",
-          "kind": "evolution",
+          "kind": "shared-scene",
           "strength": 3,
-          "note": "리더이자 기타리스트인 슬래시가 메인 멤버로 활동하는 전설적인 하드 록 밴드다.",
+          "note": "리더이자 기타리스트 슬래시가 2016년 건스 앤 로지스 재결합에 합류해 병행 활동하는 하드 록 밴드다.",
           "reviewStatus": "draft"
         },
         {
           "targetBandId": "alter-bridge",
-          "kind": "evolution",
+          "kind": "shared-scene",
           "strength": 3,
-          "note": "프론트맨 마일스 케네디가 보컬이자 기타리스트로 활동 중인 얼터너티브 메탈 밴드다.",
+          "note": "보컬이자 기타리스트 마일스 케네디가 이 밴드와 병행하여 프론트맨으로 활동하는 하드 록 밴드다.",
           "reviewStatus": "draft"
         }
       ],
@@ -13347,6 +13458,13 @@
           "strength": 3,
           "note": "3인조 트리오 구성에서 정교한 테크닉과 뉴 웨이브 요소를 접목하는 시도를 공유했다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "sting",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "리더이자 베이시스트 겸 프론트맨이었던 스팅이 밴드 활동 중단 후 시작한 솔로 커리어다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -13802,6 +13920,13 @@
           "kind": "evolution",
           "strength": 3,
           "note": "보컬 이안 커티스의 사후 남은 멤버들이 새롭게 전열을 가다듬어 결성한 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "interpol",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "특유의 차갑고 어두운 고딕 포스트 펑크 질감과 낮은 보컬 톤에서 강한 유사성을 보인다.",
           "reviewStatus": "draft"
         }
       ],
@@ -15160,6 +15285,13 @@
           "strength": 3,
           "note": "1990년대 중반 얼터너티브 메탈 및 누메탈 씬의 흥행을 함께 끌어올린 동시대 선구자다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "turnstile",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "거친 헤비니스 기타 사운드와 몽환적인 드림 팝 질감을 자유롭게 혼합하는 면모를 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -15830,7 +15962,15 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "racer-x",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "리드 기타리스트 폴 길버트가 이 밴드를 결성하기 전 활동했던 테크니컬 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Mr. Big — Wikipedia",
@@ -16312,6 +16452,13 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "1990년대 메탈 신의 대중적 전성기를 이끌며 묵직한 현대 메탈 사운드의 기반을 마련했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "sepultura",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 정통 스래시 메탈의 틀을 깨고 묵직한 그루브 메탈 스타일을 구축하며 헤비 메탈 신의 변화를 함께 이끌었다.",
           "reviewStatus": "draft"
         }
       ],
@@ -17086,6 +17233,20 @@
           "note": "Equilibrium 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)",
           "reviewStatus": "draft",
           "mirroredFrom": "equilibrium"
+        },
+        {
+          "targetBandId": "alestorm",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "유쾌한 파티 분위기와 포크 멜로디를 결합한 헤비 메탈 사운드를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "turisas",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "아코디언과 바이올린 등 전통 악기를 앞세워 경쾌하면서도 강렬한 포크 메탈 사운드를 구성한 점을 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -17543,6 +17704,13 @@
           "kind": "sounds-like",
           "strength": 3,
           "note": "80년대 스타일의 감각적인 신스 팝 사운드와 리드미컬한 인디 팝 멜로디 구성을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "twin-xl",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2010년대 후반 미국 인디 팝 및 팝 록 씬에서 세련된 감성으로 함께 입지를 다졌다.",
           "reviewStatus": "draft"
         }
       ],
@@ -18073,6 +18241,13 @@
           "note": "소나타악티카는 원래 하드록으로 시작했으나 스트라토바리우스의 음악에 반해 파워메탈로 전향했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "sonata-arctica"
+        },
+        {
+          "targetBandId": "helloween",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "멜로디컬 스피드 메탈과 파워 메탈의 기초 프레임워크를 제시하여 직간접적인 영향을 주었다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -19909,6 +20084,13 @@
           "strength": 3,
           "note": "특유의 서정적인 신스 레이어링과 어두우면서도 대중적인 뉴웨이브 감성을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "lany",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "80년대 스타일의 감각적인 신스 팝 사운드와 리드미컬한 인디 팝 멜로디 구성을 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -20601,6 +20783,13 @@
           "kind": "influenced",
           "strength": 1,
           "note": "2000년대 메인스트림 이모 팝 씬 형성에 지미 이트 월드가 직접적인 영향을 미쳤다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "weezer",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "캐치한 파워 팝 멜로디와 이모 팝 스타일의 정교한 기타 훅을 공유한다.",
           "reviewStatus": "draft"
         }
       ],
@@ -21700,6 +21889,41 @@
           "kind": "influenced",
           "strength": 3,
           "note": "2000년대 중반 영미권 인디 록 및 가라지 록 리바이블 신을 구성하는 데 결정적인 음악적 영감을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "interpol",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 뉴욕을 중심으로 포스트 펑크 리바이벌 붐을 일으킨 행보를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-white-stripes",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 가라지 록 리바이벌과 인디 록 씬의 부흥을 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kings-of-leon",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 개러지 록 리바이벌 신을 함께 이끌며 전 세계적인 주목을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "franz-ferdinand",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 가라지 록 및 포스트 펑크 리바이블 신을 함께 이끈 대표적 동시대 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "vampire-weekend",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 뉴욕 인디 록 신의 부흥과 감각적인 가라지 리바이블 열풍을 이끈 연관성이 있다.",
           "reviewStatus": "draft"
         }
       ],
@@ -22943,7 +23167,22 @@
           "reviewedAt": "2026-07-28T13:57:40.392Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "arcade-fire",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "다채로운 악기 구성과 아방가르드하면서도 캐치한 인디 록/아트 록의 감성을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "franz-ferdinand",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 펑키한 포스트 펑크 리듬과 지적이고 유쾌한 보컬 표현 방식에서 음악적 영향을 받았다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Talking Heads — Wikidata",
@@ -24350,6 +24589,34 @@
           "strength": 3,
           "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 뉴 메탈 · 얼터너티브 메탈, 강렬하고 공격적인 · 청춘과 반항",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "papa-roach",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 누메탈 장르의 대중적 전성기를 이끌며 씬을 공유했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "deftones",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 중반 얼터너티브 메탈 및 누메탈 씬의 흥행을 함께 끌어올린 동시대 선구자다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "system-of-a-down",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 헤비메탈과 얼터너티브 록 신의 대중적 부흥을 함께 주도했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "1990년대 중반 뉴메탈 사운드의 기틀을 잡은 Korn의 헤비한 디튠 사운드에서 큰 영향을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -24571,6 +24838,20 @@
           "kind": "influenced",
           "strength": 3,
           "note": "1980년대 후반 하드 록 및 글램 메탈 신을 뒤흔든 뱅어 사운드와 악동 이미지 구축에 큰 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kiss",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 미국 아레나 록과 하드 록 황금기를 함께 이끌며 폭발적인 동시대를 누렸다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "van-halen",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반과 80년대 미국 하드 록 씬의 전성기를 함께 이끌었다.",
           "reviewStatus": "draft"
         }
       ],
@@ -25267,6 +25548,13 @@
           "strength": 3,
           "note": "1990년대 초중반 브릿팝 운동을 이끌며 영국 음악 신을 주도한 동시대 라이벌이자 동료 밴드이다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "manic-street-preachers",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 영국 브릿팝 및 얼터너티브 록 부흥을 함께 주도한 동시대 대표 그룹이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -25473,7 +25761,36 @@
           "reviewedAt": "2026-07-28T01:25:19.599Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "queens-of-the-stone-age",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "조시 호미의 프로듀싱을 거치며 육중한 기타 리프와 정교한 리듬 섹션이 강조된 록 사운드를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "franz-ferdinand",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 영국 인디 록 및 인디 댄스 신에서 거대한 상업적 성공을 공유한 연관성이 있다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-subways",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중반 영국 인디 록 및 가라지 록 리바이블 붐을 함께 이끌었던 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-strokes",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "2000년대 중반 영미권 인디 록 및 가라지 록 리바이블 신을 구성하는 데 결정적인 음악적 영감을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Arctic Monkeys — Wikidata",
@@ -25706,6 +26023,13 @@
           "kind": "influenced-by",
           "strength": 3,
           "note": "초기 U2는 더 클래시의 펑크 에너지와 사회 비판적인 가사 정신에 큰 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "r-e-m",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 대학 라디오 및 포스트펑크/인디 씬에서 출발해 세계적인 메이저 록 밴드로 성장한 궤적을 함께한다.",
           "reviewStatus": "draft"
         }
       ],
@@ -26432,6 +26756,13 @@
           "strength": 3,
           "note": "1990년대 브릿팝 라이벌 구도를 형성하며 전 세계적인 브릿팝 붐을 이끌었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "suede",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 초중반 브릿팝 운동을 이끌며 영국 음악 신을 주도한 동시대 라이벌이자 동료 밴드이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -27124,7 +27455,29 @@
           "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-bravery",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중반 신스 팝과 포스트 펑크 리바이블 사운드로 동시에 대중적 주목을 받은 동시대 경쟁 그룹이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kaiser-chiefs",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 포스트펑크 / 고딕 / 뉴웨이브, 인디 록 · 포스트펑크 리바이벌, 밝고 신나는 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "ma-neskin",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "캐치한 훅과 화려한 아레나형 스타일의 대중적 록 사운드를 공유한다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "The Killers — Wikidata",
@@ -27945,7 +28298,15 @@
           "reviewedAt": "2026-07-26T00:26:19.730Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-fray",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 미국 메인스트림 씬에서 감성적인 라디오 친화적 얼터너티브 록 유행을 이끈 그룹이다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "The Calling — Wikidata",
@@ -28161,6 +28522,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "kaiser-chiefs",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "유쾌하고 경쾌한 후렴구 훅과 축제 분위기의 인디 록 사운드를 공유했던 동시대 영국 밴드이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -28408,6 +28776,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "nothing-but-thieves",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "웅장한 록 사운드 구축과 극적인 고음 보컬 스타일에서 음악적으로 큰 영향과 영감을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -28645,6 +29020,27 @@
           "reviewStatus": "draft",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "the-feeling",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중반 영국 차트에서 피아노 및 팝 록을 기반으로 서정적인 인기를 끈 동시대 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "starsailor",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "서정적인 피아노 멜로디와 호소력 짙은 멜랑콜리한 보컬 중심의 곡 구조를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-fray",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "기타보다 피아노 리프를 중심에 두고 서정적이고 감성적인 록 사운드를 구현하는 음악적 스타일을 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -28858,6 +29254,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "keane",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "서정적이고 드라마틱하게 고조되는 보컬 및 멜랑콜리한 록 발라드 정서를 공유하는 동시대 영국/아일랜드 씬의 밴드이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -29296,6 +29699,34 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "machine-gun-kelly",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "트래비스 바커의 프로듀싱을 바탕으로 2000년대 에너제틱한 팝 펑크 사운드의 구조와 캐치한 멜로디를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "simple-plan",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 메인스트림 팝 펑크 씬의 전성기를 함께 이끌며 대중적 입지를 다졌다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-offspring",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "빠른 질주감과 캐치한 멜로디, 위트 있는 가사 구성의 스케이트 팝 펑크 사운드 특징을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "yungblud",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 장난스러우면서도 직관적인 팝 펑크 사운드 및 에너지에서 깊은 영향을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -29510,6 +29941,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "the-fratellis",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -29704,6 +30142,20 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "shinedown",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "묵직한 포스트 그랜지 기타 리프와 폭발적인 보컬 샤우팅 전개 방식에서 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "foo-fighters",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "시애틀 얼터너티브 록 신을 공유",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -30138,10 +30590,10 @@
       "relations": [
         {
           "targetBandId": "nirvana",
-          "kind": "influenced-by",
+          "kind": "evolution",
           "strength": 3,
-          "note": "데이브 그롤이 너바나 해체 이후 결성한 밴드",
-          "reviewStatus": "reviewed",
+          "note": "드러머였던 데이브 그롤이 너바나 해체 이후 결성한 밴드다.",
+          "reviewStatus": "draft",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
         },
@@ -30162,6 +30614,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "queens-of-the-stone-age",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 메인스트림 록 씬을 함께 이끌었으며 데이브 그롤과의 드럼 세션 협업 등 긴밀한 관계를 맺어왔다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -30439,6 +30898,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "blink-182",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "blink-182가 구축한 주류 팝 펑크 사운드와 유머러스한 MV 스타일의 영향을 깊게 받아 등장한 후대 밴드이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -30690,6 +31156,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "mo-tley-cru-e",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 하드 / 글램 록, 글램 메탈 · 전통 헤비메탈, 빠르고 질주하는 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -30965,6 +31438,27 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "my-chemical-romance",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중반 이모 팝 및 팝 펑크의 대중적 전성기를 이끈 대표적 동시대 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "jimmy-eat-world",
+          "kind": "influenced-by",
+          "strength": 1,
+          "note": "2000년대 메인스트림 이모 팝 씬 형성에 지미 이트 월드가 직접적인 영향을 미쳤다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "paramore",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중후반 팝 펑크와 에모 붐을 함께 이끌며 차트를 석권한 동시대 대표 그룹이다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -31219,7 +31713,22 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "turisas",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "핀란드를 기반으로 포크 음악 요소와 익스트림 메탈을 유기적으로 결합하며 씬의 성장을 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "equilibrium",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "스피디한 에픽 포크 메탈 리듬과 캐치한 멜로디성을 공유한다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Ensiferum — Wikidata",
@@ -31428,6 +31937,20 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "the-fratellis",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 대표·보조 장르 교차, 인디 록 · 팝 록, 떼창하고 싶은 공연장형 · 밝고 신나는",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "american-authors",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 팝 / 소프트 록, 인디 팝 · 팝 록, 희망적이고 벅찬 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -31632,6 +32155,27 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "turnstile",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "폭발적인 그루브 리듬과 하드코어 에너지가 결합된 곡 구조에서 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "system-of-a-down",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "사회적·정치적 메시지를 담은 가사와 강렬하고 공격적인 하드코어 록 에너지를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "korn",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 모던 / 얼터너티브 메탈, 뉴 메탈 · 얼터너티브 메탈, 강렬하고 공격적인 · 청춘과 반항",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -32162,7 +32706,15 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-fray",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 얼터너티브 / 그런지, 얼터너티브 록 · 팝 록, 낭만적이고 감성적인 · 우울하고 쓸쓸한",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Daughtry — Wikidata",
@@ -32432,7 +32984,29 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "chickenfoot",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "드러머 채드 스미스가 소속 밴드 활동과 병행하는 하드 록 슈퍼그룹이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "ma-neskin",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "펑키한 베이스라인과 록을 결합한 리드미컬한 사운드 구성에서 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "rage-against-the-machine",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "90년대 힙합, 펑크, 록 요소를 결합하여 메인스트림을 이끈 얼터너티브 록 동료 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Red Hot Chili Peppers — Wikidata",
@@ -32653,6 +33227,36 @@
             "publisher": "Editorial",
             "accessedAt": "2026-07-17",
             "note": "OK Computer의 Paranoid Android와 Karma Police에 Beatles 작곡의 구체적인 영향이 있었음을 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-kinks",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "1960년대 영국 특유의 멜로디컬한 팝 록 감성과 유쾌한 음악적 위트를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "noel-gallagher-s-high-flying-birds",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "곡 구성과 화음, 사이키델릭 팝 멜로디 전개 전반에서 가장 결정적인 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "steely-dan",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "팝 작곡과 스튜디오 앨범의 확장",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Steely Dan interview archive — The Steely Dan Reader",
+            "url": "https://steelydanreader.com/1974/05/25/reelin-in-from-woolies/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Donald Fagen이 Beatles의 Ticket to Ride를 듣고 록 음악에 관심을 갖게 된 직접 회고를 확인"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -32909,6 +33513,38 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "steely-dan",
+          "kind": "influenced",
+          "strength": 1,
+          "note": "British Invasion과 블루스 록을 향한 초기 관심",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Steely Dan biography — Official site",
+            "url": "https://www.steelydan.com/bio",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "공식 전기가 Becker와 Fagen이 British Invasion과 블루스·소울 문화에 매료된 배경을 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "lynyrd-skynyrd",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "블루스 록과 거친 밴드 합주의 토대",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Gary Rossington obituary — AP",
+            "url": "https://apnews.com/article/4c8974380d034e916a39fbf50c606387",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "창단 멤버들이 Rolling Stones의 Time Is on My Side를 함께 연주하며 밴드의 출발점을 만든 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -33162,6 +33798,13 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-kinks",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1960년대 브리티시 인베이전과 모드 문화를 함께 이끌며 영국적 정체성을 음악에 녹여냈다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -33432,6 +34075,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "aerosmith",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "헤비한 블루스 록 리프와 폭발적인 무대 연출 방식에서 직접적인 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "deep-purple",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 영국 하드 록 및 헤비메탈 씬을 함께 이끈 대표 주자입니다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -34010,6 +34667,73 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "slash-feat-myles-kennedy-the-conspirators",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "기타리스트 슬래시가 2016년 재결합 이후에도 자신의 솔로 프로젝트를 병행하고 있다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "manic-street-preachers",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "초기 앨범의 거친 글램 메탈 스타일과 화려한 기타 솔로 구성 방식에서 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "aerosmith",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "1980년대 후반 하드 록 및 글램 메탈 신을 뒤흔든 뱅어 사운드와 악동 이미지 구축에 큰 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "mo-tley-cru-e",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 후반 LA 록 신에서 거대한 상업적 성공을 거두며 동시대 하드 록 붐을 함께 견인했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "skid-row",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "거칠고 야성적인 하드 록 사운드와 강력한 프론트맨 중심의 에너지에서 많은 공통점을 보인다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-rolling-stones",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "위험하고 퇴폐적인 록스타 미학",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Guns N' Roses — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Guns_N%27_Roses",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Axl Rose가 Rolling Stones를 Guns N' Roses의 큰 영향으로 직접 언급한 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "lynyrd-skynyrd",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "남부 블루스 감각을 품은 하드 록 계보",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Sweet Child o' Mine — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sweet_Child_o%27_Mine",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Axl Rose가 Sweet Child o’ Mine 보컬의 진심 어린 감정을 잡기 위해 Lynyrd Skynyrd를 참고한 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -34258,6 +34982,38 @@
             "publisher": "Editorial",
             "accessedAt": "2026-07-17",
             "note": "Rock & Roll Hall of Fame의 Radiohead 소개에서 Pink Floyd를 포함한 음악적 영향 목록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-beatles",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "스튜디오 앨범의 가능성을 확장",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Pink Floyd interview — Rolling Stone Australia",
+            "url": "https://au.rollingstone.com/music/music-news/flashback-pink-floyds-journey-to-the-dark-side-1254/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Roger Waters가 Beatles를 경쟁하기 어려울 만큼 뛰어난 기준점으로 받아들였다고 회고한 인터뷰를 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "yes",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "장편 앨범 시대의 동료",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Progressive rock — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Progressive_rock",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Pink Floyd와 Yes를 1970년대 프로그레시브 록의 주요 상업적 성공 사례로 함께 설명"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -34520,6 +35276,29 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "pink-floyd",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "프로그레시브 록의 상반된 미학",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Progressive rock — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Progressive_rock",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Pink Floyd와 King Crimson을 초기 영국 프로그레시브 록 형성기의 주요 밴드로 함께 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "dream-theater",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 록, 복잡하고 테크니컬 · 긴 곡에 몰입하는",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -34766,6 +35545,36 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "rush",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "화려한 베이스 연주와 정교한 타임 시그니처를 중심으로 프로그레시브 록 사운드를 구성한 점이 유사하다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "steely-dan",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "1970년대 재즈와 복잡한 연주를 흡수한 앨범 록",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Jazz fusion — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Jazz_fusion",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Steely Dan의 재즈 록과 Yes 멤버 Bill Bruford의 퓨전 활동을 1970년대 록·재즈 교차 흐름 안에서 함께 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "dream-theater",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 록, 복잡하고 테크니컬 · 웅장하고 영화적인",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -35007,6 +35816,38 @@
             "publisher": "Editorial",
             "accessedAt": "2026-07-17",
             "note": "Steven Wilson이 Radiohead를 오랫동안 관심 있게 들었고 자신의 음악에 영향을 주었다고 직접 밝힌 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "yes",
+          "kind": "evolution",
+          "strength": 1,
+          "note": "고전 프로그 세대와 현대 프로그 세대가 투어에서 만난 비판적 계승 관계",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Porcupine Tree history — Louder",
+            "url": "https://www.loudersound.com/music/porcupine-treee-deadwing-interview",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Porcupine Tree가 Yes의 미국 투어 오프닝을 맡은 세대 간 접점과 Steven Wilson의 비판적 거리두기를 함께 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "tool",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "현대 프로그와 메탈의 접점",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Essential prog albums — What Hi-Fi?",
+            "url": "https://www.whathifi.com/hi-fi/vinyl/the-16-best-prog-rock-albums-for-testing-hi-fi-as-well-as-expanding-your-cosmic-horizons",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Tool의 Lateralus와 Porcupine Tree의 Fear of a Blank Planet을 현대 프로그의 핵심 음반으로 함께 평가한 근거를 확인"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -35500,6 +36341,27 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-police",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반 영국 펑크/포스트 펑크 씬에서 레게 리듬을 록에 접목하는 경향을 함께 주도했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "manic-street-preachers",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "사회비판적인 정치적 가사와 격렬한 펑크 에티튜드 형성에서 직접적인 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "u2",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "초기 U2는 더 클래시의 펑크 에너지와 사회 비판적인 가사 정신에 큰 영향을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -35748,6 +36610,22 @@
             "publisher": "Editorial",
             "accessedAt": "2026-07-17",
             "note": "Kurt Cobain이 어린 시절 Sex Pistols 보도를 접한 뒤 펑크 음악을 찾아 듣고 싶었다고 회고한 1991년 인터뷰 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-who",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "세대 반항과 무대 에너지",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "British punk influences — Cardiff University thesis",
+            "url": "https://orca.cardiff.ac.uk/71555/12/2014oconnelljphd.pdf",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Sex Pistols와 초기 영국 펑크가 The Who를 포함한 모드 밴드에서 음악적 영감을 받은 연구 근거를 확인"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -36079,6 +36957,68 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-19"
+        },
+        {
+          "targetBandId": "mew",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "실험적인 곡 구조와 감각적인 인디 록 및 아트 록 구성 방식에서 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "muse",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "초기 Muse의 보컬 스타일과 어두운 얼터너티브 정서 형성에 깊은 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-beatles",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "영국 아트 록의 장기적 기준점",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Radiohead interview — Guitar World",
+            "url": "https://www.guitarworld.com/features/radiohead-interview-golden-age-radiohead",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "OK Computer의 Paranoid Android와 Karma Police에 Beatles 작곡의 구체적인 영향이 있었음을 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-cure",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "우울을 아름다운 기타 질감으로 표현",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Pablo Honey retrospective — LOS40",
+            "url": "https://los40.com/los40/2023/02/22/los40classic/1677071438_895596.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Radiohead 데뷔 시기의 음악적 영향 목록에 The Cure가 포함된 회고 자료를 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "my-bloody-valentine",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "겹겹의 기타 질감과 스튜디오 음향 실험",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "The roots of My Bloody Valentine — NME",
+            "url": "https://www.nme.com/blogs/nme-blogs/the-roots-of-my-bloody-valentine-775624",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "NME가 Loveless 이후의 직접적인 영향 계보에 Radiohead를 포함해 설명한 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -36330,6 +37270,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "weezer",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "조용한 절가 파트와 폭발적인 후렴구로 이어지는 얼터너티브 다이내믹 구조에서 깊은 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "cage-the-elephant",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 조용함과 시끄러움이 대비되는 곡 구조와 멜로디 구성 방식에서 큰 영감을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -36580,6 +37534,38 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "mogwai",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "노이즈 기타와 독립 록의 비정형 구조",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Stuart Braithwaite interview — RNZ",
+            "url": "https://www.rnz.co.nz/national/programmes/music101/audio/2018786129/mogwai-s-stuart-braithwaite-on-the-band-s-twenty-five-year-journey-and-first-uk-number-one",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Braithwaite가 Mogwai가 사랑하고 영향을 받은 밴드로 Sonic Youth를 직접 언급"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "my-bloody-valentine",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "왜곡 기타와 비정형 튜닝의 노이즈 록 어법",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "My Bloody Valentine — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/My_Bloody_Valentine_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "초기 My Bloody Valentine이 Sonic Youth의 왜곡 기타 기반 노이즈 록에서 영향을 받은 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -36822,6 +37808,84 @@
             "publisher": "Wikipedia",
             "accessedAt": "2026-07-17",
             "note": "Nirvana와 함께 1990년대 시애틀 그런지 장면에서 부상한 밴드로 명시"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "foo-fighters",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "드러머 데이브 그롤이 밴드 해체 후 결성해 세계적으로 성공한 록 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "soundgarden",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "시애틀 그런지 신을 함께 이끈 원년 밴드",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "guns-n-roses",
+          "kind": "evolution",
+          "strength": 2,
+          "note": "1990년대 주류 록의 세대교체 지점",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Seven weeks that changed rock — Louder",
+            "url": "https://www.loudersound.com/music-industry/seven-weeks-in-1991-that-rocked-the-world-changed-music",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "1991년 Guns N’ Roses의 정상급 하드 록과 Nirvana의 그런지 돌파가 교차한 주류 록 세대 전환을 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "ramones",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "팝 멜로디를 감춘 소음의 방식",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Ramones legacy — RTVE",
+            "url": "https://www.rtve.es/noticias/20140813/ramones-legado-musical/989004.shtml",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "스페인 공영방송 RTVE의 Ramones 회고에서 Nirvana로 이어지는 음악적 영향을 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "sex-pistols",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "반주류 태도와 거친 직접성",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Kurt Cobain interview archive — Live Nirvana",
+            "url": "https://www.livenirvana.com/interviews/91xxkt/index.php",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Kurt Cobain이 어린 시절 Sex Pistols 보도를 접한 뒤 펑크 음악을 찾아 듣고 싶었다고 회고한 1991년 인터뷰 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "sonic-youth",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "언더그라운드 미학과 기타 노이즈",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Sonic Youth — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sonic_Youth",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Sonic Youth가 Nirvana의 음악과 DGC 계약 결정에 큰 영향을 주었고 Krist Novoselic이 이를 직접 회고한 기록을 확인"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -37077,6 +38141,27 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "kings-of-leon",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "얼터너티브 록과 아레나 록을 아우르는 웅장한 사운드스케이프 구성에서 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "soundgarden",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "시애틀 그런지 신을 공유한 동시대 밴드",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "foo-fighters",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "시애틀 얼터너티브 록 신을 공유",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -37597,6 +38682,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-19"
+        },
+        {
+          "targetBandId": "pantera",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "묵직하고 블루지한 리프 구성과 특유의 헤비함 형성에서 결정적인 음악적 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "헤비 리프의 원형",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Metallica — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Metallica",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Metallica의 초기 헤비 메탈·하드 록 영향 목록에 Black Sabbath가 명시된 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "deep-purple",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "초기 헤비메탈 음악의 틀을 함께 확립한 3대 밴드 중 하나입니다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -37853,6 +38968,34 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "def-leppard",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반 브리티시 헤비 메탈 부흥기(NWOBHM)에서 함께 출발하며 글로벌 대중화를 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "helloween",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "트윈 기타 리프 및 하모니 구성과 웅장한 곡 전개 방식에서 결정적인 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "sum-41",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "Sum 41 특유의 화려한 트윈 기타 리프 및 메탈적 요소 구축에 깊은 영감을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "avenged-sevenfold",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 트윈 기타 하모니 솔로 스타일 형성에 결정적인 영향을 주었습니다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -38138,6 +39281,89 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "megadeth",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "결성 초기 멤버였던 데이브 머스테인이 밴드에서 해고된 후 결성한 스래시 메탈 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "motorhead",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "속도감 있는 베이스·기타 폭주 리프와 공격적인 보컬 톤에서 스래시 메탈 형성에 직접적인 영향을 주고받은 사운드적 유사성이 드러난다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "pantera",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 메탈 신의 대중적 전성기를 이끌며 묵직한 현대 메탈 사운드의 기반을 마련했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "anthrax",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "death",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "초기 스래시 메탈의 정교한 구성",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Death — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Death_(metal_band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Chuck Schuldiner의 음악적 영향 목록에 Metallica가 명시된 기록을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "rammstein",
+          "kind": "evolution",
+          "strength": 1,
+          "note": "스래시 메탈 이후 산업 메탈로 넓어진 헤비 음악의 분기",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Heavy metal genres — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Heavy_metal_genres",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Metallica가 이끈 스래시 메탈과 Rammstein이 대표하는 산업 메탈을 헤비 메탈에서 갈라진 세대별 하위 장르로 함께 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "lynyrd-skynyrd",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "Metallica가 Tuesday’s Gone을 커버한 직접 접점",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Tuesday's Gone — Metallica official catalog",
+            "url": "https://www.metallica.com/songs/tuesdays-gone.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Metallica 공식 카탈로그에서 Lynyrd Skynyrd의 Tuesday’s Gone을 커버한 직접 접점을 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "avenged-sevenfold",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "웅장한 헤비메탈 리프와 곡 구성 측면에서 큰 음악적 영향을 받았습니다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -38389,6 +39615,29 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "rammstein",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "1990년대 메탈과 대안 록의 경계를 넓힌 동시대 흐름",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Heavy metal genres — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Heavy_metal_genres",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "Tool의 얼터너티브 메탈과 Rammstein의 산업 메탈을 1990년대 이후 헤비 음악의 동시대 확장 경로로 교차 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "dream-theater",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 메탈, 복잡하고 테크니컬 · 긴 곡에 몰입하는",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -38641,6 +39890,36 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "스래시 메탈 특유의 리듬감과 극도로 공격적인 사운드 톤 구성에 직접적인 영감을 얻었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "anthrax",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "megadeth",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "스래시 메탈 빅 포의 동료",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Megadeth — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Megadeth",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-18",
+            "note": "Megadeth를 Slayer·Anthrax·Metallica와 함께 미국 스래시 메탈의 'Big Four'로 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-18"
         }
       ],
       "reviewStatus": "published",
@@ -39154,6 +40433,13 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "arch-enemy",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "화려한 멜로딕 기타 솔로와 익스트림한 그로울링 보컬이 결합된 사운드 구조에서 유사성을 보인다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -39428,6 +40714,73 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-smiths",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 영국 인디 및 포스트 펑크 씬에서 특유의 어둡고 감성적인 분위기를 형성하며 대중성을 확보했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "yungblud",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 메이크업 스타일과 서정적이면서도 어두운 포스트 펑크 감성 표현에 영감을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "joy-division",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 말과 1980년대 초 영국 포스트 펑크 및 고딕 록 운동의 성장을 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "deftones",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "어둡고 포스트 펑크적인 멜로디 감성과 특유의 우울한 레이어드 사운드 구성에서 큰 영향을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-1975",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "특유의 서정적인 신스 레이어링과 어두우면서도 대중적인 뉴웨이브 감성을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-clash",
+          "kind": "evolution",
+          "strength": 1,
+          "note": "영국 펑크에서 포스트 펑크로 넓어진 흐름",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Punk rock — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Punk_rock",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-07-17",
+            "note": "The Clash가 대표한 영국 펑크의 확장 뒤 The Cure가 포스트 펑크의 주요 밴드로 등장한 장르 전개를 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "mogwai",
+          "kind": "influenced",
+          "strength": 1,
+          "note": "어둡고 넓은 공간감을 만드는 기타 정서",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Stuart Braithwaite on The Cure — The List",
+            "url": "https://list.co.uk/news/stuart-braithwaite-you-need-strong-ankles-to-go-see-the-cure-3259",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Braithwaite가 Mogwai 음악에서 The Cure의 영향을 쉽게 들을 수 있다고 직접 설명"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -39667,6 +41020,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "david-bowie",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "실험적인 산업 음악 사운드와 페르소나 연출 면에서 보위의 영향을 크게 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "linkin-park",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "인더스트리얼 일렉트로닉 사운드와 록 사운드의 결합 방식에 영감을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -40155,6 +41522,13 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "toto",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "LA 최고 수준의 스튜디오 세션 연주자들이 중심이 되어 치밀하고 완성도 높은 스튜디오 음악을 선보인 궤적을 함께한다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -40422,6 +41796,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "creedence-clearwater-revival",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "남부 블루스 및 컨트리 감성을 현대적 록 사운드로 풀어내며 대중적 성과를 거둔 행보를 함께한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kings-of-leon",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "남부 록 특유의 블루지한 기타 연주 스타일과 음악적 정체성에서 깊은 영감을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -40673,6 +42061,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "godspeed-you-black-emperor",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 후반 포스트 록 붐을 일으키며 보컬 없는 대곡 위주의 서사적 악기 연주를 정립한 행보를 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "sigur-ros",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 후반과 2000년대 포스트 록 씬의 부흥을 이끌며 서사적인 시네마틱 록 사운드를 구축한 행보를 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -40923,6 +42325,20 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "slowdive",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 초반 영국 크리에이션 레코드를 중심으로 슈게이징 씬의 전성기를 함께 이끌었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "ride",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 초 영국 레이블 Creation Records에서 슈게이징 신을 함께 개척하고 발전시켰다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -41159,10 +42575,10 @@
       "relations": [
         {
           "targetBandId": "metallica",
-          "kind": "influenced-by",
-          "note": "데이브 머스테인이 메탈리카에서 해고된 뒤, 더 빠르고 무거운 사운드로 답하려 결성",
+          "kind": "evolution",
+          "note": "데이브 머스테인이 메탈리카에서 해고된 뒤 더 빠르고 무거운 사운드로 답하려 결성한 밴드다.",
           "strength": 3,
-          "reviewStatus": "reviewed",
+          "reviewStatus": "draft",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-18",
           "source": {
@@ -41188,6 +42604,13 @@
             "accessedAt": "2026-07-18",
             "note": "Megadeth를 Slayer·Anthrax·Metallica와 함께 미국 스래시 메탈의 'Big Four'로 설명"
           }
+        },
+        {
+          "targetBandId": "anthrax",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "스래시 메탈 빅4를 함께 이룬 동시대 밴드",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -41454,9 +42877,9 @@
         },
         {
           "targetBandId": "snow-patrol",
-          "kind": "sounds-like",
+          "kind": "influenced",
           "strength": 3,
-          "note": "공통 요소: 같은 인디 / 브릿팝 / 개러지, 포스트 브릿팝 · 팝 록, 우울하고 쓸쓸한 · 낭만적이고 감성적인",
+          "note": "1990년대 후반 감수성 짙은 어쿠스틱 포스트 브릿팝 사운드로 Snow Patrol의 초기 음악적 방향성에 영향을 주었다.",
           "reviewStatus": "draft"
         }
       ],
@@ -41686,7 +43109,22 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "bastille",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2010년대 대중적인 팝 멜로디와 웅장한 록 아레나 앤섬 사운드를 결합하여 글로벌 히트를 기록한 동시대 밴드들이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "x-ambassadors",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "밴드의 가능성을 알아보고 음반사와 연결해 주며 초기 성공과 사운드 방향성에 결정적인 도움을 주었다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:50:40.249Z",
@@ -41938,6 +43376,55 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "기존 보류 관계 이관",
           "reviewedAt": "2026-07-30"
+        },
+        {
+          "targetBandId": "beady-eye",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "밴드 해체 후 리암 갤러거를 비롯한 멤버들이 결성한 후신 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "noel-gallagher-s-high-flying-birds",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "리더이자 메인 작곡가였던 노엘 갤러거가 밴드 해체 후 결성한 솔로 프로젝트다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "ride",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "라이드 해체 후 기타리스트 앤디 벨이 합류해 베이시스트로 활동했던 슈게이징 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-stone-roses",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "특유의 거만한 태도와 멜로디컬한 기타 팝 사운드로 90년대 브릿팝 열풍의 기반을 마련해 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kasabian",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "당당하고 거친 무대 퍼포먼스와 영국 특유의 캐치한 록 앤섬 메이킹 방식에서 깊은 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-verve",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 브릿팝 전성기를 함께 이끌며 깊은 친분과 음악적 지지를 주고받은 동시대 라이벌이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "suede",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "1990년대 초중반 브릿팝 운동을 이끌며 영국 음악 신을 주도한 동시대 라이벌이자 동료 밴드이다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -42178,6 +43665,13 @@
           "kind": "shared-scene",
           "strength": 2,
           "note": "Trident 스튜디오 시기 데이비드 보위와 스파이더스 프롬 마스의 공연에서 시각적·예술적 자극을 받은 동시대 연결 관계.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "muse",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "보컬 다층 녹음과 웅장한 오페라틱 록 구성 및 클래식과의 결합 방식에서 거대한 음악적 영향을 받았다.",
           "reviewStatus": "draft"
         }
       ],
@@ -42434,7 +43928,36 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "x-ambassadors",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "대중적인 팝 멜로디와 웅장한 록 사운드를 결합하여 글로벌 히트작을 만들어낸 동시대 대표 팝 록 그룹이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-fray",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중후반 피아노와 팝 록 멜로디를 전면에 내세워 빌보드 메인스트림 차트를 점령한 동시대 라이벌이자 동료 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-script",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "피아노 팝 록 기반의 감성적인 후렴구와 앤섬 성향의 음악 스타일을 공유합니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "maroon-5",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 이후 글로벌 차트를 이끈 대표적인 메인스트림 팝 록 밴드 동료다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:46:36.840Z",
@@ -42971,6 +44494,62 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-19"
+        },
+        {
+          "targetBandId": "starsailor",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 감성적인 포스트 브릿팝과 피아노 기반 인디 록 신을 함께 형성한 동시대 대표 그룹이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "bastille",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "대중적인 서정성과 웅장한 코러스 훅 구성 방식에서 음악적 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "u2",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "U2 특유의 웅장한 아레나 록 사운드와 서정적인 멜로디는 콜드플레이의 음악적 방향성에 큰 영향을 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "keane",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초중반 피아노와 감수성 짙은 멜로디를 전면에 내세워 포스트 브릿팝 전성기를 함께 구축한 동시대 대표 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "snow-patrol",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 중후반 서정적인 록 발라드로 메인스트림 차트를 점령하며 감성적인 포스트 브릿팝 유행을 함께 이끈 동시대 대표 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "kodaline",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "감성적인 피아노 멜로디와 웅장한 후렴구 구조에서 유사한 면모를 보입니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-script",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "스타디움 규모의 웅장한 팝 록 사운드와 대중적인 멜로디 구성에 영향을 받았습니다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "maroon-5",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 초반 데뷔하여 팝 록 씬의 전성기를 함께 이끌었다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -43210,6 +44789,27 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-19"
+        },
+        {
+          "targetBandId": "racer-x",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "파워풀한 드러머 스콧 트래비스가 정식 멤버로 합류하기 전에 몸담았던 테크니컬 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "motorhead",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 후반 브리티시 헤비 메탈의 부흥을 함께 주도하며 현대적 메탈 사운드의 틀을 세웠다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "scorpions",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "1970~80년대 정통 헤비 메탈/하드 록의 날카로운 트윈 기타 리프와 하이톤 보컬 구성을 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "reviewStatus": "published",
@@ -43445,7 +45045,15 @@
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-fratellis",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 인디 / 브릿팝 / 개러지, 인디 록, 밝고 신나는 · 빠르고 질주하는",
+          "reviewStatus": "draft"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-22T11:52:49.941Z",
@@ -43677,6 +45285,34 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "1990년대 캘리포니아 펑크 록의 주류 부활과 대중화를 함께 이끈 동료 밴드.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "my-chemical-romance",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "팝 펑크 특유의 캐치한 멜로디와 웅장한 콘셉트 앨범 구조 구성에서 큰 영감을 받았다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "blink-182",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1990년대 후반부터 2000년대 팝 펑크 장르의 대중적 전성기를 함께 이끌며 투어를 함께한 동시대 라이벌이자 동료 밴드이다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "sum-41",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "90년대 팝 펑크의 대중화를 이루어 사운드적 영감을 제공한 선배 밴드다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "fall-out-boy",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "90년대 팝 펑크의 전성기를 열며 음악적 영감을 준 직계 선배 밴드다.",
           "reviewStatus": "draft"
         }
       ],
@@ -44122,7 +45758,22 @@
           "guide": "2000년대 들어 밴드를 다시 주류로 복귀시킨 곡으로, 신스와 기타가 어우러진 앤섬형 후렴구가 특징이다."
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "def-leppard",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "80년대 팝적인 멜로디 감각과 세련된 보컬 하모니를 결합한 하드 록 사운드의 스타일을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "skid-row",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "뉴저지 고향 선배인 존 본 조비의 발굴과 지원으로 데뷔 및 세계적 스타덤에 올랐다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "reviewStatus": "published",
       "reviewedBy": "Claude (AI 검수)",
       "reviewedAt": "2026-07-21T09:39:17.129Z",
@@ -44406,6 +46057,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "rush",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "복잡한 기교와 테크니컬한 연주력을 바탕으로 하드 록과 프로그레시브 음악의 대중화를 이끈 궤적을 공유한다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -44665,6 +46323,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "chickenfoot",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "정통 하드 록의 리프 구성과 블루지한 테크니컬 연주 방식에서 커다란 음악적 영향을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -44897,6 +46562,13 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "the-script",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "동시대 아일랜드 출신으로 서정적인 모던 록·팝 씬을 이끄는 동료 밴드입니다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -45703,6 +47375,34 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "jonas-brothers",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "캐치한 팝 록 멜로디와 그루비한 댄서블 프로덕션 구성을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-feeling",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "캐치한 팝 록 멜로디와 대중적인 훅 구성을 공유한다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "american-authors",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 팝 / 소프트 록, 팝 록, 떼창하고 싶은 공연장형 · 희망적이고 벅찬",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "neon-trees",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 팝 / 소프트 록, 팝 록, 떼창하고 싶은 공연장형 · 희망적이고 벅찬",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
