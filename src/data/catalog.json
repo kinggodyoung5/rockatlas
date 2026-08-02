@@ -222,7 +222,17 @@
           "reviewedAt": "2026-08-02T03:46:42.893Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-doors",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1967~68년 LA 선셋 스트립 신에서 함께 활동했다. 보컬 존 케이는 도어즈가 근처 클럽에서 연주하던 것을 직접 목격했다고 회고했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "steppenwolf — Wikidata",
@@ -957,7 +967,17 @@
           "reviewedAt": "2026-08-02T03:31:38.603Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "nightwish",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "여성 보컬과 심포닉 편곡을 결합한 고딕 록 사운드로 비슷한 시기 자주 비교됐지만, 보컬 에이미 리는 직접적인 영향은 부인했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Evanescence — Wikidata",
@@ -1388,6 +1408,15 @@
           "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다. (The xx 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
           "reviewStatus": "draft",
           "mirroredFrom": "the-xx"
+        },
+        {
+          "targetBandId": "cigarettes-after-sex",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "비슷한 몽환적 드림 팝 질감으로 자주 비교되는 후배 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -3094,7 +3123,17 @@
           "reviewedAt": "2026-08-02T02:53:15.499Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "avenged-sevenfold",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초중반 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 흐름을 함께 이끈 멜로딕 메탈코어 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Killswitch Engage — Wikidata",
@@ -3556,6 +3595,15 @@
           "strength": 3,
           "note": "1990년대 초반 영국 크리에이션 레코드를 중심으로 슈게이징 씬의 전성기를 함께 이끌었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "cigarettes-after-sex",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "이 밴드의 몽환적 잔향 미학을 계승했다고 평가되는 드림 팝 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -4237,6 +4285,15 @@
           "strength": 3,
           "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "cigarettes-after-sex",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "보컬 스타일과 몽환적 질감을 직접 참조했다고 밝힌 드림 팝 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -4687,6 +4744,15 @@
           "strength": 3,
           "note": "다채로운 악기 구성과 아방가르드하면서도 캐치한 인디 록/아트 록의 감성을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "florence-the-machine",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "웅장한 오케스트레이션과 극적인 전개를 앞세운 인디 록이라는 점에서 자주 비교되는 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -4902,6 +4968,15 @@
           "strength": 3,
           "note": "찰랑거리는 기타 사운드와 문학적인 가사를 바탕으로 1980년대 얼터너티브 록의 부흥을 함께 이끌었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-cranberries",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "데뷔작이 이 밴드를 연상시킨다는 평가를 받은 아일랜드 얼터너티브 록 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -5129,6 +5204,15 @@
           "strength": 3,
           "note": "속도감 있는 베이스·기타 폭주 리프와 공격적인 보컬 톤에서 스래시 메탈 형성에 직접적인 영향을 주고받은 사운드적 유사성이 드러난다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "king-gizzard-the-lizard-wizard",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "Infest the Rats' Nest(2019) 제작의 직접적인 계기가 됐다고 밴드가 밝힌 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -6048,6 +6132,15 @@
           "strength": 3,
           "note": "1960년대 미국 아방가르드 및 사이케델릭 씬에서 어두운 예술성과 어두운 시적 감성을 제시한 행보를 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "steppenwolf",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 시기 선셋 스트립 클럽 신에서 나란히 활동한 블루스·사이키델릭 록 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -7255,6 +7348,15 @@
           "strength": 3,
           "note": "웅장한 합창단·오케스트라 편곡과 강렬한 심포닉 메탈 사운드 구조를 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "evanescence",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "비슷한 시기 여성 보컬 중심 심포닉·고딕 사운드로 자주 함께 언급된 미국 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -7487,7 +7589,17 @@
           "reviewedAt": "2026-08-02"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "death",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "데스 메탈 장르를 정초한 척 슈울디너의 데스로부터 직접적인 영향을 받았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Cannibal Corpse — Wikidata",
@@ -15508,7 +15620,35 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "mazzy-star",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "보컬 그렉 곤잘레스가 호프 산도발의 창법과 \"Blue Light\" 같은 곡을 직접적인 참조점으로 삼았다고 밝혔다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "slowdive",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "슈게이즈의 몽환적 잔향을 계승해 \"슬로다이브의 직계 후예\"로 평가된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "beach-house",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "느리고 몽환적인 드림 팝 질감이 비치 하우스와 자주 비교된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Cigarettes After Sex — Wikipedia",
@@ -15735,6 +15875,15 @@
           "strength": 3,
           "note": "얼터너티브 록과 아레나 록을 아우르는 웅장한 사운드스케이프 구성에서 영감을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "alabama-shakes",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 서던 록·소울 부흥 흐름에서 자주 함께 언급되는 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -17980,6 +18129,24 @@
           "strength": 3,
           "note": "트윈 기타 리프 및 하모니 구성과 웅장한 곡 전개 방식에서 결정적인 음악적 영감을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "rhapsody",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "이 밴드가 정초한 파워 메탈 어법을 심포닉 성향으로 확장한 이탈리아 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "dragon-force",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "이 밴드의 투어를 서포트하며 파워 메탈 신에서 함께 활동을 넓힌 후배 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -18248,6 +18415,24 @@
           "strength": 3,
           "note": "멜로디컬 스피드 메탈과 파워 메탈의 기초 프레임워크를 제시하여 직간접적인 영향을 주었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "rhapsody",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 시기 유럽 파워 메탈 신을 함께 개척한 이탈리아 심포닉 파워 메탈 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "dragon-force",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "이 밴드의 오프닝 투어를 계기로 음반 계약을 맺고 선율적 파워 메탈 어법에서 직접적인 영향을 받은 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -18478,7 +18663,17 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "steely-dan",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "정교한 재즈 화성과 스튜디오 사운드가 스틸리 댄과 자주 비교되지만, 프론트맨 앤디 플랫츠는 이 비교에 다소 조심스러운 반응을 보였다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Mamas Gun — Wikipedia",
@@ -21438,7 +21633,17 @@
           "reviewedAt": "2026-07-28T14:06:27.447Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "kings-of-leon",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "21세기 미국 서던 록·소울 부흥을 함께 대표하는 밴드로 평론에서 자주 나란히 언급된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Alabama Shakes — Wikidata",
@@ -22315,7 +22520,17 @@
           "reviewedAt": "2026-07-28T14:02:57.443Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "arcade-fire",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "웅장한 오케스트레이션과 극적인 전개를 앞세운 인디 록이라는 점에서 자주 비교된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Florence + the Machine — Wikidata",
@@ -23654,7 +23869,17 @@
           "guide": "마리아치풍 브라스 사운드와 유쾌하면서도 블랙 유머가 담긴 가사의 대비가 인상적인 곡이다."
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-fray",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "빌보드 어덜트 팝 송 차트에서 함께 최상위권에 오르내리는 등 같은 성인 대중 록 흐름을 공유한다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Train — Wikidata",
@@ -25079,7 +25304,35 @@
           "reviewedAt": "2026-07-28T03:16:21.148Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "motorhead",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "리더 스투 매켄지가 다시 메탈로 돌아오게 만든 직접적인 계기로 모터헤드를 꼽았고, 그 에너지를 Infest the Rats' Nest(2019)에 그대로 주입했다고 밝혔다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "Infest the Rats' Nest(2019)에서 제임스 헷필드 스타일 창법과 초기 메탈리카 예찬으로 불릴 만큼 직접적인 영향을 드러냈다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "rammstein",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "리더 스투 매켄지가 성장기에 즐겨 듣던 헤비메탈 밴드로 직접 꼽았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "King Gizzard & The Lizard Wizard — Wikidata",
@@ -26264,7 +26517,26 @@
           "guide": "웅장한 합창과 질주하는 심포닉 파워 메탈 리프가 대서사시 같은 분위기를 만든다."
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "stratovarius",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 유럽 심포닉·파워 메탈 신을 함께 개척한 동시대 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "helloween",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "유럽 파워 메탈을 정초한 저먼 파워 메탈의 원조 밴드로, 같은 장르 계보를 공유한다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "Rhapsody — Wikidata",
@@ -26484,7 +26756,26 @@
           "guide": "잔잔한 기타 아르페지오 위로 돌로레스 오리어던 특유의 떨리는 비브라토 보컬이 내밀한 정서를 전한다."
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-cure",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "데뷔작부터 두 번째 앨범까지 더 큐어의 영향이 뚜렷하게 드러난다고 평가된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "the-smiths",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "데뷔작 \"Everybody Else Is Doing It, So Why Can't We\"가 \"더 스미스를 연상시킨다\"는 평가를 받았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "The Cranberries — Wikidata",
@@ -27889,7 +28180,26 @@
           "reviewedAt": "2026-07-26T00:22:55.250Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "stratovarius",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "스트라토바리우스 투어의 오프닝을 맡은 인연으로 음반 계약까지 이어졌고, 그 선율적인 파워 메탈 어법에서 직접적인 영향을 받았다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "helloween",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "헬로윈의 투어를 서포트하며 같은 파워 메탈 신에서 활동을 넓혔다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
+        }
+      ],
       "sources": [
         {
           "label": "DragonForce — Wikidata",
@@ -28107,6 +28417,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "train",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 빌보드 어덜트 팝 송 차트 흐름을 공유하는 대중 록 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [
@@ -39413,6 +39732,15 @@
           "strength": 3,
           "note": "웅장한 헤비메탈 리프와 곡 구성 측면에서 큰 음악적 영향을 받았습니다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "king-gizzard-the-lizard-wizard",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "Infest the Rats' Nest(2019)에서 제임스 헷필드 스타일 창법을 오마주할 만큼 직접적인 영향을 받은 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "reviewStatus": "published",
@@ -40218,6 +40546,15 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "cannibal-corpse",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "이 밴드가 정초한 데스 메탈 어법을 이어받은 후예 밴드 중 하나다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "reviewStatus": "published",
@@ -40838,6 +41175,15 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-cranberries",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "데뷔작부터 두 번째 앨범까지 영향이 뚜렷하게 드러난다고 평가되는 아일랜드 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "reviewStatus": "published",
@@ -41344,6 +41690,15 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "king-gizzard-the-lizard-wizard",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "리더 스투 매켄지가 성장기 영향으로 직접 꼽은 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "reviewStatus": "published",
@@ -41592,6 +41947,15 @@
           "strength": 3,
           "note": "LA 최고 수준의 스튜디오 세션 연주자들이 중심이 되어 치밀하고 완성도 높은 스튜디오 음악을 선보인 궤적을 함께한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "mamas-gun",
+          "kind": "sounds-like",
+          "strength": 2,
+          "note": "정교한 재즈 화성과 스튜디오 사운드로 자주 비교되는 영국 네오소울 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "reviewStatus": "published",
@@ -46949,6 +47313,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "killswitch-engage",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "초기 메탈코어 시기(Sounding the Seventh Trumpet~Waking the Fallen)에 같은 NWOAHM 흐름을 공유했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-02T06:24:48.738Z"
         }
       ],
       "sources": [

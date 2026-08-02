@@ -707,3 +707,38 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - `src/data/catalog.json`(6개 밴드 moodScores 보완)을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
 - 남은 15개 단일 방향 밴드는 데이터 오류가 아니라 의도된 좁은 정체성으로 확인했으므로 추가 조치가 필요하지 않다.
+
+## 28. 2026-08-02 관계 0개 밴드 20곳 전체 검토 · 근거 있는 13곳만 관계 추가
+
+공개 밴드 193개 중 `관계(relations)`가 하나도 없는 20개 밴드를 전부 개별 조사했다. 웹 검색으로 실제 인터뷰·평론·투어 이력을 확인해 사실 근거가 명확한 경우에만 추가했고, 근거를 찾지 못한 밴드는 관계 없이 그대로 두었다.
+
+**근거를 확인해 관계를 추가한 13개 밴드 (총 20쌍·40개 관계)**
+
+- Steppenwolf ↔ The Doors (shared-scene): 보컬 존 케이가 1967~68년 LA 선셋 스트립에서 도어즈와 같은 클럽 신에 있었다고 직접 회고한 것을 근거로 삼았다.
+- Evanescence ↔ Nightwish (sounds-like): 평단에서 "피할 수 없는 비교"로 자주 묶이지만, 에이미 리 본인은 직접적 영향은 부인했다는 점까지 노트에 반영했다.
+- Cannibal Corpse → Death (influenced-by): 데스 메탈을 정초한 척 슈울디너의 데스로부터 받은 장르 계보상 영향.
+- Cigarettes After Sex → Mazzy Star / Slowdive (influenced-by), ↔ Beach House (sounds-like): 보컬 그렉 곤잘레스가 호프 산도발의 창법을 직접 참조했다고 밝혔고, 평단에서 "슬로다이브의 직계 후예"로 평가된다.
+- Killswitch Engage ↔ Avenged Sevenfold (shared-scene): 2000년대 초중반 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 흐름을 공유.
+- King Gizzard & The Lizard Wizard → Motörhead / Metallica / Rammstein (influenced-by): 리더 스투 매켄지가 인터뷰에서 Infest the Rats' Nest(2019) 제작의 직접적인 계기와 영향으로 명시적으로 꼽은 밴드들이다.
+- Rhapsody ↔ Stratovarius / Helloween (shared-scene): 1990년대 유럽 심포닉·파워 메탈 신을 함께 개척.
+- DragonForce → Stratovarius (influenced-by, 오프닝 투어가 음반 계약으로 이어짐), ↔ Helloween (shared-scene, 투어 서포트).
+- The Cranberries → The Cure / The Smiths (influenced-by): 데뷔작이 두 밴드의 영향을 뚜렷하게 받았다는 평가가 다수 확인됐다.
+- Alabama Shakes ↔ Kings of Leon (shared-scene): 21세기 미국 서던 록·소울 부흥을 대표하는 밴드로 평론에서 자주 나란히 언급.
+- Mamas Gun ↔ Steely Dan (sounds-like): 리뷰에서 자주 비교되지만 프론트맨 본인은 이 비교를 조심스러워한다는 점도 노트에 반영했다.
+- Florence + the Machine ↔ Arcade Fire (sounds-like): 웅장한 오케스트레이션·극적 전개의 인디 록이라는 공통점으로 자주 비교.
+- Train ↔ The Fray (shared-scene): 빌보드 어덜트 팝 송 차트에서 함께 최상위권에 오르내리는 동시대 밴드.
+
+**근거를 찾지 못해 그대로 둔 7개 밴드**
+
+- Beck, Kings of Convenience, Peach Pit, Mumford & Sons, Semisonic, AJR, Eagles — 카탈로그 내 다른 밴드와 연결할 만한 구체적인 인터뷰·평론·투어 이력을 찾지 못했다. 억지로 장르 유사성만으로 연결하지 않고 관계 없음 상태로 남겼다.
+
+**검증**
+
+- `npm run audit:relations`: 관계 560개(이전 대비 40개 증가), 역방향 누락 0 · 종류 불일치 0.
+- `npx tsc -b`, `npm test`(11개 파일 70개 테스트), `npm run validate:taxonomy`(194/194), `npm run validate:data`(오류 없음), `npm run build`(공개 상세·공유 페이지 193개 생성 검증) 모두 통과.
+- 첫 시도에서 관계의 `source` 필드를 잘못된 형태로 채워 무결성 오류 80건이 발생했다가(검수자·URL 형식 오류), `source`를 생략하고 `reviewStatus`/`reviewedBy`/`reviewedAt`을 관계 최상위 필드로 올바르게 채워 넣어 해결했다.
+
+**Git 상태와 다음 단계**
+
+- `src/data/catalog.json`(관계 40개 추가)을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 관계 없이 남은 7개 밴드는 데이터 누락이 아니라 조사 결과 근거 부족으로 확인했으므로 추가 조치가 필요하지 않다.
