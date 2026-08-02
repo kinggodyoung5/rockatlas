@@ -19,7 +19,13 @@ interface GenreExplorerPageProps {
 export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favoriteIds, onBack, onSelectBand, onToggleFavorite, onFilter }: GenreExplorerPageProps) {
   const genre = taxonomyGenreById[genreId]
   const genreBands = bands.filter((band) => band.taxonomyV2?.primaryGenreId === genreId)
-  const subgenres = genre.subgenreIds.map((id) => ({ id, count: genreBands.filter((band) => band.taxonomyV2?.subgenreIds.includes(id)).length })).filter((item) => item.count > 0)
+  const subgenreCounts = new Map<string, number>()
+  for (const band of genreBands) {
+    for (const id of band.taxonomyV2?.subgenreIds ?? []) subgenreCounts.set(id, (subgenreCounts.get(id) ?? 0) + 1)
+  }
+  const subgenres = [...subgenreCounts.entries()]
+    .map(([id, count]) => ({ id, count }))
+    .sort((a, b) => b.count - a.count || (taxonomySubgenreById[a.id]?.name ?? a.id).localeCompare(taxonomySubgenreById[b.id]?.name ?? b.id, 'ko'))
   const visible = genreBands.filter((band) => {
     const inSubgenre = subgenreId === 'all' || band.taxonomyV2?.subgenreIds.includes(subgenreId)
     const inMood = moodId === 'all' || (band.taxonomyV2?.moodScores[moodId] ?? 0) >= 2

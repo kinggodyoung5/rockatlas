@@ -33,12 +33,13 @@ export function DiscoveryHome({ bands, label, title, description, genreVisuals, 
           {taxonomyGenres.map((genre, index) => {
             const count = bands.filter((band) => band.taxonomyV2?.primaryGenreId === genre.id).length
             const visual = genreVisuals[genre.id]
+            const cardSubgenres = genre.cardSubgenreLabels ?? genre.subgenreIds.slice(0, 3).map((id) => taxonomySubgenreById[id]?.name ?? id)
             return (
               <button key={genre.id} className={`genre-card discovery-card ${visual.artMode === 'image' && visual.imageUrl ? 'has-art' : ''}`} onClick={() => onGenre(genre.id)} style={{ '--genre-color': genre.color, '--genre-rgb': genre.accent, '--genre-art-opacity': visual.imageOpacity, '--genre-art-scale': visual.imageScale } as React.CSSProperties}>
                 {visual.artMode === 'image' && visual.imageUrl && <span className="genre-card-art" aria-hidden="true"><img src={visual.imageUrl} alt="" loading="lazy" decoding="async" style={positionStyle(visual.imagePosition, visual.imagePositionMobile)} /></span>}
                 <span className="genre-card-top"><span className="genre-index">{String(index + 1).padStart(2, '0')}</span><span className="genre-count">{count} BANDS</span></span>
                 <span className="genre-card-copy"><TightText as="h3">{genre.displayName}</TightText><strong>{genre.englishName}</strong><TightText as="p" mode="no-orphan">{genre.vibeDescription}</TightText></span>
-                <span className="genre-card-foot"><span><span className="folded-label">세부 장르</span><span className="folded-list">{genre.subgenreIds.slice(0, 3).map((id) => taxonomySubgenreById[id]?.name ?? id).join(' · ')}</span></span><span className="genre-arrow"><ArrowRight /></span></span>
+                <span className="genre-card-foot"><span><span className="folded-label">세부 장르</span><span className="folded-list">{cardSubgenres.join(' · ')}</span></span><span className="genre-arrow"><ArrowRight /></span></span>
               </button>
             )
           })}

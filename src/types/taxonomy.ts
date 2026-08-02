@@ -57,6 +57,10 @@ export interface TaxonomyGenre {
   subgenreIds: SubgenreId[]
   quickMoodIds: MoodId[]
   featuredBandIds: string[]
+  /** Optional short display labels for the genre card's front teaser, used instead of the first
+   *  three subgenreIds names when those would repeat a word (e.g. "프로그레시브 록"/"프로그레시브 메탈")
+   *  and wrap to two lines. Doesn't affect the subgenre filter chips shown inside the genre page. */
+  cardSubgenreLabels?: string[]
 }
 
 export interface TaxonomySubgenre {
