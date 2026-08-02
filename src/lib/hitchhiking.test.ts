@@ -62,7 +62,6 @@ describe('히치하이킹 방향 추천', () => {
 
   it('인접한 보조 분위기 하나만으로 의미가 다른 방향을 열지 않는다', () => {
     const cases: Array<{ direction: HitchhikingDirectionId; isolated: Partial<Record<MoodId, MoodScore>>; direct: Partial<Record<MoodId, MoodScore>>; combined: Partial<Record<MoodId, MoodScore>> }> = [
-      { direction: 'heavier', isolated: { 'aggressive-heavy': 3 }, direct: { 'massive-heavy': 3 }, combined: { 'aggressive-heavy': 4, 'fast-driving': 4 } },
       { direction: 'dreamier', isolated: { 'cosmic-psychedelic': 4 }, direct: { 'dreamy-ethereal': 3 }, combined: { 'cosmic-psychedelic': 4, 'slow-calm': 3 } },
       { direction: 'accessible', isolated: { 'anthemic-live': 5 }, direct: { 'bright-upbeat': 3 }, combined: { 'anthemic-live': 4, 'romantic-emotional': 3 } },
       { direction: 'experimental', isolated: { 'technical-complex': 5 }, direct: { 'experimental-weird': 3 }, combined: { 'technical-complex': 4, 'noisy-wall': 3 } },
@@ -77,6 +76,13 @@ describe('히치하이킹 방향 추천', () => {
       expect(directionEntrySignal(bandWithMoods(item.direct), direction), `${item.direction} / direct`).toBeGreaterThan(0)
       expect(directionEntrySignal(bandWithMoods(item.combined), direction), `${item.direction} / combined`).toBeGreaterThan(0)
     }
+  })
+
+  it('더 무겁게는 강렬함이나 묵직함 중 하나만 3점이어도 다른 방향들과 같은 방식으로 열린다', () => {
+    const direction = hitchhikingDirectionById.heavier
+    expect(directionEntrySignal(bandWithMoods({ 'aggressive-heavy': 3 }), direction)).toBeGreaterThan(0)
+    expect(directionEntrySignal(bandWithMoods({ 'massive-heavy': 3 }), direction)).toBeGreaterThan(0)
+    expect(directionEntrySignal(bandWithMoods({ 'riff-solo-driven': 5 }), direction)).toBe(0)
   })
 
   it('같은 입력에는 항상 같은 순서의 후보를 반환한다', () => {

@@ -569,6 +569,17 @@ img { display: block; max-width: 100%; }
 .mood-score-grid label > span { display: flex; justify-content: space-between; gap: 12px; }
 .mood-score-grid label em { color: var(--orange); font-size: 11px; font-style: normal; }
 .mood-score-grid input[type="range"] { width: 100%; padding: 0; accent-color: var(--orange); }
+.studio-hitchhiking-preview { margin-top: 14px; padding: 18px; border: 1px solid #29282d; background: #0c0c0e; }
+.studio-hitchhiking-preview > strong { display: block; margin-bottom: 4px; }
+.studio-hitchhiking-preview > small { display: block; color: #777579; font-size: 10px; margin-bottom: 13px; }
+.studio-hitchhiking-empty { color: #777579; font-size: 12px; }
+.studio-hitchhiking-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.studio-hitchhiking-list li { display: grid; gap: 4px; padding: 9px 11px; border: 1px solid #333238; background: #17171a; color: #b7b5ba; }
+.studio-hitchhiking-list li > span { font-weight: 700; }
+.studio-hitchhiking-list li em { color: #8d8a90; font-size: 10px; font-style: normal; }
+.studio-hitchhiking-list li.is-live { border-color: color-mix(in srgb, var(--orange) 48%, #333238); }
+.studio-hitchhiking-list li.is-live > span { color: var(--orange); }
+.studio-hitchhiking-list li.is-overflow small { color: #6a6870; font-size: 9px; }
 .studio-suggestions { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; margin-bottom: 18px; }
 .studio-suggestions > span { display: flex; align-items: center; gap: 6px; width: 100%; color: #8d8a90; font-size: 9px; font-weight: 900; }
 .studio-suggestions button { display: flex; align-items: center; gap: 9px; padding: 9px 10px; border: 1px solid #29282d; color: #aaa8aa; background: #151518; text-align: left; }

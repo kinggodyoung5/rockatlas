@@ -22,6 +22,7 @@ import { YoutubeChannelFinder, type YoutubeChannelCandidate } from './YoutubeCha
 import { CommonsImageFinder, type CommonsImageCandidate } from './CommonsImageFinder'
 import { StudioBandBasics } from './StudioBandBasics'
 import { StudioTaxonomyEditor } from './StudioTaxonomyEditor'
+import { StudioHitchhikingPreview } from './StudioHitchhikingPreview'
 
 const relationLabels: Record<RelationKind, string> = {
   'sounds-like': '비슷한 소리',
@@ -703,6 +704,8 @@ export function StudioPage() {
             onMoodScore={updateMoodScore}
             onReviewNote={(reviewNote) => changeTaxonomy({ reviewNote })}
           />
+
+          <StudioHitchhikingPreview band={draft} catalogBands={catalogBands} />
 
           <section className="studio-form-section">
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>

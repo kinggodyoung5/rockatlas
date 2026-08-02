@@ -20,8 +20,8 @@ export const HITCHHIKING_DIRECTIONS = [
     iconKey: 'weight',
     accent: '#ff6a4d',
     entryRules: [
+      { all: { 'aggressive-heavy': 3 } },
       { all: { 'massive-heavy': 3 } },
-      { all: { 'aggressive-heavy': 4 }, any: { 'riff-solo-driven': 3, 'fast-driving': 4, 'noisy-wall': 3 } },
     ],
     moodWeights: {
       'aggressive-heavy': 1,

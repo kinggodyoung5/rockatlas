@@ -648,3 +648,30 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - 이 섹션의 `catalog.json` 시대별 노트 보완을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
 - 저장소 루트의 `배포법.txt`(빈 파일)와 `.claude/settings.local.json`은 사용자 소유/개인 설정이므로 건드리지 않는다.
+
+## 26. 2026-08-02 "더 무겁게" 진입 규칙 비대칭 수정 · Studio 히치하이킹 실시간 미리보기
+
+섹션 24의 9방향 정밀화 이후 "한 밴드에 방향이 1개만 뜨는 경우가 늘었다"는 운영자 관찰을 실측으로 검증했다.
+
+**발견한 구조적 비대칭**
+
+- 다른 8개 방향은 모두 "자기 대표 분위기(가중치 1위) 3점"이 direct 진입 규칙이다. 그런데 `heavier`(더 무겁게)만 대표 분위기 `aggressive-heavy`(가중치 1위)가 아니라 2순위 분위기 `massive-heavy`를 direct 기준으로 쓰고, `aggressive-heavy`는 4점 이상 + 동반 조건이라는 훨씬 엄격한 기준을 요구했다.
+- 실측 결과 `aggressive-heavy=3`인 밴드 8개(Judas Priest, Deep Purple, Mötley Crüe, KISS, Fall Out Boy, Daughtry, The Cranberries, Slash feat. Myles Kennedy & The Conspirators)가 "더 무겁게" 후보에서 원천 배제되어 있었다. Judas Priest가 "더 무겁게"를 못 여는 것은 명백한 오류였다.
+- `heavier`의 `entryRules`를 `{ 'aggressive-heavy': 3 }` 직접 규칙(다른 방향과 동일 패턴) + `{ 'massive-heavy': 3 }`로 단순화했다. 시뮬레이션 결과 방향 1개짜리 밴드 20 → 17개, "더 무겁게" 후보 풀 53 → 62개로 개선됐고, 새로 열린 조합 전부가 실제 밴드 성향과 맞아 섹션 24가 막았던 오탐(Travis→웅장하게 등)은 재발하지 않았다.
+- 남은 1개짜리 밴드(Foo Fighters, Soundgarden 등)는 규칙 문제가 아니라 `moodScores` 자체가 밴드당 3~5개만 태깅된 데이터 밀도 문제로, 별도 스코프의 태깅 보강 작업이 필요하다(이번엔 진행하지 않음).
+
+**Studio 실시간 미리보기 신규 구현**
+
+- 운영자가 "무드스코어를 임의로 수정하면 그 즉시 알고리즘에 반영되는지" 물어 확인한 결과, 이전에는 확인할 방법이 전혀 없었다. 공개 사이트는 `generate:public-data`로 구운 정적 JSON(`public-band-index.json`)을 빌드 시점에 번들링하므로 카탈로그 수정 후 빌드·배포 전까지는 반영되지 않고, Studio에도 미리보기 기능이 없었다.
+- `src/components/StudioHitchhikingPreview.tsx`를 새로 만들어 `StudioPage.tsx`의 분류 편집 섹션 바로 아래(02B 다음)에 배치했다. 저장 전 `draft`(현재 편집 중인 밴드) 상태와 메모리상의 `catalogBands`(전체 카탈로그) 그대로 `availableHitchhikingDirections()`를 호출해, 분위기 점수 슬라이더를 움직이는 즉시 어떤 방향이 열리고 닫히는지 보여준다. 공개 페이지 노출 상한(상위 4개)에 걸리지만 조건은 충족한 방향도 "상위 4개 밖" 표시로 함께 보여준다.
+- 브라우저에서 Steppenwolf를 열어 `강렬하고 공격적인` 슬라이더를 4→0으로 내리면 "더 무겁게"가 즉시 사라지고, 3으로 올리면 즉시 다시 나타나는 것을 확인했다(저장 없이 순수 클라이언트 상태 반응).
+- `hitchhiking.test.ts`의 "인접한 보조 분위기 하나만으로 방향이 열리지 않는다" 테스트에서 `heavier` 항목을 제거하고(이제 다른 방향들과 같은 direct-rule 패턴이라 이 카테고리에 안 맞음), 새 규칙을 검증하는 전용 테스트를 추가했다.
+
+**검증**
+
+- `npx tsc -b`, `npm test`(11개 파일 70개 테스트), `npm run validate:taxonomy`(194/194), `npm run validate:data`(오류 없음), `npm run audit:moods`(커버리지 충족), `npm run build`(공개 상세·공유 페이지 193개 생성 검증) 모두 통과.
+
+**Git 상태와 다음 단계**
+
+- `src/config/hitchhiking.ts`, `src/lib/hitchhiking.test.ts`, `src/components/StudioHitchhikingPreview.tsx`(신규), `src/components/StudioPage.tsx`, `src/index.css`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 다음 후속 과제(요청 시 진행): moodScores 태깅이 얕은 밴드들의 밀도 보강.
