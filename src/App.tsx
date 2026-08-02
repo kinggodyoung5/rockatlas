@@ -1,5 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowRight, Compass, Menu, Share2, Shuffle, X } from 'lucide-react'
+import { ArrowDown, ArrowRight, Compass, MessageSquarePlus, Menu, Share2, Shuffle, X } from 'lucide-react'
 import { AllBandsPage } from './components/AllBandsPage'
 import { BandDetail } from './components/BandDetail'
 import { DiscoveryHome } from './components/DiscoveryHome'
@@ -372,7 +372,7 @@ function ExplorerApp() {
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
       <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>

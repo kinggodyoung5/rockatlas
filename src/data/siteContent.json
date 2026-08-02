@@ -17,6 +17,8 @@
   "allBandsSectionTitle": "모든 밴드 보기",
   "allBandsSectionDescription": "이름, 시대, 국가와 장르로 좁혀보세요.",
   "headerTagline": "",
+  "suggestionButtonLabel": "추가/수정 제안",
+  "suggestionLinkUrl": "",
   "footerTagline": "BETA ARCHIVE",
   "footerDescription": "각 밴드는 대표 장르 하나에만 표시되고 세부 장르와 분위기로 다시 이어집니다.",
   "footerLocation": "SEOUL / 2026",

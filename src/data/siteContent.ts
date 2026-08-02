@@ -60,6 +60,10 @@ export interface SiteContent {
   allBandsSectionTitle: string
   allBandsSectionDescription: string
   headerTagline: string
+  /** Header nav button linking out to wherever the operator wants suggestions sent (a form, email, chat
+   *  invite, ...). Hidden entirely when the URL is empty rather than showing a dead link. */
+  suggestionButtonLabel: string
+  suggestionLinkUrl: string
   footerTagline: string
   footerDescription: string
   footerLocation: string

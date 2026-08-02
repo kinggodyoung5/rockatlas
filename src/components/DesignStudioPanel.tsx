@@ -169,6 +169,11 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
             <label className="studio-grid-span">푸터 설명 <small>"N개 밴드를 수록했습니다." 뒤에 이어서 표시됩니다.</small><textarea value={value.footerDescription} onChange={(event) => onChange({ footerDescription: event.target.value })} rows={2} /></label>
           </div></details>
 
+          <details><summary>운영자에게 제안 버튼</summary><div className="studio-form-grid">
+            <label>버튼 문구<input value={value.suggestionButtonLabel} onChange={(event) => onChange({ suggestionButtonLabel: event.target.value })} placeholder="추가/수정 제안" /></label>
+            <label className="studio-grid-span">연결할 링크 <small>구글 폼, 이메일(mailto:...), 디스코드 초대 등. 비워두면 헤더에 버튼이 나타나지 않습니다.</small><input value={value.suggestionLinkUrl} onChange={(event) => onChange({ suggestionLinkUrl: event.target.value })} placeholder="https:// 또는 mailto:..." /></label>
+          </div></details>
+
           <details open><summary>폰트와 색상</summary><div className="studio-form-grid">
             <label>폰트 프리셋<select value={value.theme.fontPreset} onChange={(event) => changeTheme({ fontPreset: event.target.value as SiteContent['theme']['fontPreset'] })}><option value="modern">모던 산세리프 (Pretendard)</option><option value="classic">클래식 세리프 (Georgia)</option><option value="editorial">에디토리얼 콘덴스드</option><option value="impact">임팩트 헤드라인 (Black Han Sans)</option></select></label>
             <label>업로드 폰트 적용 범위<select value={value.theme.customFontTarget} onChange={(event) => changeTheme({ customFontTarget: event.target.value as SiteContent['theme']['customFontTarget'] })} disabled={!value.theme.customFontUrl}><option value="all">본문과 제목 모두</option><option value="body">본문만</option><option value="heading">제목만</option></select></label>

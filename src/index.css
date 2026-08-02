@@ -51,8 +51,8 @@ img { display: block; max-width: 100%; }
 .main-nav { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 700; }
 .main-nav a { color: #bdbcc0; transition: color .2s; }
 .main-nav a:hover { color: white; }
-.main-nav button { border: 1px solid var(--line); background: transparent; padding: 10px 15px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
-.main-nav button:hover { border-color: var(--orange); color: #ff956d; }
+.main-nav button, .main-nav a.suggestion-link { border: 1px solid var(--line); background: transparent; padding: 10px 15px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.main-nav button:hover, .main-nav a.suggestion-link:hover { border-color: var(--orange); color: #ff956d; }
 .menu-button { display: none; border: 0; background: transparent; cursor: pointer; }
 
 .hero { min-height: 690px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; position: relative; overflow: hidden; }
