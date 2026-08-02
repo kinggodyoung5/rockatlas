@@ -771,3 +771,27 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 **Git 상태와 다음 단계**
 
 - `src/data/taxonomy.v2.json`, `src/types/taxonomy.ts`, `src/components/DiscoveryHome.tsx`, `src/components/GenreExplorerPage.tsx`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+
+## 30. 2026-08-02 장르 카드 줄바꿈 재점검 · 포스트펑크 세부장르 중복 제거 · 자간 보정
+
+섹션 29 배포 직후 운영자가 프로그레시브 카드가 "여전히" 두 줄이라고 보고해 재점검했다.
+
+**재현 시도와 원인 분석**
+
+- 실제 사용 폰트(Pretendard Variable)를 강제 로드한 뒤 데스크톱 289px~1280px, 모바일 390px 전 구간에서 13개 카드 전부의 제목·영어 설명·세부장르 줄을 `getClientRects().length`로 실측했지만 어느 카드도 두 줄로 넘어가지 않았다.
+- 가장 유력한 원인은 GitHub Pages 배포 전파 지연 또는 브라우저 캐시로, 운영자가 섹션 29 배포가 완전히 반영되기 전 상태를 본 것으로 추정된다.
+
+**그래도 처리한 실질 개선**
+
+- 포스트펑크 카드의 세부장르 미리보기가 "포스트펑크 · 포스트펑크 리바이벌"처럼 같은 단어가 겹쳐 보이는 문제를 지적받아, `cardSubgenreLabels`를 `["포스트펑크", "고딕 록", "뉴웨이브"]`로 바꿨다. 이는 카드 자체의 한글 이름("포스트펑크 / 고딕 / 뉴웨이브")과도 정확히 대응해 더 대표성이 높다.
+- 운영자가 제안한 자간(letter-spacing) 축소를 여유 폭 확보 차원에서 적용했다: 카드 영어 설명(`.genre-card-copy > strong`) `.06em → .03em`, 세부장르 목록(`.genre-card-foot .folded-list`) `normal → -.01em`. 텍스트를 추가로 줄이거나 생략하지 않고, 실제로 문제가 재현되지 않는 상황에서 억지로 내용을 깎기보다 여유 폭만 넓히는 보수적인 조치를 택했다.
+
+**검증**
+
+- `npx tsc -b`, `npm test`(11개 파일 70개 테스트), `npm run validate:taxonomy`(194/194), `npm run validate:data`(오류 없음), `npm run build`(공개 상세·공유 페이지 193개 생성 검증) 모두 통과.
+- 브라우저에서 Pretendard 폰트 로드를 명시적으로 기다린 뒤 13개 카드 전부 제목·영어 설명·세부장르가 데스크톱·모바일 전 구간에서 1줄임을 재확인했다.
+
+**Git 상태와 다음 단계**
+
+- `src/data/taxonomy.v2.json`, `src/index.css`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 배포 후에도 운영자가 실제로 두 줄을 본다면, 브라우저 강력 새로고침(캐시 무시) 후에도 재현되는지, 그리고 정확한 화면 너비·배율을 확인해 알려달라고 요청할 필요가 있다.

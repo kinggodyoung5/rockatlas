@@ -742,12 +742,12 @@ img { display: block; max-width: 100%; }
 .genre-card-top > span { padding: 7px 9px; color: #fff; background: rgba(8,7,12,.82); border: 1px solid rgba(255,255,255,.24); box-shadow: 0 2px 14px rgba(0,0,0,.32); backdrop-filter: blur(8px); font-size: 14px; text-shadow: 0 1px 3px #000; }
 .genre-card-copy { z-index: 2; display: block; margin-top: auto; padding: 25px 26px 8px; text-align: left; text-shadow: 0 2px 14px rgba(0,0,0,.94), 0 1px 2px #000; }
 .genre-card-copy h3 { margin: 0 0 10px; max-width: 94%; color: #fff; font-size: clamp(32px, 2.65vw, 40px); line-height: 1; letter-spacing: -.045em; text-wrap: balance; overflow-wrap: anywhere; }
-.genre-card-copy > strong { display: block; min-height: 0; color: color-mix(in srgb, var(--genre-color) 48%, white); font: 900 14px/1.4 Arial; letter-spacing: .06em; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
+.genre-card-copy > strong { display: block; min-height: 0; color: color-mix(in srgb, var(--genre-color) 48%, white); font: 900 14px/1.4 Arial; letter-spacing: .03em; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
 .genre-card-copy p { max-width: 96%; min-height: 0; margin: 15px 0 0; color: rgba(255,255,255,.9); font-size: 17px; font-weight: 500; line-height: 1.58; word-break: keep-all; }
 .genre-card-foot { z-index: 2; display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-top: 0; padding: 16px 26px 25px; text-align: left; text-shadow: 0 2px 10px #000; }
 .genre-card-foot > span:first-child { min-width: 0; }
 .genre-card-foot .folded-label { margin-top: 0; color: rgba(255,255,255,.7); font-size: 14px; }
-.genre-card-foot .folded-list { overflow: visible; margin-top: 7px; color: rgba(255,255,255,.9); font-size: 15px; font-weight: 600; line-height: 1.45; text-overflow: clip; white-space: normal; word-break: keep-all; }
+.genre-card-foot .folded-list { overflow: visible; margin-top: 7px; color: rgba(255,255,255,.9); font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.45; text-overflow: clip; white-space: normal; word-break: keep-all; }
 .genre-card-foot .genre-arrow { position: static; flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--genre-color) 65%, rgba(255,255,255,.38)); color: color-mix(in srgb, var(--genre-color) 62%, white); background: rgba(9,8,13,.44); opacity: 1; transform: none; backdrop-filter: blur(6px); }
 .discovery-card:hover .genre-arrow { color: white; background: var(--genre-color); transform: translateX(3px); }
 .genre-card-style-minimal .genre-card-art { opacity: .52; }

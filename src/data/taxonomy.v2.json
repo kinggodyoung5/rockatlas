@@ -207,6 +207,7 @@
       "name": "포스트펑크 / 고딕 / 뉴웨이브",
       "displayName": "포스트펑크 / 고딕 / 뉴웨이브",
       "englishName": "Post-Punk, Goth & New Wave",
+      "cardSubgenreLabels": ["포스트펑크", "고딕 록", "뉴웨이브"],
       "description": "펑크의 거친 에너지에 전자음과 댄서블한 리듬을 얹어, 어두운 감성부터 신나는 팝 멜로디까지.",
       "vibeDescription": "80년대 감성의 스타일리시한 사운드, 세련된 도시의 록.",
       "order": 7,
