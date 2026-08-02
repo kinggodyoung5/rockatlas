@@ -30224,7 +30224,8 @@
         "moodScores": {
           "aggressive-heavy": 4,
           "riff-solo-driven": 5,
-          "anthemic-live": 3
+          "anthemic-live": 3,
+          "dark-gloomy": 3
         },
         "reviewStatus": "reviewed"
       },
@@ -30430,7 +30431,8 @@
         "moodScores": {
           "aggressive-heavy": 5,
           "fast-driving": 5,
-          "anthemic-live": 4
+          "anthemic-live": 4,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "reviewed"
       },
@@ -30690,7 +30692,8 @@
         "moodScores": {
           "anthemic-live": 5,
           "hopeful-uplifting": 4,
-          "riff-solo-driven": 3
+          "riff-solo-driven": 3,
+          "aggressive-heavy": 3
         },
         "reviewStatus": "reviewed"
       },
@@ -33891,7 +33894,8 @@
           "aggressive-heavy": 4,
           "riff-solo-driven": 4,
           "epic-cinematic": 3,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "youth-rebellious": 5
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -36464,7 +36468,8 @@
           "fast-driving": 4,
           "groovy-danceable": 4,
           "youth-rebellious": 5,
-          "experimental-weird": 3
+          "experimental-weird": 3,
+          "anthemic-live": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -38275,7 +38280,8 @@
           "hopeful-uplifting": 3,
           "romantic-emotional": 4,
           "riff-solo-driven": 4,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "aggressive-heavy": 3
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."

@@ -675,3 +675,35 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - `src/config/hitchhiking.ts`, `src/lib/hitchhiking.test.ts`, `src/components/StudioHitchhikingPreview.tsx`(신규), `src/components/StudioPage.tsx`, `src/index.css`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
 - 다음 후속 과제(요청 시 진행): moodScores 태깅이 얕은 밴드들의 밀도 보강.
+
+## 27. 2026-08-02 태깅 얕은 밴드 검토 · 근거 있는 6곳만 보완
+
+섹션 26에서 미룬 후속 과제를 처리했다. "무작정 올리지 말고, 얕은 게 맞으면 그대로 두라"는 지시에 따라, 분위기 태그가 4개 이하인 41개 공개 밴드를 전부 개별 검토했다.
+
+**검토 방식**
+
+- 41개 밴드 각각에 대해 기존 태그가 이미 그 밴드의 핵심 정체성을 충분히 담고 있는지 먼저 판단하고, 잘 알려진 특징인데 빠진 것이 명백한 경우에만 추가했다.
+- 대부분(35개)은 이미 소수의 태그만으로도 정체성이 정확하게 좁혀져 있어(Sepultura, Megadeth, Black Sabbath, King Crimson 등) 그대로 두었다.
+
+**근거를 확인해 추가한 6곳**
+
+- Soundgarden: `dark-gloomy` 3점 — 크리스 코넬 특유의 어둡고 음울한 사이키델릭 가사 정서(Black Hole Sun, Fell on Black Days)가 빠져 있었다.
+- Anthrax: `riff-solo-driven` 4점 — Big 4 스래시 밴드로서 스콧 이안·댄 스피츠의 리프 중심 연주가 핵심인데 빠져 있었다.
+- Foo Fighters: `aggressive-heavy` 3점 — All My Life, Rope, White Limo 등 공격적인 하드 록 곡이 다수인데 강렬함 점수가 전혀 없었다.
+- The Who: `youth-rebellious` 5점 — "My Generation"은 청춘 반항 록의 대표곡("hope I die before I get old")이자 모드 무브먼트의 상징인데 이 점수가 없었다.
+- The Clash: `anthemic-live` 4점 — London Calling, Should I Stay or Should I Go, Rock the Casbah 등 펑크 역사상 손꼽히는 떼창 후렴 곡들인데 이 점수가 없었다.
+- Pearl Jam: `aggressive-heavy` 3점 — Ten·Vs. 시기 그런지 특유의 분노·앵스트(Even Flow, Animal 등)가 짙은데 강렬함 점수가 전혀 없었다.
+
+**결과**
+
+- 히치하이킹 방향 1개짜리 밴드가 17 → 15개로 더 줄었고(섹션 26 수정 전 기준 20개), "더 무겁게" 후보 풀은 62 → 64개가 됐다.
+- 남은 15개(Def Leppard, Interpol, The Smiths, The White Stripes, Eagles, R.E.M., Chickenfoot, Joy Division, Kings of Convenience, X Ambassadors, Pixies, Lynyrd Skynyrd, Travis, Oasis, Kent)는 전부 검토 후 그대로 두었다 — 기존 3~4개 태그가 이미 그 밴드의 좁고 뚜렷한 음악적 정체성을 정확히 담고 있어서, 억지로 태그를 늘리면 오히려 부정확해진다고 판단했다.
+
+**검증**
+
+- `npx tsc -b`, `npm test`(11개 파일 70개 테스트), `npm run validate:taxonomy`(194/194), `npm run validate:data`(오류 없음), `npm run audit:moods`(커버리지 충족, 194개 밴드 모두 핵심 분위기 보유), `npm run build`(공개 상세·공유 페이지 193개 생성 검증) 모두 통과.
+
+**Git 상태와 다음 단계**
+
+- `src/data/catalog.json`(6개 밴드 moodScores 보완)을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 남은 15개 단일 방향 밴드는 데이터 오류가 아니라 의도된 좁은 정체성으로 확인했으므로 추가 조치가 필요하지 않다.
