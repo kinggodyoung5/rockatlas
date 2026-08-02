@@ -627,6 +627,24 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 **Git 상태와 다음 단계**
 
-- 이번 히치하이킹 변경은 아직 커밋·푸시·배포하지 않았다.
-- 기존 사용자 변경 `docs/GEMINI_STEP1_RESEARCH.md`, `.claude/settings.local.json`, `배포법.txt`는 건드리거나 포함하지 않는다.
-- 운영자가 결과를 승인하고 배포를 요청하면 히치하이킹 관련 파일과 이 상태 기록만 별도 커밋한다.
+- 이 변경은 `6ee813e`로 커밋되어 `codex/taxonomy-v2`와 `main`에 이미 푸시·배포됐다 (Git 로그 기준으로 본 문서의 이전 "아직 커밋하지 않았다" 기록을 정정함).
+- 기존 사용자 변경 `docs/GEMINI_STEP1_RESEARCH.md`는 이 커밋에 함께 포함되어 반영됐다. `.claude/settings.local.json`, `배포법.txt`는 여전히 건드리지 않는다.
+
+## 25. 2026-08-02 장르 변화 시대별 근거 설명 44개 밴드 보완
+
+`validate:data`가 계속 경고하던 "장르 변화의 기준 앨범·설명 보완 권장" 44건(다중 시대 태그를 가졌지만 일부 시대에 근거 설명이 없던 밴드)을 실제 디스코그래피 조사를 바탕으로 전부 채웠다.
+
+- 44개 밴드, 시대 태그 95개에 각 시대를 대표하는 실제 앨범명(연도 포함)과 사운드 변화 근거를 한두 문장으로 작성했다. 예: Nirvana 1980s(Bleach, 1989 로우파이 펑크·인디) → 1990s(Nevermind, 1991 그런지·얼터너티브 대중화), Radiohead 1990s(The Bends·OK Computer) → 2000s(Kid A·Amnesiac 전자음악 전환).
+- Two Door Cinema Club 2020s(Keep On Smiling, 2022), Theory of a Deadman 2010s(Savages, 2014) 등 확신이 낮았던 항목은 웹 검색으로 실제 발매 연도·성격을 확인한 뒤 작성했다.
+- Maroon 5에 이미 있던 부실한 기존 노트(`"펑크(Funk)록"`, `undefined`)도 정식 설명으로 교체했다.
+- 애매해서 보류한 항목은 없다.
+
+**검증**
+
+- `npm run validate:data`: 경고 44개 → 0개, 무결성 오류 없음 (밴드 194 · 트랙 592 · 관계 520).
+- `npx tsc -b`, `npm test`(11개 파일 69개 테스트), `npm run validate:taxonomy`(194/194), `npm run build`(공개 상세·공유 페이지 193개 생성 검증) 모두 통과.
+
+**Git 상태와 다음 단계**
+
+- 이 섹션의 `catalog.json` 시대별 노트 보완을 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+- 저장소 루트의 `배포법.txt`(빈 파일)와 `.claude/settings.local.json`은 사용자 소유/개인 설정이므로 건드리지 않는다.
