@@ -1,5 +1,12 @@
 import type { MoodId } from '../types/taxonomy'
 
+export interface HitchhikingEntryRule {
+  /** Every mood in `all` must meet its threshold. */
+  all: Partial<Record<MoodId, number>>
+  /** When present, at least one mood in `any` must also meet its threshold. */
+  any?: Partial<Record<MoodId, number>>
+}
+
 /**
  * 히치하이킹의 방향 후보군은 이 파일 한 곳에서 관리한다.
  * 방향을 추가하거나 분위기 비중을 조정하면 추천 계산·UI·데이터 진단이 함께 갱신된다.
@@ -12,7 +19,10 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 강한 리프와 압도적인 에너지 쪽으로',
     iconKey: 'weight',
     accent: '#ff6a4d',
-    triggerMoodIds: ['aggressive-heavy', 'massive-heavy'],
+    entryRules: [
+      { all: { 'massive-heavy': 3 } },
+      { all: { 'aggressive-heavy': 4 }, any: { 'riff-solo-driven': 3, 'fast-driving': 4, 'noisy-wall': 3 } },
+    ],
     moodWeights: {
       'aggressive-heavy': 1,
       'massive-heavy': 0.9,
@@ -27,7 +37,10 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 흐릿한 질감과 깊은 몰입감 쪽으로',
     iconKey: 'sparkles',
     accent: '#9d8cff',
-    triggerMoodIds: ['dreamy-ethereal', 'cosmic-psychedelic'],
+    entryRules: [
+      { all: { 'dreamy-ethereal': 3 } },
+      { all: { 'cosmic-psychedelic': 4 }, any: { 'long-form-immersive': 3, 'slow-calm': 3, 'experimental-weird': 3 } },
+    ],
     moodWeights: {
       'dreamy-ethereal': 1,
       'cosmic-psychedelic': 0.85,
@@ -43,7 +56,11 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 쉽게 꽂히는 멜로디와 후렴 쪽으로',
     iconKey: 'radio',
     accent: '#58c9a3',
-    triggerMoodIds: ['bright-upbeat', 'hopeful-uplifting', 'anthemic-live'],
+    entryRules: [
+      { all: { 'bright-upbeat': 3 } },
+      { all: { 'hopeful-uplifting': 3 } },
+      { all: { 'anthemic-live': 4 }, any: { 'romantic-emotional': 3, 'groovy-danceable': 3, 'bright-upbeat': 2 } },
+    ],
     moodWeights: {
       'bright-upbeat': 0.9,
       'hopeful-uplifting': 0.8,
@@ -59,7 +76,10 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 복잡하고 예측하기 어려운 소리 쪽으로',
     iconKey: 'flask',
     accent: '#f0b85a',
-    triggerMoodIds: ['experimental-weird', 'technical-complex'],
+    entryRules: [
+      { all: { 'experimental-weird': 3 } },
+      { all: { 'technical-complex': 4 }, any: { 'long-form-immersive': 3, 'cosmic-psychedelic': 3, 'noisy-wall': 3 } },
+    ],
     moodWeights: {
       'experimental-weird': 1,
       'technical-complex': 0.8,
@@ -75,7 +95,7 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 빠른 비트와 질주하는 에너지 쪽으로',
     iconKey: 'gauge',
     accent: '#ef7e54',
-    triggerMoodIds: ['fast-driving'],
+    entryRules: [{ all: { 'fast-driving': 3 } }],
     moodWeights: {
       'fast-driving': 1,
       'youth-rebellious': 0.45,
@@ -89,7 +109,11 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 음울하고 차가운 정서의 소리 쪽으로',
     iconKey: 'moon',
     accent: '#7886c8',
-    triggerMoodIds: ['dark-gloomy', 'melancholic-lonely', 'cold-urban'],
+    entryRules: [
+      { all: { 'dark-gloomy': 3 } },
+      { all: { 'cold-urban': 3 } },
+      { all: { 'melancholic-lonely': 4 }, any: { 'dark-gloomy': 2, 'cold-urban': 2, 'noisy-wall': 3 } },
+    ],
     moodWeights: {
       'dark-gloomy': 1,
       'melancholic-lonely': 0.75,
@@ -104,7 +128,11 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 포근하고 어쿠스틱한 감촉의 소리 쪽으로',
     iconKey: 'sun',
     accent: '#e9a85f',
-    triggerMoodIds: ['warm-comforting', 'acoustic-organic', 'romantic-emotional'],
+    entryRules: [
+      { all: { 'warm-comforting': 3 } },
+      { all: { 'acoustic-organic': 3 } },
+      { all: { 'romantic-emotional': 4 }, any: { 'hopeful-uplifting': 3, 'warm-comforting': 2, 'acoustic-organic': 2 } },
+    ],
     moodWeights: {
       'warm-comforting': 1,
       'acoustic-organic': 0.75,
@@ -119,7 +147,7 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 리드미컬하고 몸이 반응하는 소리 쪽으로',
     iconKey: 'waves',
     accent: '#55bfb2',
-    triggerMoodIds: ['groovy-danceable'],
+    entryRules: [{ all: { 'groovy-danceable': 3 } }],
     moodWeights: {
       'groovy-danceable': 1,
       'electronic-synth': 0.5,
@@ -134,7 +162,10 @@ export const HITCHHIKING_DIRECTIONS = [
     description: '더 거대하고 영화적인 울림의 소리 쪽으로',
     iconKey: 'mountain',
     accent: '#c79bff',
-    triggerMoodIds: ['epic-cinematic', 'anthemic-live'],
+    entryRules: [
+      { all: { 'epic-cinematic': 3 } },
+      { all: { 'anthemic-live': 4 }, any: { 'massive-heavy': 3, 'long-form-immersive': 3 } },
+    ],
     moodWeights: {
       'epic-cinematic': 1,
       'anthemic-live': 0.75,
@@ -149,7 +180,7 @@ export const HITCHHIKING_DIRECTIONS = [
   description: string
   iconKey: string
   accent: string
-  triggerMoodIds: readonly MoodId[]
+  entryRules: readonly HitchhikingEntryRule[]
   moodWeights: Partial<Record<MoodId, number>>
 }>
 

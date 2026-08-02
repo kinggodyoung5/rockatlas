@@ -1,8 +1,16 @@
 import { describe, expect, it } from 'vitest'
+import { hitchhikingDirectionById, type HitchhikingDirectionId } from '../config/hitchhiking'
 import { publicBands } from '../data/publicBands'
-import { availableHitchhikingDirections, decodeJourney, encodeJourney, recommendHitchhikingBands, type JourneyStep } from './hitchhiking'
+import type { Band } from '../types/music'
+import type { MoodId, MoodScore } from '../types/taxonomy'
+import { availableHitchhikingDirections, decodeJourney, directionEntrySignal, encodeJourney, recommendHitchhikingBands, type JourneyStep } from './hitchhiking'
 
 describe('히치하이킹 방향 추천', () => {
+  const bandWithMoods = (moodScores: Partial<Record<MoodId, MoodScore>>): Band => ({
+    ...publicBands[0],
+    taxonomyV2: { ...publicBands[0].taxonomyV2!, moodScores },
+  })
+
   it('모든 공개 밴드에서 노출 가능한 방향마다 서로 다른 후보 3개 이상을 만든다', () => {
     for (const band of publicBands) {
       const available = availableHitchhikingDirections(band, publicBands)
@@ -21,17 +29,16 @@ describe('히치하이킹 방향 추천', () => {
     const band = publicBands.find((item) => item.id === 'children-of-bodom')
     expect(band).toBeDefined()
     const directions = availableHitchhikingDirections(band!, publicBands).map((item) => item.direction.id)
-    expect(directions).toEqual(expect.arrayContaining(['heavier', 'faster', 'experimental', 'grander']))
+    expect(directions).toEqual(expect.arrayContaining(['heavier', 'faster', 'grander']))
     expect(directions).not.toContain('dreamier')
     expect(directions).not.toContain('accessible')
+    expect(directions).not.toContain('experimental')
   })
 
-  it('방향 카드는 현재 밴드의 대표 분위기가 3점 이상일 때만 열린다', () => {
+  it('방향 카드는 현재 밴드가 방향별 직접·조건부 진입 규칙을 충족할 때만 열린다', () => {
     for (const band of publicBands) {
-      const scores = band.taxonomyV2?.moodScores ?? {}
       for (const { direction } of availableHitchhikingDirections(band, publicBands)) {
-        const strongestTrigger = Math.max(...direction.triggerMoodIds.map((moodId) => scores[moodId] ?? 0))
-        expect(strongestTrigger, `${band.name} / ${direction.label}`).toBeGreaterThanOrEqual(3)
+        expect(directionEntrySignal(band, direction), `${band.name} / ${direction.label}`).toBeGreaterThan(0)
       }
     }
   })
@@ -42,6 +49,34 @@ describe('히치하이킹 방향 추천', () => {
     expect(band!.taxonomyV2?.moodScores['groovy-danceable'] ?? 0).toBe(0)
     const directions = availableHitchhikingDirections(band!, publicBands).map((item) => item.direction.id)
     expect(directions).not.toContain('groovier')
+  })
+
+  it('Travis에서는 떼창형 3점만으로 웅장한 방향이 열리지 않는다', () => {
+    const band = publicBands.find((item) => item.id === 'travis')
+    expect(band).toBeDefined()
+    expect(band!.taxonomyV2?.moodScores['epic-cinematic'] ?? 0).toBe(0)
+    expect(band!.taxonomyV2?.moodScores['anthemic-live'] ?? 0).toBe(3)
+    const directions = availableHitchhikingDirections(band!, publicBands).map((item) => item.direction.id)
+    expect(directions).not.toContain('grander')
+  })
+
+  it('인접한 보조 분위기 하나만으로 의미가 다른 방향을 열지 않는다', () => {
+    const cases: Array<{ direction: HitchhikingDirectionId; isolated: Partial<Record<MoodId, MoodScore>>; direct: Partial<Record<MoodId, MoodScore>>; combined: Partial<Record<MoodId, MoodScore>> }> = [
+      { direction: 'heavier', isolated: { 'aggressive-heavy': 3 }, direct: { 'massive-heavy': 3 }, combined: { 'aggressive-heavy': 4, 'fast-driving': 4 } },
+      { direction: 'dreamier', isolated: { 'cosmic-psychedelic': 4 }, direct: { 'dreamy-ethereal': 3 }, combined: { 'cosmic-psychedelic': 4, 'slow-calm': 3 } },
+      { direction: 'accessible', isolated: { 'anthemic-live': 5 }, direct: { 'bright-upbeat': 3 }, combined: { 'anthemic-live': 4, 'romantic-emotional': 3 } },
+      { direction: 'experimental', isolated: { 'technical-complex': 5 }, direct: { 'experimental-weird': 3 }, combined: { 'technical-complex': 4, 'noisy-wall': 3 } },
+      { direction: 'darker', isolated: { 'melancholic-lonely': 5 }, direct: { 'dark-gloomy': 3 }, combined: { 'melancholic-lonely': 4, 'cold-urban': 2 } },
+      { direction: 'warmer', isolated: { 'romantic-emotional': 5 }, direct: { 'warm-comforting': 3 }, combined: { 'romantic-emotional': 4, 'hopeful-uplifting': 3 } },
+      { direction: 'grander', isolated: { 'anthemic-live': 5 }, direct: { 'epic-cinematic': 3 }, combined: { 'anthemic-live': 4, 'massive-heavy': 3 } },
+    ]
+
+    for (const item of cases) {
+      const direction = hitchhikingDirectionById[item.direction]
+      expect(directionEntrySignal(bandWithMoods(item.isolated), direction), `${item.direction} / isolated`).toBe(0)
+      expect(directionEntrySignal(bandWithMoods(item.direct), direction), `${item.direction} / direct`).toBeGreaterThan(0)
+      expect(directionEntrySignal(bandWithMoods(item.combined), direction), `${item.direction} / combined`).toBeGreaterThan(0)
+    }
   })
 
   it('같은 입력에는 항상 같은 순서의 후보를 반환한다', () => {

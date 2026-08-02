@@ -1,4 +1,4 @@
-import { HITCHHIKING_DIRECTIONS, hitchhikingDirectionById, type HitchhikingDirection, type HitchhikingDirectionId } from '../config/hitchhiking'
+import { HITCHHIKING_DIRECTIONS, hitchhikingDirectionById, type HitchhikingDirection, type HitchhikingDirectionId, type HitchhikingEntryRule } from '../config/hitchhiking'
 import { taxonomyGenreById, taxonomyMoodById } from '../data/taxonomy'
 import type { Band } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
@@ -34,7 +34,6 @@ interface RecommendationOptions {
 
 const validJourneyVia = new Set<string>([...HITCHHIKING_DIRECTIONS.map((direction) => direction.id), 'connection'])
 const safeBandIdPattern = /^[a-z0-9][a-z0-9-]*$/i
-const directionEntryScore = 3
 const minimumForwardGain = 0.2
 const ceilingDirectionLevel = 4
 
@@ -50,21 +49,33 @@ export function directionLevel(band: Band, direction: HitchhikingDirection) {
   return entries.reduce((sum, [moodId, weight]) => sum + (scores[moodId] ?? 0) * weight, 0) / totalWeight
 }
 
-function strongestSourceSignal(band: Band, direction: HitchhikingDirection) {
+function meetsMoodThresholds(scores: Partial<Record<MoodId, number>>, thresholds: Partial<Record<MoodId, number>>, mode: 'all' | 'any') {
+  const entries = Object.entries(thresholds) as Array<[MoodId, number]>
+  return mode === 'all'
+    ? entries.every(([moodId, threshold]) => (scores[moodId] ?? 0) >= threshold)
+    : entries.some(([moodId, threshold]) => (scores[moodId] ?? 0) >= threshold)
+}
+
+export function directionEntrySignal(band: Band, direction: HitchhikingDirection) {
   const scores = band.taxonomyV2?.moodScores ?? {}
-  return direction.triggerMoodIds.reduce((strongest, moodId) => Math.max(strongest, scores[moodId] ?? 0), 0)
+  const rules: readonly HitchhikingEntryRule[] = direction.entryRules
+  return rules.reduce((strongest, rule) => {
+    if (!meetsMoodThresholds(scores, rule.all, 'all')) return strongest
+    if (rule.any && !meetsMoodThresholds(scores, rule.any, 'any')) return strongest
+    const primaryMoodIds = Object.keys(rule.all) as MoodId[]
+    return Math.max(strongest, ...primaryMoodIds.map((moodId) => scores[moodId] ?? 0))
+  }, 0)
 }
 
 /**
  * 모든 밴드에 같은 버튼을 강제로 노출하지 않는다.
- * 현재 밴드가 실제로 가진 3점 이상 분위기 또는 직접 검수된 관계를 통해
- * 한 단계 건너갈 수 있는 방향만 최대 네 개까지 보여준다.
+ * 현재 밴드가 방향별 직접 핵심 조건 또는 조건부 분위기 조합을 충족하고,
+ * 자연스럽게 이어질 후보가 충분한 방향만 최대 네 개까지 보여준다.
  */
 export function availableHitchhikingDirections(subject: Band, candidates: Band[], limit = 4): AvailableHitchhikingDirection[] {
   return HITCHHIKING_DIRECTIONS
     .map((direction): AvailableHitchhikingDirection & { rank: number } => {
-      const sourceSignal = strongestSourceSignal(subject, direction)
-      const subjectLevel = directionLevel(subject, direction)
+      const sourceSignal = directionEntrySignal(subject, direction)
       const candidateCount = recommendHitchhikingBands(subject, candidates, direction.id, { limit: 3 }).length
       return {
         direction,
@@ -73,7 +84,7 @@ export function availableHitchhikingDirections(subject: Band, candidates: Band[]
         rank: sourceSignal * 10 + directionLevel(subject, direction) * 4,
       }
     })
-    .filter((item) => item.sourceSignal >= directionEntryScore && item.candidateCount >= 3)
+    .filter((item) => item.sourceSignal > 0 && item.candidateCount >= 3)
     .sort((left, right) => right.rank - left.rank || left.direction.label.localeCompare(right.direction.label, 'ko'))
     .slice(0, limit)
     .map(({ rank: _rank, ...item }) => item)
@@ -117,7 +128,7 @@ export function recommendHitchhikingBands(
 ) {
   const direction = hitchhikingDirectionById[directionId]
   const subjectLevel = directionLevel(subject, direction)
-  const subjectAtCeiling = strongestSourceSignal(subject, direction) >= ceilingDirectionLevel
+  const subjectAtCeiling = directionEntrySignal(subject, direction) >= ceilingDirectionLevel
   const visited = new Set(options.visitedIds ?? [])
   const limit = options.limit ?? 12
 
@@ -162,7 +173,7 @@ export function recommendHitchhikingBands(
         ],
       }
     })
-    .filter((item) => strongestSourceSignal(item.band, direction) >= directionEntryScore
+    .filter((item) => directionEntrySignal(item.band, direction) > 0
       && (item.directionGain >= minimumForwardGain
         || subjectAtCeiling))
     .sort((left, right) => {

@@ -39,8 +39,11 @@ const unusedMoods = moodCoverage.filter((mood) => mood.any === 0)
 if (unusedMoods.length) errors.push(`아무 밴드에도 쓰이지 않는 분위기: ${unusedMoods.map((mood) => mood.name).join(', ')}`)
 
 const axisCoverage = HITCHHIKING_DIRECTIONS.map((axis) => {
-  const moodIds = axis.triggerMoodIds
-  const candidates = rows.filter((band) => moodIds.some((id) => (band.scores[id] ?? 0) >= strongScore))
+  const candidates = rows.filter((band) => axis.entryRules.some((rule) => {
+    const all = Object.entries(rule.all).every(([id, threshold]) => (band.scores[id] ?? 0) >= threshold)
+    const any = !rule.any || Object.entries(rule.any).some(([id, threshold]) => (band.scores[id] ?? 0) >= threshold)
+    return all && any
+  }))
   if (candidates.length < minimumAxisCandidates) errors.push(`${axis.label} 후보가 ${candidates.length}개뿐입니다. 최소 ${minimumAxisCandidates}개가 필요합니다.`)
   return { ...axis, candidates }
 })
