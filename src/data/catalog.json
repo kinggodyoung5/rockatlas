@@ -1,7 +1,1248 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-02T03:01:46.633Z",
+  "updatedAt": "2026-08-02T03:53:59.681Z",
   "bands": [
+    {
+      "id": "steppenwolf",
+      "name": "steppenwolf",
+      "formed": 1961,
+      "origin": "Toronto, US",
+      "countryCode": "US",
+      "activeYears": "1961–",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "블루스 록",
+        "프로토 메탈",
+        "사이키델릭 록",
+        "클래식 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1960s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "블루스 록",
+            "프로토 메탈",
+            "사이키델릭 록",
+            "클래식 록"
+          ]
+        }
+      ],
+      "tags": [
+        "하드 록",
+        "블루스 록",
+        "프로토 메탈",
+        "사이키델릭 록",
+        "클래식 록"
+      ],
+      "summary": "1961년 캐나다 토론토에서 출발하여 미국을 기반으로 활동하며 초기 하드 록과 프로토 메탈의 기틀을 잡은 밴드이다. Steppenwolf(1968), The Second(1968), At Your Birthday Party 등의 앨범을 선보이며 1960년대 후반 바이커 문화와 청년 반항 문화를 대표하는 카리스마 넘치는 음악을 선보였다.",
+      "style": "존 케이의 거칠고 압도적인 허스키 보컬과 하몬드 오르간, 강력한 디스토션 기타 리프가 사운드의 중심을 이룬다. 블루스 록을 기반으로 질주하는 드라이빙 리듬과 육중한 하드 록 앙상블을 전개한다.",
+      "image": {
+        "wikipediaTitle": "steppenwolf",
+        "fileName": "File:Steppenwolf (1970).png",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Steppenwolf_%281970%29.png/960px-Steppenwolf_%281970%29.png",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Steppenwolf_%281970%29.png",
+        "alt": "steppenwolf 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steppenwolf (1970).png",
+          "creator": "ABC / Dunhill Records",
+          "license": "Public domain",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:45:26.278Z"
+        }
+      },
+      "members": [
+        {
+          "name": "John Kay",
+          "role": "보컬, 기타, 하모니카",
+          "status": "current"
+        },
+        {
+          "name": "Michael Wilk",
+          "role": "키보드, 베이스",
+          "status": "current",
+          "activeYears": "1982–"
+        },
+        {
+          "name": "Michael Monarch",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1967–1969"
+        },
+        {
+          "name": "Rushton Moreve",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1967–1969"
+        },
+        {
+          "name": "Goldy McJohn",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1967–1974"
+        },
+        {
+          "name": "Jerry Edmonton",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1967–1976"
+        },
+        {
+          "name": "Nick St. Nicholas",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1968–1970"
+        },
+        {
+          "name": "Larry Byrom",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1969–1972"
+        },
+        {
+          "name": "Kent Henry",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1971–1972"
+        },
+        {
+          "name": "Tony Flynn",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1977–1980"
+        },
+        {
+          "name": "Steve Riley",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1979–1979"
+        },
+        {
+          "name": "Michael Palmer",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1980–1984"
+        },
+        {
+          "name": "Steve Palmer",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1980–1984"
+        },
+        {
+          "name": "Tim Berry",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1990–1993"
+        },
+        {
+          "name": "George Biondo",
+          "role": "베이스",
+          "status": "former"
+        },
+        {
+          "name": "Mars Bonfire",
+          "role": "기타",
+          "status": "former"
+        },
+        {
+          "name": "Danny Wilde",
+          "role": "기타",
+          "status": "former"
+        },
+        {
+          "name": "Bobby Cochran",
+          "role": "기타",
+          "status": "former"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "born-to-be-wild",
+          "title": "Born to Be Wild",
+          "year": 1968,
+          "album": "Steppenwolf",
+          "guide": "거친 기타 리프와 보컬, 헤비메탈이라는 단어의 유래가 된 폭발적인 하드 록 앙상블에 집중해 들을 수 있다.",
+          "youtubeId": "egMWlD3fLJ8",
+          "source": {
+            "label": "steppenwolf — Born to Be Wild YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=egMWlD3fLJ8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Retrospective Soundtrack"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:46:23.462Z"
+        },
+        {
+          "id": "magic-carpet-ride",
+          "title": "Magic Carpet Ride",
+          "year": 1968,
+          "album": "The Second",
+          "guide": "사이키델릭한 노이즈 전개와 신나는 오르간, 보컬 훅이 완벽히 만나는 지점을 들을 수 있다.",
+          "youtubeId": "HPE9a_epmWw",
+          "source": {
+            "label": "steppenwolf — Magic Carpet Ride YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=HPE9a_epmWw",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "DiscoBar80"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:46:35.011Z"
+        },
+        {
+          "id": "rock-me",
+          "title": "Rock Me",
+          "year": 1969,
+          "album": "At Your Birthday Party",
+          "guide": "묵직한 블루스 록 리듬 위로 펼쳐지는 묵직한 하몬드 오르간 연주와 보컬 필을 들을 수 있다.",
+          "youtubeId": "boo0XLeCpVg",
+          "source": {
+            "label": "steppenwolf — Rock Me YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=boo0XLeCpVg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Steppenwolf - Topic"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:46:42.893Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "steppenwolf — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q465862",
+          "publisher": "Wikidata",
+          "externalId": "Q465862",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "steppenwolf — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Steppenwolf_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "steppenwolf — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/12ff8858-bfcb-4812-a8dd-7e9debf0cbee",
+          "publisher": "MusicBrainz",
+          "externalId": "12ff8858-bfcb-4812-a8dd-7e9debf0cbee",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "steppenwolf — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Steppenwolf (1970).png",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        },
+        {
+          "label": "steppenwolf — 공식 YouTube",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/channel/UC0aR1L5OoaiiaW73-bNl_Ug",
+          "official": true,
+          "externalId": "UC0aR1L5OoaiiaW73-bNl_Ug",
+          "note": "외부 재생 제한 시 사용하는 공식 채널 링크"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "progressive-art-psychedelic"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "blues-rock",
+          "proto-metal",
+          "psychedelic-rock",
+          "classic-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "youth-rebellious": 5,
+          "riff-solo-driven": 4,
+          "aggressive-heavy": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:46:04.067Z"
+    },
+    {
+      "id": "sonata-arctica",
+      "name": "sonata arctica",
+      "formed": 1999,
+      "origin": "Kemi, FI",
+      "countryCode": "FI",
+      "activeYears": "1999–",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "파워 메탈",
+        "심포닉 메탈",
+        "스피드 메탈",
+        "프로그레시브 메탈",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "파워 메탈",
+            "심포닉 메탈",
+            "스피드 메탈",
+            "프로그레시브 메탈",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "파워 메탈",
+        "멜로딕 스피드 메탈",
+        "심포닉 메탈",
+        "프로그레시브 메탈",
+        "헤비메탈"
+      ],
+      "summary": "1999년 핀란드 케미에서 결성되어 멜로디컬한 키보드 연주와 빠른 템포가 특징인 파워 메탈 밴드이다. 데뷔 앨범 Ecliptica(1999)와 Silence(2001), Winterheart’s Guild(2003) 등을 통해 핀란드 멜로딕 파워 메탈 씬의 대표 주자로 자리매김했다.",
+      "style": "질주하는 더블 베이스 드럼 비트 위에 화려한 키보드와 기타의 트윈 스피드 솔로 연주가 펼쳐진다. 드라마틱한 서정성이 담긴 멜로디와 토니 카코의 서정적이고 캐치한 보컬 라인이 조화를 이룬다.",
+      "image": {
+        "wikipediaTitle": "sonata arctica",
+        "fileName": "File:SonataArctica 25112007Tilburg.JPG",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SonataArctica_25112007Tilburg.JPG/960px-SonataArctica_25112007Tilburg.JPG",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/SonataArctica_25112007Tilburg.JPG",
+        "alt": "sonata arctica 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:SonataArctica 25112007Tilburg.JPG",
+          "creator": "Tenth Plague",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:40:10.111Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Tony Kakko",
+          "role": "보컬, 건반",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Tommy Portimo",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Henrik Klingenberg",
+          "role": "키보드",
+          "status": "current",
+          "activeYears": "2002–"
+        },
+        {
+          "name": "Elias Viljanen",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2007–"
+        },
+        {
+          "name": "Pasi Kauppinen",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2013–"
+        },
+        {
+          "name": "Janne Kivilahti",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1999–2000"
+        },
+        {
+          "name": "Jani Liimatainen",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1999–2007"
+        },
+        {
+          "name": "Mikko Härkin",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "2000–2002"
+        },
+        {
+          "name": "Marko Paasikoski",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2000–2013"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "full-moon",
+          "title": "FullMoon",
+          "year": 1999,
+          "album": "Ecliptica",
+          "guide": "빠른 템포와 멜로디컬한 키보드 리드, 폭발적인 합창 구간이 특징인 초기 대표곡이다.",
+          "youtubeId": "cfI8o_hzaDk",
+          "source": {
+            "label": "sonata arctica — FullMoon YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=cfI8o_hzaDk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "MissKilljoy1690"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:40:42.020Z"
+        },
+        {
+          "id": "san-sebastian-re-visited",
+          "title": "San Sebastian (Re-visited)",
+          "year": 2001,
+          "album": "Silence",
+          "guide": "휘감아치는 네오클래시컬 키보드 솔로와 압도적인 스피드감의 드럼 연주가 돋보인다.",
+          "youtubeId": "ZhETi8XwONk",
+          "source": {
+            "label": "sonata arctica — San Sebastian (Re-visited) YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=ZhETi8XwONk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Sonata Arctica - Topic"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:40:59.181Z"
+        },
+        {
+          "id": "don-t-say-a-word",
+          "title": "Don't Say a Word",
+          "year": 2004,
+          "album": "Reckoning Night",
+          "guide": "어둡고 연극적인 분위기 속에서 강렬한 리프와 다이내믹한 전개가 펼쳐진다.",
+          "youtubeId": "Pz2V5eI4O2k",
+          "source": {
+            "label": "sonata arctica — Don't Say a Word YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Pz2V5eI4O2k",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Sonata Arctica"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:41:05.661Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "stratovarius",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "원래 하드록밴드로 시작했으나 스트라토바리우스의 음악에 반해 파워메탈로 전향하였다.",
+          "reviewStatus": "draft"
+        }
+      ],
+      "sources": [
+        {
+          "label": "sonata arctica — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q191660",
+          "publisher": "Wikidata",
+          "externalId": "Q191660",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "sonata arctica — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sonata_Arctica",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "sonata arctica — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC56F8c8khYkaA42xQhoS_gw",
+          "publisher": "YouTube",
+          "externalId": "UC56F8c8khYkaA42xQhoS_gw",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "sonata arctica — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/319b1175-ced9-438f-986b-9239c3edd92d",
+          "publisher": "MusicBrainz",
+          "externalId": "319b1175-ced9-438f-986b-9239c3edd92d",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "sonata arctica — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:SonataArctica 25112007Tilburg.JPG",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "folk-symphonic-metal",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "power-metal",
+          "symphonic-metal",
+          "speed-metal",
+          "progressive-metal",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "epic-cinematic": 4,
+          "melancholic-lonely": 3,
+          "technical-complex": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:44:43.890Z"
+    },
+    {
+      "id": "extreme",
+      "name": "extreme",
+      "formed": 1985,
+      "origin": "Boston, US",
+      "countryCode": "US",
+      "activeYears": "1985–",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "글램 메탈",
+        "훵크 메탈",
+        "아레나 록",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "글램 메탈",
+            "훵크 메탈",
+            "아레나 록",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "하드 록",
+        "글램 메탈",
+        "헤비메탈",
+        "펑크 록"
+      ],
+      "summary": "1985년 미국 보스턴에서 결성되어 펑크 메탈과 하드 록 사운드로 독창적인 음악 세계를 구축한 밴드이다. Extreme II: Pornograffitti (A Funked Up Fairy Tale)(1990) 등의 앨범을 통해 화려한 연주력과 차트 성과를 모두 거두었다.",
+      "style": "누노 베텐코트의 화려하고 정교한 기타 리프와 게리 체론의 폭발적인 보컬 라인이 조화를 이룬다. 펑키한 베이스 비트와 결합된 하드 록 및 화음 위주의 파워 발라드까지 폭넓은 스펙트럼을 선보인다.",
+      "image": {
+        "wikipediaTitle": "extreme",
+        "fileName": "File:Extreme en 2017.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Extreme_en_2017.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Extreme_en_2017.jpg",
+        "alt": "extreme 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Extreme en 2017.jpg",
+          "creator": "Rubén G. Herrera",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:36:51.217Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Gary Cherone",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "1986–"
+        },
+        {
+          "name": "Nuno Bettencourt",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1986–"
+        },
+        {
+          "name": "Pat Badger",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1986–"
+        },
+        {
+          "name": "Kevin Figueiredo",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2007–"
+        },
+        {
+          "name": "Paul Geary",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1986–1994"
+        },
+        {
+          "name": "Mike Mangini",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1994–1996"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "more-than-words",
+          "title": "More Than Words",
+          "year": 1990,
+          "album": "Extreme II: Pornograffitti (A Funked Up Fairy Tale)",
+          "guide": "감감적인 어쿠스틱 기타 연주와 풍성한 하모니 보컬이 조화를 이루는 명곡이다.",
+          "youtubeId": "UrIiLvg58SY",
+          "source": {
+            "label": "extreme — More Than Words YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=UrIiLvg58SY",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "ExtremeVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:38:05.298Z"
+        },
+        {
+          "id": "get-the-funk-out",
+          "title": "Get the Funk Out",
+          "year": 1990,
+          "album": "Extreme II: Pornograffitti (A Funked Up Fairy Tale)",
+          "guide": "경쾌하고 묵직한 펑키 리프와 현란한 기타 솔로 연주가 압도적이다.",
+          "youtubeId": "IqP76XWHQI0",
+          "source": {
+            "label": "extreme — Get the Funk Out YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=IqP76XWHQI0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "ExtremeVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:38:10.173Z"
+        },
+        {
+          "id": "hole-hearted",
+          "title": "Hole Hearted",
+          "year": 1990,
+          "album": "Extreme II: Pornograffitti (A Funked Up Fairy Tale)",
+          "guide": "12현 어쿠스틱 기타 리프 기반의 신나는 리듬과 입체적인 화음 연주가 인상적이다.",
+          "youtubeId": "I-h4A7bF8wQ",
+          "source": {
+            "label": "extreme — Hole Hearted YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=I-h4A7bF8wQ",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "ExtremeVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:38:15.485Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "generation-axe",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다. (Generation Axe 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "generation-axe"
+        },
+        {
+          "targetBandId": "van-halen",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다. (Van Halen 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "van-halen"
+        }
+      ],
+      "sources": [
+        {
+          "label": "extreme — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q682710",
+          "publisher": "Wikidata",
+          "externalId": "Q682710",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "extreme — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Extreme_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "extreme — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/0e6cc5e5-4f03-4993-a481-d70d0e354d9f",
+          "publisher": "MusicBrainz",
+          "externalId": "0e6cc5e5-4f03-4993-a481-d70d0e354d9f",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "extreme — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Extreme en 2017.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        },
+        {
+          "label": "extreme — 공식 YouTube",
+          "publisher": "YouTube",
+          "url": "https://www.youtube.com/@extreme_band",
+          "official": true,
+          "externalId": "@extreme_band",
+          "note": "외부 재생 제한 시 사용하는 공식 채널 링크"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "glam-metal",
+          "funk-metal",
+          "arena-rock",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "groovy-danceable": 4,
+          "riff-solo-driven": 5,
+          "bright-upbeat": 4,
+          "technical-complex": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:37:41.688Z"
+    },
+    {
+      "id": "evanescence",
+      "name": "Evanescence",
+      "formed": 1995,
+      "origin": "Little Rock, US",
+      "countryCode": "US",
+      "activeYears": "1995–",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal",
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "고딕 메탈",
+        "심포닉 메탈",
+        "얼터너티브 메탈",
+        "고딕 록",
+        "피아노 록",
+        "뉴 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal",
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "고딕 메탈",
+            "심포닉 메탈",
+            "얼터너티브 메탈",
+            "고딕 록",
+            "피아노 록"
+          ]
+        }
+      ],
+      "tags": [
+        "고딕 메탈",
+        "얼터너티브 메탈",
+        "심포닉 메탈",
+        "고딕 록",
+        "피아노 록"
+      ],
+      "summary": "1995년 미국 리틀록에서 결성되어 웅장한 오케스트레이션 사운드와 강력한 록 리프를 결합한 사운드로 세계적인 성공을 거둔 밴드이다. Origin(2000), Fallen(2003), The Open Door(2006) 등의 앨범을 발매하며 고딕 메탈 및 얼터너티브 메탈 씬을 대표해왔다.",
+      "style": "피아노와 오케스트라 편곡이 어우러진 클래시컬한 요소 위에 묵직한 기타 리프와 강렬한 드럼을 얹는다. 에이미 리의 호소력 짙고 드라마틱한 보컬을 중심으로 어둡고 감정적인 사운드를 연출한다.",
+      "image": {
+        "wikipediaTitle": "Evanescence",
+        "fileName": "File:Evanescence - Rock am Ring 2023-7536.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Evanescence_-_Rock_am_Ring_2023-7536.jpg/960px-Evanescence_-_Rock_am_Ring_2023-7536.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Evanescence_-_Rock_am_Ring_2023-7536.jpg",
+        "alt": "Evanescence 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evanescence - Rock am Ring 2023-7536.jpg",
+          "creator": "Andreas Lawen [Fotandi]",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:30:06.750Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Amy Lee",
+          "role": "보컬, 피아노",
+          "status": "current",
+          "activeYears": "1995–"
+        },
+        {
+          "name": "Tim McCord",
+          "role": "베이스, 기타",
+          "status": "current",
+          "activeYears": "2006–"
+        },
+        {
+          "name": "Will Hunt",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2007–"
+        },
+        {
+          "name": "Troy McLawhorn",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2007–"
+        },
+        {
+          "name": "Emma Anzai",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2022–"
+        },
+        {
+          "name": "Ben Moody",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1995–2003"
+        },
+        {
+          "name": "David Hodges",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1999–2002"
+        },
+        {
+          "name": "William Boyd",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2003–2006"
+        },
+        {
+          "name": "John LeCompt",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2003–2007"
+        },
+        {
+          "name": "Rocky Gray",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2003–2007"
+        },
+        {
+          "name": "Terry Balsamo",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2004–2015"
+        },
+        {
+          "name": "Jen Majura",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2015–2022"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "bring-me-to-life",
+          "title": "Bring Me to Life",
+          "year": 2003,
+          "album": "Fallen",
+          "guide": "드라마틱한 피아노 도입부와 폭발하는 헤비한 기타 리프, 랩 보컬의 피처링이 어우러진 대표곡이다.",
+          "youtubeId": "3YxaaGgTQYM",
+          "source": {
+            "label": "Evanescence — Bring Me to Life YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=3YxaaGgTQYM",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "EvanescenceVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:31:27.841Z"
+        },
+        {
+          "id": "going-under",
+          "title": "Going Under",
+          "year": 2003,
+          "album": "Fallen",
+          "guide": "묵직하게 몰아치는 기타 사운드와 에이미 리의 호소력 짙은 보컬 선율이 대비를 이룬다.",
+          "youtubeId": "CdhqVtpR2ts",
+          "source": {
+            "label": "Evanescence — Going Under YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=CdhqVtpR2ts",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "EvanescenceVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:31:33.077Z"
+        },
+        {
+          "id": "call-me-when-you-re-sober",
+          "title": "Call Me When You're Sober",
+          "year": 2006,
+          "album": "The Open Door",
+          "guide": "선명한 피아노 멜로디로 시작해 서서히 고조되는 강렬한 록 앙상블이 인상적이다.",
+          "youtubeId": "_RrA-R5VHQs",
+          "source": {
+            "label": "Evanescence — Call Me When You're Sober YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=_RrA-R5VHQs",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "EvanescenceVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:31:38.603Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Evanescence — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q1777698",
+          "publisher": "Wikidata",
+          "externalId": "Q1777698",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Evanescence — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Evanescence",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Evanescence — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCJeH7gl6PbDVV4DTldIOPOA",
+          "publisher": "YouTube",
+          "externalId": "UCJeH7gl6PbDVV4DTldIOPOA",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Evanescence — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f4a31f0a-51dd-4fa7-986d-3095c40c5ed9",
+          "publisher": "MusicBrainz",
+          "externalId": "f4a31f0a-51dd-4fa7-986d-3095c40c5ed9",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Evanescence — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Evanescence - Rock am Ring 2023-7536.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "folk-symphonic-metal"
+        ],
+        "subgenreIds": [
+          "gothic-metal",
+          "symphonic-metal",
+          "alternative-metal",
+          "gothic-rock",
+          "piano-rock",
+          "nu-metal"
+        ],
+        "moodScores": {
+          "epic-cinematic": 5,
+          "dark-gloomy": 5,
+          "melancholic-lonely": 4,
+          "massive-heavy": 4,
+          "romantic-emotional": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:31:20.434Z"
+    },
+    {
+      "id": "limp-bizkit",
+      "name": "limp bizkit",
+      "formed": 1994,
+      "origin": "Jacksonville, US",
+      "countryCode": "US",
+      "activeYears": "1994–",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "뉴 메탈",
+        "랩 메탈",
+        "랩 록",
+        "얼터너티브 메탈",
+        "훵크 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "뉴 메탈",
+            "랩 메탈",
+            "랩 록",
+            "얼터너티브 메탈",
+            "훵크 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "뉴 메탈",
+        "랩 메탈",
+        "랩 록",
+        "얼터너티브 메탈"
+      ],
+      "summary": "1994년 미국 잭슨빌에서 결성되어 힙합과 록을 결합한 랩 메탈 및 뉴 메탈 사운드로 세계적인 인기를 얻은 밴드이다. Significant Other(1999)와 Chocolate Starfish and the Hot Dog Flavored Water(2000) 등의 앨범을 통해 1990년대 후반과 2000년대 초반 뉴 메탈 붐을 이끌었다.",
+      "style": "강렬한 랩 보컬과 다운 튜닝된 heavy한 기타 리프, 힙합 스크래칭 및 묵직한 베이스 라인이 결합되어 있다. 직설적이고 폭발적인 에너지와 리드미컬한 그루브를 넘나드는 곡 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "limp bizkit",
+        "fileName": "File:Limp Bizkit au Hellfest 2015.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Limp_Bizkit_au_Hellfest_2015.jpg/960px-Limp_Bizkit_au_Hellfest_2015.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Limp_Bizkit_au_Hellfest_2015.jpg",
+        "alt": "limp bizkit 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limp Bizkit au Hellfest 2015.jpg",
+          "creator": "Tilly antoine",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:20:52.289Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Fred Durst",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "1994–2006, 2009–"
+        },
+        {
+          "name": "Wes Borland",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1995–1996, 1996–2001, 2004–2006, 2009–"
+        },
+        {
+          "name": "Sam Rivers",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1994–2006, 2009–2015"
+        },
+        {
+          "name": "John Otto",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1994–2004, 2005–2006, 2009–"
+        },
+        {
+          "name": "DJ Lethal",
+          "role": "턴테이블, 샘플링",
+          "status": "former",
+          "activeYears": "1996–2006, 2009–2012"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "nookie",
+          "title": "Nookie",
+          "year": 1999,
+          "album": "Significant Other",
+          "guide": "그루비한 힙합 비트와 캐치하면서도 강렬하게 터지는 정교한 뉴 메탈 리프.",
+          "youtubeId": "JTMVOzPPtiw",
+          "source": {
+            "label": "limp bizkit — Nookie YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=JTMVOzPPtiw",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "LimpBizkitVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:25:58.749Z"
+        },
+        {
+          "id": "break-stuff",
+          "title": "Break Stuff",
+          "year": 2000,
+          "album": "Significant Other",
+          "guide": "분노를 직설적으로 터뜨리는 보컬과 극단적인 단순함 속의 폭발적인 리프 에너지가 핵심이다.",
+          "youtubeId": "ZpUYjpKg9KY",
+          "source": {
+            "label": "limp bizkit — Break Stuff YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=ZpUYjpKg9KY",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "LimpBizkitVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:26:03.460Z"
+        },
+        {
+          "id": "rollin-air-raid-vehicle",
+          "title": "Rollin' (Air Raid Vehicle)",
+          "year": 2000,
+          "album": "Chocolate Starfish and the Hot Dog Flavored Water",
+          "guide": "중독성 강한 랩 훅과 육중하게 몰아치는 기타 묵직함이 완벽한 완급조절을 이룬다.",
+          "youtubeId": "RYnFIRc0k6E",
+          "source": {
+            "label": "limp bizkit — Rollin' (Air Raid Vehicle) YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=RYnFIRc0k6E",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "LimpBizkitVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:26:08.486Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "papa-roach",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다. (Papa Roach 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "papa-roach"
+        }
+      ],
+      "sources": [
+        {
+          "label": "limp bizkit — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q240767",
+          "publisher": "Wikidata",
+          "externalId": "Q240767",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "limp bizkit — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Limp_Bizkit",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "limp bizkit — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCCndqRyI-5Zl8Mutlq71ASw",
+          "publisher": "YouTube",
+          "externalId": "UCCndqRyI-5Zl8Mutlq71ASw",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "limp bizkit — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8f9d6bb2-dba4-4cca-9967-cc02b9f4820c",
+          "publisher": "MusicBrainz",
+          "externalId": "8f9d6bb2-dba4-4cca-9967-cc02b9f4820c",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "limp bizkit — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Limp Bizkit au Hellfest 2015.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "nu-metal",
+          "rap-metal",
+          "rap-rock",
+          "alternative-metal",
+          "funk-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "youth-rebellious": 5,
+          "groovy-danceable": 4,
+          "massive-heavy": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:22:48.504Z"
+    },
     {
       "id": "beach-house",
       "name": "beach house",
@@ -712,15 +1953,18 @@
           "year": 1993,
           "album": "Mellow Gold",
           "guide": "어쿠스틱 슬라이드 기타 리프 위에 얹히는 힙합 비트와 느슨한 래핑 보컬에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "YgSPaXgAdzE",
           "source": {
             "label": "Beck — Loser YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Beck%20Loser",
+            "url": "https://www.youtube.com/watch?v=YgSPaXgAdzE",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BeckVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:18:29.486Z"
         },
         {
           "id": "where-it-s-at",
@@ -728,15 +1972,18 @@
           "year": 1996,
           "album": "Odelay",
           "guide": "펀치감 있는 빈티지 오르간 멜로디와 스포큰 워드풍 샘플링 사운드를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "EPfmNxKLDG4",
           "source": {
             "label": "Beck — Where It's At YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Beck%20Where%20It's%20At",
+            "url": "https://www.youtube.com/watch?v=EPfmNxKLDG4",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BeckVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:18:34.302Z"
         },
         {
           "id": "devils-haircut",
@@ -744,15 +1991,18 @@
           "year": 1996,
           "album": "Odelay",
           "guide": "강렬하게 찌르는 거친 리프 기타 사운드와 드럼 루프 비트의 유기적인 결합을 들는다.",
-          "youtubeId": "",
+          "youtubeId": "aa3rBVb3v4g",
           "source": {
             "label": "Beck — Devils Haircut YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Beck%20Devils%20Haircut",
+            "url": "https://www.youtube.com/watch?v=aa3rBVb3v4g",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BeckVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:18:38.493Z"
         }
       ],
       "relations": [],
@@ -813,7 +2063,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T03:16:39.010Z"
     },
     {
       "id": "def-leppard",
@@ -1479,18 +2731,25 @@
       "activeYears": "2011-현재",
       "primaryGenre": "punk-rock",
       "genreIds": [
-        "punk-rock"
+        "punk-rock",
+        "alternative-indie",
+        "classic-rock",
+        "heavy-metal"
       ],
       "subgenres": [
         "팝펑크",
         "얼터너티브 록",
-        "팝 록"
+        "팝 록",
+        "랩 록"
       ],
       "eraTags": [
         {
           "era": "2010s",
           "genreIds": [
-            "punk-rock"
+            "punk-rock",
+            "alternative-indie",
+            "classic-rock",
+            "heavy-metal"
           ],
           "subgenres": [
             "팝펑크",
@@ -1649,12 +2908,14 @@
         "primaryGenreId": "punk-emo",
         "secondaryGenreIds": [
           "alternative-grunge",
-          "pop-soft-rock"
+          "pop-soft-rock",
+          "modern-alternative-metal"
         ],
         "subgenreIds": [
           "pop-punk",
           "alternative-rock",
-          "pop-rock"
+          "pop-rock",
+          "rap-rock"
         ],
         "moodScores": {
           "youth-rebellious": 5,
@@ -9645,6 +10906,13 @@
           "strength": 3,
           "note": "보컬 새미 해가와 베이시스트 마이클 앤소니가 반 헤일런 탈퇴 후 결성한 슈퍼그룹이다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "extreme",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다.",
+          "reviewStatus": "draft"
         }
       ],
       "sources": [
@@ -10999,7 +12267,15 @@
           "reviewedAt": "2026-08-01T05:00:49.288Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "extreme",
+          "kind": "evolution",
+          "strength": 3,
+          "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다.",
+          "reviewStatus": "draft"
+        }
+      ],
       "sources": [
         {
           "label": "Generation Axe — Wikipedia",
@@ -12291,6 +13567,13 @@
           "kind": "shared-scene",
           "strength": 3,
           "note": "2000년대 초반 누메탈 장르의 대중적 전성기를 이끌며 씬을 공유했다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "limp-bizkit",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다.",
           "reviewStatus": "draft"
         }
       ],
@@ -16782,7 +18065,16 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "sonata-arctica",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "소나타악티카는 원래 하드록으로 시작했으나 스트라토바리우스의 음악에 반해 파워메탈로 전향했다.",
+          "reviewStatus": "draft",
+          "mirroredFrom": "sonata-arctica"
+        }
+      ],
       "sources": [
         {
           "label": "Stratovarius — Wikipedia",
@@ -32124,6 +33416,22 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "acdc",
+          "kind": "influenced",
+          "note": "블루스 리프를 더 간결하게 압축",
+          "strength": 2,
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Angus Young interview — NME",
+            "url": "https://www.nme.com/news/music/ac-dcs-angus-young-recalls-first-time-he-heard-jimi-hendrixs-music-i-was-so-excited-2818034",
+            "publisher": "Editorial",
+            "accessedAt": "2026-07-17",
+            "note": "Angus Young이 AC/DC 초기 음악 환경과 영향의 흐름에서 Led Zeppelin을 직접 언급한 인터뷰를 확인"
+          },
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-07-17"
         }
       ],
       "reviewStatus": "published",
@@ -32339,7 +33647,7 @@
           },
           "year": 1990,
           "album": "The Razors Edge",
-          "guide": "브라이언 존슨의 절규하는 샤우팅과 앵거스 영의 속사포 같은 기타 인트로가 인상적인, 밴드의 라이브 오프닝 단골곡이다.",
+          "guide": "브라이언 존슨의 절규하는 샤우팅과 앵거스 영의 속사포 같은 기타 인트로가 인상적인, 밴드의 라이브 오프닝 단골곡.",
           "reviewedBy": "자동 검수 (AI)",
           "reviewedAt": "2026-07-26T08:49:02.254Z"
         },
@@ -32426,17 +33734,17 @@
       "reviewedAt": "2026-07-21T09:39:17.129Z",
       "image": {
         "wikipediaTitle": "AC/DC",
-        "fileName": "AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_(4238680962).jpg",
-        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_%284238680962%29.jpg/1280px-AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_%284238680962%29.jpg",
-        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_%284238680962%29.jpg",
+        "fileName": "File:AC DC Black Ice Tour 2009 Buenos Aires 6 de Diciembre (4238189133).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/AC_DC_Black_Ice_Tour_2009_Buenos_Aires_6_de_Diciembre_%284238189133%29.jpg/500px-AC_DC_Black_Ice_Tour_2009_Buenos_Aires_6_de_Diciembre_%284238189133%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/AC_DC_Black_Ice_Tour_2009_Buenos_Aires_6_de_Diciembre_%284238189133%29.jpg",
         "alt": "AC/DC 밴드 사진",
         "credit": {
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_(4238680962).jpg",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:AC_DC_Black_Ice_Tour_2009_Buenos_Aires_6_de_Diciembre_(4238189133).jpg",
           "creator": "Ed Vill from Caracas, Venezuela",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
           "reviewStatus": "verified",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-08-02T03:53:55.022Z"
         }
       },
       "sources": [
@@ -32464,13 +33772,6 @@
           "note": "이름·결성 시점·국가를 교차 확인한 외부 식별자"
         },
         {
-          "label": "AC/DC 이미지 — Wikimedia Commons",
-          "url": "https://commons.wikimedia.org/wiki/File:AC_DC_Black_Ice_Tour_2009_Buenos_Aires_4_de_Diciembre_(4238680962).jpg",
-          "publisher": "Wikimedia Commons",
-          "accessedAt": "2026-07-15",
-          "note": "Ed Vill from Caracas, Venezuela · CC BY 2.0"
-        },
-        {
           "label": "AC/DC — 공식 YouTube",
           "url": "https://www.youtube.com/channel/UCB0JSO6d5ysH2Mmqz5I9rIw",
           "publisher": "YouTube",
@@ -32480,6 +33781,12 @@
           "channelType": "artist",
           "accessedAt": "2026-07-18",
           "note": "대표곡 외부 재생이 제한될 때 사용하는 공식 채널 링크"
+        },
+        {
+          "label": "AC/DC — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:AC_DC_Black_Ice_Tour_2009_Buenos_Aires_6_de_Diciembre_(4238189133).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -43349,6 +44656,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
           "reviewedAt": "2026-07-26T00:32:47.754Z"
+        },
+        {
+          "targetBandId": "acdc",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "공통 요소: 같은 하드 / 글램 록, 하드 록, 기타 리프와 솔로 중심 · 떼창하고 싶은 공연장형",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
+          "reviewedAt": "2026-07-26T00:32:47.754Z"
         }
       ],
       "sources": [
@@ -44473,16 +45789,6 @@
       "createdAt": "2026-07-30T09:49:00.533Z"
     },
     {
-      "id": "papa-roach->limp-bizkit-0-0",
-      "sourceBandId": "papa-roach",
-      "sourceBandName": "Papa Roach",
-      "targetBandId": "limp-bizkit",
-      "kind": "sounds-like",
-      "strength": 3,
-      "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다.",
-      "createdAt": "2026-07-30T11:22:17.837Z"
-    },
-    {
       "id": "papa-roach->faith-no-more-0-1",
       "sourceBandId": "papa-roach",
       "sourceBandName": "Papa Roach",
@@ -44530,16 +45836,6 @@
       "kind": "shared-scene",
       "strength": 3,
       "note": "기타 거장들이 모여 투어와 연주를 펼치는 기타 중심 프로젝트의 대표적 선구자다.",
-      "createdAt": "2026-07-30T11:30:48.984Z"
-    },
-    {
-      "id": "generation-axe->extreme-0-1",
-      "sourceBandId": "generation-axe",
-      "sourceBandName": "Generation Axe",
-      "targetBandId": "extreme",
-      "kind": "evolution",
-      "strength": 3,
-      "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다.",
       "createdAt": "2026-07-30T11:30:48.984Z"
     },
     {
@@ -44611,16 +45907,6 @@
       "strength": 3,
       "note": "1980년대 후반 트윈 기타 속주 시스템과 테크니컬 메탈 신을 함께 주도하며 경쟁했던 밴드다.",
       "createdAt": "2026-07-30T11:31:48.224Z"
-    },
-    {
-      "id": "van-halen->extreme-0-0",
-      "sourceBandId": "van-halen",
-      "sourceBandName": "Van Halen",
-      "targetBandId": "extreme",
-      "kind": "influenced",
-      "strength": 3,
-      "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다.",
-      "createdAt": "2026-07-30T11:32:49.594Z"
     },
     {
       "id": "alter-bridge->creed-0-0",

@@ -55,7 +55,8 @@
     "manifestoBackgroundMode": "accent",
     "manifestoImageUrl": "",
     "manifestoImagePosition": "center",
-    "manifestoOverlayOpacity": 0.55
+    "manifestoOverlayOpacity": 0.55,
+    "heroImagePositionMobile": "74% 100%"
   },
   "genreVisuals": {
     "classic-roots-rock": {

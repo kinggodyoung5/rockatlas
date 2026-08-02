@@ -216,7 +216,7 @@ img { display: block; max-width: 100%; }
 .mood-match span { color: #929095; font-size: 12px; }
 
 .manifesto { background: var(--orange); color: white; position: relative; overflow: hidden; }
-.manifesto-bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.manifesto-bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; object-position: var(--art-position, 50% 50%); }
 .manifesto-bg-overlay { position: absolute; inset: 0; background: #000; z-index: 1; }
 .manifesto-inner { min-height: 480px; display: grid; align-content: center; position: relative; z-index: 2; }
 .manifesto-inner > span { font: 800 12px/1 Arial; letter-spacing: .17em; }
@@ -598,7 +598,7 @@ img { display: block; max-width: 100%; }
 .app-shell .genre-section { color: var(--ink); background: var(--paper); }
 .hero-art-image { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; transform: none; pointer-events: none; }
 .hero-art-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,13,.9) 0%, rgba(11,11,13,.68) 32%, rgba(11,11,13,.16) 66%, rgba(11,11,13,.04) 100%), linear-gradient(180deg, rgba(11,11,13,.04) 55%, rgba(11,11,13,.38) 100%); }
-.hero-custom-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; opacity: .92; filter: saturate(.92) contrast(1.06); }
+.hero-custom-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--art-position, 50% 100%); border: 0; opacity: .92; filter: saturate(.92) contrast(1.06); }
 .hero-art-image .hero-stamp, .hero-art-image .hero-label { display: none; }
 .hero-art-none .hero-stamp, .hero-art-none .hero-label { display: none; }
 .local-edit-shortcut { position: fixed; z-index: 40; right: 18px; bottom: 18px; padding: 11px 14px; border: 1px solid var(--orange); color: white; background: rgba(11,11,13,.9); box-shadow: 0 8px 30px rgba(0,0,0,.35); font-size: 12px; font-weight: 900; letter-spacing: .07em; }
@@ -725,7 +725,7 @@ img { display: block; max-width: 100%; }
 .discovery-card:hover .genre-count { color: inherit; }
 .genre-card-art { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; overflow: hidden; background: color-mix(in srgb, var(--genre-color) 12%, #111018); }
 .genre-card-art::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 24%, transparent 15%, rgba(8,7,12,.12) 62%, rgba(8,7,12,.5) 100%); }
-.genre-card-art img { width: 100%; height: 100%; object-fit: cover; opacity: var(--genre-art-opacity, .88); filter: saturate(.92) contrast(1.08); transform: scale(var(--genre-art-scale, 1)); transition: transform .5s ease, filter .3s ease, opacity .3s ease; }
+.genre-card-art img { width: 100%; height: 100%; object-fit: cover; object-position: var(--art-position, 50% 50%); opacity: var(--genre-art-opacity, .88); filter: saturate(.92) contrast(1.08); transform: scale(var(--genre-art-scale, 1)); transition: transform .5s ease, filter .3s ease, opacity .3s ease; }
 .discovery-card:hover .genre-card-art img { opacity: 1; filter: saturate(1.08) contrast(1.1); transform: scale(calc(var(--genre-art-scale, 1) + .04)); }
 .genre-card-top { position: absolute; z-index: 3; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
 .genre-card-top > span { padding: 7px 9px; color: #fff; background: rgba(8,7,12,.82); border: 1px solid rgba(255,255,255,.24); box-shadow: 0 2px 14px rgba(0,0,0,.32); backdrop-filter: blur(8px); font-size: 14px; text-shadow: 0 1px 3px #000; }
@@ -1241,11 +1241,11 @@ img { display: block; max-width: 100%; }
   .genre-filters button, .era-filters button, .journey-chips button, .journey-clear, .back-button { min-height: 44px; }
   .favorite-button { min-width: 44px; min-height: 44px; }
   .hero-art { position: absolute; width: 430px; right: -190px; top: 110px; opacity: .28; }
-  .hero-art.hero-art-image { inset: 0; width: 100%; height: 100%; transform: none; opacity: .58; }
-  .hero-art-image::after { background: linear-gradient(180deg, rgba(11,11,13,.64) 0%, rgba(11,11,13,.42) 54%, rgba(11,11,13,.72) 100%); }
-  /* Mobile art framing: the Studio's per-image mobile override wins when set, otherwise each image
-     keeps its previous hardcoded mobile default. See lib/imagePosition.ts. */
-  .hero-art-image .hero-custom-image { object-position: var(--art-position-mobile, 62% center); }
+  .hero-art.hero-art-image { inset: 0; width: 100%; height: 100%; transform: none; opacity: .8; }
+  .hero-art-image::after { background: linear-gradient(180deg, rgba(11,11,13,.46) 0%, rgba(11,11,13,.26) 54%, rgba(11,11,13,.56) 100%); }
+  /* Mobile art framing: the Studio's per-image mobile override wins when set, otherwise mobile just
+     reuses the desktop framing instead of a hardcoded guess. See lib/imagePosition.ts. */
+  .hero-art-image .hero-custom-image { object-position: var(--art-position-mobile, var(--art-position, 62% center)); }
   .genre-card-art img,
   .manifesto-bg-image { object-position: var(--art-position-mobile, var(--art-position, 50% 50%)); }
   .hero-stamp, .hero-label { display: none; }

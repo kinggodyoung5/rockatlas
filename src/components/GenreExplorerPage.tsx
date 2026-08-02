@@ -24,7 +24,7 @@ export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favorite
     const inSubgenre = subgenreId === 'all' || band.taxonomyV2?.subgenreIds.includes(subgenreId)
     const inMood = moodId === 'all' || (band.taxonomyV2?.moodScores[moodId] ?? 0) >= 2
     return inSubgenre && inMood
-  })
+  }).sort((a, b) => a.name.localeCompare(b.name, 'en'))
   return (
     <main id="top" className="catalog-page" tabIndex={-1} style={{ '--active-genre': genre.color } as React.CSSProperties}>
       <section className="catalog-hero shell">

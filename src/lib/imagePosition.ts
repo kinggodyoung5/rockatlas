@@ -31,11 +31,13 @@ export function parsePosition(value: ImagePosition | undefined): PositionXY {
 
 export const formatPosition = ({ x, y }: PositionXY): ImagePosition => `${Math.round(x)}% ${Math.round(y)}%`
 
-/** CSS can't branch on a JSON value, so the mobile override rides along as a custom property and a
- *  media query in index.css swaps it in below the mobile breakpoint. */
+/** CSS can't branch on a JSON value, so both the desktop position and the mobile override ride along as
+ *  custom properties, and the stylesheet's own rules (base + mobile media query) apply them via
+ *  object-position. Deliberately does NOT also set an inline objectPosition: an inline style beats any
+ *  class selector regardless of media query, which silently made the mobile override a no-op. */
 export function positionStyle(desktop: ImagePosition | undefined, mobile: ImagePosition | undefined): CSSProperties {
   const resolvedDesktop = formatPosition(parsePosition(desktop))
-  const style: Record<string, string> = { '--art-position': resolvedDesktop, objectPosition: resolvedDesktop }
+  const style: Record<string, string> = { '--art-position': resolvedDesktop }
   if (mobile) style['--art-position-mobile'] = formatPosition(parsePosition(mobile))
   return style as CSSProperties
 }
