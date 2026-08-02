@@ -1,7 +1,219 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-01T08:12:22.349Z",
+  "updatedAt": "2026-08-02T03:01:46.633Z",
   "bands": [
+    {
+      "id": "beach-house",
+      "name": "beach house",
+      "formed": 2004,
+      "origin": "Baltimore, US",
+      "countryCode": "US",
+      "activeYears": "2004–",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "드림 팝",
+        "인디 팝",
+        "인디 록",
+        "챔버 팝",
+        "슈게이즈"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "드림 팝",
+            "인디 팝",
+            "인디 록",
+            "챔버 팝",
+            "슈게이즈"
+          ]
+        }
+      ],
+      "tags": [
+        "드림 팝",
+        "인디 록",
+        "인디 팝",
+        "쇼게이즈"
+      ],
+      "summary": "2004년 미국 볼티모어에서 결성되어 몽환적인 드림 팝 음악을 선보여 온 듀오이다. Teen Dream(2010), Bloom(2012), Depression Cherry(2015) 등의 앨범을 통해 독창적인 아날로그 감성과 감각적인 사운드를 구축했다.",
+      "style": "몽환적인 오르간과 아날로그 신시사이저, 아르페지오 기타 연주가 층층이 쌓여 느리고 아늑한 사운드를 만들어낸다. 감성적이고 아련한 보컬 멜로디가 어우러져 특유의 몰입감 넘치는 분위기를 연출한다.",
+      "image": {
+        "wikipediaTitle": "beach house",
+        "fileName": "File:Beach House at House of Blues San Diego on July 1 2012.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg/960px-Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg",
+        "alt": "beach house 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach House at House of Blues San Diego on July 1 2012.jpg",
+          "creator": "Tristan Loper",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T02:18:45.141Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Victoria Legrand",
+          "role": "보컬, 키보드",
+          "status": "current",
+          "activeYears": "2004–"
+        },
+        {
+          "name": "Alex Scally",
+          "role": "기타, 키보드",
+          "status": "current",
+          "activeYears": "2004–"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "silver-soul",
+          "title": "Silver Soul",
+          "year": 2010,
+          "album": "Teen Dream",
+          "guide": "아날로그 신시사이저와 서정적인 멜로디가 조화를 이루며 따뜻하고 아련한 분위기를 자아낸다.",
+          "youtubeId": "njbmwfndFH4",
+          "source": {
+            "label": "beach house — Silver Soul YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=njbmwfndFH4",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Sub Pop"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:19:37.232Z"
+        },
+        {
+          "id": "myth",
+          "title": "Myth",
+          "year": 2012,
+          "album": "Bloom",
+          "guide": "선명한 기타 리프와 고조되는 드럼 비트가 만들어내는 웅장하고 감성적인 드림 팝 사운드가 특징이다.",
+          "youtubeId": "Bv7IcjmxjGo",
+          "source": {
+            "label": "beach house — Myth YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Bv7IcjmxjGo",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Sub Pop"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:19:46.942Z"
+        },
+        {
+          "id": "space-song",
+          "title": "Space Song",
+          "year": 2015,
+          "album": "Depression Cherry",
+          "guide": "슬라이드 기타 효과와 우주적인 아르페지오 건반 연주가 깊은 몰입감을 전달한다.",
+          "youtubeId": "RBtlPT23PTM",
+          "source": {
+            "label": "beach house — Space Song YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=RBtlPT23PTM",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Sub Pop"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:19:59.014Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "mazzy-star",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다. (Mazzy Star 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "mazzy-star"
+        },
+        {
+          "targetBandId": "the-xx",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다. (The xx 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "the-xx"
+        }
+      ],
+      "sources": [
+        {
+          "label": "beach house — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q812842",
+          "publisher": "Wikidata",
+          "externalId": "Q812842",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "beach house — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Beach_House",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "beach house — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/d5cc67b8-1cc4-453b-96e8-44487acdebea",
+          "publisher": "MusicBrainz",
+          "externalId": "d5cc67b8-1cc4-453b-96e8-44487acdebea",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "beach house — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Beach House at House of Blues San Diego on July 1 2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        },
+        {
+          "label": "beach house — 공식 YouTube",
+          "url": "https://www.youtube.com/@BeachHouseVideoZone",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "BeachHouseVideoZone",
+          "channelType": "artist",
+          "accessedAt": "2026-08-02",
+          "note": "공식 채널 확인"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "dream-pop",
+          "indie-pop",
+          "indie-rock",
+          "chamber-pop",
+          "shoegaze"
+        ],
+        "moodScores": {
+          "dreamy-ethereal": 5,
+          "slow-calm": 5,
+          "melancholic-lonely": 4,
+          "romantic-emotional": 4,
+          "warm-comforting": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:20:28.270Z"
+    },
     {
       "id": "alice-cooper",
       "name": "Alice Cooper",
@@ -41,7 +253,7 @@
         "쇼크 록",
         "클래식 록"
       ],
-      "summary": "1964년 미국 피닉스에서 결성되어 파격적인 쇼크 록 연출과 하드 록 사운드로 큰 인기를 얻은 밴드이다. Love It to Death(1971)와 School’s OutSchool’s Out(1972), Love It to Death(1971), Billion Dollar Babies(1973) 등의 앨범을 발표하며 글램 록과 초기 헤비메탈 발전에 기여했다.",
+      "summary": "1964년 미국 피닉스에서 결성되어 파격적인 쇼크 록 연출과 하드 록 사운드로 큰 인기를 얻은 밴드이다. Love It to Death(1971), School’s Out(1972), Billion Dollar Babies(1973) 등의 앨범을 발표하며 글램 록과 초기 헤비메탈 발전에 기여했다.",
       "style": "강렬한 기타 리프와 캐치한 멜로디에 연극적이고 어두운 보컬 표현을 결합한다. 음산한 분위기와 다이내믹한 록 앙상블이 연주 전반을 끌고 간다.",
       "image": {
         "wikipediaTitle": "Alice Cooper",
@@ -468,7 +680,7 @@
         "인디팝",
         "미국록"
       ],
-      "summary": "1980년대 후반 미국 로스앤젤레스에서 활동을 시작해 1990년대 인디 록과 얼터너티브 씬의 다재다능한 아이콘으로 자리 잡은 뮤지션이다. 앨범 (1994)와 (1996), 그리고 그래미 올해의 앨범상을 받은 (2014) 등을 통해 비평적·상업적 성공을 동시에 이루었다.",
+      "summary": "1980년대 후반 미국 로스앤젤레스에서 활동을 시작해 1990년대 인디 록과 얼터너티브 씬의 다재다능한 아이콘으로 자리 잡은 뮤지션이다. 앨범 <Mellow Gold>(1994)와 <Odelay>(1996), 그리고 그래미 올해의 앨범상을 받은 <Morning Phase>(2014) 등을 통해 비평적·상업적 성공을 동시에 이루었다.",
       "style": "포크, 힙합, 펑크, 로파이, 파블로 일렉트로닉 비트를 기발하게 융합한 스탬프 샘플링 편곡이 특징이다. 어쿠스틱 기타와 위트 넘치는 위트 있는 래핑, 빈티지 synthesizer 사운드가 감각적으로 조화를 이룬다.",
       "image": {
         "wikipediaTitle": "Beck",
@@ -612,18 +824,23 @@
       "activeYears": "1977-현재",
       "primaryGenre": "hard-rock",
       "genreIds": [
-        "hard-rock"
+        "hard-rock",
+        "classic-rock",
+        "heavy-metal"
       ],
       "subgenres": [
         "하드 록",
         "글램 메탈",
-        "전통 헤비메탈"
+        "전통 헤비메탈",
+        "AOR"
       ],
       "eraTags": [
         {
           "era": "1970s",
           "genreIds": [
-            "hard-rock"
+            "hard-rock",
+            "classic-rock",
+            "heavy-metal"
           ],
           "subgenres": [
             "하드 록",
@@ -639,7 +856,7 @@
         "글램메탈",
         "영국록"
       ],
-      "summary": "1977년 영국 셰필드에서 결성되어 NWOBHM 운동에서 출발해 글로벌 팝 메탈과 하드 록을 정의한 밴드다. 앨범 (1983)와 (1987)를 통해 빌보드 200 차트 정상에 오르고 멀티 플래티넘을 기록하며 커다란 성과를 거두었다.",
+      "summary": "1977년 영국 셰필드에서 결성되어 NWOBHM 운동에서 출발해 글로벌 팝 메탈과 하드 록을 정의한 밴드다. <Pyromania>(1983)와 <Hysteria>(1987)를 통해 빌보드 200 차트 정상에 오르고 멀티 플래티넘을 기록하며 커다란 성과를 거두었다.",
       "style": "정교하게 정돈된 오버더빙 기타 리프와 멀티트랙 레이어로 쌓아 올린 웅장한 백보컬 하모니가 핵심이다. 팝적인 멜로디 감각과 캐치한 코러스, 하이테크한 드럼 비트가 결합된 세련된 하드 록 사운드를 전개한다.",
       "image": {
         "wikipediaTitle": "Def Leppard",
@@ -706,48 +923,57 @@
           "title": "Pour Some Sugar on Me",
           "year": 1987,
           "album": "Hysteria",
-          "guide": "묵직하고 캐치한 미디엄 템포의 기타 리프와 다 함께 따라 부르는 웅장한 코러스 후렴구에 집중한다.",
-          "youtubeId": "",
+          "guide": "묵직하고 캐치한 미디엄 템포의 기타 리프와 다 함께 따라 부르는 웅장한 코러스 후렴구.",
+          "youtubeId": "0UIB9Y4OFPs",
           "source": {
             "label": "Def Leppard — Pour Some Sugar on Me YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Def%20Leppard%20Pour%20Some%20Sugar%20on%20Me",
+            "url": "https://www.youtube.com/watch?v=0UIB9Y4OFPs",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "DEF LEPPARD"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:01:06.415Z"
         },
         {
           "id": "photograph",
           "title": "Photograph",
           "year": 1983,
           "album": "Pyromania",
-          "guide": "도입부부터 날카롭게 파고드는 파워풀한 기타 솔로와 고음역대 보컬 하모니를 감상한다.",
-          "youtubeId": "",
+          "guide": "도입부부터 날카롭게 파고드는 파워풀한 기타 솔로와 고음역대 보컬 하모니.",
+          "youtubeId": "D4dHr8evt6k",
           "source": {
             "label": "Def Leppard — Photograph YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Def%20Leppard%20Photograph",
+            "url": "https://www.youtube.com/watch?v=D4dHr8evt6k",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "DefLeppardVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:01:23.372Z"
         },
         {
           "id": "hysteria",
           "title": "Hysteria",
           "year": 1987,
           "album": "Hysteria",
-          "guide": "서정적인 멜로디의 핑거피킹 기타와 팝적인 멜로디 라인이 조화를 이루는 아련한 곡 전개를 들는다.",
-          "youtubeId": "",
+          "guide": "서정적인 멜로디의 핑거피킹 기타와 팝적인 멜로디 라인이 조화를 이루는 아련한 곡 전개.",
+          "youtubeId": "yMzyleT2FqY",
           "source": {
             "label": "Def Leppard — Hysteria YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Def%20Leppard%20Hysteria",
+            "url": "https://www.youtube.com/watch?v=yMzyleT2FqY",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "DefLeppardVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T03:01:18.578Z"
         }
       ],
       "relations": [
@@ -828,7 +1054,8 @@
         "subgenreIds": [
           "hard-rock",
           "glam-metal",
-          "traditional-heavy-metal"
+          "traditional-heavy-metal",
+          "aor"
         ],
         "moodScores": {
           "anthemic-live": 5,
@@ -840,7 +1067,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:59:59.452Z"
     },
     {
       "id": "massive-attack",
@@ -877,7 +1106,7 @@
         "영국록",
         "다크웨이브"
       ],
-      "summary": "1988년 영국 브리스틀에서 결성되어 힙합, 록, 다크 웨이브를 결합하며 트립합 장르를 확립한 음악 그룹이다. 명반으로 평가받는 데뷔 앨범 (1991)와 (1998) 등을 통해 영국 앨범 차트 1위에 오르며 세계적인 음악적 영향을 미쳤다.",
+      "summary": "1988년 영국 브리스틀에서 결성되어 힙합, 록, 다크 웨이브를 결합하며 트립합 장르를 확립한 음악 그룹이다. 명반으로 평가받는 데뷔 앨범 <Blue Lines>(1991)와 <Mezzanine>(1998) 등을 통해 영국 앨범 차트 1위에 오르며 세계적인 음악적 영향을 미쳤다.",
       "style": "느리고 묵직한 힙합 비트와 섀도 베이스 라인 위에 어두운 신시사이저 레이어를 쌓아 만든 사운드가 특징이다. 객원 보컬들의 서정적이거나 절제된 음색과 읊조리는 듯한 래핑이 몽환적이고 긴장감 넘치는 분위기를 연출한다.",
       "image": {
         "wikipediaTitle": "Massive Attack",
@@ -1067,7 +1296,7 @@
         "미니멀리즘",
         "신스팝"
       ],
-      "summary": "2005년 영국 런던에서 결성되어 2000년대 후반 미니멀한 인디 팝과 포스트 펑크 스타일로 주목받은 밴드다. 데뷔 앨범 (2009)로 머큐리상을 수상하며 세계적인 비평적 성공을 거두었다.",
+      "summary": "2005년 영국 런던에서 결성되어 2000년대 후반 미니멀한 인디 팝과 포스트 펑크 스타일로 주목받은 밴드다. 데뷔 앨범 <XX>(2009)로 머큐리상을 수상하며 세계적인 비평적 성공을 거두었다.",
       "style": "극도로 절제된 드럼 머신 비트와 묵직한 베이스 라인, 공간감이 강조된 리버브 기타 사운드가 조화를 이룬다. 록미 매드리와 올리버 심의 낮게 읊조리는 남녀 쌍방향 대화식 보컬과 적막을 활용한 미니멀한 편곡이 특징이다.",
       "image": {
         "wikipediaTitle": "The xx",
@@ -1116,51 +1345,68 @@
           "title": "Intro",
           "year": 2009,
           "album": "xx",
-          "guide": "서정적인 기타 아르페지오와 묵직한 전자 드럼 비트가 서서히 레이어를 쌓아가는 연주에 집중한다.",
-          "youtubeId": "",
+          "guide": "서정적인 기타 아르페지오와 묵직한 전자 드럼 비트가 서서히 레이어를 쌓아가는 연주.",
+          "youtubeId": "9ehkgnqd35Y",
           "source": {
             "label": "The xx — Intro YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20xx%20Intro",
+            "url": "https://www.youtube.com/watch?v=9ehkgnqd35Y",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Spectrummaker"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:58:21.694Z"
         },
         {
           "id": "crystalised",
           "title": "Crystalised",
           "year": 2009,
           "album": "xx",
-          "guide": "록미와 올리버의 주고받는 무심한 보컬 듀엣과 절제된 미니멀 파트의 긴장감을 감상한다.",
-          "youtubeId": "",
+          "guide": "록미와 올리버의 주고받는 무심한 보컬 듀엣과 절제된 미니멀 파트의 긴장감.",
+          "youtubeId": "Pib8eYDSFEI",
           "source": {
             "label": "The xx — Crystalised YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20xx%20Crystalised",
+            "url": "https://www.youtube.com/watch?v=Pib8eYDSFEI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The xx"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:58:26.328Z"
         },
         {
           "id": "angels",
           "title": "Angels",
           "year": 2012,
           "album": "Coexist",
-          "guide": "여백이 강조된 공간감 속에서 나일론 느낌의 기타 선율과 아련한 보컬 톤을 들는다.",
-          "youtubeId": "",
+          "guide": "여백이 강조된 공간감 속에서 나일론 느낌의 기타 선율과 아련한 보컬 톤.",
+          "youtubeId": "_nW5AF0m9Zw",
           "source": {
             "label": "The xx — Angels YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20xx%20Angels",
+            "url": "https://www.youtube.com/watch?v=_nW5AF0m9Zw",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The xx"
           },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:58:34.243Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "beach-house",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다.",
           "reviewStatus": "draft"
         }
       ],
-      "relations": [],
       "sources": [
         {
           "label": "The xx — Wikidata",
@@ -1220,7 +1466,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:59:01.250Z"
     },
     {
       "id": "machine-gun-kelly",
@@ -1264,10 +1512,16 @@
         "wikipediaTitle": "Machine Gun Kelly",
         "alt": "Machine Gun Kelly 밴드 사진",
         "credit": {
-          "sourceUrl": "",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machine_Gun_Kelly_2018_02.jpg",
+          "creator": "Paulien Zomer",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T02:55:30.884Z"
+        },
+        "fileName": "File:Machine Gun Kelly 2018 02.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Machine_Gun_Kelly_2018_02.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Machine_Gun_Kelly_2018_02.jpg/500px-Machine_Gun_Kelly_2018_02.jpg"
       },
       "members": [
         {
@@ -1284,15 +1538,18 @@
           "year": 2020,
           "album": "Tickets to My Downfall",
           "guide": "질주하는 팝 펑크 드럼 비트와 중독성 있는 기타 파워 코드 리프에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "wSdT-SArM2Q",
           "source": {
             "label": "Machine Gun Kelly — Bloody Valentine YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Machine%20Gun%20Kelly%20Bloody%20Valentine",
+            "url": "https://www.youtube.com/watch?v=wSdT-SArM2Q",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "MGKVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:54:57.586Z"
         },
         {
           "id": "my-ex-s-best-friend",
@@ -1300,15 +1557,18 @@
           "year": 2020,
           "album": "Tickets to My Downfall",
           "guide": "트랩 리듬과 팝 펑크 기타 리프가 결합된 캐치한 후렴구 멜로디를 들는다.",
-          "youtubeId": "",
+          "youtubeId": "J_n01uvyhI8",
           "source": {
             "label": "Machine Gun Kelly — my ex's best friend YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Machine%20Gun%20Kelly%20my%20ex's%20best%20friend",
+            "url": "https://www.youtube.com/watch?v=J_n01uvyhI8",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "MGKVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:55:01.326Z"
         },
         {
           "id": "forget-me-too",
@@ -1316,15 +1576,18 @@
           "year": 2020,
           "album": "Tickets to My Downfall",
           "guide": "하늘을 지르는 빠른 템포의 드럼과 허스키하게 폭발하는 보컬 하모니를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "0tn6nWYNK3Q",
           "source": {
             "label": "Machine Gun Kelly — Forget Me Too YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Machine%20Gun%20Kelly%20Forget%20Me%20Too",
+            "url": "https://www.youtube.com/watch?v=0tn6nWYNK3Q",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "MGKVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:55:05.519Z"
         }
       ],
       "relations": [
@@ -1357,6 +1620,29 @@
           "publisher": "MusicBrainz",
           "externalId": "f6af669a-56ea-448a-a044-de76181ada33",
           "note": "Studio 외부 사실 재검수에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Machine Gun Kelly — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Machine_Gun_Kelly_2018_02.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        },
+        {
+          "label": "Machine Gun Kelly — 공식 YouTube",
+          "url": "https://www.youtube.com/@mgk",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "mgk",
+          "channelType": "artist",
+          "accessedAt": "2026-08-02",
+          "note": "공식 채널 확인"
+        },
+        {
+          "label": "Machine Gun Kelly — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Machine_Gun_Kelly_(musician)",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-08-02",
+          "note": "밴드 기본 정보 교차 확인"
         }
       ],
       "taxonomyV2": {
@@ -1380,7 +1666,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:53:51.013Z"
     },
     {
       "id": "killswitch-engage",
@@ -1416,7 +1704,7 @@
         "미국메탈",
         "얼터너티브메탈"
       ],
-      "summary": "1999년 미국 매사추세츠주 웨스트필드에서 결성되어 2000년대 메탈코어 장르의 부흥을 이끈 대표적인 밴드다. (2004)와 (2006) 등의 앨범을 통해 비평과 상업적 성공을 동시에 거두었다.",
+      "summary": "1999년 미국 매사추세츠주 웨스트필드에서 결성되어 2000년대 메탈코어 장르의 부흥을 이끈 대표적인 밴드다. <The End of Heartache> (2004)와 <As Daylight Dies>(2006) 등의 앨범을 통해 비평과 상업적 성공을 동시에 거두었다.",
       "style": "공격적인 스래시 메탈 스타일의 기타 리프와 파워풀한 블래스트 비트 전개가 특징이다. 강렬한 언클린 스크리밍 보컬과 캐치한 멜로딕 클린 보컬이 대비를 이루는 드라마틱한 후렴 구조를 보여준다.",
       "image": {
         "wikipediaTitle": "Killswitch Engage",
@@ -1477,48 +1765,57 @@
           "title": "My Curse",
           "year": 2006,
           "album": "As Daylight Dies",
-          "guide": "도입부의 감성적인 기타 아르페지오 이후 폭발하는 강렬한 리프와 하워드 존스의 멜로딕한 후렴 보컬을 감상한다.",
-          "youtubeId": "",
+          "guide": "도입부의 감성적인 기타 아르페지오 이후 폭발하는 강렬한 리프와 하워드 존스의 멜로딕한 후렴 보컬.",
+          "youtubeId": "iPW9AbRMwFU",
           "source": {
             "label": "Killswitch Engage — My Curse YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Killswitch%20Engage%20My%20Curse",
+            "url": "https://www.youtube.com/watch?v=iPW9AbRMwFU",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Roadrunner Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:53:10.947Z"
         },
         {
           "id": "the-end-of-heartache",
           "title": "The End of Heartache",
           "year": 2004,
           "album": "The End of Heartache",
-          "guide": "묵직하게 내리치는 헤비한 기타 리프와 대비되는 벅찬 클린 보컬 선율에 집중한다.",
-          "youtubeId": "",
+          "guide": "묵직하게 내리치는 헤비한 기타 리프와 대비되는 벅찬 클린 보컬 선율.",
+          "youtubeId": "JiDnB-CrrNs",
           "source": {
             "label": "Killswitch Engage — The End of Heartache YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Killswitch%20Engage%20The%20End%20of%20Heartache",
+            "url": "https://www.youtube.com/watch?v=JiDnB-CrrNs",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Roadrunner Records UK"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:53:06.266Z"
         },
         {
           "id": "in-due-time",
           "title": "In Due Time",
           "year": 2012,
           "album": "Disarm the Descent",
-          "guide": "제시 리치 복귀 후의 타이트하게 내달리는 드럼 비트와 에너제틱한 스크리밍 보컬을 들는다.",
-          "youtubeId": "",
+          "guide": "제시 리치 복귀 후의 타이트하게 내달리는 드럼 비트와 에너제틱한 스크리밍 보컬.",
+          "youtubeId": "HANCzu70us4",
           "source": {
             "label": "Killswitch Engage — In Due Time YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Killswitch%20Engage%20In%20Due%20Time",
+            "url": "https://www.youtube.com/watch?v=HANCzu70us4",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Roadrunner Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:53:15.499Z"
         }
       ],
       "relations": [],
@@ -1579,7 +1876,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:52:23.929Z"
     },
     {
       "id": "alestorm",
@@ -1594,7 +1893,9 @@
       ],
       "subgenres": [
         "파워 메탈",
-        "포크 메탈"
+        "포크 메탈",
+        "바이킹 메탈",
+        "전통 헤비메탈"
       ],
       "eraTags": [
         {
@@ -1615,16 +1916,22 @@
         "영국메탈",
         "헤비메탈"
       ],
-      "summary": "2004년 스코틀랜드 퍼스에서 크리스토퍼 보어스를 중심으로 결성되어 해적을 테마로 한 파워 메탈과 포크 메탈 사운드로 인기를 얻은 밴드다. 앨범 <Captain Morgan's Revenge>(2008)와 (2014) 등을 통해 유로피언 메탈 페스티벌의 대표적인 인라인 라인업으로 자리 잡았다.",
+      "summary": "2004년 스코틀랜드 퍼스에서 크리스토퍼 보어스를 중심으로 결성되어 해적을 테마로 한 파워 메탈과 포크 메탈 사운드로 인기를 얻은 밴드다. 앨범 <Captain Morgan's Revenge>(2008)ㅍ등을 통해 유로피언 메탈 페스티벌의 대표적인 인라인 라인업으로 자리 잡았다.",
       "style": "해적 민요풍의 포크 멜로디를 키타와 신시사이저 연주로 구현하며 유쾌하고 경쾌한 파워 메탈 리듬을 전개한다. 크리스토퍼 보어스의 유쾌하면서도 거친 보컬과 대중적인 코러스 싱어롱 구간이 사운드의 중심을 이룬다.",
       "image": {
         "wikipediaTitle": "Alestorm",
         "alt": "Alestorm 밴드 사진",
         "credit": {
-          "sourceUrl": "",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alestorm_Promo_Photograph_2014.jpg",
+          "creator": "Alestorm",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T02:46:59.408Z"
+        },
+        "fileName": "File:Alestorm Promo Photograph 2014.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Alestorm_Promo_Photograph_2014.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Alestorm_Promo_Photograph_2014.jpg/500px-Alestorm_Promo_Photograph_2014.jpg"
       },
       "members": [
         {
@@ -1676,48 +1983,57 @@
           "title": "Drink",
           "year": 2014,
           "album": "Sunset on the Golden Age",
-          "guide": "경쾌하게 질주하는 파워 메탈 리프와 대규모 떼창을 유도하는 캐치한 후렴구 멜로디에 집중한다.",
-          "youtubeId": "",
+          "guide": "경쾌하게 질주하는 파워 메탈 리프와 대규모 떼창을 유도하는 캐치한 후렴구 멜로디.",
+          "youtubeId": "f55CqLc6IR0",
           "source": {
             "label": "Alestorm — Drink YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Alestorm%20Drink",
+            "url": "https://www.youtube.com/watch?v=f55CqLc6IR0",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Napalm Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:45:47.393Z"
         },
         {
           "id": "keelhauled",
           "title": "Keelhauled",
           "year": 2009,
           "album": "Black Sails at Midnight",
-          "guide": "속도감 넘치는 민요풍 키보드 리프와 에너제틱하게 터져 나오는 보컬을 감상한다.",
-          "youtubeId": "",
+          "guide": "속도감 넘치는 민요풍 키보드 리프와 에너제틱하게 터져 나오는 보컬.",
+          "youtubeId": "ta-Z_psXODw",
           "source": {
             "label": "Alestorm — Keelhauled YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Alestorm%20Keelhauled",
+            "url": "https://www.youtube.com/watch?v=ta-Z_psXODw",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Napalm Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:45:53.887Z"
         },
         {
           "id": "fucked-with-an-anchor",
           "title": "Fucked with an Anchor",
           "year": 2017,
           "album": "No Grave But the Sea",
-          "guide": "유쾌하고 솔직한 가사와 모던한 신스 팝 스타일 포크 멜로디의 조화를 들는다.",
-          "youtubeId": "",
+          "guide": "유쾌하고 솔직한 가사와 모던한 신스 팝 스타일 포크 멜로디의 조화.",
+          "youtubeId": "th4Czv1j3F8",
           "source": {
             "label": "Alestorm — Fucked with an Anchor YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Alestorm%20Fucked%20with%20an%20Anchor",
+            "url": "https://www.youtube.com/watch?v=th4Czv1j3F8",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Napalm Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:46:24.654Z"
         }
       ],
       "relations": [
@@ -1750,6 +2066,29 @@
           "publisher": "MusicBrainz",
           "externalId": "c0252a1b-0133-46bb-8c4f-cade46349ec3",
           "note": "Studio 자동 검색 후보 · 운영자 확인 필요"
+        },
+        {
+          "label": "Alestorm — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Alestorm_Promo_Photograph_2014.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        },
+        {
+          "label": "Alestorm — 공식 YouTube",
+          "url": "https://www.youtube.com/@Alestorm",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "Alestorm",
+          "channelType": "artist",
+          "accessedAt": "2026-08-02",
+          "note": "공식 채널 확인"
+        },
+        {
+          "label": "Alestorm — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Alestorm",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-08-02",
+          "note": "밴드 기본 정보 교차 확인"
         }
       ],
       "taxonomyV2": {
@@ -1759,7 +2098,9 @@
         ],
         "subgenreIds": [
           "power-metal",
-          "folk-metal"
+          "folk-metal",
+          "viking-metal",
+          "traditional-heavy-metal"
         ],
         "moodScores": {
           "bright-upbeat": 5,
@@ -1771,7 +2112,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:47:09.154Z"
     },
     {
       "id": "slowdive",
@@ -1782,17 +2125,20 @@
       "activeYears": "1989-1995, 2014-현재",
       "primaryGenre": "britpop-indie",
       "genreIds": [
-        "britpop-indie"
+        "britpop-indie",
+        "progressive-art"
       ],
       "subgenres": [
         "드림 팝",
+        "슈게이즈",
         "앰비언트 록"
       ],
       "eraTags": [
         {
           "era": "1980s",
           "genreIds": [
-            "britpop-indie"
+            "britpop-indie",
+            "progressive-art"
           ],
           "subgenres": [
             "드림 팝",
@@ -1807,7 +2153,7 @@
         "영국록",
         "앰비언트"
       ],
-      "summary": "1989년 영국 레딩에서 닐 헐스테드와 레이첼 고스웰을 중심으로 결성되어 슈게이징 장르를 확립한 대표적인 밴드다. 명반 (1993) 발표 이후 해체했다가 2014년 재결합하여 정규 앨범 (2017)와 (2023)로 다시 성공적인 활동을 이어가고 있다.",
+      "summary": "1989년 영국 레딩에서 닐 헐스테드와 레이첼 고스웰을 중심으로 결성되어 슈게이징 장르를 확립한 대표적인 밴드다. 슈게이즈 3대 명반 중 하나인 <Souvlaki>(1993) 발표 이후 해체했다가 2014년 재결합하여 다시 성공적인 활동을 이어가고 있다.",
       "style": "깊은 리버브와 디레이 효과가 적용된 기타 레이어가 중첩되어 완만하고 거대한 사운드의 벽을 형성한다. 닐 헐스테드와 레이첼 고스웰의 속삭이는 듯한 남녀 듀엣 보컬과 슬로우코어에 가까운 정적인 템포 전개가 특징이다.",
       "image": {
         "wikipediaTitle": "Slowdive",
@@ -1874,48 +2220,57 @@
           "title": "Alison",
           "year": 1993,
           "album": "Souvlaki",
-          "guide": "찰랑이는 이펙터 기타 사운드와 그 위로 아련하게 언혀지는 닐 헐스테드의 보컬 멜로디에 집중한다.",
-          "youtubeId": "",
+          "guide": "찰랑이는 이펙터 기타 사운드와 그 위로 아련하게 얹혀지는 닐 헐스테드의 보컬 멜로디.",
+          "youtubeId": "jkM3M3zGcGE",
           "source": {
             "label": "Slowdive — Alison YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Slowdive%20Alison",
+            "url": "https://www.youtube.com/watch?v=jkM3M3zGcGE",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SlowdiveVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:43:10.242Z"
         },
         {
           "id": "when-the-sun-hits",
           "title": "When the Sun Hits",
           "year": 1993,
           "album": "Souvlaki",
-          "guide": "고요한 아르페지오로 시작해 후렴구에서 폭발하듯 쏟아지는 거대한 기타 노이즈 폭풍을 감상한다.",
-          "youtubeId": "",
+          "guide": "고요한 아르페지오로 시작해 후렴구에서 폭발하듯 쏟아지는 거대한 기타 노이즈 폭풍.",
+          "youtubeId": "MKYY0IlTMw4",
           "source": {
             "label": "Slowdive — When the Sun Hits YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Slowdive%20When%20the%20Sun%20Hits",
+            "url": "https://www.youtube.com/watch?v=MKYY0IlTMw4",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SlowdiveVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:43:18.559Z"
         },
         {
           "id": "sugar-for-the-pill",
           "title": "Sugar for the Pill",
           "year": 2017,
           "album": "Slowdive",
-          "guide": "절제된 핑거피킹 기타 리프와 레이첼 고스웰의 몽환적인 코러스 보컬의 유기적인 조화를 들는다.",
-          "youtubeId": "",
+          "guide": "절제된 핑거피킹 기타 리프와 레이첼 고스웰의 몽환적인 코러스 보컬의 유기적인 조화.",
+          "youtubeId": "BxwAPBxc0lU",
           "source": {
             "label": "Slowdive — Sugar for the Pill YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Slowdive%20Sugar%20for%20the%20Pill",
+            "url": "https://www.youtube.com/watch?v=BxwAPBxc0lU",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SlowdiveVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:43:23.562Z"
         }
       ],
       "relations": [
@@ -1967,11 +2322,12 @@
       "taxonomyV2": {
         "primaryGenreId": "shoegaze-dream-post",
         "secondaryGenreIds": [
-          "indie-britpop-garage",
-          "progressive-art-psychedelic"
+          "progressive-art-psychedelic",
+          "indie-britpop-garage"
         ],
         "subgenreIds": [
           "dream-pop",
+          "shoegaze",
           "ambient-rock"
         ],
         "moodScores": {
@@ -1984,7 +2340,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:42:16.347Z"
     },
     {
       "id": "turisas",
@@ -2024,17 +2382,22 @@
         "바이킹메탈",
         "메탈"
       ],
-      "summary": "1997년 핀란드 헤메늘린나에서 마티아스 뉘고르드와 유시 위티칼로를 중심으로 결성되어 포크 메탈과 심포닉 메탈을 결합한 사운드로 이름을 알린 밴드다. 앨범 (2004)과 concept 앨범 (2007) 등을 발표하며 스칸디나비아 익스트림 메탈 씬에서 독자적인 입지를 다졌다.",
+      "summary": "1997년 핀란드 헤메늘린나에서 마티아스 뉘고르드와 유시 위티칼로를 중심으로 결성되어 포크 메탈과 심포닉 메탈을 결합한 사운드로 이름을 알린 밴드다. 스칸디나비아 익스트림 메탈 씬에서 독자적인 입지를 다졌다.",
       "style": "바이올린과 아코디언 선율을 오케스트레이션과 결합하여 웅장한 서사시 느낌의 사운드를 연출한다. 묵직한 메탈 리프 위에 거친 그로울링과 선명한 클린 보컬, 웅장한 합창단 코러스를 번갈아 배치하는 곡 전개가 특징이다.",
       "image": {
         "wikipediaTitle": "Turisas",
-        "fileName": "Turisas Metal Frenzy 2018 30.jpg",
+        "fileName": "File:Turisas Metal Frenzy 2018 30.jpg",
         "alt": "Turisas 밴드 사진",
         "credit": {
-          "sourceUrl": "File:Turisas Metal Frenzy 2018 30.jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turisas_Metal_Frenzy_2018_30.jpg",
+          "creator": "S. Bollmann",
+          "license": "Attribution",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T03:09:17.304Z",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/File:Turisas_Metal_Frenzy_2018_30.jpg"
+        },
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Turisas_Metal_Frenzy_2018_30.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Turisas_Metal_Frenzy_2018_30.jpg/500px-Turisas_Metal_Frenzy_2018_30.jpg"
       },
       "members": [
         {
@@ -2086,48 +2449,57 @@
           "title": "Rasputin",
           "year": 2007,
           "album": "The Varangian Way",
-          "guide": "Boney M.의 원곡을 바이올린 연주와 금관 악기 멜로디가 넘치는 파워풀한 포크 메탈로 재해석한 후렴구에 집중한다.",
-          "youtubeId": "",
+          "guide": "Boney M.의 원곡을 바이올린 연주와 금관 악기 멜로디가 넘치는 파워풀한 포크 메탈로 재해석한 후렴구.",
+          "youtubeId": "cdkBs0VCSX0",
           "source": {
             "label": "Turisas — Rasputin YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Turisas%20Rasputin",
+            "url": "https://www.youtube.com/watch?v=cdkBs0VCSX0",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Century Media Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:37:21.010Z"
         },
         {
           "id": "battle-metal",
           "title": "Battle Metal",
           "year": 2004,
           "album": "Battle Metal",
-          "guide": "폭발적인 더블 베이스 드럼 위로 터져 나오는 웅장한 코러스 떼창과 바이올린 멜로디 라인을 들는다.",
-          "youtubeId": "",
+          "guide": "폭발적인 더블 베이스 드럼 위로 터져 나오는 웅장한 코러스 떼창과 바이올린 멜로디 라인.",
+          "youtubeId": "Ift85e38H3M",
           "source": {
             "label": "Turisas — Battle Metal YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Turisas%20Battle%20Metal",
+            "url": "https://www.youtube.com/watch?v=Ift85e38H3M",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Century Media Records"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:37:27.333Z"
         },
         {
           "id": "to-holmgard-and-beyond",
           "title": "To Holmgard and Beyond",
           "year": 2007,
           "album": "The Varangian Way",
-          "guide": "영화 음악을 연상시키는 오케스트레이션 편곡과 마티아스 뉘고르드의 장엄한 보컬 연주를 감상한다.",
-          "youtubeId": "",
+          "guide": "영화 음악을 연상시키는 오케스트레이션 편곡과 마티아스 뉘고르드의 장엄한 보컬 연주.",
+          "youtubeId": "p1pVGwW-kc8",
           "source": {
             "label": "Turisas — To Holmgard and Beyond YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Turisas%20To%20Holmgard%20and%20Beyond",
+            "url": "https://www.youtube.com/watch?v=p1pVGwW-kc8",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "fthioh1"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:37:43.818Z"
         }
       ],
       "relations": [
@@ -2175,6 +2547,12 @@
           "publisher": "MusicBrainz",
           "externalId": "1cf39e0b-c595-46f7-9ea8-4d2b14843c81",
           "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Turisas — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Turisas_Metal_Frenzy_2018_30.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -2199,7 +2577,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:37:02.015Z"
     },
     {
       "id": "new-order",
@@ -2239,7 +2619,7 @@
         "영국록",
         "댄스로우"
       ],
-      "summary": "1980년 조이 디비전의 해체 이후 남은 멤버들을 중심으로 영국 맨체스터에서 결성되어 포스트 펑크와 신스팝의 결합을 이끈 밴드다. <Power, & Corruption Lies>(1983)와 싱글 (1983) 등을 통해 인디 신스팝 씬에 커다란 영향을 남겼다.",
+      "summary": "1980년 조이 디비전의 해체 이후 남은 멤버들을 중심으로 영국 맨체스터에서 결성되어 포스트 펑크와 신스팝의 결합을 이끈 밴드다. <Power, & Corruption Lies>(1983)을 통해 인디 신스팝 씬에 커다란 영향을 남겼다.",
       "style": "버나드 섬너의 절제된 보컬과 피터 훅의 독특한 하이톤 베이스 멜로디 연주가 특징이다. 전자 드럼 비트와 에너제틱한 신시사이저 리프, 포스트 펑크풍 기타 연주가 자아내는 그루비한 댄스 사운드를 선보인다.",
       "image": {
         "wikipediaTitle": "New Order",
@@ -2301,15 +2681,18 @@
           "year": 1983,
           "album": "Power, Corruption & Lies",
           "guide": "도입부의 차가운 시퀀서 드럼 비트와 피터 훅의 하이톤 베이스 라인에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "9GMjH1nR0ds",
           "source": {
             "label": "New Order — Blue Monday YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=New%20Order%20Blue%20Monday",
+            "url": "https://www.youtube.com/watch?v=9GMjH1nR0ds",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "New Order"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:21:41.949Z"
         },
         {
           "id": "bizarre-love-triangle",
@@ -2317,15 +2700,18 @@
           "year": 1986,
           "album": "Brotherhood",
           "guide": "화려하게 폭발하는 신시사이저 멜로디와 캐치한 댄스 팝 리듬을 들는다.",
-          "youtubeId": "",
+          "youtubeId": "tkOr12AQpnU",
           "source": {
             "label": "New Order — Bizarre Love Triangle YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=New%20Order%20Bizarre%20Love%20Triangle",
+            "url": "https://www.youtube.com/watch?v=tkOr12AQpnU",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "New Order"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:21:46.203Z"
         },
         {
           "id": "true-faith",
@@ -2333,15 +2719,18 @@
           "year": 1987,
           "album": "Substance 1987",
           "guide": "세련된 1980년대 댄스 팝 시퀀싱 사운드와 서정적인 보컬 후렴구를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "mfI1S0PKJR8",
           "source": {
             "label": "New Order — True Faith YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=New%20Order%20True%20Faith",
+            "url": "https://www.youtube.com/watch?v=mfI1S0PKJR8",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "New Order"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:21:49.817Z"
         }
       ],
       "relations": [
@@ -2412,7 +2801,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:21:53.313Z"
     },
     {
       "id": "mazzy-star",
@@ -2423,17 +2814,23 @@
       "activeYears": "1989-1997, 2012-2014",
       "primaryGenre": "britpop-indie",
       "genreIds": [
-        "britpop-indie"
+        "britpop-indie",
+        "progressive-art",
+        "classic-rock"
       ],
       "subgenres": [
         "드림 팝",
-        "인디 록"
+        "인디 록",
+        "네오사이키델리아",
+        "슬로코어"
       ],
       "eraTags": [
         {
           "era": "1980s",
           "genreIds": [
-            "britpop-indie"
+            "britpop-indie",
+            "progressive-art",
+            "classic-rock"
           ],
           "subgenres": [
             "드림 팝",
@@ -2448,7 +2845,7 @@
         "슬로우코어",
         "미국록"
       ],
-      "summary": "1989년 미국 칼리포니아주 샌타모니카에서 호프 산도발과 데이비드 로백을 중심으로 결성되어 드림 팝과 네오 사이케델리아의 대표주자로 평가받는 밴드다. 앨범 (1993)와 (1996) 등을 발표하며 평단과 리스너들의 주목을 받았다.",
+      "summary": "1989년 미국 칼리포니아주 샌타모니카에서 호프 산도발과 데이비드 로백을 중심으로 결성되어 드림 팝과 네오 사이케델리아의 대표주자로 평가받는 밴드다. ",
       "style": "호프 산도발의 나른하고 아련한 음색과 데이비드 로백의 서정적인 어쿠스틱·슬라이드 기타 연주가 유기적으로 조화를 이룬다. 슬로우코어 기반의 느린 템포 위에 리버브가 깊게 걸린 사이케델릭 오르간과 몽환적인 음향 레이어를 얹는 것이 특징이다.",
       "image": {
         "wikipediaTitle": "Mazzy Star",
@@ -2497,51 +2894,68 @@
           "title": "Fade Into You",
           "year": 1993,
           "album": "So Tonight That I Might See",
-          "guide": "공간감 있는 찰랑거리는 어쿠스틱 기타와 호프 산도발의 속삭이는 듯한 보컬에 집중한다.",
-          "youtubeId": "",
+          "guide": "공간감 있는 찰랑거리는 어쿠스틱 기타와 호프 산도발의 속삭이는 듯한 보컬.",
+          "youtubeId": "ImKY6TZEyrI",
           "source": {
             "label": "Mazzy Star — Fade Into You YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mazzy%20Star%20Fade%20Into%20You",
+            "url": "https://www.youtube.com/watch?v=ImKY6TZEyrI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "MazzyStarVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:13:22.595Z"
         },
         {
           "id": "look-on-down-from-the-bridge",
           "title": "Look On Down From the Bridge",
           "year": 1996,
           "album": "Among My Swan",
-          "guide": "느리게 읊조리는 오르간 사운드와 슬픈 감성을 극대화하는 서정적인 보컬을 감상한다.",
-          "youtubeId": "",
+          "guide": "느리게 읊조리는 오르간 사운드와 슬픈 감성을 극대화하는 서정적인 보컬.",
+          "youtubeId": "p3NZn0mA_XI",
           "source": {
             "label": "Mazzy Star — Look On Down From the Bridge YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mazzy%20Star%20Look%20On%20Down%20From%20the%20Bridge",
+            "url": "https://www.youtube.com/watch?v=p3NZn0mA_XI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Mazzy Star - Topic"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:13:39.065Z"
         },
         {
           "id": "into-dust",
           "title": "Into Dust",
           "year": 1993,
           "album": "So Tonight That I Might See",
-          "guide": "극도로 절제된 첼로 선율과 어쿠스틱 기타 핑거피킹이 자아내는 고요함을 들는다.",
-          "youtubeId": "",
+          "guide": "극도로 절제된 첼로 선율과 어쿠스틱 기타 핑거피킹이 자아내는 고요함.",
+          "youtubeId": "24Vwg2CDFYI",
           "source": {
             "label": "Mazzy Star — Into Dust YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mazzy%20Star%20Into%20Dust",
+            "url": "https://www.youtube.com/watch?v=24Vwg2CDFYI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rock & Metal ReNewed"
           },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:13:55.634Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "beach-house",
+          "kind": "sounds-like",
+          "strength": 3,
+          "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다.",
           "reviewStatus": "draft"
         }
       ],
-      "relations": [],
       "sources": [
         {
           "label": "Mazzy Star — Wikidata",
@@ -2587,7 +3001,9 @@
         ],
         "subgenreIds": [
           "dream-pop",
-          "indie-rock"
+          "indie-rock",
+          "neo-psychedelia",
+          "slowcore"
         ],
         "moodScores": {
           "dreamy-ethereal": 5,
@@ -2599,7 +3015,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:17:07.251Z"
     },
     {
       "id": "interpol",
@@ -2639,7 +3057,7 @@
         "미국록",
         "뉴웨이브"
       ],
-      "summary": "1997년 미국 뉴욕에서 결성되어 2000년대 초반 포스트 펑크 리바이벌 부흥을 이끈 밴드다. 명반으로 평가받는 데뷔 앨범 (2002)와 (2004) 등을 통해 비평적 호평과 글로벌 인지도를 확보했다.",
+      "summary": "1997년 미국 뉴욕에서 결성되어 2000년대 초반 포스트 펑크 리바이벌 부흥을 이끈 밴드다. 명반으로 평가받는 데뷔 앨범 <Turn On the Bright Lights>(2002)와 <Antics>(2004) 등을 통해 비평적 호평과 글로벌 인지도를 확보했다.",
       "style": "절제된 드럼 비트와 차갑고 묵직한 베이스 라인이 사운드의 기저를 형성한다. 폴 뱅크스의 무심한 듯 낮게 읊조리는 보컬과 두 대의 기타가 자아내는 날카롭고 음울한 레이어가 특징이다.",
       "image": {
         "wikipediaTitle": "Interpol",
@@ -2688,48 +3106,57 @@
           "title": "Obstacle 1",
           "year": 2002,
           "album": "Turn On the Bright Lights",
-          "guide": "긴장감 있게 박혀 들어가는 베이스 라인과 날카로운 기타 리프의 대조를 듣는다.",
-          "youtubeId": "",
+          "guide": "긴장감 있게 박혀 들어가는 베이스 라인과 날카로운 기타 리프의 대조.",
+          "youtubeId": "OC5zHACynR4",
           "source": {
             "label": "Interpol — Obstacle 1 YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Interpol%20Obstacle%201",
+            "url": "https://www.youtube.com/watch?v=OC5zHACynR4",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Interpol"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:11:19.142Z"
         },
         {
           "id": "evil",
           "title": "Evil",
           "year": 2004,
           "album": "Antics",
-          "guide": "중독성 있는 멜로디의 베이스 연주와 차갑게 고조되는 보컬 후렴구를 감상한다.",
-          "youtubeId": "",
+          "guide": "중독성 있는 멜로디의 베이스 연주와 차갑게 고조되는 보컬 후렴구.",
+          "youtubeId": "dkpgz3uQ58U",
           "source": {
             "label": "Interpol — Evil YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Interpol%20Evil",
+            "url": "https://www.youtube.com/watch?v=dkpgz3uQ58U",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Interpol"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:11:26.965Z"
         },
         {
           "id": "pda",
           "title": "PDA",
           "year": 2002,
           "album": "Turn On the Bright Lights",
-          "guide": "곡 후반부 폭발하듯 이어지는 사이케델릭한 기타 아웃트로 연주에 집중한다.",
-          "youtubeId": "",
+          "guide": "곡 후반부 폭발하듯 이어지는 사이케델릭한 기타 아웃트로 연주.",
+          "youtubeId": "3oL5QQ-6sQ0",
           "source": {
             "label": "Interpol — PDA YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Interpol%20PDA",
+            "url": "https://www.youtube.com/watch?v=3oL5QQ-6sQ0",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Interpol"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:11:31.570Z"
         }
       ],
       "relations": [
@@ -2774,6 +3201,16 @@
           "url": "https://commons.wikimedia.org/wiki/File:Interpol Concert in Las Vegas, September 19, 2005-4.jpg",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        },
+        {
+          "label": "Interpol — 공식 YouTube",
+          "url": "https://www.youtube.com/@InterpolNYC",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "Interpol",
+          "channelType": "artist",
+          "accessedAt": "2026-08-02",
+          "note": "공식 채널 확인"
         }
       ],
       "taxonomyV2": {
@@ -2797,7 +3234,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:11:56.330Z"
     },
     {
       "id": "arcade-fire",
@@ -3065,7 +3504,7 @@
         "영국록",
         "조브리티시"
       ],
-      "summary": "1982년 영국 맨체스터에서 결성되어 1980년대 인디 팝과 얼터너티브 록의 틀을 확립한 4인조 밴드다. (1984)부터 (1986)까지 메이저 차트 상위권에 진입하며 영국 인디 음악 씬에 커다란 영향을 남겼다.",
+      "summary": "1982년 영국 맨체스터에서 결성되어 1980년대 인디 팝과 얼터너티브 록의 틀을 확립한 4인조 밴드다. 영국 인디 음악 씬에 커다란 영향을 남겼다.",
       "style": "조니 마의 정교한 어쿠스틱·전기 기타 아르페지오와 모리시의 서정적이면서도 위트 넘치는 가사 및 보컬이 대조를 이룬다. 앤디 루크의 화려한 베이스 라인과 마이크 조이스의 경쾌한 드럼 비트가 유기적으로 조화를 이룬다.",
       "image": {
         "wikipediaTitle": "The Smiths",
@@ -3114,15 +3553,18 @@
           "year": 1986,
           "album": "The Queen Is Dead",
           "guide": "서정적인 신시사이저 현악 사운드와 애절하게 얹히는 모리시의 보컬 멜로디에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "siO6dkqidc4",
           "source": {
             "label": "The Smiths — There Is a Light That Never Goes Out YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Smiths%20There%20Is%20a%20Light%20That%20Never%20Goes%20Out",
+            "url": "https://www.youtube.com/watch?v=siO6dkqidc4",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The Smiths"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:08:09.560Z"
         },
         {
           "id": "this-charming-man",
@@ -3130,15 +3572,18 @@
           "year": 1983,
           "album": "The Smiths",
           "guide": "도입부부터 청량하게 찰랑거리는 조니 마의 기타 아르페지오 리프를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "cJRP3LRcUFg",
           "source": {
             "label": "The Smiths — This Charming Man YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Smiths%20This%20Charming%20Man",
+            "url": "https://www.youtube.com/watch?v=cJRP3LRcUFg",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The Smiths"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:08:18.050Z"
         },
         {
           "id": "how-soon-is-now",
@@ -3146,15 +3591,18 @@
           "year": 1984,
           "album": "Hatful of Hollow",
           "guide": "트레몰로 효과가 거세게 걸린 기타 노이즈 리프와 음울한 베이스 라인의 조합을 들는다.",
-          "youtubeId": "",
+          "youtubeId": "hnpILIIo9ek",
           "source": {
             "label": "The Smiths — How Soon Is Now? YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Smiths%20How%20Soon%20Is%20Now%3F",
+            "url": "https://www.youtube.com/watch?v=hnpILIIo9ek",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The Smiths"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:08:23.187Z"
         }
       ],
       "relations": [
@@ -3230,7 +3678,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:08:36.705Z"
     },
     {
       "id": "motorhead",
@@ -3241,7 +3691,9 @@
       "activeYears": "1975-2015",
       "primaryGenre": "heavy-metal",
       "genreIds": [
-        "heavy-metal"
+        "heavy-metal",
+        "hard-rock",
+        "punk-rock"
       ],
       "subgenres": [
         "스피드 메탈",
@@ -3253,7 +3705,9 @@
         {
           "era": "1970s",
           "genreIds": [
-            "heavy-metal"
+            "heavy-metal",
+            "hard-rock",
+            "punk-rock"
           ],
           "subgenres": [
             "스피드 메탈",
@@ -3270,17 +3724,22 @@
         "스래시메탈",
         "영국록"
       ],
-      "summary": "1975년 영국 런던에서 레미 킬미스터를 중심으로 결성되어 하드 록과 헤비 메탈, 스래시 메탈의 교두보를 놓은 밴드다. 앨범 (1979)과 대표 명반 (1980), 라이브 앨범 <No 'til Hammersmith Sleep>(1981) 등을 통해 글로벌 록 씬에 깊은 족적을 남겼다.",
+      "summary": "1975년 영국 런던에서 레미 킬미스터를 중심으로 결성되어 하드 록과 헤비 메탈, 스래시 메탈의 교두보를 놓은 밴드다. 대표 명반 <Ace of Spades>(1980), 라이브 앨범 <No 'til Hammersmith Sleep>(1981) 등을 통해 글로벌 록 씬에 깊은 족적을 남겼다.",
       "style": "레미 킬미스터의 오버드라이브가 걸린 강렬한 베이스 리프와 거친 허스키 보컬이 사운드의 핵심을 형성한다. 스피드 메탈의 모태가 된 빠른 투베이스 드럼 비트와 머신건 같은 기타 리프가 결합해 극도의 질주감을 만든다.",
       "image": {
         "wikipediaTitle": "Motörhead",
-        "fileName": "Motorhead in Indianapolis (September 9, 2015) - Jessica Branstetter 09.jpg",
+        "fileName": "File:Motorhead in Indianapolis (September 9, 2015) - Jessica Branstetter 03.jpg",
         "alt": "Motörhead 밴드 사진",
         "credit": {
-          "sourceUrl": "File:Motorhead in Indianapolis (September 9, 2015) - Jessica Branstetter 09.jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motorhead_in_Indianapolis_(September_9,_2015)_-_Jessica_Branstetter_03.jpg",
+          "creator": "Jessica Branstetter",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T02:07:24.448Z"
+        },
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Motorhead_in_Indianapolis_%28September_9%2C_2015%29_-_Jessica_Branstetter_03.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Motorhead_in_Indianapolis_%28September_9%2C_2015%29_-_Jessica_Branstetter_03.jpg/500px-Motorhead_in_Indianapolis_%28September_9%2C_2015%29_-_Jessica_Branstetter_03.jpg"
       },
       "members": [
         {
@@ -3320,48 +3779,57 @@
           "title": "Ace of Spades",
           "year": 1980,
           "album": "Ace of Spades",
-          "guide": "도입부부터 폭발하는 레미의 왜곡된 베이스 리프와 쉬지 않고 질주하는 퍼스트 템포 드럼 비트에 집중한다.",
-          "youtubeId": "",
+          "guide": "도입부부터 폭발하는 레미의 왜곡된 베이스 리프와 쉬지 않고 질주하는 퍼스트 템포 드럼 비트.",
+          "youtubeId": "3mbvWn1EY6g",
           "source": {
             "label": "Motörhead — Ace of Spades YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mot%C3%B6rhead%20Ace%20of%20Spades",
+            "url": "https://www.youtube.com/watch?v=3mbvWn1EY6g",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Motörhead Official"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:06:10.023Z"
         },
         {
           "id": "overkill",
           "title": "Overkill",
           "year": 1979,
           "album": "Overkill",
-          "guide": "스피드 메탈의 시작을 알린 더블 베이스 드럼의 타이트한 연속 스트로크와 거친 보컬을 들는다.",
-          "youtubeId": "",
+          "guide": "스피드 메탈의 시작을 알린 더블 베이스 드럼의 타이트한 연속 스트로크와 거친 보컬.",
+          "youtubeId": "MlzTET_8SQg",
           "source": {
             "label": "Motörhead — Overkill YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mot%C3%B6rhead%20Overkill",
+            "url": "https://www.youtube.com/watch?v=MlzTET_8SQg",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Motörhead Official"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:06:15.063Z"
         },
         {
           "id": "iron-fist",
           "title": "Iron Fist",
           "year": 1982,
           "album": "Iron Fist",
-          "guide": "날카롭고 강렬하게 찍혀 나가는 테일러의 기타 코드와 하드코어 펑크풍의 폭발적인 에너지를 감상한다.",
-          "youtubeId": "",
+          "guide": "날카롭고 강렬하게 찍혀 나가는 테일러의 기타 코드와 하드코어 펑크풍의 폭발적인 에너지.",
+          "youtubeId": "2m3s3ahr9NI",
           "source": {
             "label": "Motörhead — Iron Fist YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Mot%C3%B6rhead%20Iron%20Fist",
+            "url": "https://www.youtube.com/watch?v=2m3s3ahr9NI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Motörhead Official"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:06:24.332Z"
         }
       ],
       "relations": [
@@ -3409,6 +3877,12 @@
           "publisher": "MusicBrainz",
           "externalId": "57961a97-3796-4bf7-9f02-a985a8979ae9",
           "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Motörhead — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Motorhead_in_Indianapolis_(September_9,_2015)_-_Jessica_Branstetter_03.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -3433,7 +3907,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:07:31.417Z"
     },
     {
       "id": "simple-plan",
@@ -3469,16 +3945,22 @@
         "이모",
         "펑크록"
       ],
-      "summary": "1999년 캐나다 몬트리올에서 결성되어 2000년대 초반 팝 펑크의 대중화를 이끈 밴드다. 데뷔 앨범 <No Balls Helmets...Just No Pads,>(2002)와 (2004) 등으로 차트 상위권에 오르며 국제적인 성공을 거두었다.",
+      "summary": "1999년 캐나다 몬트리올에서 결성되어 2000년대 초반 팝 펑크의 대중화를 이끈 밴드다. 데뷔 앨범 <No Balls Helmets...Just No Pads,>(2002)와 <Still Not Getting Any...>(2004) 등으로 차트 상위권에 오르며 국제적인 성공을 거두었다.",
       "style": "캐치한 멜로디 훅과 직관적이고 경쾌한 파워 코드 기타 리프가 사운드의 핵심을 이룬다. 피에르 부비에의 호소력 짙은 보컬과 청소년기의 고민, 감정을 다룬 진솔한 가사가 직진하는 펑크 리듬과 어우러진다.",
       "image": {
         "wikipediaTitle": "Simple Plan",
         "alt": "Simple Plan 밴드 사진",
         "credit": {
-          "sourceUrl": "",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simple_Plan_-Press-_Chapman_Baehler.jpg",
+          "creator": "Chapman Baehler",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T02:01:19.264Z"
+        },
+        "fileName": "File:Simple Plan -Press- Chapman Baehler.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Simple_Plan_-Press-_Chapman_Baehler.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Simple_Plan_-Press-_Chapman_Baehler.jpg/500px-Simple_Plan_-Press-_Chapman_Baehler.jpg"
       },
       "members": [
         {
@@ -3518,48 +4000,73 @@
           "title": "Perfect",
           "year": 2002,
           "album": "No Pads, No Helmets...Just Balls",
-          "guide": "서정적인 어쿠스틱 스트럼으로 시작해 후반부 폭발하는 감정선과 보컬 샤우팅을 들는다.",
-          "youtubeId": "",
+          "guide": "서정적인 어쿠스틱 스트럼으로 시작해 후반부 폭발하는 감정선과 보컬 샤우팅.",
+          "youtubeId": "RUi54JTgL5s",
           "source": {
             "label": "Simple Plan — Perfect YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Simple%20Plan%20Perfect",
+            "url": "https://www.youtube.com/watch?v=RUi54JTgL5s",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SimplePlan"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:58:08.076Z"
         },
         {
           "id": "welcome-to-my-life",
           "title": "Welcome to My Life",
           "year": 2004,
           "album": "Still Not Getting Any...",
-          "guide": "묵직하고 미니멀한 록 리듬 위로 흐르는 캐치한 후렴구 멜로디와 가사를 감상한다.",
-          "youtubeId": "",
+          "guide": "묵직하고 미니멀한 록 리듬 위로 흐르는 캐치한 후렴구 멜로디와 가사.",
+          "youtubeId": "r0U0AlLVqpk",
           "source": {
             "label": "Simple Plan — Welcome to My Life YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Simple%20Plan%20Welcome%20to%20My%20Life",
+            "url": "https://www.youtube.com/watch?v=r0U0AlLVqpk",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SimplePlan"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:58:13.002Z"
         },
         {
           "id": "i-m-just-a-kid",
           "title": "I'm Just a Kid",
           "year": 2002,
           "album": "No Pads, No Helmets...Just Balls",
-          "guide": "질주하는 팝 펑크 리프와 소외감을 표현한 에너제틱한 싱어롱 구간에 집중한다.",
-          "youtubeId": "",
+          "guide": "질주하는 팝 펑크 리프와 소외감을 표현한 에너제틱한 싱어롱 구간.",
+          "youtubeId": "_GOR5gvQwDI",
           "source": {
             "label": "Simple Plan — I'm Just a Kid YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Simple%20Plan%20I'm%20Just%20a%20Kid",
+            "url": "https://www.youtube.com/watch?v=_GOR5gvQwDI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SimplePlan"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:58:17.570Z"
+        },
+        {
+          "id": "take-my-hand",
+          "title": "Take My Hand",
+          "youtubeId": "1s2Lgc6yVno",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Take My Hand — YouTube",
+            "url": "https://www.youtube.com/watch?v=1s2Lgc6yVno",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SimplePlanLyrics"
+          },
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T02:00:45.310Z"
         }
       ],
       "relations": [
@@ -3585,6 +4092,29 @@
           "publisher": "MusicBrainz",
           "externalId": "b345af35-205e-4eca-8006-029e5c20127e",
           "note": "Studio 자동 검색 후보 · 운영자 확인 필요"
+        },
+        {
+          "label": "Simple Plan — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Simple_Plan_-Press-_Chapman_Baehler.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        },
+        {
+          "label": "Simple Plan — 공식 YouTube",
+          "url": "https://www.youtube.com/@simpleplan",
+          "publisher": "YouTube",
+          "official": true,
+          "channelName": "SimplePlan",
+          "channelType": "artist",
+          "accessedAt": "2026-08-02",
+          "note": "공식 채널 확인"
+        },
+        {
+          "label": "Simple Plan — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Simple_Plan",
+          "publisher": "Wikipedia",
+          "accessedAt": "2026-08-02",
+          "note": "밴드 기본 정보 교차 확인"
         }
       ],
       "taxonomyV2": {
@@ -3607,7 +4137,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T02:01:24.290Z"
     },
     {
       "id": "the-offspring",
@@ -3647,17 +4179,21 @@
         "얼터너티브록",
         "미국록"
       ],
-      "summary": "1984년 미국 칼리포니아주 헌팅턴비치에서 결성되어 1990년대 팝 펑크 및 캘리포니아 펑크 록의 대중적 부흥을 주도한 밴드다. 메이저 레이블 이적 전 대표작 (1994)와 (1998) 등으로 세계적인 상업적 성공을 거두었다.",
+      "summary": "1984년 미국 칼리포니아주 헌팅턴비치에서 결성되어 1990년대 팝 펑크 및 캘리포니아 펑크 록의 대중적 부흥을 주도한 밴드다. 세계적인 상업적 성공을 거두었다.",
       "style": "데인저러스한 인트로와 캐치하고 빠르게 질주하는 펑크 파워 코드 리프가 사운드의 중심을 이룬다. 덱스터 홀랜드 특유의 솟구치는 하이톤 보컬과 유쾌하면서도 사회비판적인 후렴구 떼창 구성이 특징이다.",
       "image": {
         "wikipediaTitle": "The Offspring",
-        "fileName": "Offspring2025Aichi Cropped.jpg",
+        "fileName": "File:Offspring 2008.jpg",
         "alt": "The Offspring 밴드 사진",
         "credit": {
-          "sourceUrl": "File:Offspring2025Aichi Cropped.jpg",
-          "license": "검토 필요",
-          "reviewStatus": "needs-review"
-        }
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Offspring_2008.jpg",
+          "creator": "Lost",
+          "license": "Public domain",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-02T01:55:36.070Z"
+        },
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Offspring_2008.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Offspring_2008.jpg/500px-Offspring_2008.jpg"
       },
       "members": [
         {
@@ -3704,15 +4240,18 @@
           "year": 1998,
           "album": "Americana",
           "guide": "도입부의 날카로운 기타 리프와 속도감 있게 내달리는 드럼 비트에 집중한다.",
-          "youtubeId": "",
+          "youtubeId": "7iNbnineUCI",
           "source": {
             "label": "The Offspring — The Kids Aren't Alright YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Offspring%20The%20Kids%20Aren't%20Alright",
+            "url": "https://www.youtube.com/watch?v=7iNbnineUCI",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "OffspringVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:54:36.300Z"
         },
         {
           "id": "self-esteem",
@@ -3720,15 +4259,18 @@
           "year": 1994,
           "album": "Smash",
           "guide": "중독성 있는 베이스 라인으로 시작해 폭발하는 하드코어 스타일 후렴구를 들는다.",
-          "youtubeId": "",
+          "youtubeId": "2MB44ofKjZg",
           "source": {
             "label": "The Offspring — Self Esteem YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Offspring%20Self%20Esteem",
+            "url": "https://www.youtube.com/watch?v=2MB44ofKjZg",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The Offspring"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:54:52.546Z"
         },
         {
           "id": "pretty-fly-for-a-white-guy",
@@ -3736,15 +4278,18 @@
           "year": 1998,
           "album": "Americana",
           "guide": "위트 넘치는 대사 샘플링과 캐치한 팝 펑크 리듬의 완벽한 조화를 감상한다.",
-          "youtubeId": "",
+          "youtubeId": "QtTR-_Klcq8",
           "source": {
             "label": "The Offspring — Pretty Fly (For a White Guy) YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=The%20Offspring%20Pretty%20Fly%20(For%20a%20White%20Guy)",
+            "url": "https://www.youtube.com/watch?v=QtTR-_Klcq8",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "OffspringVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:55:04.320Z"
         }
       ],
       "relations": [
@@ -3792,6 +4337,12 @@
           "publisher": "MusicBrainz",
           "externalId": "23a03e33-a603-404e-bcbf-2c00159d7067",
           "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "The Offspring — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Offspring_2008.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
         }
       ],
       "taxonomyV2": {
@@ -3816,7 +4367,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T01:55:41.529Z"
     },
     {
       "id": "scorpions",
@@ -3856,7 +4409,7 @@
         "아레나록",
         "클래식록"
       ],
-      "summary": "1965년 독일 하노버에서 루돌프 솅커를 중심으로 결성되어 1970~80년대 하드 록과 헤비 메탈의 메인스트림화를 이끈 밴드다. 앨범 (1982)과 (1984) 등을 통해 세계적인 موفق을 거두고 유럽과 북미를 아우르는 대형 아레나 투어로 확고한 입지를 다졌다.",
+      "summary": "1965년 독일 하노버에서 루돌프 솅커를 중심으로 결성되어 1970~80년대 하드 록과 헤비 메탈의 메인스트림화를 이끈 밴드다. 세계적인 성공을 거두고 유럽과 북미를 아우르는 대형 아레나 투어로 확고한 입지를 다진 독일 락의 자존심.",
       "style": "루돌프 솅커와 마티아스 압스의 강력한 파워 코드 리프 및 서정적인 트윈 기타 솔로가 특징이다. 클라우스 마이네의 맑고 날카로운 고음 보컬과 감성적인 록 발라드, 캐치한 후렴구 전개가 결합되어 특유의 앤섬 사운드를 완성한다.",
       "image": {
         "wikipediaTitle": "Scorpions",
@@ -3935,48 +4488,57 @@
           "title": "Rock You Like a Hurricane",
           "year": 1984,
           "album": "Love at First Sting",
-          "guide": "폭발적이고 직관적인 드라이브의 메인 기타 리프와 중독성 있는 후렴구 떼창에 집중한다.",
-          "youtubeId": "",
+          "guide": "폭발적이고 직관적인 드라이브의 메인 기타 리프와 중독성 있는 후렴구 떼창.",
+          "youtubeId": "6yP1tcy9a10",
           "source": {
             "label": "Scorpions — Rock You Like a Hurricane YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Scorpions%20Rock%20You%20Like%20a%20Hurricane",
+            "url": "https://www.youtube.com/watch?v=6yP1tcy9a10",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "ScorpionsVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:51:12.934Z"
         },
         {
           "id": "wind-of-change",
           "title": "Wind of Change",
           "year": 1990,
           "album": "Crazy World",
-          "guide": "도입부의 휘파람 멜로디와 서정적으로 고조되는 클라우스 마이네의 희망찬 보컬을 감상한다.",
-          "youtubeId": "",
+          "guide": "도입부의 휘파람 멜로디와 서정적으로 고조되는 클라우스 마이네의 희망찬 보컬.",
+          "youtubeId": "n4RjJKxsamQ",
           "source": {
             "label": "Scorpions — Wind of Change YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Scorpions%20Wind%20of%20Change",
+            "url": "https://www.youtube.com/watch?v=n4RjJKxsamQ",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "ScorpionsVEVO"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:51:18.282Z"
         },
         {
           "id": "still-loving-you",
           "title": "Still Loving You",
           "year": 1984,
           "album": "Love at First Sting",
-          "guide": "애절한 어쿠스틱 기타 아르페지오로 시작해 후반부 거세게 폭발하는 록 발라드 전개를 듣는다.",
-          "youtubeId": "",
+          "guide": "애절한 어쿠스틱 기타 아르페지오로 시작해 후반부 거세게 폭발하는 록 발라드 전개.",
+          "youtubeId": "7pOr3dBFAeY",
           "source": {
             "label": "Scorpions — Still Loving You YouTube 검색",
-            "url": "https://www.youtube.com/results?search_query=Scorpions%20Still%20Loving%20You",
+            "url": "https://www.youtube.com/watch?v=7pOr3dBFAeY",
             "publisher": "YouTube",
             "official": false,
-            "note": "Gemini는 곡 정보만 제안했고, 깨질 수 있는 직접 링크 대신 안전한 검색 링크를 사용합니다."
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Scorpions"
           },
-          "reviewStatus": "draft"
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-02T01:51:23.616Z"
         }
       ],
       "relations": [
@@ -4054,7 +4616,9 @@
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-02T01:51:56.698Z"
     },
     {
       "id": "the-doors",
@@ -44249,16 +44813,6 @@
       "createdAt": "2026-08-01T04:26:27.314Z"
     },
     {
-      "id": "mazzy-star->beach-house-0-0",
-      "sourceBandId": "mazzy-star",
-      "sourceBandName": "Mazzy Star",
-      "targetBandId": "beach-house",
-      "kind": "sounds-like",
-      "strength": 3,
-      "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다.",
-      "createdAt": "2026-08-01T04:26:59.633Z"
-    },
-    {
       "id": "mazzy-star->cocteau-twins-0-1",
       "sourceBandId": "mazzy-star",
       "sourceBandName": "Mazzy Star",
@@ -44307,16 +44861,6 @@
       "strength": 3,
       "note": "매사추세츠 출신 메탈 씬을 기반으로 헤비한 스래시 메탈 리프와 캐치한 클린 코러스가 결합된 사운드 구조를 공유한다.",
       "createdAt": "2026-08-01T04:28:57.857Z"
-    },
-    {
-      "id": "the-xx->beach-house-0-0",
-      "sourceBandId": "the-xx",
-      "sourceBandName": "The xx",
-      "targetBandId": "beach-house",
-      "kind": "sounds-like",
-      "strength": 3,
-      "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다.",
-      "createdAt": "2026-08-01T04:30:00.101Z"
     },
     {
       "id": "the-xx->foals-0-1",
