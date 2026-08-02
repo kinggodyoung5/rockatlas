@@ -21,7 +21,11 @@ interface WikidataEntity {
 const args = process.argv.slice(2)
 const strict = args.includes('--strict')
 const selectedBandId = args.find((arg) => arg.startsWith('--band='))?.split('=')[1]
-const selectedBands = selectedBandId ? bands.filter((band) => band.id === selectedBandId) : bands
+const fromBandId = args.find((arg) => arg.startsWith('--from='))?.split('=')[1]
+const fromIndex = fromBandId ? bands.findIndex((band) => band.id === fromBandId) : 0
+const toBandId = args.find((arg) => arg.startsWith('--to='))?.split('=')[1]
+const toIndex = toBandId ? bands.findIndex((band) => band.id === toBandId) : bands.length - 1
+const selectedBands = selectedBandId ? bands.filter((band) => band.id === selectedBandId) : fromIndex >= 0 && toIndex >= fromIndex ? bands.slice(fromIndex, toIndex + 1) : bands
 const sleep = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds))
 
 if (selectedBands.length === 0) {
@@ -41,15 +45,19 @@ async function fetchJson<T>(url: URL, attempt = 0): Promise<T> {
 }
 
 const wikidataIds = selectedBands.map((band) => band.sources.find((source) => source.publisher === 'Wikidata')?.externalId).filter(Boolean) as string[]
-const wikidataUrl = new URL('https://www.wikidata.org/w/api.php')
-wikidataUrl.search = new URLSearchParams({
-  action: 'wbgetentities',
-  ids: wikidataIds.join('|'),
-  props: 'claims',
-  format: 'json',
-  origin: '*',
-}).toString()
-const wikidata = await fetchJson<{ entities?: Record<string, WikidataEntity> }>(wikidataUrl)
+const wikidata: { entities: Record<string, WikidataEntity> } = { entities: {} }
+for (let offset = 0; offset < wikidataIds.length; offset += 50) {
+  const wikidataUrl = new URL('https://www.wikidata.org/w/api.php')
+  wikidataUrl.search = new URLSearchParams({
+    action: 'wbgetentities',
+    ids: wikidataIds.slice(offset, offset + 50).join('|'),
+    props: 'claims',
+    format: 'json',
+    origin: '*',
+  }).toString()
+  const batch = await fetchJson<{ entities?: Record<string, WikidataEntity> }>(wikidataUrl)
+  Object.assign(wikidata.entities, batch.entities ?? {})
+}
 
 const countryByWikidataId: Record<string, string> = {
   Q30: 'US',
@@ -100,10 +108,18 @@ for (const [index, band] of selectedBands.entries()) {
     continue
   }
 
-  const entity = wikidata.entities?.[wikidataId]
+  const entity = wikidata.entities[wikidataId]
   const mbUrl = new URL(`https://musicbrainz.org/ws/2/artist/${musicBrainzId}`)
   mbUrl.search = new URLSearchParams({ inc: 'artist-rels', fmt: 'json' }).toString()
-  const mb = await fetchJson<MusicBrainzArtist>(mbUrl)
+  let mb: MusicBrainzArtist
+  try {
+    mb = await fetchJson<MusicBrainzArtist>(mbUrl)
+  } catch (error) {
+    discrepancies.push(`${band.name}: MusicBrainz ID 조회 실패 (${error instanceof Error ? error.message : '알 수 없는 오류'})`)
+    console.log(`- ${band.name}: MusicBrainz 조회 실패`)
+    if (index < selectedBands.length - 1) await sleep(1_100)
+    continue
+  }
   const mbYear = Number(mb['life-span']?.begin?.slice(0, 4)) || undefined
   const wdYear = wikidataYear(entity)
   const wdCountry = wikidataCountry(entity)

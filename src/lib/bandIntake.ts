@@ -106,6 +106,7 @@ const textProse = (value: unknown) => stripMarkdownToText(text(value))
 const normalizeTaxonomyLabel = (value: unknown) => text(value)
   .toLocaleLowerCase()
   .normalize('NFKC')
+  .replace(/락/g, '록')
   .replace(/&/g, 'and')
   .replace(/[^a-z0-9가-힣]+/g, '')
 
@@ -113,19 +114,38 @@ const genreAliasMap = new Map<string, GenreTaxonomyId>(taxonomyGenres.flatMap((g
   [genre.id, genre.name, genre.displayName, genre.englishName].map((label) => [normalizeTaxonomyLabel(label), genre.id] as const),
 ))
 const subgenreAliasMap = new Map<string, string>(taxonomySubgenres.flatMap((subgenre) =>
-  [subgenre.id, subgenre.name, subgenre.englishName].map((label) => [normalizeTaxonomyLabel(label), subgenre.id] as const),
+  [subgenre.id, subgenre.name, subgenre.englishName, ...(subgenre.aliases ?? [])].map((label) => [normalizeTaxonomyLabel(label), subgenre.id] as const),
 ))
-// A few very common short forms Gemini reaches for that don't exactly match any registered subgenre name
-// (our subgenre is "전통 헤비메탈"/"Traditional Heavy Metal", but the everyday term is just "헤비메탈"/"Heavy Metal").
-const extraSubgenreAliases: Record<string, string> = {
-  헤비메탈: 'traditional-heavy-metal', heavymetal: 'traditional-heavy-metal',
-  펑크: 'punk-rock', punk: 'punk-rock',
-  메탈코어: 'metalcore', metalcore: 'metalcore',
+// Common transliterations and everyday short forms. Keep ambiguous Korean "펑크" (punk/funk)
+// mappings conservative; only variants that point to one clear catalog genre belong here.
+const extraSubgenreAliases: Record<string, string[]> = {
+  'traditional-heavy-metal': ['헤비메탈', 'heavy metal', '정통 헤비메탈'],
+  'punk-rock': ['펑크', 'punk', '펑크락'],
+  'psychedelic-rock': ['사이케델릭 록', '사이케딜릭 록', '싸이키델릭 록', '싸이케델릭 록', '사이키델릭 락', '사이케델릭 락', '사이케딜릭 락', 'psych rock'],
+  'progressive-rock': ['프로그래시브 록', '프로그레시브 락', '프로그 록'],
+  'garage-rock': ['가라지 록', '개러지 락', '가라지 락'],
+  'garage-punk': ['가라지 펑크'],
+  'gothic-rock': ['고스 록', '고딕 락'],
+  'shoegaze': ['슈게이징', '슈게이즈 록'],
+  'thrash-metal': ['쓰래시 메탈', '스레시 메탈', '스래쉬 메탈'],
+  'nu-metal': ['누 메탈', '뉴메틀'],
+  'melodic-death-metal': ['멜로딕 데스', '멜데스'],
+  'neoclassical-metal': ['네오 클래시컬 메탈', '네오클래식 메탈'],
+  'symphonic-metal': ['심포니 메탈'],
+  'post-hardcore': ['포스트 하드코어 록'],
+  'post-rock': ['포스트 록'],
+  'math-rock': ['매스 록', '수학 록'],
+  'trip-hop': ['트립 홉'],
 }
-for (const [label, subgenreId] of Object.entries(extraSubgenreAliases)) {
-  const key = normalizeTaxonomyLabel(label)
-  if (!subgenreAliasMap.has(key)) subgenreAliasMap.set(key, subgenreId)
+for (const [subgenreId, labels] of Object.entries(extraSubgenreAliases)) {
+  labels.forEach((label) => {
+    const key = normalizeTaxonomyLabel(label)
+    if (!subgenreAliasMap.has(key)) subgenreAliasMap.set(key, subgenreId)
+  })
 }
+const canonicalSubgenreKeys = new Set(taxonomySubgenres.flatMap((subgenre) =>
+  [subgenre.id, subgenre.name, subgenre.englishName].map((label) => normalizeTaxonomyLabel(label)),
+))
 // Gemini reasonably guesses well-known genre words ("Heavy Metal", "Grunge") that are actually one of our
 // subgenres, not the name of the (oddly-combined) parent genre bucket they belong to. Resolve those to their
 // parent genre instead of rejecting the whole band for "no valid primary genre".
@@ -180,7 +200,41 @@ const resolveGenreId = (value: unknown): GenreTaxonomyId | undefined => {
   const viaSubgenre = subgenreAliasMap.get(normalizeTaxonomyLabel(value))
   return viaSubgenre ? parentGenreIdBySubgenreId.get(viaSubgenre) : undefined
 }
-const resolveSubgenreId = (value: unknown) => subgenreAliasMap.get(normalizeTaxonomyLabel(value))
+function editDistance(left: string, right: string) {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index)
+  for (let leftIndex = 1; leftIndex <= left.length; leftIndex += 1) {
+    const current = [leftIndex]
+    for (let rightIndex = 1; rightIndex <= right.length; rightIndex += 1) {
+      current[rightIndex] = Math.min(
+        current[rightIndex - 1] + 1,
+        previous[rightIndex] + 1,
+        previous[rightIndex - 1] + (left[leftIndex - 1] === right[rightIndex - 1] ? 0 : 1),
+      )
+    }
+    previous.splice(0, previous.length, ...current)
+  }
+  return previous[right.length]
+}
+
+function fuzzyResolveSubgenreId(value: unknown) {
+  const key = normalizeTaxonomyLabel(value)
+  // Korean "펑크" can mean punk or the common misspelling/transliteration of funk.
+  // Without more context it must stay for review instead of being silently forced.
+  if (new Set(['펑크메탈']).has(key)) return undefined
+  if (key.length < 5) return undefined
+  const allowedDistance = key.length >= 9 ? 2 : 1
+  const ranked = [...subgenreAliasMap.entries()]
+    .filter(([candidate]) => Math.abs(candidate.length - key.length) <= allowedDistance)
+    .map(([candidate, id]) => ({ id, distance: editDistance(key, candidate) }))
+    .filter((candidate) => candidate.distance <= allowedDistance)
+    .sort((left, right) => left.distance - right.distance)
+  if (!ranked.length) return undefined
+  const best = ranked[0]
+  const tiedIds = new Set(ranked.filter((candidate) => candidate.distance === best.distance).map((candidate) => candidate.id))
+  return tiedIds.size === 1 ? best.id : undefined
+}
+
+export const resolveSubgenreId = (value: unknown) => subgenreAliasMap.get(normalizeTaxonomyLabel(value)) ?? fuzzyResolveSubgenreId(value)
 
 /** Character-bigram Dice coefficient between two single words — similarity robust to conjugation
  *  differences and small typos (e.g. Korean "음울한" vs "음울하고"). */
@@ -335,8 +389,10 @@ function normalizeMembers(value: unknown): Member[] {
   return value.flatMap<Member>((entry) => {
     if (typeof entry === 'string') return [{ name: entry.trim(), role: '역할 확인 필요', status: 'current' as const }]
     if (!isRecord(entry) || !text(entry.name)) return []
-    const status = ['current', 'former', 'touring'].includes(text(entry.status)) ? text(entry.status) as Member['status'] : 'current'
-    return [{ name: text(entry.name), role: text(entry.role) || '역할 확인 필요', status, activeYears: text(entry.activeYears) || undefined }]
+    const activeYears = text(entry.activeYears)
+    let status = ['current', 'former', 'touring'].includes(text(entry.status)) ? text(entry.status) as Member['status'] : 'current'
+    if (status === 'former' && /(?:현재|present)\s*$/i.test(activeYears)) status = 'current'
+    return [{ name: text(entry.name), role: text(entry.role) || '역할 확인 필요', status, activeYears: activeYears || undefined }]
   })
 }
 
@@ -422,6 +478,51 @@ function normalizeTaxonomy(raw: UnknownRecord, legacy: GenreId): BandTaxonomyV2 
   }
 }
 
+/** Reads Gemini's optional per-era genre-shift list (only present when the band's sound genuinely
+ *  changed over time, e.g. Coldplay's alternative -> post-britpop -> pop rock -> pop progression). Each
+ *  entry's subgenre names are resolved the same way the band's own subgenres are. Requires at least two
+ *  distinct, resolvable eras to count as a real shift — anything less falls back to the single default
+ *  entry, since "no shift reported" and "one bad entry" should both mean the safe default, not a
+ *  one-era-tag result that looks identical to a real single-era band anyway. */
+function eraShiftTags(value: UnknownRecord, legacy: GenreId): Band['eraTags'] | null {
+  const raw = value.eraGenreShifts ?? value.eraTags
+  if (!Array.isArray(raw)) return null
+  const parsed = raw.flatMap((entry): Band['eraTags'] => {
+    if (!isRecord(entry)) return []
+    const era = text(entry.era) as EraId
+    if (!eraIds.includes(era)) return []
+    const names = stringList(entry.subgenres)
+      .flatMap((label) => {
+        const id = resolveSubgenreId(label)
+        const resolved = id ? taxonomySubgenres.find((item) => item.id === id)?.name : undefined
+        return resolved ? [resolved] : []
+      })
+    const note = text(entry.note ?? entry.reason ?? entry.description)
+    return names.length ? [{ era, genreIds: [legacy], subgenres: [...new Set(names)], note: note || undefined }] : []
+  })
+  const byEra = new Map(parsed.map((tag) => [tag.era, tag]))
+  const ordered = eraIds.filter((era) => byEra.has(era)).map((era) => byEra.get(era)!)
+  const distinctGenreSets = new Set(ordered.map((tag) => [...tag.subgenres].sort().join('|')))
+  return ordered.length >= 2 && distinctGenreSets.size >= 2 ? ordered : null
+}
+
+const bareAlbumYearPattern = /\(\s*(?:19|20)\d{2}\s*\)(?:\s*(?:,|·|및|과|와)\s*\(\s*(?:19|20)\d{2}\s*\))*(?=\s*등의?\s*앨범)/g
+
+function hasBareAlbumYearReference(value: string) {
+  bareAlbumYearPattern.lastIndex = 0
+  return bareAlbumYearPattern.test(value)
+}
+
+function repairBareAlbumYears(summary: string, tracks: Band['tracks']) {
+  if (!hasBareAlbumYearReference(summary)) return summary
+  const albums = [...new Map(tracks
+    .filter((track) => track.album?.trim())
+    .map((track) => [`${track.album!.trim()}-${track.year ?? ''}`, `${track.album!.trim()}${track.year ? `(${track.year})` : ''}`])).values()]
+  if (!albums.length) return summary
+  bareAlbumYearPattern.lastIndex = 0
+  return summary.replace(bareAlbumYearPattern, albums.join(', '))
+}
+
 function normalizeBand(value: unknown, index: number): Band | null {
   if (!isRecord(value)) return null
   const name = text(value.name ?? value.bandName ?? value.artist)
@@ -441,6 +542,8 @@ function normalizeBand(value: unknown, index: number): Band | null {
   const creditRaw = isRecord(imageRaw.credit) ? imageRaw.credit : {}
   const sources = normalizeSources(value.sources, name || id, value)
   const activeYears = text(value.activeYears ?? value.active_years) || (formed ? `${formed}–현재` : '')
+  const tracks = normalizeTracks(value.tracks ?? value.representativeTracks, name)
+  const summary = repairBareAlbumYears(textProse(value.summary ?? value.achievementSummary ?? value.introduction), tracks)
   return {
     id,
     name,
@@ -451,9 +554,9 @@ function normalizeBand(value: unknown, index: number): Band | null {
     primaryGenre: legacy,
     genreIds: [legacy],
     subgenres,
-    eraTags: [{ era: eraFromYear(formed), genreIds: [legacy], subgenres }],
+    eraTags: eraShiftTags(value, legacy) ?? [{ era: eraFromYear(formed), genreIds: [legacy], subgenres }],
     tags: stringList(value.tags),
-    summary: textProse(value.summary ?? value.achievementSummary ?? value.introduction),
+    summary,
     style: textProse(value.style ?? value.soundDescription ?? value.musicDescription),
     image: {
       wikipediaTitle: text(imageRaw.wikipediaTitle) || name,
@@ -470,7 +573,7 @@ function normalizeBand(value: unknown, index: number): Band | null {
       },
     },
     members: normalizeMembers(value.members),
-    tracks: normalizeTracks(value.tracks ?? value.representativeTracks, name),
+    tracks,
     relations: normalizeRelations(value.relations),
     sources,
     taxonomyV2,
@@ -795,7 +898,7 @@ const reviewBlockingCodes = new Set([
   'short-summary', 'short-style', 'no-wikidata', 'no-musicbrainz', 'no-wikipedia', 'no-members',
   'no-official-channel', 'image-lookup-failed', 'no-image', 'youtube-unreachable', 'youtube-fallback',
   'english-tags', 'english-roles', 'wikidata-mismatch', 'musicbrainz-mismatch',
-  'unverified-influence-relation',
+  'unverified-influence-relation', 'invalid-era-shifts', 'missing-era-shift-notes', 'missing-summary-album-names',
 ])
 
 export function refreshCandidateReviewState(candidate: IntakeCandidate, externalVerificationReady = false) {
@@ -852,9 +955,18 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     const originalTaxonomy = isRecord(original.taxonomyV2) ? original.taxonomyV2 : isRecord(original.taxonomy) ? original.taxonomy : {}
     const requestedPrimary = originalTaxonomy.primaryGenreId ?? originalTaxonomy.primaryGenre ?? original.primaryGenreId ?? original.genre
     const requestedLegacy = text(original.primaryGenre)
+    const requestedEraShifts = Array.isArray(original.eraGenreShifts) ? original.eraGenreShifts : []
+    const originalSummary = textProse(original.summary ?? original.achievementSummary ?? original.introduction)
+    const originalMembers = Array.isArray(original.members) ? original.members.filter(isRecord) : []
     if (!resolveGenreId(requestedPrimary) && !legacyGenreIds.includes(requestedLegacy as GenreId)) issues.push({ severity: 'error', code: 'missing-primary-genre', message: '허용된 대표 장르가 없습니다. 자동 오분류를 막기 위해 추가를 중단했습니다.' })
     const invalidSecondary = stringList(originalTaxonomy.secondaryGenreIds ?? originalTaxonomy.secondaryGenres ?? original.secondaryGenreIds ?? original.secondaryGenres).filter((value) => !resolveGenreId(value))
     const invalidSubgenres = stringList(originalTaxonomy.subgenreIds ?? originalTaxonomy.subgenres ?? original.subgenreIds ?? original.subgenres).filter((value) => !resolveSubgenreId(value))
+    const remappedSubgenres = stringList(originalTaxonomy.subgenreIds ?? originalTaxonomy.subgenres ?? original.subgenreIds ?? original.subgenres).flatMap((label) => {
+      const subgenreId = resolveSubgenreId(label)
+      return subgenreId && !canonicalSubgenreKeys.has(normalizeTaxonomyLabel(label))
+        ? [`${label} → ${subgenreId} (${taxonomySubgenres.find((subgenre) => subgenre.id === subgenreId)?.name})`]
+        : []
+    })
     const originalMoods = isRecord(originalTaxonomy.moodScores) ? originalTaxonomy.moodScores : isRecord(originalTaxonomy.moods) ? originalTaxonomy.moods : isRecord(original.moodScores) ? original.moodScores : isRecord(original.moods) ? original.moods : {}
     const invalidMoods = Object.entries(originalMoods).filter(([label, value]) => !resolveMoodId(label) || !Number.isInteger(number(value)) || number(value) < 1 || number(value) > 5).map(([id]) => id)
     const remappedMoods = Object.keys(originalMoods).flatMap((label) => {
@@ -864,9 +976,30 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
         : []
     })
     if (invalidSecondary.length) issues.push({ severity: 'warning', code: 'invalid-secondary-genres', message: `허용되지 않는 보조 장르를 자동 제외했습니다: ${invalidSecondary.join(', ')}` })
-    if (invalidSubgenres.length) issues.push({ severity: 'warning', code: 'invalid-subgenres', message: `허용되지 않는 세부 장르를 자동 제외했습니다: ${invalidSubgenres.join(', ')}` })
+    if (invalidSubgenres.length) issues.push({ severity: 'warning', code: 'invalid-subgenres', message: `아직 정식 세부 장르와 안전하게 연결하지 못해 검토 대상으로 남겼습니다: ${invalidSubgenres.join(', ')}` })
+    if (remappedSubgenres.length) issues.push({ severity: 'info', code: 'remapped-subgenres', message: `표기·철자 차이를 정식 세부 장르로 바꿨습니다: ${remappedSubgenres.join(', ')}` })
     if (invalidMoods.length) issues.push({ severity: 'warning', code: 'invalid-moods', message: `허용되지 않는 분위기 ID 또는 점수를 자동 제외했습니다: ${invalidMoods.join(', ')}` })
     if (remappedMoods.length) issues.push({ severity: 'info', code: 'remapped-moods', message: `같은 뜻의 분위기 표현을 정식 항목으로 바꿨습니다: ${remappedMoods.join(', ')}` })
+    if (requestedEraShifts.length > 0 && band.eraTags.length < 2) {
+      issues.push({ severity: 'warning', code: 'invalid-era-shifts', message: '제안된 장르 변화가 두 개 이상의 서로 다른 유효 장르 시대로 확인되지 않아 기본 한 시대로 되돌렸습니다. 일시적인 앨범 실험인지 먼저 확인하세요.' })
+    }
+    if (band.eraTags.length > 1 && band.eraTags.some((tag) => !tag.note?.trim())) {
+      issues.push({ severity: 'warning', code: 'missing-era-shift-notes', message: '장르 변화의 일부 시대에 기준 앨범명과 변화 설명이 없습니다. 공개 전에 각 시대의 대표 앨범명(연도)을 확인하세요.' })
+    }
+    if (hasBareAlbumYearReference(originalSummary)) {
+      if (originalSummary !== band.summary) {
+        issues.push({ severity: 'info', code: 'summary-albums-repaired', message: 'Gemini가 소개글에서 빠뜨린 앨범명을 대표곡의 앨범명·연도로 자동 보완했습니다. 보완된 소개글만 한 번 읽어보세요.' })
+      } else {
+        issues.push({ severity: 'warning', code: 'missing-summary-album-names', message: '소개글에 앨범명 없이 연도만 적힌 부분이 있습니다. 대표곡에도 앨범 정보가 없어 자동 보완하지 못했습니다. 공개 전에 앨범명을 적어주세요.' })
+      }
+    }
+    const correctedCurrentMembers = originalMembers
+      .filter((member) => text(member.status) === 'former' && /(?:현재|present)\s*$/i.test(text(member.activeYears)))
+      .map((member) => text(member.name))
+      .filter(Boolean)
+    if (correctedCurrentMembers.length) {
+      issues.push({ severity: 'info', code: 'member-status-repaired', message: `former인데 활동연도가 현재까지로 적힌 멤버를 current로 자동 보정했습니다: ${correctedCurrentMembers.join(', ')}` })
+    }
     const selfRelations = band.relations.filter((relation) => relation.targetBandId === band.id)
     const unknownRelations = band.relations.filter((relation) => relation.targetBandId !== band.id && !knownIds.has(relation.targetBandId))
     band.relations = band.relations.filter((relation) => relation.targetBandId !== band.id && knownIds.has(relation.targetBandId))
@@ -1046,8 +1179,23 @@ export function finalizeIntakeBand(band: Band): Band {
   return structuredClone(band)
 }
 
-export function buildGeminiResearchPrompt() {
+function buildGeminiResearchPromptBase() {
   const genreIdsText = taxonomyGenres.map((genre) => genre.id).join(', ')
+  const subgenreIdsText = taxonomySubgenres.map((subgenre) => subgenre.id).join(', ')
   const moodIdsText = taxonomyMoods.map((mood) => `${mood.id}=${mood.name}`).join(', ')
-  return `ROCK ATLAS GEM 지침 v4. 사용자가 밴드 이름만 입력하면 웹에서 내용을 조사해 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지한다. 모르는 내용은 추측하지 말고 빈 값 또는 빈 배열로 둔다. 정확한 Wikidata·MusicBrainz ID, 이미지 파일명, YouTube 영상·채널 URL은 쓰지 않는다. 이것들은 ROCK ATLAS Studio가 직접 검색하고 교차 검증한다.\n\n고유명사를 제외한 설명·태그·멤버 역할·관계 이유는 한국어 평서체(~다/~이다)로 쓴다. 소개문에는 확인 가능한 연도·앨범·차트·수상처럼 구체적인 발자취만 쓰고, 확인하지 못한 판매량·최초·최고 같은 표현은 쓰지 않는다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"결성·주요 작품·성과·영향이 드러나는 한국어 2문장","style":"리듬·악기·보컬·프로덕션·곡 전개를 직관적으로 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["실제 세부 장르명 2~5개"],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"","guide":"이 곡에서 들을 지점 한국어 한 문장"}],"relations":[{"targetBandName":"관련 밴드 영문명","kind":"sounds-like|shared-scene","strength":1,"note":"비슷한 이유 또는 같은 장면인 이유 한국어 한 문장"}]}]}\n\n대표곡은 인지도가 높은 순서로 3곡, 핵심 현재·전 멤버만 쓴다. 관계는 확실한 sounds-like 또는 shared-scene 후보만 최대 2개 쓴다. influenced-by·influenced·evolution은 출처 검증이 필요하므로 출력하지 않는다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 번역·조합·변형하지 말고 그대로 복사한다. 장르도 아래 ID만 쓴다. 밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
+  const eraIdsText = eraIds.join(', ')
+  return `ROCK ATLAS GEM 지침 v6. 사용자가 밴드 이름 또는 ROCK ATLAS Studio의 [검증 자료]를 입력하면 아래 형식의 JSON만 출력한다. 인사·설명·마크다운·코드펜스는 금지한다. [검증 자료]가 있으면 그 값을 최우선으로 사용하고 절대 충돌하는 사실을 만들지 않는다. 모르는 내용은 추측하지 말고 빈 값 또는 빈 배열로 둔다. Wikidata·MusicBrainz ID, 이미지 파일명, YouTube 영상·채널 URL은 쓰지 않는다. 이것들은 Studio가 직접 검색하고 검증한다.\n\n고유명사를 제외한 설명·태그·멤버 역할은 한국어 평서체(~다/~이다)로 쓴다. 소개문에는 확인 가능한 연도·앨범·차트·수상만 쓰고, 출처로 확인하지 못한 판매량·최초·최고 같은 표현은 쓰지 않는다. 앨범은 반드시 <앨범명>(연도)로 쓴다. 절대로 앨범명을 생략한 채 (1989), (1993)처럼 연도만 나열하지 않는다. 출력 직전에 summary와 eraGenreShifts의 모든 (연도) 바로 앞에 실제 앨범명이 있는지 검사하고, 없으면 검증 자료의 정확한 앨범명을 복사해 다시 쓴다. 멤버의 활동연도를 모르면 빈 문자열로 둔다.\n\n{"bands":[{"name":"","formed":0,"origin":"도시, 국가","countryCode":"ISO 2글자","activeYears":"","summary":"결성·주요 작품·성과가 드러나는 한국어 2문장. 예: Arise(1991), Chaos A.D.(1993)처럼 앨범명과 연도를 붙여 쓴다","style":"리듬·악기·보컬·프로덕션·곡 전개를 설명하는 한국어 2문장","tags":["한국어 3~6개"],"genre":"장르 ID 1개","secondaryGenres":["가까운 장르 ID만"],"subgenres":["아래 세부 장르 ID 2~5개"],"eraGenreShifts":[{"era":"시대 ID","subgenres":["아래 세부 장르 ID 1~4개"],"note":"변화 기준 앨범명(연도)과 지속된 변화 설명"}],"moods":{"분위기 ID":1},"members":[{"name":"","role":"한국어 역할","status":"current|former|touring","activeYears":""}],"representativeTracks":[{"title":"","year":0,"album":"앨범명을 절대 비우지 않음","guide":"이 곡에서 들을 지점 한국어 한 문장"}],"relations":[]}]}\n\n대표곡은 정확한 곡명·앨범명·연도를 확인할 수 있는 3곡만 쓴다. album은 빈 문자열을 금지한다. 관계는 항상 빈 배열로 둔다. 실제 인적 관계는 Studio가 구조화 자료로 확인하고, 비슷한 밴드는 사이트 알고리즘이 계산한다. 분위기는 대표곡 기준 3~6개를 1~5점으로 쓰고 아래 ID를 그대로 복사한다. 세부 장르도 가능한 한 아래 ID를 그대로 복사한다.\n\neraGenreShifts는 장기적인 장르 노선 변화와 기준 앨범이 모두 확인된 경우에만 쓴다. 한 앨범의 일시적 실험, 멤버·보컬 교체만으로는 쓰지 않는다. 확신이 없거나 같은 계열을 유지했다면 빈 배열로 둔다. 시대 ID: ${eraIdsText}\n\n밴드가 여러 개면 bands 배열에 모두 넣는다.\n장르 ID: ${genreIdsText}\n세부 장르 ID: ${subgenreIdsText}\n분위기 ID=뜻: ${moodIdsText}`
+}
+
+export function buildGeminiResearchPrompt() {
+  return buildGeminiResearchPromptBase()
+    .replace('ROCK ATLAS GEM 지침 v6', 'ROCK ATLAS GEM 지침 v7')
+    .replace(
+      '"eraGenreShifts":[{"era":"시대 ID","subgenres":["그 시대의 실제 세부 장르명 1~4개"]}]',
+      '"eraGenreShifts":[{"era":"시대 ID","subgenres":["그 시대의 실제 세부 장르명 1~4개"],"note":"변화를 대표하는 앨범명(연도)과 장기 노선 변화 근거 한 문장"}]',
+    )
+    .replace(
+      '데뷔 때부터 지금까지 같은 계열의 음악을 해온 밴드는 이 배열을 비워 둔다 — 추측으로 시대를 나누지 않는다.',
+      '서로 다른 두 시대 이상에서 장르 조합이 실제로 달라질 때만 쓴다. 각 note에는 변화를 대표하는 앨범명(연도)을 반드시 넣는다. 한 앨범에서만 잠깐 들린 요소, 보컬·멤버 교체 자체, 같은 장르 이름의 단순 반복은 변화로 만들지 않는다. 데뷔 때부터 지금까지 같은 계열의 음악을 해온 밴드는 이 배열을 비워 둔다 — 추측으로 시대를 나누지 않는다.',
+    )
 }

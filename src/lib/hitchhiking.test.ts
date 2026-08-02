@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-import { HITCHHIKING_DIRECTIONS } from '../config/hitchhiking'
 import { publicBands } from '../data/publicBands'
 import { availableHitchhikingDirections, decodeJourney, encodeJourney, recommendHitchhikingBands, type JourneyStep } from './hitchhiking'
 
@@ -25,6 +24,24 @@ describe('히치하이킹 방향 추천', () => {
     expect(directions).toEqual(expect.arrayContaining(['heavier', 'faster', 'experimental', 'grander']))
     expect(directions).not.toContain('dreamier')
     expect(directions).not.toContain('accessible')
+  })
+
+  it('방향 카드는 현재 밴드의 대표 분위기가 3점 이상일 때만 열린다', () => {
+    for (const band of publicBands) {
+      const scores = band.taxonomyV2?.moodScores ?? {}
+      for (const { direction } of availableHitchhikingDirections(band, publicBands)) {
+        const strongestTrigger = Math.max(...direction.triggerMoodIds.map((moodId) => scores[moodId] ?? 0))
+        expect(strongestTrigger, `${band.name} / ${direction.label}`).toBeGreaterThanOrEqual(3)
+      }
+    }
+  })
+
+  it('Radiohead에서는 전자음악 점수만으로 그루비 방향이 열리지 않는다', () => {
+    const band = publicBands.find((item) => item.id === 'radiohead')
+    expect(band).toBeDefined()
+    expect(band!.taxonomyV2?.moodScores['groovy-danceable'] ?? 0).toBe(0)
+    const directions = availableHitchhikingDirections(band!, publicBands).map((item) => item.direction.id)
+    expect(directions).not.toContain('groovier')
   })
 
   it('같은 입력에는 항상 같은 순서의 후보를 반환한다', () => {

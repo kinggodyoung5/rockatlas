@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 
-interface TaxonomyItem { id: string; order?: number }
+interface TaxonomyItem { id: string; order?: number; name?: string; englishName?: string; aliases?: string[] }
 interface GenreItem extends TaxonomyItem { subgenreIds: string[]; quickMoodIds: string[] }
 interface TaxonomyFile {
   schemaVersion: number
@@ -46,6 +46,23 @@ const moodIds = new Set(taxonomy.moods.map((item) => item.id))
 for (const genre of taxonomy.genres) {
   for (const id of genre.subgenreIds) if (!subgenreIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 세부 장르 ${id}`)
   for (const id of genre.quickMoodIds) if (!moodIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 분위기 ${id}`)
+}
+
+const normalizeLabel = (value: string) => value.toLocaleLowerCase().normalize('NFKC').replace(/락/g, '록').replace(/&/g, 'and').replace(/[^a-z0-9가-힣]+/g, '')
+const aliasOwners = new Map<string, string>()
+const parentCount = new Map(taxonomy.subgenres.map((item) => [item.id, 0]))
+for (const genre of taxonomy.genres) {
+  for (const id of genre.subgenreIds) parentCount.set(id, (parentCount.get(id) ?? 0) + 1)
+}
+for (const subgenre of taxonomy.subgenres) {
+  if (parentCount.get(subgenre.id) !== 1) errors.push(`${subgenre.id}: 상위 장르 배정은 정확히 1개여야 합니다. 현재 ${parentCount.get(subgenre.id) ?? 0}개입니다.`)
+  for (const label of [subgenre.id, subgenre.name ?? '', subgenre.englishName ?? '', ...(subgenre.aliases ?? [])]) {
+    const key = normalizeLabel(label)
+    if (!key) continue
+    const owner = aliasOwners.get(key)
+    if (owner && owner !== subgenre.id) errors.push(`${subgenre.id}: 별칭 '${label}'이 ${owner}와 충돌합니다.`)
+    else aliasOwners.set(key, subgenre.id)
+  }
 }
 
 const groups = new Set(taxonomy.moods.map((mood) => mood.groupId))

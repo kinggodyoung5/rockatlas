@@ -99,16 +99,16 @@ export function rankIdentityCandidates(band: Pick<Band, 'name' | 'formed' | 'ori
       reasons.push('개인 아티스트 가능성')
     }
 
-    if (candidate.country && candidate.country.toUpperCase() === band.countryCode.toUpperCase()) {
+    if (band.countryCode && candidate.country && candidate.country.toUpperCase() === band.countryCode.toUpperCase()) {
       score += 12
       reasons.push('국가 일치')
     }
     const location = normalize(`${candidate.origin ?? ''} ${candidate.area ?? ''}`)
-    if (location && normalize(band.origin).includes(location)) {
+    if (band.origin && location && normalize(band.origin).includes(location)) {
       score += 10
       reasons.push('결성지 일치')
     }
-    if (candidate.formed) {
+    if (band.formed >= 1900 && candidate.formed) {
       const difference = Math.abs(candidate.formed - band.formed)
       if (difference === 0) {
         score += 15

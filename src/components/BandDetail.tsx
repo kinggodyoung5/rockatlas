@@ -1,7 +1,6 @@
-import { ArrowLeft, CalendarDays, Check, CircleAlert, ExternalLink, Heart, MapPin, Share2, Users } from 'lucide-react'
+import { ArrowLeft, CalendarDays, ExternalLink, Heart, MapPin, Share2, Users } from 'lucide-react'
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
-import { reviewBand } from '../data/review'
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { HitchhikingDirectionId } from '../config/hitchhiking'
 import type { BandDetailCopy } from '../data/siteContent'
@@ -12,10 +11,19 @@ import { BandImage } from './BandImage'
 import { HitchhikingPanel } from './HitchhikingPanel'
 import { RelationMap } from './RelationMap'
 
-const LATEST_ERA = '2020s'
+/** True when the band's own activeYears text ends without a closing year ("...–현재" / "...–present"),
+ *  i.e. it's still going. Only the most recent activeYears segment matters — a reunion clause elsewhere
+ *  in the string ("1994, 2010–현재") shouldn't make an otherwise-ended run look ongoing. */
+export function isStillActive(activeYears: string): boolean {
+  const lastSegment = activeYears.split(',').at(-1) ?? ''
+  return /현재|present/i.test(lastSegment)
+}
 
-/** Collapses consecutive eras with the same subgenre/genre mix into one range row, so a genre that never changed doesn't repeat itself every decade. */
-function groupEraTags(eraTags: BandEraTag[]) {
+/** Collapses consecutive eras with the same subgenre/genre mix into one range row, so a genre that never
+ *  changed doesn't repeat itself every decade. The final group extends to "현재" (present) instead of
+ *  stopping at its last recorded era when the band is still active — a single era tag for a band that's
+ *  never changed genre reads as "1960년대~현재", not just "1960년대". */
+export function groupEraTags(eraTags: BandEraTag[], activeYears: string) {
   const groups: { startEra: BandEraTag['era']; endEra: BandEraTag['era']; subgenres: string[]; note?: string }[] = []
   for (const tag of eraTags) {
     const last = groups.at(-1)
@@ -27,11 +35,14 @@ function groupEraTags(eraTags: BandEraTag[]) {
       groups.push({ startEra: tag.era, endEra: tag.era, subgenres: tag.subgenres, note: tag.note })
     }
   }
-  return groups.map((group) => {
+  const ongoing = isStillActive(activeYears)
+  return groups.map((group, index) => {
     const startLabel = eraById[group.startEra].label
     const endLabel = eraById[group.endEra].label
-    const isOngoing = group.endEra === LATEST_ERA && group.startEra !== group.endEra
-    const label = group.startEra === group.endEra ? startLabel : isOngoing ? `${startLabel}~` : `${startLabel}~${endLabel}`
+    const isLastGroup = index === groups.length - 1
+    const label = isLastGroup && ongoing
+      ? `${startLabel}~현재`
+      : group.startEra === group.endEra ? startLabel : `${startLabel}~${endLabel}`
     return { key: `${group.startEra}-${group.endEra}`, label, subgenres: group.subgenres, note: group.note }
   })
 }
@@ -79,7 +90,6 @@ export function BandDetail({
     : []
   const currentMembers = band.members.filter((member) => member.status !== 'former')
   const formerMembers = band.members.filter((member) => member.status === 'former')
-  const review = reviewBand(band)
   const imageCredit = band.image.credit
   const datedTracks = band.tracks.filter((track): track is Track & { year: number } => typeof track.year === 'number').sort((a, b) => a.year - b.year)
   const orderedTracks = [...band.tracks].sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity))
@@ -140,7 +150,7 @@ export function BandDetail({
               : band.genreIds.map((id) => <strong key={id}>{genreById[id].name}</strong>)}
           </div>
           <div className="era-timeline" aria-label="시대별 장르 변화">
-            {groupEraTags(band.eraTags).map((group) => (
+            {groupEraTags(band.eraTags, band.activeYears).map((group) => (
               <div key={group.key}>
                 <strong>{group.label}</strong>
                 <span>{group.subgenres.map((item) => <em key={item}>{item}</em>)}</span>
@@ -212,23 +222,6 @@ export function BandDetail({
         <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} copy={bandDetailCopy} />
       </div>
 
-      <details className="sources-disclosure shell">
-        <summary><span>출처 · 권리</span><small>검수 {review.passedChecks}/{review.totalChecks}</small></summary>
-        <div className="sources-disclosure-body">
-          <p>데이터와 이미지·영상 권리 상태를 확인하는 운영 정보입니다.</p>
-          <div className="review-progress" aria-label={`검수 기준 ${review.totalChecks}개 중 ${review.passedChecks}개 통과`}><span style={{ width: `${(review.passedChecks / review.totalChecks) * 100}%` }} /></div>
-          <ul className="review-checks">
-            {review.checks.map((check) => (
-              <li key={check.id} className={check.passed ? 'is-passed' : ''}>{check.passed ? <Check size={14} /> : <CircleAlert size={14} />}<span><strong>{check.label}</strong><small>{check.detail}</small></span></li>
-            ))}
-          </ul>
-          <div className="source-links">
-            {band.sources.map((source) => (
-              <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><span>{source.label}<small>{source.externalId ?? source.note ?? '외부 원문 연결'}</small></span><ExternalLink size={13} /></a>
-            ))}
-          </div>
-        </div>
-      </details>
     </main>
   )
 }

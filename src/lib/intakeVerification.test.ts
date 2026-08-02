@@ -43,6 +43,12 @@ describe('intake identity verification', () => {
     expect(ranked[0].id).toBe(musicbrainz[0].id)
   })
 
+  it('does not penalize formation facts before a name-only research has loaded them', () => {
+    const ranked = rankIdentityCandidates({ name: 'Dream Theater', formed: 0, origin: '', countryCode: '' }, musicbrainz)
+    expect(ranked[0].matchScore).toBeGreaterThanOrEqual(75)
+    expect(ranked[0].matchReasons.some((reason) => reason.includes('연도'))).toBe(false)
+  })
+
   it('auto-selects identifiers that cross-link and agrees on core facts', () => {
     const result = buildIdentityVerification(band, wikidata, musicbrainz)
     expect(result.status).toBe('verified')
@@ -85,4 +91,3 @@ describe('intake identity verification', () => {
     expect(result.image.credit.sourceUrl).toBe('File:Dream Theater live.jpg')
   })
 })
-

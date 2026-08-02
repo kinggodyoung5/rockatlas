@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-23T14:22:46.498Z",
+  "updatedAt": "2026-08-01T14:30:00.000+09:00",
   "genres": [
     {
       "id": "classic-roots-rock",
@@ -20,6 +20,11 @@
         "country-rock",
         "southern-rock",
         "roots-rock",
+        "rock-and-roll",
+        "heartland-rock",
+        "surf-rock",
+        "rockabilly",
+        "indie-folk",
         "mod-rock",
         "rock-opera"
       ],
@@ -78,6 +83,8 @@
         "radio-rock",
         "adult-oriented-rock",
         "jazz-rock",
+        "power-pop",
+        "folk-pop",
         "post-britpop",
         "electropop",
         "synthpop"
@@ -105,14 +112,18 @@
         "art-rock",
         "progressive-metal",
         "psychedelic-rock",
+        "acid-rock",
+        "psychedelic-pop",
         "neo-psychedelia",
+        "krautrock",
         "space-rock",
         "stoner-rock",
         "experimental-rock",
         "symphonic-prog",
         "neo-prog",
         "post-prog",
-        "art-metal"
+        "art-metal",
+        "avant-garde-metal"
       ],
       "quickMoodIds": [
         "technical-complex",
@@ -135,13 +146,18 @@
       "subgenreIds": [
         "punk-rock",
         "hardcore-punk",
+        "melodic-hardcore",
         "pop-punk",
         "emo",
+        "screamo",
         "post-hardcore",
         "skate-punk",
         "ska-punk",
         "garage-punk",
         "anarcho-punk",
+        "proto-punk",
+        "riot-grrrl",
+        "folk-punk",
         "reggae-rock"
       ],
       "quickMoodIds": [
@@ -169,6 +185,8 @@
         "garage-rock-revival",
         "jangle-pop",
         "indie-pop",
+        "lo-fi-rock",
+        "chamber-pop",
         "dance-rock",
         "dance-punk"
       ],
@@ -197,7 +215,9 @@
         "darkwave",
         "coldwave",
         "post-punk-revival",
-        "no-wave"
+        "no-wave",
+        "trip-hop",
+        "madchester"
       ],
       "quickMoodIds": [
         "cold-urban",
@@ -252,6 +272,8 @@
         "post-rock",
         "slowcore",
         "ambient-rock",
+        "ethereal-wave",
+        "post-metal",
         "math-rock",
         "instrumental-rock"
       ],
@@ -331,11 +353,15 @@
         "melodic-death-metal",
         "black-metal",
         "doom-metal",
+        "stoner-metal",
+        "drone-metal",
         "death-doom",
         "grindcore",
         "blackened-death-metal",
         "technical-death-metal",
-        "progressive-death-metal"
+        "progressive-death-metal",
+        "blackgaze",
+        "symphonic-black-metal"
       ],
       "quickMoodIds": [
         "aggressive-heavy",
@@ -363,7 +389,10 @@
         "industrial-metal",
         "industrial-rock",
         "electronicore",
+        "rap-rock",
         "rap-metal",
+        "funk-metal",
+        "djent",
         "neue-deutsche-harte"
       ],
       "quickMoodIds": [
@@ -696,6 +725,11 @@
       "englishName": "No Wave"
     },
     {
+      "id": "trip-hop",
+      "name": "트립합",
+      "englishName": "Trip-Hop"
+    },
+    {
       "id": "alternative-rock",
       "name": "얼터너티브 록",
       "englishName": "Alternative Rock"
@@ -929,6 +963,170 @@
       "id": "neue-deutsche-harte",
       "name": "노이에 도이체 헤르테",
       "englishName": "Neue Deutsche Härte"
+    },
+    {
+      "id": "rock-and-roll",
+      "name": "로큰롤",
+      "englishName": "Rock and Roll",
+      "aliases": ["Rock & Roll", "록앤롤", "락앤롤"]
+    },
+    {
+      "id": "heartland-rock",
+      "name": "하트랜드 록",
+      "englishName": "Heartland Rock"
+    },
+    {
+      "id": "surf-rock",
+      "name": "서프 록",
+      "englishName": "Surf Rock",
+      "aliases": ["Surf Music", "서프 음악"]
+    },
+    {
+      "id": "rockabilly",
+      "name": "로커빌리",
+      "englishName": "Rockabilly",
+      "aliases": ["록커빌리"]
+    },
+    {
+      "id": "indie-folk",
+      "name": "인디 포크",
+      "englishName": "Indie Folk",
+      "aliases": ["Indie-Folk"]
+    },
+    {
+      "id": "power-pop",
+      "name": "파워 팝",
+      "englishName": "Power Pop",
+      "aliases": ["Power-Pop"]
+    },
+    {
+      "id": "folk-pop",
+      "name": "포크 팝",
+      "englishName": "Folk Pop",
+      "aliases": ["Folk-Pop"]
+    },
+    {
+      "id": "acid-rock",
+      "name": "애시드 록",
+      "englishName": "Acid Rock",
+      "aliases": ["Acid-Rock", "에시드 록"]
+    },
+    {
+      "id": "psychedelic-pop",
+      "name": "사이키델릭 팝",
+      "englishName": "Psychedelic Pop",
+      "aliases": ["사이케델릭 팝", "사이케딜릭 팝", "Psych Pop"]
+    },
+    {
+      "id": "krautrock",
+      "name": "크라우트록",
+      "englishName": "Krautrock",
+      "aliases": ["Kraut Rock", "크라우트 록"]
+    },
+    {
+      "id": "avant-garde-metal",
+      "name": "아방가르드 메탈",
+      "englishName": "Avant-Garde Metal",
+      "aliases": ["Avant Garde Metal", "실험적 메탈"]
+    },
+    {
+      "id": "melodic-hardcore",
+      "name": "멜로딕 하드코어",
+      "englishName": "Melodic Hardcore",
+      "aliases": ["Melodic Hardcore Punk", "멜로딕 하드코어 펑크"]
+    },
+    {
+      "id": "screamo",
+      "name": "스크리모",
+      "englishName": "Screamo"
+    },
+    {
+      "id": "proto-punk",
+      "name": "프로토 펑크",
+      "englishName": "Proto-Punk",
+      "aliases": ["Proto Punk"]
+    },
+    {
+      "id": "riot-grrrl",
+      "name": "라이엇 걸",
+      "englishName": "Riot Grrrl",
+      "aliases": ["Riot Girl", "라이엇 그럴"]
+    },
+    {
+      "id": "folk-punk",
+      "name": "포크 펑크",
+      "englishName": "Folk Punk",
+      "aliases": ["Folk-Punk"]
+    },
+    {
+      "id": "lo-fi-rock",
+      "name": "로파이 록",
+      "englishName": "Lo-Fi Rock",
+      "aliases": ["Lo-Fi", "Lofi Rock", "로파이"]
+    },
+    {
+      "id": "chamber-pop",
+      "name": "챔버 팝",
+      "englishName": "Chamber Pop",
+      "aliases": ["Chamber-Pop"]
+    },
+    {
+      "id": "madchester",
+      "name": "매드체스터",
+      "englishName": "Madchester"
+    },
+    {
+      "id": "ethereal-wave",
+      "name": "에테리얼 웨이브",
+      "englishName": "Ethereal Wave",
+      "aliases": ["Etherealwave", "에테리얼웨이브"]
+    },
+    {
+      "id": "post-metal",
+      "name": "포스트 메탈",
+      "englishName": "Post-Metal",
+      "aliases": ["Post Metal"]
+    },
+    {
+      "id": "stoner-metal",
+      "name": "스토너 메탈",
+      "englishName": "Stoner Metal",
+      "aliases": ["Stoner Doom", "스토너 둠"]
+    },
+    {
+      "id": "drone-metal",
+      "name": "드론 메탈",
+      "englishName": "Drone Metal",
+      "aliases": ["Drone Doom", "드론 둠"]
+    },
+    {
+      "id": "blackgaze",
+      "name": "블랙게이즈",
+      "englishName": "Blackgaze",
+      "aliases": ["Black Gaze", "블랙 게이즈"]
+    },
+    {
+      "id": "symphonic-black-metal",
+      "name": "심포닉 블랙 메탈",
+      "englishName": "Symphonic Black Metal"
+    },
+    {
+      "id": "rap-rock",
+      "name": "랩 록",
+      "englishName": "Rap Rock",
+      "aliases": ["Rap-Rock", "랩락"]
+    },
+    {
+      "id": "funk-metal",
+      "name": "훵크 메탈",
+      "englishName": "Funk Metal",
+      "aliases": ["Funk-Metal"]
+    },
+    {
+      "id": "djent",
+      "name": "젠트",
+      "englishName": "Djent",
+      "aliases": ["디젠트"]
     }
   ],
   "moods": [

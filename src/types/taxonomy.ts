@@ -63,6 +63,7 @@ export interface TaxonomySubgenre {
   id: SubgenreId
   name: string
   englishName: string
+  aliases?: string[]
 }
 
 export interface TaxonomyMood {

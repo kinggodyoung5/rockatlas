@@ -2,10 +2,12 @@ import { AlertTriangle, FileDown, FileUp, History, RotateCcw, Save, ShieldCheck,
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { genres } from '../data/genres'
 import { taxonomyGenres, taxonomySubgenres } from '../data/taxonomy'
+import { resolveSubgenreId } from '../lib/bandIntake'
 import { studioFetchJson } from '../lib/studioApiClient'
 import { getMissingTrackGuides, getStudioDiagnostics } from '../lib/studioDiagnostics'
 import type { Band, EraId, GenreId, PendingRelation, Track } from '../types/music'
 import { LinkHealthPanel, type LinkHealthSummary } from './LinkHealthPanel'
+import { CatalogFactAuditPanel } from './CatalogFactAuditPanel'
 
 export interface DeletedBandRecord {
   band: Band
@@ -66,12 +68,13 @@ function csvBand(row: Record<string, string>, index: number): Band {
   const primaryGenre = genres.some((genre) => genre.id === requestedGenre) ? requestedGenre : 'classic-rock'
   const subgenres = list(row.subgenres)
   const taxonomyPrimary = taxonomyByLegacy[primaryGenre]
-  const taxonomySubgenreIds = taxonomySubgenres.filter((item) => subgenres.some((value) => value === item.id || value.toLocaleLowerCase() === item.name.toLocaleLowerCase() || value.toLocaleLowerCase() === item.englishName.toLocaleLowerCase())).map((item) => item.id)
+  const taxonomySubgenreIds = [...new Set(subgenres.map(resolveSubgenreId).filter((id): id is string => Boolean(id)))]
+  const normalizedSubgenres = taxonomySubgenreIds.map((id) => taxonomySubgenres.find((item) => item.id === id)?.name ?? id)
   return {
     id: slugify(row.id || name) || `csv-band-${Date.now()}-${index}`,
     name, formed: year, origin: row.origin || '', countryCode: (row.countryCode || '').toUpperCase(), activeYears: row.activeYears || `${year}–현재`,
-    primaryGenre, genreIds: [primaryGenre], subgenres, tags: list(row.tags),
-    eraTags: [{ era: eraFromYear(year), genreIds: [primaryGenre], subgenres }],
+    primaryGenre, genreIds: [primaryGenre], subgenres: normalizedSubgenres, tags: list(row.tags),
+    eraTags: [{ era: eraFromYear(year), genreIds: [primaryGenre], subgenres: normalizedSubgenres }],
     summary: row.summary || '', style: row.style || '',
     image: { wikipediaTitle: name, alt: `${name} 밴드 사진`, credit: { sourceUrl: '', license: '검토 필요', reviewStatus: 'needs-review' } },
     members: [], tracks: [], relations: [],
@@ -144,6 +147,7 @@ export function DataManagerPanel({ bands, selectedBandId, trash, pendingRelation
       </div>
 
       <div className="studio-manager-grid">
+        <CatalogFactAuditPanel bands={bands} selectedBandId={selectedBandId} onSelectBand={onSelectBand} onUpdateBand={onUpdateBand} />
         <details open><summary><AlertTriangle size={14} /> 자동 진단 <em>{warnings.length}</em></summary><div className="studio-warning-list">{warnings.length ? warnings.map((warning, index) => <button key={`${warning.message}-${index}`} data-severity={warning.severity} onClick={() => { const band = bands.find((item) => item.id === warning.bandId); if (band) onSelectBand(band) }}><strong>{warning.severity === 'error' ? '오류' : '주의'}</strong><span>{warning.message}</span></button>) : <p>중복·관계·공개 검수 경고가 없습니다.</p>}</div></details>
 
         <details><summary><Trash2 size={14} /> 삭제·복구 <em>{trash.length}</em></summary><div className="studio-trash">

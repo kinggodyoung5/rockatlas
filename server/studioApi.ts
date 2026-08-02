@@ -47,8 +47,32 @@ type ExternalSearchCandidate = {
   wikipediaUrl?: string
 }
 
+type FactAuditBandPayload = {
+  id?: unknown
+  name?: unknown
+  formed?: unknown
+  origin?: unknown
+  countryCode?: unknown
+  activeYears?: unknown
+  sources?: unknown
+  members?: unknown
+  tracks?: unknown
+}
+
+type FactEvidence = {
+  id: 'formed' | 'country' | 'origin' | 'active-end'
+  label: string
+  localValue: string
+  externalValue: string
+  status: 'verified' | 'review' | 'missing'
+  confidence: 'high' | 'medium' | 'low'
+  sources: string[]
+  message: string
+}
+
 let preflightInProgress = false
 const externalSearchCache = new Map<string, { expiresAt: number; results: ExternalSearchCandidate[] }>()
+const factAuditCache = new Map<string, { expiresAt: number; payload: unknown }>()
 
 const isLocalRequest = (origin: string) => !origin || /^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(origin)
 
@@ -216,6 +240,171 @@ function wikidataYear(entity: Record<string, unknown>, property: string) {
 function wikidataLabel(entity: Record<string, unknown> | undefined) {
   const labels = entity?.labels as Record<string, { value?: string }> | undefined
   return labels?.ko?.value ?? labels?.en?.value ?? ''
+}
+
+const normalizedText = (value: string) => value
+  .toLocaleLowerCase()
+  .normalize('NFKD')
+  .replace(/\p{Mark}+/gu, '')
+  .replace(/[^a-z0-9가-힣]+/g, '')
+
+function sourceExternalId(sources: unknown, publisher: string) {
+  if (!Array.isArray(sources)) return ''
+  const source = sources.find((item) => item && typeof item === 'object' && String((item as Record<string, unknown>).publisher ?? '') === publisher) as Record<string, unknown> | undefined
+  return String(source?.externalId ?? '').trim()
+}
+
+function factEvidence(
+  id: FactEvidence['id'],
+  label: string,
+  localValue: string,
+  externalValues: Array<{ source: string; value?: string }>,
+  similar: (local: string, external: string) => boolean = (local, external) => normalizedText(local) === normalizedText(external),
+): FactEvidence {
+  const available = externalValues.filter((item): item is { source: string; value: string } => Boolean(item.value))
+  if (!available.length) return { id, label, localValue, externalValue: '', status: 'missing', confidence: 'low', sources: [], message: '외부 구조화 자료에 값이 없습니다.' }
+  const groups = new Map<string, Array<{ source: string; value: string }>>()
+  available.forEach((item) => {
+    const key = normalizedText(item.value)
+    groups.set(key, [...(groups.get(key) ?? []), item])
+  })
+  const strongest = [...groups.values()].sort((left, right) => right.length - left.length)[0]
+  const externalValue = strongest[0].value
+  const matches = similar(localValue, externalValue)
+  const confidence = strongest.length >= 2 ? 'high' : 'medium'
+  return {
+    id,
+    label,
+    localValue,
+    externalValue,
+    status: matches ? 'verified' : 'review',
+    confidence,
+    sources: strongest.map((item) => item.source),
+    message: matches
+      ? `${strongest.map((item) => item.source).join('·')} 자료와 일치합니다.`
+      : `${strongest.map((item) => item.source).join('·')} 값과 달라 운영자 확인이 필요합니다.`,
+  }
+}
+
+async function fetchJsonWithRetry<T>(url: URL, signal: AbortSignal, attempt = 0): Promise<T> {
+  const result = await fetch(url, { signal, headers: { 'User-Agent': 'RockAtlasStudio/0.2 (local catalog editor; personal project)', Accept: 'application/json' } })
+  if (result.ok) return result.json() as Promise<T>
+  if ((result.status === 429 || result.status >= 500) && attempt < 2) {
+    await new Promise((resolveDelay) => setTimeout(resolveDelay, 1_100 * (attempt + 1)))
+    return fetchJsonWithRetry<T>(url, signal, attempt + 1)
+  }
+  throw new Error(`${url.hostname} 응답 오류 (${result.status})`)
+}
+
+async function buildFactAudit(band: FactAuditBandPayload, signal: AbortSignal) {
+  const id = String(band.id ?? '').trim()
+  const name = String(band.name ?? '').trim()
+  const wikidataId = sourceExternalId(band.sources, 'Wikidata')
+  const musicBrainzId = sourceExternalId(band.sources, 'MusicBrainz')
+  if (!name) throw new Error('밴드 이름이 필요합니다.')
+
+  let wikidataEntity: Record<string, unknown> | undefined
+  let wikidataError = ''
+  if (/^Q\d+$/.test(wikidataId)) {
+    try {
+      const url = new URL('https://www.wikidata.org/w/api.php')
+      url.search = new URLSearchParams({ action: 'wbgetentities', ids: wikidataId, props: 'labels|aliases|claims|sitelinks', languages: 'en|ko', sitefilter: 'enwiki|kowiki', format: 'json', origin: '*' }).toString()
+      const payload = await fetchJsonWithRetry<{ entities?: Record<string, Record<string, unknown>> }>(url, signal)
+      wikidataEntity = payload.entities?.[wikidataId]
+      if (!wikidataEntity || 'missing' in wikidataEntity) wikidataError = 'Wikidata 항목이 존재하지 않습니다.'
+    } catch (error) { wikidataError = error instanceof Error ? error.message : 'Wikidata 확인 실패' }
+  } else wikidataError = 'Wikidata ID가 없거나 형식이 잘못되었습니다.'
+
+  type MbRelation = { type?: string; direction?: string; begin?: string | null; end?: string | null; artist?: { id?: string; name?: string }; url?: { resource?: string } }
+  type MbReleaseGroup = { id?: string; title?: string; 'first-release-date'?: string; 'primary-type'?: string }
+  type MbArtist = { id?: string; name?: string; type?: string; country?: string; aliases?: Array<{ name?: string }>; area?: { name?: string }; 'begin-area'?: { name?: string }; 'life-span'?: { begin?: string; end?: string; ended?: boolean }; relations?: MbRelation[]; 'release-groups'?: MbReleaseGroup[] }
+  let musicBrainz: MbArtist | undefined
+  let musicBrainzError = ''
+  if (/^[0-9a-f-]{36}$/i.test(musicBrainzId)) {
+    try {
+      const url = new URL(`https://musicbrainz.org/ws/2/artist/${musicBrainzId}`)
+      url.search = new URLSearchParams({ inc: 'aliases+artist-rels+release-groups+url-rels', fmt: 'json' }).toString()
+      musicBrainz = await fetchJsonWithRetry<MbArtist>(url, signal)
+    } catch (error) { musicBrainzError = error instanceof Error ? error.message : 'MusicBrainz 확인 실패' }
+  } else musicBrainzError = 'MusicBrainz ID가 없거나 형식이 잘못되었습니다.'
+
+  const labels = wikidataEntity?.labels as Record<string, { value?: string }> | undefined
+  const aliases = wikidataEntity?.aliases as Record<string, Array<{ value?: string }>> | undefined
+  const wikidataNames = [labels?.en?.value, labels?.ko?.value, ...(aliases?.en ?? []).map((item) => item.value), ...(aliases?.ko ?? []).map((item) => item.value)].filter((value): value is string => Boolean(value))
+  const nameMatchesWikidata = !wikidataEntity || wikidataNames.some((value) => normalizedText(value) === normalizedText(name))
+  const musicBrainzNames = [musicBrainz?.name, ...(musicBrainz?.aliases ?? []).map((alias) => alias.name)].filter((value): value is string => Boolean(value))
+  const nameMatchesMusicBrainz = !musicBrainz?.name || musicBrainzNames.some((value) => normalizedText(value) === normalizedText(name))
+  const linkedMusicBrainzId = wikidataEntity ? wikidataString(wikidataEntity, 'P434') : ''
+  const linkedAcrossSources = Boolean(linkedMusicBrainzId && musicBrainzId && linkedMusicBrainzId === musicBrainzId)
+
+  const localFormed = String(band.formed ?? '')
+  // A MusicBrainz Person life-span starts at birth, not at career debut.
+  // Only Group records can safely supply a formation/end year here.
+  const isMusicBrainzGroup = musicBrainz?.type === 'Group'
+  const mbFormed = isMusicBrainzGroup ? musicBrainz?.['life-span']?.begin?.slice(0, 4) ?? '' : ''
+  const wdFormed = wikidataEntity ? String(wikidataYear(wikidataEntity, 'P571') ?? '') : ''
+  const localCountry = String(band.countryCode ?? '').toUpperCase()
+  const localOrigin = String(band.origin ?? '')
+  const mbOrigin = musicBrainz?.['begin-area']?.name ?? musicBrainz?.area?.name ?? ''
+  const localEnd = String(band.activeYears ?? '').match(/(\d{4})(?!.*\d)/)?.[1] ?? ''
+  const mbEnd = isMusicBrainzGroup ? musicBrainz?.['life-span']?.end?.slice(0, 4) ?? '' : ''
+  const facts: FactEvidence[] = [
+    factEvidence('formed', '결성 연도', localFormed, [{ source: 'MusicBrainz', value: mbFormed }, { source: 'Wikidata', value: wdFormed }], (local, external) => Math.abs(Number(local) - Number(external)) <= 1),
+    factEvidence('country', '국가 코드', localCountry, [{ source: 'MusicBrainz', value: musicBrainz?.country }]),
+    factEvidence('origin', '결성지', localOrigin, [{ source: 'MusicBrainz', value: mbOrigin }], (local, external) => normalizedText(local).includes(normalizedText(external)) || normalizedText(external).includes(normalizedText(local))),
+    factEvidence('active-end', '활동 종료 연도', localEnd, [{ source: 'MusicBrainz', value: mbEnd }]),
+  ]
+
+  const memberRelations = (musicBrainz?.relations ?? []).filter((relation) => relation.type === 'member of band' && relation.direction === 'backward' && relation.artist?.name)
+  const externalMembers = memberRelations.map((relation) => ({ name: relation.artist!.name!, begin: relation.begin ?? '', end: relation.end ?? '' }))
+  const albums = (musicBrainz?.['release-groups'] ?? [])
+    .filter((item) => item.title && item['primary-type'] === 'Album')
+    .map((item) => ({ id: item.id ?? '', title: item.title!, year: Number(item['first-release-date']?.slice(0, 4)) || undefined }))
+    .sort((left, right) => (left.year ?? 9999) - (right.year ?? 9999) || left.title.localeCompare(right.title))
+  const albumByName = new Map(albums.map((album) => [normalizedText(album.title), album]))
+  // Linked release groups are capped by MusicBrainz. When the cap is reached,
+  // an unmatched local album is inconclusive rather than an error.
+  const albumListIsComplete = albums.length < 25
+  const tracks = Array.isArray(band.tracks) ? band.tracks as Array<Record<string, unknown>> : []
+  const trackChecks = tracks.map((track) => {
+    const album = String(track.album ?? '').trim()
+    const matchedAlbum = album ? albumByName.get(normalizedText(album)) : undefined
+    const year = Number(track.year) || undefined
+    return {
+      id: String(track.id ?? ''), title: String(track.title ?? ''), album, year,
+      status: !album ? 'missing' : !matchedAlbum ? (albumListIsComplete ? 'review' : 'missing') : year && matchedAlbum.year && Math.abs(year - matchedAlbum.year) > 1 ? 'review' : 'verified',
+      externalAlbum: matchedAlbum?.title ?? '', externalYear: matchedAlbum?.year,
+    }
+  })
+  const localMembers = Array.isArray(band.members) ? band.members as Array<Record<string, unknown>> : []
+  const externalMemberNames = new Set(externalMembers.map((member) => normalizedText(member.name)))
+  const memberChecks = localMembers.map((member) => ({
+    name: String(member.name ?? ''),
+    status: externalMemberNames.has(normalizedText(String(member.name ?? ''))) ? 'verified' : 'missing',
+  }))
+  const issues = [
+    ...(wikidataError ? [{ severity: 'error', code: 'wikidata', message: wikidataError }] : []),
+    ...(musicBrainzError ? [{ severity: 'error', code: 'musicbrainz', message: musicBrainzError }] : []),
+    ...(!nameMatchesWikidata ? [{ severity: 'error', code: 'wikidata-name', message: `Wikidata 이름이 ${name}과 일치하지 않습니다.` }] : []),
+    ...(!nameMatchesMusicBrainz ? [{ severity: 'error', code: 'musicbrainz-name', message: `MusicBrainz 이름 “${musicBrainz?.name}”이 ${name}과 일치하지 않습니다.` }] : []),
+    ...(wikidataEntity && musicBrainz && !linkedAcrossSources ? [{ severity: 'warning', code: 'cross-link', message: 'Wikidata가 현재 MusicBrainz ID를 직접 가리키지 않습니다.' }] : []),
+    ...facts.filter((fact) => fact.status === 'review').map((fact) => ({ severity: 'warning', code: `fact-${fact.id}`, message: `${fact.label}: 로컬 “${fact.localValue || '없음'}” ↔ 외부 “${fact.externalValue}”` })),
+    ...trackChecks.filter((track) => track.status === 'review').map((track) => ({ severity: 'warning', code: `track-${track.id}`, message: `${track.title}: 앨범·발매연도를 MusicBrainz 음반 목록에서 일치시키지 못했습니다.` })),
+  ]
+  return {
+    bandId: id,
+    bandName: name,
+    checkedAt: new Date().toISOString(),
+    status: issues.some((issue) => issue.severity === 'error') ? 'error' : issues.length ? 'review' : 'verified',
+    linkedAcrossSources,
+    identity: { wikidataId, musicBrainzId, wikidataName: wikidataNames[0] ?? '', musicBrainzName: musicBrainz?.name ?? '' },
+    facts,
+    albums,
+    externalMembers,
+    memberChecks,
+    trackChecks,
+    issues,
+  }
 }
 
 async function fetchWikidataCandidates(query: string, signal: AbortSignal): Promise<ExternalSearchCandidate[]> {
@@ -459,6 +648,32 @@ export function studioApi(): Plugin {
         }
       })
 
+      server.middlewares.use('/api/studio/fact-audit', async (request, response, next) => {
+        if (request.method !== 'POST') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('사실 검수는 로컬 Studio에서만 허용됩니다.')
+        }
+        try {
+          const payload = await readBody(request, 300_000)
+          const band = payload.band as FactAuditBandPayload | undefined
+          if (!band || typeof band !== 'object' || Array.isArray(band)) throw new Error('검수할 밴드 정보가 필요합니다.')
+          const cacheKey = `${String(band.id ?? band.name ?? '')}:${sourceExternalId(band.sources, 'Wikidata')}:${sourceExternalId(band.sources, 'MusicBrainz')}`
+          const cached = factAuditCache.get(cacheKey)
+          if (cached && cached.expiresAt > Date.now()) return json(response, { ...(cached.payload as Record<string, unknown>), cached: true })
+          const controller = new AbortController()
+          const timeout = setTimeout(() => controller.abort(), 25_000)
+          try {
+            const result = await buildFactAudit(band, controller.signal)
+            factAuditCache.set(cacheKey, { expiresAt: Date.now() + 24 * 60 * 60 * 1000, payload: result })
+            json(response, result)
+          } finally { clearTimeout(timeout) }
+        } catch (error) {
+          response.statusCode = 502
+          response.end(error instanceof Error && error.name === 'AbortError' ? '외부 사실 검수가 시간 안에 끝나지 않았습니다.' : error instanceof Error ? error.message : '외부 사실 검수 실패')
+        }
+      })
+
       server.middlewares.use('/api/studio/external-search', async (request, response, next) => {
         if (request.method !== 'GET') return next()
         const requestUrl = new URL(request.url ?? '', 'http://localhost')
@@ -493,7 +708,7 @@ export function studioApi(): Plugin {
               country: item.country ?? '',
               origin: item['begin-area']?.name ?? '',
               area: item['begin-area']?.name ?? item.area?.name ?? '',
-              formed: Number.parseInt(item['life-span']?.begin?.slice(0, 4) ?? '', 10) || undefined,
+              formed: item.type === 'Group' ? Number.parseInt(item['life-span']?.begin?.slice(0, 4) ?? '', 10) || undefined : undefined,
               begin: item['life-span']?.begin ?? '',
               end: item['life-span']?.end ?? '',
               ended: Boolean(item['life-span']?.ended),

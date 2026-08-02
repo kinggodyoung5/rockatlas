@@ -24,7 +24,6 @@ export interface HitchhikingRecommendation {
 export interface AvailableHitchhikingDirection {
   direction: HitchhikingDirection
   sourceSignal: number
-  editorialBridge: boolean
   candidateCount: number
 }
 
@@ -35,7 +34,9 @@ interface RecommendationOptions {
 
 const validJourneyVia = new Set<string>([...HITCHHIKING_DIRECTIONS.map((direction) => direction.id), 'connection'])
 const safeBandIdPattern = /^[a-z0-9][a-z0-9-]*$/i
-const directionTriggerWeight = 0.5
+const directionEntryScore = 3
+const minimumForwardGain = 0.2
+const ceilingDirectionLevel = 4
 
 function moodEntries(direction: HitchhikingDirection) {
   return Object.entries(direction.moodWeights) as Array<[MoodId, number]>
@@ -51,13 +52,7 @@ export function directionLevel(band: Band, direction: HitchhikingDirection) {
 
 function strongestSourceSignal(band: Band, direction: HitchhikingDirection) {
   const scores = band.taxonomyV2?.moodScores ?? {}
-  return moodEntries(direction).reduce((strongest, [moodId, weight]) => {
-    const rawScore = scores[moodId] ?? 0
-    // 낮은 가중치의 분위기는 추천 순위를 다듬는 보조 신호일 뿐,
-    // 그 분위기 하나만으로 방향 버튼을 만들지는 않는다.
-    if (rawScore < 3 || weight < directionTriggerWeight) return strongest
-    return Math.max(strongest, rawScore * (0.65 + weight * 0.35))
-  }, 0)
+  return direction.triggerMoodIds.reduce((strongest, moodId) => Math.max(strongest, scores[moodId] ?? 0), 0)
 }
 
 /**
@@ -66,25 +61,19 @@ function strongestSourceSignal(band: Band, direction: HitchhikingDirection) {
  * 한 단계 건너갈 수 있는 방향만 최대 네 개까지 보여준다.
  */
 export function availableHitchhikingDirections(subject: Band, candidates: Band[], limit = 4): AvailableHitchhikingDirection[] {
-  const candidateById = new Map(candidates.map((candidate) => [candidate.id, candidate]))
   return HITCHHIKING_DIRECTIONS
     .map((direction): AvailableHitchhikingDirection & { rank: number } => {
       const sourceSignal = strongestSourceSignal(subject, direction)
       const subjectLevel = directionLevel(subject, direction)
-      const editorialBridge = subject.relations.some((relation) => {
-        const target = candidateById.get(relation.targetBandId)
-        return Boolean(target && strongestSourceSignal(target, direction) >= 3 && directionLevel(target, direction) > subjectLevel)
-      })
       const candidateCount = recommendHitchhikingBands(subject, candidates, direction.id, { limit: 3 }).length
       return {
         direction,
         sourceSignal: Math.round(sourceSignal * 10) / 10,
-        editorialBridge,
         candidateCount,
-        rank: sourceSignal * 10 + directionLevel(subject, direction) * 4 + (editorialBridge ? 18 : 0),
+        rank: sourceSignal * 10 + directionLevel(subject, direction) * 4,
       }
     })
-    .filter((item) => (item.sourceSignal >= 3 || item.editorialBridge) && item.candidateCount >= 3)
+    .filter((item) => item.sourceSignal >= directionEntryScore && item.candidateCount >= 3)
     .sort((left, right) => right.rank - left.rank || left.direction.label.localeCompare(right.direction.label, 'ko'))
     .slice(0, limit)
     .map(({ rank: _rank, ...item }) => item)
@@ -128,6 +117,7 @@ export function recommendHitchhikingBands(
 ) {
   const direction = hitchhikingDirectionById[directionId]
   const subjectLevel = directionLevel(subject, direction)
+  const subjectAtCeiling = strongestSourceSignal(subject, direction) >= ceilingDirectionLevel
   const visited = new Set(options.visitedIds ?? [])
   const limit = options.limit ?? 12
 
@@ -172,7 +162,9 @@ export function recommendHitchhikingBands(
         ],
       }
     })
-    .filter((item) => item.directionLevel > 0)
+    .filter((item) => strongestSourceSignal(item.band, direction) >= directionEntryScore
+      && (item.directionGain >= minimumForwardGain
+        || subjectAtCeiling))
     .sort((left, right) => {
       const visitOrder = Number(visited.has(left.band.id)) - Number(visited.has(right.band.id))
       return visitOrder || right.score - left.score || right.directionGain - left.directionGain || left.band.name.localeCompare(right.band.name, 'en')

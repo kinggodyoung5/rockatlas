@@ -4,6 +4,7 @@ import { buildGeminiResearchPrompt, finalizeIntakeBand, inspectBandIntake, looku
 import { applyVerifiedIdentity, buildIdentityVerification, searchIdentityVerification, type IdentityProvider, type IntakeFactCheck, type IntakeIdentityVerification } from '../lib/intakeVerification'
 import type { Band, PendingRelation } from '../types/music'
 import { IntakeVerificationCard } from './IntakeVerificationCard'
+import { BandResearchStarter } from './BandResearchStarter'
 
 interface BandIntakePanelProps {
   bands: Band[]
@@ -118,7 +119,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
   const copyPrompt = async () => {
     try {
       await navigator.clipboard.writeText(buildGeminiResearchPrompt())
-      setMessage('Gem 지침 v4를 복사했습니다. 기존 Gem 지침을 교체하세요. 이제 정확한 ID·이미지·영상 링크는 Gemini가 아니라 Studio가 직접 찾습니다.')
+      setMessage('Gem 지침 v7을 복사했습니다. 기존 지침을 교체하세요. Studio 검증 자료와 정식 세부 장르 ID를 우선하고, 관계·외부 ID·링크는 Gemini가 만들지 않습니다.')
     } catch {
       setMessage('복사 권한이 없어 실패했습니다. 브라우저의 클립보드 권한을 확인하세요.')
     }
@@ -219,6 +220,8 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
     <section id="intake" className="studio-form-section band-intake-panel">
       <div className="studio-section-heading"><span><Inbox size={22} /></span><div><h3>새 밴드 검수함 2.0</h3><p>Gemini는 음악 내용 초안만 만들고, 정확한 외부 ID·사진·출처는 Studio가 직접 찾아 교차 확인합니다. 애매한 항목만 운영자가 고르면 됩니다.</p></div></div>
 
+      <BandResearchStarter />
+
       <ol className="intake-steps">
         <li><strong>1</strong><span><b>Gem 지침 최초 1회 등록</b>복사한 내용을 Gemini의 Gem 지침에 저장합니다.</span></li>
         <li><strong>2</strong><span><b>결과 붙여넣기</b>코드 블록이나 설명이 섞여 있어도 자동으로 JSON을 찾습니다.</span></li>
@@ -226,7 +229,7 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
       </ol>
 
       <div className="intake-actions">
-        <button type="button" className="is-primary" onClick={() => void copyPrompt()}><Clipboard size={16} /> Gemini Gem 지침 v4 복사</button>
+        <button type="button" className="is-primary" onClick={() => void copyPrompt()}><Clipboard size={16} /> Gemini Gem 지침 v7 복사</button>
         <button type="button" onClick={() => fileRef.current?.click()}><Upload size={16} /> JSON 파일 선택</button>
         <input ref={fileRef} hidden type="file" accept="application/json,.json,text/plain" onChange={(event) => event.target.files?.[0] && void loadFile(event.target.files[0])} />
         <button type="button" onClick={clear}><Trash2 size={15} /> 비우기</button>
@@ -263,6 +266,9 @@ export function BandIntakePanel({ bands, onAddBands }: BandIntakePanelProps) {
                 <div><strong>업적·발자취</strong><p>{candidate.band.summary || '소개문 없음'}</p></div>
                 <div><strong>어떤 음악인가요</strong><p>{candidate.band.style || '음악 설명 없음'}</p></div>
                 <div><strong>분류</strong><p>{candidate.band.taxonomyV2?.primaryGenreId} · {candidate.band.taxonomyV2?.subgenreIds.join(', ') || '세부 장르 없음'} · 분위기 {Object.keys(candidate.band.taxonomyV2?.moodScores ?? {}).length}개</p></div>
+                <div><strong>장르 변화</strong><p>{candidate.band.eraTags.length > 1
+                  ? candidate.band.eraTags.map((tag) => `${tag.era}: ${tag.subgenres.join('·')}${tag.note ? ` — ${tag.note}` : ''}`).join(' / ')
+                  : '뚜렷한 장기 노선 변화 없음 — 결성 시대의 핵심 장르를 현재까지 유지하는 것으로 처리'}</p></div>
                 <div><strong>관계 후보</strong><p>{candidate.band.relations.length || candidate.pendingRelations.length ? [...candidate.band.relations.map((relation) => `${relation.targetBandId} (${relation.kind})`), ...candidate.pendingRelations.map((relation) => `${relation.targetBandId} (${relation.kind}, 추가 대기)`) ].join(' · ') : '없음'}</p></div>
                 <label><input type="checkbox" checked={editorialApprovedKeys.has(candidate.key)} onChange={() => toggleEditorialApproval(candidate)} /> 위 소개·분류·관계 후보를 읽고 공개로 추가</label>
               </details>}

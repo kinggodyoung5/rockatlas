@@ -89,7 +89,7 @@ export function HitchhikingPanel({
         style={{ '--direction-count': availableDirections.length } as React.CSSProperties}
         aria-label="추천 방향 선택"
       >
-        {availableDirections.map(({ direction: item, editorialBridge }) => {
+        {availableDirections.map(({ direction: item }) => {
           const Icon = directionIcons[item.iconKey]
           const active = item.id === directionId
           const label = directionCopy(item.id)
@@ -105,7 +105,6 @@ export function HitchhikingPanel({
               <span>
                 <strong>{label.label}</strong>
                 <small>{label.description}</small>
-                {editorialBridge && <em>검수된 연결을 통한 경로</em>}
               </span>
               <ArrowRight size={17} />
             </button>

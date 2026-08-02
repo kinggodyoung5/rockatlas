@@ -24,13 +24,19 @@ for (const band of bands) {
   if (new Set(band.subgenres).size !== band.subgenres.length) errors.push(`${band.id}: 중복 세부 장르`)
   if (band.eraTags.length === 0) errors.push(`${band.id}: 시대별 장르 태그 누락`)
   const eraIds = new Set<string>()
+  const eraGenreSets = new Set<string>()
   for (const eraTag of band.eraTags) {
     if (eraIds.has(eraTag.era)) errors.push(`${band.id}: 중복 시대 태그 ${eraTag.era}`)
     eraIds.add(eraTag.era)
+    eraGenreSets.add([...eraTag.subgenres].sort().join('|'))
     if (eraTag.genreIds.length === 0 || eraTag.subgenres.length === 0) errors.push(`${band.id}/${eraTag.era}: 시대별 장르 정보 누락`)
     for (const genreId of eraTag.genreIds) {
       if (!genreIds.has(genreId)) errors.push(`${band.id}/${eraTag.era}: 존재하지 않는 시대별 장르 ${genreId}`)
     }
+  }
+  if (band.eraTags.length > 1 && eraGenreSets.size < 2) errors.push(`${band.id}: 장르 조합이 같은 시대를 변화로 중복 기록함`)
+  if (band.reviewStatus === 'published' && band.eraTags.length > 1 && band.eraTags.some((tag) => !tag.note?.trim())) {
+    warnings.push(`${band.id}: 장르 변화의 기준 앨범·설명 보완 권장`)
   }
   if (band.reviewStatus !== 'draft') {
     if (!band.reviewedBy || !band.reviewedAt) errors.push(`${band.id}: 검수 밴드의 검수자·검수 시각 누락`)
