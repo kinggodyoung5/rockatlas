@@ -81,6 +81,7 @@ function ExplorerApp() {
   const [bandLoading, setBandLoading] = useState(Boolean(initialBandId))
   const [bandLoadError, setBandLoadError] = useState('')
   const [mobileMenu, setMobileMenu] = useState(false)
+  const [searchFocusToken, setSearchFocusToken] = useState(0)
   const [shareOpen, setShareOpen] = useState(false)
   const [shareBand, setShareBand] = useState<Band | null>(null)
   const [shareJourneyUrl, setShareJourneyUrl] = useState('')
@@ -208,6 +209,7 @@ function ExplorerApp() {
   }, [])
   const goGenre = useCallback((genreId: GenreTaxonomyId) => updateRoute({ ...defaultRoute(), view: 'genre', genreId }), [updateRoute])
   const goBands = useCallback(() => updateRoute({ ...defaultRoute(), view: 'bands' }), [updateRoute])
+  const goBandsSearch = useCallback(() => { goBands(); setSearchFocusToken((token) => token + 1) }, [goBands])
   const goMoods = useCallback(() => updateRoute({ ...defaultRoute(), view: 'moods' }), [updateRoute])
   const goBackToPreviousPage = useCallback(() => {
     if (window.history.state?.rockAtlasNavigation) {
@@ -360,7 +362,7 @@ function ExplorerApp() {
   const activeGenreId = route.genreId === 'all' ? taxonomyGenres[0].id : route.genreId
   const content = route.view === 'home' ? homeMain
     : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goBackToPreviousPage} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId }, true)} />
-      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} sectionLabel={siteContent.allBandsSectionLabel} sectionTitle={siteContent.allBandsSectionTitle} sectionDescription={siteContent.allBandsSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+      : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} sectionLabel={siteContent.allBandsSectionLabel} sectionTitle={siteContent.allBandsSectionTitle} sectionDescription={siteContent.allBandsSectionDescription} searchFocusToken={searchFocusToken} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
         : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} sectionLabel={siteContent.moodSectionLabel} sectionTitle={siteContent.moodSectionTitle} sectionDescription={siteContent.moodSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
   const navLink = (view: 'home' | 'bands' | 'moods', label: string, action: () => void) => <a href={view === 'home' ? './' : `?view=${view}`} onClick={(event) => { event.preventDefault(); action(); setMobileMenu(false) }}>{label}</a>
@@ -372,7 +374,7 @@ function ExplorerApp() {
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className={mobileMenu ? 'main-nav is-open' : 'main-nav'} aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><button className="menu-button" onClick={() => setMobileMenu((value) => !value)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="main-navigation">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className="main-nav" aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><nav id="mobile-quick-nav" className={mobileMenu ? 'mobile-quick-nav is-open' : 'mobile-quick-nav'} aria-label="모바일 메뉴">{navLink('bands', '이름으로 검색', goBandsSearch)}{navLink('bands', '모든 밴드 보기', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}</nav><button className="menu-button" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="mobile-quick-nav">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
       <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>

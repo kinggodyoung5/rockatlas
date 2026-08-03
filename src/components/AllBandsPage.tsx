@@ -1,4 +1,5 @@
 import { RotateCcw, Search, X } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 import { eras } from '../data/eras'
 import { taxonomyGenreById, taxonomyGenres, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band, EraId } from '../types/music'
@@ -19,12 +20,19 @@ interface AllBandsPageProps {
   sectionLabel: string
   sectionTitle: string
   sectionDescription: string
+  /** Bumped by a parent nav action (e.g. a dedicated "search" menu entry) to move focus into
+   *  the search field even when this page is already mounted. Ignored on plain page visits. */
+  searchFocusToken?: number
   onFilter: (patch: Partial<{ query: string; genreId: GenreTaxonomyId | 'all'; subgenreId: string | 'all'; eraId: EraId | 'all'; countryCode: string | 'all'; sort: CatalogSort }>, replace?: boolean) => void
   onSelectBand: (band: Band) => void
   onToggleFavorite: (bandId: string) => void
 }
 
-export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, countryCode, sort, favoriteIds, sectionLabel, sectionTitle, sectionDescription, onFilter, onSelectBand, onToggleFavorite }: AllBandsPageProps) {
+export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, countryCode, sort, favoriteIds, sectionLabel, sectionTitle, sectionDescription, searchFocusToken, onFilter, onSelectBand, onToggleFavorite }: AllBandsPageProps) {
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if (searchFocusToken) searchInputRef.current?.focus()
+  }, [searchFocusToken])
   const countries = [...new Set(bands.map((band) => band.countryCode).filter(Boolean))].sort((a, b) => countryName(a).localeCompare(countryName(b), 'ko'))
   const availableSubgenres = [...new Set(bands.flatMap((band) => band.taxonomyV2?.subgenreIds ?? []))].sort((a, b) => (taxonomySubgenreById[a]?.name ?? a).localeCompare(taxonomySubgenreById[b]?.name ?? b, 'ko'))
   const normalized = query.trim().toLocaleLowerCase()
@@ -42,7 +50,7 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
     <main id="top" className="catalog-page all-bands-page" tabIndex={-1}>
       <section className="catalog-hero shell"><span className="section-no">{sectionLabel}</span><h1>{sectionTitle}</h1><p>{bands.length}개의 출발점을 {sectionDescription}</p></section>
       <section className="catalog-controls shell">
-        <label className="search-field catalog-search"><Search size={18} /><span className="sr-only">밴드 검색</span><input value={query} onChange={(event) => onFilter({ query: event.target.value }, true)} placeholder="밴드, 국가, 스타일 검색" />{query && <button onClick={() => onFilter({ query: '' }, true)} aria-label="검색어 지우기"><X size={16} /></button>}</label>
+        <label className="search-field catalog-search"><Search size={18} /><span className="sr-only">밴드 검색</span><input ref={searchInputRef} value={query} onChange={(event) => onFilter({ query: event.target.value }, true)} placeholder="밴드, 국가, 스타일 검색" />{query && <button onClick={() => onFilter({ query: '' }, true)} aria-label="검색어 지우기"><X size={16} /></button>}</label>
         <div className="catalog-select-grid">
           <label>대표 장르<select value={genreId} onChange={(event) => onFilter({ genreId: event.target.value as GenreTaxonomyId | 'all', subgenreId: 'all' })}><option value="all">모든 장르</option>{taxonomyGenres.map((genre) => <option key={genre.id} value={genre.id}>{genre.displayName}</option>)}</select></label>
           <label>세부 장르<select value={subgenreId} onChange={(event) => onFilter({ subgenreId: event.target.value })}><option value="all">모든 세부 장르</option>{availableSubgenres.map((id) => <option key={id} value={id}>{taxonomySubgenreById[id]?.name ?? id}</option>)}</select></label>

@@ -54,6 +54,7 @@ img { display: block; max-width: 100%; }
 .main-nav button, .main-nav a.suggestion-link { border: 1px solid var(--line); background: transparent; padding: 10px 15px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
 .main-nav button:hover, .main-nav a.suggestion-link:hover { border-color: var(--orange); color: #ff956d; }
 .menu-button { display: none; border: 0; background: transparent; cursor: pointer; }
+.mobile-quick-nav { display: none; }
 
 .hero { min-height: 690px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; position: relative; overflow: hidden; }
 .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 70px 70px; mask-image: linear-gradient(to right, black, transparent 85%); pointer-events: none; }
@@ -1239,9 +1240,11 @@ img { display: block; max-width: 100%; }
   .site-banner-suffix { margin-left: 0; font-size: 11px; }
   .site-banner-tagline { font-size: 10px; }
   .menu-button { width: 44px; height: 44px; display: grid; place-items: center; }
-  .main-nav { display: none; position: absolute; left: 0; right: 0; top: 69px; background: #111114; border: 1px solid var(--line); padding: 18px; align-items: stretch; flex-direction: column; gap: 0; }
-  .main-nav.is-open { display: flex; }
-  .main-nav a, .main-nav button { padding: 15px; border-bottom: 1px solid var(--line); }
+  .main-nav { display: none; }
+  .mobile-quick-nav { position: absolute; left: 0; right: 0; top: 69px; background: #111114; border: 1px solid var(--line); padding: 18px; align-items: stretch; flex-direction: column; gap: 0; z-index: 25; }
+  .mobile-quick-nav.is-open { display: flex; }
+  .mobile-quick-nav a, .mobile-quick-nav button { padding: 15px; border-bottom: 1px solid var(--line); color: #bdbcc0; }
+  .mobile-quick-nav a:last-child, .mobile-quick-nav button:last-child { border-bottom: 0; }
   .hero { display: block; min-height: 650px; }
   .hero-copy { padding: 86px 0; }
   .hero h1 { font-size: clamp(54px, 18vw, 76px); }
