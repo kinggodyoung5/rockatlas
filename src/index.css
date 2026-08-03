@@ -648,7 +648,7 @@ img { display: block; max-width: 100%; }
 .app-shell.cosmic-subtle > *,
 .app-shell.cosmic-deep > * { position: relative; z-index: 1; }
 .cosmic-subtle .site-header,
-.cosmic-deep .site-header { background: color-mix(in srgb, var(--ink) 84%, transparent); backdrop-filter: blur(14px); }
+.cosmic-deep .site-header { background: color-mix(in srgb, var(--ink) 84%, transparent); backdrop-filter: blur(14px); z-index: 20; }
 .cosmic-subtle .hero,
 .cosmic-deep .hero { isolation: isolate; }
 .cosmic-subtle .hero::before,
