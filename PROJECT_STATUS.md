@@ -846,3 +846,34 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 **Git 상태와 다음 단계**
 
 - `src/index.css`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+
+## 33. 2026-08-04 검수함 "외부 식별자 문제" 원인 규명 — Wikidata 'mul' 라벨 미처리 · 오류 결과 24시간 캐시 완화
+
+운영자가 검수함(밴드명으로 검증 자료 만들기)에서 "Steel Panther"를 검색하니 "외부 식별자에 문제가 있습니다"라며 Gemini에 보낼 자료 복사 버튼이 안 나온다고 보고했다.
+
+**원인**
+
+- `/api/studio/fact-audit`가 Wikidata 항목(Q179652)의 이름을 확인할 때 `en`·`ko` 라벨만 요청·확인했다. 그런데 Wikidata는 밴드명처럼 언어와 무관하게 동일한 이름은 별도 `en` 라벨 대신 언어중립 코드인 `mul`에만 저장하는 경우가 있는데, Steel Panther의 Wikidata 항목이 정확히 이 경우였다 — `en`/`ko` 라벨과 별칭이 전부 비어 있고 이름은 오직 `mul`에만("Steel Panther") 들어있었다. 코드가 `mul`을 전혀 확인하지 않아 "이름이 일치하는 후보가 없다"고 잘못 판단해 `wikidata-name` 오류를 발생시켰다.
+- 검색 단계(`외부 검색` API)는 검색 API 자체가 반환하는 라벨을 그대로 써서 우연히 정상 작동했지만, 정밀 대조 단계(`/api/studio/fact-audit`)는 이 라벨을 다시 계산하면서 `mul`을 빠뜨려 실패했다 — 같은 화면 안에서 앞뒤가 다르게 동작한 이유다.
+- 부수적으로 발견한 문제: 이 오류 결과가 24시간 캐시에 그대로 저장되고 있었다. `status`가 `'error'`든 `'verified'`든 구분 없이 같은 24시간 TTL을 썼기 때문에, 이런 일시적/개별적 실패가 한 번 나면 서버를 재시작하기 전까지 하루 종일 같은 결과가 반복됐을 것이다.
+
+**수정**
+
+- `wikidataLabel()` 헬퍼와 `buildFactAudit`의 이름 대조 로직에 `mul` 라벨·별칭을 포함하도록 추가했다. Wikidata API 요청의 `languages` 파라미터에도 `mul`을 추가했다(요청하지 않으면 응답에 아예 포함되지 않는다).
+- 캐시 TTL을 분리했다: 정상 결과는 기존대로 24시간, `status: 'error'`인 결과는 1분만 캐시해서 일시적 실패가 오래 남지 않도록 했다.
+
+**검증**
+
+- 실제 Wikidata API를 직접 조회해 Q179652가 `en`/`ko` 라벨·별칭이 없고 `mul`에만 이름이 있다는 것을 확인했다.
+- 수정 전 `/api/studio/fact-audit`를 Steel Panther로 직접 호출해 `status: "error"`, `issues: [{"code":"wikidata-name",...}]`, `wikidataName: ""`를 재현했다.
+- 수정 후 같은 요청이 `status: "verified"`, `issues: []`, `wikidataName: "Steel Panther"`로 바뀐 것을 확인했다.
+- 브라우저에서 실제 검수함 화면으로 "Steel Panther"를 검색해, Wikidata·MusicBrainz가 자동 선택되고 "검증 자료를 Gemini에 보낼 문장 복사" 버튼이 정상적으로 나타나는 것까지 끝까지 확인했다.
+- `npx tsc -b`(server/ 포함), `npm test`(11개 파일 70개 테스트), `npm run build` 모두 통과.
+
+**참고: 이 수정은 공개 사이트 배포가 필요 없다**
+
+- 검수함의 `/api/studio/*` API들은 `server/studioApi.ts`의 Vite `configureServer` 플러그인 훅으로 구현돼 있는데, 이 훅은 로컬 개발 서버(`npm run dev`)에서만 동작하고 정적 빌드(`vite build` → GitHub Pages)에는 아예 포함되지 않는다. 즉 이 문제는 Studio를 로컬에서 켤 때만 재현되고, 고치는 것도 저장소의 이 파일만 고치면 된다 — `main`에 배포해도 방문자가 보는 공개 사이트에는 아무 차이가 없다. 그래도 기록·버전 관리를 위해 기존 관례대로 `codex/taxonomy-v2`와 `main`에 커밋을 반영해둔다.
+
+**Git 상태와 다음 단계**
+
+- `server/studioApi.ts`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`에도 반영한다(공개 사이트 동작에는 영향 없음).

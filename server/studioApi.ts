@@ -239,7 +239,10 @@ function wikidataYear(entity: Record<string, unknown>, property: string) {
 
 function wikidataLabel(entity: Record<string, unknown> | undefined) {
   const labels = entity?.labels as Record<string, { value?: string }> | undefined
-  return labels?.ko?.value ?? labels?.en?.value ?? ''
+  // 'mul' is Wikidata's language-independent label, used for names that are
+  // identical across languages (e.g. most band names) instead of a separate
+  // 'en' entry. Skipping it made otherwise-correct items look nameless.
+  return labels?.ko?.value ?? labels?.en?.value ?? labels?.mul?.value ?? ''
 }
 
 const normalizedText = (value: string) => value
@@ -308,7 +311,7 @@ async function buildFactAudit(band: FactAuditBandPayload, signal: AbortSignal) {
   if (/^Q\d+$/.test(wikidataId)) {
     try {
       const url = new URL('https://www.wikidata.org/w/api.php')
-      url.search = new URLSearchParams({ action: 'wbgetentities', ids: wikidataId, props: 'labels|aliases|claims|sitelinks', languages: 'en|ko', sitefilter: 'enwiki|kowiki', format: 'json', origin: '*' }).toString()
+      url.search = new URLSearchParams({ action: 'wbgetentities', ids: wikidataId, props: 'labels|aliases|claims|sitelinks', languages: 'en|ko|mul', sitefilter: 'enwiki|kowiki', format: 'json', origin: '*' }).toString()
       const payload = await fetchJsonWithRetry<{ entities?: Record<string, Record<string, unknown>> }>(url, signal)
       wikidataEntity = payload.entities?.[wikidataId]
       if (!wikidataEntity || 'missing' in wikidataEntity) wikidataError = 'Wikidata 항목이 존재하지 않습니다.'
@@ -330,7 +333,7 @@ async function buildFactAudit(band: FactAuditBandPayload, signal: AbortSignal) {
 
   const labels = wikidataEntity?.labels as Record<string, { value?: string }> | undefined
   const aliases = wikidataEntity?.aliases as Record<string, Array<{ value?: string }>> | undefined
-  const wikidataNames = [labels?.en?.value, labels?.ko?.value, ...(aliases?.en ?? []).map((item) => item.value), ...(aliases?.ko ?? []).map((item) => item.value)].filter((value): value is string => Boolean(value))
+  const wikidataNames = [labels?.en?.value, labels?.ko?.value, labels?.mul?.value, ...(aliases?.en ?? []).map((item) => item.value), ...(aliases?.ko ?? []).map((item) => item.value), ...(aliases?.mul ?? []).map((item) => item.value)].filter((value): value is string => Boolean(value))
   const nameMatchesWikidata = !wikidataEntity || wikidataNames.some((value) => normalizedText(value) === normalizedText(name))
   const musicBrainzNames = [musicBrainz?.name, ...(musicBrainz?.aliases ?? []).map((alias) => alias.name)].filter((value): value is string => Boolean(value))
   const nameMatchesMusicBrainz = !musicBrainz?.name || musicBrainzNames.some((value) => normalizedText(value) === normalizedText(name))
@@ -432,7 +435,7 @@ async function fetchWikidataCandidates(query: string, signal: AbortSignal): Prom
     action: 'wbgetentities',
     ids: searchResults.map((item) => item.id).join('|'),
     props: 'labels|aliases|claims|sitelinks',
-    languages: 'en|ko',
+    languages: 'en|ko|mul',
     sitefilter: 'enwiki|kowiki',
     format: 'json',
     origin: '*',
@@ -452,7 +455,7 @@ async function fetchWikidataCandidates(query: string, signal: AbortSignal): Prom
       action: 'wbgetentities',
       ids: referencedIds.join('|'),
       props: 'labels',
-      languages: 'en|ko',
+      languages: 'en|ko|mul',
       format: 'json',
       origin: '*',
     }).toString()
@@ -485,6 +488,7 @@ async function fetchWikidataCandidates(query: string, signal: AbortSignal): Prom
         ...(item.aliases ?? []),
         ...(aliases?.en ?? []).map((alias) => alias.value ?? ''),
         ...(aliases?.ko ?? []).map((alias) => alias.value ?? ''),
+        ...(aliases?.mul ?? []).map((alias) => alias.value ?? ''),
       ].filter(Boolean).slice(0, 8),
       entityType: wikidataLabel(references[entityTypeId]),
       country: wikidataLabel(references[countryId]),
@@ -665,7 +669,11 @@ export function studioApi(): Plugin {
           const timeout = setTimeout(() => controller.abort(), 25_000)
           try {
             const result = await buildFactAudit(band, controller.signal)
-            factAuditCache.set(cacheKey, { expiresAt: Date.now() + 24 * 60 * 60 * 1000, payload: result })
+            // Only cache a clean result for a full day. An 'error' status can come from a
+            // transient external-API hiccup or gap (e.g. a Wikidata item missing an en/ko
+            // label); caching that for 24h would strand the band until the cache expired.
+            const ttl = result.status === 'error' ? 60_000 : 24 * 60 * 60 * 1000
+            factAuditCache.set(cacheKey, { expiresAt: Date.now() + ttl, payload: result })
             json(response, result)
           } finally { clearTimeout(timeout) }
         } catch (error) {
