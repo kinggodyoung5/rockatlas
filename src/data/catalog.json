@@ -1,7 +1,2734 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-02T03:53:59.681Z",
+  "updatedAt": "2026-08-05T09:29:51.990Z",
   "bands": [
+    {
+      "id": "steel-panther",
+      "name": "Steel Panther",
+      "formed": 2000,
+      "origin": "Los Angeles, US",
+      "countryCode": "US",
+      "activeYears": "2000–현재",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "글램 메탈",
+        "헤어 메탈",
+        "하드 록",
+        "전통 헤비메탈",
+        "아레나 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "글램 메탈",
+            "헤어 메탈",
+            "하드 록",
+            "전통 헤비메탈",
+            "아레나 록"
+          ]
+        }
+      ],
+      "tags": [
+        "글램 메탈",
+        "헤비 메탈",
+        "하드 록",
+        "헤어 메탈",
+        "코미디 록"
+      ],
+      "summary": "2000년 미국 로스앤젤레스에서 결성된 글램 메탈 밴드다. Feel the Steel(2009)과 Balls Out(2011) 등의 정규 앨범을 통해 1980년대 헤비 메탈 문화를 유머러스하게 패러디하며 음악적 기량과 독창적인 캐릭터를 보여주었다.",
+      "style": "1980년대 하드 록 및 헤비 메탈에 기반한 화려한 기타 솔로와 캐치한 멜로디가 중심을 이룬다. 풍자적인 가사와 유머를 고난도의 연주력과 폭발적인 아레나 사운드로 풀어내는 특징이 있다.",
+      "image": {
+        "wikipediaTitle": "steel panther",
+        "fileName": "File:20180804 Wacken Wacken Open air Steel Panther 0073.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/20180804_Wacken_Wacken_Open_air_Steel_Panther_0073.jpg/960px-20180804_Wacken_Wacken_Open_air_Steel_Panther_0073.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/20180804_Wacken_Wacken_Open_air_Steel_Panther_0073.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "steel panther 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:20180804 Wacken Wacken Open air Steel Panther 0073.jpg",
+          "creator": "© Markus Felix | PushingPixels (contact me)",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:39:33.099Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Michael Starr",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2008–현재"
+        },
+        {
+          "name": "Satchel",
+          "role": "기타, 백보컬",
+          "status": "current",
+          "activeYears": "2008–현재"
+        },
+        {
+          "name": "Stix Zadinia",
+          "role": "드럼, 피아노, 백보컬",
+          "status": "current",
+          "activeYears": "2008–현재"
+        },
+        {
+          "name": "Joe Lester",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2022–현재"
+        },
+        {
+          "name": "Lexxi Foxx",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2008–2021"
+        },
+        {
+          "name": "Ray Luzier",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "–2003"
+        },
+        {
+          "name": "Michael Diamond",
+          "role": "베이스",
+          "status": "former"
+        },
+        {
+          "name": "Ralph Saenz",
+          "role": "보컬",
+          "status": "former"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "death-to-all-but-metal",
+          "title": "Death to All but Metal",
+          "year": 2009,
+          "album": "Feel the Steel",
+          "guide": "헤비 메탈에 대한 애정을 담아낸 강렬한 기타 리프와 위트 있는 보컬을 감상할 수 있다.",
+          "youtubeId": "Ho4pTIS6xfg",
+          "source": {
+            "label": "steel panther — Death to All but Metal YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Ho4pTIS6xfg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SteelPantherVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:51:56.378Z"
+        },
+        {
+          "id": "community-property",
+          "title": "Community Property",
+          "year": 2009,
+          "album": "Feel the Steel",
+          "guide": "1980년대 스타일 파워 발라드의 특성을 재치 있게 패러디한 멜로디 라인이 돋보인다.",
+          "youtubeId": "bzUPG8olnO0",
+          "source": {
+            "label": "steel panther — Community Property YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=bzUPG8olnO0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SteelPantherVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:52:01.689Z"
+        },
+        {
+          "id": "17-girls-in-a-row",
+          "title": "17 Girls in a Row",
+          "year": 2011,
+          "album": "Balls Out",
+          "guide": "경쾌한 드라이브 비트와 캐치한 코러스가 이끄는 전형적인 글램 메탈 사운드를 들려준다.",
+          "youtubeId": "R5w4dgy1NlI",
+          "source": {
+            "label": "steel panther — 17 Girls in a Row YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=R5w4dgy1NlI",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Andrzej Latawiec"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:52:14.956Z"
+        },
+        {
+          "id": "glory-hole",
+          "title": "Glory Hole",
+          "year": 2014,
+          "album": "All You Can Eat",
+          "guide": "묵직한 더블 베이스 드럼과 공격적인 기타 리프를 앞세워 밴드 특유의 과장된 글램 메탈 유머를 밀어붙이는 곡이다.",
+          "youtubeId": "diYS8jyOcFc",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Glory Hole — YouTube",
+            "url": "https://www.youtube.com/watch?v=diYS8jyOcFc",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "SteelPantherVEVO"
+          },
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:52:27.339Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "steel panther — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q179652",
+          "publisher": "Wikidata",
+          "externalId": "Q179652",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "steel panther — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Steel_Panther",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Steel Panther — 공식 YouTube",
+          "url": "https://www.youtube.com/steelpantherrocks",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "밴드 공식 웹사이트에서 연결된 공식 채널"
+        },
+        {
+          "label": "steel panther — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f82927e4-b905-4e3b-a82e-5184fbb68b29",
+          "publisher": "MusicBrainz",
+          "externalId": "f82927e4-b905-4e3b-a82e-5184fbb68b29",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "steel panther — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:20180804 Wacken Wacken Open air Steel Panther 0073.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "glam-metal",
+          "hair-metal",
+          "hard-rock",
+          "traditional-heavy-metal",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5,
+          "fast-driving": 4,
+          "youth-rebellious": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-04T11:52:33.520Z"
+    },
+    {
+      "id": "rainbow",
+      "name": "Rainbow",
+      "formed": 1975,
+      "origin": "Hertford, GB",
+      "countryCode": "GB",
+      "activeYears": "1975–1984, 1993–1997, 2015–2019",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "전통 헤비메탈",
+        "네오클래시컬 메탈",
+        "아레나 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "전통 헤비메탈",
+            "네오클래시컬 메탈",
+            "아레나 록"
+          ]
+        }
+      ],
+      "tags": [
+        "하드 록",
+        "헤비 메탈",
+        "네오클래시컬 메탈",
+        "아레나 록",
+        "프로그레시브 록"
+      ],
+      "summary": "1974년 기타리스트 리치 블랙모어를 중심으로 결성되어 하드 록과 헤비 메탈의 발전에 커다란 족적을 남긴 밴드이다. Rising(1976), Long Live Rock ’n’ Roll(1978), Down to Earth(1979) 등의 정규 앨범을 통해 클래시컬한 멜로디와 하드 록 리프가 어우러진 명곡들을 발표했다.",
+      "style": "리치 블랙모어의 네오클래시컬 스타일 기타 솔로와 화려한 기타 리프가 사운드의 핵심을 이룬다. 초기 웅장한 판타지 테마의 하드 록에서 점차 라디오 친화적인 상업적 팝 록 및 아레나 록 노선으로 변모했다.",
+      "image": {
+        "wikipediaTitle": "rainbow",
+        "fileName": "File:Rainbow in performance (27 09 1977 02 500b).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Rainbow_in_performance_%2827_09_1977_02_500b%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Rainbow_in_performance_%2827_09_1977_02_500b%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "rainbow 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rainbow in performance (27 09 1977 02 500b).jpg",
+          "creator": "Helge Øverås",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:39:20.704Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Doogie White",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1993–1997"
+        },
+        {
+          "name": "Ronnie Romero",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2015–2019"
+        },
+        {
+          "name": "David Keith",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2015–2019"
+        },
+        {
+          "name": "Bob Nouveau",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2015–2019"
+        },
+        {
+          "name": "Gary Driscoll",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1975"
+        },
+        {
+          "name": "Craig Gruber",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1975"
+        },
+        {
+          "name": "Mickey Lee Soule",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1975"
+        },
+        {
+          "name": "Jimmy Bain",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1975–1977"
+        },
+        {
+          "name": "Tony Carey",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1975–1977"
+        },
+        {
+          "name": "Ronnie James Dio",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1975–1979"
+        },
+        {
+          "name": "Cozy Powell",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1975–1980"
+        },
+        {
+          "name": "Ritchie Blackmore",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1975–1984, 1993–1997, 2015–2019"
+        },
+        {
+          "name": "Bob Daisley",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1977–1979"
+        },
+        {
+          "name": "Roger Glover",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1979–1984"
+        },
+        {
+          "name": "Graham Bonnet",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1979–1980"
+        },
+        {
+          "name": "Don Airey",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1979–1981"
+        },
+        {
+          "name": "Bob Rondinelli",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1980–1983"
+        },
+        {
+          "name": "Joe Lynn Turner",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1980–1984"
+        },
+        {
+          "name": "David Rosenthal",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1981–1984"
+        },
+        {
+          "name": "Paul Morris",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1993–1997"
+        },
+        {
+          "name": "Jens Johansson",
+          "role": "키보드",
+          "status": "current",
+          "activeYears": "2015–2019"
+        },
+        {
+          "name": "Candice Night",
+          "role": "백보컬",
+          "status": "current",
+          "activeYears": "1994–1997, 2015–2019"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "stargazer",
+          "title": "Stargazer",
+          "year": 1976,
+          "album": "Rising",
+          "guide": "코지 파웰의 강렬한 드럼 솔로 도입부와 로니 제임스 디오의 웅장한 보컬, 오케스트라 사운드가 만드는 에픽 하드 록을 감상할 수 있다.",
+          "youtubeId": "YmJIccPWnEk",
+          "source": {
+            "label": "rainbow — Stargazer YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=YmJIccPWnEk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rainbow - Topic"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:29:20.389Z"
+        },
+        {
+          "id": "since-you-been-gone",
+          "title": "Since You Been Gone",
+          "year": 1979,
+          "album": "Down to Earth",
+          "guide": "캐치한 기타 리프와 그레이엄 보넷의 파워풀한 보컬이 이끄는 상업적 팝 록 멜로디의 전형이다.",
+          "youtubeId": "1P17ct4e5OE",
+          "source": {
+            "label": "rainbow — Since You Been Gone YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=1P17ct4e5OE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Ritchie Blackmore's Rainbow"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:29:31.333Z"
+        },
+        {
+          "id": "kill-the-king",
+          "title": "Kill the King",
+          "year": 1978,
+          "album": "Long Live Rock ’n’ Roll",
+          "guide": "질주하는 리듬과 리치 블랙모어의 속주 기타 솔로가 선사하는 초기 스피드 메탈의 에너지를 느낄 수 있다.",
+          "youtubeId": "iM7PG4CA-2E",
+          "source": {
+            "label": "rainbow — Kill the King YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=iM7PG4CA-2E",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Ritchie Blackmore's Rainbow"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:29:41.537Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "rainbow — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q16005",
+          "publisher": "Wikidata",
+          "externalId": "Q16005",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "rainbow — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rainbow_(rock_band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "rainbow — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCgOBQxVfZhfr8A0i1r7-01w",
+          "publisher": "YouTube",
+          "externalId": "UCgOBQxVfZhfr8A0i1r7-01w",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "rainbow — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/e3cb4543-210f-499a-b0d1-3882c312dfb9",
+          "publisher": "MusicBrainz",
+          "externalId": "e3cb4543-210f-499a-b0d1-3882c312dfb9",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "rainbow — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Rainbow in performance (27 09 1977 02 500b).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "traditional-power-thrash-metal",
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "traditional-heavy-metal",
+          "neoclassical-metal",
+          "arena-rock"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "epic-cinematic": 5,
+          "fast-driving": 4,
+          "anthemic-live": 4,
+          "massive-heavy": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:28:57.805Z"
+    },
+    {
+      "id": "whitesnake",
+      "name": "Whitesnake",
+      "formed": 1978,
+      "origin": "Middlesbrough, GB",
+      "countryCode": "GB",
+      "activeYears": "1978–1990, 1994, 1997, 2002–2022",
+      "primaryGenre": "hard-rock",
+      "genreIds": [
+        "hard-rock"
+      ],
+      "subgenres": [
+        "하드 록",
+        "글램 메탈",
+        "블루스 록",
+        "아레나 록",
+        "전통 헤비메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "hard-rock"
+          ],
+          "subgenres": [
+            "하드 록",
+            "글램 메탈",
+            "블루스 록",
+            "아레나 록",
+            "전통 헤비메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "하드 록",
+        "글램 메탈",
+        "블루스 록",
+        "아레나 록",
+        "헤비 메탈"
+      ],
+      "summary": "1978년 영국 미들즈브러에서 결성된 하드 록 밴드로 데이비드 커버데일이 이끌었다. Trouble(1978)을 시작으로 Slide It In(1984), Whitesnake(1987) 등의 정규 앨범을 발표하며 블루스 기반의 하드 록에서 화려한 글램 메탈 스타일로 세계적인 성공을 거두었다.",
+      "style": "데이비드 커버데일의 힘있고 허스키한 리드 보컬과 화려한 기타 솔로가 사운드의 중심을 이룬다. 초기 블루스 록 색채에서 점차 세련되고 폭발적인 글램 메탈과 아레나 하드 록 스타일로 완성되었다.",
+      "image": {
+        "wikipediaTitle": "whitesnake",
+        "fileName": "File:Whitesnake - Wacken Open Air 2016-AL1161.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Whitesnake_-_Wacken_Open_Air_2016-AL1161.jpg/960px-Whitesnake_-_Wacken_Open_Air_2016-AL1161.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Whitesnake_-_Wacken_Open_Air_2016-AL1161.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "whitesnake 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whitesnake - Wacken Open Air 2016-AL1161.jpg",
+          "creator": "Andreas Lawen, Fotandi",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:38:26.862Z"
+        }
+      },
+      "members": [
+        {
+          "name": "David Coverdale",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "1978–1990, 1994, 1997, 2002–2022"
+        },
+        {
+          "name": "Peter Solley",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1978"
+        },
+        {
+          "name": "Dave Dowle",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1978–1979"
+        },
+        {
+          "name": "Bernie Marsden",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1978–1982"
+        },
+        {
+          "name": "Jon Lord",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1978–1984"
+        },
+        {
+          "name": "Micky Moody",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1978–1984"
+        },
+        {
+          "name": "Neil Murray",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1978–1984"
+        },
+        {
+          "name": "Ian Paice",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1979–1982"
+        },
+        {
+          "name": "Mel Galley",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1982–1984"
+        },
+        {
+          "name": "Cozy Powell",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1982–1985"
+        },
+        {
+          "name": "John Sykes",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1984–1987"
+        },
+        {
+          "name": "Aynsley Dunbar",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1987"
+        },
+        {
+          "name": "Vivian Campbell",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1987–1988"
+        },
+        {
+          "name": "Tommy Aldridge",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1987–1990, 2003–2007, 2013–2022"
+        },
+        {
+          "name": "Rudy Sarzo",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1987–1991"
+        },
+        {
+          "name": "Adrian Vandenberg",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1987–1991"
+        },
+        {
+          "name": "Steve Vai",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1989–1991"
+        },
+        {
+          "name": "Warren DeMartini",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1994"
+        },
+        {
+          "name": "Paul Mirkovich",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1994"
+        },
+        {
+          "name": "Reb Beach",
+          "role": "기타, 백보컬",
+          "status": "current",
+          "activeYears": "2003–2022"
+        },
+        {
+          "name": "Joel Hoekstra",
+          "role": "기타, 백보컬",
+          "status": "current",
+          "activeYears": "2014–2022"
+        },
+        {
+          "name": "Michele Luppi",
+          "role": "키보드, 백보컬",
+          "status": "current",
+          "activeYears": "2015–2022"
+        },
+        {
+          "name": "Dino Jelusick",
+          "role": "키보드, 기타, 백보컬",
+          "status": "current",
+          "activeYears": "2021–2022"
+        },
+        {
+          "name": "Tanya O'Callaghan",
+          "role": "베이스, 백보컬",
+          "status": "current",
+          "activeYears": "2021–2022"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "here-i-go-again",
+          "title": "Here I Go Again",
+          "year": 1987,
+          "album": "Whitesnake",
+          "guide": "드라마틱한 서정적 도입부 이후 폭발하는 강렬한 기타 리프와 아레나 록 사운드를 감상할 수 있다.",
+          "youtubeId": "WyF8RHM1OCg",
+          "source": {
+            "label": "whitesnake — Here I Go Again YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=WyF8RHM1OCg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Whitesnake TV"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:28:31.014Z"
+        },
+        {
+          "id": "is-this-love",
+          "title": "Is This Love",
+          "year": 1987,
+          "album": "Whitesnake",
+          "guide": "데이비드 커버데일의 매혹적인 보컬과 세련된 록 파워 발라드 멜로디가 돋보인다.",
+          "youtubeId": "GOJk0HW_hJw",
+          "source": {
+            "label": "whitesnake — Is This Love YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=GOJk0HW_hJw",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Whitesnake TV"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:28:37.695Z"
+        },
+        {
+          "id": "fool-for-your-loving",
+          "title": "Fool for Your Loving",
+          "year": 1980,
+          "album": "Ready an’ Willing",
+          "guide": "블루스 록 특유의 쫀득한 기타 리프와 경쾌한 하드 록 리듬이 이끄는 곡이다.",
+          "youtubeId": "WtznhhKOW5k",
+          "source": {
+            "label": "whitesnake — Fool for Your Loving YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=WtznhhKOW5k",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Whitesnake TV"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:28:43.815Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "whitesnake — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q189965",
+          "publisher": "Wikidata",
+          "externalId": "Q189965",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "whitesnake — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Whitesnake",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "whitesnake — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCdUzfHh6yiFUkdIfbbvCEQg",
+          "publisher": "YouTube",
+          "externalId": "UCdUzfHh6yiFUkdIfbbvCEQg",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "whitesnake — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5dedf5cf-a598-4408-9556-3bf3f149f3ba",
+          "publisher": "MusicBrainz",
+          "externalId": "5dedf5cf-a598-4408-9556-3bf3f149f3ba",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "whitesnake — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Whitesnake - Wacken Open Air 2016-AL1161.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "hard-glam-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "traditional-power-thrash-metal"
+        ],
+        "subgenreIds": [
+          "hard-rock",
+          "glam-metal",
+          "blues-rock",
+          "arena-rock",
+          "traditional-heavy-metal"
+        ],
+        "moodScores": {
+          "riff-solo-driven": 5,
+          "anthemic-live": 5,
+          "romantic-emotional": 4,
+          "massive-heavy": 4,
+          "fast-driving": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:28:11.124Z"
+    },
+    {
+      "id": "rascal-flatts",
+      "name": "Rascal Flatts",
+      "formed": 1999,
+      "origin": "Columbus, US",
+      "countryCode": "US",
+      "activeYears": "1999–2021, 2024–현재",
+      "primaryGenre": "classic-rock",
+      "genreIds": [
+        "classic-rock"
+      ],
+      "subgenres": [
+        "컨트리 록",
+        "팝 록",
+        "소프트 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "classic-rock"
+          ],
+          "subgenres": [
+            "컨트리 록",
+            "팝 록",
+            "소프트 록"
+          ]
+        }
+      ],
+      "tags": [
+        "컨트리 팝",
+        "컨트리 록",
+        "컨트리",
+        "컨템포러리 컨트리"
+      ],
+      "summary": "1999년 미국 콜럼버스에서 결성되어 대중적인 성공을 거둔 컨트리 팝 트리오 밴드이다. Feels Like Today(2004), Me and My Gang(2006) 등의 정규 앨범을 통해 특유의 감성적인 하모니와 주류 팝 감성을 결합한 대표 트랙들을 선보였다.",
+      "style": "게리 레복스의 감정 폭이 넓은 리드 보컬과 세 멤버의 매끄러운 3성 하모니를 중심에 둔다. 컨트리 음악 특유의 어쿠스틱 악기 편성에 포크·팝 록 스타일의 풍부한 아레나 사운드를 결합한 프로덕션을 보여준다.",
+      "image": {
+        "wikipediaTitle": "rascal flatts",
+        "fileName": "File:RascalFlatts.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/RascalFlatts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/RascalFlatts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "rascal flatts 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:RascalFlatts.jpg",
+          "creator": "Melissa Dale",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:38:11.794Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Gary LeVox",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1999–2021, 2024–현재"
+        },
+        {
+          "name": "Jay DeMarcus",
+          "role": "베이스, 피아노, 백보컬",
+          "status": "current",
+          "activeYears": "1999–2021, 2024–현재"
+        },
+        {
+          "name": "Joe Don Rooney",
+          "role": "리드 기타, 어쿠스틱 기타, 백보컬",
+          "status": "current",
+          "activeYears": "1999–2021, 2024–현재"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "bless-the-broken-road",
+          "title": "Bless the Broken Road",
+          "year": 2004,
+          "album": "Feels Like Today",
+          "guide": "따뜻한 피아노 선율과 절절한 보컬 하모니가 만들어내는 서정적인 멜로디를 감상할 수 있다.",
+          "youtubeId": "FaQHyHwFgeg",
+          "source": {
+            "label": "rascal flatts — Bless the Broken Road YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=FaQHyHwFgeg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rascal Flatts - Topic"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:27:35.358Z"
+        },
+        {
+          "id": "what-hurts-the-most",
+          "title": "What Hurts the Most",
+          "year": 2006,
+          "album": "Me and My Gang",
+          "guide": "폭발적인 보컬 고음과 팝 록 스타일의 웅장한 사운드 전개가 돋보인다.",
+          "youtubeId": "7qH4qyi1-Ys",
+          "source": {
+            "label": "rascal flatts — What Hurts the Most YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=7qH4qyi1-Ys",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "RascalFlattsVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:27:39.811Z"
+        },
+        {
+          "id": "me-and-my-gang",
+          "title": "Me and My Gang",
+          "year": 2006,
+          "album": "Me and My Gang",
+          "guide": "신나는 컨트리 록 리프와 경쾌한 리듬이 이끄는 흥겨운 에너지를 체감할 수 있다.",
+          "youtubeId": "2dPij68fudY",
+          "source": {
+            "label": "rascal flatts — Me and My Gang YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=2dPij68fudY",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "RascalFlattsVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:27:48.773Z"
+        },
+        {
+          "id": "life-is-a-highway",
+          "title": "Life Is a Highway",
+          "year": 2006,
+          "album": "Cars (Original Motion Picture Soundtrack)",
+          "guide": "톰 코크런의 원곡을 힘찬 보컬 하모니와 경쾌한 컨트리 록 리듬으로 재해석한 영화 Cars의 대표 삽입곡이다.",
+          "youtubeId": "5tXh_MfrMe0",
+          "reviewStatus": "reviewed",
+          "source": {
+            "label": "Life Is A Highway — YouTube",
+            "url": "https://www.youtube.com/watch?v=5tXh_MfrMe0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "RascalFlattsVEVO"
+          },
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:27:58.507Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "rascal flatts — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q753598",
+          "publisher": "Wikidata",
+          "externalId": "Q753598",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "rascal flatts — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rascal_Flatts",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "rascal flatts — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCGU4r5GpJcsGImckTkldSAQ",
+          "publisher": "YouTube",
+          "externalId": "UCGU4r5GpJcsGImckTkldSAQ",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "rascal flatts — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/6e0ae159-8449-4262-bba5-18ec87fa529f",
+          "publisher": "MusicBrainz",
+          "externalId": "6e0ae159-8449-4262-bba5-18ec87fa529f",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "rascal flatts — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:RascalFlatts.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "pop-soft-rock",
+        "secondaryGenreIds": [
+          "classic-roots-rock",
+          "indie-britpop-garage"
+        ],
+        "subgenreIds": [
+          "country-rock",
+          "pop-rock",
+          "soft-rock"
+        ],
+        "moodScores": {
+          "warm-comforting": 5,
+          "romantic-emotional": 5,
+          "hopeful-uplifting": 4,
+          "bright-upbeat": 4,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:26:39.261Z"
+    },
+    {
+      "id": "primal-scream",
+      "name": "Primal Scream",
+      "formed": 1982,
+      "origin": "Glasgow, GB",
+      "countryCode": "GB",
+      "activeYears": "1982–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "매드체스터",
+        "댄스 록",
+        "얼터너티브 록",
+        "인디 록",
+        "사이키델릭 록",
+        "전자 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "매드체스터",
+            "댄스 록",
+            "얼터너티브 록",
+            "인디 록",
+            "사이키델릭 록",
+            "전자 록"
+          ]
+        }
+      ],
+      "tags": [
+        "얼터너티브 록",
+        "매드체스터",
+        "댄스 록",
+        "인디 록",
+        "사이키델릭 록"
+      ],
+      "summary": "1982년 스코틀랜드 글래스고에서 결성되어 장르를 넘나드는 실험적인 사운드를 선보인 얼터너티브 록 밴드이다. 대표작 Screamadelica(1991)와 XTRMNTR(1999)를 비롯한 다수의 앨범을 통해 록 음악과 댄스 씬의 융합을 이끌었다.",
+      "style": "인디 팝에서 시작해 댄스, 댄스 록, 노이즈, 산업적 일렉트로닉, 루트 록까지 폭넓은 스펙트럼을 오간다. 사이키델릭한 리듬과 강렬한 리프, 전자음 효과음을 자극적으로 결합한 사운드가 특징이다.",
+      "image": {
+        "wikipediaTitle": "primal scream",
+        "fileName": "File:Primal Scream.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Primal_Scream.jpg/960px-Primal_Scream.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Primal_Scream.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "primal scream 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Primal Scream.jpg",
+          "creator": "Phil Guest",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:37:53.403Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Bobby Gillespie",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1982–현재"
+        },
+        {
+          "name": "Andrew Innes",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1986–현재"
+        },
+        {
+          "name": "Mani",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1996–2011"
+        },
+        {
+          "name": "Darrin Mooney",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1997–현재"
+        },
+        {
+          "name": "Kevin Shields",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1998–2006"
+        },
+        {
+          "name": "Simone Marie Butler",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2012–2026"
+        },
+        {
+          "name": "Jim Beattie",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1982–1989"
+        },
+        {
+          "name": "Robert Young",
+          "role": "기타, 베이스",
+          "status": "former",
+          "activeYears": "1984–2006"
+        },
+        {
+          "name": "Gavin Skinner",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1987–1988"
+        },
+        {
+          "name": "Martin Duffy",
+          "role": "키보드",
+          "status": "former",
+          "activeYears": "1989–2022"
+        },
+        {
+          "name": "Denise Johnson",
+          "role": "보컬",
+          "status": "former",
+          "activeYears": "1990–1996"
+        },
+        {
+          "name": "Paul Harte",
+          "role": "기타",
+          "status": "former"
+        },
+        {
+          "name": "Jim Hunt",
+          "role": "색소폰",
+          "status": "former"
+        },
+        {
+          "name": "Duncan McKay",
+          "role": "트럼펫",
+          "status": "former"
+        },
+        {
+          "name": "Paul Mulreany",
+          "role": "드럼",
+          "status": "former"
+        },
+        {
+          "name": "Henry Olsen",
+          "role": "베이스",
+          "status": "former"
+        },
+        {
+          "name": "Toby Tomanov",
+          "role": "드럼",
+          "status": "former"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "loaded",
+          "title": "Loaded",
+          "year": 1991,
+          "album": "Screamadelica",
+          "guide": "샘플링과 댄스 비트가 가미되어 록과 하우스 음악의 경계를 허무는 트랙.",
+          "youtubeId": "Y3ixEzKA4k0",
+          "source": {
+            "label": "primal scream — Loaded YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Y3ixEzKA4k0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "PrimalScreamVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:26:01.050Z"
+        },
+        {
+          "id": "movin-on-up",
+          "title": "Movin' On Up",
+          "year": 1991,
+          "album": "Screamadelica",
+          "guide": "고스펠 풍의 백보컬과 벅차오르는 고조감이 어우러지는 신나는 피아노 리듬.",
+          "youtubeId": "UVm3mJPn5tE",
+          "source": {
+            "label": "primal scream — Movin' On Up YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=UVm3mJPn5tE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "PrimalScreamVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:26:05.938Z"
+        },
+        {
+          "id": "rocks",
+          "title": "Rocks",
+          "year": 1994,
+          "album": "Give Out but Don’t Give Up",
+          "guide": "클래식한 하드 록 및 블루스 록 스타일에 기반한 신나는 기타 리프.",
+          "youtubeId": "Z3ZCZjhjguA",
+          "source": {
+            "label": "primal scream — Rocks YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Z3ZCZjhjguA",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "PrimalScreamVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:26:11.300Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "the-stone-roses",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다. (The Stone Roses 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "reviewStatus": "draft",
+          "mirroredFrom": "the-stone-roses"
+        }
+      ],
+      "sources": [
+        {
+          "label": "primal scream — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q666697",
+          "publisher": "Wikidata",
+          "externalId": "Q666697",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "primal scream — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Primal_Scream",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Primal Scream — 공식 YouTube",
+          "url": "https://www.youtube.com/primalscreamofficial",
+          "publisher": "YouTube",
+          "official": true,
+          "note": "공식 아티스트 채널"
+        },
+        {
+          "label": "primal scream — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/55704c38-224f-4b75-b29f-d43653f8bc9a",
+          "publisher": "MusicBrainz",
+          "externalId": "55704c38-224f-4b75-b29f-d43653f8bc9a",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "primal scream — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Primal Scream.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "progressive-art-psychedelic",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "madchester",
+          "dance-rock",
+          "alternative-rock",
+          "indie-rock",
+          "psychedelic-rock",
+          "electronic-rock"
+        ],
+        "moodScores": {
+          "groovy-danceable": 5,
+          "cosmic-psychedelic": 4,
+          "electronic-synth": 4,
+          "bright-upbeat": 4,
+          "youth-rebellious": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:26:35.459Z"
+    },
+    {
+      "id": "jesus-and-mary-chain",
+      "name": "The Jesus and Mary Chain",
+      "formed": 1983,
+      "origin": "East Kilbride, GB",
+      "countryCode": "GB",
+      "activeYears": "1983–1999, 2007–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "노이즈 팝",
+        "슈게이즈",
+        "포스트펑크",
+        "노이즈 록",
+        "얼터너티브 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "노이즈 팝",
+            "슈게이즈",
+            "포스트펑크",
+            "노이즈 록",
+            "얼터너티브 록"
+          ]
+        }
+      ],
+      "tags": [
+        "노이즈 팝",
+        "슈게이징",
+        "포스트 펑크",
+        "얼터너티브 록",
+        "노이즈 록"
+      ],
+      "summary": "1984년 스코틀랜드 이스트킬브라이드에서 결성되어 1980년대 포스트 펑크 및 노이즈 팝 씬을 형성한 대표적인 록 밴드이다. Psychocandy(1985), Darklands(1987), Automatic(1989), Honey’s Dead(1992) 등의 정규 앨범을 통해 독창적인 사운드로 많은 후대 얼터너티브 록 뮤지션들에게 영향을 주었다.",
+      "style": "극단적인 기타 노이즈 피드백과 1960년대 스타일의 감미로운 메이저 팝 멜로디의 대비를 핵심으로 한다. 짐 리드의 무심한 듯한 보컬과 윌리엄 리드의 피드백 소음, 단순하고 강렬한 드럼 비트가 조화를 이룬다.",
+      "image": {
+        "wikipediaTitle": "jesus and mary chain",
+        "fileName": "File:Jesus and Mary Chain 2007.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Jesus_and_Mary_Chain_2007.jpg/960px-Jesus_and_Mary_Chain_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Jesus_and_Mary_Chain_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "jesus and mary chain 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jesus and Mary Chain 2007.jpg",
+          "creator": "Liane Chan from Buena Park, United States",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:37:35.796Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Jim Reid",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1983–1999, 2007–현재"
+        },
+        {
+          "name": "William Reid",
+          "role": "기타, 보컬",
+          "status": "current",
+          "activeYears": "1983–1999, 2007–현재"
+        },
+        {
+          "name": "John Moore",
+          "role": "기타, 드럼",
+          "status": "current",
+          "activeYears": "1986–현재"
+        },
+        {
+          "name": "Philip King",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2007–현재"
+        },
+        {
+          "name": "Scott Von Ryper",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2015–현재"
+        },
+        {
+          "name": "Bobby Gillespie",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1984–1985"
+        },
+        {
+          "name": "Douglas Hart",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1984–1991"
+        },
+        {
+          "name": "Martin Hewes",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1986–1986"
+        },
+        {
+          "name": "David Evans",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1987–1989"
+        },
+        {
+          "name": "Ben Lurie",
+          "role": "기타, 베이스",
+          "status": "former",
+          "activeYears": "1989–1998"
+        },
+        {
+          "name": "Steve Monti",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1992–1998"
+        },
+        {
+          "name": "Nick Sanderson",
+          "role": "드럼",
+          "status": "former"
+        },
+        {
+          "name": "Richard Thomas",
+          "role": "드럼",
+          "status": "former"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "just-like-honey",
+          "title": "Just Like Honey",
+          "year": 1985,
+          "album": "Psychocandy",
+          "guide": "선명하고 감미로운 팝 멜로디 위로 어우러지는 몽환적인 기타 노이즈 피드백이 인상적이다.",
+          "youtubeId": "7EgB__YratE",
+          "source": {
+            "label": "jesus and mary chain — Just Like Honey YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=7EgB__YratE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "UPROXX Indie Mixtape"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:25:18.011Z"
+        },
+        {
+          "id": "april-skies",
+          "title": "April Skies",
+          "year": 1987,
+          "album": "Darklands",
+          "guide": "노이즈를 정제하고 선율미와 드라이브감을 강조한 노이즈 팝 사운드의 정수를 보여준다.",
+          "youtubeId": "OPPP3BXurHk",
+          "source": {
+            "label": "jesus and mary chain — April Skies YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=OPPP3BXurHk",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "UPROXX Indie Mixtape"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:25:21.889Z"
+        },
+        {
+          "id": "head-on",
+          "title": "Head On",
+          "year": 1989,
+          "album": "Automatic",
+          "guide": "전자 드럼 드라이브 비트와 날카로운 기타 리닝이 만들어내는 질주감을 체감할 수 있다.",
+          "youtubeId": "eGp47YwDZ48",
+          "source": {
+            "label": "jesus and mary chain — Head On YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=eGp47YwDZ48",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "UPROXX Indie Mixtape"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:25:25.648Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "jesus and mary chain — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q1126301",
+          "publisher": "Wikidata",
+          "externalId": "Q1126301",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "jesus and mary chain — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Jesus_and_Mary_Chain",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "jesus and mary chain — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCAlP0LcJ_RVqLvNr78w8MmA",
+          "publisher": "YouTube",
+          "externalId": "UCAlP0LcJ_RVqLvNr78w8MmA",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "jesus and mary chain — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+          "publisher": "MusicBrainz",
+          "externalId": "e938a15c-b17e-4e7a-9f68-ff0d536cab44",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "jesus and mary chain — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Jesus and Mary Chain 2007.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "shoegaze-dream-post",
+        "secondaryGenreIds": [
+          "post-punk-goth-new-wave",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "noise-pop",
+          "shoegaze",
+          "post-punk",
+          "noise-rock",
+          "alternative-rock"
+        ],
+        "moodScores": {
+          "noisy-wall": 5,
+          "dark-gloomy": 4,
+          "cold-urban": 4,
+          "melancholic-lonely": 4,
+          "dreamy-ethereal": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:25:38.241Z"
+    },
+    {
+      "id": "the-national",
+      "name": "The National",
+      "formed": 1999,
+      "origin": "Cincinnati, US",
+      "countryCode": "US",
+      "activeYears": "1999–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "포스트펑크 리바이벌",
+        "챔버 팝",
+        "얼터너티브 록",
+        "인디 포크"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "포스트펑크 리바이벌",
+            "챔버 팝",
+            "얼터너티브 록",
+            "인디 포크"
+          ]
+        }
+      ],
+      "tags": [
+        "인디 록",
+        "포스트 펑크 리바이블",
+        "인디 포크",
+        "체임버 팝",
+        "얼터너티브 록"
+      ],
+      "summary": "1999년 미국 브루클린에서 결성되어 어둡고 서정적인 인디 록으로 거대한 팬층을 확보한 밴드이다. Boxer(2007), High Violet(2010), Sleep Well Beast(2017) 등의 정규 앨범을 발표하며 독보적인 세련됨과 깊이 있는 사운드를 구축했다.",
+      "style": "매트 버닝거의 진중하고 낮은 바리톤 보컬과 브라이언 데벤도르프의 감각적이고 다이내믹한 드럼 리듬이 사운드를 이끈다. 아론 데스너와 브라이스 데스너 형제의 정교한 기타 레이어링 및 오케스트라 편곡이 차분하면서도 감정적인 긴장감을 더한다.",
+      "image": {
+        "wikipediaTitle": "The National (band)",
+        "alt": "The National 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_National_(Band)_Sleep_Well_Beast_Tour_Pittsburgh_Full_Band.jpg",
+          "creator": "Matthewvetter",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-05T09:24:52.287Z"
+        },
+        "fileName": "File:The National (Band) Sleep Well Beast Tour Pittsburgh Full Band.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/The_National_%28Band%29_Sleep_Well_Beast_Tour_Pittsburgh_Full_Band.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/The_National_%28Band%29_Sleep_Well_Beast_Tour_Pittsburgh_Full_Band.jpg/500px-The_National_%28Band%29_Sleep_Well_Beast_Tour_Pittsburgh_Full_Band.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+      },
+      "members": [
+        {
+          "name": "Matt Berninger",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Aaron Dessner",
+          "role": "기타, 키보드",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Bryan Devendorf",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Scott Devendorf",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1999–"
+        },
+        {
+          "name": "Bryce Dessner",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2001–"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "mr-november",
+          "title": "Mr. November",
+          "year": 2005,
+          "album": "Alligator",
+          "guide": "질주하는 드럼 비트와 날카로운 기타 속에서 폭발하는 후렴구의 반항적인 에너지.",
+          "youtubeId": "bxWQMyoYJBU",
+          "source": {
+            "label": "The National — Mr. November YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=bxWQMyoYJBU",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The National"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:22:56.559Z"
+        },
+        {
+          "id": "fake-empire",
+          "title": "Fake Empire",
+          "year": 2007,
+          "album": "Boxer",
+          "guide": "절제된 피아노 선율로 시작해 점차 웅장한 관악기 사운드로 이어지는 감각적인 전개.",
+          "youtubeId": "YKYvAJBsoqY",
+          "source": {
+            "label": "The National — Fake Empire YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=YKYvAJBsoqY",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The National - Topic"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:23:07.464Z"
+        },
+        {
+          "id": "bloodbuzz-ohio",
+          "title": "Bloodbuzz Ohio",
+          "year": 2010,
+          "album": "High Violet",
+          "guide": "특유의 묵직한 바리톤 보컬과 끊임없이 전진하는 강렬한 드럼 리듬의 조화.",
+          "youtubeId": "yfySK7CLEEg",
+          "source": {
+            "label": "The National — Bloodbuzz Ohio YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=yfySK7CLEEg",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "The National"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:23:12.730Z"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "arcade-fire",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 북미 인디 록 씬의 성장을 이끌며 문학적이고 오케스트라풍 요소가 가미된 사운드를 선보였다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-05T12:00:00.000Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The National — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q1142566",
+          "publisher": "Wikidata",
+          "externalId": "Q1142566",
+          "note": "Wikidata와 MusicBrainz에서 밴드명을 교차 확인함"
+        },
+        {
+          "label": "The National — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_National_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 연결함"
+        },
+        {
+          "label": "The National — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCeiRyLo_Q9q4tlv9aaQJF5w",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "UCeiRyLo_Q9q4tlv9aaQJF5w",
+          "note": "Wikidata와 MusicBrainz에서 교차 확인한 공식 채널"
+        },
+        {
+          "label": "The National — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/664c3e0e-42d8-48c1-b209-1efca19c0325",
+          "publisher": "MusicBrainz",
+          "externalId": "664c3e0e-42d8-48c1-b209-1efca19c0325",
+          "note": "Wikidata와 MusicBrainz에서 밴드명을 교차 확인함"
+        },
+        {
+          "label": "The National — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The_National_(Band)_Sleep_Well_Beast_Tour_Pittsburgh_Full_Band.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "post-punk-revival",
+          "chamber-pop",
+          "alternative-rock",
+          "indie-folk"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dark-gloomy": 4,
+          "slow-calm": 4,
+          "cold-urban": 4,
+          "romantic-emotional": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:24:58.985Z"
+    },
+    {
+      "id": "bring-me-the-horizon",
+      "name": "Bring Me the Horizon",
+      "formed": 2004,
+      "origin": "Sheffield, GB",
+      "countryCode": "GB",
+      "activeYears": "2004–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "메탈코어",
+        "얼터너티브 메탈",
+        "일렉트로닉코어",
+        "포스트하드코어",
+        "뉴 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "메탈코어",
+            "얼터너티브 메탈",
+            "일렉트로닉코어",
+            "포스트하드코어",
+            "뉴 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "메탈코어",
+        "얼터너티브 메탈",
+        "일렉트로닉코어",
+        "포스트 하드코어",
+        "뉴 메탈"
+      ],
+      "summary": "2004년 영국 셰필드에서 결성된 메탈 밴드로, 데스코어에서 시작해 얼터너티브 메탈과 일렉트로닉 록까지 스펙트럼을 확장했다. Sempiternal(2013)과 That’s the Spirit(2015) 등의 정규 앨범을 통해 대중성과 메탈의 결합을 이끌며 세계적인 대표 록 밴드로 자리매김했다.",
+      "style": "초기의 강렬한 메탈코어와 둔탁한 브레이크다운을 바탕으로 점차 일렉트로닉 신스 사운드와 대중적인 팝-록 훅을 결합했다. 올리버 사이크스의 다채로운 스크리밍과 멜로디컬한 보컬, 화려한 사운드 프로덕션이 사운드의 핵심이다.",
+      "image": {
+        "wikipediaTitle": "bring me the horizon",
+        "alt": "bring me the horizon 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bring-Me-The-Horizon.jpg",
+          "creator": "MCK-photography",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-05T09:22:26.950Z"
+        },
+        "fileName": "File:Bring-Me-The-Horizon.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bring-Me-The-Horizon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Bring-Me-The-Horizon.jpg/500px-Bring-Me-The-Horizon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+      },
+      "members": [
+        {
+          "name": "Oliver Sykes",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Lee Malia",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Matt Kean",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Matt Nicholls",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Jordan Fish",
+          "role": "키보드, 백보컬",
+          "status": "former",
+          "activeYears": "2012–2023"
+        },
+        {
+          "name": "Curtis Ward",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2004–2009"
+        },
+        {
+          "name": "Jona Weinhofen",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2009–2013"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "can-you-feel-my-heart",
+          "title": "Can You Feel My Heart",
+          "year": 2013,
+          "album": "Sempiternal",
+          "guide": "웅장한 신세사이저 리프와 메탈코어 사운드가 결합된 선율적이고 강렬한 사운드가 돋보인다.",
+          "youtubeId": "QJJYpsA5tv8",
+          "source": {
+            "label": "bring me the horizon — Can You Feel My Heart YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=QJJYpsA5tv8",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BMTHOfficialVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:21:30.772Z"
+        },
+        {
+          "id": "throne",
+          "title": "Throne",
+          "year": 2015,
+          "album": "That’s the Spirit",
+          "guide": "신스팝 요소와 중후한 기타 리프를 가미한 스케일 큰 경기장형 아레나 록의 면모를 보여준다.",
+          "youtubeId": "Ow_qI_F2ZJI",
+          "source": {
+            "label": "bring me the horizon — Throne YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=Ow_qI_F2ZJI",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BMTHOfficialVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:21:34.267Z"
+        },
+        {
+          "id": "shadow-moses",
+          "title": "Shadow Moses",
+          "year": 2013,
+          "album": "Sempiternal",
+          "guide": "폭발적인 떼창 구절과 중후한 기타 톤이 연출하는 묵직한 에너지를 체감할 수 있다.",
+          "youtubeId": "-k9qDxyxS3s",
+          "source": {
+            "label": "bring me the horizon — Shadow Moses YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=-k9qDxyxS3s",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "BMTHOfficialVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:21:37.500Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "Bring Me the Horizon — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q494784",
+          "publisher": "Wikidata",
+          "externalId": "Q494784",
+          "note": "Wikidata와 MusicBrainz에서 밴드명을 교차 확인함"
+        },
+        {
+          "label": "Bring Me the Horizon — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bring_Me_the_Horizon",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 연결함"
+        },
+        {
+          "label": "Bring Me the Horizon — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCAayZDDj3uom0QpSJiwLoUw",
+          "publisher": "YouTube",
+          "official": true,
+          "externalId": "UCAayZDDj3uom0QpSJiwLoUw",
+          "note": "Wikidata에서 확인한 공식 채널"
+        },
+        {
+          "label": "Bring Me the Horizon — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/074e3847-f67f-49f9-81f1-8c8cea147e8e",
+          "publisher": "MusicBrainz",
+          "externalId": "074e3847-f67f-49f9-81f1-8c8cea147e8e",
+          "note": "Studio 자동 검색 후보 · 운영자 확인 필요"
+        },
+        {
+          "label": "Bring Me the Horizon — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Bring-Me-The-Horizon.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Commons API로 자동 확인한 이미지 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "punk-emo"
+        ],
+        "subgenreIds": [
+          "metalcore",
+          "alternative-metal",
+          "electronicore",
+          "post-hardcore",
+          "nu-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "electronic-synth": 4,
+          "anthemic-live": 5,
+          "youth-rebellious": 4,
+          "fast-driving": 4
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:22:32.225Z"
+    },
+    {
+      "id": "the-libertines",
+      "name": "The Libertines",
+      "formed": 1997,
+      "origin": "London, GB",
+      "countryCode": "GB",
+      "activeYears": "1997–2004, 2010, 2014–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "가라지 록 리바이벌",
+        "포스트펑크 리바이벌",
+        "펑크 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "가라지 록 리바이벌",
+            "포스트펑크 리바이벌",
+            "펑크 록"
+          ]
+        }
+      ],
+      "tags": [
+        "인디 록",
+        "가라지 록 리바이블",
+        "포스트 펑크 리바이블",
+        "펑크 록"
+      ],
+      "summary": "1997년 영국 런던에서 결성되어 2000년대 초반 인디 록 및 가라지 록 리바이블 부흥을 이끈 밴드이다. Up the Bracket(2002)과 The Libertines(2004) 등의 정규 앨범을 통해 영국의 거친 인디 록 씬을 대표하는 팀으로 자리매김했다.",
+      "style": "피터 도허티와 칼 바랏의 상호작용하는 유기적인 투 보컬과 날카롭고 날것 그대로의 거친 기타 연주가 특징이다. 펑크 록의 거친 에너지에 브릿팝 특유의 캐치한 멜로디 감성을 접목했다.",
+      "image": {
+        "wikipediaTitle": "the libertines",
+        "fileName": "File:The Libertines 2014.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/The_Libertines_2014.jpg/960px-The_Libertines_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/The_Libertines_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "the libertines 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The Libertines 2014.jpg",
+          "creator": "Aurelien Guichard",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:36:37.205Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Carl Barât",
+          "role": "보컬, 기타",
+          "status": "current",
+          "activeYears": "1997–"
+        },
+        {
+          "name": "Peter Doherty",
+          "role": "보컬, 기타",
+          "status": "current",
+          "activeYears": "1997–"
+        },
+        {
+          "name": "Gary Powell",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2001–"
+        },
+        {
+          "name": "John Hassall",
+          "role": "베이스",
+          "status": "current"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "time-for-heroes",
+          "title": "Time for Heroes",
+          "year": 2002,
+          "album": "Up the Bracket",
+          "guide": "특유의 거친 기타 리프와 반항적인 보컬 에너지, 빠른 템포가 조화를 이루는 데뷔작의 대표곡이다.",
+          "youtubeId": "HAusT_Yl1gE",
+          "source": {
+            "label": "the libertines — Time for Heroes YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=HAusT_Yl1gE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rough Trade Records"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:20:35.039Z"
+        },
+        {
+          "id": "can-t-stand-me-now",
+          "title": "Can't Stand Me Now",
+          "year": 2004,
+          "album": "The Libertines",
+          "guide": "피터 도허티와 칼 바랏의 대화하듯 주고받는 투 보컬과 캐치한 기타 훅이 강렬한 인상을 남긴다.",
+          "youtubeId": "CqM11bt9QvI",
+          "source": {
+            "label": "the libertines — Can't Stand Me Now YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=CqM11bt9QvI",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rough Trade Records"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:20:39.487Z"
+        },
+        {
+          "id": "don-t-look-back-into-the-sun",
+          "title": "Don't Look Back Into the Sun",
+          "year": 2003,
+          "album": "Don't Look Back into the Sun (single)",
+          "guide": "신나는 기타 연주와 대중적이고 경쾌한 멜로디 라인이 시원하게 질주한다.",
+          "youtubeId": "jLYsIESNtUc",
+          "source": {
+            "label": "the libertines — Don't Look Back Into the Sun YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=jLYsIESNtUc",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "Rough Trade Records"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:20:48.076Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "the libertines — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q214350",
+          "publisher": "Wikidata",
+          "externalId": "Q214350",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "the libertines — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Libertines",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "the libertines — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCATDZ9YHc9cOIKbnD1yiY5g",
+          "publisher": "YouTube",
+          "externalId": "UCATDZ9YHc9cOIKbnD1yiY5g",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "the libertines — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/82b304c0-7da4-45d3-896a-0767c7ae1141",
+          "publisher": "MusicBrainz",
+          "externalId": "82b304c0-7da4-45d3-896a-0767c7ae1141",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "the libertines — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:The Libertines 2014.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "punk-emo",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "garage-rock-revival",
+          "post-punk-revival",
+          "punk-rock"
+        ],
+        "moodScores": {
+          "youth-rebellious": 5,
+          "fast-driving": 4,
+          "bright-upbeat": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:20:56.003Z"
+    },
+    {
+      "id": "the-vaccines",
+      "name": "The Vaccines",
+      "formed": 2010,
+      "origin": "London, GB",
+      "countryCode": "GB",
+      "activeYears": "2010–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "가라지 록 리바이벌",
+        "포스트펑크 리바이벌",
+        "파워 팝"
+      ],
+      "eraTags": [
+        {
+          "era": "2010s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "가라지 록 리바이벌",
+            "포스트펑크 리바이벌",
+            "파워 팝"
+          ]
+        }
+      ],
+      "tags": [
+        "인디 록",
+        "포스트 펑크 리바이블",
+        "가라지 록",
+        "포스트 브릿팝",
+        "파워 팝"
+      ],
+      "summary": "2010년 런던에서 결성된 인디 록 밴드로, 2010년대 영국의 인디 기타 록 부흥을 이끈 주요 주자 중 하나. 데뷔 앨범인 What Did You Expect From The Vaccines?(2011)와 후속작 Come of Age(2012)를 통해 평단과 대중의 인기를 동시에 얻었다.",
+      "style": "빠르고 직선적인 기타 리프와 중독성 있는 팝 멜로디 구조가 특징이다. 가라지 록 기반의 거친 에너지에 신나는 보컬 훅을 결합한 스타일을 보여준다.",
+      "image": {
+        "wikipediaTitle": "the vaccines",
+        "fileName": "File:Immergut Bands-The Vaccines218.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Immergut_Bands-The_Vaccines218.jpg/960px-Immergut_Bands-The_Vaccines218.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Immergut_Bands-The_Vaccines218.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "the vaccines 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Immergut Bands-The Vaccines218.jpg",
+          "creator": "Henry Laurisch",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:36:25.418Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Justin Hayward-Young",
+          "role": "리드 보컬, 리듬 기타",
+          "status": "current",
+          "activeYears": "2010–현재"
+        },
+        {
+          "name": "Arni Arnason",
+          "role": "베이스 기타",
+          "status": "current",
+          "activeYears": "2010–현재"
+        },
+        {
+          "name": "Timothy Lanham",
+          "role": "키보드, 기타, 백보컬",
+          "status": "current",
+          "activeYears": "2017–현재"
+        },
+        {
+          "name": "Yoann Intonti",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2017–현재"
+        },
+        {
+          "name": "Freddie Cowan",
+          "role": "리드 기타",
+          "status": "former",
+          "activeYears": "2010–2023"
+        },
+        {
+          "name": "Pete Robertson",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2010–2016"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "if-you-wanna",
+          "title": "If You Wanna",
+          "year": 2011,
+          "album": "What Did You Expect From The Vaccines?",
+          "guide": "질주감 있는 템포와 폭발적인 기타 훅이 돋보이는 곡이다.",
+          "youtubeId": "uQKjI6395iU",
+          "source": {
+            "label": "the vaccines — If You Wanna YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=uQKjI6395iU",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "TheVaccinesVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:19:43.970Z"
+        },
+        {
+          "id": "wreckin-bar-ra-ra-ra",
+          "title": "Wreckin' Bar (Ra Ra Ra)",
+          "year": 2011,
+          "album": "What Did You Expect From The Vaccines?",
+          "guide": "짧고 강렬한 템포로 가라지 록 특유의 에너지와 스피드를 들려준다.",
+          "youtubeId": "0sOq6Rrre7c",
+          "source": {
+            "label": "the vaccines — Wreckin' Bar (Ra Ra Ra) YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=0sOq6Rrre7c",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "TheVaccinesVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:19:48.080Z"
+        },
+        {
+          "id": "teenage-icon",
+          "title": "Teenage Icon",
+          "year": 2012,
+          "album": "Come of Age",
+          "guide": "묵직한 둔탁한 드럼 리듬 위에 선명한 기타 리프가 드라이브를 더한다.",
+          "youtubeId": "bFUKrsDDChE",
+          "source": {
+            "label": "the vaccines — Teenage Icon YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=bFUKrsDDChE",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "TheVaccinesVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-05T09:19:52.910Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "the vaccines — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q1458872",
+          "publisher": "Wikidata",
+          "externalId": "Q1458872",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "the vaccines — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Vaccines",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "the vaccines — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCWLY9PpOMnI3Q66zwZdyzyA",
+          "publisher": "YouTube",
+          "externalId": "UCWLY9PpOMnI3Q66zwZdyzyA",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "the vaccines — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/aa76ec08-45ab-4724-9411-d80b0e59ac59",
+          "publisher": "MusicBrainz",
+          "externalId": "aa76ec08-45ab-4724-9411-d80b0e59ac59",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "the vaccines — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Immergut Bands-The Vaccines218.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "punk-emo",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "garage-rock-revival",
+          "post-punk-revival",
+          "power-pop"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "fast-driving": 5,
+          "groovy-danceable": 4,
+          "youth-rebellious": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-05T09:20:07.433Z"
+    },
+    {
+      "id": "hoobastank",
+      "name": "Hoobastank",
+      "formed": 1994,
+      "origin": "Agoura Hills, US",
+      "countryCode": "US",
+      "activeYears": "1994–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "포스트그런지",
+        "얼터너티브 록",
+        "얼터너티브 메탈",
+        "팝 록",
+        "뉴 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "포스트그런지",
+            "얼터너티브 록",
+            "얼터너티브 메탈",
+            "팝 록",
+            "뉴 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트 그란지",
+        "얼터너티브 록",
+        "얼터너티브 메탈",
+        "모던 록"
+      ],
+      "summary": "1994년 미국 아구라 힐스에서 결성되어 포스트 그란지와 얼터너티브 록 메인스트림에서 명성을 얻은 밴드이다. 메이저 데뷔 앨범 Hoobastank(2001)와 글로벌 히트작 The Reason(2003)을 통해 2000년대 대표적인 모던 록 밴드로 자리매김했다.",
+      "style": "묵직한 디스토션 기타 리프와 드라이브감 넘치는 드럼 비트 위로 더글라스 로브의 감성적이면서도 시원한 보컬 선율을 얹는다. 묵직한 하드 록 사운드와 대중적이고 감각적인 훅이 인상적인 포스트 그란지 전개를 보여준다.",
+      "image": {
+        "wikipediaTitle": "hoobastank",
+        "fileName": "File:Hoobastank MAA.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hoobastank_MAA.jpg/960px-Hoobastank_MAA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Hoobastank_MAA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "hoobastank 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoobastank MAA.jpg",
+          "creator": "Sry85",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-04T11:36:12.638Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Doug Robb",
+          "role": "보컬",
+          "status": "current",
+          "activeYears": "1994–"
+        },
+        {
+          "name": "Dan Estrin",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1994–"
+        },
+        {
+          "name": "Chris Hesse",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "1994–"
+        },
+        {
+          "name": "Jesse Charland",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2009–"
+        },
+        {
+          "name": "Markku Lappalainen",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1994–2005"
+        },
+        {
+          "name": "Jeremy Wasser",
+          "role": "색소폰",
+          "status": "former",
+          "activeYears": "1995–2000"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "crawling-in-the-dark",
+          "title": "Crawling in the Dark",
+          "year": 2001,
+          "album": "Hoobastank",
+          "guide": "폭발적인 기타 리프와 다이내믹하게 터지는 후렴 보컬의 에너지가 강렬하다.",
+          "youtubeId": "bOHxtOLfvIo",
+          "source": {
+            "label": "hoobastank — Crawling in the Dark YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=bOHxtOLfvIo",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "HoobastankVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:43:43.508Z"
+        },
+        {
+          "id": "running-away",
+          "title": "Running Away",
+          "year": 2001,
+          "album": "Hoobastank",
+          "guide": "캐치한 메인 기타 멜로디라인과 서정적인 훅이 대칭을 이루는 포스트 그런지 트랙.",
+          "youtubeId": "kxwsu8JfvVU",
+          "source": {
+            "label": "hoobastank — Running Away YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=kxwsu8JfvVU",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "HoobastankVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:43:47.581Z"
+        },
+        {
+          "id": "the-reason",
+          "title": "The Reason",
+          "year": 2003,
+          "album": "The Reason",
+          "guide": "잔잔한 어쿠스틱 느낌의 연주에서 시작해 감성적인 후렴으로 이어지는 록 발라드.",
+          "youtubeId": "fV4DiAyExN0",
+          "source": {
+            "label": "hoobastank — The Reason YouTube 검색",
+            "url": "https://www.youtube.com/watch?v=fV4DiAyExN0",
+            "publisher": "YouTube",
+            "official": false,
+            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
+            "channelName": "HoobastankVEVO"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "Studio operator",
+          "reviewedAt": "2026-08-04T11:43:51.796Z"
+        }
+      ],
+      "relations": [],
+      "sources": [
+        {
+          "label": "hoobastank — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q49724",
+          "publisher": "Wikidata",
+          "externalId": "Q49724",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "hoobastank — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Hoobastank",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "hoobastank — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCityQM41pM2PchmqbpawEIQ",
+          "publisher": "YouTube",
+          "externalId": "UCityQM41pM2PchmqbpawEIQ",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "hoobastank — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2fa0d3ac-b64c-401a-b0a1-4915ba6cc157",
+          "publisher": "MusicBrainz",
+          "externalId": "2fa0d3ac-b64c-401a-b0a1-4915ba6cc157",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "hoobastank — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Hoobastank MAA.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "modern-alternative-metal",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "pop-soft-rock"
+        ],
+        "subgenreIds": [
+          "post-grunge",
+          "alternative-rock",
+          "alternative-metal",
+          "pop-rock",
+          "nu-metal"
+        ],
+        "moodScores": {
+          "youth-rebellious": 4,
+          "melancholic-lonely": 4,
+          "romantic-emotional": 4,
+          "fast-driving": 4,
+          "anthemic-live": 5
+        },
+        "reviewStatus": "draft",
+        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-08-04T11:43:58.061Z"
+    },
     {
       "id": "steppenwolf",
       "name": "steppenwolf",
@@ -4753,6 +7480,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "the-national",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "2000년대 북미 인디 록 씬의 성장을 이끌며 문학적이고 오케스트라풍 요소가 가미된 사운드를 선보였다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-05T12:00:00.000Z"
         }
       ],
       "sources": [
@@ -5422,15 +8158,18 @@
         {
           "id": "take-my-hand",
           "title": "Take My Hand",
-          "youtubeId": "1s2Lgc6yVno",
+          "year": 2008,
+          "album": "Simple Plan",
+          "guide": "팽팽한 기타와 전자음이 섞인 질주감 위로, 함께 버티자는 메시지를 힘찬 후렴으로 끌어올리는 곡이다.",
+          "youtubeId": "ztBcsIRYhdQ",
           "reviewStatus": "reviewed",
           "source": {
-            "label": "Take My Hand — YouTube",
-            "url": "https://www.youtube.com/watch?v=1s2Lgc6yVno",
+            "label": "Simple Plan — Take My Hand 공식 음원",
+            "url": "https://www.youtube.com/watch?v=ztBcsIRYhdQ",
             "publisher": "YouTube",
-            "official": false,
-            "note": "YouTube 검색 후보에서 운영자가 직접 선택한 영상",
-            "channelName": "SimplePlanLyrics"
+            "official": true,
+            "note": "Simple Plan 공식 아티스트 채널 음원",
+            "channelName": "SimplePlan"
           },
           "reviewedBy": "Studio operator",
           "reviewedAt": "2026-08-02T02:00:45.310Z"
@@ -11552,6 +14291,13 @@
           "kind": "influenced",
           "strength": 3,
           "note": "특유의 거만한 태도와 멜로디컬한 기타 팝 사운드로 90년대 브릿팝 열풍의 기반을 마련해 주었다.",
+          "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "primal-scream",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다.",
           "reviewStatus": "draft"
         }
       ],
@@ -48062,16 +50808,6 @@
       "createdAt": "2026-07-30T11:31:35.280Z"
     },
     {
-      "id": "the-stone-roses->primal-scream-0-1",
-      "sourceBandId": "the-stone-roses",
-      "sourceBandName": "The Stone Roses",
-      "targetBandId": "primal-scream",
-      "kind": "shared-scene",
-      "strength": 3,
-      "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다.",
-      "createdAt": "2026-07-30T11:31:35.280Z"
-    },
-    {
       "id": "racer-x->cacophony-0-0",
       "sourceBandId": "racer-x",
       "sourceBandName": "Racer X",
@@ -48260,16 +50996,6 @@
       "strength": 3,
       "note": "2000년대 초반 대중적인 팝 펑크/이모 사운드와 감성적인 가사 주제를 공유한다.",
       "createdAt": "2026-08-01T04:20:52.262Z"
-    },
-    {
-      "id": "arcade-fire->the-national-0-0",
-      "sourceBandId": "arcade-fire",
-      "sourceBandName": "Arcade Fire",
-      "targetBandId": "the-national",
-      "kind": "shared-scene",
-      "strength": 3,
-      "note": "2000년대 북미 인디 록 씬의 성장을 이끌며 문학적이고 오케스트라풍 요소가 가미된 사운드를 선보였다.",
-      "createdAt": "2026-08-01T04:26:27.314Z"
     },
     {
       "id": "mazzy-star->cocteau-twins-0-1",

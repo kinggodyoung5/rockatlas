@@ -877,3 +877,69 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 **Git 상태와 다음 단계**
 
 - `server/studioApi.ts`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`에도 반영한다(공개 사이트 동작에는 영향 없음).
+
+## 34. 2026-08-05 모바일 탐색 카드 재설계 · 신규 밴드 교차 검수 (로컬 확인 대기)
+
+운영자가 모바일 익스트림 메탈 장르 카드 깨짐, 장르·느낌 카드의 과도한 세로 길이, 최근 추가 밴드의 곡·멤버 누락을 보고했다. 이번 작업은 운영자 확인을 위해 로컬까지만 반영했으며 커밋·푸시·배포하지 않았다.
+
+**모바일 UI**
+
+- 680px 이하 장르 카드를 1열 340px 대형 카드에서 2열 250~290px 카드로 변경했다.
+- 카드 문구를 하단에 모으고 긴 설명은 모바일에서 숨겼다. 대신 각 카드에 대표 세부 장르를 최대 2줄로 표시해 작은 카드에서도 장르를 식별할 수 있게 했다.
+- 긴 제목도 카드 밖으로 넘치지 않도록 모바일 제목 크기·줄바꿈 규칙을 조정했다. 390px 실제 화면에서 익스트림 메탈을 포함한 15개 카드 전부 넘침 0건을 확인했다.
+- 느낌 카드는 모바일 2열, 카드 높이 104px로 줄이고 이름·밴드 수 중심으로 정리했다. 한 그룹의 6개 분위기가 3행 안에 보인다.
+
+**데이터 검수**
+
+- 최근 추가 11개 밴드(Steel Panther, Rainbow, Whitesnake, Rascal Flatts, Primal Scream, The Jesus and Mary Chain, The National, Bring Me the Horizon, The Libertines, The Vaccines, Hoobastank)의 Wikidata·MusicBrainz 식별자와 멤버 이름을 외부 원본과 교차 감사했다.
+- Rainbow의 잘못된 결성 정보와 전원 `역할 확인 필요/current` 상태를 실제 역할·재적 연도·상태로 교정하고 최신 활동기 멤버 Jens Johansson·Candice Night를 보완했다.
+- `the nationals`를 `The National`로 교정하고 잘못 연결된 MusicBrainz ID를 `664c3e0e-42d8-48c1-b209-1efca19c0325`로 바꿨다. Wikidata·Wikipedia·공식 YouTube 출처도 채우고 Arcade Fire와의 보류 관계를 양방향 관계로 전환했다.
+- Steel Panther `Glory Hole`, Rascal Flatts `Life Is a Highway`, Simple Plan `Take My Hand`의 누락된 연도·앨범·곡 설명을 채웠다. Simple Plan 곡은 비공식 가사 영상 대신 공식 아티스트 채널 음원으로 교체했다.
+- Bring Me the Horizon, Steel Panther, Primal Scream, The National의 누락된 공식 YouTube 출처를 보완했다.
+- The Jesus and Mary Chain의 결성연도·활동 중단 기간, The Libertines의 활동 중단 기간, Rascal Flatts의 2024년 재결합 등 명백한 활동연도 오류를 교정했다.
+- 전체 205개 밴드를 다시 검사한 결과 대표곡의 연도·앨범·설명 누락 0건, 멤버 역할 누락/`확인 필요` 0건이다.
+- `Massive Attack` 한 팀은 기존처럼 `draft` 상태이므로 공개 데이터는 204개다. 이번 요청 범위에서 임의 공개하지 않았다.
+
+**검증**
+
+- `validate:data`: 205개 밴드, 627곡, Wikidata·MusicBrainz·Commons 205/205, 공식 YouTube 205/205, 오류 0.
+- `validate:taxonomy`: 13개 장르·140개 세부 장르·24개 분위기, 205/205 통과.
+- 신규 11개 밴드 `audit:facts`: 등록 멤버 113/115 자동 대조, Rainbow의 최신 활동기 2명(Jens Johansson·Candice Night)은 MusicBrainz 관계에 없으나 별도 자료로 확인했다.
+- Vitest 11개 파일·70개 테스트 통과.
+- 프로덕션 빌드 및 공개 산출물 검증 통과: 공개 목록·상세·공유 페이지 각 204개, 메인 전체 카탈로그 선로딩 없음.
+- 390×844 실제 브라우저에서 장르 카드 2열·느낌 카드 2열, 레이아웃 넘침 0, 콘솔 오류 0을 확인했다.
+
+**현재 Git 상태와 정확한 다음 단계**
+
+- 사용자 소유 기존 변경: `src/data/catalog.json`, `.claude/settings.local.json`, `배포법.txt`.
+- 이번 세션 변경: `src/index.css`, 기존 미커밋 `src/data/catalog.json` 안의 위 데이터 보정, `PROJECT_STATUS.md`.
+- 커밋·푸시·배포하지 않았다.
+- 다음 단계: 운영자가 `http://127.0.0.1:4174/`에서 모바일 카드와 밴드 데이터를 확인한다. 승인되면 변경 파일을 다시 점검한 뒤 커밋하며, 배포는 운영자의 별도 명시가 있을 때만 한다.
+
+## 35. 2026-08-05 모바일 장르 카드 설명 복원 · Studio 모바일 미리보기 스크롤 버그 수정 · 코덱스 작업 커밋 배포
+
+운영자가 섹션 34(코덱스, 미커밋)를 검토하고 두 가지를 요청했다: (1) 모바일 장르 카드에서 설명을 지우고 세부장르로 대체한 것을 되돌리되, 이전보다 텍스트를 더 아래로 내려 그림이 더 보이게 할 것. (2) Studio 디자인 패널의 실시간 미리보기에서 모바일 모드로 봐도 끝까지 스크롤이 안 되는 문제를 조사·수정할 것.
+
+**모바일 장르 카드**
+
+- 코덱스가 `.genre-card-copy p`(설명)를 `display:none` 처리하고 대신 `.genre-card-foot`에 세부장르 목록을 2줄로 보여주도록 바꿔놨었다. 설명을 다시 보이게 복원하고 세부장르 표시는 원래대로 숨겼다.
+- 다만 텍스트 시작 위치(`.genre-card-copy`의 top padding)는 코덱스가 낮춘 82px보다 더 내려 96px로 설정해, 카드 상단에 이미지가 더 넓게 드러나도록 했다(운영자 요청: "예전보다 좀 더 아래 빈 공간에다 써서 그림이 더 잘보이게").
+- 설명 폰트를 13px에서 11.5px로, 줄 수는 2줄 유지로 살짝 줄여 코덱스가 줄인 카드 높이(340px에서 250~255px, 2열 배치)에 맞췄다.
+- 390px 실제 브라우저에서 15개 카드 전부(익스트림 메탈 포함) 설명이 잘리거나 넘치지 않고, 세부장르 목록과 겹치지 않는 것을 실측 확인했다.
+
+**Studio 모바일 미리보기 스크롤 버그**
+
+- 원인: 미리보기 iframe을 CSS `zoom`으로 축소해 사이드바에 넣는 방식인데, iframe 자체의 `height`가 데스크톱 2400px·모바일 2600px로 고정돼 있었다. 실제 렌더링된 페이지는 이보다 훨씬 길어서(예: 4625px), 바깥 뷰포트는 `overflow:hidden`이라 스크롤 자체가 안 됐고, iframe 내부 스크롤도 iframe 자신의 고정 높이 안에서만 가능해 전체 페이지의 상당 부분(데스크톱 기준 약 3분의 2)이 애초에 도달 불가능했다.
+- 수정: iframe의 실제 문서 높이를 측정해 iframe 자신의 `height`를 그 값에 정확히 맞추고, 바깥 뷰포트는 `overflow:hidden`에서 `overflow-y:auto`로 바꿔 스크롤 레이어를 하나로 통일했다. 처음엔 `ResizeObserver`로 자동 갱신을 시도했으나 iframe 문서의 크기 변화를 안정적으로 감지하지 못해 0.4초 간격 폴링으로 교체했다.
+- 부수 확인: 모바일 모드일 때 iframe에 실제로 `width:390px`가 적용되고 iframe 내부의 `window.innerWidth`도 정확히 390을 반환하는 것을 확인했다 — 진짜 390px 뷰포트에서 렌더링되는 것이지 시각적으로만 축소한 가짜가 아니다.
+- 브라우저에서 데스크톱·모바일 두 모드 모두 끝까지 스크롤이 되는 것, iframe 높이가 실제 콘텐츠 높이와 정확히 일치하는 것을 확인했다.
+
+**검증**
+
+- `npx tsc -b`, `npm test`(11개 파일 70개 테스트), `npm run validate:data`(205개 밴드, 오류 없음), `npm run validate:taxonomy`(205/205), `npm run build`(공개 상세·공유 페이지 204개 생성 검증) 모두 통과.
+- 코덱스가 섹션 34에서 이미 검증해둔 신규 밴드 11개 데이터는 별도로 재검증하지 않고 그대로 신뢰했다 — 이번 `validate:data` 재실행 결과도 오류 0건으로 일치한다.
+
+**Git 상태와 다음 단계**
+
+- 이번 커밋에 코덱스의 섹션 34 작업(신규 밴드 11개, 데이터 교정)과 이번 세션의 모바일 카드·Studio 미리보기 수정을 함께 포함해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다 — 운영자가 명시적으로 커밋·배포까지 요청했다.
+- 저장소 루트의 `배포법.txt`(빈 파일)와 `.claude/settings.local.json`은 여전히 건드리지 않는다.

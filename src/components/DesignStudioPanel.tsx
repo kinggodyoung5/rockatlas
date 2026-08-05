@@ -48,8 +48,29 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
   const previewIframeRef = useRef<HTMLIFrameElement>(null)
   const previewValueRef = useRef(value)
   previewValueRef.current = value
+  const [previewContentHeight, setPreviewContentHeight] = useState(2400)
   const sendPreviewState = () => previewIframeRef.current?.contentWindow?.postMessage({ type: 'rockatlas-preview', siteContent: previewValueRef.current }, '*')
+  // The iframe is visually shrunk with CSS zoom so it fits the sidebar, but its own document
+  // still needs a real height equal to the full rendered page -- otherwise the page's own
+  // internal scrolling and the sidebar's outer scrolling fight each other and the bottom of
+  // the page becomes unreachable. Measuring scrollHeight directly (same-origin) and mirroring
+  // it onto the iframe's own height means the outer viewport is the only scrollable layer.
+  const measurePreviewHeight = () => {
+    const doc = previewIframeRef.current?.contentDocument
+    const height = doc?.documentElement?.scrollHeight
+    if (height) setPreviewContentHeight((current) => (current === height ? current : height))
+  }
+  const handlePreviewLoad = () => { sendPreviewState(); measurePreviewHeight() }
   useEffect(() => { sendPreviewState() }, [value])
+  useEffect(() => {
+    // The iframe's document grows asynchronously (React render, webfonts, image aspect
+    // ratios resolving) after its own `load` event, and a ResizeObserver on the iframe's
+    // documentElement doesn't reliably catch that in this cross-context setup. Polling is
+    // unglamorous but simple and correct: it also naturally re-measures on a desktop/mobile
+    // mode switch, since that changes the iframe's width and reflows the same document.
+    const interval = window.setInterval(measurePreviewHeight, 400)
+    return () => window.clearInterval(interval)
+  }, [])
   useEffect(() => {
     const handleReady = (event: MessageEvent) => { if (event.data?.type === 'rockatlas-preview-ready') sendPreviewState() }
     window.addEventListener('message', handleReady)
@@ -297,7 +318,7 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
         <div className={`studio-live-preview-frame is-${previewMode}`}>
           <div className="studio-preview-toolbar"><span>실시간 미리보기 · 실제 화면과 동일합니다</span><button className={previewMode === 'desktop' ? 'is-active' : ''} onClick={() => setPreviewMode('desktop')} aria-label="PC 미리보기"><Monitor size={14} /></button><button className={previewMode === 'mobile' ? 'is-active' : ''} onClick={() => setPreviewMode('mobile')} aria-label="모바일 미리보기"><Smartphone size={14} /></button></div>
           <div className="studio-live-preview-viewport">
-            <iframe ref={previewIframeRef} className="studio-live-preview-iframe" src="./?livePreview=1" title="실시간 미리보기" onLoad={sendPreviewState} />
+            <iframe ref={previewIframeRef} className="studio-live-preview-iframe" src="./?livePreview=1" title="실시간 미리보기" style={{ height: `${previewContentHeight}px` }} onLoad={handlePreviewLoad} />
           </div>
         </div>
       </div>
