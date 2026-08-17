@@ -200,15 +200,15 @@ img { display: block; max-width: 100%; }
 .catalog-control-summary { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; color: #8f8c91; font: 800 12px/1 Arial; letter-spacing: .08em; }
 .mood-browser { padding: 55px 0 10px; }
 .mood-group { margin-bottom: 45px; }
-.mood-group h2 { margin: 0 0 18px; color: #d0cdcd; font-size: 24px; font-weight: 800; }
+.mood-group h2 { margin: 0 0 18px; color: var(--mood-group-color, #d0cdcd); font-size: 24px; font-weight: 800; }
 .mood-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-.mood-card-grid button { min-height: 205px; display: flex; flex-direction: column; align-items: flex-start; padding: 20px; border: 1px solid #313036; background: #111114; text-align: left; cursor: pointer; }
-.mood-card-grid button:hover, .mood-card-grid button.is-selected { border-color: var(--orange); background: color-mix(in srgb, var(--orange) 13%, #111114); }
+.mood-card-grid button { min-height: 205px; display: flex; flex-direction: column; align-items: flex-start; padding: 20px; border: 1px solid #313036; border-left: 3px solid var(--mood-group-color, #313036); background: #111114; text-align: left; cursor: pointer; }
+.mood-card-grid button:hover, .mood-card-grid button.is-selected { border-color: var(--mood-group-color); background: color-mix(in srgb, var(--mood-group-color) 13%, #111114); }
 .mood-card-grid button:disabled { cursor: not-allowed; opacity: .38; }
 .mood-card-grid button > span { color: #918e93; font: 800 13px/1 Arial; }
 .mood-card-grid button strong { margin-top: 25px; font-size: 19px; line-height: 1.25; word-break: keep-all; }
 .mood-card-grid button p { color: #aeacb0; font-size: 15px; line-height: 1.65; word-break: keep-all; }
-.mood-card-grid button em { margin-top: auto; color: var(--orange); font: 800 13px/1 Arial; letter-spacing: .07em; font-style: normal; }
+.mood-card-grid button em { margin-top: auto; color: var(--mood-group-color, var(--orange)); font: 800 13px/1 Arial; letter-spacing: .07em; font-style: normal; }
 .mood-result-controls { display: flex; align-items: end; gap: 18px; }
 .mood-result-controls .catalog-select-grid { flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .mood-result-grid { align-items: start; }

@@ -7,6 +7,8 @@ import { countryName } from '../lib/countryNames'
 import { BandCard } from './BandCard'
 
 const groupLabels: Record<MoodGroupId, string> = { energy: '에너지와 속도', emotion: '감정과 정서', texture: '공간감과 음색', listening: '구성과 감상 방식' }
+// Cosmic-themed palette: sun orange, nebula purple, nebula cyan (texture holds "우주적이고 환각적인"), starlight gold.
+const groupColors: Record<MoodGroupId, string> = { energy: '#e86335', emotion: '#9b7fd4', texture: '#4fb8c9', listening: '#d9a25c' }
 
 interface MoodFinderPageProps {
   bands: Band[]
@@ -45,7 +47,7 @@ export function MoodFinderPage({ bands, selectedMoodIds, genreId, eraId, country
     <main id="top" className="catalog-page mood-page" tabIndex={-1}>
       <section className="catalog-hero shell"><span className="section-no">{sectionLabel}</span><h1>{sectionTitle}</h1><p>{sectionDescription}</p><strong>{selectedMoodIds.length}/3 선택</strong></section>
       <section className="mood-browser shell">
-        {(Object.keys(groupLabels) as MoodGroupId[]).map((groupId) => <div className="mood-group" key={groupId}><h2>{groupLabels[groupId]}</h2><div className="mood-card-grid">{taxonomyMoods.filter((mood) => mood.groupId === groupId).map((mood) => {
+        {(Object.keys(groupLabels) as MoodGroupId[]).map((groupId) => <div className="mood-group" key={groupId} style={{ '--mood-group-color': groupColors[groupId] } as React.CSSProperties}><h2>{groupLabels[groupId]}</h2><div className="mood-card-grid">{taxonomyMoods.filter((mood) => mood.groupId === groupId).map((mood) => {
           const selected = selectedMoodIds.includes(mood.id)
           const count = bands.filter((band) => (band.taxonomyV2?.moodScores[mood.id] ?? 0) >= 2).length
           return <button key={mood.id} className={selected ? 'is-selected' : ''} aria-pressed={selected} disabled={!selected && selectedMoodIds.length >= 3} onClick={() => toggleMood(mood.id)}><span>{String(mood.order).padStart(2, '0')}</span><strong>{mood.name}</strong><p>{mood.description}</p><em>{count} BANDS</em></button>
