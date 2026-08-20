@@ -997,3 +997,34 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 **Git 상태와 다음 단계**
 
 - `src/components/BandResearchStarter.tsx`, `src/data/catalog.json`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
+
+## 38. 2026-08-20 Massive Attack 완전 삭제 · 신규 초안 8개 검수 및 배포
+
+**Massive Attack 삭제**
+
+- 운영자가 "매시브 어택은 내 기준 락이 아닌 것 같아서 사실 계속 냅둔거였는데, 얘네를 락밴드라고 볼 수 있을까?"라고 질문 — 섹션 37에서 공개 전환했던 걸 운영자가 원래부터 의도적으로 초안으로 남겨뒀던 이유(장르 정체성 의문)를 뒤늦게 알게 된 것.
+- 솔직한 평가를 전달했다: Massive Attack은 트립합/일렉트로닉이 핵심이고, 기타·밴드 편성 중심의 관습적인 "록" 범주에는 들어맞지 않는다.
+- `AskUserQuestion`으로 처리 방침을 확인 — 운영자가 "완전히 삭제"를 선택.
+- `cat.bands`에서 `massive-attack` 밴드 객체를 통째로 제거. `the-xx`가 갖고 있던 Massive Attack 대상 관계(shared-scene, "Crystalised" 커버 근거)도 함께 제거.
+- 1차 `validate:data`에서 `pendingRelations`(보류 관계) 배열에 `massive-attack->portishead-0-0`, `massive-attack->tricky-0-1` 두 항목이 출발 밴드 없음 오류로 남아있는 걸 발견 — 밴드 삭제 시 놓친 잔여 데이터였다. 두 항목도 제거해 오류 0건으로 정리.
+- 결과: 밴드 213 → 212, 초안 0개 유지.
+
+**신규 초안 8개 검수 및 완성**
+
+운영자가 새로 추가한 8개 초안(`lamb-of-god`, `machine-head`, `manowar`, `the-prodigy`, `the-used`, `placebo`, `the-kooks`, `accept`)을 전부 검수하고 빠진 내용을 채웠다.
+
+- 표기 정리: 밴드명·`wikipediaTitle`·별칭·모든 출처 라벨·트랙 출처 라벨의 소문자 표기를 8개 밴드 전부 정식 표기로 수정.
+- 신원 교차검증 공백 보완: `machine-head`는 Wikidata 연결이 아예 없었음 — `/api/studio/external-search`로 확인한 Q319458(미국 헤비메탈 밴드, 1991년 결성, Oakland)이 기존 MusicBrainz 항목과 정확히 일치함을 확인해 Wikidata·Wikipedia·공식 YouTube 채널(`UC5mX9jQdmMRzCLfOJmeyhsg`) 출처를 추가. `placebo`는 MusicBrainz 교차확인이 없었음 — `847e8284-8582-4b0e-9c26-b042a4f49e57`(영국 얼터너티브 록, 런던, 1994년 결성)이 기존 Wikidata 항목과 일치함을 확인해 추가. 두 밴드 모두 `/api/studio/fact-audit`로 `status: verified` 재확인.
+- 대표곡 24개(밴드당 3곡) 전부 YouTube 공식 영상 ID와 출처(`channelName`/`channelType`/`official: true`)를 채워 `reviewStatus: reviewed`로 전환.
+- 이미지 데이터가 깨져 있던 3개 밴드(`machine-head`는 이미지 자체가 없었고, `the-prodigy`·`the-used`는 `credit.sourceUrl`이 실제 URL이 아니라 파일명 문자열만 들어있었음) — Wikimedia Commons API로 실제 `displayUrl`/`originalUrl`/작가/라이선스를 조회해 재구성, `credit.reviewStatus: verified`로 전환.
+- `the-prodigy` 요약문에 앨범명이 중복 이어붙여진 깨진 텍스트("The Fat of the LandThe Fat of the Land(1997)...")가 있었음 — 각 앨범명이 한 번씩만 나오도록 재작성.
+- 관계 9쌍(양방향 18건) 추가, 전부 사실 확인 후 방향별로 다른 어투의 노트 작성: lamb-of-god↔pantera(영향, 단 보컬은 단순 모방 아니라고 직접 선을 그은 점도 반영), lamb-of-god↔killswitch-engage(NWOAHM 신 공유), machine-head↔pantera(기타 톤 직접 참고), manowar↔rhapsody(서사적 파워 메탈 원형→후예), the-prodigy↔nine-inch-nails(인더스트리얼 영향), the-used↔my-chemical-romance(2004 Warped Tour·2005 Taste of Chaos 신 공유), placebo↔david-bowie(보위가 투어 초청·싱글 코러스 참여), the-kooks↔arctic-monkeys(데뷔 앨범 동일 발매일), accept↔scorpions(1970~80년대 독일 헤비메탈 두 축).
+- 8개 밴드 전부 `reviewStatus: published`, `reviewedBy: 'ROCK ATLAS editorial'`, `taxonomyV2.reviewStatus: reviewed`로 전환.
+
+**검증**
+
+- `npm run validate:data`(밴드 212개, Wikidata·MusicBrainz·Commons 이미지·대표곡 링크·공식 YouTube 링크 212/212, 오류 0건), `npm run validate:taxonomy`(212/212, 오류 없음), `npx tsc -b`, `npm test`(11개 파일 70개 테스트 통과), `npm run build`(공개 상세·공유 페이지 212개 생성 검증, `validate-build-output` 통과) 모두 통과.
+
+**Git 상태와 다음 단계**
+
+- `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다 — 운영자가 "검수 후 배포해"로 명시적으로 요청.

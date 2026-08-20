@@ -1,7 +1,1988 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-05T09:29:51.990Z",
+  "updatedAt": "2026-08-20T12:09:58.249Z",
   "bands": [
+    {
+      "id": "lamb-of-god",
+      "name": "Lamb of God",
+      "formed": 1999,
+      "origin": "Richmond, US",
+      "countryCode": "US",
+      "activeYears": "1999–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "그루브 메탈",
+        "스래시 메탈",
+        "메탈코어",
+        "얼터너티브 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "그루브 메탈",
+            "스래시 메탈",
+            "메탈코어",
+            "얼터너티브 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "그루브 메탈",
+        "스래시 메탈",
+        "메탈코어",
+        "미국 메탈",
+        "헤비 메탈"
+      ],
+      "summary": "1999년 미국 리치먼드에서 결성된 헤비 메탈 밴드로, 신개념 아메리칸 헤비 메탈(NWOAHM) 운동의 주축으로 활동했다. As the Palaces Burn(2003)과 Ashes of the Wake(2004) 등의 정규 앨범을 통해 독보적인 그루브 메탈 사운드를 확립했다.",
+      "style": "랜디 블라이스의 강렬하고 날카로운 스크리밍과 유기적으로 몰아치는 정교한 트윈 기타 리프가 중심을 이룬다. 폴리리듬적 드럼 비트와 다이내믹한 템포 변화가 어우러져 압도적인 중량감과 에너지를 만든다.",
+      "image": {
+        "wikipediaTitle": "Lamb of God",
+        "fileName": "File:Lamb Of God - Rock am Ring 2015-9946.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Lamb_Of_God_-_Rock_am_Ring_2015-9946.jpg/960px-Lamb_Of_God_-_Rock_am_Ring_2015-9946.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Lamb_Of_God_-_Rock_am_Ring_2015-9946.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "Lamb of God 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamb Of God - Rock am Ring 2015-9946.jpg",
+          "creator": "Andreas Lawen, Fotandi",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:09:53.346Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Willie Adler",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "Randy Blythe",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "John Campbell",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "Mark Morton",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1999–현재"
+        },
+        {
+          "name": "Art Cruz",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2019–현재"
+        },
+        {
+          "name": "Chris Adler",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1999–2019"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "laid-to-rest",
+          "title": "Laid to Rest",
+          "year": 2004,
+          "album": "Ashes of the Wake",
+          "guide": "정교하고 유기적인 기타 리프와 랜디 블라이스의 격정적인 보컬 분출을 체감할 수 있다.",
+          "youtubeId": "HL9kaJZw8iw",
+          "source": {
+            "label": "Lamb of God — Laid to Rest",
+            "url": "https://www.youtube.com/watch?v=HL9kaJZw8iw",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "lambofgodVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "redneck",
+          "title": "Redneck",
+          "year": 2006,
+          "album": "Sacrament",
+          "guide": "특유의 그루브한 리듬과 캐치하면서도 파괴적인 코러스 전개가 돋보인다.",
+          "youtubeId": "oqdZpxkzNvc",
+          "source": {
+            "label": "Lamb of God — Redneck",
+            "url": "https://www.youtube.com/watch?v=oqdZpxkzNvc",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "lambofgodVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "512",
+          "title": "512",
+          "year": 2015,
+          "album": "VII: Sturm und Drang",
+          "guide": "묵직하게 죄어오는 어두운 분위기와 다이내믹한 템포 조절이 선명한 인상을 남긴다.",
+          "youtubeId": "dulxbKkj9Wg",
+          "source": {
+            "label": "Lamb of God — 512",
+            "url": "https://www.youtube.com/watch?v=dulxbKkj9Wg",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "lambofgodVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "pantera",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "기타 파트에 판테라의 영향이 확실히 있다고 평가되지만, 보컬 랜디 블라이스는 둘 다 미국 남부 출신이라 그루브·서던 록 영향이 겹친 것이지 그대로 따라한 것은 아니라고 선을 그었다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "killswitch-engage",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초중반 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 흐름을 함께 이끈 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Lamb of God — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q207731",
+          "publisher": "Wikidata",
+          "externalId": "Q207731",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Lamb of God — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lamb_of_God_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Lamb of God — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC4_yA-FDGB3Zwmk96E7yujA",
+          "publisher": "YouTube",
+          "externalId": "UC4_yA-FDGB3Zwmk96E7yujA",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Lamb of God — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/298909e4-ebcb-47b8-95e9-cc53b087fc65",
+          "publisher": "MusicBrainz",
+          "externalId": "298909e4-ebcb-47b8-95e9-cc53b087fc65",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Lamb of God — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Lamb Of God - Rock am Ring 2015-9946.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "groove-metal",
+          "thrash-metal",
+          "metalcore",
+          "alternative-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "massive-heavy": 5,
+          "fast-driving": 4,
+          "riff-solo-driven": 5,
+          "technical-complex": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "machine-head",
+      "name": "Machine Head",
+      "formed": 1991,
+      "origin": "Oakland, US",
+      "countryCode": "US",
+      "activeYears": "1991–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "그루브 메탈",
+        "스래시 메탈",
+        "전통 헤비메탈",
+        "얼터너티브 메탈",
+        "뉴 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "그루브 메탈",
+            "스래시 메탈",
+            "전통 헤비메탈",
+            "얼터너티브 메탈",
+            "뉴 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "헤비 메탈",
+        "그루브 메탈",
+        "스래시 메탈",
+        "얼터너티브 메탈",
+        "뉴 메탈"
+      ],
+      "summary": "1991년 미국 오클랜드에서 결성된 헤비 메탈 밴드로, 1990년대 그루브 메탈과 스래시 메탈의 핵심 축을 담당했다. Burn My Eyes(1994)와 The Blackening(2007) 등의 정규 앨범을 통해 메탈 씬에 묵직한 존재감을 각인시켰다.",
+      "style": "묵직하고 리드미컬한 기타 리프와 다이내믹한 다운튜닝 드라이브가 사운드를 이끈다. 로버트 플린의 폭발적인 셔우팅과 스크리밍 보컬, 정교하고 날카로운 솔로 연주가 어우러져 압도적인 중량감을 선사한다.",
+      "image": {
+        "wikipediaTitle": "Machine Head",
+        "alt": "Machine Head 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machine_Head_en_concert_%C3%A0_La_Rochelle_en_2018_(cropped).jpg",
+          "creator": "Tilly antoine",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:17:05.209Z"
+        },
+        "fileName": "File:Machine Head en concert à La Rochelle en 2018 (cropped).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Machine_Head_en_concert_%C3%A0_La_Rochelle_en_2018_%28cropped%29.jpg/960px-Machine_Head_en_concert_%C3%A0_La_Rochelle_en_2018_%28cropped%29.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Machine_Head_en_concert_%C3%A0_La_Rochelle_en_2018_%28cropped%29.jpg"
+      },
+      "members": [
+        {
+          "name": "Robert Flynn",
+          "role": "리드 보컬, 기타",
+          "status": "current",
+          "activeYears": "1991–현재"
+        },
+        {
+          "name": "Reece Scruggs",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2024–현재"
+        },
+        {
+          "name": "Jared MacEachern",
+          "role": "베이스, 백보컬",
+          "status": "current"
+        },
+        {
+          "name": "Wacław Kiełtyka",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Tony Costanza",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1991–1994"
+        },
+        {
+          "name": "Logan Mader",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1991–1998"
+        },
+        {
+          "name": "Adam Duce",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1991–2013"
+        },
+        {
+          "name": "Chris Kontos",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1994–1995"
+        },
+        {
+          "name": "Dave McClain",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1995–2018"
+        },
+        {
+          "name": "Ahrue Luster",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1998–2002"
+        },
+        {
+          "name": "Phil Demmel",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2002–2018"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "davidian",
+          "title": "Davidian",
+          "year": 1994,
+          "album": "Burn My Eyes",
+          "guide": "묵직하게 내리치는 그루브 리프와 폭발적인 후렴구 브레이크다운이 전해주는 육중한 에너지를 체감할 수 있다.",
+          "youtubeId": "Qf0yWQzz0gM",
+          "source": {
+            "label": "Machine Head — Davidian",
+            "url": "https://www.youtube.com/watch?v=Qf0yWQzz0gM",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Roadrunner Records",
+            "channelType": "label",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "imperium",
+          "title": "Imperium",
+          "year": 2003,
+          "album": "Through the Ashes of Empires",
+          "guide": "긴장감을 고조시키는 도입부를 지나 격렬하게 몰아치는 스래시 메탈 리프와 떼창 구절이 인상적이다.",
+          "youtubeId": "zPFPRSZDXp0",
+          "source": {
+            "label": "Machine Head — Imperium",
+            "url": "https://www.youtube.com/watch?v=zPFPRSZDXp0",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Roadrunner Records",
+            "channelType": "label",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "halo",
+          "title": "Halo",
+          "year": 2007,
+          "album": "The Blackening",
+          "guide": "정교하고 서정적인 기타 솔로 레이어와 웅장하게 확장되는 스케일 큰 곡 전개를 들을 수 있다.",
+          "youtubeId": "cFerqOU1iWU",
+          "source": {
+            "label": "Machine Head — Halo",
+            "url": "https://www.youtube.com/watch?v=cFerqOU1iWU",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Roadrunner Records",
+            "channelType": "label",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "pantera",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "데뷔작 Burn My Eyes(1994)의 기타 톤을 만들 때 판테라의 Vulgar Display of Power(1992)를 계속 참고했다고 리더 로브 플린이 직접 밝혔다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Machine Head — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/22a1f4d7-81ff-4216-ac06-3387da6bc118",
+          "publisher": "MusicBrainz",
+          "externalId": "22a1f4d7-81ff-4216-ac06-3387da6bc118",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Machine Head — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q319458",
+          "publisher": "Wikidata",
+          "externalId": "Q319458",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Machine Head — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Machine_Head_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Machine Head — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC5mX9jQdmMRzCLfOJmeyhsg",
+          "publisher": "YouTube",
+          "externalId": "UC5mX9jQdmMRzCLfOJmeyhsg",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Machine Head — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Machine_Head_en_concert_%C3%A0_La_Rochelle_en_2018_(cropped).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "modern-alternative-metal",
+          "alternative-grunge"
+        ],
+        "subgenreIds": [
+          "groove-metal",
+          "thrash-metal",
+          "traditional-heavy-metal",
+          "alternative-metal",
+          "nu-metal"
+        ],
+        "moodScores": {
+          "aggressive-heavy": 5,
+          "massive-heavy": 5,
+          "fast-driving": 4,
+          "riff-solo-driven": 5,
+          "anthemic-live": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "manowar",
+      "name": "Manowar",
+      "formed": 1980,
+      "origin": "Auburn, US",
+      "countryCode": "US",
+      "activeYears": "1980–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "전통 헤비메탈",
+        "파워 메탈",
+        "스피드 메탈"
+      ],
+      "eraTags": [
+        {
+          "era": "1980s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "전통 헤비메탈",
+            "파워 메탈",
+            "스피드 메탈"
+          ]
+        }
+      ],
+      "tags": [
+        "헤비 메탈",
+        "파워 메탈",
+        "에픽 메탈",
+        "스피드 메탈",
+        "트루 메탈"
+      ],
+      "summary": "1980년 미국 오번에서 결성된 헤비 메탈 밴드로 파워 메탈 장르의 구축에 깊은 영향을 미쳤다. Battle Hymns(1982)와 Kings of Metal(1988) 등 다수의 정규 앨범을 통해 영웅적이고 웅장한 메탈 사운드를 선보였다.",
+      "style": "선명하고 강렬한 베이스 리프와 폭발적인 음역대의 보컬 연주가 사운드의 중심을 이룬다. 전사의 신화와 승리를 테마로 한 에픽 구성과 극적인 코러스 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "Manowar",
+        "fileName": "File:Manowar 2016 (cropped).jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Manowar_2016_%28cropped%29.jpg/960px-Manowar_2016_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Manowar_2016_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "Manowar 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manowar 2016 (cropped).jpg",
+          "creator": "Firestormmd",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:08:28.670Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Eric Adams",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "1980–현재"
+        },
+        {
+          "name": "Joey DeMaio",
+          "role": "베이스, 키보드",
+          "status": "current",
+          "activeYears": "1980–현재"
+        },
+        {
+          "name": "Dave Chedrick",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2022–현재"
+        },
+        {
+          "name": "Carl Canedy",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1980–1981"
+        },
+        {
+          "name": "Ross the Boss",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1980–1989"
+        },
+        {
+          "name": "Donnie Hamzik",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1981–1983, 2009–2017"
+        },
+        {
+          "name": "Scott Columbus",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1983–1991, 1994–2008"
+        },
+        {
+          "name": "David Shankle",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1989–1994"
+        },
+        {
+          "name": "Kenny \"Rhino\" Earl Edwards",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1991–1994, 2008–2009"
+        },
+        {
+          "name": "Karl Logan",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1994–2018"
+        },
+        {
+          "name": "E. V. Martel",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2019–2022"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "battle-hymn",
+          "title": "Battle Hymn",
+          "year": 1982,
+          "album": "Battle Hymns",
+          "guide": "웅장한 오케스트레이션조의 전개와 에릭 아담스의 치솟는 고음 보컬이 만드는 에픽한 선율을 느낄 수 있다.",
+          "youtubeId": "EtNqj9g8HJE",
+          "source": {
+            "label": "Manowar — Battle Hymn",
+            "url": "https://www.youtube.com/watch?v=EtNqj9g8HJE",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Manowar - Topic",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "kings-of-metal",
+          "title": "Kings of Metal",
+          "year": 1988,
+          "album": "Kings of Metal",
+          "guide": "직관적인 기타 리프와 라이브에 최적화된 당당하고 캐치한 떼창 코러스가 돋보인다.",
+          "youtubeId": "RSSmwXy98IY",
+          "source": {
+            "label": "Manowar — Kings of Metal",
+            "url": "https://www.youtube.com/watch?v=RSSmwXy98IY",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Manowar - Topic",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "warriors-of-the-world-united",
+          "title": "Warriors of the World United",
+          "year": 2002,
+          "album": "Warriors of the World",
+          "guide": "묵직한 행진곡풍 비트 위로 펼쳐지는 벅차고 결의에 찬 메인 멜로디를 감상할 수 있다.",
+          "youtubeId": "G1G9D8A4Fiw",
+          "source": {
+            "label": "Manowar — Warriors of the World United",
+            "url": "https://www.youtube.com/watch?v=G1G9D8A4Fiw",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "MANOWAR",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "rhapsody",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "헬로윈보다 7년 앞서 결성돼 서사적·영웅서사 파워 메탈의 원형을 세웠고, 랩소디(오브 파이어)의 심포닉 파워 메탈도 이 원형 위에서 구축됐다고 평가된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Manowar — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q156049",
+          "publisher": "Wikidata",
+          "externalId": "Q156049",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Manowar — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Manowar",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Manowar — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCFcDpTbLxlmlkRdQc7w_mmw",
+          "publisher": "YouTube",
+          "externalId": "UCFcDpTbLxlmlkRdQc7w_mmw",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Manowar — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/00eeed6b-5897-4359-8347-b8cd28375331",
+          "publisher": "MusicBrainz",
+          "externalId": "00eeed6b-5897-4359-8347-b8cd28375331",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Manowar — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Manowar 2016 (cropped).jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "folk-symphonic-metal"
+        ],
+        "subgenreIds": [
+          "traditional-heavy-metal",
+          "power-metal",
+          "speed-metal"
+        ],
+        "moodScores": {
+          "massive-heavy": 5,
+          "epic-cinematic": 5,
+          "anthemic-live": 5,
+          "fast-driving": 4,
+          "aggressive-heavy": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "the-prodigy",
+      "name": "The Prodigy",
+      "formed": 1990,
+      "origin": "Braintree, GB",
+      "countryCode": "GB",
+      "activeYears": "1990–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "전자 록",
+        "댄스 펑크",
+        "인더스트리얼 록",
+        "신스 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "전자 록",
+            "댄스 펑크",
+            "인더스트리얼 록",
+            "신스 록"
+          ]
+        }
+      ],
+      "tags": [
+        "일렉트로닉 록",
+        "빅 비트",
+        "일렉트로닉",
+        "댄스 펑크",
+        "디지털 펑크"
+      ],
+      "summary": "1990년 영국 브레인트리에서 결성되어 일렉트로닉과 록 음악의 결합을 이끈 그룹이다. Experience(1992), Music for the Jilted Generation(1994), The Fat of the Land(1997) 등의 앨범을 통해 세계적인 명성을 얻었다.",
+      "style": "강렬한 비트와 공격적인 신시사이저 레이어, 펑크적 에너지가 융합된 사운드가 특징이다. 리암 하울렛의 감각적인 프로덕션에 맥심과 키스 플린트의 독창적 보컬 및 퍼포먼스가 더해진다.",
+      "image": {
+        "wikipediaTitle": "The Prodigy",
+        "fileName": "File:Prodigy-rock-am-ring-2009.jpg",
+        "alt": "The Prodigy 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prodigy-rock-am-ring-2009.jpg",
+          "creator": "Herr Stern (Flickr)",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:17:05.209Z"
+        },
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Prodigy-rock-am-ring-2009.jpg/960px-Prodigy-rock-am-ring-2009.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Prodigy-rock-am-ring-2009.jpg"
+      },
+      "members": [
+        {
+          "name": "Liam Howlett",
+          "role": "프로듀서, 키보드",
+          "status": "current",
+          "activeYears": "1990–현재"
+        },
+        {
+          "name": "Maxim",
+          "role": "MC, 보컬",
+          "status": "current",
+          "activeYears": "1990–현재"
+        },
+        {
+          "name": "Leeroy Thornhill",
+          "role": "댄서, 키보드",
+          "status": "former",
+          "activeYears": "1990–2000"
+        },
+        {
+          "name": "Keith Flint",
+          "role": "보컬, 댄서",
+          "status": "former",
+          "activeYears": "1990–2019"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "firestarter",
+          "title": "Firestarter",
+          "year": 1997,
+          "album": "The Fat of the Land",
+          "guide": "공격적인 기타 리프 샘플과 키스 플린트의 강렬한 보컬이 이끄는 빅 비트 사운드를 감상할 수 있다.",
+          "youtubeId": "wmin5WkOuPw",
+          "source": {
+            "label": "The Prodigy — Firestarter",
+            "url": "https://www.youtube.com/watch?v=wmin5WkOuPw",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Prodigy",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "breathe",
+          "title": "Breathe",
+          "year": 1997,
+          "album": "The Fat of the Land",
+          "guide": "묵직하고 위협적인 베이스라인과 맥심, 키스 플린트의 교차 보컬이 긴장감을 조성한다.",
+          "youtubeId": "6_PAHbqq-o4",
+          "source": {
+            "label": "The Prodigy — Breathe",
+            "url": "https://www.youtube.com/watch?v=6_PAHbqq-o4",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Prodigy",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "voodoo-people",
+          "title": "Voodoo People",
+          "year": 1994,
+          "album": "Music for the Jilted Generation",
+          "guide": "빠른 템포의 브레이크비트와 중독성 있는 메인 멜로디 라인이 인상적이다.",
+          "youtubeId": "YV78vobCyIo",
+          "source": {
+            "label": "The Prodigy — Voodoo People",
+            "url": "https://www.youtube.com/watch?v=YV78vobCyIo",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Prodigy",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "nine-inch-nails",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "The Fat of the Land(1997)의 공격적인 인더스트리얼 질감에 나인 인치 네일스의 영향이 있었다고 평가된다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Prodigy — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q7256860",
+          "publisher": "Wikidata",
+          "externalId": "Q7256860",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "The Prodigy — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Prodigy",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "The Prodigy — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC7IZbkKDd20v6Ni_vFX63rQ",
+          "publisher": "YouTube",
+          "externalId": "UC7IZbkKDd20v6Ni_vFX63rQ",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "The Prodigy — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704",
+          "publisher": "MusicBrainz",
+          "externalId": "4a4ee089-93b1-4470-af9a-6ff575d32704",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "The Prodigy — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Prodigy-rock-am-ring-2009.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "post-punk-goth-new-wave",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "electronic-rock",
+          "dance-punk",
+          "industrial-rock",
+          "synth-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "electronic-synth": 5,
+          "aggressive-heavy": 5,
+          "groovy-danceable": 4,
+          "youth-rebellious": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "the-used",
+      "name": "The Used",
+      "formed": 2001,
+      "origin": "Orem, US",
+      "countryCode": "US",
+      "activeYears": "2001–현재",
+      "primaryGenre": "punk-rock",
+      "genreIds": [
+        "punk-rock"
+      ],
+      "subgenres": [
+        "포스트하드코어",
+        "이모",
+        "스크리모",
+        "얼터너티브 록",
+        "팝펑크"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "punk-rock"
+          ],
+          "subgenres": [
+            "포스트하드코어",
+            "이모",
+            "스크리모",
+            "얼터너티브 록",
+            "팝펑크"
+          ]
+        }
+      ],
+      "tags": [
+        "포스트 하드코어",
+        "이모",
+        "얼터너티브 록",
+        "스크리모",
+        "팝 펑크"
+      ],
+      "summary": "2001년 미국 오렘에서 결성된 포스트 하드코어 및 이모 밴드이다. The Used(2002)와 In Love and Death(2004) 등의 정규 앨범을 통해 2000년대 이모 붐을 이끌며 폭발적인 감정선이 담긴 음악을 발표했다.",
+      "style": "버트 맥크라켄의 감정 기복이 큰 스크리밍과 캐치한 팝 멜로디 보컬이 공존한다. 격렬하고 날카로운 기타 디스토션에 다이내믹한 리듬 전개가 더해져 강렬한 에너지를 형성한다.",
+      "image": {
+        "wikipediaTitle": "The Used",
+        "fileName": "File:MuchMusic Video Awards 2007 608.jpg",
+        "alt": "The Used 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:MuchMusic_Video_Awards_2007_608.jpg",
+          "creator": "Robin Wong",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:17:05.209Z"
+        },
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/MuchMusic_Video_Awards_2007_608.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/MuchMusic_Video_Awards_2007_608.jpg"
+      },
+      "members": [
+        {
+          "name": "Bert McCracken",
+          "role": "리드 보컬",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Quinn Allman",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Jeph Howard",
+          "role": "베이스",
+          "status": "current",
+          "activeYears": "2001–현재"
+        },
+        {
+          "name": "Dan Whitesides",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2006–현재"
+        },
+        {
+          "name": "Joey Bradford",
+          "role": "기타",
+          "status": "current"
+        },
+        {
+          "name": "Branden Steineckert",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2001–2006"
+        },
+        {
+          "name": "Justin Shekoski",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "2015–2018"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "the-taste-of-ink",
+          "title": "The Taste of Ink",
+          "year": 2002,
+          "album": "The Used",
+          "guide": "희망과 반항심이 어우러진 캐치한 멜로디와 버트 맥크라켄의 보컬 감정선을 느낄 수 있다.",
+          "youtubeId": "aJXRFcyWgdk",
+          "source": {
+            "label": "The Used — The Taste of Ink",
+            "url": "https://www.youtube.com/watch?v=aJXRFcyWgdk",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Used",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "buried-myself-alive",
+          "title": "Buried Myself Alive",
+          "year": 2002,
+          "album": "The Used",
+          "guide": "묵직한 포스트 하드코어 기타 리프와 분출하는 후렴구 보컬의 조화를 체감할 수 있다.",
+          "youtubeId": "4OIAiVIN8Ck",
+          "source": {
+            "label": "The Used — Buried Myself Alive",
+            "url": "https://www.youtube.com/watch?v=4OIAiVIN8Ck",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Used",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "all-that-i-ve-got",
+          "title": "All That I've Got",
+          "year": 2004,
+          "album": "In Love and Death",
+          "guide": "서정적이고 우울한 멜로디 라인과 점진적으로 고조되는 가슴 절절한 연주를 들을 수 있다.",
+          "youtubeId": "IXibBhyPLwA",
+          "source": {
+            "label": "The Used — All That I've Got",
+            "url": "https://www.youtube.com/watch?v=IXibBhyPLwA",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "The Used - Topic",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "my-chemical-romance",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2004년 Warped Tour와 2005년 첫 Taste of Chaos 투어를 함께 돌며 2000년대 이모·포스트 하드코어 신을 이끌었다. 마이 케미컬 로맨스가 초기에 The Used의 오프닝을 맡기도 했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Used — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q847970",
+          "publisher": "Wikidata",
+          "externalId": "Q847970",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "The Used — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Used",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "The Used — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCFwZUc0XGKdVBn7deieUasA",
+          "publisher": "YouTube",
+          "externalId": "UCFwZUc0XGKdVBn7deieUasA",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "The Used — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8262d8e4-9137-4bb3-a787-3caabbbc13e9",
+          "publisher": "MusicBrainz",
+          "externalId": "8262d8e4-9137-4bb3-a787-3caabbbc13e9",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "The Used — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:MuchMusic_Video_Awards_2007_608.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "punk-emo",
+        "secondaryGenreIds": [
+          "alternative-grunge",
+          "modern-alternative-metal"
+        ],
+        "subgenreIds": [
+          "post-hardcore",
+          "emo",
+          "screamo",
+          "alternative-rock",
+          "pop-punk"
+        ],
+        "moodScores": {
+          "youth-rebellious": 5,
+          "aggressive-heavy": 5,
+          "melancholic-lonely": 4,
+          "fast-driving": 4,
+          "romantic-emotional": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "placebo",
+      "name": "Placebo",
+      "formed": 1994,
+      "origin": "London, GB",
+      "countryCode": "GB",
+      "activeYears": "1994–현재",
+      "primaryGenre": "alternative-indie",
+      "genreIds": [
+        "alternative-indie"
+      ],
+      "subgenres": [
+        "얼터너티브 록",
+        "인디 록",
+        "글램 록",
+        "포스트펑크",
+        "신스 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1990s",
+          "genreIds": [
+            "alternative-indie"
+          ],
+          "subgenres": [
+            "얼터너티브 록",
+            "인디 록",
+            "글램 록",
+            "포스트펑크",
+            "신스 록"
+          ]
+        }
+      ],
+      "tags": [
+        "얼터너티브 록",
+        "글램 록",
+        "인디 록",
+        "신스 록",
+        "포스트 펑크"
+      ],
+      "summary": "1994년 영국 런던에서 결성되어 독창적인 음악적 색채를 선보인 얼터너티브 록 밴드이다. Placebo(1996), Without You I’m Nothing(1998), Sleeping With Ghosts(2003) 등의 정규 앨범을 통해 독특한 감성과 사운드를 전 세계에 각인시켰다.",
+      "style": "브라이언 몰코의 독특한 비음 보컬과 날카로운 디스토션 기타, 신시사이저 레이어가 사운드를 형성한다. 글램 록적 독창성과 멜랑콜리한 신스 록, 포스트 펑크 질감이 공존하는 감성적인 곡 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "Placebo",
+        "fileName": "File:Placebo coachella.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Placebo_coachella.jpg/960px-Placebo_coachella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Placebo_coachella.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "Placebo 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Placebo coachella.jpg",
+          "creator": "Marcelo Teson from Los Angeles, CA, USA",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:07:42.896Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Brian Molko",
+          "role": "리드 보컬, 기타",
+          "status": "current",
+          "activeYears": "1994–현재"
+        },
+        {
+          "name": "Stefan Olsdal",
+          "role": "베이스, 키보드, 기타",
+          "status": "current",
+          "activeYears": "1994–현재"
+        },
+        {
+          "name": "Robert Schultzberg",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1994–1996"
+        },
+        {
+          "name": "Steve Hewitt",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1994, 1995, 1996–2007"
+        },
+        {
+          "name": "Steve Forrest",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2008–2015"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "nancy-boy",
+          "title": "Nancy Boy",
+          "year": 1996,
+          "album": "Placebo",
+          "guide": "중독성 있는 날카로운 기타 리프와 브레이크스루를 이끈 신나는 그런지·글램 록 템포를 들을 수 있다.",
+          "youtubeId": "PBxuq_eWW94",
+          "source": {
+            "label": "Placebo — Nancy Boy",
+            "url": "https://www.youtube.com/watch?v=PBxuq_eWW94",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "PLACEBO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "every-you-every-me",
+          "title": "Every You Every Me",
+          "year": 1998,
+          "album": "Without You I’m Nothing",
+          "guide": "질주하는 록 드라이브 리듬과 브라이언 몰코의 보컬 감성이 선명하게 드러난다.",
+          "youtubeId": "OMaycNcPsHI",
+          "source": {
+            "label": "Placebo — Every You Every Me",
+            "url": "https://www.youtube.com/watch?v=OMaycNcPsHI",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "PLACEBO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "the-bitter-end",
+          "title": "The Bitter End",
+          "year": 2003,
+          "album": "Sleeping With Ghosts",
+          "guide": "긴장감 넘치는 빠른 드럼 비트와 다이내믹하게 몰아치는 신스·기타 사운드를 체감할 수 있다.",
+          "youtubeId": "-JJAXwAaA2w",
+          "source": {
+            "label": "Placebo — The Bitter End",
+            "url": "https://www.youtube.com/watch?v=-JJAXwAaA2w",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "PLACEBO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "david-bowie",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "데뷔 초 데이비드 보위가 자신의 Outside 투어 오프닝으로 직접 초청했고, 1998년 싱글 \"Without You I'm Nothing\"에 코러스로 참여했으며, 1999년 브릿 어워즈에서 \"20th Century Boy\"를 함께 라이브로 선보였다. 보컬 브라이언 몰코는 보위를 자신의 멘토로 언급한다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Placebo — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q484839",
+          "publisher": "Wikidata",
+          "externalId": "Q484839",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Placebo — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Placebo — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC2b9IFlgcfZ_2TOW_BQTh0A",
+          "publisher": "YouTube",
+          "externalId": "UC2b9IFlgcfZ_2TOW_BQTh0A",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Placebo — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Placebo coachella.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        },
+        {
+          "label": "Placebo — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/847e8284-8582-4b0e-9c26-b042a4f49e57",
+          "publisher": "MusicBrainz",
+          "externalId": "847e8284-8582-4b0e-9c26-b042a4f49e57",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "alternative-grunge",
+        "secondaryGenreIds": [
+          "indie-britpop-garage",
+          "post-punk-goth-new-wave"
+        ],
+        "subgenreIds": [
+          "alternative-rock",
+          "indie-rock",
+          "glam-rock",
+          "post-punk",
+          "synth-rock"
+        ],
+        "moodScores": {
+          "melancholic-lonely": 5,
+          "dark-gloomy": 5,
+          "youth-rebellious": 4,
+          "electronic-synth": 4,
+          "cold-urban": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "the-kooks",
+      "name": "The Kooks",
+      "formed": 2004,
+      "origin": "Brighton, GB",
+      "countryCode": "GB",
+      "activeYears": "2004–현재",
+      "primaryGenre": "britpop-indie",
+      "genreIds": [
+        "britpop-indie"
+      ],
+      "subgenres": [
+        "인디 록",
+        "인디 팝",
+        "포스트 브릿팝",
+        "포스트펑크 리바이벌",
+        "팝 록"
+      ],
+      "eraTags": [
+        {
+          "era": "2000s",
+          "genreIds": [
+            "britpop-indie"
+          ],
+          "subgenres": [
+            "인디 록",
+            "인디 팝",
+            "포스트 브릿팝",
+            "포스트펑크 리바이벌",
+            "팝 록"
+          ]
+        }
+      ],
+      "tags": [
+        "인디 록",
+        "인디 팝",
+        "포스트 브릿팝",
+        "포스트 펑크 리바이벌",
+        "인디 팝 록"
+      ],
+      "summary": "2004년 영국 브라이턴에서 결성되어 2000년대 인디 록과 포스트 브릿팝 붐을 이끈 밴드이다. Inside In/Inside Out(2006)과 Konk(2008) 등의 정규 앨범을 통해 특유의 캐치한 멜로디와 경쾌한 리듬이 돋보이는 곡들을 선보였다.",
+      "style": "루크 프리차드의 개성 있는 보컬과 경쾌한 리듬, 차랑차랑한 어쿠스틱 및 전자기타 리프가 사운드를 형성한다. 인디 팝과 포스트 펑크 리바이벌의 기운을 담아낸 캐치한 코러스 전개가 특징이다.",
+      "image": {
+        "wikipediaTitle": "The Kooks",
+        "fileName": "File:TheKooksGroningen.JPG",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/TheKooksGroningen.JPG/960px-TheKooksGroningen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/TheKooksGroningen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "The Kooks 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:TheKooksGroningen.JPG",
+          "creator": "Erwin1990",
+          "license": "Public domain",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:07:23.440Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Luke Pritchard",
+          "role": "리드 보컬, 기타",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Hugh Harris",
+          "role": "기타, 키보드, 백보컬",
+          "status": "current",
+          "activeYears": "2004–현재"
+        },
+        {
+          "name": "Alexis Nunez",
+          "role": "드럼",
+          "status": "current",
+          "activeYears": "2012–현재"
+        },
+        {
+          "name": "Max Rafferty",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2004–2008"
+        },
+        {
+          "name": "Paul Garred",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "2004–2012"
+        },
+        {
+          "name": "Dan Logan",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2008–2008"
+        },
+        {
+          "name": "Peter Denton",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "2008–2018"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "naive",
+          "title": "Naïve",
+          "year": 2006,
+          "album": "Inside In/Inside Out",
+          "guide": "중독성 있는 톡톡 튀는 기타 리프와 루크 프리차드의 독특한 보컬 톤을 감상할 수 있다.",
+          "youtubeId": "jkaMiaRLgvY",
+          "source": {
+            "label": "The Kooks — Naïve",
+            "url": "https://www.youtube.com/watch?v=jkaMiaRLgvY",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "TheKooksVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "she-moves-in-her-own-way",
+          "title": "She Moves in Her Own Way",
+          "year": 2006,
+          "album": "Inside In/Inside Out",
+          "guide": "경쾌한 어쿠스틱 기타 선율과 싱그러운 팝 록 멜로디가 매력적으로 전개된다.",
+          "youtubeId": "pquhYpGHrlw",
+          "source": {
+            "label": "The Kooks — She Moves in Her Own Way",
+            "url": "https://www.youtube.com/watch?v=pquhYpGHrlw",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "TheKooksVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "always-where-i-need-to-be",
+          "title": "Always Where I Need to Be",
+          "year": 2008,
+          "album": "Konk",
+          "guide": "에너지 넘치는 드럼 비트와 관객들과 함께 부르기 좋은 캐치한 훅이 돋보인다.",
+          "youtubeId": "wh_-IoHD6oM",
+          "source": {
+            "label": "The Kooks — Always Where I Need to Be",
+            "url": "https://www.youtube.com/watch?v=wh_-IoHD6oM",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "TheKooksVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "arctic-monkeys",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "데뷔 앨범 Inside In/Inside Out과 아틱 몽키스의 데뷔 앨범이 2006년 1월 같은 날 발매되며 2000년대 영국 인디 붐의 상징적인 순간을 함께 만들었다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Kooks — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q211768",
+          "publisher": "Wikidata",
+          "externalId": "Q211768",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "The Kooks — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Kooks",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "The Kooks — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UC3lSoOBQYPsZPYpgoC6_RVg",
+          "publisher": "YouTube",
+          "externalId": "UC3lSoOBQYPsZPYpgoC6_RVg",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "The Kooks — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f82f3a3e-29c2-42ca-b589-bc5dc210fa9e",
+          "publisher": "MusicBrainz",
+          "externalId": "f82f3a3e-29c2-42ca-b589-bc5dc210fa9e",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "The Kooks — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:TheKooksGroningen.JPG",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "indie-britpop-garage",
+        "secondaryGenreIds": [
+          "pop-soft-rock",
+          "classic-roots-rock"
+        ],
+        "subgenreIds": [
+          "indie-rock",
+          "indie-pop",
+          "post-britpop",
+          "post-punk-revival",
+          "pop-rock"
+        ],
+        "moodScores": {
+          "bright-upbeat": 5,
+          "youth-rebellious": 4,
+          "groovy-danceable": 4,
+          "romantic-emotional": 4,
+          "acoustic-organic": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
+    {
+      "id": "accept",
+      "name": "Accept",
+      "formed": 1971,
+      "origin": "Solingen, DE",
+      "countryCode": "DE",
+      "activeYears": "1971–현재",
+      "primaryGenre": "heavy-metal",
+      "genreIds": [
+        "heavy-metal"
+      ],
+      "subgenres": [
+        "전통 헤비메탈",
+        "스피드 메탈",
+        "파워 메탈",
+        "하드 록"
+      ],
+      "eraTags": [
+        {
+          "era": "1970s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "전통 헤비메탈",
+            "스피드 메탈",
+            "파워 메탈",
+            "하드 록"
+          ]
+        }
+      ],
+      "tags": [
+        "헤비 메탈",
+        "스피드 메탈",
+        "파워 메탈",
+        "독일 메탈",
+        "하드 록"
+      ],
+      "summary": "1971년 독일 졸링겐에서 결성되어 헤비 메탈 및 스피드 메탈 발전의 기틀을 마련한 밴드다. Breaker(1981), Restless and Wild(1982), Balls to the Wall(1983) 등의 정규 앨범을 통해 독보적인 음악적 스타일을 확립했다.",
+      "style": "날카롭고 정교한 기타 리프와 다이내믹한 듀얼 기타 연주가 사운드의 중심을 이룬다. 우도 디르크슈나이더 특유의 거칠고 날카로운 스크리밍 보컬과 웅장한 백보컬 합창 코러스가 강렬한 대비를 이룬다.",
+      "image": {
+        "wikipediaTitle": "Accept",
+        "fileName": "File:Accept - Elbriot 2022 52.jpg",
+        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Accept_-_Elbriot_2022_52.jpg/960px-Accept_-_Elbriot_2022_52.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Accept_-_Elbriot_2022_52.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "Accept 밴드 사진",
+        "credit": {
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Accept - Elbriot 2022 52.jpg",
+          "creator": "Frank Schwichtenberg",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "reviewStatus": "verified",
+          "reviewedAt": "2026-08-20T12:07:07.260Z"
+        }
+      },
+      "members": [
+        {
+          "name": "Wolf Hoffmann",
+          "role": "기타",
+          "status": "current",
+          "activeYears": "1976–현재"
+        },
+        {
+          "name": "Udo Dirkschneider",
+          "role": "리드 보컬",
+          "status": "former",
+          "activeYears": "1976–1987, 1992–1996, 2005"
+        },
+        {
+          "name": "Peter Baltes",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1976–1987, 1992–1997"
+        },
+        {
+          "name": "Dieter Rubach",
+          "role": "베이스",
+          "status": "former",
+          "activeYears": "1976–1976"
+        },
+        {
+          "name": "Michael Wagener",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1976–1976"
+        },
+        {
+          "name": "Frank Friedrich",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1976–1979"
+        },
+        {
+          "name": "Gerhard Wahl",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1976–1979"
+        },
+        {
+          "name": "Jörg Fischer",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1978–1982, 1984–1988"
+        },
+        {
+          "name": "Stefan Kaufmann",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1980–1994"
+        },
+        {
+          "name": "Jan Koemmet",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1982–1982"
+        },
+        {
+          "name": "Herman Frank",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1982–1984"
+        },
+        {
+          "name": "Michael White",
+          "role": "보컬",
+          "status": "former",
+          "activeYears": "1987–1987"
+        },
+        {
+          "name": "Rob Armitage",
+          "role": "보컬",
+          "status": "former",
+          "activeYears": "1987–1988"
+        },
+        {
+          "name": "David Reece",
+          "role": "보컬",
+          "status": "former",
+          "activeYears": "1988–1989"
+        },
+        {
+          "name": "Ken Mary",
+          "role": "드럼",
+          "status": "former",
+          "activeYears": "1989–1989"
+        },
+        {
+          "name": "Jim Stacey",
+          "role": "기타",
+          "status": "former",
+          "activeYears": "1989–1989"
+        }
+      ],
+      "tracks": [
+        {
+          "id": "fast-as-a-shark",
+          "title": "Fast as a Shark",
+          "year": 1982,
+          "album": "Restless and Wild",
+          "guide": "속도감 넘치는 투베이스 드럼 비트와 초반 민요 샘플 뒤에 이어지는 오프닝 리프를 들을 수 있다.",
+          "youtubeId": "g1TM_o5lslY",
+          "source": {
+            "label": "Accept — Fast as a Shark",
+            "url": "https://www.youtube.com/watch?v=g1TM_o5lslY",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Accept - Topic",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "balls-to-the-wall",
+          "title": "Balls to the Wall",
+          "year": 1983,
+          "album": "Balls to the Wall",
+          "guide": "묵직한 템포의 메인 기타 리프와 중독성 넘치는 떼창 구조의 웅장한 코러스를 체감할 수 있다.",
+          "youtubeId": "B_3TlrZLpQ0",
+          "source": {
+            "label": "Accept — Balls to the Wall",
+            "url": "https://www.youtube.com/watch?v=B_3TlrZLpQ0",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "AcceptVEVO",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        },
+        {
+          "id": "metal-heart",
+          "title": "Metal Heart",
+          "year": 1985,
+          "album": "Metal Heart",
+          "guide": "클래식 선율을 기묘하게 연계한 기타 솔로와 화려한 메탈 기타 디스토션을 감상할 수 있다.",
+          "youtubeId": "c7hZzWAeY0k",
+          "source": {
+            "label": "Accept — Metal Heart",
+            "url": "https://www.youtube.com/watch?v=c7hZzWAeY0k",
+            "publisher": "YouTube",
+            "official": true,
+            "channelName": "Accept - Topic",
+            "channelType": "artist",
+            "accessedAt": "2026-08-20",
+            "note": "공식 채널·레이블 업로드 영상 확인"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20"
+        }
+      ],
+      "relations": [
+        {
+          "targetBandId": "scorpions",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1970~80년대 독일 헤비메탈을 대표하는 두 축으로 나란히 꼽히는 동시대 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Accept — Wikidata",
+          "url": "http://www.wikidata.org/entity/Q25507",
+          "publisher": "Wikidata",
+          "externalId": "Q25507",
+          "note": "Studio에서 MusicBrainz와 교차 확인함"
+        },
+        {
+          "label": "Accept — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Accept_(band)",
+          "publisher": "Wikipedia",
+          "note": "검증된 Wikidata 항목에서 자동 연결함"
+        },
+        {
+          "label": "Accept — 공식 YouTube",
+          "url": "https://www.youtube.com/channel/UCyhVxwsqif2_ATAHtTHn7zg",
+          "publisher": "YouTube",
+          "externalId": "UCyhVxwsqif2_ATAHtTHn7zg",
+          "official": true,
+          "channelType": "artist",
+          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
+        },
+        {
+          "label": "Accept — MusicBrainz",
+          "url": "https://musicbrainz.org/artist/41f4d85a-0bd7-4602-a3e3-8c47f36efb0a",
+          "publisher": "MusicBrainz",
+          "externalId": "41f4d85a-0bd7-4602-a3e3-8c47f36efb0a",
+          "note": "Studio에서 Wikidata와 교차 확인함"
+        },
+        {
+          "label": "Accept — Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Accept - Elbriot 2022 52.jpg",
+          "publisher": "Wikimedia Commons",
+          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
+        }
+      ],
+      "taxonomyV2": {
+        "primaryGenreId": "traditional-power-thrash-metal",
+        "secondaryGenreIds": [
+          "hard-glam-rock"
+        ],
+        "subgenreIds": [
+          "traditional-heavy-metal",
+          "speed-metal",
+          "power-metal",
+          "hard-rock"
+        ],
+        "moodScores": {
+          "fast-driving": 5,
+          "aggressive-heavy": 5,
+          "riff-solo-driven": 5,
+          "anthemic-live": 5,
+          "massive-heavy": 4
+        },
+        "reviewStatus": "reviewed",
+        "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
+      },
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T12:24:45.380Z"
+    },
     {
       "id": "steel-panther",
       "name": "Steel Panther",
@@ -5080,220 +7061,6 @@
       "reviewedAt": "2026-08-02T02:59:59.452Z"
     },
     {
-      "id": "massive-attack",
-      "name": "Massive Attack",
-      "formed": 1988,
-      "origin": "브리스틀, 영국",
-      "countryCode": "GB",
-      "activeYears": "1988-현재",
-      "primaryGenre": "alternative-indie",
-      "genreIds": [
-        "alternative-indie"
-      ],
-      "subgenres": [
-        "트립합",
-        "일렉트로니카"
-      ],
-      "eraTags": [
-        {
-          "era": "1980s",
-          "genreIds": [
-            "alternative-indie"
-          ],
-          "subgenres": [
-            "트립합",
-            "일렉트로니카"
-          ],
-          "note": "Blue Lines(1991)부터 힙합 비트, 더브 저역, 소울 보컬과 앰비언트 전자음향을 결합한 브리스틀 트립합 노선을 개척해 유지했다."
-        }
-      ],
-      "tags": [
-        "트립합",
-        "일렉트로닉",
-        "브리스틀사운드",
-        "영국록",
-        "다크웨이브"
-      ],
-      "summary": "1988년 영국 브리스틀에서 결성되어 힙합, 록, 다크 웨이브를 결합하며 트립합 장르를 확립한 음악 그룹이다. 명반으로 평가받는 데뷔 앨범 <Blue Lines>(1991)와 <Mezzanine>(1998) 등을 통해 영국 앨범 차트 1위에 오르며 세계적인 음악적 영향을 미쳤다.",
-      "style": "느리고 묵직한 힙합 비트와 섀도 베이스 라인 위에 어두운 신시사이저 레이어를 쌓아 만든 사운드가 특징이다. 객원 보컬들의 서정적이거나 절제된 음색과 읊조리는 듯한 래핑이 몽환적이고 긴장감 넘치는 분위기를 연출한다.",
-      "image": {
-        "wikipediaTitle": "Massive Attack",
-        "fileName": "File:Massive Attack composite.jpg",
-        "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Massive_Attack_composite.jpg",
-        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Massive_Attack_composite.jpg",
-        "alt": "Massive Attack 밴드 사진",
-        "credit": {
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Massive Attack composite.jpg",
-          "creator": "Photo by Festival Eurockéennes/Rod le Hiboo, artwork by Jezhotwells",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-          "reviewStatus": "verified",
-          "reviewedAt": "2026-08-01T04:30:18.344Z"
-        }
-      },
-      "members": [
-        {
-          "name": "Robert \"3D\" Del Naja",
-          "role": "보컬, 프로듀싱",
-          "status": "current",
-          "activeYears": "1988-현재"
-        },
-        {
-          "name": "Grant \"Daddy G\" Marshall",
-          "role": "보컬, 프로듀싱",
-          "status": "current",
-          "activeYears": "1988-현재"
-        },
-        {
-          "name": "Andy \"Mushroom\" Vowles",
-          "role": "프로듀싱",
-          "status": "former",
-          "activeYears": "1988-1999"
-        },
-        {
-          "name": "Adrian \"Tricky\" Thaws",
-          "role": "보컬",
-          "status": "former",
-          "activeYears": "1988-1995"
-        }
-      ],
-      "tracks": [
-        {
-          "id": "teardrop",
-          "title": "Teardrop",
-          "year": 1998,
-          "album": "Mezzanine",
-          "guide": "심장 박동을 닮은 절제된 비트와 엘리자베스 프레이저의 아련한 보컬 선율에 집중한다.",
-          "youtubeId": "u7K72X4eo_s",
-          "source": {
-            "label": "Massive Attack — Teardrop",
-            "url": "https://www.youtube.com/watch?v=u7K72X4eo_s",
-            "publisher": "YouTube",
-            "official": true,
-            "channelName": "Massive Attack",
-            "channelType": "artist",
-            "accessedAt": "2026-08-02",
-            "note": "공식 채널·레이블 업로드 영상 확인"
-          },
-          "reviewStatus": "reviewed",
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-08-02"
-        },
-        {
-          "id": "unfinished-sympathy",
-          "title": "Unfinished Sympathy",
-          "year": 1991,
-          "album": "Blue Lines",
-          "guide": "풍부한 현악 오케스트레이션 스트링 연주와 샤라 넬슨의 호소력 짙은 보컬을 감상한다.",
-          "youtubeId": "cgyw6rDFYO8",
-          "source": {
-            "label": "Massive Attack — Unfinished Sympathy",
-            "url": "https://www.youtube.com/watch?v=cgyw6rDFYO8",
-            "publisher": "YouTube",
-            "official": true,
-            "channelName": "Massive Attack",
-            "channelType": "artist",
-            "accessedAt": "2026-08-02",
-            "note": "공식 채널·레이블 업로드 영상 확인"
-          },
-          "reviewStatus": "reviewed",
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-08-02"
-        },
-        {
-          "id": "angel",
-          "title": "Angel",
-          "year": 1998,
-          "album": "Mezzanine",
-          "guide": "낮게 깔리는 묵직한 베이스 라인에서 후반부 폭발하는 헤비한 기타 노이즈로 이어지는 전개를 들는다.",
-          "youtubeId": "hbe3CQamF8k",
-          "source": {
-            "label": "Massive Attack — Angel",
-            "url": "https://www.youtube.com/watch?v=hbe3CQamF8k",
-            "publisher": "YouTube",
-            "official": true,
-            "channelName": "Massive Attack",
-            "channelType": "artist",
-            "accessedAt": "2026-08-02",
-            "note": "공식 채널·레이블 업로드 영상 확인"
-          },
-          "reviewStatus": "reviewed",
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-08-02"
-        }
-      ],
-      "relations": [
-        {
-          "targetBandId": "the-xx",
-          "kind": "shared-scene",
-          "strength": 2,
-          "note": "워페인트, 마크 러네건과 함께 The xx의 \"Crystalised\"를 라이브로 커버했다.",
-          "reviewStatus": "reviewed",
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-08-20T09:30:49.071Z"
-        }
-      ],
-      "sources": [
-        {
-          "label": "Massive Attack — Wikidata",
-          "url": "http://www.wikidata.org/entity/Q357418",
-          "publisher": "Wikidata",
-          "externalId": "Q357418",
-          "note": "Studio에서 MusicBrainz와 교차 확인함"
-        },
-        {
-          "label": "Massive Attack — Wikipedia",
-          "url": "https://en.wikipedia.org/wiki/Massive_Attack",
-          "publisher": "Wikipedia",
-          "note": "검증된 Wikidata 항목에서 자동 연결함"
-        },
-        {
-          "label": "Massive Attack — 공식 YouTube",
-          "url": "https://www.youtube.com/channel/UCNgjBASMIxygr65gJs9IyUA",
-          "publisher": "YouTube",
-          "externalId": "UCNgjBASMIxygr65gJs9IyUA",
-          "official": true,
-          "channelType": "artist",
-          "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
-        },
-        {
-          "label": "Massive Attack — MusicBrainz",
-          "url": "https://musicbrainz.org/artist/10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
-          "publisher": "MusicBrainz",
-          "externalId": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
-          "note": "Studio에서 Wikidata와 교차 확인함"
-        },
-        {
-          "label": "Massive Attack — Wikimedia Commons",
-          "url": "https://commons.wikimedia.org/wiki/File:Massive Attack composite.jpg",
-          "publisher": "Wikimedia Commons",
-          "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
-        }
-      ],
-      "taxonomyV2": {
-        "primaryGenreId": "post-punk-goth-new-wave",
-        "secondaryGenreIds": [
-          "shoegaze-dream-post",
-          "indie-britpop-garage"
-        ],
-        "subgenreIds": [
-          "trip-hop"
-        ],
-        "moodScores": {
-          "dark-gloomy": 5,
-          "slow-calm": 4,
-          "cold-urban": 5,
-          "electronic-synth": 4,
-          "dreamy-ethereal": 4
-        },
-        "reviewStatus": "reviewed",
-        "reviewNote": "Wikidata·MusicBrainz 교차 검증 통과, 분류·관계 검수 완료."
-      },
-      "reviewStatus": "published",
-      "reviewedBy": "ROCK ATLAS editorial",
-      "reviewedAt": "2026-08-20T09:30:49.071Z"
-    },
-    {
       "id": "the-xx",
       "name": "The xx",
       "formed": 2005,
@@ -5440,15 +7207,6 @@
           "strength": 3,
           "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다.",
           "reviewStatus": "draft"
-        },
-        {
-          "targetBandId": "massive-attack",
-          "kind": "shared-scene",
-          "strength": 2,
-          "note": "Massive Attack이 워페인트, 마크 러네건과 함께 자신들의 곡 \"Crystalised\"를 라이브로 커버한 인연이 있다.",
-          "reviewStatus": "reviewed",
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-08-20T09:30:49.071Z"
         }
       ],
       "sources": [
@@ -5880,6 +7638,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "lamb-of-god",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초중반 뉴 웨이브 오브 아메리칸 헤비메탈(NWOAHM) 흐름을 함께 이끈 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -8682,6 +10449,15 @@
           "strength": 3,
           "note": "1980년대 라디오 프렌들리한 하드 록과 아레나 메탈의 전성기를 함께 이끌며 대중적 성과를 거두었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "accept",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1970~80년대 독일 헤비메탈을 대표하는 두 축으로 나란히 꼽히는 동시대 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -13190,6 +14966,15 @@
           "strength": 3,
           "note": "실험적인 산업 음악 사운드와 페르소나 연출 면에서 보위의 영향을 크게 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "placebo",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "데뷔 초부터 이 밴드를 눈여겨봐 자신의 투어에 초청하고 싱글에 직접 코러스로 참여하는 등 멘토 역할을 한 후배 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -19376,6 +21161,24 @@
           "strength": 3,
           "note": "1990년대 정통 스래시 메탈의 틀을 깨고 묵직한 그루브 메탈 스타일을 구축하며 헤비 메탈 신의 변화를 함께 이끌었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "lamb-of-god",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "기타 파트에 직접적인 영향을 준 것으로 평가되는 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "machine-head",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "데뷔작 Burn My Eyes(1994)의 기타 톤에 직접적인 참고 대상이 됐다고 밴드가 밝힌 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -19635,6 +21438,15 @@
           "strength": 3,
           "note": "2000년대 중반 이모 팝 및 팝 펑크의 대중적 전성기를 이끈 대표적 동시대 밴드이다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-used",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2004년 Warped Tour와 2005년 첫 Taste of Chaos 투어를 함께 돌며 2000년대 이모·포스트 하드코어 신을 이끌었다. 초기에 The Used의 오프닝을 맡기도 했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -28809,6 +30621,15 @@
           "strength": 3,
           "note": "2000년대 중반 영미권 인디 록 및 가라지 록 리바이블 신을 구성하는 데 결정적인 음악적 영감을 주었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-kooks",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "데뷔 앨범이 이 밴드의 데뷔 앨범과 2006년 1월 같은 날 발매되며 2000년대 영국 인디 붐의 상징적인 순간을 함께 만들었다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -29302,6 +31123,15 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "manowar",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "만노워가 세운 서사적 파워 메탈의 원형 위에 오케스트레이션을 더해 심포닉 파워 메탈로 확장한 후예 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "sources": [
@@ -44206,6 +46036,15 @@
           "strength": 3,
           "note": "인더스트리얼 일렉트로닉 사운드와 록 사운드의 결합 방식에 영감을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-prodigy",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "The Fat of the Land(1997)의 인더스트리얼한 질감에 영향을 준 것으로 평가되는 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T12:24:24.832Z"
         }
       ],
       "reviewStatus": "published",
@@ -51077,26 +52916,6 @@
       "strength": 3,
       "note": "2000년대 후반 영국 인디 씬의 성장 과정에서 신선하고 절제된 기타 사운드로 주목받은 행보를 함께한다.",
       "createdAt": "2026-08-01T04:30:00.101Z"
-    },
-    {
-      "id": "massive-attack->portishead-0-0",
-      "sourceBandId": "massive-attack",
-      "sourceBandName": "Massive Attack",
-      "targetBandId": "portishead",
-      "kind": "shared-scene",
-      "strength": 3,
-      "note": "1990년대 영국 브리스틀 씬을 중심으로 트립합 음악의 대중화와 비평적 부흥을 함께 이끌었다.",
-      "createdAt": "2026-08-01T04:30:15.914Z"
-    },
-    {
-      "id": "massive-attack->tricky-0-1",
-      "sourceBandId": "massive-attack",
-      "sourceBandName": "Massive Attack",
-      "targetBandId": "tricky",
-      "kind": "sounds-like",
-      "strength": 3,
-      "note": "초기 멤버로서 특유의 어둡고 음울한 트립합 비트와 읊조리는 보컬 스타일의 유사성을 공유한다.",
-      "createdAt": "2026-08-01T04:30:15.914Z"
     },
     {
       "id": "beck->eels-0-0",
