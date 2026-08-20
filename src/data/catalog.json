@@ -5222,7 +5222,17 @@
           "reviewedAt": "2026-08-02"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-xx",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "워페인트, 마크 러네건과 함께 The xx의 \"Crystalised\"를 라이브로 커버했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T09:30:49.071Z"
+        }
+      ],
       "sources": [
         {
           "label": "Massive Attack — Wikidata",
@@ -5276,10 +5286,12 @@
           "electronic-synth": 4,
           "dreamy-ethereal": 4
         },
-        "reviewStatus": "draft",
-        "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
+        "reviewStatus": "reviewed",
+        "reviewNote": "Wikidata·MusicBrainz 교차 검증 통과, 분류·관계 검수 완료."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "ROCK ATLAS editorial",
+      "reviewedAt": "2026-08-20T09:30:49.071Z"
     },
     {
       "id": "the-xx",
@@ -5428,6 +5440,15 @@
           "strength": 3,
           "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "massive-attack",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "Massive Attack이 워페인트, 마크 러네건과 함께 자신들의 곡 \"Crystalised\"를 라이브로 커버한 인연이 있다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-08-20T09:30:49.071Z"
         }
       ],
       "sources": [

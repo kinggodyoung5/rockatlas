@@ -40,7 +40,13 @@ export function BandResearchStarter() {
   const [message, setMessage] = useState('밴드명만 입력하면 먼저 신원을 확인하고, AI가 지어낼 수 없는 사실 자료를 만듭니다.')
 
   const loadAudit = async (next: IntakeIdentityVerification) => {
-    if (!next.wikidata.selected || !next.musicbrainz.selected) return
+    if (!next.wikidata.selected || !next.musicbrainz.selected) {
+      // A candidate click on one provider used to leave this message frozen on
+      // "select a candidate below" with no sign the click had registered at all.
+      const stillNeeded = [!next.wikidata.selected && 'Wikidata', !next.musicbrainz.selected && 'MusicBrainz'].filter(Boolean).join(' · ')
+      setMessage(`${stillNeeded}에서도 올바른 후보를 선택하면 자동으로 검증 자료를 만듭니다.`)
+      return
+    }
     const result = await auditBandFacts(researchDraft(name.trim(), next))
     setAudit(result)
     setMessage(result.status === 'error' ? '외부 식별자에 문제가 있습니다. 아래 후보를 다시 선택하세요.' : '검증 자료가 준비됐습니다. 한 번 복사해 Gemini 채팅에 붙이면 됩니다.')
