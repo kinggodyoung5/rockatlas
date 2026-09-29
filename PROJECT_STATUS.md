@@ -1045,3 +1045,45 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다.
 - 별도 진행 중이던 "인지도 있는 밴드 30개 초안 추가" 작업은 도구 장애로 중단된 상태다. 도구 복구 후 이어서 진행해야 한다.
+
+## 40. 2026-09-29 인지도 있는 밴드 30개 초안 완전 검수 추가 (운영자 최종 확인 대기)
+
+섹션 39에서 중단됐던 "카탈로그에 빠진 인지도 있는 밴드 30개 초안 추가" 작업을 도구 복구 후 이어서 완료했다. 운영자 요청은 "내가 확인 후 공개만 누르면 되도록 전부 깔끔하게" — 즉 `reviewStatus: 'draft'`로 남겨두되, Studio의 "운영 준비도" 7개 체크(기본 정보·소개·장르/시대·멤버/대표곡·이미지 권리·관계·새 탐색 분류)를 전부 통과하도록 데이터를 완전히 채우는 것이었다.
+
+**추가한 30개 밴드** (장르 그룹 · 밴드명 · 결성년도):
+- 클래식/루츠 록: Fleetwood Mac(1967), The Jimi Hendrix Experience(1966), Cream(1966), Dire Straits(1977), The Black Keys(2001)
+- 하드/글램 록: Thin Lizzy(1969), Royal Blood(2013)
+- 팝/소프트 록: Foreigner(1976)
+- 프로그레시브/사이키델릭: Genesis(1967), Tame Impala(2007)
+- 펑크/이모: Bad Religion(1980), Misfits(1977), Rancid(1991)
+- 인디/브릿팝/개러지: Pulp(1978)
+- 포스트펑크/고딕/뉴웨이브: Depeche Mode(1980), Siouxsie and the Banshees(1976), Bauhaus(1978), Echo & the Bunnymen(1978)
+- 얼터너티브/그런지: The Smashing Pumpkins(1988), Stone Temple Pilots(1989), Pavement(1989)
+- 슈게이즈/드림팝/포스트록: Cocteau Twins(1979)
+- 전통/파워/스래시 메탈: Blind Guardian(1984), Sabaton(1999)
+- 포크/심포닉 메탈: Within Temptation(1996)
+- 익스트림 메탈: Opeth(1990), Dimmu Borgir(1993)
+- 모던/얼터너티브 메탈: Mastodon(2000), Gojira(1996), Disturbed(1994)
+
+**자동화 파이프라인**
+
+- 30개 밴드 각각의 요약·소리 설명·멤버·대표곡·장르 분류를 직접 조사해 작성한 뒤, 로컬 Studio API(`/api/studio/external-search`, `/api/studio/youtube-search`, `/api/studio/commons-image-search`)를 Node 스크립트로 직접 호출해 Wikidata·MusicBrainz 교차 검증, 대표곡 3곡씩(총 90곡) 공식 YouTube 영상, Wikimedia Commons 이미지를 일괄 확보했다.
+- MusicBrainz·Wikidata·Wikimedia·YouTube API가 간헐적으로 429/502를 반환해 1차 실행 후 일부 밴드(8개 Wikidata, 12개 이미지, Disturbed 대표곡 1곡)가 누락됐고, 재시도 스크립트로 전부 보완했다.
+- 검수 중 Pavement의 자동 이미지 검색이 동명의 다른 밴드("Packway Handle Band") 사진을 잘못 매칭한 것을 발견 — Wikidata에 연결된 정식 이미지(`Pavement, the band, in Tokyo.jpg`, 멤버 카테고리 태그로 재확인)로 교체했다.
+- YouTube Data API 일일 쿼터가 소진돼 자동 검색이 막힌 4곡(Jimi Hendrix Experience·Bauhaus·Echo & the Bunnymen 공식 채널, Disturbed "The Sound of Silence")은 WebSearch로 별도 확인해 채웠다.
+
+**관계(30개 밴드 전부 1개 이상)**
+
+- 대부분 실제 근거가 있는 사실을 확인한 뒤 추가했다: Jimi Hendrix Experience↔Cream(1966~67 런던 블루스 록 신), Thin Lizzy→Iron Maiden(트윈 리드 기타 계승), Bad Religion↔Rancid(브렛 구레비츠가 에피타프에서 직접 프로듀싱), Siouxsie and the Banshees→The Cure(로버트 스미스의 밴시스 투어 기타리스트 활동), Royal Blood→Queens of the Stone Age(마이크 커가 인생 앨범으로 꼽음, 실제 합동 투어), Cocteau Twins→My Bloody Valentine(슈게이즈 텍스처의 원류), Blind Guardian→Helloween(독일 파워 메탈 계보), Within Temptation↔Nightwish(심포닉 메탈 "3대 밴드"), Opeth→Death(미카엘 오케르펠트가 직접 언급한 최대 영향), Dimmu Borgir↔Children of Bodom(칠드런 오브 보덤 데뷔 공연이 딤무 보르기르 오프닝 무대였음), Gojira↔Metallica(수 차례 스타디움 투어 오프닝), Royal Blood 외 다수는 WebSearch로 사실 확인 후 반영.
+- 카탈로그에 이미 존재하던 "보류 관계"(과거 세션이 대상 밴드가 아직 없어 미리 만들어 둔 관계 제안) 10건이 이번에 대상 밴드가 생기면서 유효해졌다 — Eagles↔Fleetwood Mac, Journey↔Foreigner 등 내가 이미 추가한 관계와 중복되는 2건은 정리만 하고, 나머지 8건(Green Day↔Rancid, Boston↔Foreigner, The White Stripes↔The Black Keys, Epica↔Within Temptation, Mazzy Star↔Cocteau Twins, New Order↔Depeche Mode, Slowdive↔Cocteau Twins)은 실제 관계로 전환해 양방향으로 추가했다. 보류 관계 40건 → 30건.
+- 관계는 전부 새 밴드→새 밴드, 새 밴드→기존 공개 밴드 양방향으로 추가했다. 기존 공개 밴드 쪽에 추가된 관계는 대상이 아직 초안이라 `publicBandById`에 없어 공개 사이트에는 노출되지 않고, 해당 초안이 공개되는 순간 자동으로 나타난다(코드 확인 완료, RelationMap.tsx가 대상 부재 시 렌더링 스킵).
+
+**검증**
+
+- `npm run validate:data`(밴드 242개, Wikidata·MusicBrainz·Commons 이미지·대표곡 링크·공식 YouTube 링크 242/242, 오류 0건), `npm run validate:taxonomy`(242/242, 오류 없음), `npx tsc -b`, `npm test`(11개 파일 70개 테스트 통과), `npm run build`(공개 상세·공유 페이지는 여전히 212개 — 30개 초안은 공개 데이터에서 제외됨, `validate-build-output` 통과) 모두 통과.
+- Studio 운영 준비도 7개 체크(기본 정보·소개/소리 설명·장르/시대·멤버/대표곡·이미지 권리·관계·새 탐색 분류) 전부 30개 밴드 모두 7/7 통과를 스크립트로 재확인했다 — 운영자가 Studio에서 초안을 열어 "공개" 버튼만 누르면 된다.
+
+**Git 상태와 다음 단계**
+
+- `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`에도 푸시한다 — 30개는 `draft` 상태라 배포되어도 공개 목록에는 나타나지 않고, 운영자가 Studio에서 개별적으로 최종 확인 후 공개 전환하면 그때 공개된다.
+- 다음 단계(운영자 액션 필요): Studio(`npm run studio`)에서 30개 밴드를 하나씩 열어 검토 후 "공개" 상태로 전환.
