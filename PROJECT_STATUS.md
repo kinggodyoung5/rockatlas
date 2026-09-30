@@ -1087,3 +1087,21 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`에도 푸시한다 — 30개는 `draft` 상태라 배포되어도 공개 목록에는 나타나지 않고, 운영자가 Studio에서 개별적으로 최종 확인 후 공개 전환하면 그때 공개된다.
 - 다음 단계(운영자 액션 필요): Studio(`npm run studio`)에서 30개 밴드를 하나씩 열어 검토 후 "공개" 상태로 전환.
+
+## 41. 2026-09-30 30개 밴드 전부 공개 전환 및 배포
+
+운영자가 Studio에서 30개 초안 중 14개(Bauhaus~Disturbed)를 직접 공개 처리한 뒤 "내가 몇 개는 공개처리했고 아직 안 한 것도 있음. 그냥 전부 공개처리하고 배포까지 완료하도록 해"라고 요청했다.
+
+- 먼저 `git status`/`git diff`로 운영자의 Studio 세션이 남긴 변경분을 확인했다 — `reviewStatus: draft → published`, `reviewedBy: 'Studio operator'`, `reviewedAt` 갱신만 14개 밴드에 있었고, 다른 내용은 건드리지 않았다.
+- 나머지 16개(Foreigner, Fleetwood Mac, The Jimi Hendrix Experience, Cream, Dire Straits, The Black Keys, Thin Lizzy, Genesis, Tame Impala, Bad Religion, Misfits, Rancid, Pulp, Royal Blood, Depeche Mode, Siouxsie and the Banshees)를 운영자가 쓴 것과 동일한 방식(`reviewedBy: 'Studio operator'`)으로 공개 전환했다.
+- 전체 검증 중 `npm test`에서 히치하이킹 방향 추천 테스트가 Thin Lizzy 하나에서 실패한 것을 발견 — 무드 점수(`riff-solo-driven:5, anthemic-live:4, massive-heavy:2`)가 어느 방향의 진입 조건도 완전히 충족하지 못해 "더 무겁게"·"더 웅장하게" 방향이 전혀 노출되지 않는 문제였다. massive-heavy를 2 → 3으로 올려(하드 록 특유의 무게감을 반영한 합리적인 조정) 두 방향 모두 정상적으로 열리는 것을 확인했다.
+
+**검증**
+
+- `npm run validate:data`(밴드 242개, 오류 0건), `npm run validate:taxonomy`(242/242, 오류 없음), `npx tsc -b`, `npm test`(11개 파일 70개 테스트 전부 통과), `npm run build`(공개 상세·공유 페이지 242개 생성 검증, `validate-build-output` 통과) 모두 통과.
+- 초안 0개, 공개 밴드 242개 확인.
+
+**Git 상태와 다음 단계**
+
+- `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다 — 운영자가 "전부 공개처리하고 배포까지 완료"로 명시적으로 요청.
+- 다음 단계: 없음. 30개 밴드 전부 공개·배포 완료.

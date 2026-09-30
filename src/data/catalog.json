@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-08-20T12:09:58.249Z",
+  "updatedAt": "2026-09-30T13:50:40.939Z",
   "bands": [
     {
       "id": "lamb-of-god",
@@ -53123,7 +53123,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "fleetwood-mac",
@@ -53359,7 +53361,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "jimi-hendrix-experience",
@@ -53565,7 +53569,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "cream",
@@ -53767,7 +53773,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "dire-straits",
@@ -53977,7 +53985,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "the-black-keys",
@@ -54186,7 +54196,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "thin-lizzy",
@@ -54389,12 +54401,14 @@
         "moodScores": {
           "riff-solo-driven": 5,
           "anthemic-live": 4,
-          "massive-heavy": 2
+          "massive-heavy": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "genesis",
@@ -54616,7 +54630,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "tame-impala",
@@ -54832,7 +54848,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "bad-religion",
@@ -55030,7 +55048,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "misfits",
@@ -55232,7 +55252,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "rancid",
@@ -55449,7 +55471,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "pulp",
@@ -55653,7 +55677,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "royal-blood",
@@ -55845,7 +55871,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "depeche-mode",
@@ -56072,7 +56100,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "siouxsie-and-the-banshees",
@@ -56283,7 +56313,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:53:05.395Z"
     },
     {
       "id": "bauhaus",
@@ -56487,7 +56519,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:50:37.451Z"
     },
     {
       "id": "echo-and-the-bunnymen",
@@ -56699,7 +56733,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:50:23.732Z"
     },
     {
       "id": "the-smashing-pumpkins",
@@ -56911,7 +56947,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:50:00.002Z"
     },
     {
       "id": "stone-temple-pilots",
@@ -57119,7 +57157,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T13:49:43.330Z"
     },
     {
       "id": "pavement",
@@ -57326,7 +57366,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:36:22.857Z"
     },
     {
       "id": "cocteau-twins",
@@ -57546,7 +57588,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T12:00:09.289Z"
     },
     {
       "id": "blind-guardian",
@@ -57754,7 +57798,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T11:59:43.008Z"
     },
     {
       "id": "sabaton",
@@ -57958,7 +58004,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T11:59:33.177Z"
     },
     {
       "id": "within-temptation",
@@ -58171,7 +58219,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T11:58:46.063Z"
     },
     {
       "id": "opeth",
@@ -58387,7 +58437,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:48:35.604Z"
     },
     {
       "id": "dimmu-borgir",
@@ -58591,7 +58643,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:48:26.242Z"
     },
     {
       "id": "mastodon",
@@ -58803,7 +58857,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:48:17.840Z"
     },
     {
       "id": "gojira",
@@ -59015,7 +59071,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:37:33.343Z"
     },
     {
       "id": "disturbed",
@@ -59219,7 +59277,9 @@
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
       },
-      "reviewStatus": "draft"
+      "reviewStatus": "published",
+      "reviewedBy": "Studio operator",
+      "reviewedAt": "2026-09-30T10:37:25.691Z"
     }
   ],
   "pendingRelations": [
