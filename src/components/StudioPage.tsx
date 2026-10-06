@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, Check, Database, Download, ExternalLink, FileUp, Link2, Loader2, Palette, Plus, Save, Search, Sparkles, Wand2 } from 'lucide-react'
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { genres as initialGenres } from '../data/genres'
@@ -58,6 +58,28 @@ const legacyGenreByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
   'folk-symphonic-metal': 'heavy-metal',
   'extreme-metal': 'extreme-metal',
   'modern-alternative-metal': 'heavy-metal',
+}
+
+/** 이름을 입력해 필터링하며 고르는 밴드 선택 입력. 목록은 알파벳순으로 정렬해 전달한다. */
+function BandPicker({ value, bands, onPick }: { value: string; bands: Band[]; onPick: (bandId: string) => void }) {
+  const listId = useId()
+  const currentName = bands.find((band) => band.id === value)?.name ?? ''
+  const [text, setText] = useState(currentName)
+  useEffect(() => setText(currentName), [currentName])
+  const commit = (next: string) => {
+    setText(next)
+    const match = bands.find((band) => band.name.toLocaleLowerCase() === next.trim().toLocaleLowerCase())
+    if (match && match.id !== value) onPick(match.id)
+  }
+  return (
+    <>
+      <input list={listId} value={text} placeholder="밴드 이름 검색" aria-label="관계 대상 밴드"
+        onChange={(event) => commit(event.target.value)}
+        onFocus={(event) => event.target.select()}
+        onBlur={() => setText(currentName)} />
+      <datalist id={listId}>{bands.map((band) => <option key={band.id} value={band.name} />)}</datalist>
+    </>
+  )
 }
 
 function sourceId(band: Band, publisher: SourceRef['publisher']) {
@@ -241,6 +263,10 @@ export function StudioPage() {
     const related = activeTaxonomyGenreIds.flatMap((id) => taxonomyGenreDraftById[id]?.subgenreIds ?? [])
     return [...new Set([...related, ...taxonomyDraft.subgenreIds])]
   }, [activeTaxonomyGenreIds, taxonomyDraft.subgenreIds, taxonomyGenreDraftById])
+
+  const relationTargetBands = useMemo(() => catalogBands
+    .filter((band) => band.id !== draft.id)
+    .sort((left, right) => left.name.localeCompare(right.name, 'en', { sensitivity: 'base' })), [catalogBands, draft.id])
 
   const checks = completeness(draft)
   const passedChecks = checks.filter((check) => check.passed).length
@@ -725,7 +751,7 @@ export function StudioPage() {
             <div className="studio-relations">
               {draft.relations.map((relation, index) => (
                 <div key={`${relation.targetBandId}-${index}`} className="studio-relation-row">
-                  <select value={relation.targetBandId} onChange={(event) => updateRelation(index, { targetBandId: event.target.value })}>{catalogBands.filter((band) => band.id !== draft.id).map((band) => <option key={band.id} value={band.id}>{band.name}</option>)}</select>
+                  <BandPicker value={relation.targetBandId} bands={relationTargetBands} onPick={(bandId) => updateRelation(index, { targetBandId: bandId })} />
                   <select value={relation.kind} onChange={(event) => updateRelation(index, { kind: event.target.value as RelationKind })}>{Object.entries(relationLabels).map(([kind, label]) => <option key={kind} value={kind}>{label}</option>)}</select>
                   <select value={relation.strength} onChange={(event) => updateRelation(index, { strength: Number(event.target.value) as 1 | 2 | 3 })}><option value={1}>약함</option><option value={2}>중간</option><option value={3}>강함</option></select>
                   <input value={relation.note} onChange={(event) => updateRelation(index, { note: event.target.value })} aria-label="관계 이유" />
