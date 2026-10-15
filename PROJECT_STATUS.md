@@ -1105,3 +1105,29 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 
 - `src/data/catalog.json`, `PROJECT_STATUS.md`를 커밋해 `codex/taxonomy-v2`에 푸시하고 `main`으로 배포한다 — 운영자가 "전부 공개처리하고 배포까지 완료"로 명시적으로 요청.
 - 다음 단계: 없음. 30개 밴드 전부 공개·배포 완료.
+
+## 42. 2026-10-15 인지도 밴드 30개 초안 추가 2차 (1975년 이후 · 메탈 보강 · 2010년대 이후 신인 10팀)
+
+운영자 요청: 1975년 이후 결성 밴드로 한정하고 메탈을 더 채운 20팀 + 2010년대 이후 등장한 신인 10팀을, 공개 버튼만 누르면 되도록 전부 채운 초안으로 추가.
+
+**추가한 30개 (모두 `reviewStatus: draft`)**
+- 20팀: Tom Petty and the Heartbreakers, The Cars, Dead Kennedys, Bloc Party, Yeah Yeah Yeahs, Foster the People, Faith No More, Audioslave, Explosions in the Sky, Dio, Testament, Kreator, Mercyful Fate, In Flames, Amon Amarth, Behemoth, Ghost, Meshuggah, Trivium, Bullet for My Valentine
+- 신인 10팀: Greta Van Fleet, Dirty Honey, Wolf Alice, Wet Leg, The Last Dinner Party, IDLES, Fontaines D.C., Sleep Token, Spiritbox, Bad Omens
+
+**데이터 파이프라인**: 로컬 Studio API(Wikidata·MusicBrainz·YouTube·Commons)로 신원·대표곡 3곡·이미지를 일괄 수집하고, API 429/502로 빠진 항목은 재시도 스크립트와 수동 조회로 보완.
+
+**검수 중 바로잡은 것**
+- 자동 검색이 엉뚱한 영상을 물어온 7곡을 교체했다(Bloc Party "Like Eating Glass"는 "Banquet"과 중복, Audioslave "Be Yourself"는 "Like a Stone"과 중복, Kreator "Extreme Aggression"은 "Betrayer", Mercyful Fate "Melissa"는 "Evil", Trivium "Strife"는 "Crown in the Grave", The Last Dinner Party "Sinner"는 다른 곡).
+- 사실 오류 수정: Trivium "Strife"는 Shogun이 아니라 Vengeance Falls(2013) 수록곡, Bloc Party "Like Eating Glass"는 A Weekend in the City가 아니라 Silent Alarm(2005) 수록곡. Dirty Honey 데뷔 앨범은 2021년.
+- 비공식 업로드(팬·재업로더) 대신 공식 채널/Topic/VEVO 업로드로 교체. 공식 영상이 없는 곡(Greta Van Fleet "Safari Song", Testament "The New Order", Bloc Party "Like Eating Glass", Explosions in the Sky 2곡, Faith No More 2곡)은 `official: false` 또는 대체 영상 사유를 `source.note`에 기록 — **공개 전 확인 권장**.
+- YouTube Data API 일일 쿼터가 다시 소진돼 일부 곡은 WebSearch로 확인.
+
+**관계**: 30팀 모두 1개 이상(근거는 인터뷰·투어 기록·공식 이력 확인 후 작성: Meshuggah↔Tool 2002 투어, Meshuggah↔In Flames 2023 투어, Spiritbox↔Bring Me the Horizon 무대 합동, Wet Leg←IDLES 영감 발언, Wolf Alice←Pixies 등). 과거 보류 관계 중 대상이 생긴 3건(Papa Roach→Faith No More, Sigur Rós→Explosions in the Sky, Arch Enemy→In Flames)은 실제 관계로 전환하고 보류 목록에서 제거(30→27건).
+
+**검증**: `validate:taxonomy` 273/273, `tsc -b`, `npm test` 70/70 통과. Studio 준비도 7/7, 히치하이킹 진입 조건(방향 1개 이상) 30팀 전부 충족을 스크립트로 확인.
+
+**미해결 — 운영자 확인 필요**
+- `wintersun`(운영자가 Studio에서 추가·공개)이 이미지 권리 검수 미완료(`needs-review`) 상태로 `published`라 `validate:data`가 오류 1건을 낸다. 이 상태로는 배포 전 검증이 통과하지 않는다. Studio에서 이미지 권리 검수를 마치거나 비공개 전환 필요.
+- 초안 30개 최종 확인 후 공개 → 배포. `main` 배포는 위 wintersun 해결 뒤.
+
+**Git**: `codex/taxonomy-v2`에만 커밋·푸시, `main` 배포 보류.
