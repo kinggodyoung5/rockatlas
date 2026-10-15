@@ -48241,7 +48241,7 @@
             "스래시 메탈",
             "스피드 메탈"
           ],
-          "note": "Killing Is My Business...(1985)와 Peace Sells... but Who's Buying?(1986)에서 기교적이고 빠른 스래시·스피드 메탈을 확립했다."
+          "note": "Killing Is My Business...(1985)부터 Rust in Peace(1990)까지 기교적이고 빠른 스래시·스피드 메탈을 확립했다."
         },
         {
           "era": "1990s",
@@ -48249,9 +48249,20 @@
             "heavy-metal"
           ],
           "subgenres": [
+            "스래시 메탈",
             "헤비 메탈"
           ],
-          "note": "Countdown to Extinction(1992)에서 템포를 늦추고 멜로디를 강화한 대중적인 헤비 메탈로 전환했다."
+          "note": "Countdown to Extinction(1992)부터 스래시를 기반으로 템포를 늦추고 멜로디와 대중성을 키웠고, Risk(1999)에서 하드 록에 가까운 실험까지 나아갔다."
+        },
+        {
+          "era": "2000s",
+          "genreIds": [
+            "heavy-metal"
+          ],
+          "subgenres": [
+            "스래시 메탈"
+          ],
+          "note": "The System Has Failed(2004)와 Endgame(2009)로 스래시 노선에 복귀해 이후 현재까지 이어가고 있다."
         }
       ],
       "summary": "1983년 메탈리카에서 해고된 데이브 머스테인이 결성한 밴드로, 슬레이어·앤스랙스·메탈리카와 함께 미국 스래시 메탈의 '빅4'로 꼽힌다. Rust in Peace(1990)와 Countdown to Extinction(1992) 등을 통해 정교한 연주력과 대중성을 모두 갖춘 스래시 메탈의 정점을 보여줬다.",
