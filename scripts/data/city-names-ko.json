@@ -1,0 +1,21 @@
+{
+  "_note": "출신지 정규화용 영문 도시명 → 한글 표기. 사전에 없는 도시는 normalize-catalog가 자동 변환하지 않고 목록으로 보고한다.",
+  "Agoura Hills": "아고라힐스", "Ajax": "에이잭스", "Arlington": "알링턴", "Auburn": "오번", "Bakersfield": "베이커스필드",
+  "Baltimore": "볼티모어", "Barnsley": "반즐리", "Bellevue": "벨뷰", "Bergen": "베르겐", "Birmingham": "버밍엄",
+  "Blackwood": "블랙우드", "Boston": "보스턴", "Bowling Green": "볼링그린", "Braintree": "브레인트리", "Brighton": "브라이턴",
+  "Calabasas": "칼라바사스", "Cincinnati": "신시내티", "Cleveland": "클리블랜드", "Columbus": "콜럼버스", "Copenhagen": "코펜하겐",
+  "Dallas": "댈러스", "Des Moines": "디모인", "Doncaster": "동커스터", "Donetsk": "도네츠크", "Downey": "다우니",
+  "Dublin": "더블린", "East Kilbride": "이스트킬브라이드", "El Paso": "엘패소", "Ellensburg": "엘런스버그", "Franklin": "프랭클린",
+  "Gelsenkirchen": "겔젠키르헨", "Glasgow": "글래스고", "Glendale": "글렌데일", "Hamburg": "함부르크", "Hellerup": "헬레루프",
+  "Helsinki": "헬싱키", "Hertford": "하트퍼드", "Huntington Beach": "헌팅턴비치", "Jacksonville": "잭슨빌", "Kemi": "케미",
+  "Lahti": "라흐티", "Leicester": "레스터", "Limerick": "리머릭", "Little Rock": "리틀록", "London": "런던",
+  "Los Angeles": "로스앤젤레스", "Manchester": "맨체스터", "McLeansville": "매클린스빌", "Melbourne": "멜버른", "Mesa": "메사",
+  "Middlesbrough": "미들즈브러", "Minneapolis": "미니애폴리스", "Montesano": "몬테사노", "München": "뮌헨", "New York": "뉴욕",
+  "New York City": "뉴욕", "Newark": "뉴어크", "Newcastle upon Tyne": "뉴캐슬어폰타인", "Oakland": "오클랜드", "Orem": "오렘",
+  "Orlando": "올랜도", "Oxford": "옥스퍼드", "Pasadena": "패서디나", "Peoria": "피오리아", "Phoenix": "피닉스",
+  "Provo": "프로보", "Richmond": "리치먼드", "Sacramento": "새크라멘토", "Salford": "샐퍼드", "San Diego": "샌디에이고",
+  "San Francisco": "샌프란시스코", "Seattle": "시애틀", "Sheffield": "셰필드", "Solingen": "졸링겐", "Swords": "스워즈",
+  "Toms River": "톰스리버", "Trieste": "트리에스테", "Union City": "유니언시티", "Upplands Väsby": "우플란스베스뷔", "Vacaville": "배커빌",
+  "Vancouver": "밴쿠버", "Warrington": "워링턴", "Weil am Rhein": "바일암라인", "Welwyn Garden City": "웰린가든시티", "Wigan": "위건",
+  "Wilmette": "윌멧", "Wilmslow": "윌름슬로", "Wyckoff": "와이코프"
+}

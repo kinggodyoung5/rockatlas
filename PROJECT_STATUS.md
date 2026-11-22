@@ -1206,3 +1206,33 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 - `codex/taxonomy-v2`에 커밋·푸시. **`main` 배포는 하지 않음**(운영자 승인 필요). 이제 `validate:data` 오류가 없어 배포 검증은 통과할 상태.
 - 백업: `../rock-atlas-backups/p0-20261122/catalog-before.json`.
 - 다음 단계: 운영자 승인 시 `main` 배포. 이후 계획서 P1(표기 정규화 스크립트 — 출신지 한글/영문 통일, 멤버 활동연도 `present` 351건, 관계 "~습니다"체 16건 등).
+
+## 46. 2026-11-22 개선 계획 P1 완료 — 표기 정규화
+
+운영자 요청: 배포는 보류하고 P1 진행.
+
+**P1-1 정규화 스크립트** `scripts/normalize-catalog.ts` (`npm run normalize:check` / `normalize:write`)
+- 활동 기간: 밴드·멤버 전체 `present` → `현재`, 연도 구분자 en dash(–) 통일, 쉼표 뒤 공백 통일. 남은 위반 0.
+- 출신지: 전부 `"도시, 국가"` 한글 표기(국가명은 국가 코드의 한국어 이름). 영문 115건은 검토한 도시 사전 `scripts/data/city-names-ko.json`으로만 변환하고, 사전에 없으면 자동 변환하지 않고 보고한다. 주·구성국(잉글랜드/스코틀랜드/웨일스, 캘리포니아 등)은 빼고 국가로 통일, `호주` → `오스트레일리아`(필터의 국가명과 일치).
+- 출신지 사실 오류 정정(스크립트의 `originOverrides`에 근거 주석): Steppenwolf "Toronto, US" → 로스앤젤레스(1967년 LA 결성), R.E.M. "아테네" → 애선스(조지아주 Athens), Alabama Shakes → 애선스, X Ambassadors "Brooklyn" → 이타카, Arctic Monkeys "High Green" → 셰필드, Chickenfoot → 카보산루카스(멕시코, 밴드 국적은 미국 유지), Racer X·Slash "United States" → 로스앤젤레스, Overkill → 올드브리지, Generation Axe → 다국적.
+- 관계 설명의 "~습니다/~입니다"체 18건을 "~다"체로. 의미가 바뀌지 않게 실제 등장하는 어미만 규칙으로 변환(첫 적용에서 "보입니다"가 "보다"로 잘못 바뀐 2건을 잡아 규칙 순서를 고침).
+- 앨범명 "Single" 5곡(Misfits 2, Bauhaus 2, Dead Kennedys 1) → `album` 제거 + `releaseType: 'single'`. 화면에 "싱글"로 표시(전에는 "싱글·수록 음반 정보 확인 중").
+- `reviewedBy`의 AI 표기 변형 2종("자동 검수 (AI)", "Claude (AI 검수)") → `ROCK ATLAS editorial (AI 보조)`. Codex·운영자 표기는 유지.
+- 국가 코드 `XW`(Generation Axe)가 필터에 "XW"로 보이던 것을 "다국적"으로(`countryNames.ts`).
+
+**P1-2 검색 별칭**
+- 밴드마다 한글 이름을 `tags` 맨 앞에 추가 → "메탈리카", "너바나"로 검색 가능(브라우저 확인).
+- 출처: Wikidata 한국어 라벨 279팀(`scripts/data/korean-names-wikidata.json`, 재수집 `npm run collect:korean-names`) + 수동 사전 `scripts/data/korean-names-manual.json`(라벨 없는 29팀, 그리고 Wikidata 라벨이 일반명사 번역인 Nirvana "열반", Tool "도구", Coal Chamber "석탄 챔버"와 로마자뿐인 R.E.M.·U2·AJR·P.O.D.·AC/DC·The 1975·The Bravery를 덮어씀).
+- 태그 철자 통일: 그란지→그런지, 리바이블→리바이벌, 슈게이징→슈게이즈.
+- Studio 입력란 "핵심 태그" → "검색어·별칭"으로 이름과 안내 변경.
+
+**P1-3 검증 규칙**
+- `validate:data` 오류 추가: `present` 표기, 영문 출신지, "~습니다"체 관계 설명, 앨범명 "Single". 경고 추가: 소문자 밴드명, 대표곡 3곡 미만(36팀), 관계 설명 15자 미만(31건) — 경고 67개는 P2·P4 대상.
+- 배포 워크플로에 `normalize:check` 단계, Studio 배포 전 검사에 "표기 규칙 검사" 단계 추가. Studio에서 영문 출신지 등으로 저장하면 이 단계가 실패하며 `npm run normalize:write`를 안내한다.
+
+**검증**: `normalize:check` 위반 0, `tsc -b`, `validate:data`(오류 0, 경고 67), `validate:taxonomy`, `npm test` 74/74, `npm run build`. 브라우저: "메탈리카"·"너바나" 검색 1건씩, 국가 필터 "다국적", Misfits 출신지 "로디, 미국"·싱글 표시 확인.
+
+**Git 상태와 다음 단계**
+- `codex/taxonomy-v2`에 커밋·푸시. `main` 배포는 운영자 지시로 보류.
+- 작업 전 백업: `C:\Users\SH\AppData\Local\Temp\claude\2c43461aa0a5b1e7\4cdface6-0bf4-4e55-ba21-5eae889120a0\scratchpad\catalog-before-p1.json`(임시 폴더) 및 Git 커밋 `f9099ea`.
+- 다음 단계: 계획서 P2(관계 모델 개편 — `member-link` 신설, `evolution` 22쌍 이관, 멤버 공유 탐지, 관계 표시 3묶음).

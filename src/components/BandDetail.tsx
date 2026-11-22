@@ -166,7 +166,7 @@ export function BandDetail({
           <div className="career-timeline">
             <div><time>{band.formed}</time><span><strong>{band.origin}에서 결성</strong><small>{band.activeYears}</small></span></div>
             {datedTracks.map((track) => (
-              <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? '싱글·수록 음반 정보 확인 중'}</small></span></div>
+              <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? (track.releaseType === 'single' ? '싱글' : '싱글·수록 음반 정보 확인 중')}</small></span></div>
             ))}
           </div>
           <h3 className="listen-heading">대표곡</h3>
@@ -179,7 +179,7 @@ export function BandDetail({
               return (
                 <a key={item.id} className="track-row track-guide-row" href={href} target="_blank" rel="noreferrer">
                   <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="track-info"><strong>{item.title}</strong><small>{[item.album, item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
+                  <span className="track-info"><strong>{item.title}</strong><small>{[item.album ?? (item.releaseType === 'single' ? '싱글' : undefined), item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
                   <span className="track-external"><small>{hasReviewedDirectLink ? 'YouTube' : 'YouTube 검색'}</small><ExternalLink size={15} /></span>
                 </a>
               )

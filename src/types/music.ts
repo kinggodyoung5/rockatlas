@@ -83,6 +83,9 @@ export interface Track extends ReviewRecord {
   title: string
   year?: number
   album?: string
+  /** Set for a track released outside any album (a stand-alone single), so the UI can say so
+   *  instead of treating the missing album as unfinished data. */
+  releaseType?: 'single'
   guide?: string
   youtubeId: string
   source: SourceRef

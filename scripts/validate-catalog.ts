@@ -108,7 +108,18 @@ for (const band of bands) {
       if (!relation.reviewedBy || !relation.reviewedAt) errors.push(`${band.id} → ${relation.targetBandId}: 검수자·검수 시각 누락`)
       if (relation.source && !/^https:\/\//.test(relation.source.url)) errors.push(`${band.id} → ${relation.targetBandId}: 관계 출처 URL 형식 오류`)
     }
+    if (relation.note.trim().length < 15) warnings.push(`${band.id} → ${relation.targetBandId}: 관계 설명이 15자 미만 — 근거가 드러나는 한 문장으로 보완 권장`)
+    if (/(습|입|합)니다\.$/.test(relation.note.trim())) errors.push(`${band.id} → ${relation.targetBandId}: 관계 설명은 "~다"체로 씀 (npm run normalize:write)`)
   }
+
+  // Notation rules (improvement plan P1-3). Fixable ones are errors because normalize:write fixes them.
+  if (/present/i.test(band.activeYears) || band.members.some((member) => /present/i.test(member.activeYears ?? ''))) {
+    errors.push(`${band.id}: 활동 기간에 "present" 대신 "현재"를 씀 (npm run normalize:write)`)
+  }
+  if (/^[A-Za-z]/.test(band.origin)) errors.push(`${band.id}: 출신지는 "도시, 국가" 한글 표기로 씀 — "${band.origin}" (npm run normalize:write)`)
+  if (band.reviewStatus === 'published' && /^[a-z]/.test(band.name) && band.id !== 'blink-182') warnings.push(`${band.id}: 밴드명이 소문자로 시작함 — 공식 표기인지 확인`)
+  if (band.reviewStatus === 'published' && band.tracks.length < 3) warnings.push(`${band.id}: 대표곡 ${band.tracks.length}곡 — 3곡 이상 권장`)
+  if (band.tracks.some((track) => /^single$/i.test(track.album ?? ''))) errors.push(`${band.id}: 앨범명 "Single" 대신 releaseType: "single"을 씀`)
 }
 
 for (const band of bands) {

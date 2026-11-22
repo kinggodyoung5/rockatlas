@@ -8,6 +8,8 @@ const regionNames = typeof Intl !== 'undefined' && 'DisplayNames' in Intl
  *  or the code isn't recognized. */
 export function countryName(code: string): string {
   if (!code) return code
+  // Not an ISO country: the catalog's code for a multinational line-up (e.g. Generation Axe).
+  if (code.toUpperCase() === 'XW') return '다국적'
   try {
     return regionNames?.of(code.toUpperCase()) ?? code
   } catch {

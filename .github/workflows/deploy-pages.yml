@@ -29,6 +29,8 @@ jobs:
         run: npm ci
       - name: Validate catalog
         run: npm run validate:data
+      - name: Check catalog notation
+        run: npm run normalize:check
       - name: Validate taxonomy
         run: npm run validate:taxonomy
       - name: Validate uploaded assets are committed

@@ -32,7 +32,10 @@
     "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
     "validate:uploads": "node --experimental-strip-types scripts/validate-uploads.ts",
     "review": "node --experimental-strip-types scripts/review-report.ts",
-    "review:strict": "node --experimental-strip-types scripts/review-report.ts --strict"
+    "review:strict": "node --experimental-strip-types scripts/review-report.ts --strict",
+    "normalize:check": "node --experimental-strip-types scripts/normalize-catalog.ts",
+    "normalize:write": "node --experimental-strip-types scripts/normalize-catalog.ts --write",
+    "collect:korean-names": "node --experimental-strip-types scripts/collect-korean-names.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",

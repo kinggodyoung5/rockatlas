@@ -599,6 +599,7 @@ export function studioApi(): Plugin {
         const npmPrefix = process.platform === 'win32' ? [resolve(dirname(process.execPath), 'node_modules/npm/bin/npm-cli.js')] : []
         const commands = [
           { id: 'catalog', label: '밴드 데이터 검사', args: ['run', 'validate:data'] },
+          { id: 'notation', label: '표기 규칙 검사 (실패 시 npm run normalize:write)', args: ['run', 'normalize:check'] },
           { id: 'taxonomy', label: '장르·분위기 검사', args: ['run', 'validate:taxonomy'] },
           { id: 'moods', label: '분위기 커버리지 진단', args: ['run', 'audit:moods'] },
           { id: 'tests', label: '자동 회귀 테스트', args: ['test'] },
