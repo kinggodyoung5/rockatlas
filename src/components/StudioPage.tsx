@@ -23,14 +23,7 @@ import { CommonsImageFinder, type CommonsImageCandidate } from './CommonsImageFi
 import { StudioBandBasics } from './StudioBandBasics'
 import { StudioTaxonomyEditor } from './StudioTaxonomyEditor'
 import { StudioHitchhikingPreview } from './StudioHitchhikingPreview'
-
-const relationLabels: Record<RelationKind, string> = {
-  'sounds-like': '비슷한 소리',
-  'influenced-by': '영향을 받음',
-  influenced: '영향을 줌',
-  'shared-scene': '같은 장면',
-  evolution: '계보의 확장',
-}
+import { relationLabels } from '../lib/relationLabels'
 
 const recoveryKey = 'rock-atlas-studio-recovery-v1'
 type StudioRecovery = { version: 1; savedAt: string; bands: Band[]; selectedId: string; draft: Band }

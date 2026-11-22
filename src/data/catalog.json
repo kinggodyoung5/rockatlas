@@ -4,7 +4,7 @@
   "bands": [
     {
       "id": "wintersun",
-      "name": "wintersun",
+      "name": "Wintersun",
       "formed": 2003,
       "origin": "Helsinki, FI",
       "countryCode": "FI",
@@ -43,11 +43,11 @@
       "summary": "2003년 핀란드 헬싱키에서 야리 맨패(Jari Mäenpää)를 중심으로 결성된 멜로딕 데스 메탈 밴드다. 데뷔 앨범 Wintersun(2004)과 대작 프로젝트 Time I(2012)을 발표하며 웅장한 오케스트레이션과 서정적인 메탈 사운드를 선보였다.",
       "style": "네오클래시컬 리프와 블라스트 비트 위에 대규모 심포닉 오케스트레이션을 결합한 극적인 구성을 보여준다. 야리 맨패의 날카로운 스크리밍과 맑은 클린 보컬이 교차하며 북유럽 특유의 서정적이고 웅장한 분위기를 만든다.",
       "image": {
-        "wikipediaTitle": "wintersun",
+        "wikipediaTitle": "Wintersun",
         "fileName": "File:Wintersun Rockharz 2019 22.jpg",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Wintersun_Rockharz_2019_22.jpg/960px-Wintersun_Rockharz_2019_22.jpg",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Wintersun_Rockharz_2019_22.jpg",
-        "alt": "wintersun 밴드 사진",
+        "alt": "Wintersun 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wintersun_Rockharz_2019_22.jpg",
           "creator": "Stefan Bollmann",
@@ -104,7 +104,7 @@
           "guide": "초기 밴드의 폭발적인 스피드와 네오클래시컬 메탈 특유의 질주감을 느낄 수 있다.",
           "youtubeId": "BM6CqGE8TWQ",
           "source": {
-            "label": "wintersun — Beyond the Dark Sun YouTube 검색",
+            "label": "Wintersun — Beyond the Dark Sun",
             "url": "https://www.youtube.com/watch?v=BM6CqGE8TWQ",
             "publisher": "YouTube",
             "official": false,
@@ -123,7 +123,7 @@
           "guide": "화려하고 초월적인 기타 솔로와 서늘하고 웅장한 멜로디의 정수를 보여준다.",
           "youtubeId": "QpoLe2v6MVo",
           "source": {
-            "label": "wintersun — Winter Madness YouTube 검색",
+            "label": "Wintersun — Winter Madness",
             "url": "https://www.youtube.com/watch?v=QpoLe2v6MVo",
             "publisher": "YouTube",
             "official": false,
@@ -142,7 +142,7 @@
           "guide": "13분이 넘는 대곡으로 웅장한 심포닉 오케스트레이션과 다채로운 모티브 전개가 압도적이다.",
           "youtubeId": "ttoJ-Ro0L04",
           "source": {
-            "label": "wintersun — Sons of Winter and Stars YouTube 검색",
+            "label": "Wintersun — Sons of Winter and Stars",
             "url": "https://www.youtube.com/watch?v=ttoJ-Ro0L04",
             "publisher": "YouTube",
             "official": false,
@@ -159,26 +159,26 @@
           "targetBandId": "megadeth",
           "kind": "evolution",
           "strength": 2,
-          "note": "wintersun의 기타리스트 테무 만테사리가 메가데스의 기타리스트로도 활동중이다.",
+          "note": "Wintersun의 기타리스트 테무 만테사리가 메가데스의 기타리스트로도 활동중이다.",
           "reviewStatus": "draft"
         }
       ],
       "sources": [
         {
-          "label": "wintersun — Wikidata",
+          "label": "Wintersun — Wikidata",
           "url": "http://www.wikidata.org/entity/Q622755",
           "publisher": "Wikidata",
           "externalId": "Q622755",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "wintersun — Wikipedia",
+          "label": "Wintersun — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Wintersun",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "wintersun — 공식 YouTube",
+          "label": "Wintersun — 공식 YouTube",
           "url": "https://www.youtube.com/channel/UCRIPNIEqzmHiB0fIpAz0Zgw",
           "publisher": "YouTube",
           "externalId": "UCRIPNIEqzmHiB0fIpAz0Zgw",
@@ -187,14 +187,14 @@
           "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
         },
         {
-          "label": "wintersun — MusicBrainz",
+          "label": "Wintersun — MusicBrainz",
           "url": "https://musicbrainz.org/artist/c054ea6b-c585-41eb-ae7e-4b0ca43308ff",
           "publisher": "MusicBrainz",
           "externalId": "c054ea6b-c585-41eb-ae7e-4b0ca43308ff",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "wintersun — Wikimedia Commons",
+          "label": "Wintersun — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:Wintersun_Rockharz_2019_22.jpg",
           "publisher": "Wikimedia Commons",
           "note": "Commons API로 확인: Stefan Bollmann 촬영, Attribution(저작자 표시 조건) 라이선스. Rockharz Open Air 2019 공연 사진"
@@ -4980,7 +4980,7 @@
     },
     {
       "id": "steppenwolf",
-      "name": "steppenwolf",
+      "name": "Steppenwolf",
       "formed": 1961,
       "origin": "Toronto, US",
       "countryCode": "US",
@@ -5021,11 +5021,11 @@
       "summary": "1961년 캐나다 토론토에서 출발하여 미국을 기반으로 활동하며 초기 하드 록과 프로토 메탈의 기틀을 잡은 밴드이다. Steppenwolf(1968), The Second(1968), At Your Birthday Party 등의 앨범을 선보이며 1960년대 후반 바이커 문화와 청년 반항 문화를 대표하는 카리스마 넘치는 음악을 선보였다.",
       "style": "존 케이의 거칠고 압도적인 허스키 보컬과 하몬드 오르간, 강력한 디스토션 기타 리프가 사운드의 중심을 이룬다. 블루스 록을 기반으로 질주하는 드라이빙 리듬과 육중한 하드 록 앙상블을 전개한다.",
       "image": {
-        "wikipediaTitle": "steppenwolf",
+        "wikipediaTitle": "Steppenwolf (band)",
         "fileName": "File:Steppenwolf (1970).png",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Steppenwolf_%281970%29.png/960px-Steppenwolf_%281970%29.png",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Steppenwolf_%281970%29.png",
-        "alt": "steppenwolf 밴드 사진",
+        "alt": "Steppenwolf 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steppenwolf (1970).png",
           "creator": "ABC / Dunhill Records",
@@ -5148,7 +5148,7 @@
           "guide": "거친 기타 리프와 보컬, 헤비메탈이라는 단어의 유래가 된 폭발적인 하드 록 앙상블에 집중해 들을 수 있다.",
           "youtubeId": "egMWlD3fLJ8",
           "source": {
-            "label": "steppenwolf — Born to Be Wild YouTube 검색",
+            "label": "Steppenwolf — Born to Be Wild",
             "url": "https://www.youtube.com/watch?v=egMWlD3fLJ8",
             "publisher": "YouTube",
             "official": false,
@@ -5167,7 +5167,7 @@
           "guide": "사이키델릭한 노이즈 전개와 신나는 오르간, 보컬 훅이 완벽히 만나는 지점을 들을 수 있다.",
           "youtubeId": "HPE9a_epmWw",
           "source": {
-            "label": "steppenwolf — Magic Carpet Ride YouTube 검색",
+            "label": "Steppenwolf — Magic Carpet Ride",
             "url": "https://www.youtube.com/watch?v=HPE9a_epmWw",
             "publisher": "YouTube",
             "official": false,
@@ -5186,7 +5186,7 @@
           "guide": "묵직한 블루스 록 리듬 위로 펼쳐지는 묵직한 하몬드 오르간 연주와 보컬 필을 들을 수 있다.",
           "youtubeId": "boo0XLeCpVg",
           "source": {
-            "label": "steppenwolf — Rock Me YouTube 검색",
+            "label": "Steppenwolf — Rock Me",
             "url": "https://www.youtube.com/watch?v=boo0XLeCpVg",
             "publisher": "YouTube",
             "official": false,
@@ -5211,33 +5211,33 @@
       ],
       "sources": [
         {
-          "label": "steppenwolf — Wikidata",
+          "label": "Steppenwolf — Wikidata",
           "url": "http://www.wikidata.org/entity/Q465862",
           "publisher": "Wikidata",
           "externalId": "Q465862",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "steppenwolf — Wikipedia",
+          "label": "Steppenwolf — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Steppenwolf_(band)",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "steppenwolf — MusicBrainz",
+          "label": "Steppenwolf — MusicBrainz",
           "url": "https://musicbrainz.org/artist/12ff8858-bfcb-4812-a8dd-7e9debf0cbee",
           "publisher": "MusicBrainz",
           "externalId": "12ff8858-bfcb-4812-a8dd-7e9debf0cbee",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "steppenwolf — Wikimedia Commons",
+          "label": "Steppenwolf — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:Steppenwolf (1970).png",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
         },
         {
-          "label": "steppenwolf — 공식 YouTube",
+          "label": "Steppenwolf — 공식 YouTube",
           "publisher": "YouTube",
           "url": "https://www.youtube.com/channel/UC0aR1L5OoaiiaW73-bNl_Ug",
           "official": true,
@@ -5274,7 +5274,7 @@
     },
     {
       "id": "sonata-arctica",
-      "name": "sonata arctica",
+      "name": "Sonata Arctica",
       "formed": 1999,
       "origin": "Kemi, FI",
       "countryCode": "FI",
@@ -5315,11 +5315,11 @@
       "summary": "1999년 핀란드 케미에서 결성되어 멜로디컬한 키보드 연주와 빠른 템포가 특징인 파워 메탈 밴드이다. 데뷔 앨범 Ecliptica(1999)와 Silence(2001), Winterheart’s Guild(2003) 등을 통해 핀란드 멜로딕 파워 메탈 씬의 대표 주자로 자리매김했다.",
       "style": "질주하는 더블 베이스 드럼 비트 위에 화려한 키보드와 기타의 트윈 스피드 솔로 연주가 펼쳐진다. 드라마틱한 서정성이 담긴 멜로디와 토니 카코의 서정적이고 캐치한 보컬 라인이 조화를 이룬다.",
       "image": {
-        "wikipediaTitle": "sonata arctica",
+        "wikipediaTitle": "Sonata Arctica",
         "fileName": "File:SonataArctica 25112007Tilburg.JPG",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/SonataArctica_25112007Tilburg.JPG/960px-SonataArctica_25112007Tilburg.JPG",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/SonataArctica_25112007Tilburg.JPG",
-        "alt": "sonata arctica 밴드 사진",
+        "alt": "Sonata Arctica 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:SonataArctica 25112007Tilburg.JPG",
           "creator": "Tenth Plague",
@@ -5394,7 +5394,7 @@
           "guide": "빠른 템포와 멜로디컬한 키보드 리드, 폭발적인 합창 구간이 특징인 초기 대표곡이다.",
           "youtubeId": "cfI8o_hzaDk",
           "source": {
-            "label": "sonata arctica — FullMoon YouTube 검색",
+            "label": "Sonata Arctica — FullMoon",
             "url": "https://www.youtube.com/watch?v=cfI8o_hzaDk",
             "publisher": "YouTube",
             "official": false,
@@ -5413,7 +5413,7 @@
           "guide": "휘감아치는 네오클래시컬 키보드 솔로와 압도적인 스피드감의 드럼 연주가 돋보인다.",
           "youtubeId": "ZhETi8XwONk",
           "source": {
-            "label": "sonata arctica — San Sebastian (Re-visited) YouTube 검색",
+            "label": "Sonata Arctica — San Sebastian (Re-visited)",
             "url": "https://www.youtube.com/watch?v=ZhETi8XwONk",
             "publisher": "YouTube",
             "official": false,
@@ -5432,7 +5432,7 @@
           "guide": "어둡고 연극적인 분위기 속에서 강렬한 리프와 다이내믹한 전개가 펼쳐진다.",
           "youtubeId": "Pz2V5eI4O2k",
           "source": {
-            "label": "sonata arctica — Don't Say a Word YouTube 검색",
+            "label": "Sonata Arctica — Don't Say a Word",
             "url": "https://www.youtube.com/watch?v=Pz2V5eI4O2k",
             "publisher": "YouTube",
             "official": false,
@@ -5455,20 +5455,20 @@
       ],
       "sources": [
         {
-          "label": "sonata arctica — Wikidata",
+          "label": "Sonata Arctica — Wikidata",
           "url": "http://www.wikidata.org/entity/Q191660",
           "publisher": "Wikidata",
           "externalId": "Q191660",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "sonata arctica — Wikipedia",
+          "label": "Sonata Arctica — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Sonata_Arctica",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "sonata arctica — 공식 YouTube",
+          "label": "Sonata Arctica — 공식 YouTube",
           "url": "https://www.youtube.com/channel/UC56F8c8khYkaA42xQhoS_gw",
           "publisher": "YouTube",
           "externalId": "UC56F8c8khYkaA42xQhoS_gw",
@@ -5477,14 +5477,14 @@
           "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
         },
         {
-          "label": "sonata arctica — MusicBrainz",
+          "label": "Sonata Arctica — MusicBrainz",
           "url": "https://musicbrainz.org/artist/319b1175-ced9-438f-986b-9239c3edd92d",
           "publisher": "MusicBrainz",
           "externalId": "319b1175-ced9-438f-986b-9239c3edd92d",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "sonata arctica — Wikimedia Commons",
+          "label": "Sonata Arctica — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:SonataArctica 25112007Tilburg.JPG",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
@@ -5518,7 +5518,7 @@
     },
     {
       "id": "extreme",
-      "name": "extreme",
+      "name": "Extreme",
       "formed": 1985,
       "origin": "Boston, US",
       "countryCode": "US",
@@ -5558,11 +5558,11 @@
       "summary": "1985년 미국 보스턴에서 결성되어 펑크 메탈과 하드 록 사운드로 독창적인 음악 세계를 구축한 밴드이다. Extreme II: Pornograffitti (A Funked Up Fairy Tale)(1990) 등의 앨범을 통해 화려한 연주력과 차트 성과를 모두 거두었다.",
       "style": "누노 베텐코트의 화려하고 정교한 기타 리프와 게리 체론의 폭발적인 보컬 라인이 조화를 이룬다. 펑키한 베이스 비트와 결합된 하드 록 및 화음 위주의 파워 발라드까지 폭넓은 스펙트럼을 선보인다.",
       "image": {
-        "wikipediaTitle": "extreme",
+        "wikipediaTitle": "Extreme (band)",
         "fileName": "File:Extreme en 2017.jpg",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Extreme_en_2017.jpg",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Extreme_en_2017.jpg",
-        "alt": "extreme 밴드 사진",
+        "alt": "Extreme 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Extreme en 2017.jpg",
           "creator": "Rubén G. Herrera",
@@ -5619,7 +5619,7 @@
           "guide": "감감적인 어쿠스틱 기타 연주와 풍성한 하모니 보컬이 조화를 이루는 명곡이다.",
           "youtubeId": "UrIiLvg58SY",
           "source": {
-            "label": "extreme — More Than Words YouTube 검색",
+            "label": "Extreme — More Than Words",
             "url": "https://www.youtube.com/watch?v=UrIiLvg58SY",
             "publisher": "YouTube",
             "official": false,
@@ -5638,7 +5638,7 @@
           "guide": "경쾌하고 묵직한 펑키 리프와 현란한 기타 솔로 연주가 압도적이다.",
           "youtubeId": "IqP76XWHQI0",
           "source": {
-            "label": "extreme — Get the Funk Out YouTube 검색",
+            "label": "Extreme — Get the Funk Out",
             "url": "https://www.youtube.com/watch?v=IqP76XWHQI0",
             "publisher": "YouTube",
             "official": false,
@@ -5657,7 +5657,7 @@
           "guide": "12현 어쿠스틱 기타 리프 기반의 신나는 리듬과 입체적인 화음 연주가 인상적이다.",
           "youtubeId": "I-h4A7bF8wQ",
           "source": {
-            "label": "extreme — Hole Hearted YouTube 검색",
+            "label": "Extreme — Hole Hearted",
             "url": "https://www.youtube.com/watch?v=I-h4A7bF8wQ",
             "publisher": "YouTube",
             "official": false,
@@ -5689,33 +5689,33 @@
       ],
       "sources": [
         {
-          "label": "extreme — Wikidata",
+          "label": "Extreme — Wikidata",
           "url": "http://www.wikidata.org/entity/Q682710",
           "publisher": "Wikidata",
           "externalId": "Q682710",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "extreme — Wikipedia",
+          "label": "Extreme — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Extreme_(band)",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "extreme — MusicBrainz",
+          "label": "Extreme — MusicBrainz",
           "url": "https://musicbrainz.org/artist/0e6cc5e5-4f03-4993-a481-d70d0e354d9f",
           "publisher": "MusicBrainz",
           "externalId": "0e6cc5e5-4f03-4993-a481-d70d0e354d9f",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "extreme — Wikimedia Commons",
+          "label": "Extreme — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:Extreme en 2017.jpg",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
         },
         {
-          "label": "extreme — 공식 YouTube",
+          "label": "Extreme — 공식 YouTube",
           "publisher": "YouTube",
           "url": "https://www.youtube.com/@extreme_band",
           "official": true,
@@ -6021,7 +6021,7 @@
     },
     {
       "id": "limp-bizkit",
-      "name": "limp bizkit",
+      "name": "Limp Bizkit",
       "formed": 1994,
       "origin": "Jacksonville, US",
       "countryCode": "US",
@@ -6061,11 +6061,11 @@
       "summary": "1994년 미국 잭슨빌에서 결성되어 힙합과 록을 결합한 랩 메탈 및 뉴 메탈 사운드로 세계적인 인기를 얻은 밴드이다. Significant Other(1999)와 Chocolate Starfish and the Hot Dog Flavored Water(2000) 등의 앨범을 통해 1990년대 후반과 2000년대 초반 뉴 메탈 붐을 이끌었다.",
       "style": "강렬한 랩 보컬과 다운 튜닝된 heavy한 기타 리프, 힙합 스크래칭 및 묵직한 베이스 라인이 결합되어 있다. 직설적이고 폭발적인 에너지와 리드미컬한 그루브를 넘나드는 곡 전개가 특징이다.",
       "image": {
-        "wikipediaTitle": "limp bizkit",
+        "wikipediaTitle": "Limp Bizkit",
         "fileName": "File:Limp Bizkit au Hellfest 2015.jpg",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Limp_Bizkit_au_Hellfest_2015.jpg/960px-Limp_Bizkit_au_Hellfest_2015.jpg",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Limp_Bizkit_au_Hellfest_2015.jpg",
-        "alt": "limp bizkit 밴드 사진",
+        "alt": "Limp Bizkit 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Limp Bizkit au Hellfest 2015.jpg",
           "creator": "Tilly antoine",
@@ -6116,7 +6116,7 @@
           "guide": "그루비한 힙합 비트와 캐치하면서도 강렬하게 터지는 정교한 뉴 메탈 리프.",
           "youtubeId": "JTMVOzPPtiw",
           "source": {
-            "label": "limp bizkit — Nookie YouTube 검색",
+            "label": "Limp Bizkit — Nookie",
             "url": "https://www.youtube.com/watch?v=JTMVOzPPtiw",
             "publisher": "YouTube",
             "official": false,
@@ -6135,7 +6135,7 @@
           "guide": "분노를 직설적으로 터뜨리는 보컬과 극단적인 단순함 속의 폭발적인 리프 에너지가 핵심이다.",
           "youtubeId": "ZpUYjpKg9KY",
           "source": {
-            "label": "limp bizkit — Break Stuff YouTube 검색",
+            "label": "Limp Bizkit — Break Stuff",
             "url": "https://www.youtube.com/watch?v=ZpUYjpKg9KY",
             "publisher": "YouTube",
             "official": false,
@@ -6154,7 +6154,7 @@
           "guide": "중독성 강한 랩 훅과 육중하게 몰아치는 기타 묵직함이 완벽한 완급조절을 이룬다.",
           "youtubeId": "RYnFIRc0k6E",
           "source": {
-            "label": "limp bizkit — Rollin' (Air Raid Vehicle) YouTube 검색",
+            "label": "Limp Bizkit — Rollin' (Air Raid Vehicle)",
             "url": "https://www.youtube.com/watch?v=RYnFIRc0k6E",
             "publisher": "YouTube",
             "official": false,
@@ -6178,20 +6178,20 @@
       ],
       "sources": [
         {
-          "label": "limp bizkit — Wikidata",
+          "label": "Limp Bizkit — Wikidata",
           "url": "http://www.wikidata.org/entity/Q240767",
           "publisher": "Wikidata",
           "externalId": "Q240767",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "limp bizkit — Wikipedia",
+          "label": "Limp Bizkit — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Limp_Bizkit",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "limp bizkit — 공식 YouTube",
+          "label": "Limp Bizkit — 공식 YouTube",
           "url": "https://www.youtube.com/channel/UCCndqRyI-5Zl8Mutlq71ASw",
           "publisher": "YouTube",
           "externalId": "UCCndqRyI-5Zl8Mutlq71ASw",
@@ -6200,14 +6200,14 @@
           "note": "검증된 Wikidata 항목의 공식 채널 ID에서 자동 연결함"
         },
         {
-          "label": "limp bizkit — MusicBrainz",
+          "label": "Limp Bizkit — MusicBrainz",
           "url": "https://musicbrainz.org/artist/8f9d6bb2-dba4-4cca-9967-cc02b9f4820c",
           "publisher": "MusicBrainz",
           "externalId": "8f9d6bb2-dba4-4cca-9967-cc02b9f4820c",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "limp bizkit — Wikimedia Commons",
+          "label": "Limp Bizkit — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:Limp Bizkit au Hellfest 2015.jpg",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
@@ -6241,7 +6241,7 @@
     },
     {
       "id": "beach-house",
-      "name": "beach house",
+      "name": "Beach House",
       "formed": 2004,
       "origin": "Baltimore, US",
       "countryCode": "US",
@@ -6281,11 +6281,11 @@
       "summary": "2004년 미국 볼티모어에서 결성되어 몽환적인 드림 팝 음악을 선보여 온 듀오이다. Teen Dream(2010), Bloom(2012), Depression Cherry(2015) 등의 앨범을 통해 독창적인 아날로그 감성과 감각적인 사운드를 구축했다.",
       "style": "몽환적인 오르간과 아날로그 신시사이저, 아르페지오 기타 연주가 층층이 쌓여 느리고 아늑한 사운드를 만들어낸다. 감성적이고 아련한 보컬 멜로디가 어우러져 특유의 몰입감 넘치는 분위기를 연출한다.",
       "image": {
-        "wikipediaTitle": "beach house",
+        "wikipediaTitle": "Beach House",
         "fileName": "File:Beach House at House of Blues San Diego on July 1 2012.jpg",
         "displayUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg/960px-Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg",
         "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Beach_House_at_House_of_Blues_San_Diego_on_July_1_2012.jpg",
-        "alt": "beach house 밴드 사진",
+        "alt": "Beach House 밴드 사진",
         "credit": {
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach House at House of Blues San Diego on July 1 2012.jpg",
           "creator": "Tristan Loper",
@@ -6318,7 +6318,7 @@
           "guide": "아날로그 신시사이저와 서정적인 멜로디가 조화를 이루며 따뜻하고 아련한 분위기를 자아낸다.",
           "youtubeId": "njbmwfndFH4",
           "source": {
-            "label": "beach house — Silver Soul YouTube 검색",
+            "label": "Beach House — Silver Soul",
             "url": "https://www.youtube.com/watch?v=njbmwfndFH4",
             "publisher": "YouTube",
             "official": false,
@@ -6337,7 +6337,7 @@
           "guide": "선명한 기타 리프와 고조되는 드럼 비트가 만들어내는 웅장하고 감성적인 드림 팝 사운드가 특징이다.",
           "youtubeId": "Bv7IcjmxjGo",
           "source": {
-            "label": "beach house — Myth YouTube 검색",
+            "label": "Beach House — Myth",
             "url": "https://www.youtube.com/watch?v=Bv7IcjmxjGo",
             "publisher": "YouTube",
             "official": false,
@@ -6356,7 +6356,7 @@
           "guide": "슬라이드 기타 효과와 우주적인 아르페지오 건반 연주가 깊은 몰입감을 전달한다.",
           "youtubeId": "RBtlPT23PTM",
           "source": {
-            "label": "beach house — Space Song YouTube 검색",
+            "label": "Beach House — Space Song",
             "url": "https://www.youtube.com/watch?v=RBtlPT23PTM",
             "publisher": "YouTube",
             "official": false,
@@ -6397,33 +6397,33 @@
       ],
       "sources": [
         {
-          "label": "beach house — Wikidata",
+          "label": "Beach House — Wikidata",
           "url": "http://www.wikidata.org/entity/Q812842",
           "publisher": "Wikidata",
           "externalId": "Q812842",
           "note": "Studio에서 MusicBrainz와 교차 확인함"
         },
         {
-          "label": "beach house — Wikipedia",
+          "label": "Beach House — Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Beach_House",
           "publisher": "Wikipedia",
           "note": "검증된 Wikidata 항목에서 자동 연결함"
         },
         {
-          "label": "beach house — MusicBrainz",
+          "label": "Beach House — MusicBrainz",
           "url": "https://musicbrainz.org/artist/d5cc67b8-1cc4-453b-96e8-44487acdebea",
           "publisher": "MusicBrainz",
           "externalId": "d5cc67b8-1cc4-453b-96e8-44487acdebea",
           "note": "Studio에서 Wikidata와 교차 확인함"
         },
         {
-          "label": "beach house — Wikimedia Commons",
+          "label": "Beach House — Wikimedia Commons",
           "url": "https://commons.wikimedia.org/wiki/File:Beach House at House of Blues San Diego on July 1 2012.jpg",
           "publisher": "Wikimedia Commons",
           "note": "Wikidata 이미지와 Commons API에서 자동 확인한 원본·권리 출처"
         },
         {
-          "label": "beach house — 공식 YouTube",
+          "label": "Beach House — 공식 YouTube",
           "url": "https://www.youtube.com/@BeachHouseVideoZone",
           "publisher": "YouTube",
           "official": true,
@@ -48703,7 +48703,7 @@
           "targetBandId": "wintersun",
           "kind": "evolution",
           "strength": 2,
-          "note": "wintersun의 기타리스트 테무 만테사리를 메가데스의 기타리스트로 영입하였다.",
+          "note": "Wintersun의 기타리스트 테무 만테사리를 메가데스의 기타리스트로 영입하였다.",
           "reviewStatus": "draft",
           "mirroredFrom": "wintersun"
         }

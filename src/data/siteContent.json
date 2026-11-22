@@ -235,8 +235,8 @@
       }
     },
     "relationEyebrow": "EDITORIAL CONNECTIONS",
-    "relationTitle": "역사로 확인된 관계들",
-    "relationDescription": "역사적 사실로 확인된 관계들입니다.",
-    "relationEmptyMessage": "아직 검증된 연결이 없습니다. 위에서 계속 탐험해보세요."
+    "relationTitle": "이어진 밴드들",
+    "relationDescription": "편집부가 정리한 영향·장면·계보 관계입니다. 출처를 확인한 관계에는 \"출처 확인\" 표시가 붙습니다.",
+    "relationEmptyMessage": "아직 정리된 연결이 없습니다. 위의 히치하이킹으로 계속 탐험해보세요."
   }
 }

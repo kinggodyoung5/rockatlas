@@ -6,6 +6,7 @@ import type { Band, EraId } from '../types/music'
 import type { GenreTaxonomyId } from '../types/taxonomy'
 import type { CatalogSort } from '../lib/explorerRoute'
 import { countryName } from '../lib/countryNames'
+import { matchesCatalogFilter, sortCatalog } from '../lib/catalogFilters'
 import { BandCard } from './BandCard'
 
 interface AllBandsPageProps {
@@ -35,16 +36,7 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
   }, [searchFocusToken])
   const countries = [...new Set(bands.map((band) => band.countryCode).filter(Boolean))].sort((a, b) => countryName(a).localeCompare(countryName(b), 'ko'))
   const availableSubgenres = [...new Set(bands.flatMap((band) => band.taxonomyV2?.subgenreIds ?? []))].sort((a, b) => (taxonomySubgenreById[a]?.name ?? a).localeCompare(taxonomySubgenreById[b]?.name ?? b, 'ko'))
-  const normalized = query.trim().toLocaleLowerCase()
-  const visible = bands.filter((band) => {
-    const taxonomy = band.taxonomyV2
-    const searchable = `${band.name} ${band.origin} ${band.tags.join(' ')} ${band.subgenres.join(' ')} ${band.members.map((member) => member.name).join(' ')}`.toLocaleLowerCase()
-    return (!normalized || searchable.includes(normalized))
-      && (genreId === 'all' || taxonomy?.primaryGenreId === genreId)
-      && (subgenreId === 'all' || taxonomy?.subgenreIds.includes(subgenreId))
-      && (eraId === 'all' || band.eraTags.some((tag) => tag.era === eraId))
-      && (countryCode === 'all' || band.countryCode === countryCode)
-  }).sort((a, b) => sort === 'formed-asc' ? a.formed - b.formed : sort === 'formed-desc' ? b.formed - a.formed : a.name.localeCompare(b.name, 'en'))
+  const visible = sortCatalog(bands.filter((band) => matchesCatalogFilter(band, { query, genreId, subgenreId, eraId, countryCode })), sort)
   const reset = () => onFilter({ query: '', genreId: 'all', subgenreId: 'all', eraId: 'all', countryCode: 'all', sort: 'name' })
   return (
     <main id="top" className="catalog-page all-bands-page" tabIndex={-1}>

@@ -1,15 +1,8 @@
 import { ArrowRight, GitBranch } from 'lucide-react'
 import type { BandDetailCopy } from '../data/siteContent'
 import { publicBandById as bandById } from '../data/publicBands'
-import type { Band, RelationKind } from '../types/music'
-
-const relationLabels: Record<RelationKind, string> = {
-  'sounds-like': '닮은 사운드',
-  'influenced-by': '영향을 받음',
-  influenced: '영향을 줌',
-  'shared-scene': '같은 장면',
-  evolution: '세대 전환',
-}
+import type { Band } from '../types/music'
+import { relationEvidence, relationLabels } from '../lib/relationLabels'
 
 interface RelationMapProps {
   band: Band
@@ -44,7 +37,7 @@ export function RelationMap({ band, onSelect, visitedIds, copy }: RelationMapPro
                 .slice(0, 2)
               return (
                 <button key={`${item.targetBandId}-${item.kind}`} className="relation-node" onClick={() => onSelect(target)}>
-                  <span className="node-kind">{relationLabels[item.kind]} {visitedIds.includes(target.id) && <em>· VISITED</em>}</span>
+                  <span className="node-kind">{relationLabels[item.kind]}{relationEvidence(item) === 'sourced' && <em className="node-sourced"> · 출처 확인</em>} {visitedIds.includes(target.id) && <em>· VISITED</em>}</span>
                   <strong>{target.name}</strong>
                   <p>{item.note}</p>
                   {nextBands.length > 0 && <span className="node-next">그다음: {nextBands.map((next) => next.name).join(' · ')}</span>}

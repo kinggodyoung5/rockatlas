@@ -1179,3 +1179,30 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 **Git 상태와 다음 단계**
 - 브랜치 `codex/taxonomy-v2`, HEAD `b8e3913`. 섹션 43의 포스터 초안 35팀 작업과 이번 문서 모두 **커밋하지 않았다.**
 - 다음 정확한 단계: 운영자가 계획서 6장의 결정 사항을 정한 뒤, P0(Wintersun 권리 검수, 미커밋 작업 커밋, 밴드명 대소문자, 결성 시대 필터, 관계 문구)부터 시작한다.
+
+## 45. 2026-11-22 Wintersun 권리 검수 · 초안 65팀 공개 · 개선 계획 P0 완료
+
+운영자 요청: Wintersun 이미지 권리 검수, 초안 검수 후 커밋·공개, `docs/IMPROVEMENT_PLAN_2026-11.md`의 P0 진행.
+
+**Wintersun (P0-1)**: Commons API로 확인 — 촬영 Stefan Bollmann, `Attribution` 라이선스. 같은 촬영자의 Exodus·Sodom·Death Angel 사진과 같은 방식(라이선스 URL = 파일 페이지 `#Licensing`)으로 기록하고 `verified` 처리. 표시 URL을 960px 썸네일로 교체. `validate:data` 오류 0건.
+
+**초안 65팀 공개 (P0-2)**: Claude 2차 30팀 + Codex 포스터 35팀 전수 점검 후 공개.
+- 점검 항목: 준비도 필드, 히치하이킹 진입 조건, 대표곡 영상·공식 여부, 이미지 권리, 관계 대상 존재, 소개·소리 설명 길이.
+- 수정: 소리 설명이 80자 미만이던 16팀(전부 Claude 2차 배치) 보강. Faith No More "Midlife Crisis"·"Easy"를 비공식 재업로드에서 공식 Topic 음원으로, Explosions in the Sky "Catastrophe and the Cure"를 NPR Music 공식 라이브로 교체. Topic·레이블 배포 음원인데 `official` 표시가 빠진 6곡 정정.
+- 전 카탈로그 밴드 `activeYears`의 `present`를 `현재`로 통일(49팀).
+- 결과: 308팀 전부 공개, 초안 0. 커밋 `7833b21`.
+
+**P0-3 밴드명 대소문자**: Wintersun, Steppenwolf, Sonata Arctica, Extreme, Limp Bizkit, Beach House. 이름·위키백과 문서명(`image.wikipediaTitle`은 Wikipedia 출처 URL에서 가져옴)·대체 텍스트·출처 라벨·대표곡 출처 라벨·관계 설명·보류 관계 이름까지 정정. 소문자 이름은 공식 표기인 blink-182만 남음.
+
+**P0-4 결성 시대 필터 버그**: `src/lib/catalogFilters.ts` 신설. 모든 밴드 보기의 시대 필터가 결성 연도 기준으로 동작(전에는 활동 시대 태그 기준이라 1977년 결성 Dire Straits가 1970년대에 안 나왔음). 느낌으로 찾기의 시대 필터는 활동 기준이 맞으므로 라벨만 "활동 시대"로 변경. 테스트 4개 추가(`catalogFilters.test.ts`).
+
+**P0-5 관계 섹션 문구**: "역사로 확인된 관계들" → "이어진 밴드들". 설명에 출처 표시 안내. 출처 URL이 있는 관계 카드에 "· 출처 확인" 표시.
+
+**P0-6 관계 라벨 통일**: `src/lib/relationLabels.ts`에서 공개 화면·Studio가 같은 라벨 사용. `evolution`은 P2 이관 전까지 "계보로 이어짐"(전에는 공개 "세대 전환", Studio "계보의 확장"). `relationEvidence()` 판정 함수 추가.
+
+**검증**: `tsc -b`, `validate:data`(308/308, 오류 0), `validate:taxonomy`, `npm test` 74/74, `npm run build`(상세·공유 페이지 308개). 브라우저에서 1970년대+dire → Dire Straits 1팀, 1980년대+dire → 0팀, Metallica 관계 섹션 새 문구·출처 표시 7개·"계보로 이어짐" 2개, Wintersun 이름·사진·권리 표기 확인.
+
+**Git 상태와 다음 단계**
+- `codex/taxonomy-v2`에 커밋·푸시. **`main` 배포는 하지 않음**(운영자 승인 필요). 이제 `validate:data` 오류가 없어 배포 검증은 통과할 상태.
+- 백업: `../rock-atlas-backups/p0-20261122/catalog-before.json`.
+- 다음 단계: 운영자 승인 시 `main` 배포. 이후 계획서 P1(표기 정규화 스크립트 — 출신지 한글/영문 통일, 멤버 활동연도 `present` 351건, 관계 "~습니다"체 16건 등).
