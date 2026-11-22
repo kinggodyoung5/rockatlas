@@ -15,7 +15,13 @@ export type RelationKind =
   | 'influenced-by'
   | 'influenced'
   | 'shared-scene'
-  | 'evolution'
+  /** Bands joined by a person, not by sound: successor bands, a member leaving to start or join
+   *  another, a member playing in both. Never counts as musical similarity (plan decision 3.2). */
+  | 'member-link'
+
+/** How a member-link connects the two bands. 'session' is recorded for completeness but is not drawn
+ *  as a lineage line. */
+export type MemberLinkType = 'successor' | 'moved' | 'shared' | 'session'
 
 export type ReviewStatus = 'draft' | 'reviewed' | 'published'
 
@@ -101,6 +107,10 @@ export interface Relation extends ReviewRecord {
    *  (the value is that other band's id). Lets edits/deletes on the original keep this one in sync
    *  without ever touching a relation an operator wrote by hand, which never has this field. */
   mirroredFrom?: string
+  /** member-link only (required for that kind): the people who connect the two bands. */
+  people?: string[]
+  /** member-link only (required for that kind). The mirrored side carries the same value. */
+  linkType?: MemberLinkType
 }
 
 /** A relation dropped during intake because its target band doesn't exist in the catalog yet.
@@ -113,6 +123,9 @@ export interface PendingRelation {
   kind: RelationKind
   strength: 1 | 2 | 3
   note: string
+  /** member-link only: carried over to both sides when the pending relation resolves. */
+  people?: string[]
+  linkType?: MemberLinkType
   createdAt: string
 }
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-22T03:20:18.723Z",
+  "updatedAt": "2026-11-22T03:37:07.671Z",
   "bands": [
     {
       "id": "wintersun",
@@ -158,10 +158,44 @@
       "relations": [
         {
           "targetBandId": "megadeth",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Wintersun의 기타리스트 테무 만테사리가 메가데스의 기타리스트로도 활동중이다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Teemu Mäntysaari"
+          ],
+          "note": "기타리스트 테무 맨티사리가 2023년부터 함께 활동하는 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "ensiferum",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Jari Mäenpää",
+            "Oliver Fokin"
+          ],
+          "strength": 2,
+          "note": "Wintersun 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "nightwish",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Kai Hahto",
+            "Jukka Koskinen"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -670,7 +704,7 @@
           "targetBandId": "ill-nino",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "기타리스트 Ahrue Luster는 Machine Head 활동 후 Ill Niño에 합류해 2003년부터 2019년까지 연주했다. (Ill Niño 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "기타리스트 Ahrue Luster는 Machine Head 활동 후 Ill Niño에 합류해 2003년부터 2019년까지 연주했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "ill-nino"
         }
@@ -1394,6 +1428,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "rancid",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Branden Steineckert"
+          ],
+          "strength": 2,
+          "note": "The Used 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -2159,6 +2206,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "flotsam-and-jetsam",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ken Mary"
+          ],
+          "strength": 2,
+          "note": "Accept 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -2407,7 +2467,21 @@
           "reviewedAt": "2026-08-04T11:52:27.339Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "korn",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ray Luzier"
+          ],
+          "strength": 2,
+          "note": "Steel Panther 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        }
+      ],
       "sources": [
         {
           "label": "steel panther — Wikidata",
@@ -2721,12 +2795,70 @@
       "relations": [
         {
           "targetBandId": "dio",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 로니 제임스 디오가 이후 자신의 밴드 디오를 결성해 판타지풍 헤비메탈 노선을 이어갔다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ronnie James Dio"
+          ],
+          "note": "레인보우 초대 보컬 로니 제임스 디오가 이후 결성한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "deep-purple",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ritchie Blackmore",
+            "Roger Glover",
+            "Don Airey"
+          ],
+          "strength": 2,
+          "note": "Rainbow 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Bob Daisley"
+          ],
+          "strength": 2,
+          "note": "Rainbow 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "stratovarius",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Jens Johansson"
+          ],
+          "strength": 2,
+          "note": "Rainbow 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Cozy Powell"
+          ],
+          "strength": 2,
+          "note": "Rainbow 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -3055,7 +3187,89 @@
           "reviewedAt": "2026-08-05T09:28:43.815Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "deep-purple",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "David Coverdale",
+            "Jon Lord",
+            "Ian Paice"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Tommy Aldridge",
+            "Rudy Sarzo"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "def-leppard",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "dio",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "generation-axe",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Steve Vai"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "rainbow",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Cozy Powell"
+          ],
+          "strength": 2,
+          "note": "Whitesnake 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        }
+      ],
       "sources": [
         {
           "label": "whitesnake — Wikidata",
@@ -3556,9 +3770,35 @@
           "targetBandId": "the-stone-roses",
           "kind": "shared-scene",
           "strength": 3,
-          "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다. (The Stone Roses 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "1980년대 말 록 음악과 인디 댄스 문화의 결합을 함께 이끈 대표적 동시대 밴드다.",
           "reviewStatus": "draft",
           "mirroredFrom": "the-stone-roses"
+        },
+        {
+          "targetBandId": "jesus-and-mary-chain",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Bobby Gillespie"
+          ],
+          "strength": 2,
+          "note": "Primal Scream 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "my-bloody-valentine",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Kevin Shields"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -3820,7 +4060,21 @@
           "reviewedAt": "2026-08-05T09:25:25.648Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "primal-scream",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Bobby Gillespie"
+          ],
+          "strength": 2,
+          "note": "The Jesus and Mary Chain 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        }
+      ],
       "sources": [
         {
           "label": "jesus and mary chain — Wikidata",
@@ -4292,7 +4546,7 @@
           "targetBandId": "architects",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Architects의 Sam Carter는 Bring Me the Horizon의 'The Sadness Will Never End'(2008)에 게스트 보컬로 참여했다. (Architects 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Architects의 Sam Carter는 Bring Me the Horizon의 'The Sadness Will Never End'",
           "reviewStatus": "draft",
           "mirroredFrom": "architects"
         }
@@ -4499,7 +4753,38 @@
           "reviewedAt": "2026-08-05T09:20:48.076Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-clash",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "클래시의 믹 존스가 데뷔작 Up the Bracket(2002)과 2집을 직접 프로듀싱했고, 평단은 이 밴드를 리버틴스의 음악적 선배로 꼽는다.",
+          "source": {
+            "label": "Wikipedia — Up the Bracket",
+            "url": "https://en.wikipedia.org/wiki/Up_the_Bracket",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        },
+        {
+          "targetBandId": "the-strokes",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초 개러지 록 리바이벌에서 뉴욕의 스트록스에 맞선 영국의 대표 주자로 함께 묶였다.",
+          "source": {
+            "label": "Wikipedia — The Libertines",
+            "url": "https://en.wikipedia.org/wiki/The_Libertines",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "the libertines — Wikidata",
@@ -4715,7 +5000,38 @@
           "reviewedAt": "2026-08-05T09:19:52.910Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-strokes",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "멤버들이 데뷔 당시 스트록스가 큰 영향이었다고 직접 밝혔다.",
+          "source": {
+            "label": "TNT Magazine — Interview with The Vaccines",
+            "url": "https://www.tntmagazine.com/leisure-entertainment/interviews/interview-with-the-vaccines/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        },
+        {
+          "targetBandId": "ramones",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "저스틴 영이 가장 좋아하는 밴드 중 하나로 라모네스를 꼽았고, 짧고 빠른 데뷔작은 라모네스와 자주 비교됐다.",
+          "source": {
+            "label": "Atwood Magazine — The Vaccines celebrate a decade of their debut",
+            "url": "https://atwoodmagazine.com/wdyx-the-vaccines-music-interview-2021-what-did-you-expect-from-the-vaccines-album-feature/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "the vaccines — Wikidata",
@@ -4933,7 +5249,38 @@
           "reviewedAt": "2026-08-04T11:43:51.796Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "incubus",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "캘리포니아 아고라힐스·칼라바사스 지역 신에서 함께 성장했고, 후바스탱크의 첫 공연에 인큐버스도 함께 섰다.",
+          "source": {
+            "label": "Pollstar — Hoobastank (2002)",
+            "url": "https://news.pollstar.com/2002/08/12/hoobastank/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        },
+        {
+          "targetBandId": "linkin-park",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 캘리포니아 아고라힐스 출신으로, 결성 초기 린킨 파크 멤버들과 같은 지역 신에서 어울렸다.",
+          "source": {
+            "label": "Guitar Center Podcast — Dan Estrin of Hoobastank",
+            "url": "https://www.guitarcenter.com/riffs/interviews/guitars/guitar-center-podcast-s3-e8-dan-estrin-hoobastank",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "hoobastank — Wikidata",
@@ -5695,19 +6042,37 @@
       "relations": [
         {
           "targetBandId": "generation-axe",
-          "kind": "evolution",
           "strength": 3,
-          "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다. (Generation Axe 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
-          "reviewStatus": "draft",
-          "mirroredFrom": "generation-axe"
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Nuno Bettencourt"
+          ],
+          "note": "기타리스트 누노 베텐코트가 익스트림 활동과 함께 참여하는 기타 슈퍼그룹이다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "van-halen",
           "kind": "influenced-by",
           "strength": 3,
-          "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다. (Van Halen 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "에디 반 헤일런 특유의 테크니컬한 기타 태핑 및 화려한 리프 프로덕션에 큰 영향을 받았다.",
           "reviewStatus": "draft",
           "mirroredFrom": "van-halen"
+        },
+        {
+          "targetBandId": "dream-theater",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mike Mangini"
+          ],
+          "strength": 2,
+          "note": "Extreme 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -5976,6 +6341,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "static-x",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Will Hunt"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -6196,7 +6574,7 @@
           "targetBandId": "papa-roach",
           "kind": "sounds-like",
           "strength": 3,
-          "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다. (Papa Roach 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "papa-roach"
         }
@@ -6399,7 +6777,7 @@
           "targetBandId": "mazzy-star",
           "kind": "sounds-like",
           "strength": 3,
-          "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다. (Mazzy Star 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "몽환적인 분위기와 감성적인 드림 팝 사운드의 질감을 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "mazzy-star"
         },
@@ -6407,7 +6785,7 @@
           "targetBandId": "the-xx",
           "kind": "sounds-like",
           "strength": 3,
-          "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다. (The xx 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "절제된 템포와 공간감을 살린 몽환적인 팝/인디 사운드 질감을 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "the-xx"
         },
@@ -6632,7 +7010,7 @@
           "targetBandId": "kiss",
           "kind": "sounds-like",
           "strength": 3,
-          "note": "시각적이고 파격적인 쇼맨십과 글램 록에 기반을 둔 캐치한 하드 록 사운드를 공유한다. (KISS 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "시각적이고 파격적인 쇼맨십과 글램 록에 기반을 둔 캐치한 하드 록 사운드를 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "kiss"
         }
@@ -6857,6 +7235,19 @@
           "strength": 3,
           "note": "1990년대 정통 스래시 메탈의 틀을 깨고 묵직한 그루브 메탈 스타일을 구축하며 헤비 메탈 신의 변화를 함께 이끌었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Eloy Casagrande"
+          ],
+          "strength": 2,
+          "note": "Sepultura 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -7039,7 +7430,38 @@
           "reviewedAt": "2026-08-02T03:18:38.493Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "sonic-youth",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1995년 롤라팔루자 투어에 함께 출연하며 1990년대 미국 얼터너티브 신의 중심 무대를 공유했다.",
+          "source": {
+            "label": "Lollapalooza 1995 line-up",
+            "url": "https://grooveist.com/lineups/lollapalooza-1995-lineup/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        },
+        {
+          "targetBandId": "pavement",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1995년 롤라팔루자 투어에 함께 출연한 1990년대 로파이·인디 성향의 동시대 아티스트다.",
+          "source": {
+            "label": "Lollapalooza 1995 line-up",
+            "url": "https://grooveist.com/lineups/lollapalooza-1995-lineup/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "Beck — Wikidata",
@@ -7282,7 +7704,7 @@
           "targetBandId": "boston",
           "kind": "influenced-by",
           "strength": 3,
-          "note": "정교한 오버다빙 기타 레이어링과 풍성한 코러스 화음 프로덕션 방식에서 보스턴의 큰 영향을 받았다. (Boston 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "정교한 오버다빙 기타 레이어링과 풍성한 코러스 화음 프로덕션 방식에서 보스턴의 큰 영향을 받았다.",
           "reviewStatus": "draft",
           "mirroredFrom": "boston"
         },
@@ -7290,9 +7712,35 @@
           "targetBandId": "scorpions",
           "kind": "shared-scene",
           "strength": 3,
-          "note": "1980년대 라디오 프렌들리한 하드 록과 아레나 메탈의 전성기를 함께 이끌며 대중적 성과를 거두었다. (Scorpions 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "1980년대 라디오 프렌들리한 하드 록과 아레나 메탈의 전성기를 함께 이끌며 대중적 성과를 거두었다.",
           "reviewStatus": "draft",
           "mirroredFrom": "scorpions"
+        },
+        {
+          "targetBandId": "dio",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Def Leppard 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Def Leppard 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -8896,10 +9344,18 @@
       "relations": [
         {
           "targetBandId": "joy-division",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 이안 커티스의 사망 이후 남은 멤버들이 새롭게 결성한 후신 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Bernard Sumner",
+            "Peter Hook",
+            "Stephen Morris"
+          ],
+          "note": "이언 커티스 사망 후 남은 세 멤버가 결성 이전에 함께했던 전신 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "depeche-mode",
@@ -10079,7 +10535,7 @@
           "targetBandId": "saxon",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Saxon은 초기 활동기에 Motörhead의 공연을 지원했으며, 두 팀은 영국 헤비메탈 공연 신에서 긴 인연을 맺었다. (Saxon 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Saxon은 초기 활동기에 Motörhead의 공연을 지원했으며, 두 팀은 영국 헤비메탈 공연 신에서 긴 인연을 맺었다.",
           "reviewStatus": "draft",
           "mirroredFrom": "saxon"
         },
@@ -10087,9 +10543,35 @@
           "targetBandId": "venom",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "거친 보컬·왜곡된 베이스·빠른 로큰롤 리듬이라는 공통점이 있다. Venom은 이를 더 음산하고 과격한 방향으로 확장한 음악적 비교 대상이다. (Venom 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "거친 보컬·왜곡된 베이스·빠른 로큰롤 리듬이라는 공통점이 있다. Venom은 이를 더 음산하고 과격한 방향으로 확장한 음악적 비교 대상이다.",
           "reviewStatus": "draft",
           "mirroredFrom": "venom"
+        },
+        {
+          "targetBandId": "king-diamond",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "Motörhead 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "scorpions",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "Motörhead 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -10814,6 +11296,32 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "king-diamond",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "Scorpions 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "motorhead",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "Scorpions 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -11993,7 +12501,7 @@
           "targetBandId": "jinjer",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Jinjer는 Arch Enemy의 Will to Power 유럽 투어에 지원 밴드로 참여하며 국제적인 공연 활동을 넓혔다. (Jinjer 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Jinjer는 Arch Enemy의 Will to Power 유럽 투어에 지원 밴드로 참여하며 국제적인 공연 활동을 넓혔다.",
           "reviewStatus": "draft",
           "mirroredFrom": "jinjer"
         }
@@ -12290,6 +12798,20 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "wintersun",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Kai Hahto",
+            "Jukka Koskinen"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -13435,7 +13957,7 @@
           "targetBandId": "the-police",
           "kind": "shared-scene",
           "strength": 3,
-          "note": "The Police 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)",
+          "note": "3인조 트리오 구성에서 정교한 테크닉과 뉴 웨이브 요소를 접목하는 시도를 공유했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "the-police"
         }
@@ -13694,9 +14216,22 @@
           "targetBandId": "screaming-trees",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Screaming Trees의 보컬 Mark Lanegan은 이후 Queens of the Stone Age의 여러 음반과 공연에 참여했다. (Screaming Trees 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Screaming Trees의 보컬 Mark Lanegan은 이후 Queens of the Stone Age의 여러 음반과 공연에 참여했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "screaming-trees"
+        },
+        {
+          "targetBandId": "a-perfect-circle",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Troy Van Leeuwen"
+          ],
+          "strength": 2,
+          "note": "Queens of the Stone Age 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -14900,10 +15435,19 @@
       "relations": [
         {
           "targetBandId": "oasis",
-          "kind": "evolution",
           "strength": 3,
-          "note": "오아시스 해체 후 리암 갤러거를 중심으로 남은 멤버들이 결성한 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Liam Gallagher",
+            "Gem Archer",
+            "Andy Bell",
+            "Chris Sharrock"
+          ],
+          "note": "리엄 갤러거와 멤버들이 2009년 해체 직전까지 함께한 전신 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "noel-gallagher-s-high-flying-birds",
@@ -14912,6 +15456,19 @@
           "note": "오아시스에서 갈라져 나와 형은 하이플라잉버즈로, 동생은 비디아이로.",
           "reviewStatus": "draft",
           "mirroredFrom": "noel-gallagher-s-high-flying-birds"
+        },
+        {
+          "targetBandId": "ride",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Andy Bell"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -16131,10 +16688,17 @@
         },
         {
           "targetBandId": "chickenfoot",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 새미 해가와 베이시스트 마이클 앤소니가 반 헤일런 탈퇴 후 결성한 슈퍼그룹이다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Sammy Hagar",
+            "Michael Anthony"
+          ],
+          "note": "반 헤일런 출신 새미 헤이거와 마이클 앤서니가 2008년 결성한 슈퍼그룹이다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "extreme",
@@ -16356,17 +16920,29 @@
       "relations": [
         {
           "targetBandId": "mr-big",
-          "kind": "evolution",
           "strength": 3,
-          "note": "리드 기타리스트 폴 길버트가 레이서 엑스 해체 후 결성하여 세계적인 성공을 거둔 하드 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Paul Gilbert"
+          ],
+          "note": "기타리스트 폴 길버트가 레이서 엑스를 떠나 결성에 참여한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "judas-priest",
-          "kind": "evolution",
           "strength": 3,
-          "note": "파워풀한 드러머 스콧 트래비스가 레이서 엑스 활동 후 주다스 프리스트의 정식 멤버로 합류했다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Scott Travis"
+          ],
+          "note": "드러머 스콧 트래비스가 1989년 합류한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -17318,10 +17894,17 @@
         },
         {
           "targetBandId": "van-halen",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 새미 해가와 베이시스트 마이클 앤소니가 중심이 되어 활약했던 전설적인 하드 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Sammy Hagar",
+            "Michael Anthony"
+          ],
+          "note": "새미 헤이거(보컬)와 마이클 앤서니(베이스)가 몸담았던 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -17536,10 +18119,55 @@
       "relations": [
         {
           "targetBandId": "extreme",
-          "kind": "evolution",
           "strength": 3,
-          "note": "멤버 누노 베텐코트가 리드 기타리스트로 활동하는 대표 하드 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Nuno Bettencourt"
+          ],
+          "note": "누노 베텐코트가 기타를 맡고 있는 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "pantera",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Steve Vai"
+          ],
+          "strength": 2,
+          "note": "Generation Axe 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -17976,10 +18604,16 @@
       "relations": [
         {
           "targetBandId": "oasis",
-          "kind": "evolution",
           "strength": 3,
-          "note": "노엘 갤러거가 리더이자 메인 작곡가로 활약했던 전설적인 브릿팝 대표 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Noel Gallagher"
+          ],
+          "note": "노엘 갤러거가 리더이자 주 작곡가로 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "the-beatles",
@@ -18190,10 +18824,16 @@
       "relations": [
         {
           "targetBandId": "the-police",
-          "kind": "evolution",
           "strength": 3,
-          "note": "스팅이 솔로 데뷔 이전에 리더이자 베이시스트 및 프론트맨으로 활동했던 3인조 뉴웨이브/록 밴드이다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Sting"
+          ],
+          "note": "스팅이 1977~1986년(2007~2008년 재결합) 보컬·베이스를 맡은 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -18621,10 +19261,16 @@
         },
         {
           "targetBandId": "sting",
-          "kind": "evolution",
           "strength": 3,
-          "note": "리더이자 베이시스트 겸 프론트맨이었던 스팅이 밴드 활동 중단 후 시작한 솔로 커리어다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Sting"
+          ],
+          "note": "보컬·베이시스트 스팅이 1985년부터 시작한 솔로 활동이다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -19088,10 +19734,18 @@
         },
         {
           "targetBandId": "new-order",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 이안 커티스의 사후 남은 멤버들이 새롭게 전열을 가다듬어 결성한 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Bernard Sumner",
+            "Peter Hook",
+            "Stephen Morris"
+          ],
+          "note": "1980년 이언 커티스가 세상을 떠난 뒤 남은 세 멤버가 이름을 바꿔 이어간 후신 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "interpol",
@@ -20183,10 +20837,29 @@
         },
         {
           "targetBandId": "oasis",
-          "kind": "evolution",
           "strength": 3,
-          "note": "라이드 해체 이후 기타리스트 앤디 벨이 오아시스의 베이시스트로 합류하여 활동했다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Andy Bell"
+          ],
+          "note": "라이드의 기타리스트 앤디 벨이 1999년 베이시스트로 합류한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "beady-eye",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Andy Bell"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -20510,7 +21183,7 @@
           "targetBandId": "incubus",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Incubus와 Deftones는 2015년 북미 공동 헤드라이너 투어를 진행했다. (Incubus 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Incubus와 Deftones는 2015년 북미 공동 헤드라이너 투어를 진행했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "incubus"
         }
@@ -21226,10 +21899,16 @@
       "relations": [
         {
           "targetBandId": "racer-x",
-          "kind": "evolution",
           "strength": 3,
-          "note": "리드 기타리스트 폴 길버트가 이 밴드를 결성하기 전 활동했던 테크니컬 하드 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Paul Gilbert"
+          ],
+          "note": "폴 길버트가 미스터 빅 이전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -21741,6 +22420,45 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "anthrax",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Charlie Benante"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "generation-axe",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -22523,7 +23241,7 @@
           "targetBandId": "equilibrium",
           "kind": "sounds-like",
           "strength": 3,
-          "note": "Equilibrium 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)",
+          "note": "에픽 포크 메탈 씬을 이끄는 콤비네이션. 유럽 메탈 페스티벌의 단골 헤드라인업이다.",
           "reviewStatus": "draft",
           "mirroredFrom": "equilibrium"
         },
@@ -23599,6 +24317,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "rainbow",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Jens Johansson"
+          ],
+          "strength": 2,
+          "note": "Stratovarius 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -24280,7 +25011,23 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "the-beatles",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "닐 스미스가 비틀즈와 멤버들의 솔로작, 특히 폴 매카트니의 Ram에 빠져 이후 앨범의 방향이 바뀌었다고 밝혔다.",
+          "source": {
+            "label": "Magnet Magazine — A Conversation With Peach Pit",
+            "url": "https://magnetmagazine.com/2021/09/26/a-conversation-with-peach-pit/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "Peach Pit — Wikipedia",
@@ -24736,7 +25483,23 @@
           "reviewedAt": "2026-07-28T14:29:50.376Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "florence-the-machine",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2010년대 영국 출신 포크·인디 팝으로 함께 세계적 성공을 거두며 여러 페스티벌과 공연 무대를 공유했다.",
+          "source": {
+            "label": "PhillyVoice — Firefly 2016 headliners",
+            "url": "https://www.phillyvoice.com/mumford-sons-florence-machine-kings-leon-headline-firefly/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "Mumford & Sons — Wikipedia",
@@ -27330,6 +28093,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "the-libertines",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초 개러지 록 리바이벌에서 영국 쪽 대표 주자로 함께 묶인 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — The Libertines",
+            "url": "https://en.wikipedia.org/wiki/The_Libertines",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        },
+        {
+          "targetBandId": "the-vaccines",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "데뷔 당시 큰 영향을 받았다고 밝힌 2010년대 영국 인디 록 후배 밴드다.",
+          "source": {
+            "label": "TNT Magazine — Interview with The Vaccines",
+            "url": "https://www.tntmagazine.com/leisure-entertainment/interviews/interview-with-the-vaccines/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "sources": [
@@ -27731,6 +28524,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "mumford-sons",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2010년대 영국 출신 포크 록으로 함께 세계적 성공을 거두며 여러 페스티벌과 공연 무대를 공유했다.",
+          "source": {
+            "label": "PhillyVoice — Firefly 2016 headliners",
+            "url": "https://www.phillyvoice.com/mumford-sons-florence-machine-kings-leon-headline-firefly/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "sources": [
@@ -28145,7 +28953,23 @@
           "reviewedAt": "2026-07-28T14:00:33.503Z"
         }
       ],
-      "relations": [],
+      "relations": [
+        {
+          "targetBandId": "imagine-dragons",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2023년 이매진 드래곤스의 Mercury World Tour 유럽 공연에서 오프닝을 맡았다.",
+          "source": {
+            "label": "Wikipedia — Mercury World Tour",
+            "url": "https://en.wikipedia.org/wiki/Mercury_World_Tour",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
+        }
+      ],
       "sources": [
         {
           "label": "AJR — Wikidata",
@@ -29817,9 +30641,22 @@
           "targetBandId": "mudvayne",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Mudvayne은 2001년 Slipknot이 이끈 Pledge of Allegiance 투어에 참여했다. (Mudvayne 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Mudvayne은 2001년 Slipknot이 이끈 Pledge of Allegiance 투어에 참여했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "mudvayne"
+        },
+        {
+          "targetBandId": "sepultura",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Eloy Casagrande"
+          ],
+          "strength": 2,
+          "note": "Slipknot 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -30085,9 +30922,22 @@
           "targetBandId": "static-x",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "낮게 조율된 기타와 반복적인 리듬이라는 뉴 메탈의 공통점이 있다. Static-X는 전자 루프와 기계적인 박자의 비중이 더 크다는 음악적 비교다. (Static-X 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "낮게 조율된 기타와 반복적인 리듬이라는 뉴 메탈의 공통점이 있다. Static-X는 전자 루프와 기계적인 박자의 비중이 더 크다는 음악적 비교다.",
           "reviewStatus": "draft",
           "mirroredFrom": "static-x"
+        },
+        {
+          "targetBandId": "steel-panther",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ray Luzier"
+          ],
+          "strength": 2,
+          "note": "Korn 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -30330,7 +31180,7 @@
           "targetBandId": "tesla",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "블루스 기반 기타 리프와 거친 보컬, 라이브 합주 중심의 하드 록이라는 공통점이 있다. 직접 영향관계를 단정하지 않는 음악적 비교다. (Tesla 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "블루스 기반 기타 리프와 거친 보컬, 라이브 합주 중심의 하드 록이라는 공통점이 있다. 직접 영향관계를 단정하지 않는 음악적 비교다.",
           "reviewStatus": "draft",
           "mirroredFrom": "tesla"
         }
@@ -30815,7 +31665,7 @@
           "targetBandId": "ratt",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "1980년대 로스앤젤레스 클럽 신에서 함께 성장하며 글램 메탈의 대중화를 이끈 밴드들이다. (Ratt 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "1980년대 로스앤젤레스 클럽 신에서 함께 성장하며 글램 메탈의 대중화를 이끈 밴드들이다.",
           "reviewStatus": "draft",
           "mirroredFrom": "ratt"
         }
@@ -33501,6 +34351,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "skid-row",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "ZP Theart"
+          ],
+          "strength": 2,
+          "note": "DragonForce 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -35793,18 +36656,22 @@
         },
         {
           "targetBandId": "audioslave",
-          "kind": "evolution",
           "strength": 3,
-          "note": "해체 후 보컬 크리스 코넬이 레이지 어게인스트 더 머신의 연주진과 결성한 오디오슬레이브로 이어졌다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Chris Cornell"
+          ],
+          "note": "보컬 크리스 코넬이 사운드가든 해체 후 합류한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "temple-of-the-dog",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Soundgarden의 Chris Cornell과 Matt Cameron이 Temple of the Dog의 보컬·드럼으로 참여했다. (Temple of the Dog 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Soundgarden의 Chris Cornell과 Matt Cameron이 Temple of the Dog의 보컬·드럼으로 참여했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "temple-of-the-dog"
         }
@@ -36022,17 +36889,35 @@
           "targetBandId": "overkill",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "두 팀은 1980년대 뉴욕·뉴저지의 동부 스래시 신을 대표했으며, 기타리스트 Dan Spitz가 초기 Overkill을 거쳐 Anthrax에 합류했다. (Overkill 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "두 팀은 1980년대 뉴욕·뉴저지의 동부 스래시 신을 대표했으며, 기타리스트 Dan Spitz가 초기 Overkill을 거쳐 Anthrax에 합류했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "overkill"
         },
         {
           "targetBandId": "nuclear-assault",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Anthrax 창단 멤버 Dan Lilker가 탈퇴 후 John Connelly와 Nuclear Assault를 결성했다. (Nuclear Assault 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
-          "reviewStatus": "draft",
-          "mirroredFrom": "nuclear-assault"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dan Lilker"
+          ],
+          "note": "앤스랙스 창단 베이시스트 댄 릴커가 탈퇴 후 결성한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "pantera",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Charlie Benante"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -36263,12 +37148,16 @@
       "relations": [
         {
           "targetBandId": "nirvana",
-          "kind": "evolution",
           "strength": 3,
-          "note": "드러머였던 데이브 그롤이 너바나 해체 이후 결성한 밴드다.",
-          "reviewStatus": "draft",
-          "reviewedBy": "운영자 검수 (일괄 승인 · 근거 링크 생략)",
-          "reviewedAt": "2026-07-26T00:32:47.754Z"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dave Grohl"
+          ],
+          "note": "데이브 그롤이 1990~1994년 드러머로 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "pearl-jam",
@@ -36839,6 +37728,19 @@
           "strength": 3,
           "note": "공통 요소: 같은 하드 / 글램 록, 글램 메탈 · 전통 헤비메탈, 빠르고 질주하는 · 떼창하고 싶은 공연장형",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "dragon-force",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "ZP Theart"
+          ],
+          "strength": 2,
+          "note": "Skid Row 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -37405,6 +38307,20 @@
           "strength": 3,
           "note": "스피디한 에픽 포크 메탈 리듬과 캐치한 멜로디성을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "wintersun",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Jari Mäenpää",
+            "Oliver Fokin"
+          ],
+          "strength": 2,
+          "note": "Ensiferum 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -37859,12 +38775,18 @@
         },
         {
           "targetBandId": "audioslave",
-          "kind": "evolution",
           "strength": 3,
-          "note": "보컬 잭 드 라 로차의 탈퇴 후 남은 연주진이 크리스 코넬과 결성한 오디오슬레이브로 이어졌다.",
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Tom Morello",
+            "Tim Commerford",
+            "Brad Wilk"
+          ],
+          "note": "보컬 잭 드 라 로차가 탈퇴한 뒤 남은 연주진 세 명이 크리스 코넬과 함께 결성한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -38164,9 +39086,24 @@
           "targetBandId": "p-o-d",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "랩과 멜로디 보컬, 저음 기타와 큰 후렴을 조합한다는 공통점이 있다. P.O.D.의 레게 리듬은 차별점이며 직접 영향관계를 뜻하지 않는다. (P.O.D. 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "랩과 멜로디 보컬, 저음 기타와 큰 후렴을 조합한다는 공통점이 있다. P.O.D.의 레게 리듬은 차별점이며 직접 영향관계를 뜻하지 않는다.",
           "reviewStatus": "draft",
           "mirroredFrom": "p-o-d"
+        },
+        {
+          "targetBandId": "hoobastank",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 캘리포니아 아고라힐스 출신으로, 결성 초기 같은 지역 신에서 어울린 밴드다.",
+          "source": {
+            "label": "Guitar Center Podcast — Dan Estrin of Hoobastank",
+            "url": "https://www.guitarcenter.com/riffs/interviews/guitars/guitar-center-podcast-s3-e8-dan-estrin-hoobastank",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "sources": [
@@ -38412,6 +39349,19 @@
           "strength": 3,
           "note": "공통 요소: 같은 얼터너티브 / 그런지, 얼터너티브 록 · 팝 록, 낭만적이고 감성적인 · 우울하고 쓸쓸한",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "static-x",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Marty O'Brien"
+          ],
+          "strength": 2,
+          "note": "Daughtry 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -38710,7 +39660,7 @@
           "targetBandId": "jane-s-addiction",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Dave Navarro는 Jane's Addiction 이후 Red Hot Chili Peppers에 합류해 One Hot Minute(1995)에 참여했고, Flea는 1997년 Jane's Addiction 재결합 투어에서 연주했다. (Jane's Addiction 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Dave Navarro는 Jane's Addiction 이후 Red Hot Chili Peppers에 합류해 One Hot Minute",
           "reviewStatus": "draft",
           "mirroredFrom": "jane-s-addiction"
         }
@@ -38978,6 +39928,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "peach-pit",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "닐 스미스가 비틀즈와 폴 매카트니의 Ram에 빠져 앨범 방향이 바뀌었다고 밝힌 캐나다 인디 밴드다.",
+          "source": {
+            "label": "Magnet Magazine — A Conversation With Peach Pit",
+            "url": "https://magnetmagazine.com/2021/09/26/a-conversation-with-peach-pit/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "reviewStatus": "published",
@@ -40405,22 +41370,6 @@
           "reviewedAt": "2026-07-17"
         },
         {
-          "targetBandId": "nirvana",
-          "kind": "evolution",
-          "note": "1990년대 주류 록의 세대교체 지점",
-          "strength": 2,
-          "reviewStatus": "reviewed",
-          "source": {
-            "label": "Seven weeks that changed rock — Louder",
-            "url": "https://www.loudersound.com/music-industry/seven-weeks-in-1991-that-rocked-the-world-changed-music",
-            "publisher": "Editorial",
-            "accessedAt": "2026-07-17",
-            "note": "1991년 Guns N’ Roses의 정상급 하드 록과 Nirvana의 그런지 돌파가 교차한 주류 록 세대 전환을 설명"
-          },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
-        },
-        {
           "targetBandId": "slash-feat-myles-kennedy-the-conspirators",
           "kind": "shared-scene",
           "strength": 3,
@@ -41312,19 +42261,18 @@
         },
         {
           "targetBandId": "porcupine-tree",
-          "kind": "evolution",
-          "note": "고전 프로그 세대와 현대 프로그 세대가 투어에서 만난 비판적 계승 관계",
           "strength": 1,
-          "reviewStatus": "reviewed",
+          "kind": "influenced",
+          "note": "프런트맨 스티븐 윌슨이 2013~2016년 이 밴드의 대표작을 직접 리믹스하고 Close to the Edge를 걸작으로 꼽을 만큼 영향을 받은 현대 프로그레시브 밴드다.",
           "source": {
-            "label": "Porcupine Tree history — Louder",
-            "url": "https://www.loudersound.com/music/porcupine-treee-deadwing-interview",
-            "publisher": "Editorial",
-            "accessedAt": "2026-07-17",
-            "note": "Porcupine Tree가 Yes의 미국 투어 오프닝을 맡은 세대 간 접점과 Steven Wilson의 비판적 거리두기를 함께 확인"
+            "label": "Wikipedia — The Steven Wilson Remixes",
+            "url": "https://en.wikipedia.org/wiki/The_Steven_Wilson_Remixes",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
           },
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "rush",
@@ -41614,19 +42562,18 @@
         },
         {
           "targetBandId": "yes",
-          "kind": "evolution",
           "strength": 1,
-          "note": "고전 프로그 세대와 현대 프로그 세대가 투어에서 만난 비판적 계승 관계",
-          "reviewStatus": "reviewed",
+          "kind": "influenced-by",
+          "note": "스티븐 윌슨이 2013~2016년 Close to the Edge 등 대표작을 직접 리믹스할 만큼 깊이 영향을 받은 고전 프로그레시브 록의 원류다.",
           "source": {
-            "label": "Porcupine Tree history — Louder",
-            "url": "https://www.loudersound.com/music/porcupine-treee-deadwing-interview",
-            "publisher": "Editorial",
-            "accessedAt": "2026-07-17",
-            "note": "Porcupine Tree가 Yes의 미국 투어 오프닝을 맡은 세대 간 접점과 Steven Wilson의 비판적 거리두기를 함께 확인"
+            "label": "Wikipedia — The Steven Wilson Remixes",
+            "url": "https://en.wikipedia.org/wiki/The_Steven_Wilson_Remixes",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
           },
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "tool",
@@ -41895,6 +42842,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "the-vaccines",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "저스틴 영이 가장 좋아하는 밴드로 꼽으며, 짧고 빠른 데뷔작이 자주 비교된 후배 밴드다.",
+          "source": {
+            "label": "Atwood Magazine — The Vaccines celebrate a decade of their debut",
+            "url": "https://atwoodmagazine.com/wdyx-the-vaccines-music-interview-2021-what-did-you-expect-from-the-vaccines-album-feature/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "reviewStatus": "published",
@@ -42132,22 +43094,6 @@
           "reviewedAt": "2026-07-17"
         },
         {
-          "targetBandId": "the-cure",
-          "kind": "evolution",
-          "note": "영국 펑크에서 포스트 펑크로 넓어진 흐름",
-          "strength": 1,
-          "reviewStatus": "reviewed",
-          "source": {
-            "label": "Punk rock — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Punk_rock",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "The Clash가 대표한 영국 펑크의 확장 뒤 The Cure가 포스트 펑크의 주요 밴드로 등장한 장르 전개를 확인"
-          },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
-        },
-        {
           "targetBandId": "the-police",
           "kind": "shared-scene",
           "strength": 3,
@@ -42167,6 +43113,21 @@
           "strength": 3,
           "note": "초기 U2는 더 클래시의 펑크 에너지와 사회 비판적인 가사 정신에 큰 영향을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-libertines",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "믹 존스가 데뷔작과 2집을 직접 프로듀싱한, 2000년대 영국 개러지 록 리바이벌의 후배 밴드다.",
+          "source": {
+            "label": "Wikipedia — Up the Bracket",
+            "url": "https://en.wikipedia.org/wiki/Up_the_Bracket",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "reviewStatus": "published",
@@ -43400,6 +44361,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "beck",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1995년 롤라팔루자 투어에 함께 출연하며 1990년대 얼터너티브 신의 중심 무대를 공유했다.",
+          "source": {
+            "label": "Lollapalooza 1995 line-up",
+            "url": "https://grooveist.com/lineups/lollapalooza-1995-lineup/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "reviewStatus": "published",
@@ -43651,10 +44627,16 @@
         },
         {
           "targetBandId": "foo-fighters",
-          "kind": "evolution",
           "strength": 3,
-          "note": "드러머 데이브 그롤이 밴드 해체 후 결성해 세계적으로 성공한 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dave Grohl"
+          ],
+          "note": "드러머 데이브 그롤이 1994년 너바나가 끝난 뒤 결성한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "soundgarden",
@@ -43662,22 +44644,6 @@
           "strength": 3,
           "note": "시애틀 그런지 신을 함께 이끈 원년 밴드",
           "reviewStatus": "draft"
-        },
-        {
-          "targetBandId": "guns-n-roses",
-          "kind": "evolution",
-          "strength": 2,
-          "note": "1990년대 주류 록의 세대교체 지점",
-          "reviewStatus": "reviewed",
-          "source": {
-            "label": "Seven weeks that changed rock — Louder",
-            "url": "https://www.loudersound.com/music-industry/seven-weeks-in-1991-that-rocked-the-world-changed-music",
-            "publisher": "Editorial",
-            "accessedAt": "2026-07-17",
-            "note": "1991년 Guns N’ Roses의 정상급 하드 록과 Nirvana의 그런지 돌파가 교차한 주류 록 세대 전환을 설명"
-          },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
         },
         {
           "targetBandId": "ramones",
@@ -43740,7 +44706,7 @@
           "targetBandId": "melvins",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Melvins의 드러머 Dale Crover는 Nirvana의 초기 녹음에 참여했으며 그중 일부가 Bleach(1989)에 실렸다. (Melvins 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Melvins의 드러머 Dale Crover는 Nirvana의 초기 녹음에 참여했으며 그중 일부가 Bleach",
           "reviewStatus": "draft",
           "mirroredFrom": "melvins"
         }
@@ -44033,17 +44999,39 @@
           "targetBandId": "mudhoney",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Mudhoney의 Mark Arm·Steve Turner와 Pearl Jam의 Stone Gossard·Jeff Ament는 이전에 Green River에서 함께 활동했다. (Mudhoney 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Mudhoney의 Mark Arm·Steve Turner와 Pearl Jam의 Stone Gossard·Jeff Ament는 이전에 Green River에서 함께 활동했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "mudhoney"
         },
         {
           "targetBandId": "mother-love-bone",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Mother Love Bone의 Stone Gossard와 Jeff Ament가 Andrew Wood 사망 후 Pearl Jam을 결성했다. (Mother Love Bone 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
-          "reviewStatus": "draft",
-          "mirroredFrom": "mother-love-bone"
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "note": "스톤 고사드와 제프 아먼트가 결성 이전에 함께했던 전신 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "temple-of-the-dog",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Eddie Vedder",
+            "Mike McCready",
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "reviewStatus": "published",
@@ -44604,12 +45592,16 @@
         },
         {
           "targetBandId": "dio",
-          "kind": "evolution",
           "strength": 3,
-          "note": "1979~82년 보컬로 활동한 로니 제임스 디오가 이후 결성한 밴드로, 그의 헤비메탈 사운드가 이어졌다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ronnie James Dio"
+          ],
+          "note": "1979~1982년 블랙 사바스의 보컬이었던 로니 제임스 디오가 이후 결성한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "ghost",
@@ -44622,11 +45614,16 @@
         },
         {
           "targetBandId": "ozzy-osbourne",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Black Sabbath 보컬이던 Ozzy Osbourne이 1979년 탈퇴 후 자신의 솔로 밴드를 결성했다. (Ozzy Osbourne 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
-          "reviewStatus": "draft",
-          "mirroredFrom": "ozzy-osbourne"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ozzy Osbourne"
+          ],
+          "note": "1979년 블랙 사바스에서 해고된 오지 오스본이 시작한 솔로 활동이다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "reviewStatus": "published",
@@ -45214,10 +46211,16 @@
         },
         {
           "targetBandId": "megadeth",
-          "kind": "evolution",
           "strength": 3,
-          "note": "결성 초기 멤버였던 데이브 머스테인이 밴드에서 해고된 후 결성한 스래시 메탈 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dave Mustaine"
+          ],
+          "note": "1983년 메탈리카에서 해고된 데이브 머스테인이 결성한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "motorhead",
@@ -45252,22 +46255,6 @@
             "publisher": "Wikipedia",
             "accessedAt": "2026-07-17",
             "note": "Chuck Schuldiner의 음악적 영향 목록에 Metallica가 명시된 기록을 확인"
-          },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
-        },
-        {
-          "targetBandId": "rammstein",
-          "kind": "evolution",
-          "strength": 1,
-          "note": "스래시 메탈 이후 산업 메탈로 넓어진 헤비 음악의 분기",
-          "reviewStatus": "reviewed",
-          "source": {
-            "label": "Heavy metal genres — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Heavy_metal_genres",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Metallica가 이끈 스래시 메탈과 Rammstein이 대표하는 산업 메탈을 헤비 메탈에서 갈라진 세대별 하위 장르로 함께 설명"
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
@@ -45353,7 +46340,7 @@
           "targetBandId": "exodus",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Exodus의 창단 기타리스트 Kirk Hammett가 1983년 Metallica로 합류했다. 두 팀은 베이 에어리어 스래시 신에서 함께 성장했다. (Exodus 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Exodus의 창단 기타리스트 Kirk Hammett가 1983년 Metallica로 합류했다. 두 팀은 베이 에어리어 스래시 신에서 함께 성장했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "exodus"
         },
@@ -45361,7 +46348,7 @@
           "targetBandId": "death-angel",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Metallica의 Kirk Hammett가 Death Angel의 초기 데모 Kill as One 제작을 도왔으며, 두 팀은 베이 에어리어 스래시 신의 인연을 공유한다. (Death Angel 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Metallica의 Kirk Hammett가 Death Angel의 초기 데모 Kill as One 제작을 도왔으며, 두 팀은 베이 에어리어 스래시 신의 인연을 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "death-angel"
         },
@@ -45369,7 +46356,7 @@
           "targetBandId": "flotsam-and-jetsam",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "초기 베이시스트 Jason Newsted가 Doomsday for the Deceiver(1986) 발표 후 Metallica에 합류했다. (Flotsam and Jetsam 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "초기 베이시스트 Jason Newsted가 Doomsday for the Deceiver",
           "reviewStatus": "draft",
           "mirroredFrom": "flotsam-and-jetsam"
         },
@@ -45377,7 +46364,7 @@
           "targetBandId": "volbeat",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Volbeat는 Metallica의 World Magnetic 투어와 이후 여러 대형 공연에서 지원 밴드로 함께했다. (Volbeat 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Volbeat는 Metallica의 World Magnetic 투어와 이후 여러 대형 공연에서 지원 밴드로 함께했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "volbeat"
         }
@@ -45680,7 +46667,7 @@
           "targetBandId": "a-perfect-circle",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Maynard James Keenan은 Tool과 A Perfect Circle의 보컬을 병행한다. 두 팀은 별도 밴드로 활동한다. (A Perfect Circle 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Maynard James Keenan은 Tool과 A Perfect Circle의 보컬을 병행한다. 두 팀은 별도 밴드로 활동한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "a-perfect-circle"
         }
@@ -46194,19 +47181,18 @@
         },
         {
           "targetBandId": "children-of-bodom",
-          "kind": "evolution",
-          "note": "초기 데스 메탈에서 멜로딕·테크니컬 계열로 확장된 흐름",
           "strength": 2,
-          "reviewStatus": "reviewed",
+          "kind": "influenced",
+          "note": "알렉시 라이호가 2002년 척 슐디너 추모 공연에서 데스의 곡을 직접 부를 만큼 기교와 멜로디에 큰 영향을 받은 후배 밴드다.",
           "source": {
-            "label": "Death metal — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Death_metal",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Death가 정립한 데스 메탈에서 Children of Bodom이 속한 멜로딕·심포닉 계열로 확장된 장르 진화 흐름을 확인"
+            "label": "Loudwire — Alexi Laiho fronts Death tribute band at 2002 memorial",
+            "url": "https://loudwire.com/alexi-laiho-death-tribute-band-2002-recordings/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
           },
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "metallica",
@@ -46246,9 +47232,23 @@
           "targetBandId": "dark-angel",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "드러머 Gene Hoglan은 Dark Angel 활동 후 Death에 합류해 Individual Thought Patterns(1993)와 Symbolic(1995)에 참여했다. (Dark Angel 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "드러머 Gene Hoglan은 Dark Angel 활동 후 Death에 합류해 Individual Thought Patterns",
           "reviewStatus": "draft",
           "mirroredFrom": "dark-angel"
+        },
+        {
+          "targetBandId": "testament",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gene Hoglan",
+            "Steve Di Giorgio"
+          ],
+          "strength": 2,
+          "note": "Death 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "reviewStatus": "published",
@@ -46477,19 +47477,18 @@
       "relations": [
         {
           "targetBandId": "death",
-          "kind": "evolution",
-          "note": "초기 데스 메탈에서 멜로딕·테크니컬 계열로 확장된 흐름",
           "strength": 2,
-          "reviewStatus": "reviewed",
+          "kind": "influenced-by",
+          "note": "알렉시 라이호가 2002년 척 슐디너 추모 공연에서 곡을 직접 부를 만큼 기교와 멜로디에 큰 영향을 준 선배 밴드다.",
           "source": {
-            "label": "Death metal — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Death_metal",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Death가 정립한 데스 메탈에서 Children of Bodom이 속한 멜로딕·심포닉 계열로 확장된 장르 진화 흐름을 확인"
+            "label": "Loudwire — Alexi Laiho fronts Death tribute band at 2002 memorial",
+            "url": "https://loudwire.com/alexi-laiho-death-tribute-band-2002-recordings/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
           },
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "iron-maiden",
@@ -46850,22 +47849,6 @@
           "reviewStatus": "draft"
         },
         {
-          "targetBandId": "the-clash",
-          "kind": "evolution",
-          "strength": 1,
-          "note": "영국 펑크에서 포스트 펑크로 넓어진 흐름",
-          "reviewStatus": "reviewed",
-          "source": {
-            "label": "Punk rock — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Punk_rock",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "The Clash가 대표한 영국 펑크의 확장 뒤 The Cure가 포스트 펑크의 주요 밴드로 등장한 장르 전개를 확인"
-          },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
-        },
-        {
           "targetBandId": "mogwai",
           "kind": "influenced",
           "strength": 1,
@@ -47111,19 +48094,18 @@
         },
         {
           "targetBandId": "rammstein",
-          "kind": "evolution",
-          "note": "1990년대 산업 록의 주류화에서 유럽 산업 메탈의 확장으로 이어진 흐름",
           "strength": 2,
-          "reviewStatus": "reviewed",
+          "kind": "shared-scene",
+          "note": "트렌트 레즈너가 프로듀싱한 영화 Lost Highway(1997) 사운드트랙에 나란히 실리며 1990년대 인더스트리얼 메탈의 주류화를 함께 대표했다.",
           "source": {
-            "label": "Industrial metal — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Industrial_metal",
+            "label": "Wikipedia — Lost Highway (soundtrack)",
+            "url": "https://en.wikipedia.org/wiki/Lost_Highway_(soundtrack)",
             "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Nine Inch Nails의 1990년대 초 주류 돌파 뒤 Rammstein이 후반기 산업 메탈의 상업적 확장을 이은 흐름을 확인"
+            "accessedAt": "2026-11-22"
           },
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "tool",
@@ -47379,35 +48361,18 @@
       "relations": [
         {
           "targetBandId": "nine-inch-nails",
-          "kind": "evolution",
-          "note": "산업 록의 주류화 이후 유럽 산업 메탈로 확장된 흐름",
           "strength": 2,
-          "reviewStatus": "reviewed",
+          "kind": "shared-scene",
+          "note": "트렌트 레즈너가 프로듀싱한 영화 Lost Highway(1997) 사운드트랙에 나란히 실리며 1990년대 인더스트리얼 록의 주류화를 함께 대표했다.",
           "source": {
-            "label": "Industrial metal — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Industrial_metal",
+            "label": "Wikipedia — Lost Highway (soundtrack)",
+            "url": "https://en.wikipedia.org/wiki/Lost_Highway_(soundtrack)",
             "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Nine Inch Nails의 1990년대 초 주류 돌파 뒤 Rammstein이 후반기 산업 메탈의 상업적 확장을 이은 흐름을 확인"
+            "accessedAt": "2026-11-22"
           },
-          "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
-        },
-        {
-          "targetBandId": "metallica",
-          "kind": "evolution",
-          "note": "스래시 메탈 이후 산업 메탈로 넓어진 헤비 음악의 분기",
-          "strength": 1,
           "reviewStatus": "reviewed",
-          "source": {
-            "label": "Heavy metal genres — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Heavy_metal_genres",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-17",
-            "note": "Metallica가 이끈 스래시 메탈과 Rammstein이 대표하는 산업 메탈을 헤비 메탈에서 갈라진 세대별 하위 장르로 함께 설명"
-          },
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-17"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "tool",
@@ -48529,6 +49494,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "primal-scream",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Kevin Shields"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "reviewStatus": "published",
@@ -48857,19 +49835,16 @@
       "relations": [
         {
           "targetBandId": "metallica",
-          "kind": "evolution",
-          "note": "데이브 머스테인이 메탈리카에서 해고된 뒤 복수심으로 메가데스를 결성했고, 결국 스래시메탈 빅4를 함께 이뤘다.",
           "strength": 3,
-          "reviewStatus": "draft",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dave Mustaine"
+          ],
+          "note": "데이브 머스테인이 1981~1983년 기타리스트로 활동하다 해고된 밴드다.",
+          "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-07-18",
-          "source": {
-            "label": "Megadeth — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Megadeth",
-            "publisher": "Wikipedia",
-            "accessedAt": "2026-07-18",
-            "note": "1983년 4월 11일 Dave Mustaine이 Metallica에서 해고된 뒤 복수심으로 더 빠르고 무거운 밴드를 결성했다는 기록을 확인"
-          }
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "slayer",
@@ -48896,11 +49871,29 @@
         },
         {
           "targetBandId": "wintersun",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Wintersun의 기타리스트 테무 만테사리를 메가데스의 기타리스트로 영입하였다.",
-          "reviewStatus": "draft",
-          "mirroredFrom": "wintersun"
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Teemu Mäntysaari"
+          ],
+          "note": "테무 맨티사리가 메가데스 합류 전부터 기타를 맡아 온 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "in-flames",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Chris Broderick"
+          ],
+          "strength": 2,
+          "note": "Megadeth 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "reviewStatus": "published",
@@ -49426,6 +50419,21 @@
           "strength": 3,
           "note": "밴드의 가능성을 알아보고 음반사와 연결해 주며 초기 성공과 사운드 방향성에 결정적인 도움을 주었다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "ajr",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2023년 Mercury World Tour 유럽 공연에서 오프닝을 맡은 팝 록 밴드다.",
+          "source": {
+            "label": "Wikipedia — Mercury World Tour",
+            "url": "https://en.wikipedia.org/wiki/Mercury_World_Tour",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "reviewStatus": "published",
@@ -49685,24 +50693,45 @@
         },
         {
           "targetBandId": "beady-eye",
-          "kind": "evolution",
           "strength": 3,
-          "note": "밴드 해체 후 리암 갤러거를 비롯한 멤버들이 결성한 후신 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Liam Gallagher",
+            "Gem Archer",
+            "Andy Bell",
+            "Chris Sharrock"
+          ],
+          "note": "2009년 해체 직후 리엄 갤러거와 마지막 라인업 멤버들이 그대로 이어서 결성한 후신 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "noel-gallagher-s-high-flying-birds",
-          "kind": "evolution",
           "strength": 3,
-          "note": "리더이자 메인 작곡가였던 노엘 갤러거가 밴드 해체 후 결성한 솔로 프로젝트다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Noel Gallagher"
+          ],
+          "note": "오아시스의 주 작곡가 노엘 갤러거가 2009년 탈퇴 후 시작한 프로젝트다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "ride",
-          "kind": "evolution",
           "strength": 3,
-          "note": "라이드 해체 후 기타리스트 앤디 벨이 합류해 베이시스트로 활동했던 슈게이징 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Andy Bell"
+          ],
+          "note": "앤디 벨이 오아시스 합류 이전에 기타리스트로 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "the-stone-roses",
@@ -51111,10 +52140,16 @@
         },
         {
           "targetBandId": "racer-x",
-          "kind": "evolution",
           "strength": 3,
-          "note": "파워풀한 드러머 스콧 트래비스가 정식 멤버로 합류하기 전에 몸담았던 테크니컬 하드 록 밴드다.",
-          "reviewStatus": "draft"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Scott Travis"
+          ],
+          "note": "스콧 트래비스가 주다스 프리스트 합류 이전에 드러머로 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "motorhead",
@@ -52128,7 +53163,7 @@
           "targetBandId": "europe",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "1980년대 작품에서 큰 후렴·건반·파워 발라드를 결합한 아레나 하드 록의 공통점을 들을 수 있다. 직접 영향관계를 뜻하지 않는 음악적 비교다. (Europe 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "1980년대 작품에서 큰 후렴·건반·파워 발라드를 결합한 아레나 하드 록의 공통점을 들을 수 있다. 직접 영향관계를 뜻하지 않는 음악적 비교다.",
           "reviewStatus": "draft",
           "mirroredFrom": "europe"
         }
@@ -52429,9 +53464,22 @@
           "targetBandId": "queensryche",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "서사적 앨범 구성과 정교한 기타 연주를 함께 쓰는 프로그레시브 메탈의 공통점이 있다. 직접 영향관계를 단정하지 않는 음악적 비교다. (Queensrÿche 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "서사적 앨범 구성과 정교한 기타 연주를 함께 쓰는 프로그레시브 메탈의 공통점이 있다. 직접 영향관계를 단정하지 않는 음악적 비교다.",
           "reviewStatus": "draft",
           "mirroredFrom": "queensryche"
+        },
+        {
+          "targetBandId": "extreme",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mike Mangini"
+          ],
+          "strength": 2,
+          "note": "Dream Theater 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -52589,6 +53637,18 @@
           "role": "Keyboards",
           "status": "former",
           "activeYears": "1968–1976, 1984–2002"
+        },
+        {
+          "name": "David Coverdale",
+          "role": "보컬",
+          "status": "former",
+          "activeYears": "1973–1976"
+        },
+        {
+          "name": "Glenn Hughes",
+          "role": "베이스·보컬",
+          "status": "former",
+          "activeYears": "1973–1976"
         }
       ],
       "tracks": [
@@ -52699,6 +53759,36 @@
           "strength": 3,
           "note": "정통 하드 록의 리프 구성과 블루지한 테크니컬 연주 방식에서 커다란 음악적 영향을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "rainbow",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ritchie Blackmore",
+            "Roger Glover",
+            "Don Airey"
+          ],
+          "strength": 2,
+          "note": "Deep Purple 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "David Coverdale",
+            "Jon Lord",
+            "Ian Paice"
+          ],
+          "strength": 2,
+          "note": "Deep Purple 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -56379,6 +57469,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T11:13:17.650Z"
+        },
+        {
+          "targetBandId": "the-used",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Branden Steineckert"
+          ],
+          "strength": 2,
+          "note": "Rancid 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -57860,6 +58963,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "a-perfect-circle",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "James Iha"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -58284,6 +59400,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "beck",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1995년 롤라팔루자 투어에 함께 출연한 1990년대 로파이·인디 성향의 동시대 아티스트다.",
+          "source": {
+            "label": "Lollapalooza 1995 line-up",
+            "url": "https://grooveist.com/lineups/lollapalooza-1995-lineup/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "sources": [
@@ -60008,7 +61139,7 @@
           "targetBandId": "lorna-shore",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Lorna Shore는 2023년 Gojira와 Mastodon의 북미 공동 투어 The Mega-Monsters Tour에 지원 밴드로 참여했다. (Lorna Shore 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Lorna Shore는 2023년 Gojira와 Mastodon의 북미 공동 투어 The Mega-Monsters Tour에 지원 밴드로 참여했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "lorna-shore"
         }
@@ -60226,7 +61357,7 @@
           "targetBandId": "drowning-pool",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "무거운 중간 템포 리프와 외치는 후렴, 멜로디 보컬을 결합한 2000년대 미국 메탈의 공통점을 비교한 연결이다. (Drowning Pool 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "무거운 중간 템포 리프와 외치는 후렴, 멜로디 보컬을 결합한 2000년대 미국 메탈의 공통점을 비교한 연결이다.",
           "reviewStatus": "draft",
           "mirroredFrom": "drowning-pool"
         }
@@ -61767,7 +62898,7 @@
           "targetBandId": "mushroomhead",
           "kind": "sounds-like",
           "strength": 2,
-          "note": "여러 보컬 음색과 건반, 메탈과 비메탈 요소를 섞는 편곡의 공통점을 비교한다. 직접적인 계보를 확정하는 연결은 아니다. (Mushroomhead 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "여러 보컬 음색과 건반, 메탈과 비메탈 요소를 섞는 편곡의 공통점을 비교한다. 직접적인 계보를 확정하는 연결은 아니다.",
           "reviewStatus": "draft",
           "mirroredFrom": "mushroomhead"
         }
@@ -61981,21 +63112,31 @@
       "relations": [
         {
           "targetBandId": "soundgarden",
-          "kind": "evolution",
           "strength": 3,
-          "note": "사운드가든 해체 후 보컬 크리스 코넬이 새롭게 결성한 밴드로, 그의 보컬이 새로운 형태로 이어졌다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Chris Cornell"
+          ],
+          "note": "보컬 크리스 코넬이 1984~1997년 활동한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "rage-against-the-machine",
-          "kind": "evolution",
           "strength": 3,
-          "note": "레이지 어게인스트 더 머신의 기타·베이스·드럼이 보컬 잭 드 라 로차의 탈퇴 후 다시 모여 결성한 밴드다.",
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Tom Morello",
+            "Tim Commerford",
+            "Brad Wilk"
+          ],
+          "note": "기타·베이스·드럼 세 멤버가 2000년까지 함께한 전신 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -62431,21 +63572,55 @@
       "relations": [
         {
           "targetBandId": "black-sabbath",
-          "kind": "evolution",
           "strength": 3,
-          "note": "로니 제임스 디오가 1979~82년 블랙 사바스의 보컬로 활동한 뒤 자신의 밴드 디오를 결성했다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ronnie James Dio"
+          ],
+          "note": "로니 제임스 디오가 1979~1982년(이후 재결합) 보컬로 활동한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "rainbow",
-          "kind": "evolution",
           "strength": 3,
-          "note": "로니 제임스 디오가 레인보우에서 보컬로 활동한 경험이 이후 자신의 밴드 디오의 판타지풍 헤비메탈 노선으로 이어졌다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ronnie James Dio"
+          ],
+          "note": "로니 제임스 디오가 1975~1979년 초대 보컬로 활동한 밴드다.",
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
-          "reviewedAt": "2026-10-15T09:28:01.806Z"
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "def-leppard",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Dio 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Vivian Campbell"
+          ],
+          "strength": 2,
+          "note": "Dio 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -62668,6 +63843,33 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "death",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gene Hoglan",
+            "Steve Di Giorgio"
+          ],
+          "strength": 2,
+          "note": "Testament 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "dark-angel",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gene Hoglan"
+          ],
+          "strength": 2,
+          "note": "Testament 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -62881,7 +64083,7 @@
           "targetBandId": "sodom",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Kreator·Sodom·Destruction·Tankard는 독일 스래시 메탈의 주요 네 밴드로 함께 거론된다. (Sodom 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Kreator·Sodom·Destruction·Tankard는 독일 스래시 메탈의 주요 네 밴드로 함께 거론된다.",
           "reviewStatus": "draft",
           "mirroredFrom": "sodom"
         },
@@ -62889,7 +64091,7 @@
           "targetBandId": "destruction",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Kreator·Destruction·Sodom·Tankard는 1980년대 독일 스래시 메탈의 대표적인 네 팀으로 같은 장면을 형성했다. (Destruction 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Kreator·Destruction·Sodom·Tankard는 1980년대 독일 스래시 메탈의 대표적인 네 팀으로 같은 장면을 형성했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "destruction"
         }
@@ -63118,11 +64320,18 @@
         },
         {
           "targetBandId": "king-diamond",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Mercyful Fate의 King Diamond, Michael Denner, Timi Hansen이 1985년 새 밴드 King Diamond를 시작했다. (King Diamond 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
-          "reviewStatus": "draft",
-          "mirroredFrom": "king-diamond"
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "King Diamond",
+            "Michael Denner",
+            "Timi Hansen"
+          ],
+          "note": "1985년 머시풀 페이트가 멈춘 뒤 킹 다이아몬드가 멤버 일부와 함께 결성한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -63358,6 +64567,19 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "megadeth",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Chris Broderick"
+          ],
+          "strength": 2,
+          "note": "In Flames 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -67803,26 +69025,90 @@
       "relations": [
         {
           "targetBandId": "black-sabbath",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Black Sabbath 보컬이던 Ozzy Osbourne이 1979년 탈퇴 후 자신의 솔로 밴드를 결성했다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ozzy Osbourne"
+          ],
+          "note": "오지 오스본이 1968~1979년(이후 재결합) 보컬로 활동한 밴드다.",
           "reviewStatus": "reviewed",
-          "reviewedBy": "Codex source review (2026-10-25)",
-          "reviewedAt": "2026-10-25T00:05:09.281Z",
-          "source": {
-            "label": "Ozzy Osbourne — 관계 검토",
-            "url": "https://en.wikipedia.org/wiki/Ozzy_Osbourne",
-            "publisher": "Wikipedia",
-            "note": "본문의 이력·멤버·투어 기록 기준"
-          }
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         },
         {
           "targetBandId": "coal-chamber",
           "kind": "shared-scene",
           "strength": 2,
-          "note": "Ozzy Osbourne은 Coal Chamber의 Peter Gabriel 커버곡 'Shock the Monkey'(1999)에 게스트 보컬로 참여했다. (Coal Chamber 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)",
+          "note": "Ozzy Osbourne은 Coal Chamber의 Peter Gabriel 커버곡 'Shock the Monkey'",
           "reviewStatus": "draft",
           "mirroredFrom": "coal-chamber"
+        },
+        {
+          "targetBandId": "whitesnake",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Tommy Aldridge",
+            "Rudy Sarzo"
+          ],
+          "strength": 2,
+          "note": "Ozzy Osbourne 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "generation-axe",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "king-diamond",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gus G"
+          ],
+          "strength": 2,
+          "note": "Ozzy Osbourne 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "pantera",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Zakk Wylde"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "rainbow",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Bob Daisley"
+          ],
+          "strength": 2,
+          "note": "Ozzy Osbourne 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -68295,18 +69581,57 @@
       "relations": [
         {
           "targetBandId": "mercyful-fate",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Mercyful Fate의 King Diamond, Michael Denner, Timi Hansen이 1985년 새 밴드 King Diamond를 시작했다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "King Diamond",
+            "Michael Denner",
+            "Timi Hansen"
+          ],
+          "note": "킹 다이아몬드와 초기 멤버들이 함께했던 밴드다.",
           "reviewStatus": "reviewed",
-          "reviewedBy": "Codex source review (2026-10-25)",
-          "reviewedAt": "2026-10-25T00:05:09.281Z",
-          "source": {
-            "label": "King Diamond — 관계 검토",
-            "url": "https://en.wikipedia.org/wiki/King_Diamond_(band)",
-            "publisher": "Wikipedia",
-            "note": "본문의 이력·멤버·투어 기록 기준"
-          }
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "motorhead",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "King Diamond 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gus G"
+          ],
+          "strength": 2,
+          "note": "King Diamond 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "scorpions",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Mikkey Dee"
+          ],
+          "strength": 2,
+          "note": "King Diamond 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -70249,6 +71574,19 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "testament",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Gene Hoglan"
+          ],
+          "strength": 2,
+          "note": "Dark Angel 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -70486,6 +71824,19 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "accept",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Ken Mary"
+          ],
+          "strength": 2,
+          "note": "Flotsam and Jetsam 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -70736,18 +72087,16 @@
       "relations": [
         {
           "targetBandId": "anthrax",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Anthrax 창단 멤버 Dan Lilker가 탈퇴 후 John Connelly와 Nuclear Assault를 결성했다.",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dan Lilker"
+          ],
+          "note": "댄 릴커가 창단 멤버로 참여했던 밴드다.",
           "reviewStatus": "reviewed",
-          "reviewedBy": "Codex source review (2026-10-25)",
-          "reviewedAt": "2026-10-25T00:05:09.281Z",
-          "source": {
-            "label": "Nuclear Assault — 관계 검토",
-            "url": "https://en.wikipedia.org/wiki/Nuclear_Assault",
-            "publisher": "Wikipedia",
-            "note": "본문의 이력·멤버·투어 기록 기준"
-          }
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
         }
       ],
       "sources": [
@@ -70967,6 +72316,32 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "melvins",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Matt Lukin"
+          ],
+          "strength": 2,
+          "note": "Mudhoney 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "screaming-trees",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dan Peters"
+          ],
+          "strength": 2,
+          "note": "Mudhoney 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -71211,6 +72586,19 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "mudhoney",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Dan Peters"
+          ],
+          "strength": 2,
+          "note": "Screaming Trees 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -71425,18 +72813,31 @@
       "relations": [
         {
           "targetBandId": "pearl-jam",
-          "kind": "evolution",
           "strength": 2,
-          "note": "Mother Love Bone의 Stone Gossard와 Jeff Ament가 Andrew Wood 사망 후 Pearl Jam을 결성했다.",
+          "kind": "member-link",
+          "linkType": "successor",
+          "people": [
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "note": "1990년 보컬 앤드루 우드가 세상을 떠난 뒤 스톤 고사드와 제프 아먼트가 이어서 결성한 밴드다.",
           "reviewStatus": "reviewed",
-          "reviewedBy": "Codex source review (2026-10-25)",
-          "reviewedAt": "2026-10-25T00:05:09.281Z",
-          "source": {
-            "label": "Mother Love Bone — 관계 검토",
-            "url": "https://en.wikipedia.org/wiki/Mother_Love_Bone",
-            "publisher": "Wikipedia",
-            "note": "본문의 이력·멤버·투어 기록 기준"
-          }
+          "reviewedBy": "ROCK ATLAS editorial",
+          "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "temple-of-the-dog",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "strength": 2,
+          "note": "Mother Love Bone 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -71663,6 +73064,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "pearl-jam",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Eddie Vedder",
+            "Mike McCready",
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "mother-love-bone",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Stone Gossard",
+            "Jeff Ament"
+          ],
+          "strength": 2,
+          "note": "Temple of the Dog 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -71956,6 +73387,19 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "mudhoney",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Matt Lukin"
+          ],
+          "strength": 2,
+          "note": "Melvins 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -72435,6 +73879,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "hoobastank",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "캘리포니아 아고라힐스·칼라바사스 지역 신에서 함께 성장했고, 이 밴드의 첫 공연에 함께 섰다.",
+          "source": {
+            "label": "Pollstar — Hoobastank (2002)",
+            "url": "https://news.pollstar.com/2002/08/12/hoobastank/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-22"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:37:07.671Z"
         }
       ],
       "sources": [
@@ -72703,6 +74162,32 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "queens-of-the-stone-age",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Troy Van Leeuwen"
+          ],
+          "strength": 2,
+          "note": "A Perfect Circle 멤버가 합류하기 전에 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "the-smashing-pumpkins",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "James Iha"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -73207,6 +74692,32 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "daughtry",
+          "kind": "member-link",
+          "linkType": "moved",
+          "people": [
+            "Marty O'Brien"
+          ],
+          "strength": 2,
+          "note": "Static-X 출신 멤버가 이후 활동한 밴드다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "evanescence",
+          "kind": "member-link",
+          "linkType": "shared",
+          "people": [
+            "Will Hunt"
+          ],
+          "strength": 2,
+          "note": "두 밴드에서 같은 멤버가 함께 활동했다.",
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-22T03:35:41.839Z"
         }
       ],
       "sources": [
@@ -75727,10 +77238,14 @@
       "sourceBandId": "slash-feat-myles-kennedy-the-conspirators",
       "sourceBandName": "Slash feat. Myles Kennedy & The Conspirators",
       "targetBandId": "velvet-revolver",
-      "kind": "evolution",
+      "kind": "member-link",
       "strength": 3,
       "note": "슬래시가 본 프로젝트 이전에 차려 글로벌한 상업적 성공을 거두었던 슈퍼그룹이다.",
-      "createdAt": "2026-07-30T11:30:28.019Z"
+      "createdAt": "2026-07-30T11:30:28.019Z",
+      "people": [
+        "Slash"
+      ],
+      "linkType": "shared"
     },
     {
       "id": "generation-axe->g3-0-0",
@@ -75747,10 +77262,14 @@
       "sourceBandId": "generation-axe",
       "sourceBandName": "Generation Axe",
       "targetBandId": "animals-as-leaders",
-      "kind": "evolution",
+      "kind": "member-link",
       "strength": 3,
       "note": "멤버 토신 아바시가 이끄는 대표적인 차세대 인스트루멘털 프로그레시브 메탈 밴드다.",
-      "createdAt": "2026-07-30T11:30:48.984Z"
+      "createdAt": "2026-07-30T11:30:48.984Z",
+      "people": [
+        "Tosin Abasi"
+      ],
+      "linkType": "shared"
     },
     {
       "id": "equilibrium->finntroll-0-0",
@@ -75797,20 +77316,30 @@
       "sourceBandId": "alter-bridge",
       "sourceBandName": "Alter Bridge",
       "targetBandId": "creed",
-      "kind": "evolution",
+      "kind": "member-link",
       "strength": 3,
       "note": "마크 트레몬티, 브라이언 마샬, 스콧 필립스가 알터 브릿지 형성 이전에 메인 멤버로 활약했던 포스트 그란지 밴드다.",
-      "createdAt": "2026-07-30T11:33:00.887Z"
+      "createdAt": "2026-07-30T11:33:00.887Z",
+      "people": [
+        "Mark Tremonti",
+        "Scott Phillips",
+        "Brian Marshall"
+      ],
+      "linkType": "successor"
     },
     {
       "id": "alter-bridge->tremonti-0-1",
       "sourceBandId": "alter-bridge",
       "sourceBandName": "Alter Bridge",
       "targetBandId": "tremonti",
-      "kind": "evolution",
+      "kind": "member-link",
       "strength": 3,
       "note": "기타리스트 마크 트레몬티가 자신의 리드 보컬과 더 헤비한 메탈 사운드를 선보이기 위해 결성한 솔로 프로젝트 밴드다.",
-      "createdAt": "2026-07-30T11:33:00.887Z"
+      "createdAt": "2026-07-30T11:33:00.887Z",
+      "people": [
+        "Mark Tremonti"
+      ],
+      "linkType": "shared"
     },
     {
       "id": "the-velvet-underground->the-stooges-0-0",

@@ -62,7 +62,11 @@ type GenreId = // 섹션 4의 8개 id 중 하나만 사용
   | 'classic-rock' | 'hard-rock' | 'progressive-art' | 'punk-rock'
   | 'alternative-indie' | 'grunge' | 'heavy-metal' | 'extreme-metal'
 
-type RelationKind = 'sounds-like' | 'influenced-by' | 'influenced' | 'shared-scene' | 'evolution'
+type RelationKind = 'sounds-like' | 'influenced-by' | 'influenced' | 'shared-scene' | 'member-link'
+// member-link: 같은 사람이 거쳐 간 밴드(후신 밴드, 멤버 이동, 겸업). 소리가 비슷하다는 뜻이 아니다.
+//   반드시 people(이어 주는 사람 이름 배열)과 linkType('successor' | 'moved' | 'shared')을 함께 적는다.
+//   예: { targetBandName: 'Megadeth', kind: 'member-link', linkType: 'moved', people: ['Dave Mustaine'], ... }
+// 'evolution'은 폐지됐다. 장르사 해석("A 이후 B로 넓어진 흐름")은 관계가 아니므로 쓰지 않는다.
 type ReviewStatus = 'draft' | 'reviewed' | 'published'
 type EraId = '1960s' | '1970s' | '1980s' | '1990s' | '2000s' | '2010s' | '2020s'
 
@@ -391,12 +395,8 @@ Mogwai · My Bloody Valentine · Megadeth
   ],
   "relations": [
     {
-      "targetBandName": "Nine Inch Nails", "kind": "evolution", "note": "산업 록의 주류화 이후 유럽 산업 메탈로 확장된 흐름", "strength": 2, "reviewStatus": "draft",
-      "source": { "label": "Industrial metal — Wikipedia", "url": "https://en.wikipedia.org/wiki/Industrial_metal", "publisher": "Wikipedia", "accessedAt": "2026-07-17", "note": "Nine Inch Nails의 주류 돌파 이후 Rammstein이 산업 메탈의 상업적 확장을 이은 흐름을 확인" }
-    },
-    {
-      "targetBandName": "Metallica", "kind": "evolution", "note": "스래시 메탈 이후 산업 메탈로 넓어진 헤비 음악의 분기", "strength": 1, "reviewStatus": "draft",
-      "source": { "label": "Heavy metal genres — Wikipedia", "url": "https://en.wikipedia.org/wiki/Heavy_metal_genres", "publisher": "Wikipedia", "accessedAt": "2026-07-17", "note": "스래시 메탈과 산업 메탈을 헤비 메탈에서 갈라진 세대별 하위 장르로 함께 설명" }
+      "targetBandName": "Nine Inch Nails", "kind": "shared-scene", "note": "트렌트 레즈너가 프로듀싱한 영화 Lost Highway(1997) 사운드트랙에 나란히 실리며 1990년대 인더스트리얼 메탈의 주류화를 함께 대표했다.", "strength": 2, "reviewStatus": "draft",
+      "source": { "label": "Lost Highway (soundtrack) — Wikipedia", "url": "https://en.wikipedia.org/wiki/Lost_Highway_(soundtrack)", "publisher": "Wikipedia", "accessedAt": "2026-11-22" }
     }
   ],
   "reviewStatus": "draft",

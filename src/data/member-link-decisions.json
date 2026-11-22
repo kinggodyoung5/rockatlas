@@ -1,0 +1,68 @@
+{
+  "_note": "멤버 공유 자동 탐지 후보 중 '연결하지 않기'로 판정한 기록. namesake=동명이인, session=세션·임시 참여, not-relevant=계보로 볼 의미 없음. Studio의 멤버 연결 후보 패널이 기록한다.",
+  "decisions": [
+    {
+      "pairKey": "foreigner|the-clash",
+      "person": "Mick Jones",
+      "decision": "namesake",
+      "note": "The Clash의 Mick Jones(1955년생 런던)와 Foreigner의 Mick Jones(1944년생 런던)는 다른 사람이다.",
+      "decidedAt": "2026-11-22T00:00:00.000Z"
+    },
+    {
+      "pairKey": "avenged-sevenfold|dream-theater",
+      "person": "Mike Portnoy",
+      "decision": "session",
+      "note": "Mike Portnoy는 2009~2010년 The Rev 사망 후 임시 드러머로 참여했다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "audioslave|temple-of-the-dog",
+      "person": "Chris Cornell",
+      "decision": "not-relevant",
+      "note": "Chris Cornell 연결은 Soundgarden↔Temple of the Dog·Audioslave로 이미 드러난다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "death-angel|machine-head",
+      "person": "Chris Kontos",
+      "decision": "session",
+      "note": "Chris Kontos의 Death Angel 참여는 1991년 짧은 기간이다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "def-leppard|tesla",
+      "person": "Phil Collen",
+      "decision": "session",
+      "note": "Phil Collen은 Tesla의 2019년 앨범 Shock 프로듀서·공동 작곡자로 참여했다(정식 멤버 아님).",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "korn|tesla",
+      "person": "Ray Luzier",
+      "decision": "session",
+      "note": "Tesla 멤버 목록의 Ray Luzier 2016년 표기는 세션 참여로 보인다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "steel-panther|tesla",
+      "person": "Ray Luzier",
+      "decision": "session",
+      "note": "Tesla 멤버 목록의 Ray Luzier 2016년 표기는 세션 참여로 보인다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "mercyful-fate|volbeat",
+      "person": "Hank Shermann",
+      "decision": "session",
+      "note": "Hank Shermann은 Volbeat 2013년 앨범에 게스트로 참여했다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    },
+    {
+      "pairKey": "ratt|whitesnake",
+      "person": "Warren DeMartini",
+      "decision": "session",
+      "note": "Warren DeMartini는 1994년 Whitesnake 투어에만 참여했다.",
+      "decidedAt": "2026-11-22T03:35:41.839Z"
+    }
+  ]
+}

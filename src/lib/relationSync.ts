@@ -12,8 +12,10 @@ const blankNotePlaceholders = new Set(['', '연결 이유를 입력하세요.', 
  *  short attribution tag instead of a content-free "자동 생성" placeholder. Only falls back to the
  *  generic note when the source side never wrote a real reason. */
 function mirroredNote(sourceNote: string, sourceBandName: string): string {
-  if (blankNotePlaceholders.has(sourceNote.trim())) return `${sourceBandName} 쪽에서 추가한 연결 관계 (자동 생성 · 필요하면 다듬으세요)`
-  return `${sourceNote} (${sourceBandName} 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)`
+  // The note is public text, so it must not carry an editing hint; the mirroredFrom field already marks
+  // this side as auto-created for Studio.
+  if (blankNotePlaceholders.has(sourceNote.trim())) return `${sourceBandName}와(과) 연결된 밴드다. (설명 보완 필요)`
+  return sourceNote.trim()
 }
 
 export function resolvePendingRelations(bandsList: Band[], pendingList: PendingRelation[]) {
@@ -33,6 +35,7 @@ export function resolvePendingRelations(bandsList: Band[], pendingList: PendingR
       const forward: Relation = {
         targetBandId: pending.targetBandId,
         kind: pending.kind,
+        ...(pending.kind === 'member-link' ? { people: pending.people, linkType: pending.linkType } : {}),
         strength: pending.strength,
         note: pending.note,
         reviewStatus: 'draft',
@@ -44,6 +47,7 @@ export function resolvePendingRelations(bandsList: Band[], pendingList: PendingR
       const mirrored: Relation = {
         targetBandId: pending.sourceBandId,
         kind: inverseRelationKind(pending.kind),
+        ...(pending.kind === 'member-link' ? { people: pending.people, linkType: pending.linkType } : {}),
         strength: pending.strength,
         note: mirroredNote(pending.note, pending.sourceBandName),
         reviewStatus: 'draft',
@@ -86,6 +90,8 @@ export function syncMirroredRelation(
         kind: inverseRelationKind(next.kind),
         strength: next.strength,
         note: mirroredNote(next.note, ownBandName),
+        // A member link is the same fact from both sides: copy who connects the bands and how.
+        ...(next.kind === 'member-link' ? { people: next.people, linkType: next.linkType } : {}),
         reviewStatus: 'draft',
         mirroredFrom: ownBandId,
       }

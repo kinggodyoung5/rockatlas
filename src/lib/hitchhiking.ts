@@ -3,6 +3,7 @@ import { taxonomyGenreById, taxonomyMoodById } from '../data/taxonomy'
 import type { Band } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
 import { scoreBandSimilarity } from './bandSimilarity'
+import { isMusicalRelation } from './relationLabels'
 
 export type JourneyVia = HitchhikingDirectionId | 'connection'
 
@@ -94,8 +95,9 @@ export function isNaturalHitchhikingTransition(subject: Band, candidate: Band) {
   const left = subject.taxonomyV2
   const right = candidate.taxonomyV2
   if (!left || !right) return false
-  const editorialRelation = subject.relations.some((relation) => relation.targetBandId === candidate.id)
-    || candidate.relations.some((relation) => relation.targetBandId === subject.id)
+  // Member links are about people, not sound, so they never make a transition "natural" (plan 3.2).
+  const editorialRelation = subject.relations.some((relation) => isMusicalRelation(relation) && relation.targetBandId === candidate.id)
+    || candidate.relations.some((relation) => isMusicalRelation(relation) && relation.targetBandId === subject.id)
   const samePrimaryGenre = left.primaryGenreId === right.primaryGenreId
   const primaryGenreCrossing = left.secondaryGenreIds.includes(right.primaryGenreId)
     || right.secondaryGenreIds.includes(left.primaryGenreId)
@@ -144,8 +146,8 @@ export function recommendHitchhikingBands(
       const gain = candidateLevel - subjectLevel
       const similarity = scoreBandSimilarity(subject, candidate)
       const leadMood = strongestDirectionMood(candidate, direction)
-      const relation = subject.relations.find((item) => item.targetBandId === candidate.id)
-        ?? candidate.relations.find((item) => item.targetBandId === subject.id)
+      const relation = subject.relations.find((item) => isMusicalRelation(item) && item.targetBandId === candidate.id)
+        ?? candidate.relations.find((item) => isMusicalRelation(item) && item.targetBandId === subject.id)
       const continuityReason = relation?.note || similarity.reasons[0]
         || `${taxonomyGenreById[candidate.taxonomyV2!.primaryGenreId]?.displayName ?? '새로운 록의 계보'} 쪽으로 장르가 확장`
       const forwardStep = Math.min(Math.max(gain, 0), 1.5)

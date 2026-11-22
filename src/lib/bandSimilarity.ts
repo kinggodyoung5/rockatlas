@@ -1,5 +1,6 @@
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band } from '../types/music'
+import { isMusicalRelation } from './relationLabels'
 import type { MoodId } from '../types/taxonomy'
 
 export interface BandSimilarity {
@@ -42,7 +43,8 @@ export function scoreBandSimilarity(subject: Band, candidate: Band): BandSimilar
     score += 4
     reasons.push(`같은 ${subject.countryCode} 지역`)
   }
-  const manuallyConnected = subject.relations.some((relation) => relation.targetBandId === candidate.id) || candidate.relations.some((relation) => relation.targetBandId === subject.id)
+  const manuallyConnected = subject.relations.some((relation) => isMusicalRelation(relation) && relation.targetBandId === candidate.id)
+    || candidate.relations.some((relation) => isMusicalRelation(relation) && relation.targetBandId === subject.id)
   if (manuallyConnected) score += 10
   return { band: candidate, score: Math.round(score), reasons: [...new Set(reasons)].slice(0, 3) }
 }

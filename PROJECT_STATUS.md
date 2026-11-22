@@ -1236,3 +1236,41 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 - `codex/taxonomy-v2`에 커밋·푸시. `main` 배포는 운영자 지시로 보류.
 - 작업 전 백업: `C:\Users\SH\AppData\Local\Temp\claude\2c43461aa0a5b1e7\4cdface6-0bf4-4e55-ba21-5eae889120a0\scratchpad\catalog-before-p1.json`(임시 폴더) 및 Git 커밋 `f9099ea`.
 - 다음 단계: 계획서 P2(관계 모델 개편 — `member-link` 신설, `evolution` 22쌍 이관, 멤버 공유 탐지, 관계 표시 3묶음).
+
+## 47. 2026-11-22 개선 계획 P2 — 관계 모델 개편
+
+**P2-1 스키마**: 관계 종류 `evolution` 폐지, `member-link`(멤버로 이어짐) 신설. `Relation`·`PendingRelation`에 `people`(이어 주는 사람)·`linkType`(`successor` 후신 / `moved` 멤버 이동 / `shared` 겸업 / `session` 세션) 추가.
+- `src/lib/relationLabels.ts`: 라벨·`memberLinkLabels`·표시 묶음(`relationGroups`)·`isMusicalRelation()`.
+- 멤버 연결은 음악적 유사성이 아니므로 히치하이킹의 "자연스러운 전환" 판정·관계 가산점(`hitchhiking.ts`)과 유사도 가산점(`bandSimilarity.ts`)에서 제외.
+- 동기화(`relationSync.ts`): 미러 관계와 보류 관계 해소 시 `people`·`linkType`을 양쪽에 복사.
+- 입력(`bandIntake.ts`): 붙여넣은 JSON의 옛 `evolution`은 `people`이 있으면 `member-link`, 없으면 `shared-scene`으로 받음.
+- 검증: `member-link`에 `people`/`linkType`이 없거나 양쪽 값이 다르면 오류. Studio 보류 관계 검사·`audit-relations`·공개 인덱스(`linkType` 포함)·Gemini 템플릿 문서 갱신.
+
+**P2-2 `evolution` 26쌍 이관** (`scripts/migrate-evolution-relations.ts`, 표 밖의 `evolution`이 남으면 실패하도록 작성)
+- `member-link` 20쌍: 후신(Joy Division→New Order, Oasis→Beady Eye, RATM→Audioslave, Mother Love Bone→Pearl Jam), 이동(Nirvana→Foo Fighters, Metallica→Megadeth, Black Sabbath→Ozzy·Dio, Rainbow→Dio 등 14쌍), 겸업(Extreme↔Generation Axe, Wintersun↔Megadeth). 양쪽 설명을 사람 이름이 드러나게 새로 씀.
+- 재판정 6쌍(사람이 이어진 게 아닌 장르사 해석): 출처 확인 후 3쌍은 출처 달린 관계로 전환 — Death→Children of Bodom(영향, 알렉시 라이호의 2002년 척 슐디너 추모 공연), Yes→Porcupine Tree(영향, 스티븐 윌슨의 2013~2016 Yes 리믹스), Nine Inch Nails↔Rammstein(같은 장면, Lost Highway 사운드트랙). 근거가 없는 3쌍은 삭제 — Guns N' Roses↔Nirvana("세대교체 지점"), Metallica↔Rammstein, The Clash↔The Cure(로버트 스미스가 클래시의 음악이 아니라 펑크의 태도에 영향받았다고 말함).
+- 보류 관계 4건(`evolution`)도 사람·종류를 붙여 `member-link`로.
+
+**P2-3 멤버 공유 자동 탐지**
+- `src/lib/memberOverlap.ts`(이름 정규화: 발음 기호·따옴표 별명 제거) + 테스트. 이미 관계가 있는 쌍·판정 기록·익명 이름 제외.
+- 판정 기록 `src/data/member-link-decisions.json`(동명이인·세션·연결 안 함) + Studio API `GET/POST /api/studio/member-link-decisions`.
+- Studio "멤버 공유 후보" 패널(`MemberLinkPanel.tsx`, 데이터 관리 영역): 후보마다 후신/이동/겸업으로 연결하거나 동명이인/세션/연결 안 함으로 제외.
+- 2026-11-22 탐지 62쌍 전수 판정(`scripts/apply-member-links-2026-11.ts`): 40쌍 연결, 8쌍 제외 기록(Mike Portnoy의 A7X 임시 참여, Tesla 멤버 목록의 Phil Collen·Ray Luzier 2016 표기 등 세션), 14쌍은 이미 있는 음악 관계를 유지(한 쌍에는 관계 하나). 동명이인 Mick Jones(The Clash/Foreigner) 제외 확인. Deep Purple 멤버에 빠져 있던 David Coverdale·Glenn Hughes(1973–1976) 추가.
+
+**P2-4 공개 관계 화면**: 세 묶음으로 표시 — "영향의 흐름"(카드 라벨을 상대 기준 "영향을 준 선배"/"영향을 받은 후배"로), "같은 장면 · 닮은 소리", "멤버로 이어진 밴드"(점선 카드, 사람 이름과 후신/이동/겸업 표시, "소리가 비슷하다는 뜻은 아닙니다" 안내). Studio 관계 행에 멤버 연결 종류·사람 입력란.
+
+**P2-5**: Studio "가까운 밴드 후보"로 관계를 추가할 때 "공통 요소: …" 문구가 설명으로 자동 입력되어 그대로 공개되던 것을 중단(운영자가 직접 씀).
+
+**P2-6 관계 보강(1차)**
+- 관계 0개 15팀 → 3팀. 멤버 연결로 5팀(Rainbow, Whitesnake, Steel Panther, Bring Me the Horizon 쪽 등), 출처 단 관계 11쌍(22건)으로 7팀 해결: The Libertines(믹 존스 프로듀싱/The Clash, The Strokes), The Vaccines(The Strokes, Ramones), Hoobastank(Incubus, Linkin Park — 아고라힐스 신), Beck(Sonic Youth, Pavement — 1995 롤라팔루자), Mumford & Sons(Florence + the Machine), AJR(Imagine Dragons 2023 투어 오프닝), Peach Pit(The Beatles).
+- 남은 관계 0개 3팀: **Rascal Flatts**(컨트리 팝 — 수록 범위 자체를 운영자가 판단 필요), **Kings of Convenience**(주로 비교되는 Simon & Garfunkel이 카탈로그에 없음), **Semisonic**(1998년 함께 투어한 Matchbox Twenty·Soul Asylum이 카탈로그에 없음).
+- 미러 관계 설명 41건 끝의 "(… 쪽 관계에서 자동 연결됨 · 필요하면 다듬으세요)" 편집 안내가 공개 화면에 노출되던 것을 제거하고, 앞으로 붙지 않게 `relationSync.ts` 수정.
+
+**현재 수치**: 관계 892건(출처 있음 183, 미검수 341), 멤버 연결 120건, 영향 관계 288건 중 출처 96건(33%), 관계 0개 3팀 · 1개 100팀 · 2개 이하 171팀. 계획서 목표(2개 이하 20팀, 영향 출처 80%)까지는 데이터 작업이 더 필요하다.
+
+**검증**: `tsc -b`, `validate:data`(오류 0, 경고 67), `audit:relations`(역방향 누락·종류 불일치 0), `normalize:check` 0, `npm test` 79/79(멤버 탐지·관계 테스트 5개 추가), `npm run build`. 브라우저: Metallica 관계가 3묶음(영향 9, 장면 10, 멤버 1 — Megadeth "멤버 이동 · Dave Mustaine")으로 표시, Studio 멤버 공유 후보 패널 0쌍(전부 판정됨)·판정 API 동작 확인.
+
+**Git 상태와 다음 단계**
+- `codex/taxonomy-v2`에 커밋·푸시. `main` 배포는 보류(운영자 지시).
+- 남은 P2-6: 관계 1~2개 밴드 보강, 출처 없는 영향 관계 192건 출처 확인, 미검수 관계 341건 검수, 15자 미만 설명 31건. 멤버를 언급하는 `shared-scene` 관계(예: Metallica↔Exodus "Kirk Hammett가 합류") 중 멤버 연결로 바꿀 것을 운영자가 고를 수 있음.
+- 다음 단계: 계획서 P3(분류 검수 183팀 도구, 유사도 점수 v2, 히치하이킹·느낌으로 찾기 개선) 또는 P2-6 데이터 보강 계속.

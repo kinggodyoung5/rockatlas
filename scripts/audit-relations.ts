@@ -6,7 +6,7 @@ const compatibleReverseKinds: Record<RelationKind, RelationKind[]> = {
   'sounds-like': ['sounds-like'],
   influenced: ['influenced-by'],
   'influenced-by': ['influenced'],
-  evolution: ['evolution'],
+  'member-link': ['member-link'],
 }
 
 const bandById = new Map(bands.map((band) => [band.id, band]))

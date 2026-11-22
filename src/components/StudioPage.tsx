@@ -4,7 +4,7 @@ import { bands as initialBands, catalogFile } from '../data/bands'
 import { genres as initialGenres } from '../data/genres'
 import { siteContent, type SiteContent } from '../data/siteContent'
 import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
-import type { Band, BandTaxonomyV2, GenreId, PendingRelation, Relation, RelationKind, SourceRef } from '../types/music'
+import type { Band, BandTaxonomyV2, GenreId, MemberLinkType, PendingRelation, Relation, RelationKind, SourceRef } from '../types/music'
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
@@ -14,6 +14,7 @@ import { clone, createDraftBand, createTaxonomyDraft, membersToText, parseEraTag
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
+import { MemberLinkPanel } from './MemberLinkPanel'
 import type { LinkHealthSummary } from './LinkHealthPanel'
 import { StudioOperationsDashboard } from './StudioOperationsDashboard'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
@@ -23,7 +24,7 @@ import { CommonsImageFinder, type CommonsImageCandidate } from './CommonsImageFi
 import { StudioBandBasics } from './StudioBandBasics'
 import { StudioTaxonomyEditor } from './StudioTaxonomyEditor'
 import { StudioHitchhikingPreview } from './StudioHitchhikingPreview'
-import { relationLabels } from '../lib/relationLabels'
+import { memberLinkLabels, relationLabels } from '../lib/relationLabels'
 
 const recoveryKey = 'rock-atlas-studio-recovery-v1'
 type StudioRecovery = { version: 1; savedAt: string; bands: Band[]; selectedId: string; draft: Band }
@@ -692,6 +693,7 @@ export function StudioPage() {
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} pendingRelations={pendingRelations} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} onLinkHealthSummary={setLinkHealth} />
+          <MemberLinkPanel bands={catalogBands} onLink={(updated) => updated.forEach(updateManagedBand)} />
 
           <StudioBandBasics
             draft={draft}
@@ -739,7 +741,7 @@ export function StudioPage() {
             <div className="studio-section-heading"><span>04</span><div><h3>관계 연결</h3><p>분류·태그·시대가 가까운 밴드를 후보로 추천합니다. 영향 관계는 출처 확인 뒤 승인하세요.</p></div></div>
             <div className="studio-suggestions">
               <span><Sparkles size={15} /> 가까운 밴드 후보</span>
-              {suggestions.map((item) => <button key={item.band.id} onClick={() => addRelation(item.band.id, `공통 요소: ${item.reason}`, item.score)}><strong>{item.band.name}</strong><small>{item.reason} · 점수 {item.score}</small><Plus size={14} /></button>)}
+              {suggestions.map((item) => <button key={item.band.id} onClick={() => addRelation(item.band.id, undefined, item.score)}><strong>{item.band.name}</strong><small>{item.reason} · 점수 {item.score}</small><Plus size={14} /></button>)}
             </div>
             <div className="studio-relations">
               {draft.relations.map((relation, index) => (
@@ -748,6 +750,11 @@ export function StudioPage() {
                   <select value={relation.kind} onChange={(event) => updateRelation(index, { kind: event.target.value as RelationKind })}>{Object.entries(relationLabels).map(([kind, label]) => <option key={kind} value={kind}>{label}</option>)}</select>
                   <select value={relation.strength} onChange={(event) => updateRelation(index, { strength: Number(event.target.value) as 1 | 2 | 3 })}><option value={1}>약함</option><option value={2}>중간</option><option value={3}>강함</option></select>
                   <input value={relation.note} onChange={(event) => updateRelation(index, { note: event.target.value })} aria-label="관계 이유" />
+                  {relation.kind === 'member-link' && <div className="studio-relation-member">
+                    <select value={relation.linkType ?? 'moved'} onChange={(event) => updateRelation(index, { linkType: event.target.value as MemberLinkType })} aria-label="멤버 연결 종류">{Object.entries(memberLinkLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select>
+                    <input defaultValue={(relation.people ?? []).join(', ')} onBlur={(event) => updateRelation(index, { people: event.target.value.split(',').map((item) => item.trim()).filter(Boolean) })} placeholder="이어 주는 사람 (쉼표로 구분)" aria-label="이어 주는 사람" />
+                    <small>소리가 비슷하다는 뜻이 아닙니다. 상대 밴드 쪽 관계의 사람·종류도 같게 맞춰야 저장 검사를 통과합니다.</small>
+                  </div>}
                   <button aria-label="관계 삭제" onClick={() => {
                     const removed = draft.relations[index]
                     change({ relations: draft.relations.filter((_, relationIndex) => relationIndex !== index) })

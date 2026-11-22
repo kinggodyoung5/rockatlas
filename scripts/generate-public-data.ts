@@ -66,7 +66,7 @@ function compactBand(band: JsonRecord) {
     },
     members: members.map(({ name, status }) => ({ name, role: '', status })),
     tracks: [],
-    relations: relations.map(({ targetBandId, kind, strength, reviewStatus }) => ({ targetBandId, kind, strength, note: '', reviewStatus })),
+    relations: relations.map(({ targetBandId, kind, strength, reviewStatus, linkType }) => ({ targetBandId, kind, strength, note: '', reviewStatus, ...(linkType ? { linkType } : {}) })),
     sources: [],
     taxonomyV2: taxonomy,
     reviewStatus: band.reviewStatus,

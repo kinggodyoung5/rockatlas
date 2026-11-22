@@ -108,6 +108,10 @@ for (const band of bands) {
       if (!relation.reviewedBy || !relation.reviewedAt) errors.push(`${band.id} → ${relation.targetBandId}: 검수자·검수 시각 누락`)
       if (relation.source && !/^https:\/\//.test(relation.source.url)) errors.push(`${band.id} → ${relation.targetBandId}: 관계 출처 URL 형식 오류`)
     }
+    if (relation.kind === 'member-link') {
+      if (!relation.people?.length) errors.push(`${band.id} → ${relation.targetBandId}: 멤버 연결에 이어 주는 사람(people)이 없음`)
+      if (!relation.linkType) errors.push(`${band.id} → ${relation.targetBandId}: 멤버 연결의 종류(linkType)가 없음`)
+    }
     if (relation.note.trim().length < 15) warnings.push(`${band.id} → ${relation.targetBandId}: 관계 설명이 15자 미만 — 근거가 드러나는 한 문장으로 보완 권장`)
     if (/(습|입|합)니다\.$/.test(relation.note.trim())) errors.push(`${band.id} → ${relation.targetBandId}: 관계 설명은 "~다"체로 씀 (npm run normalize:write)`)
   }
@@ -125,6 +129,12 @@ for (const band of bands) {
 for (const band of bands) {
   for (const relation of band.relations) {
     if (!bandIds.has(relation.targetBandId)) errors.push(`${band.id}: 존재하지 않는 관계 대상 ${relation.targetBandId}`)
+    if (relation.kind === 'member-link') {
+      const reverse = bands.find((item) => item.id === relation.targetBandId)?.relations.find((item) => item.targetBandId === band.id)
+      if (reverse?.kind === 'member-link' && (reverse.linkType !== relation.linkType || [...(reverse.people ?? [])].sort().join('|') !== [...(relation.people ?? [])].sort().join('|'))) {
+        errors.push(`${band.id} ↔ ${relation.targetBandId}: 멤버 연결 양쪽의 사람·종류가 다름`)
+      }
+    }
   }
 }
 

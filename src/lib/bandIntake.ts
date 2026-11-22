@@ -26,7 +26,7 @@ export interface IntakeResult {
 type UnknownRecord = Record<string, unknown>
 
 const legacyGenreIds: GenreId[] = ['classic-rock', 'hard-rock', 'progressive-art', 'punk-rock', 'alternative-indie', 'britpop-indie', 'heavy-metal', 'extreme-metal']
-const relationKinds: RelationKind[] = ['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'evolution']
+const relationKinds: RelationKind[] = ['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'member-link']
 const eraIds: EraId[] = ['1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s']
 
 const legacyByTaxonomy: Record<GenreTaxonomyId, GenreId> = {
@@ -429,7 +429,15 @@ function normalizeRelations(value: unknown): Relation[] {
     if (!isRecord(entry)) return []
     const targetBandId = slugify(text(entry.targetBandId ?? entry.targetId ?? entry.targetBandName ?? entry.targetName))
     if (!targetBandId) return []
-    const kind = relationKinds.includes(text(entry.kind) as RelationKind) ? text(entry.kind) as RelationKind : 'sounds-like'
+    const people = stringList(entry.people)
+    const rawKind = text(entry.kind)
+    // 'evolution' was retired for 'member-link'. Older pasted JSON still uses it: keep it as a member link
+    // only when it names the people involved, otherwise it was a genre-history reading and becomes a scene link.
+    const kind: RelationKind = rawKind === 'evolution'
+      ? (people.length ? 'member-link' : 'shared-scene')
+      : relationKinds.includes(rawKind as RelationKind) ? rawKind as RelationKind : 'sounds-like'
+    const linkTypes = ['successor', 'moved', 'shared', 'session'] as const
+    const linkType = linkTypes.find((value) => value === text(entry.linkType)) ?? (kind === 'member-link' ? 'moved' : undefined)
     const rawStrength = Math.round(number(entry.strength))
     // Gemini often rates strength on its own 1-5 scale; clamp toward the nearer end instead of silently
     // collapsing an out-of-range "5" (meant as strongest) down to 1 (weakest).
@@ -440,6 +448,7 @@ function normalizeRelations(value: unknown): Relation[] {
       kind,
       strength,
       note: textProse(entry.note) || '외부 조사에서 제안된 관계 · 근거 확인 필요',
+      ...(kind === 'member-link' ? { people, linkType } : {}),
       reviewStatus: 'draft',
       source: evidenceUrl
         ? { label: '관계 근거', url: evidenceUrl, publisher: 'Editorial', note: 'Gemini가 제안한 근거 링크 · 운영자 확인 필요' }
@@ -1016,7 +1025,7 @@ export async function inspectBandIntake(rawText: string, existingBands: Band[]):
     if (unknownRelations.length) issues.push({ severity: 'warning', code: 'pending-relations', message: `아직 카탈로그에 없는 밴드를 가리키는 관계를 보류함에 저장했습니다: ${unknownRelations.map((relation) => relation.targetBandId).join(', ')} (해당 밴드가 나중에 추가되면 저장 시 양쪽에 자동으로 연결됩니다)` })
     if (selfRelations.length) issues.push({ severity: 'warning', code: 'self-relation-removed', message: '자기 자신을 가리키는 관계를 제외했습니다.' })
     const unverifiedInfluenceRelations = [...band.relations, ...unknownRelations]
-      .filter((relation) => ['influenced-by', 'influenced', 'evolution'].includes(relation.kind) && !relation.source?.url)
+      .filter((relation) => ['influenced-by', 'influenced', 'member-link'].includes(relation.kind) && !relation.source?.url)
     if (unverifiedInfluenceRelations.length) {
       issues.push({
         severity: 'warning',

@@ -11,6 +11,7 @@ const catalogHistoryPath = resolve('src/data/catalog-history.json')
 const siteContentPath = resolve('src/data/siteContent.json')
 const genresPath = resolve('src/data/genres.json')
 const taxonomyPath = resolve('src/data/taxonomy.v2.json')
+const memberLinkDecisionsPath = resolve('src/data/member-link-decisions.json')
 const uploadsPath = resolve('public/uploads')
 const fontUploadsPath = resolve('public/uploads/fonts')
 
@@ -171,7 +172,7 @@ function validatePendingRelations(pendingRelations: unknown[], bands: CatalogBan
     if (bandIds.has(targetBandId)) errors.push(`${id}: 대상 밴드 ${targetBandId}가 이미 있으므로 먼저 자동 연결해야 합니다.`)
     if (!targetBandId || sourceBandId === targetBandId) errors.push(`${id}: 대상 밴드 ID가 비어 있거나 자기 자신입니다.`)
     if (!String(pending.sourceBandName ?? '').trim() || !String(pending.note ?? '').trim()) errors.push(`${id}: 밴드 이름 또는 관계 설명이 비어 있습니다.`)
-    if (!['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'evolution'].includes(String(pending.kind))) errors.push(`${id}: 관계 종류가 올바르지 않습니다.`)
+    if (!['sounds-like', 'influenced-by', 'influenced', 'shared-scene', 'member-link'].includes(String(pending.kind))) errors.push(`${id}: 관계 종류가 올바르지 않습니다.`)
     if (![1, 2, 3].includes(Number(pending.strength))) errors.push(`${id}: 관계 강도는 1~3이어야 합니다.`)
   })
   if (errors.length) throw new Error(`보류 관계 안전 검사에서 ${errors.length}건을 발견했습니다.\n- ${errors.slice(0, 12).join('\n- ')}`)
@@ -976,6 +977,36 @@ export function studioApi(): Plugin {
         } catch (error) {
           response.statusCode = 400
           response.end(error instanceof Error ? error.message : '13장르 분류 저장 실패')
+        }
+      })
+
+      server.middlewares.use('/api/studio/member-link-decisions', async (request, response, next) => {
+        if (request.method === 'GET') {
+          response.setHeader('Content-Type', 'application/json; charset=utf-8')
+          response.end(await readFile(memberLinkDecisionsPath, 'utf8'))
+          return
+        }
+        if (request.method !== 'POST') return next()
+        if (!isLocalRequest(request.headers.origin ?? '')) {
+          response.statusCode = 403
+          return response.end('Studio 저장은 로컬에서만 허용됩니다.')
+        }
+        try {
+          const payload = await readBody(request, 20_000)
+          const pairKey = String(payload.pairKey ?? '')
+          const people = Array.isArray(payload.people) ? payload.people.map(String).filter(Boolean) : []
+          const decision = String(payload.decision ?? '')
+          if (!/^[a-z0-9-]+\|[a-z0-9-]+$/.test(pairKey) || !people.length || !['namesake', 'session', 'not-relevant'].includes(decision)) throw new Error('판정 형식이 올바르지 않습니다.')
+          const file = JSON.parse(await readFile(memberLinkDecisionsPath, 'utf8')) as { _note?: string; decisions: Record<string, unknown>[] }
+          const decidedAt = new Date().toISOString()
+          for (const person of people) {
+            if (!file.decisions.some((record) => record.pairKey === pairKey && record.person === person)) file.decisions.push({ pairKey, person, decision, decidedAt })
+          }
+          await writeFile(memberLinkDecisionsPath, `${JSON.stringify(file, null, 2)}\n`, 'utf8')
+          json(response, file)
+        } catch (error) {
+          response.statusCode = 400
+          response.end(error instanceof Error ? error.message : '판정 저장 실패')
         }
       })
 
