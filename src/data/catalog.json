@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-23T12:00:55.774Z",
+  "updatedAt": "2026-11-23T12:02:07.342Z",
   "bands": [
     {
       "id": "wintersun",
@@ -5665,6 +5665,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "jimi-hendrix-experience",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "영화 Easy Rider(1969) 사운드트랙에 'If 6 Was 9'가 'Born to Be Wild'와 함께 실렸다.",
+          "source": {
+            "label": "Wikipedia — Easy Rider (soundtrack)",
+            "url": "https://en.wikipedia.org/wiki/Easy_Rider_(soundtrack)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -16803,6 +16818,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "shinedown",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2013년 가을 영국 아레나 투어에 헤일스톰과 함께 서포트로 동행했다.",
+          "source": {
+            "label": "Antimusic — Alter Bridge, Shinedown and Halestorm tour",
+            "url": "https://antimusic.com/news/13/April/09Alter_Bridge,_Shinedown_and_Halestorm_Tour.shtml",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -18751,6 +18781,21 @@
           "strength": 3,
           "note": "보컬이자 기타리스트 마일스 케네디가 이 밴드와 병행하여 프론트맨으로 활동하는 하드 록 밴드다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "dirty-honey",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 Living the Dream 북미 투어에서 오프닝을 맡은 LA 하드록 밴드다.",
+          "source": {
+            "label": "Music Life Magazine — Slash featuring Myles Kennedy and the Conspirators, Toronto 2019",
+            "url": "https://www.musiclifemagazine.net/slash-featuring-myles-kennedy-and-the-conspirators-at-rebel-night-club-toronto-ontario-july-29-2019/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -23103,6 +23148,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "misfits",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "제라드·마이키 웨이 형제가 어린 시절 영향받았다고 밝힌, 같은 뉴저지 출신 호러 펑크 선배다.",
+          "source": {
+            "label": "Wikipedia — Gerard Way",
+            "url": "https://en.wikipedia.org/wiki/Gerard_Way",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -26109,6 +26169,21 @@
           "strength": 3,
           "note": "묵직한 포스트 그랜지 기타 리프와 폭발적인 보컬 샤우팅 전개 방식에서 음악적 영감을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "alter-bridge",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2013년 가을 영국 아레나 투어에서 함께 무대에 선 헤드라이너 밴드다.",
+          "source": {
+            "label": "Antimusic — Alter Bridge, Shinedown and Halestorm tour",
+            "url": "https://antimusic.com/news/13/April/09Alter_Bridge,_Shinedown_and_Halestorm_Tour.shtml",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -41079,6 +41154,21 @@
           "strength": 3,
           "note": "1960년대 브리티시 인베이전과 모드 문화를 함께 이끌며 영국적 정체성을 음악에 녹여냈다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "jimi-hendrix-experience",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1967년 몬터레이 팝 페스티벌에서 동전 던지기로 순서를 정한 상대로, 더 후가 먼저 무대를 마친 뒤 기타에 불을 붙이며 맞섰다.",
+          "source": {
+            "label": "Ultimate Classic Rock — Pete Townshend and Jimi Hendrix negotiating Monterey",
+            "url": "https://ultimateclassicrock.com/pete-townshend-jimi-hendrix-negotiating-monterey/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "reviewStatus": "published",
@@ -56426,6 +56516,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "the-who",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1967년 몬터레이 팝 페스티벌에서 누가 먼저 무대에 설지 동전 던지기로 정했고, 더 후가 먼저 기타를 부수자 헨드릭스는 기타에 불을 붙였다.",
+          "source": {
+            "label": "Ultimate Classic Rock — Pete Townshend and Jimi Hendrix negotiating Monterey",
+            "url": "https://ultimateclassicrock.com/pete-townshend-jimi-hendrix-negotiating-monterey/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
+        },
+        {
+          "targetBandId": "steppenwolf",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "영화 Easy Rider(1969) 사운드트랙의 첫 곡 'Born to Be Wild'를 부른 밴드다.",
+          "source": {
+            "label": "Wikipedia — Easy Rider (soundtrack)",
+            "url": "https://en.wikipedia.org/wiki/Easy_Rider_(soundtrack)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -58224,6 +58344,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "my-chemical-romance",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "제라드·마이키 웨이 형제가 어린 시절 영향받은 밴드로 미스피츠를 꼽았고, 같은 뉴저지 출신으로 호러 펑크의 이미지를 물려받았다.",
+          "source": {
+            "label": "Wikipedia — Gerard Way",
+            "url": "https://en.wikipedia.org/wiki/Gerard_Way",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [
@@ -67664,6 +67799,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "slash-feat-myles-kennedy-the-conspirators",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 Living the Dream 북미 투어에서 오프닝을 맡았다.",
+          "source": {
+            "label": "Music Life Magazine — Slash featuring Myles Kennedy and the Conspirators, Toronto 2019",
+            "url": "https://www.musiclifemagazine.net/slash-featuring-myles-kennedy-and-the-conspirators-at-rebel-night-club-toronto-ontario-july-29-2019/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:02:07.342Z"
         }
       ],
       "sources": [

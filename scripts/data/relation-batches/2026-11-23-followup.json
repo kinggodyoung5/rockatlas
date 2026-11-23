@@ -1,0 +1,25 @@
+{
+  "note": "관계 1개 이하 밴드 보강 — 남은 후보 중 출처로 확인된 연결.",
+  "pairs": [
+    { "from": "jimi-hendrix-experience", "to": "the-who", "kind": "shared-scene", "strength": 2,
+      "fromNote": "1967년 몬터레이 팝 페스티벌에서 누가 먼저 무대에 설지 동전 던지기로 정했고, 더 후가 먼저 기타를 부수자 헨드릭스는 기타에 불을 붙였다.",
+      "toNote": "1967년 몬터레이 팝 페스티벌에서 동전 던지기로 순서를 정한 상대로, 더 후가 먼저 무대를 마친 뒤 기타에 불을 붙이며 맞섰다.",
+      "source": { "label": "Ultimate Classic Rock — Pete Townshend and Jimi Hendrix negotiating Monterey", "url": "https://ultimateclassicrock.com/pete-townshend-jimi-hendrix-negotiating-monterey/", "publisher": "Editorial" } },
+    { "from": "steppenwolf", "to": "jimi-hendrix-experience", "kind": "shared-scene", "strength": 1,
+      "fromNote": "영화 Easy Rider(1969) 사운드트랙에 'If 6 Was 9'가 'Born to Be Wild'와 함께 실렸다.",
+      "toNote": "영화 Easy Rider(1969) 사운드트랙의 첫 곡 'Born to Be Wild'를 부른 밴드다.",
+      "source": { "label": "Wikipedia — Easy Rider (soundtrack)", "url": "https://en.wikipedia.org/wiki/Easy_Rider_(soundtrack)", "publisher": "Wikipedia" } },
+    { "from": "alter-bridge", "to": "shinedown", "kind": "shared-scene", "strength": 2,
+      "fromNote": "2013년 가을 영국 아레나 투어에 헤일스톰과 함께 서포트로 동행했다.",
+      "toNote": "2013년 가을 영국 아레나 투어에서 함께 무대에 선 헤드라이너 밴드다.",
+      "source": { "label": "Antimusic — Alter Bridge, Shinedown and Halestorm tour", "url": "https://antimusic.com/news/13/April/09Alter_Bridge,_Shinedown_and_Halestorm_Tour.shtml", "publisher": "Editorial" } },
+    { "from": "misfits", "to": "my-chemical-romance", "kind": "influenced", "strength": 2,
+      "fromNote": "제라드·마이키 웨이 형제가 어린 시절 영향받은 밴드로 미스피츠를 꼽았고, 같은 뉴저지 출신으로 호러 펑크의 이미지를 물려받았다.",
+      "toNote": "제라드·마이키 웨이 형제가 어린 시절 영향받았다고 밝힌, 같은 뉴저지 출신 호러 펑크 선배다.",
+      "source": { "label": "Wikipedia — Gerard Way", "url": "https://en.wikipedia.org/wiki/Gerard_Way", "publisher": "Wikipedia" } },
+    { "from": "slash-feat-myles-kennedy-the-conspirators", "to": "dirty-honey", "kind": "shared-scene", "strength": 2,
+      "fromNote": "2019년 Living the Dream 북미 투어에서 오프닝을 맡은 LA 하드록 밴드다.",
+      "toNote": "2019년 Living the Dream 북미 투어에서 오프닝을 맡았다.",
+      "source": { "label": "Music Life Magazine — Slash featuring Myles Kennedy and the Conspirators, Toronto 2019", "url": "https://www.musiclifemagazine.net/slash-featuring-myles-kennedy-and-the-conspirators-at-rebel-night-club-toronto-ontario-july-29-2019/", "publisher": "Editorial" } }
+  ]
+}
