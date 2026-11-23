@@ -1274,3 +1274,25 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 - `codex/taxonomy-v2`에 커밋·푸시. `main` 배포는 보류(운영자 지시).
 - 남은 P2-6: 관계 1~2개 밴드 보강, 출처 없는 영향 관계 192건 출처 확인, 미검수 관계 341건 검수, 15자 미만 설명 31건. 멤버를 언급하는 `shared-scene` 관계(예: Metallica↔Exodus "Kirk Hammett가 합류") 중 멤버 연결로 바꿀 것을 운영자가 고를 수 있음.
 - 다음 단계: 계획서 P3(분류 검수 183팀 도구, 유사도 점수 v2, 히치하이킹·느낌으로 찾기 개선) 또는 P2-6 데이터 보강 계속.
+
+## 48. 2026-11-23 P2-6 관계 보강 2차 — 관계 1개 이하 밴드
+
+**방식**: 관계 1개 이하 103팀을 장르별로 훑어 후보를 세우고, 하나씩 WebSearch로 사실을 확인한 뒤 출처 URL이 있는 것만 넣었다. 투어 동행·프로듀싱·커버·공동 작곡·직접 언급처럼 기록이 남은 연결만 쓰고, 평론가의 "닮았다"는 평이나 확인 안 되는 후보는 넣지 않았다.
+- 새 도구 `scripts/add-relations.ts`: 배치 파일(`scripts/data/relation-batches/*.json`)의 쌍을 양방향으로 넣음(영향은 반대쪽에 역방향 종류). 출처 URL·양쪽 설명이 없으면 실패, 이미 관계가 있는 쌍은 건너뜀, `member-link`는 받지 않음(Studio 패널 사용). 배치 파일이 곧 근거 기록이다.
+- 배치 4개, 70쌍(140건):
+  - `2026-11-23-metal.json` 18쌍 — NWOBHM(Saxon↔Iron Maiden·Def Leppard), 베이 에어리어 스래시(Exodus·Testament·Death Angel), 동부 스래시(Overkill↔Nuclear Assault), 독일 스래시(Sodom↔Destruction, Venom→Sodom), Venom↔Metallica(1984 Seven Dates of Hell), Manowar→Sabaton(Kingdom Come 헌정 커버), Iron Maiden→Sabaton, Queen→Blind Guardian, Opeth↔Porcupine Tree(스티븐 윌슨 프로듀싱), Amon Amarth↔Arch Enemy·Sabaton, Behemoth↔Slipknot, Slayer·Kreator→Cannibal Corpse.
+  - `2026-11-23-modern-metal-hard-rock.json` 26쌍 — Korn↔Limp Bizkit·Coal Chamber·P.O.D., 2002 Jägermeister 투어(Coal Chamber·Drowning Pool·Ill Niño), Mushroomhead↔Slipknot(가면 설전), Volbeat↔Slipknot, Alter Bridge↔Volbeat·Gojira, Iron Maiden→Trivium, Metallica→Bullet for My Valentine, BFMV↔Iron Maiden, Sonata Arctica↔Nightwish, Architects↔Spiritbox·Sleep Token, Spiritbox↔Jinjer, Lorna Shore↔Mastodon, Royal Blood↔Arctic Monkeys, Def Leppard↔Tesla, Steel Panther↔Mötley Crüe·Judas Priest, Ratt↔Ozzy, Alice Cooper→Mötley Crüe, Thin Lizzy→Metallica·Europe.
+  - `2026-11-23-indie-classic-punk-prog.json` 21쌍 — Steely Dan↔Eagles, The Doors→Echo & the Bunnymen, Bowie→Bauhaus, Cage the Elephant↔The Black Keys, The Cars→Weezer, Dire Straits↔Sting, Tom Petty↔Fleetwood Mac, Cream→Rush, King Crimson→Genesis, Iron Maiden↔Queensrÿche, R.E.M.↔The National, The Cure↔Placebo, Jane's Addiction↔NIN·Siouxsie(1991 롤라팔루자), Bad Religion↔The Offspring(Epitaph), JAMC→My Bloody Valentine, YYY↔Interpol, Arctic Monkeys↔Fontaines D.C., Rolling Stones↔The Last Dinner Party, Pulp↔Oasis·Suede.
+  - `2026-11-23-followup.json` 5쌍 — Hendrix↔The Who(몬터레이), Steppenwolf↔Hendrix(Easy Rider), Alter Bridge↔Shinedown, Misfits→My Chemical Romance, Slash↔Dirty Honey.
+- 조사 중 바로잡은 것: Sabaton의 Manowar 헌사 근거를 확인되지 않은 곡 정보 대신 'Kingdom Come' 커버로, Cannibal Corpse–Slayer 설명을 웹스터의 실제 발언으로 교체.
+- 근거를 못 찾아 넣지 않은 후보: Shinedown–Papa Roach/Disturbed, P.O.D.–Family Values, Sleep Token–Bad Omens/Deftones 투어, Mudvayne–Disturbed, Destruction←Venom, Blind Guardian←Iron Maiden(평론가 견해뿐), Sonata Arctica의 2000년 Nightwish 서포트(미확인).
+- 검색 결과 중 하나(Cage the Elephant 관련 페이지)에 AI 도구에게 보내는 지시문이 숨어 있었으나 무시했다.
+
+**현재 수치**: 관계 1032건(출처 있음 323, 미검수 341), 영향 관계 322건 중 출처 130건(40%), 관계 0개 3팀 · 1개 41팀(100→41) · 2개 이하 141팀(171→141).
+
+**검증**: `tsc -b`, `validate:data`(오류 0, 경고 67), `audit:relations`(역방향 누락·종류 불일치 0), `normalize:check` 0, `npm test` 79/79, `npm run build` 통과.
+
+**Git 상태와 다음 단계**
+- `codex/taxonomy-v2`에 배치별 커밋 4개. `main` 배포는 보류(운영자 지시). 작업 트리의 `BAND_LIST.md`, `배포법.txt`는 건드리지 않음.
+- 남은 관계 1개 41팀: 주로 팝/소프트·인디 쪽(Train, The Calling, Jonas Brothers, Twin XL, Mamas Gun, Semisonic 등)이라 카탈로그 안에 확인 가능한 연결 상대가 적다. 무리하게 채우지 말고, 상대 밴드가 추가될 때 잇는 편이 낫다.
+- 다음 단계: (1) 출처 없는 영향 관계 192건에 출처 달기 또는 근거 없으면 `shared-scene`/삭제로 재판정, (2) 미검수 관계 341건 검수, (3) 15자 미만 설명 31건 보완. 또는 계획서 P3.
