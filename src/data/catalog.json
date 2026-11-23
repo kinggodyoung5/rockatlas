@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-23T11:53:27.260Z",
+  "updatedAt": "2026-11-23T11:58:34.745Z",
   "bands": [
     {
       "id": "wintersun",
@@ -2495,6 +2495,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "mo-tley-cru-e",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2011년 데프 레파드와 함께한 영국 아레나 공동 헤드라인 투어에서 서포트를 맡았다. 스틸 팬서가 패러디하는 1980년대 글램 메탈의 원조다.",
+          "source": {
+            "label": "MusicRadar — Def Leppard, Mötley Crüe and Steel Panther UK tour dates",
+            "url": "https://musicradar.com/totalguitar/def-leppard-motley-crue-and-steel-panther-uk-tour-dates-491553",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "judas-priest",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "2014년 가을 북미 투어에서 오프닝을 맡았다.",
+          "source": {
+            "label": "Blabbermouth — Judas Priest announces U.S. tour with Steel Panther",
+            "url": "https://blabbermouth.net/news/judas-priest-announces-u-s-tour-with-steel-panther",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -5835,6 +5865,21 @@
           "strength": 3,
           "note": "원래 하드록밴드로 시작했으나 스트라토바리우스의 음악에 반해 파워메탈로 전향하였다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "nightwish",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "토니 카코가 Wishmaster 투어에서 객원 보컬로 'Beauty and the Beast'를 불렀고, 2005·2008년 북미 투어 오프닝도 맡았다.",
+          "source": {
+            "label": "Wikipedia — Tony Kakko",
+            "url": "https://en.wikipedia.org/wiki/Tony_Kakko",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -6592,6 +6637,21 @@
           "note": "힙합 랩 음악 요소와 헤비니스 하드 록 리프를 결합하는 사운드 구성을 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "papa-roach"
+        },
+        {
+          "targetBandId": "korn",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "필디가 데모를 로스 로빈슨에게 건네며 데뷔의 계기를 만들어 준 밴드로, 1998년 첫 Family Values 투어를 함께 이끌었다.",
+          "source": {
+            "label": "Wikipedia — Limp Bizkit",
+            "url": "https://en.wikipedia.org/wiki/Limp_Bizkit",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -7028,6 +7088,21 @@
           "note": "시각적이고 파격적인 쇼맨십과 글램 록에 기반을 둔 캐치한 하드 록 사운드를 공유한다.",
           "reviewStatus": "draft",
           "mirroredFrom": "kiss"
+        },
+        {
+          "targetBandId": "mo-tley-cru-e",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "니키 식스가 음악이 점점 물러지던 시절 키스와 앨리스 쿠퍼가 등장했다고 회고하며 결정적 영향으로 꼽았다. 이후 Hey Stoopid(1991)에서 곡을 함께 썼다.",
+          "source": {
+            "label": "Literary Hub — Nikki Sixx on discovering hard rock in the middle of Idaho",
+            "url": "https://lithub.com/motley-crues-nikki-sixx-on-discovering-hard-rock-in-the-middle-of-idaho/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -7771,6 +7846,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "tesla",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1987~88년 Hysteria 투어에서 100회 넘게 오프닝을 맡으며 데뷔 앨범을 알린 밴드다.",
+          "source": {
+            "label": "Def Leppard UK fan archive — Green Bay 1988",
+            "url": "https://deflepparduk.com/1988greenbay.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -12857,6 +12947,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "sonata-arctica",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "토니 카코가 Wishmaster 투어에 객원 보컬로 참여했고, 북미 투어 오프닝도 맡은 핀란드 파워 메탈 동료다.",
+          "source": {
+            "label": "Wikipedia — Tony Kakko",
+            "url": "https://en.wikipedia.org/wiki/Tony_Kakko",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -16518,6 +16623,36 @@
           "strength": 3,
           "note": "프론트맨 마일스 케네디가 메인 보컬리스트로 병행 활동하는 프로젝트 하드 록 밴드다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "volbeat",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2016년 유럽 아레나 투어에서 고지라와 함께 서포트를 맡았다.",
+          "source": {
+            "label": "Louder — Alter Bridge to tour Europe with Volbeat and Gojira",
+            "url": "https://www.loudersound.com/news/alter-bridge-europe-tour-2016-volbeat-gojira-like-a-storm",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "gojira",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "2016년 유럽 아레나 투어 후반부에 서포트로 합류했다.",
+          "source": {
+            "label": "Louder — Alter Bridge to tour Europe with Volbeat and Gojira",
+            "url": "https://www.loudersound.com/news/alter-bridge-europe-tour-2016-volbeat-gojira-like-a-storm",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -30747,6 +30882,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "mushroomhead",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "가면과 작업복 차림이 겹쳐 2000년대 내내 언론을 통해 설전을 벌인 클리블랜드의 라이벌이다.",
+          "source": {
+            "label": "Louder — Slipknot vs Mushroomhead: nu metal's most ridiculous feud",
+            "url": "https://www.loudersound.com/features/slipknot-vs-mushroomhead-revisiting-nu-metals-most-ridiculous-feud",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "volbeat",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 북미 Knotfest Roadshow에 함께한 덴마크 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Slipknot announces Knotfest Roadshow with Volbeat, Gojira and Behemoth",
+            "url": "https://blabbermouth.net/news/slipknot-announces-knotfest-roadshow-tour-with-volbeat-gojira-and-behemoth",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -31028,6 +31193,51 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "limp-bizkit",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "필디가 데모를 프로듀서 로스 로빈슨에게 건네 데뷔의 길을 열어 준 후배 밴드로, 1998년 첫 Family Values 투어도 함께했다.",
+          "source": {
+            "label": "Wikipedia — Limp Bizkit",
+            "url": "https://en.wikipedia.org/wiki/Limp_Bizkit",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "coal-chamber",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 중반 LA 클럽가에서 위스키·록시 공연을 매진시키며 경쟁한 뉴메탈 동기 밴드다.",
+          "source": {
+            "label": "Encyclopedia.com — Coal Chamber",
+            "url": "https://www.encyclopedia.com/education/news-wires-white-papers-and-books/coal-chamber",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "p-o-d",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년 봄 콘의 유럽 투어 오프닝을 맡은 뒤 Ozzfest 2000으로 이어간 밴드다.",
+          "source": {
+            "label": "Nu Metal Agenda — Celebrating Ozzfest 2000",
+            "url": "https://numetalagenda.com/celebrating-ozzfest-2000-25-years-later/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -31758,6 +31968,36 @@
           "note": "1980년대 로스앤젤레스 클럽 신에서 함께 성장하며 글램 메탈의 대중화를 이끈 밴드들이다.",
           "reviewStatus": "draft",
           "mirroredFrom": "ratt"
+        },
+        {
+          "targetBandId": "steel-panther",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2011년 영국 아레나 투어에서 서포트를 맡은, 1980년대 글램 메탈을 패러디하는 밴드다.",
+          "source": {
+            "label": "MusicRadar — Def Leppard, Mötley Crüe and Steel Panther UK tour dates",
+            "url": "https://musicradar.com/totalguitar/def-leppard-motley-crue-and-steel-panther-uk-tour-dates-491553",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "alice-cooper",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "니키 식스가 키스와 함께 결정적 영향으로 꼽은 쇼크 록의 원조로, Hey Stoopid(1991)에서 곡을 함께 쓰기도 했다.",
+          "source": {
+            "label": "Literary Hub — Nikki Sixx on discovering hard rock in the middle of Idaho",
+            "url": "https://lithub.com/motley-crues-nikki-sixx-on-discovering-hard-rock-in-the-middle-of-idaho/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -32258,6 +32498,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "royal-blood",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "맷 헬더스가 2013년 글래스턴베리 무대에서 직접 만든 티셔츠를 입고 응원해 준 밴드로, 같은 매니지먼트에 소속돼 있다.",
+          "source": {
+            "label": "Wikipedia — Royal Blood (band)",
+            "url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -46055,6 +46310,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "trivium",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "곡 'Iron Maiden'을 커버해 Shogun(2008) 스페셜 에디션에 실은 후배 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Trivium guitarist talks about covering Iron Maiden",
+            "url": "https://blabbermouth.net/news/trivium-guitarist-talks-about-covering-iron-maiden",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "bullet-for-my-valentine",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2006년 투어 서포트를 맡은 웨일스 후배 밴드다.",
+          "source": {
+            "label": "Louder — Matt Tuck on meeting Metallica, Iron Maiden and falling out with Rob Zombie",
+            "url": "https://loudersound.com/features/matt-tuck-on-meeting-metallica-iron-maiden-and-falling-out-with-rob-zombie",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "reviewStatus": "published",
@@ -46517,6 +46802,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "bullet-for-my-valentine",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "매트 턱이 처음 산 음반이 이 밴드의 블랙 앨범이었다고 밝힌 웨일스 메탈코어 밴드다. 'Creeping Death' 등을 커버했다.",
+          "source": {
+            "label": "Blabbermouth — Bullet For My Valentine frontman: Metallica's Black Album was first record I ever bought",
+            "url": "https://blabbermouth.net/news/bullet-for-my-valentine-frontman-metallicas-black-album-was-first-record-i-ever-bought",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "thin-lizzy",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "이 밴드의 'Whiskey in the Jar' 편곡을 커버해 그래미를 받았고, 공연에서 필 리넛에게 곡을 바치기도 했다.",
+          "source": {
+            "label": "Louder — Watch Metallica pay tribute to Phil Lynott with Whiskey in the Jar",
+            "url": "https://www.loudersound.com/news/watch-metallica-pay-tribute-to-phil-lynott-in-ireland-with-whiskey-in-the-jar-cover",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "reviewStatus": "published",
@@ -52344,6 +52659,21 @@
           "strength": 3,
           "note": "1970~80년대 정통 헤비 메탈/하드 록의 날카로운 트윈 기타 리프와 하이톤 보컬 구성을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "steel-panther",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "2014년 가을 북미 투어에서 오프닝을 맡은 글램 메탈 패러디 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Judas Priest announces U.S. tour with Steel Panther",
+            "url": "https://blabbermouth.net/news/judas-priest-announces-u-s-tour-with-steel-panther",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "reviewStatus": "published",
@@ -56579,6 +56909,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "씬 리지판 'Whiskey in the Jar'를 커버해 Garage Inc.(1998)에 실었고, 이 곡으로 그래미 베스트 하드록 퍼포먼스를 받았다. 공연에서 필 리넛에게 곡을 바치기도 했다.",
+          "source": {
+            "label": "Louder — Watch Metallica pay tribute to Phil Lynott with Whiskey in the Jar",
+            "url": "https://www.loudersound.com/news/watch-metallica-pay-tribute-to-phil-lynott-in-ireland-with-whiskey-in-the-jar-cover",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "europe",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "기타리스트 존 노럼이 솔로 앨범마다 씬 리지 곡을 커버할 만큼 영향을 받은 스웨덴 하드록 밴드다.",
+          "source": {
+            "label": "Wikipedia — John Norum",
+            "url": "https://en.wikipedia.org/wiki/John_Norum",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -58065,6 +58425,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "arctic-monkeys",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "드러머 맷 헬더스가 2013년 글래스턴베리 헤드라인 무대에서 로열 블러드 티셔츠를 입어 이름을 알렸고, 같은 매니지먼트에 소속돼 있다.",
+          "source": {
+            "label": "Wikipedia — Royal Blood (band)",
+            "url": "https://en.wikipedia.org/wiki/Royal_Blood_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -61174,6 +61549,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "lorna-shore",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "북미 투어 2차 레그에 고지라와 함께 서포트로 동행한 데스코어 밴드다.",
+          "source": {
+            "label": "Destroy All Lines — Lorna Shore plot biggest Australia and New Zealand shows ever",
+            "url": "https://www.destroyalllines.com/blog/lorna-shore-plot-biggest-australia-and-new-zealand-shows-ever",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -61397,6 +61787,21 @@
           "note": "Lorna Shore는 2023년 Gojira와 Mastodon의 북미 공동 투어 The Mega-Monsters Tour에 지원 밴드로 참여했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "lorna-shore"
+        },
+        {
+          "targetBandId": "alter-bridge",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "2016년 유럽 아레나 투어 후반부에 서포트로 합류해 함께 무대에 선 헤드라이너 밴드다.",
+          "source": {
+            "label": "Louder — Alter Bridge to tour Europe with Volbeat and Gojira",
+            "url": "https://www.loudersound.com/news/alter-bridge-europe-tour-2016-volbeat-gojira-like-a-storm",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -66012,6 +66417,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "곡 'Iron Maiden'을 커버해 Shogun(2008) 스페셜 에디션에 실었고, 이후 Kerrang! 헌정 앨범에도 참여했다.",
+          "source": {
+            "label": "Blabbermouth — Trivium guitarist talks about covering Iron Maiden",
+            "url": "https://blabbermouth.net/news/trivium-guitarist-talks-about-covering-iron-maiden",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -66229,6 +66649,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "metallica",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "매트 턱이 처음 산 음반이 Metallica(블랙 앨범)였다고 말했고, 'Creeping Death'·'Welcome Home (Sanitarium)'을 커버했다.",
+          "source": {
+            "label": "Blabbermouth — Bullet For My Valentine frontman: Metallica's Black Album was first record I ever bought",
+            "url": "https://blabbermouth.net/news/bullet-for-my-valentine-frontman-metallicas-black-album-was-first-record-i-ever-bought",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2006년 아이언 메이든의 투어 서포트를 맡아 스티브 해리스를 만났다.",
+          "source": {
+            "label": "Louder — Matt Tuck on meeting Metallica, Iron Maiden and falling out with Rob Zombie",
+            "url": "https://loudersound.com/features/matt-tuck-on-meeting-metallica-iron-maiden-and-falling-out-with-rob-zombie",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -67946,6 +68396,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "architects",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "Those That Wish to Exist 영국 아레나 투어에서 서포트로 함께한 영국 메탈코어 밴드다.",
+          "source": {
+            "label": "Kerrang! — Sleep Token and Malevolence join Architects' UK tour",
+            "url": "https://kerrang.com/sleep-token-and-malevolence-join-architects-for-those-that-wish-to-exist-uk-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -68159,6 +68624,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "architects",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2024년 1월 유럽 투어에서 서포트로 함께한 영국 메탈코어 밴드다.",
+          "source": {
+            "label": "Metal Injection — Architects, Spiritbox, Loathe announce European tour",
+            "url": "https://metalinjection.net/tour-dates/architects-spiritbox-loathe-announce-european-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "jinjer",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2026년 Tsunami Sea 영국·유럽 투어에 스페셜 게스트로 함께한 우크라이나 메탈 밴드다.",
+          "source": {
+            "label": "Tuonela Magazine — Jinjer announce 2026 UK + EU tour as special guest for Spiritbox",
+            "url": "https://tuonelamagazine.com/jinjer-announce-2026-uk-eu-tour-as-special-guest-for-spiritbox",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -68597,6 +69092,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "ozzy-osbourne",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1984년 오지 오스본 투어 서포트로 Out of the Cellar를 미국 톱10에 올리는 계기를 잡았다.",
+          "source": {
+            "label": "Louder — The rise, fall and afterlife of Ratt",
+            "url": "https://www.loudersound.com/bands-artists/interviews/the-rise-fall-and-afterlife-of-ratt",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -68849,6 +69359,21 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "thin-lizzy",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "존 노럼이 솔로 앨범마다 곡을 커버할 만큼 영향을 받은 밴드로, 초기 유럽의 트윈 기타 하드록에 흔적을 남겼다.",
+          "source": {
+            "label": "Wikipedia — John Norum",
+            "url": "https://en.wikipedia.org/wiki/John_Norum",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -69142,6 +69667,21 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "def-leppard",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1987~88년 Hysteria 투어에서 100회 넘게 오프닝을 맡은 헤드라이너 밴드다.",
+          "source": {
+            "label": "Def Leppard UK fan archive — Green Bay 1988",
+            "url": "https://deflepparduk.com/1988greenbay.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -69454,6 +69994,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "ratt",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1984년 투어 서포트를 맡으며 Out of the Cellar로 크게 성공한 LA 글램 메탈 밴드다.",
+          "source": {
+            "label": "Louder — The rise, fall and afterlife of Ratt",
+            "url": "https://www.loudersound.com/bands-artists/interviews/the-rise-fall-and-afterlife-of-ratt",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -75484,6 +76039,51 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "korn",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 중반 LA 클럽가에서 경쟁하며 함께 뉴메탈의 틀을 만든 동기 밴드다.",
+          "source": {
+            "label": "Encyclopedia.com — Coal Chamber",
+            "url": "https://www.encyclopedia.com/education/news-wires-white-papers-and-books/coal-chamber",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "drowning-pool",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 일 니뇨와 함께 미국을 돈 뉴메탈 동료다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "ill-nino",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 매일 밤 바로 앞 순서로 무대에 선 라틴 메탈 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -75749,6 +76349,21 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "korn",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년 봄 유럽 투어에서 오프닝을 맡으며 함께 무대에 선 뉴메탈 선배 밴드다.",
+          "source": {
+            "label": "Nu Metal Agenda — Celebrating Ozzfest 2000",
+            "url": "https://numetalagenda.com/celebrating-ozzfest-2000-25-years-later/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -75981,6 +76596,36 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "coal-chamber",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 일 니뇨와 함께 미국을 돈 뉴메탈 동료다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "ill-nino",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 콜 체임버와 함께 미국을 돈 뉴메탈 동료다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -76300,6 +76945,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "coal-chamber",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 매일 밤 바로 뒤 순서로 무대에 선 뉴메탈 선배 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "drowning-pool",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2002년 Jägermeister Music Tour에서 콜 체임버와 함께 미국을 돈 뉴메탈 동료다.",
+          "source": {
+            "label": "Blabbermouth — Drowning Pool, Coal Chamber, Ill Niño confirmed for Jägermeister tour",
+            "url": "https://blabbermouth.net/news/drowning-pool-coal-chamber-ill-nino-confirmed-for-jagermeister-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -76571,6 +77246,21 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "가면과 작업복 차림이 겹쳐 2000년대 내내 언론을 통해 설전을 벌인 라이벌이다. 머시룸헤드가 2년 먼저 결성됐다.",
+          "source": {
+            "label": "Louder — Slipknot vs Mushroomhead: nu metal's most ridiculous feud",
+            "url": "https://www.loudersound.com/features/slipknot-vs-mushroomhead-revisiting-nu-metals-most-ridiculous-feud",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -76871,6 +77561,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "spiritbox",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2024년 1월 유럽 투어에서 서포트를 맡은 캐나다 메탈코어 밴드다.",
+          "source": {
+            "label": "Metal Injection — Architects, Spiritbox, Loathe announce European tour",
+            "url": "https://metalinjection.net/tour-dates/architects-spiritbox-loathe-announce-european-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "sleep-token",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "Those That Wish to Exist 영국 아레나 투어에서 서포트를 맡은 밴드다.",
+          "source": {
+            "label": "Kerrang! — Sleep Token and Malevolence join Architects' UK tour",
+            "url": "https://kerrang.com/sleep-token-and-malevolence-join-architects-for-those-that-wish-to-exist-uk-tour",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -77125,6 +77845,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 북미 Knotfest Roadshow에 고지라·베헤모스와 함께 참여했다.",
+          "source": {
+            "label": "Blabbermouth — Slipknot announces Knotfest Roadshow with Volbeat, Gojira and Behemoth",
+            "url": "https://blabbermouth.net/news/slipknot-announces-knotfest-roadshow-tour-with-volbeat-gojira-and-behemoth",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "alter-bridge",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2016년 유럽 아레나 투어에서 서포트로 함께한 헤드라이너 밴드다.",
+          "source": {
+            "label": "Louder — Alter Bridge to tour Europe with Volbeat and Gojira",
+            "url": "https://www.loudersound.com/news/alter-bridge-europe-tour-2016-volbeat-gojira-like-a-storm",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -77388,6 +78138,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "spiritbox",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2026년 Tsunami Sea 영국·유럽 투어에 스페셜 게스트로 함께했다.",
+          "source": {
+            "label": "Tuonela Magazine — Jinjer announce 2026 UK + EU tour as special guest for Spiritbox",
+            "url": "https://tuonelamagazine.com/jinjer-announce-2026-uk-eu-tour-as-special-guest-for-spiritbox",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
@@ -77679,6 +78444,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "mastodon",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "북미 투어 2차 레그에서 고지라와 함께 서포트로 동행했다.",
+          "source": {
+            "label": "Destroy All Lines — Lorna Shore plot biggest Australia and New Zealand shows ever",
+            "url": "https://www.destroyalllines.com/blog/lorna-shore-plot-biggest-australia-and-new-zealand-shows-ever",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:58:34.745Z"
         }
       ],
       "sources": [
