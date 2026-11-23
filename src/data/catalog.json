@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-23T11:58:34.745Z",
+  "updatedAt": "2026-11-23T12:00:55.774Z",
   "bands": [
     {
       "id": "wintersun",
@@ -1686,6 +1686,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "the-cure",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "로버트 스미스가 2004년 공연에 함께 올랐고, 그가 기획한 2018년 멜트다운 페스티벌에서 'Let's Go to Bed'를 커버했다.",
+          "source": {
+            "label": "Contactmusic — Placebo cover The Cure at Meltdown Festival",
+            "url": "https://admin.contactmusic.com/placebo/news/placebo-cover-the-cure-meltdown-festival_6126005.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -4118,6 +4133,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "my-bloody-valentine",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "케빈 실즈와 빌린다 버처가 함께 좋아한 밴드였고, 초기에는 이 밴드의 아류라는 평을 들을 만큼 노이즈 팝의 영향이 짙었다.",
+          "source": {
+            "label": "Guitar.com — How Kevin Shields and My Bloody Valentine changed guitar playing",
+            "url": "https://www.guitar.com/features/opinion-analysis/how-kevin-shields-my-bloody-valentine-changed-guitar-playing/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -4342,6 +4372,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-05T12:00:00.000Z"
+        },
+        {
+          "targetBandId": "r-e-m",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2008년 Accelerate 북미 투어 전 일정에서 오프닝을 맡은 헤드라이너 밴드다.",
+          "source": {
+            "label": "JamBase — R.E.M. tour with Modest Mouse and The National",
+            "url": "https://www.jambase.com/article/r-e-m-tour-w-m-mouse-national",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -9938,6 +9983,21 @@
           "strength": 3,
           "note": "특유의 차갑고 어두운 고딕 포스트 펑크 질감과 낮은 보컬 톤에서 강한 유사성을 보인다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "yeah-yeah-yeahs",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초 브루클린에서 출발해 뉴욕 록 리바이벌을 함께 이끈 동시대 밴드다.",
+          "source": {
+            "label": "NPR — Inside the whirlwind that was the NYC rock revival",
+            "url": "https://www.npr.org/sections/therecord/2017/05/24/529820681/this-was-it-inside-the-whirlwind-that-was-the-nyc-rock-revival",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -11157,6 +11217,21 @@
           "strength": 3,
           "note": "빠른 질주감과 캐치한 멜로디, 위트 있는 가사 구성의 스케이트 팝 펑크 사운드 특징을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "bad-religion",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "기타리스트 브렛 거레위츠가 세운 에피태프 레코드가 Smash(1994)를 발매했다.",
+          "source": {
+            "label": "Wikipedia — Brett Gurewitz",
+            "url": "https://en.wikipedia.org/wiki/Brett_Gurewitz",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -11662,6 +11737,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "echo-and-the-bunnymen",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "1987년 영화 The Lost Boys 사운드트랙에서 'People Are Strange'를 커버했고, 레이 만자렉이 직접 키보드와 프로듀싱을 맡았다.",
+          "source": {
+            "label": "Wikipedia — People Are Strange",
+            "url": "https://en.wikipedia.org/wiki/People_Are_Strange",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -14140,6 +14230,21 @@
           "note": "3인조 트리오 구성에서 정교한 테크닉과 뉴 웨이브 요소를 접목하는 시도를 공유했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "the-police"
+        },
+        {
+          "targetBandId": "cream",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "게디 리가 초창기에 따라 하려 했던 파워 트리오의 원형이다. 잭 브루스는 그가 베이시스트의 길을 굳히게 한 인물이다.",
+          "source": {
+            "label": "Wikipedia — Geddy Lee",
+            "url": "https://en.wikipedia.org/wiki/Geddy_Lee",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -15130,6 +15235,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "steely-dan",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 매니저를 둔 라이벌로, 'Hotel California'의 'steely knives'가 이 밴드를 가리킨다고 글렌 프라이가 밝혔다.",
+          "source": {
+            "label": "Ultimate Classic Rock — Why Eagles referenced Steely Dan in 'Hotel California'",
+            "url": "https://ultimateclassicrock.com/eagles-steely-dan-hotel-california/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -15875,6 +15995,21 @@
           "strength": 3,
           "note": "1980년대 아르페지오 쟁글 기타 선율과 독특한 인디 팝 정서를 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-national",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2008년 Accelerate 북미 투어 전 일정에서 모디스트 마우스와 함께 오프닝을 맡았다.",
+          "source": {
+            "label": "JamBase — R.E.M. tour with Modest Mouse and The National",
+            "url": "https://www.jambase.com/article/r-e-m-tour-w-m-mouse-national",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -16185,6 +16320,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "bauhaus",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "1982년 'Ziggy Stardust' 커버로 Top of the Pops에 출연한 고딕 록 밴드다.",
+          "source": {
+            "label": "Far Out — Bauhaus does Bowie: their 1982 tribute to 'Ziggy Stardust'",
+            "url": "https://faroutmagazine.co.uk/bauhaus-david-bowie-ziggy-stardust/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -19044,6 +19194,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "dire-straits",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "'Money for Nothing'(1985)의 'I want my MTV' 도입부를 부르며 공동 작곡자에 이름을 올린 밴드다.",
+          "source": {
+            "label": "Wikipedia — Money for Nothing",
+            "url": "https://en.wikipedia.org/wiki/Money_for_Nothing",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -26920,6 +27085,21 @@
           "strength": 3,
           "note": "캐치한 파워 팝 멜로디와 이모 팝 스타일의 정교한 기타 훅을 공유한다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-cars",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "리버스 쿠오모가 원한 소리의 모델이었고, 프런트맨 릭 오케이섹이 Blue Album(1994)과 Green Album을 프로듀싱했다.",
+          "source": {
+            "label": "Wikipedia — Weezer (Blue Album)",
+            "url": "https://en.wikipedia.org/wiki/Weezer_(Blue_Album)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -30356,6 +30536,21 @@
           "strength": 3,
           "note": "특유의 조용함과 시끄러움이 대비되는 곡 구조와 멜로디 구성 방식에서 큰 영감을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "the-black-keys",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "댄 아우어바흐가 네 번째 앨범 Tell Me I'm Pretty(2015)를 내슈빌 Easy Eye Sound에서 프로듀싱했다.",
+          "source": {
+            "label": "Wikipedia — Tell Me I'm Pretty",
+            "url": "https://en.wikipedia.org/wiki/Tell_Me_I%27m_Pretty",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -32254,6 +32449,21 @@
           "strength": 3,
           "note": "1990년대 영국 브릿팝 및 얼터너티브 록 부흥을 함께 주도한 동시대 대표 그룹이다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "pulp",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1978년 결성 후 오랜 무명 끝에 브릿팝 시기 전성기를 맞은 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — Britpop",
+            "url": "https://en.wikipedia.org/wiki/Britpop",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -32513,6 +32723,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "fontaines-dc",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2023년 The Car 북미 투어 전 일정에서 오프닝을 맡은 더블린 포스트펑크 밴드다.",
+          "source": {
+            "label": "Hot Press — Fontaines D.C. to support Arctic Monkeys on North American tour",
+            "url": "https://www.hotpress.com/music/fontaines-d-c-to-support-arctic-monkeys-on-north-american-tour-22931455",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -40576,6 +40801,21 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "the-last-dinner-party",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "정식 음원도 내기 전인 2022년 7월, 하이드 파크 공연의 오프닝 무대에 섰다.",
+          "source": {
+            "label": "Far Out — The rise and rise of The Last Dinner Party",
+            "url": "https://faroutmagazine.co.uk/the-rise-and-rise-of-the-last-dinner-party-tracking-their-story-through-six-gigs/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -42370,6 +42610,21 @@
           "strength": 3,
           "note": "공통 요소: 같은 프로그레시브 / 사이키델릭, 프로그레시브 록, 복잡하고 테크니컬 · 긴 곡에 몰입하는",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "genesis",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "토니 뱅크스가 Trespass(1970)를 쓰던 시기 In the Court of the Crimson King이 큰 영향을 줬다고 말했다.",
+          "source": {
+            "label": "Wikipedia — King Crimson",
+            "url": "https://en.wikipedia.org/wiki/King_Crimson",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -46340,6 +46595,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-23T11:58:34.745Z"
+        },
+        {
+          "targetBandId": "queensryche",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "1985년 World Slavery 투어의 뉴욕 라디오 시티 공연에서 오프닝을 맡았다.",
+          "source": {
+            "label": "Wikipedia — World Slavery Tour",
+            "url": "https://en.wikipedia.org/wiki/World_Slavery_Tour",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -48361,6 +48631,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "placebo",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "로버트 스미스가 2004년 공연에 올라 'Without You I'm Nothing'과 'Boys Don't Cry'를 함께 불렀고, 2018년 그가 기획한 멜트다운 페스티벌에도 섰다.",
+          "source": {
+            "label": "Contactmusic — Placebo cover The Cure at Meltdown Festival",
+            "url": "https://admin.contactmusic.com/placebo/news/placebo-cover-the-cure-meltdown-festival_6126005.html",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -48634,6 +48919,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "jane-s-addiction",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1991년 첫 롤라팔루자를 기획하고 헤드라이너로 선 밴드다.",
+          "source": {
+            "label": "Wikipedia — List of Lollapalooza lineups by year",
+            "url": "https://en.wikipedia.org/wiki/List_of_Lollapalooza_lineups_by_year",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -49136,6 +49436,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "eagles",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 매니저를 둔 라이벌로, 'Everything You Did'에서 이글스를 언급하자 이글스가 'Hotel California'의 'steely knives'로 화답했다.",
+          "source": {
+            "label": "Ultimate Classic Rock — Why Eagles referenced Steely Dan in 'Hotel California'",
+            "url": "https://ultimateclassicrock.com/eagles-steely-dan-hotel-california/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -49987,6 +50302,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "jesus-and-mary-chain",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "케빈 실즈와 빌린다 버처가 함께 좋아했고, 초기 사운드에 노이즈 팝의 뼈대를 준 선배 밴드다.",
+          "source": {
+            "label": "Guitar.com — How Kevin Shields and My Bloody Valentine changed guitar playing",
+            "url": "https://www.guitar.com/features/opinion-analysis/how-kevin-shields-my-bloody-valentine-changed-guitar-playing/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -51240,6 +51570,21 @@
           "strength": 3,
           "note": "1990년대 초중반 브릿팝 운동을 이끌며 영국 음악 신을 주도한 동시대 라이벌이자 동료 밴드이다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "pulp",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 중반 블러·스웨이드와 함께 브릿팝을 대표한 셰필드 밴드다.",
+          "source": {
+            "label": "Wikipedia — Britpop",
+            "url": "https://en.wikipedia.org/wiki/Britpop",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "reviewStatus": "published",
@@ -55855,6 +56200,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "tom-petty-and-the-heartbreakers",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "보컬 스티비 닉스의 첫 솔로 히트 'Stop Draggin' My Heart Around'(1981)를 쓰고 연주한 밴드다.",
+          "source": {
+            "label": "Wikipedia — Stop Draggin' My Heart Around",
+            "url": "https://en.wikipedia.org/wiki/Stop_Draggin%27_My_Heart_Around",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -56272,6 +56632,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "rush",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "게디 리가 초창기에 크림을 흉내 내며 'Spoonful'을 연주했고, 잭 브루스를 베이시스트로서 자신을 바꿔 놓은 인물로 꼽았다.",
+          "source": {
+            "label": "Wikipedia — Geddy Lee",
+            "url": "https://en.wikipedia.org/wiki/Geddy_Lee",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -56484,6 +56859,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "sting",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "'Money for Nothing'(1985)의 'I want my MTV' 도입부를 불렀고, 'Don't Stand So Close to Me' 선율을 빌린 대가로 공동 작곡자에 올랐다.",
+          "source": {
+            "label": "Wikipedia — Money for Nothing",
+            "url": "https://en.wikipedia.org/wiki/Money_for_Nothing",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -56696,6 +57086,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T11:13:17.650Z"
+        },
+        {
+          "targetBandId": "cage-the-elephant",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "댄 아우어바흐가 Tell Me I'm Pretty(2015)를 프로듀싱한 켄터키 출신 밴드다.",
+          "source": {
+            "label": "Wikipedia — Tell Me I'm Pretty",
+            "url": "https://en.wikipedia.org/wiki/Tell_Me_I%27m_Pretty",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -57161,6 +57566,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "king-crimson",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "토니 뱅크스가 Trespass를 쓰던 시기 큰 영향을 받았다고 말한 프로그레시브 록의 출발점이다.",
+          "source": {
+            "label": "Wikipedia — King Crimson",
+            "url": "https://en.wikipedia.org/wiki/King_Crimson",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -57585,6 +58005,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "the-offspring",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "기타리스트 브렛 거레위츠가 세운 에피태프 레코드에서 Smash(1994)를 내며 인디 음반 최다 판매 기록을 세웠다.",
+          "source": {
+            "label": "Wikipedia — Brett Gurewitz",
+            "url": "https://en.wikipedia.org/wiki/Brett_Gurewitz",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -58230,6 +58665,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "oasis",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 중반 블러·스웨이드와 함께 브릿팝을 대표한 밴드다.",
+          "source": {
+            "label": "Wikipedia — Britpop",
+            "url": "https://en.wikipedia.org/wiki/Britpop",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
+        },
+        {
+          "targetBandId": "suede",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1990년대 초 브릿팝의 출발을 알린 밴드 중 하나로, 이후 함께 브릿팝을 대표했다.",
+          "source": {
+            "label": "Wikipedia — Britpop",
+            "url": "https://en.wikipedia.org/wiki/Britpop",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -58883,6 +59348,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "jane-s-addiction",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1991년 첫 롤라팔루자를 기획하고 헤드라이너로 선 밴드다.",
+          "source": {
+            "label": "Wikipedia — List of Lollapalooza lineups by year",
+            "url": "https://en.wikipedia.org/wiki/List_of_Lollapalooza_lineups_by_year",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -59091,6 +59571,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "david-bowie",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "1982년 'Ziggy Stardust'를 커버해 Top of the Pops 무대까지 오를 만큼 영향을 준 선배다.",
+          "source": {
+            "label": "Far Out — Bauhaus does Bowie: their 1982 tribute to 'Ziggy Stardust'",
+            "url": "https://faroutmagazine.co.uk/bauhaus-david-bowie-ziggy-stardust/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -59303,6 +59798,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "the-doors",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "1987년 'People Are Strange'를 커버했을 때 레이 만자렉이 직접 키보드와 프로듀싱을 맡아 준 밴드다.",
+          "source": {
+            "label": "Wikipedia — People Are Strange",
+            "url": "https://en.wikipedia.org/wiki/People_Are_Strange",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -62242,6 +62752,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "fleetwood-mac",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "스티비 닉스의 솔로 히트 'Stop Draggin' My Heart Around'(1981)는 톰 페티와 마이크 캠벨이 쓰고 하트브레이커스가 연주한 곡이다.",
+          "source": {
+            "label": "Wikipedia — Stop Draggin' My Heart Around",
+            "url": "https://en.wikipedia.org/wiki/Stop_Draggin%27_My_Heart_Around",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -62462,6 +62987,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "weezer",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "리버스 쿠오모가 'Just What I Needed' 같은 소리를 원해 릭 오케이섹에게 Blue Album(1994) 프로듀싱을 맡겼고, 오케이섹은 Green Album까지 함께했다.",
+          "source": {
+            "label": "Wikipedia — Weezer (Blue Album)",
+            "url": "https://en.wikipedia.org/wiki/Weezer_(Blue_Album)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -63099,6 +63639,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "interpol",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2000년대 초 뉴욕 록 리바이벌을 스트록스와 함께 이끈 동시대 밴드다.",
+          "source": {
+            "label": "NPR — Inside the whirlwind that was the NYC rock revival",
+            "url": "https://www.npr.org/sections/therecord/2017/05/24/529820681/this-was-it-inside-the-whirlwind-that-was-the-nyc-rock-revival",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -67738,6 +68293,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "the-rolling-stones",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "정식 음원도 내기 전인 2022년 7월, 하이드 파크 공연의 오프닝을 맡겨 준 밴드다.",
+          "source": {
+            "label": "Far Out — The rise and rise of The Last Dinner Party",
+            "url": "https://faroutmagazine.co.uk/the-rise-and-rise-of-the-last-dinner-party-tracking-their-story-through-six-gigs/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -68187,6 +68757,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "arctic-monkeys",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2023년 The Car 북미 투어 전 일정에서 오프닝을 맡았다.",
+          "source": {
+            "label": "Hot Press — Fontaines D.C. to support Arctic Monkeys on North American tour",
+            "url": "https://www.hotpress.com/music/fontaines-d-c-to-support-arctic-monkeys-on-north-american-tour-22931455",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -70802,6 +71387,21 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "shared-scene",
+          "strength": 1,
+          "note": "1985년 World Slavery 투어의 뉴욕 공연에서 오프닝을 맡은 헤드라이너 밴드다.",
+          "source": {
+            "label": "Wikipedia — World Slavery Tour",
+            "url": "https://en.wikipedia.org/wiki/World_Slavery_Tour",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
@@ -74719,6 +75319,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "nine-inch-nails",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "페리 패럴이 밴드의 고별 투어로 기획한 1991년 첫 롤라팔루자에서 막 떠오르던 나인 인치 네일스가 함께했다.",
+          "source": {
+            "label": "Wikipedia — List of Lollapalooza lineups by year",
+            "url": "https://en.wikipedia.org/wiki/List_of_Lollapalooza_lineups_by_year",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
+        },
+        {
+          "targetBandId": "siouxsie-and-the-banshees",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1991년 첫 롤라팔루자에서 유일한 영국 밴드이자 여성 프런트 밴드로 함께했다.",
+          "source": {
+            "label": "Wikipedia — List of Lollapalooza lineups by year",
+            "url": "https://en.wikipedia.org/wiki/List_of_Lollapalooza_lineups_by_year",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T12:00:55.774Z"
         }
       ],
       "sources": [
