@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-22T03:37:07.671Z",
+  "updatedAt": "2026-11-23T11:53:27.260Z",
   "bands": [
     {
       "id": "wintersun",
@@ -969,6 +969,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-20T12:24:24.832Z"
+        },
+        {
+          "targetBandId": "sabaton",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "'Kingdom Come'을 매노워에게 바치는 헌사로 커버한, 서사적 파워 메탈의 후배 밴드다.",
+          "source": {
+            "label": "Louder — Sabaton cover Manowar's Kingdom Come as a tribute",
+            "url": "https://www.loudersound.com/news/sabaton-cover-manowars-kingdom-come-as-a-tribute-to-the-oiled-up-kings-of-metal",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -7741,6 +7756,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "saxon",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 시기 NWOBHM에서 출발해 1980년대 초 함께 주목받은 영국 밴드다.",
+          "source": {
+            "label": "Wikipedia — New wave of British heavy metal",
+            "url": "https://en.wikipedia.org/wiki/New_wave_of_British_heavy_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -12504,6 +12534,21 @@
           "note": "Jinjer는 Arch Enemy의 Will to Power 유럽 투어에 지원 밴드로 참여하며 국제적인 공연 활동을 넓혔다.",
           "reviewStatus": "draft",
           "mirroredFrom": "jinjer"
+        },
+        {
+          "targetBandId": "amon-amarth",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "스웨덴 멜로딕 데스 메탈의 동료로, 2019년 Berserker 투어를 함께 돌았다.",
+          "source": {
+            "label": "Kerrang! — Amon Amarth announce UK tour with Arch Enemy",
+            "url": "https://www.kerrang.com/the-news/amon-amarth-announce-uk-tour-with-arch-enemy/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -13054,6 +13099,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-08-02T06:24:48.738Z"
+        },
+        {
+          "targetBandId": "slayer",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "알렉스 웹스터가 워낙 많이 들어 그 영향이 음악 곳곳에 배어 있을 것이라고 말한 스래시 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Cannibal Corpse: we listen to Slayer so much",
+            "url": "https://blabbermouth.net/news/cannibal-corpse-we-listen-to-slayer-so-much-that-the-influence-is-probably-very-pervasive",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "kreator",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "알렉스 웹스터가 곡을 쓸 때 돌아가는 뿌리로 꼽은 독일 스래시 밴드다.",
+          "source": {
+            "label": "At The Barrier — Alex Webster of Cannibal Corpse interview",
+            "url": "https://atthebarrier.com/2021/04/08/alex-webster-of-cannibal-corpse-interview/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -30657,6 +30732,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "behemoth",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 북미 Knotfest Roadshow에 스페셜 게스트로 함께한 폴란드 익스트림 메탈 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Slipknot announces Knotfest Roadshow with Volbeat, Gojira and Behemoth",
+            "url": "https://blabbermouth.net/news/slipknot-announces-knotfest-roadshow-tour-with-volbeat-gojira-and-behemoth",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -42590,6 +42680,21 @@
           },
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-07-17"
+        },
+        {
+          "targetBandId": "opeth",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "스티븐 윌슨이 Blackwater Park(2001)부터 세 장을 공동 프로듀싱한 스웨덴 프로그레시브 데스 메탈 밴드다.",
+          "source": {
+            "label": "Wikipedia — Blackwater Park",
+            "url": "https://en.wikipedia.org/wiki/Blackwater_Park",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "reviewStatus": "published",
@@ -45920,6 +46025,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "saxon",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 말~1980년대 초 뉴 웨이브 오브 브리티시 헤비메탈(NWOBHM)을 함께 이끈 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — New wave of British heavy metal",
+            "url": "https://en.wikipedia.org/wiki/New_wave_of_British_heavy_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "sabaton",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "요아킴 브로덴이 자신들이 하는 스타일을 지금도 이어가는 대표 밴드로 아이언 메이든을 꼽았다.",
+          "source": {
+            "label": "Blabbermouth — Joakim Brodén on Sabaton's classic heavy metal sound",
+            "url": "https://blabbermouth.net/news/joakim-broden-on-sabatons-classic-heavy-metal-sound-were-the-last-of-a-breed",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "reviewStatus": "published",
@@ -46367,6 +46502,21 @@
           "note": "Volbeat는 Metallica의 World Magnetic 투어와 이후 여러 대형 공연에서 지원 밴드로 함께했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "volbeat"
+        },
+        {
+          "targetBandId": "venom",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1984년 Seven Dates of Hell 투어에서 이 밴드의 오프닝으로 첫 유럽 투어를 치렀다.",
+          "source": {
+            "label": "Wikipedia — List of Metallica concert tours",
+            "url": "https://en.wikipedia.org/wiki/List_of_Metallica_concert_tours",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "reviewStatus": "published",
@@ -46964,6 +47114,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "cannibal-corpse",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "알렉스 웹스터가 슬레이어를 워낙 많이 들어 그 영향이 음악 곳곳에 배어 있을 것이라고 말한 후배 데스 메탈 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Cannibal Corpse: we listen to Slayer so much",
+            "url": "https://blabbermouth.net/news/cannibal-corpse-we-listen-to-slayer-so-much-that-the-influence-is-probably-very-pervasive",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "reviewStatus": "published",
@@ -51011,6 +51176,21 @@
           "strength": 3,
           "note": "보컬 다층 녹음과 웅장한 오페라틱 록 구성 및 클래식과의 결합 방식에서 거대한 음악적 영향을 받았다.",
           "reviewStatus": "draft"
+        },
+        {
+          "targetBandId": "blind-guardian",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "앨범 제목 A Night at the Opera(2002)를 퀸에게서 가져왔고, 겹겹이 쌓은 오페라풍 합창이 퀸의 영향으로 꼽힌다.",
+          "source": {
+            "label": "Wikipedia — A Night at the Opera (Blind Guardian album)",
+            "url": "https://en.wikipedia.org/wiki/A_Night_at_the_Opera_(Blind_Guardian_album)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "reviewStatus": "published",
@@ -59848,6 +60028,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "queen",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "앨범 제목 A Night at the Opera(2002)를 이 밴드에게서 가져왔고, 오페라풍 합창 편곡에 큰 영향을 준 밴드다.",
+          "source": {
+            "label": "Wikipedia — A Night at the Opera (Blind Guardian album)",
+            "url": "https://en.wikipedia.org/wiki/A_Night_at_the_Opera_(Blind_Guardian_album)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -60056,6 +60251,51 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "manowar",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "'Kingdom Come'을 헌사로 커버할 만큼 영향을 받은, 서사적 헤비메탈의 선배 밴드다.",
+          "source": {
+            "label": "Louder — Sabaton cover Manowar's Kingdom Come as a tribute",
+            "url": "https://www.loudersound.com/news/sabaton-cover-manowars-kingdom-come-as-a-tribute-to-the-oiled-up-kings-of-metal",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "influenced-by",
+          "strength": 2,
+          "note": "요아킴 브로덴이 자신들의 스타일을 지금도 이어가는 대표 밴드로 꼽은 선배 밴드다.",
+          "source": {
+            "label": "Blabbermouth — Joakim Brodén on Sabaton's classic heavy metal sound",
+            "url": "https://blabbermouth.net/news/joakim-broden-on-sabatons-classic-heavy-metal-sound-were-the-last-of-a-breed",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "amon-amarth",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "바이킹 서사를 다루는 스웨덴 메탈 동료로, 북미 투어를 함께 돌았다.",
+          "source": {
+            "label": "Exclaim! — Amon Amarth announce North American tour with Sabaton",
+            "url": "https://exclaim.ca/music/article/amon_amarth_announce_north_american_tour_with_sabaton_skeletonwitch",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -60487,6 +60727,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-09-29T10:58:04.671Z"
+        },
+        {
+          "targetBandId": "porcupine-tree",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "프런트맨 스티븐 윌슨이 Blackwater Park(2001)·Deliverance·Damnation을 공동 프로듀싱하며 오페스의 프로그레시브 전환에 깊이 관여했다.",
+          "source": {
+            "label": "Wikipedia — Blackwater Park",
+            "url": "https://en.wikipedia.org/wiki/Blackwater_Park",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -63870,6 +64125,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
           "reviewedAt": "2026-11-22T03:35:41.839Z"
+        },
+        {
+          "targetBandId": "exodus",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 베이 에어리어 스래시 신의 개척자로, 함께 'Big Six'로 꼽히는 동료다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "death-angel",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1980년대 후반 베이 에어리어 스래시 2세대를 함께 이끈 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -64094,6 +64379,21 @@
           "note": "Kreator·Destruction·Sodom·Tankard는 1980년대 독일 스래시 메탈의 대표적인 네 팀으로 같은 장면을 형성했다.",
           "reviewStatus": "draft",
           "mirroredFrom": "destruction"
+        },
+        {
+          "targetBandId": "cannibal-corpse",
+          "kind": "influenced",
+          "strength": 2,
+          "note": "알렉스 웹스터가 곡을 쓸 때 돌아가는 뿌리로 크리에이터를 슬레이어·소돔과 함께 꼽았다.",
+          "source": {
+            "label": "At The Barrier — Alex Webster of Cannibal Corpse interview",
+            "url": "https://atthebarrier.com/2021/04/08/alex-webster-of-cannibal-corpse-interview/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -64798,6 +65098,36 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "arch-enemy",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "스웨덴 멜로딕 데스 메탈의 동료로, 2019년 Berserker 투어를 함께 돌았다.",
+          "source": {
+            "label": "Kerrang! — Amon Amarth announce UK tour with Arch Enemy",
+            "url": "https://www.kerrang.com/the-news/amon-amarth-announce-uk-tour-with-arch-enemy/",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "sabaton",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "전쟁·전사 서사를 다루는 스웨덴 메탈 동료로, 북미 투어를 함께 돌았다.",
+          "source": {
+            "label": "Exclaim! — Amon Amarth announce North American tour with Sabaton",
+            "url": "https://exclaim.ca/music/article/amon_amarth_announce_north_american_tour_with_sabaton_skeletonwitch",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -65011,6 +65341,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-10-15T09:28:01.806Z"
+        },
+        {
+          "targetBandId": "slipknot",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "2019년 슬립낫의 북미 Knotfest Roadshow에 스페셜 게스트로 참여했다.",
+          "source": {
+            "label": "Blabbermouth — Slipknot announces Knotfest Roadshow with Volbeat, Gojira and Behemoth",
+            "url": "https://blabbermouth.net/news/slipknot-announces-knotfest-roadshow-tour-with-volbeat-gojira-and-behemoth",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -69349,6 +69694,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "iron-maiden",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1970년대 말~1980년대 초 뉴 웨이브 오브 브리티시 헤비메탈(NWOBHM)을 대표한 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — New wave of British heavy metal",
+            "url": "https://en.wikipedia.org/wiki/New_wave_of_British_heavy_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "def-leppard",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 시기 NWOBHM에서 출발해 1980년대 초 함께 주목받은 영국 밴드다.",
+          "source": {
+            "label": "Wikipedia — New wave of British heavy metal",
+            "url": "https://en.wikipedia.org/wiki/New_wave_of_British_heavy_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -70091,6 +70466,36 @@
             "publisher": "Wikipedia",
             "note": "장르와 편곡의 편집적 비교이며 실제 영향관계 주장 아님"
           }
+        },
+        {
+          "targetBandId": "sodom",
+          "kind": "influenced",
+          "strength": 3,
+          "note": "톰 엔젤리퍼가 베놈의 첫 앨범을 듣고 음악을 시작했다고 밝혔고, 초기에는 베놈보다 더 무겁게 연주하려 했다.",
+          "source": {
+            "label": "Wikipedia — Sodom (band)",
+            "url": "https://en.wikipedia.org/wiki/Sodom_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "metallica",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1984년 베놈의 Seven Dates of Hell 투어에 오프닝으로 서며 첫 유럽 투어를 치른 밴드다.",
+          "source": {
+            "label": "Wikipedia — List of Metallica concert tours",
+            "url": "https://en.wikipedia.org/wiki/List_of_Metallica_concert_tours",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -70336,6 +70741,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "testament",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "1980년대 샌프란시스코 베이 에어리어 스래시 신을 함께 이끈 'Big Six'의 동료다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "death-angel",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "같은 베이 에어리어 스래시 신에서 활동하며 함께 'Big Six'로 꼽히는 밴드다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -70567,6 +71002,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "nuclear-assault",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "뉴욕 하드코어의 속도를 흡수한 1980년대 동부 해안 스래시 신에서 함께 등장한 밴드다.",
+          "source": {
+            "label": "Louder — The story of East Coast thrash",
+            "url": "https://www.loudersound.com/features/we-took-influences-from-the-new-york-hardcore-scene-our-stuff-was-faster-than-in-the-bay-area-the-100mph-story-of-east-coast-thrash",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -70775,6 +71225,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "destruction",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "크리에이터와 함께 독일 스래시 메탈의 중심을 이룬 동시대 밴드다. 함께 투어하다 갈등을 빚은 일화도 있다.",
+          "source": {
+            "label": "Wikipedia — Sodom (band)",
+            "url": "https://en.wikipedia.org/wiki/Sodom_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "venom",
+          "kind": "influenced-by",
+          "strength": 3,
+          "note": "톰 엔젤리퍼가 이 밴드의 첫 앨범을 듣고 음악을 시작했다고 밝힐 만큼 초기 사운드에 큰 영향을 준 선배 밴드다.",
+          "source": {
+            "label": "Wikipedia — Sodom (band)",
+            "url": "https://en.wikipedia.org/wiki/Sodom_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -71057,6 +71537,21 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "sodom",
+          "kind": "shared-scene",
+          "strength": 3,
+          "note": "크리에이터와 함께 독일 스래시 메탈의 중심을 이룬 동시대 밴드다. 함께 투어하다 갈등을 빚은 일화도 있다.",
+          "source": {
+            "label": "Wikipedia — Sodom (band)",
+            "url": "https://en.wikipedia.org/wiki/Sodom_(band)",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -71298,6 +71793,36 @@
             "publisher": "Wikipedia",
             "note": "본문의 이력·멤버·투어 기록 기준"
           }
+        },
+        {
+          "targetBandId": "exodus",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "베이 에어리어 스래시 신의 개척자로, 함께 'Big Six'로 꼽히는 선배 밴드다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
+        },
+        {
+          "targetBandId": "testament",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "1980년대 후반 베이 에어리어 스래시 2세대를 함께 이끈 동시대 밴드다.",
+          "source": {
+            "label": "Wikipedia — Bay Area thrash metal",
+            "url": "https://en.wikipedia.org/wiki/Bay_Area_thrash_metal",
+            "publisher": "Wikipedia",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
@@ -72097,6 +72622,21 @@
           "reviewStatus": "reviewed",
           "reviewedBy": "ROCK ATLAS editorial",
           "reviewedAt": "2026-11-22T03:31:19.445Z"
+        },
+        {
+          "targetBandId": "overkill",
+          "kind": "shared-scene",
+          "strength": 2,
+          "note": "뉴저지 출신으로 1980년대 동부 해안 스래시 신을 함께 대표한 밴드다.",
+          "source": {
+            "label": "Louder — The story of East Coast thrash",
+            "url": "https://www.loudersound.com/features/we-took-influences-from-the-new-york-hardcore-scene-our-stuff-was-faster-than-in-the-bay-area-the-100mph-story-of-east-coast-thrash",
+            "publisher": "Editorial",
+            "accessedAt": "2026-11-23"
+          },
+          "reviewStatus": "reviewed",
+          "reviewedBy": "ROCK ATLAS editorial (AI 보조)",
+          "reviewedAt": "2026-11-23T11:53:27.260Z"
         }
       ],
       "sources": [
