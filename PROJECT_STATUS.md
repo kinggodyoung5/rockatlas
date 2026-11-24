@@ -1335,3 +1335,21 @@ Travis에서 `떼창하고 싶은 공연장형 3점`만으로 `더 웅장하게`
 - `codex/taxonomy-v2`에 P3 커밋 6개. `main` 배포는 보류(운영자 지시).
 - 계획서 P3 완료 조건 중 "공개 밴드 분류 전부 reviewed, 방향 1개뿐인 밴드 0팀"은 데이터 작업이라 `docs/CONTENT_BACKLOG.md` 5번으로 넘김.
 - 다음 단계: 계획서 P4(콘텐츠 깊이 — 음반·연표 스키마, 대표곡·소개 보강, 장르 해설) 또는 P5(화면과 정체성).
+
+## 50. 2026-11-24 무드 점수 검증 · 개선 계획 P4 — 콘텐츠 깊이 (구조와 자동 수집분)
+
+**무드 점수 검증**: `npm run audit:mood-evidence`(신규) — 점수 0~1인데 근거(소개·소리 설명·대표곡 가이드 문장 / 세부장르 / 같은 계열 동료 평균)가 있는 무드 162건을 뽑아 판정. 확실 28건 반영(`scripts/apply-mood-fixes-2026-11.ts`: Queen·RATM·Children of Bodom 등 리프·솔로, Linkin Park·Muse 등 신스, Maroon 5 그루브, Sum 41·Misfits 반항, Opeth·Sleep Token 무게 등). 그럴듯함 31건·오탐 목록은 `docs/CONTENT_BACKLOG.md` 6번.
+
+**P4 원칙**: 운영자 지시대로 코드·화면·검증과 출처에서 자동으로 가져올 수 있는 사실 데이터만 지금 하고, 사람이 써야 하는 문장(입문 추천 음반·해설, 장르 해설, 세부장르 정의, 소개문 보강, 과거 멤버, 트리비아)은 `docs/CONTENT_BACKLOG.md` 7번으로 넘겼다.
+
+- **P4-1 음반·연표**: 타입 `Album`·`Milestone`·`Trivia`, `Member.deceased`. `scripts/collect-albums.ts`(MusicBrainz release-group, 공식 발매만 `release-group-status=website-default`, 정규 음반만, 결성 전 개명 이전 음반 제외, 같은 제목은 구분명 — Weezer (Blue Album) 등, 1.2초 간격·캐시 `scripts/.cache/`, `--apply`/`--replace`). **307팀에 정규 음반 2,913장 반영**(Generation Axe는 정규 음반 없음). 상세 "02 / FOOTPRINT"를 결성·사건·음반·대표곡 연표로 교체(◇ 사건, ● 음반, ♪ 대표곡을 수록 음반 아래로, 입문 추천을 달면 추천 음반만 먼저 + "전체 디스코그래피 펼치기"). Studio "03B 음반과 연표" 한 줄 입력. 검증: 음반·연표 형식 오류, 결성 전 음반 경고, **대표곡 앨범명이 음반 목록에 없음 경고 45건**(오타·편집 음반 — 백로그).
+- **P4-2**: Studio YouTube 찾기가 공식 채널 ID가 있으면 업로드 목록(`playlistItems`, 쪽당 쿼터 1)에서 먼저 찾고, 없을 때만 검색(쿼터 100). 서버 `youtube-search?channelId=`. 대표곡 보강·공식 표시 확인은 백로그.
+- **P4-4**: 멤버 다섯째 칸에 사망 연도 → "· 2016년 별세". 해체 밴드는 "마지막 라인업", 활동 중이면 "현재 라인업".
+- **P4-5**: `TaxonomyGenre.history/starterBandIds/keyAlbums/sources`, `TaxonomySubgenre.description/exampleBandIds`. 장르 페이지 "이 장르 이야기 / 여기서 시작하세요 / 핵심 음반"(채워진 것만), 세부장르 칩 툴팁. 용어 사전 `?view=glossary`(수록 밴드 있는 세부장르 122개 + 무드 24개, 대표 밴드 자동 선택, 푸터 링크). Studio 디자인 작업실에 장르 해설·입문 밴드·대표 밴드·핵심 음반·출처 편집, "세부장르 정의" 편집기. `validate:taxonomy`가 가리키는 밴드 존재 확인.
+- **P4-6**: 상세 맨 아래 "출처와 검수"(Wikipedia·MusicBrainz·Wikidata 링크, 사진 저작자·라이선스 링크·원본, 마지막 검수일, "잘못된 정보 알리기" → 사이트 제안 폼). 사진 저작자 표기 11건을 Commons 원문 확인 후 정리(Mastodon은 사진가 안내문·이메일까지 들어가 있던 것을 요청한 표기 "Adam Kliczek, http://memoriesstay.com"로). Metallica의 "Library of Congress Life"는 실제 계정명이라 유지.
+- **P4-7**: 홈 "오늘의 밴드"(날짜 시드, 모두 같은 밴드). `trivia`는 출처가 있을 때만 상세에 "알고 계셨나요"로 표시. 연대기 페이지는 P7 계보도와 함께.
+- 기타: 장르·용어 사전 페이지의 "이전 페이지"가 섹션 라벨과 붙어 보이던 것을 한 줄 분리.
+
+**검증**: `tsc -b`, `validate:data`(오류 0, 경고 109 — 앨범명 불일치 45 추가), `validate:taxonomy`, `normalize:check` 0, `npm test` 110/110, `npm run build`. 브라우저: Metallica 연표(음반 아래 대표곡), 출처와 검수, 용어 사전 데스크톱·모바일(가로 넘침 없음), 장르 페이지 사전 링크, 오늘의 밴드, 콘솔 오류 없음.
+
+**Git·다음 단계**: `codex/taxonomy-v2`에 커밋. `main` 배포 보류. 다음: P5(화면과 정체성) 또는 백로그 콘텐츠 채우기.
