@@ -43,7 +43,7 @@
 
 점수가 0~1인데 근거(소개·소리 설명·대표곡 가이드 문장 / 세부장르 / 같은 계열 동료 평균)가 있는 무드 162건을 뽑아 하나씩 판단했다. 괄호는 제안 점수. 적용 전 운영자 확인.
 
-**확실 — 바로 고칠 만함 (27건)**
+**확실 — 2026-11-24 반영 완료 (28건, `scripts/apply-mood-fixes-2026-11.ts`)**
 - 기타 리프와 솔로 중심: Queen(4, 브라이언 메이), Rage Against the Machine(5, 톰 모렐로), Children of Bodom(5, 알렉시 라이호), Bullet for My Valentine(5), Wintersun(4), Sepultura(4), Skid Row(4), Toto(4, 스티브 루카서), The Smashing Pumpkins(4), Manowar(3), Sabaton(3)
 - 전자음과 신스: Linkin Park(4), Muse(4), Beck(4), Bad Omens(4), Neon Trees(3), Spiritbox(3)
 - 춤추기 좋고 그루비한: Maroon 5(4), Rage Against the Machine(4), Blur(3, 'Girls & Boys')

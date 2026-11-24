@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-23T12:02:07.342Z",
+  "updatedAt": "2026-11-24T12:29:13.652Z",
   "bands": [
     {
       "id": "wintersun",
@@ -251,7 +251,8 @@
           "technical-complex": 5,
           "fast-driving": 4,
           "melancholic-lonely": 4,
-          "massive-heavy": 4
+          "massive-heavy": 4,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -1038,7 +1039,8 @@
           "epic-cinematic": 5,
           "anthemic-live": 5,
           "fast-driving": 4,
-          "aggressive-heavy": 4
+          "aggressive-heavy": 4,
+          "riff-solo-driven": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료."
@@ -7452,7 +7454,8 @@
           "aggressive-heavy": 5,
           "massive-heavy": 5,
           "youth-rebellious": 4,
-          "fast-driving": 4
+          "fast-driving": 4,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -7664,7 +7667,8 @@
           "bright-upbeat": 4,
           "groovy-danceable": 4,
           "acoustic-organic": 4,
-          "experimental-weird": 4
+          "experimental-weird": 4,
+          "electronic-synth": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -8630,7 +8634,8 @@
           "fast-driving": 4,
           "anthemic-live": 5,
           "hopeful-uplifting": 4,
-          "riff-solo-driven": 4
+          "riff-solo-driven": 4,
+          "massive-heavy": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -14823,7 +14828,8 @@
           "romantic-emotional": 4,
           "warm-comforting": 3,
           "anthemic-live": 4,
-          "technical-complex": 4
+          "technical-complex": 4,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -23754,7 +23760,8 @@
           "groovy-danceable": 5,
           "fast-driving": 5,
           "anthemic-live": 5,
-          "youth-rebellious": 4
+          "youth-rebellious": 4,
+          "acoustic-organic": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -33901,7 +33908,8 @@
           "fast-driving": 4,
           "youth-rebellious": 4,
           "melancholic-lonely": 3,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "groovy-danceable": 3
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -35971,7 +35979,8 @@
           "epic-cinematic": 5,
           "anthemic-live": 5,
           "cosmic-psychedelic": 4,
-          "riff-solo-driven": 4
+          "riff-solo-driven": 4,
+          "electronic-synth": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -38169,7 +38178,8 @@
           "aggressive-heavy": 5,
           "anthemic-live": 5,
           "hopeful-uplifting": 4,
-          "bright-upbeat": 3
+          "bright-upbeat": 3,
+          "youth-rebellious": 4
         },
         "reviewStatus": "reviewed"
       },
@@ -38438,7 +38448,8 @@
           "aggressive-heavy": 5,
           "romantic-emotional": 5,
           "fast-driving": 4,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "reviewed"
       },
@@ -39246,7 +39257,8 @@
           "fast-driving": 4,
           "anthemic-live": 5,
           "bright-upbeat": 4,
-          "groovy-danceable": 2
+          "groovy-danceable": 2,
+          "electronic-synth": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -39488,7 +39500,9 @@
           "fast-driving": 4,
           "anthemic-live": 5,
           "technical-complex": 4,
-          "youth-rebellious": 3
+          "youth-rebellious": 3,
+          "riff-solo-driven": 5,
+          "groovy-danceable": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -39803,7 +39817,8 @@
           "romantic-emotional": 4,
           "melancholic-lonely": 5,
           "fast-driving": 4,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "electronic-synth": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -48454,7 +48469,8 @@
           "fast-driving": 5,
           "aggressive-heavy": 5,
           "epic-cinematic": 4,
-          "technical-complex": 4
+          "technical-complex": 4,
+          "riff-solo-driven": 5
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -52020,7 +52036,8 @@
           "romantic-emotional": 4,
           "epic-cinematic": 5,
           "technical-complex": 3,
-          "anthemic-live": 5
+          "anthemic-live": 5,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "기존 편집 데이터와 MusicBrainz 장르·태그를 교차한 1차 초안. Studio 운영자 검토 필요."
@@ -55887,7 +55904,8 @@
           "hopeful-uplifting": 4,
           "anthemic-live": 5,
           "bright-upbeat": 5,
-          "electronic-synth": 2
+          "electronic-synth": 2,
+          "groovy-danceable": 4
         },
         "reviewStatus": "draft",
         "reviewNote": "외부 조사 JSON에서 가져온 분류 초안 · 운영자 검수 필요"
@@ -58409,7 +58427,8 @@
         "moodScores": {
           "aggressive-heavy": 4,
           "dark-gloomy": 3,
-          "fast-driving": 3
+          "fast-driving": 3,
+          "youth-rebellious": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -59089,7 +59108,8 @@
         "moodScores": {
           "riff-solo-driven": 4,
           "massive-heavy": 4,
-          "fast-driving": 3
+          "fast-driving": 3,
+          "anthemic-live": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -60228,7 +60248,8 @@
         "moodScores": {
           "melancholic-lonely": 3,
           "noisy-wall": 3,
-          "epic-cinematic": 3
+          "epic-cinematic": 3,
+          "riff-solo-driven": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -61365,7 +61386,8 @@
         "moodScores": {
           "epic-cinematic": 5,
           "anthemic-live": 4,
-          "fast-driving": 3
+          "fast-driving": 3,
+          "riff-solo-driven": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -61815,7 +61837,9 @@
         "moodScores": {
           "technical-complex": 5,
           "dark-gloomy": 3,
-          "long-form-immersive": 4
+          "long-form-immersive": 4,
+          "aggressive-heavy": 3,
+          "massive-heavy": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -67419,7 +67443,8 @@
           "aggressive-heavy": 4,
           "youth-rebellious": 4,
           "anthemic-live": 3,
-          "melancholic-lonely": 3
+          "melancholic-lonely": 3,
+          "riff-solo-driven": 5
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -69198,7 +69223,8 @@
           "epic-cinematic": 4,
           "romantic-emotional": 4,
           "dreamy-ethereal": 3,
-          "aggressive-heavy": 3
+          "aggressive-heavy": 3,
+          "massive-heavy": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -69439,7 +69465,8 @@
         "moodScores": {
           "aggressive-heavy": 4,
           "massive-heavy": 4,
-          "dreamy-ethereal": 3
+          "dreamy-ethereal": 3,
+          "electronic-synth": 3
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
@@ -69662,7 +69689,8 @@
           "aggressive-heavy": 3,
           "romantic-emotional": 3,
           "cold-urban": 3,
-          "dark-gloomy": 3
+          "dark-gloomy": 3,
+          "electronic-synth": 4
         },
         "reviewStatus": "reviewed",
         "reviewNote": "외부 신원 교차 검증, 대표곡 공식 영상, 이미지 권리, 관계 검수 완료 (초안, 공개 전 최종 확인 대기)."
