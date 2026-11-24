@@ -1,11 +1,11 @@
 import { readFile } from 'node:fs/promises'
 
 interface TaxonomyItem { id: string; order?: number; name?: string; englishName?: string; aliases?: string[] }
-interface GenreItem extends TaxonomyItem { subgenreIds: string[]; quickMoodIds: string[] }
+interface GenreItem extends TaxonomyItem { subgenreIds: string[]; quickMoodIds: string[]; featuredBandIds?: string[]; starterBandIds?: string[]; keyAlbums?: Array<{ bandId: string; title: string; year: number }>; sources?: Array<{ url: string }> }
 interface TaxonomyFile {
   schemaVersion: number
   genres: GenreItem[]
-  subgenres: TaxonomyItem[]
+  subgenres: Array<TaxonomyItem & { exampleBandIds?: string[] }>
   moods: Array<TaxonomyItem & { groupId: string }>
   moodPresets?: Array<{ id: string; name: string; moodIds: string[]; excludeMoodIds?: string[] }>
 }
@@ -48,6 +48,14 @@ for (const genre of taxonomy.genres) {
   for (const id of genre.subgenreIds) if (!subgenreIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 세부 장르 ${id}`)
   for (const id of genre.quickMoodIds) if (!moodIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 분위기 ${id}`)
 }
+
+// 장르 해설·용어 사전이 가리키는 밴드는 실제로 있어야 한다 (plan P4-5).
+const knownBandIds = new Set(catalog.bands.map((band) => band.id))
+for (const genre of taxonomy.genres) {
+  for (const id of [...(genre.featuredBandIds ?? []), ...(genre.starterBandIds ?? []), ...(genre.keyAlbums ?? []).map((album) => album.bandId)]) if (!knownBandIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 밴드 ${id}`)
+  for (const source of genre.sources ?? []) if (!source.url?.startsWith('https://')) errors.push(`${genre.id}: 해설 출처는 https 주소여야 합니다.`)
+}
+for (const subgenre of taxonomy.subgenres) for (const id of subgenre.exampleBandIds ?? []) if (!knownBandIds.has(id)) errors.push(`${subgenre.id}: 존재하지 않는 대표 밴드 ${id}`)
 
 const presetIds = (taxonomy.moodPresets ?? []).map((preset) => preset.id)
 if (new Set(presetIds).size !== presetIds.length) errors.push('추천 조합 ID가 중복되었습니다.')

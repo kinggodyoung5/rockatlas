@@ -3,6 +3,7 @@ import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../da
 import type { Band } from '../types/music'
 import type { GenreTaxonomyId, MoodId } from '../types/taxonomy'
 import { BandCard } from './BandCard'
+import { GenreGuide } from './GenreGuide'
 
 interface GenreExplorerPageProps {
   bands: Band[]
@@ -14,9 +15,10 @@ interface GenreExplorerPageProps {
   onSelectBand: (band: Band) => void
   onToggleFavorite: (bandId: string) => void
   onFilter: (patch: { subgenreId?: string | 'all'; moodId?: MoodId | 'all' }) => void
+  onGlossary: () => void
 }
 
-export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favoriteIds, onBack, onSelectBand, onToggleFavorite, onFilter }: GenreExplorerPageProps) {
+export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favoriteIds, onBack, onSelectBand, onToggleFavorite, onFilter, onGlossary }: GenreExplorerPageProps) {
   const genre = taxonomyGenreById[genreId]
   const genreBands = bands.filter((band) => band.taxonomyV2?.primaryGenreId === genreId)
   const subgenreCounts = new Map<string, number>()
@@ -38,8 +40,9 @@ export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favorite
         <span className="section-no">GENRE {String(genre.order).padStart(2, '0')}</span>
         <h1>{genre.name}</h1><p>{genre.description}</p><strong>{genre.vibeDescription}</strong>
       </section>
+      <GenreGuide genre={genre} bands={bands} onSelectBand={onSelectBand} onGlossary={onGlossary} />
       <section className="catalog-controls shell" aria-label="장르 필터">
-        <div className="filter-block"><span>세부 장르</span><div className="filter-chips"><button className={subgenreId === 'all' ? 'active' : ''} onClick={() => onFilter({ subgenreId: 'all' })}>전체 <em>{genreBands.length}</em></button>{subgenres.map((item) => <button key={item.id} className={`${subgenreId === item.id ? 'active' : ''} ${item.count >= 3 ? 'is-prominent' : ''}`} onClick={() => onFilter({ subgenreId: item.id })}>{taxonomySubgenreById[item.id]?.name ?? item.id} <em>{item.count}</em></button>)}</div></div>
+        <div className="filter-block"><span>세부 장르</span><div className="filter-chips"><button className={subgenreId === 'all' ? 'active' : ''} onClick={() => onFilter({ subgenreId: 'all' })}>전체 <em>{genreBands.length}</em></button>{subgenres.map((item) => <button key={item.id} title={taxonomySubgenreById[item.id]?.description} className={`${subgenreId === item.id ? 'active' : ''} ${item.count >= 3 ? 'is-prominent' : ''}`} onClick={() => onFilter({ subgenreId: item.id })}>{taxonomySubgenreById[item.id]?.name ?? item.id} <em>{item.count}</em></button>)}</div></div>
         <div className="filter-block"><span>빠른 분위기</span><div className="filter-chips"><button className={moodId === 'all' ? 'active' : ''} onClick={() => onFilter({ moodId: 'all' })}>전체</button>{genre.quickMoodIds.map((id) => <button key={id} className={moodId === id ? 'active' : ''} onClick={() => onFilter({ moodId: id })}>{taxonomyMoodById[id].name}</button>)}</div></div>
         {(subgenreId !== 'all' || moodId !== 'all') && <button className="filter-reset" onClick={() => onFilter({ subgenreId: 'all', moodId: 'all' })}><RotateCcw size={14} /> 필터 초기화</button>}
       </section>

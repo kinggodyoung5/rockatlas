@@ -16,9 +16,11 @@ interface YoutubeTrackFinderProps {
   bandName: string
   tracks: Track[]
   onSelect: (trackId: string, candidate: YoutubeCandidate) => void
+  /** 밴드의 공식 YouTube 채널 ID(UC…). 있으면 업로드 목록에서 먼저 찾는다. */
+  channelId?: string
 }
 
-export function YoutubeTrackFinder({ bandName, tracks, onSelect }: YoutubeTrackFinderProps) {
+export function YoutubeTrackFinder({ bandName, tracks, onSelect, channelId }: YoutubeTrackFinderProps) {
   const [trackId, setTrackId] = useState(tracks[0]?.id ?? '')
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<YoutubeCandidate[]>([])
@@ -37,6 +39,15 @@ export function YoutubeTrackFinder({ bandName, tracks, onSelect }: YoutubeTrackF
     setLoading(true)
     setMessage('YouTube에서 검색하는 중…')
     try {
+      // 공식 채널 ID가 있으면 먼저 그 채널 업로드 목록에서 곡 제목으로 찾는다(쿼터 1/쪽). 없을 때만 일반 검색(쿼터 100).
+      if (channelId && !query) {
+        const fromChannel = await studioFetchJson<{ results: YoutubeCandidate[] }>(`/api/studio/youtube-search?channelId=${encodeURIComponent(channelId)}&q=${encodeURIComponent(selectedTrack?.title ?? '')}`).catch(() => ({ results: [] as YoutubeCandidate[] }))
+        if (fromChannel.results.length) {
+          setResults(fromChannel.results)
+          setMessage(`공식 채널 업로드에서 ${fromChannel.results.length}개 후보를 찾았습니다.`)
+          return
+        }
+      }
       const data = await studioFetchJson<{ results: YoutubeCandidate[] }>(`/api/studio/youtube-search?q=${encodeURIComponent(effectiveQuery)}`)
       setResults(data.results)
       setMessage(data.results.length ? `${data.results.length}개 후보를 찾았습니다.` : '검색 결과가 없습니다.')

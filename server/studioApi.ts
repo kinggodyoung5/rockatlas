@@ -747,6 +747,37 @@ export function studioApi(): Plugin {
           response.statusCode = 400
           return response.end('검색어를 두 글자 이상 입력하세요.')
         }
+        // channelId 모드 (plan P4-2): 검색(쿼터 100) 대신 공식 채널의 업로드 목록(쪽당 쿼터 1)에서 제목을 맞춘다.
+        // 채널 ID UC… 의 업로드 재생목록은 UU… 로 정해져 있다. 최대 6쪽(300편)까지만 본다.
+        const channelId = requestUrl.searchParams.get('channelId')?.trim() ?? ''
+        if (searchType === 'video' && /^UC[\w-]{22}$/.test(channelId)) {
+          try {
+            const words = query.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').split(' ').filter((word) => word.length > 1)
+            const results: Array<{ videoId: string; title: string; channelTitle: string; publishedAt: string; thumbnailUrl: string; url: string; matched: number }> = []
+            let pageToken = ''
+            for (let page = 0; page < 6; page += 1) {
+              const listUrl = new URL('https://www.googleapis.com/youtube/v3/playlistItems')
+              listUrl.search = new URLSearchParams({ part: 'snippet', playlistId: `UU${channelId.slice(2)}`, maxResults: '50', key: youtubeApiKey, ...(pageToken ? { pageToken } : {}) }).toString()
+              const listResponse = await fetch(listUrl)
+              const listPayload = await listResponse.json() as { error?: { message?: string }; nextPageToken?: string; items?: Array<{ snippet?: { title?: string; channelTitle?: string; publishedAt?: string; resourceId?: { videoId?: string }; thumbnails?: { medium?: { url?: string }; default?: { url?: string } } } }> }
+              if (!listResponse.ok) throw new Error(listPayload.error?.message ?? `YouTube API 오류 (${listResponse.status})`)
+              for (const item of listPayload.items ?? []) {
+                const videoId = item.snippet?.resourceId?.videoId
+                const title = item.snippet?.title ?? ''
+                const lower = title.toLocaleLowerCase()
+                const matched = words.filter((word) => lower.includes(word)).length
+                if (videoId && matched) results.push({ videoId, title, channelTitle: item.snippet?.channelTitle ?? '', publishedAt: item.snippet?.publishedAt ?? '', thumbnailUrl: item.snippet?.thumbnails?.medium?.url ?? item.snippet?.thumbnails?.default?.url ?? '', url: `https://www.youtube.com/watch?v=${videoId}`, matched })
+              }
+              if (!listPayload.nextPageToken) break
+              pageToken = listPayload.nextPageToken
+            }
+            results.sort((a, b) => b.matched - a.matched || a.title.length - b.title.length)
+            return json(response, { query, channelId, results: results.slice(0, 8).map(({ matched: _matched, ...item }) => item) })
+          } catch (error) {
+            response.statusCode = 502
+            return response.end(error instanceof Error ? error.message : 'YouTube 채널 목록 조회 실패')
+          }
+        }
         try {
           const controller = new AbortController()
           const timeout = setTimeout(() => controller.abort(), 12_000)

@@ -1,11 +1,13 @@
-import { ArrowLeft, CalendarDays, ExternalLink, Heart, MapPin, Share2, Users } from 'lucide-react'
+import { ArrowLeft, CalendarDays, ExternalLink, Flag, Heart, MapPin, Share2, Users } from 'lucide-react'
+import { useState } from 'react'
+import { buildBandTimeline } from '../lib/bandTimeline'
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
 import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { HitchhikingDirectionId } from '../config/hitchhiking'
 import type { BandDetailCopy } from '../data/siteContent'
 import type { JourneyStep, JourneyVia } from '../lib/hitchhiking'
-import type { Band, BandEraTag, Track } from '../types/music'
+import type { Band, BandEraTag, Member } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
 import { BandImage } from './BandImage'
 import { HitchhikingPanel } from './HitchhikingPanel'
@@ -47,6 +49,14 @@ export function groupEraTags(eraTags: BandEraTag[], activeYears: string) {
   })
 }
 
+function memberLine(member: Member) {
+  return [member.role, member.activeYears, member.deceased ? `${member.deceased}년 별세` : ''].filter(Boolean).join(' · ')
+}
+
+const sourceLinkOrder = ['Wikipedia', 'MusicBrainz', 'Wikidata'] as const
+const formatReviewDate = (value?: string) => value && /^\d{4}-\d{2}-\d{2}/.test(value) ? value.slice(0, 10).replace(/-/g, '.') : undefined
+const albumTypeLabels = { studio: '정규 음반', ep: 'EP', live: '라이브 음반', compilation: '편집 음반' } as const
+
 interface BandDetailProps {
   band: Band
   onBack: () => void
@@ -59,6 +69,8 @@ interface BandDetailProps {
   onShareJourney: () => void
   onShare: () => void
   bandDetailCopy: BandDetailCopy
+  /** "잘못된 정보 알리기" 링크(사이트 설정의 제안 폼). 없으면 링크를 숨긴다. */
+  reportUrl?: string
 }
 
 export function BandDetail({
@@ -73,7 +85,9 @@ export function BandDetail({
   onShareJourney,
   onShare,
   bandDetailCopy,
+  reportUrl,
 }: BandDetailProps) {
+  const [showAllAlbums, setShowAllAlbums] = useState(false)
   const genre = genreById[band.primaryGenre]
   const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
   const genreColor = taxonomyGenre?.color ?? genre.color
@@ -91,9 +105,20 @@ export function BandDetail({
   const currentMembers = band.members.filter((member) => member.status !== 'former')
   const formerMembers = band.members.filter((member) => member.status === 'former')
   const imageCredit = band.image.credit
-  const datedTracks = band.tracks.filter((track): track is Track & { year: number } => typeof track.year === 'number').sort((a, b) => a.year - b.year)
   const orderedTracks = [...band.tracks].sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity))
-  const albums = [...new Set(band.tracks.map((track) => track.album).filter((album): album is string => Boolean(album)))]
+  const essentialAlbums = (band.albums ?? []).filter((album) => album.essential)
+  // 입문 추천 음반이 정해져 있으면 그것을, 아니면 대표곡이 실린 음반을 "대표 음반"으로 보인다.
+  const albums = essentialAlbums.length
+    ? essentialAlbums.map((album) => album.title)
+    : [...new Set(band.tracks.map((track) => track.album).filter((album): album is string => Boolean(album)))]
+  const timeline = buildBandTimeline(band, { essentialOnly: !showAllAlbums })
+  const hiddenAlbumCount = essentialAlbums.length ? (band.albums?.length ?? 0) - essentialAlbums.length : 0
+  const stillActive = isStillActive(band.activeYears)
+  const sourceLinks = sourceLinkOrder
+    .map((publisher) => band.sources.find((source) => source.publisher === publisher && source.url))
+    .filter((source): source is NonNullable<typeof source> => Boolean(source))
+  const trivia = (band.trivia ?? []).filter((item) => item.source?.url)
+  const reviewedOn = formatReviewDate(band.reviewedAt)
   const youtubeChannel = band.sources.find((source) => source.publisher === 'YouTube' && source.official)
 
   return (
@@ -162,13 +187,24 @@ export function BandDetail({
 
         <section className="track-list-section">
           <span className="section-no">02 / FOOTPRINT</span>
-          <h2>대표곡으로 보는 발자취</h2>
-          <div className="career-timeline">
-            <div><time>{band.formed}</time><span><strong>{band.origin}에서 결성</strong><small>{band.activeYears}</small></span></div>
-            {datedTracks.map((track) => (
-              <div key={track.id}><time>{track.year}</time><span><strong>{track.title}</strong><small>{track.album ?? (track.releaseType === 'single' ? '싱글' : '싱글·수록 음반 정보 확인 중')}</small></span></div>
-            ))}
-          </div>
+          <h2>{band.albums?.length || band.milestones?.length ? '연표로 보는 발자취' : '대표곡으로 보는 발자취'}</h2>
+          <ol className="career-timeline band-timeline">
+            {timeline.map((entry) => {
+              if (entry.kind === 'formed') return <li key={entry.key} data-kind="event"><time>{entry.year}</time><span><strong>{band.origin}에서 결성</strong><small>{band.activeYears}</small></span></li>
+              if (entry.kind === 'milestone') return <li key={entry.key} data-kind="event"><time>{entry.year}</time><span><strong>{entry.milestone.text}</strong></span></li>
+              if (entry.kind === 'track') return <li key={entry.key} data-kind="track"><time>{entry.year}</time><span><strong>{entry.track.title}</strong><small>{entry.track.album ?? (entry.track.releaseType === 'single' ? '싱글' : '대표곡')}</small></span></li>
+              return <li key={entry.key} data-kind="album" data-essential={entry.album.essential ? 'true' : undefined}>
+                <time>{entry.year}</time>
+                <span>
+                  <strong>{entry.album.title}{entry.album.essential && <em className="album-badge">입문 추천</em>}</strong>
+                  <small>{albumTypeLabels[entry.album.type]}</small>
+                  {entry.album.note && <p>{entry.album.note}</p>}
+                  {entry.tracks.length > 0 && <ul>{entry.tracks.map((track) => <li key={track.id}>{track.title}</li>)}</ul>}
+                </span>
+              </li>
+            })}
+          </ol>
+          {hiddenAlbumCount > 0 && <button className="timeline-toggle" onClick={() => setShowAllAlbums(!showAllAlbums)}>{showAllAlbums ? '입문 추천 음반만 보기' : `전체 디스코그래피 펼치기 (${hiddenAlbumCount}장 더)`}</button>}
           <h3 className="listen-heading">대표곡</h3>
           <div className="track-list track-guide-list">
             {orderedTracks.map((item, index) => {
@@ -198,15 +234,21 @@ export function BandDetail({
           <h2>주요 멤버</h2>
           <div className="member-columns">
             <div>
-              <h3>현재 / 후기 라인업</h3>
-              {currentMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.activeYears ? ` · ${member.activeYears}` : ''}{member.status === 'touring' ? ' · 투어' : ''}</span></p>)}
+              <h3>{stillActive ? '현재 라인업' : '마지막 라인업'}</h3>
+              {currentMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{memberLine(member)}{member.status === 'touring' ? ' · 투어' : ''}</span></p>)}
             </div>
             {formerMembers.length > 0 && <div>
               <h3>과거 핵심 멤버</h3>
-              {formerMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{member.role}{member.activeYears ? ` · ${member.activeYears}` : ''}</span></p>)}
+              {formerMembers.map((member) => <p key={member.name}><strong>{member.name}</strong><span>{memberLine(member)}</span></p>)}
             </div>}
           </div>
         </section>
+
+        {trivia.length > 0 && <section className="trivia-section detail-grid-wide">
+          <span className="section-no">04 / TRIVIA</span>
+          <h2>알고 계셨나요</h2>
+          <ul>{trivia.map((item) => <li key={item.text}><p>{item.text}</p><a href={item.source.url} target="_blank" rel="noreferrer">{item.source.label} <ExternalLink size={12} /></a></li>)}</ul>
+        </section>}
       </div>
 
       <div className="shell">
@@ -220,6 +262,30 @@ export function BandDetail({
           onShareJourney={onShareJourney}
         />
         <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} copy={bandDetailCopy} />
+
+        <section className="sources-section" aria-labelledby="sources-title">
+          <span className="section-no">SOURCES</span>
+          <h2 id="sources-title">출처와 검수</h2>
+          <div className="sources-grid">
+            <div>
+              <h3>참고한 자료</h3>
+              <ul>{sourceLinks.map((source) => <li key={source.publisher}><a href={source.url} target="_blank" rel="noreferrer">{source.publisher} <ExternalLink size={12} /></a></li>)}</ul>
+              {(band.albums?.length ?? 0) > 0 && <p>음반 목록과 발매 연도는 MusicBrainz 기준입니다.</p>}
+            </div>
+            <div>
+              <h3>사진</h3>
+              <p>{imageCredit.reviewStatus === 'verified'
+                ? <>{imageCredit.creator ?? '저작자 미상'} · {imageCredit.licenseUrl ? <a href={imageCredit.licenseUrl} target="_blank" rel="noreferrer">{imageCredit.license}</a> : imageCredit.license}</>
+                : '출처·라이선스 검토 중'}</p>
+              <a href={imageCredit.sourceUrl} target="_blank" rel="noreferrer">원본 파일 <ExternalLink size={12} /></a>
+            </div>
+            <div>
+              <h3>검수</h3>
+              <p>{reviewedOn ? `마지막 검수 ${reviewedOn}` : '검수 기록 없음'}</p>
+              {reportUrl && <a className="report-link" href={reportUrl} target="_blank" rel="noreferrer" title={`${band.name} 정보에 대한 제안`}><Flag size={13} /> 잘못된 정보 알리기</a>}
+            </div>
+          </div>
+        </section>
       </div>
 
     </main>

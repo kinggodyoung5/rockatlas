@@ -61,6 +61,14 @@ export interface TaxonomyGenre {
    *  three subgenreIds names when those would repeat a word (e.g. "프로그레시브 록"/"프로그레시브 메탈")
    *  and wrap to two lines. Doesn't affect the subgenre filter chips shown inside the genre page. */
   cardSubgenreLabels?: string[]
+  /** 장르 해설 (plan P4-5): 어디서 시작됐고 어떻게 갈라졌나. 문단은 빈 줄로 나눈다. */
+  history?: string
+  /** "여기서 시작하세요": 이 순서로 들어 보라는 입문 밴드 3~5팀. */
+  starterBandIds?: string[]
+  /** 핵심 음반 3~5장. */
+  keyAlbums?: Array<{ bandId: string; title: string; year: number; note: string }>
+  /** 해설의 근거(위키백과 장르 문서 등). */
+  sources?: Array<{ label: string; url: string }>
 }
 
 export interface TaxonomySubgenre {
@@ -68,6 +76,10 @@ export interface TaxonomySubgenre {
   name: string
   englishName: string
   aliases?: string[]
+  /** 한두 문장 정의 (plan P4-5). 용어 사전과 세부장르 칩에 쓴다. */
+  description?: string
+  /** 대표 밴드. 비어 있으면 화면이 수록 밴드에서 자동으로 고른다. */
+  exampleBandIds?: string[]
 }
 
 export interface TaxonomyMood {

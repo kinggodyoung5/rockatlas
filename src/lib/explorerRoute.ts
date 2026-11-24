@@ -4,7 +4,7 @@ import type { EraId } from '../types/music'
 import type { GenreTaxonomyId, MoodId } from '../types/taxonomy'
 import { decodeProfileIds, encodeProfileIds } from './tasteProfile'
 
-export type ExplorerView = 'home' | 'genre' | 'bands' | 'moods' | 'profile'
+export type ExplorerView = 'home' | 'genre' | 'bands' | 'moods' | 'profile' | 'glossary'
 export type CatalogSort = 'name' | 'formed-asc' | 'formed-desc'
 
 export interface ExplorerRoute {
@@ -38,7 +38,7 @@ export function parseExplorerRoute(search = window.location.search): ExplorerRou
   const era = params.get('era')
   const sort = params.get('sort')
   return {
-    view: view === 'genre' || view === 'bands' || view === 'moods' || view === 'profile' ? view : 'home',
+    view: view === 'genre' || view === 'bands' || view === 'moods' || view === 'profile' || view === 'glossary' ? view : 'home',
     genreId: genre && genreIds.has(genre as GenreTaxonomyId) ? genre as GenreTaxonomyId : 'all',
     subgenreId: subgenre || 'all',
     quickMoodId: mood && moodIds.has(mood as MoodId) ? mood as MoodId : 'all',

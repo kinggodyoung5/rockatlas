@@ -60,3 +60,15 @@
 - 그 밖(3): Opeth 외 Epica 공격성, Nightwish 어두움, Architects·Behemoth 테크니컬, Nine Inch Nails 노이즈, Fleetwood Mac 몽환, The Kinks·American Authors·Ensiferum·The Cranberries·Rascal Flatts 어쿠스틱, Jimmy Eat World 밝음, Aerosmith 낭만, Green Day 웅장(American Idiot), Snow Patrol 잔잔, Kodaline 떼창, Queen 실험
 
 **오탐 — 바꾸지 않음**: My Chemical Romance·The Used·The Fray·Ride 밝음, Beach House 노이즈, Red Hot Chili Peppers 어두움, Black Sabbath·Ozzy·King Diamond 속도, Pink Floyd 테크니컬, Metallica·Van Halen·Radiohead 낭만 등 — 글에 단어가 한 번 나오거나 세부장르가 일부 시기만 가리키는 경우.
+
+### 7. P4 콘텐츠 (화면·입력란·검증은 2026-11-24에 완료, 내용 채우기는 여기로)
+
+- **입문 추천 음반·해설**: 음반 목록·연도는 MusicBrainz에서 자동으로 채웠다(`scripts/collect-albums.ts --apply`). 핵심 밴드부터 `essential`(3~5장)과 한 줄 `note`를 Studio "음반과 연표"에서 단다. 추천을 달면 상세 연표가 추천 음반만 먼저 보이고 "전체 디스코그래피 펼치기"가 생긴다.
+- **연표 사건(`milestones`)**: 결성·멤버 변동·활동 중단·재결합·수상. 출처 있는 것만.
+- **대표곡 2곡뿐인 밴드**(계획서 부록 A-3, `validate:data` 경고) → 3곡 이상. 공식 표시(`source.official`) 비율 85% 이상 — Studio YouTube 찾기가 이제 공식 채널 업로드 목록을 먼저 본다.
+- **대표곡 앨범명이 음반 목록에 없음** 경고(`validate:data`): 오타이거나 편집 음반·사운드트랙 수록곡. 앨범명을 고치거나 해당 음반을 `compilation`으로 추가.
+- **소개·소리 설명 보강**: `summary` 90자 미만, `style` 90자 미만 밴드(계획서 부록 A-5, A-6). 목표 summary 120~220자, style 100~200자, 사실 중심 `~다`체, "…년 …에서 결성된 밴드로" 반복 피하기.
+- **과거 멤버 보강·별세 표시**: 2005년 이전 결성인데 과거 멤버 0명인 밴드(부록 A-8). 멤버 다섯째 칸에 사망 연도.
+- **장르 해설**: 13장르 `history`(3~5문단, 연도·기점 음반·출처), `starterBandIds`, `keyAlbums`, `featuredBandIds` — Studio 디자인 작업실 장르 카드 편집. 채우면 장르 페이지 "이 장르 이야기 / 여기서 시작하세요 / 핵심 음반"과 시작 화면 "3팀 고르기"에 쓰인다.
+- **세부장르 정의**: 140개 `description`(한두 문장) — Studio "세부장르 정의". 용어 사전(`?view=glossary`)과 장르 칩 툴팁에 쓰인다.
+- **알고 계셨나요(`trivia`)**: 출처 필수. 채워진 밴드에만 표시된다.

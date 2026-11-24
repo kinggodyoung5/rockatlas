@@ -10,7 +10,7 @@ import { scoreBandSimilarity, similarBands } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
 import { resolvePendingRelations, syncMirroredRelation as syncMirroredRelationData } from '../lib/relationSync'
 import { studioFetchJson } from '../lib/studioApiClient'
-import { clone, createDraftBand, createTaxonomyDraft, membersToText, parseEraTags, parseMembers, parseTracks, tracksToText } from '../lib/studioBandUtils'
+import { clone, createDraftBand, createTaxonomyDraft, albumsToText, membersToText, milestonesToText, parseAlbums, parseEraTags, parseMembers, parseMilestones, parseTracks, tracksToText } from '../lib/studioBandUtils'
 import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
@@ -208,6 +208,7 @@ export function StudioPage() {
   const [taxonomyGenreDrafts, setTaxonomyGenreDrafts] = useState(() => clone(taxonomyGenres))
   const [taxonomyMoodDrafts, setTaxonomyMoodDrafts] = useState(() => clone(taxonomyMoods))
   const [taxonomyPresetDrafts, setTaxonomyPresetDrafts] = useState(() => clone(taxonomyMoodPresets))
+  const [taxonomySubgenreDrafts, setTaxonomySubgenreDrafts] = useState(() => clone(taxonomy.subgenres))
   const [taxonomyDirty, setTaxonomyDirty] = useState(false)
   const [taxonomyMessage, setTaxonomyMessage] = useState('현재 13개 장르 카드입니다.')
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
@@ -438,7 +439,7 @@ export function StudioPage() {
 
   const saveTaxonomyGenres = async () => {
     try {
-      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts, moodPresets: taxonomyPresetDrafts.filter((preset) => preset.name.trim() && preset.moodIds.length) }) })
+      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts, moodPresets: taxonomyPresetDrafts.filter((preset) => preset.name.trim() && preset.moodIds.length), subgenres: taxonomySubgenreDrafts }) })
       setTaxonomyDirty(false)
       setTaxonomyMessage(`13장르 카드 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
     } catch (error) { setTaxonomyMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
@@ -697,7 +698,7 @@ export function StudioPage() {
         </aside>}
 
         <div className="studio-editor">
-          {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} presets={taxonomyPresetDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onPresetsChange={changeTaxonomyPresets} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
+          {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} presets={taxonomyPresetDrafts} subgenres={taxonomySubgenreDrafts} onSubgenresChange={(next) => { setTaxonomySubgenreDrafts(next); setTaxonomyDirty(true) }} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onPresetsChange={changeTaxonomyPresets} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
           <StudioOperationsDashboard bands={catalogBands} pendingRelations={pendingRelations} hasUnsavedChanges={dirty || catalogDirty || siteDirty || taxonomyDirty} linkHealth={linkHealth} onSelectBand={chooseBand} />
 
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
@@ -742,10 +743,18 @@ export function StudioPage() {
           <section className="studio-form-section">
             <div className="studio-section-heading"><span>03</span><div><h3>멤버와 대표곡</h3><p>표 형식 대신 한 줄씩 입력하면 자동으로 구조화합니다.</p></div></div>
             <div className="studio-dual-fields">
-              <label>멤버 <small>이름 | 역할 | current/former/touring | 활동연도</small><textarea key={`${selectedId}-members`} defaultValue={membersToText(draft.members)} onBlur={(event) => change({ members: parseMembers(event.target.value) })} rows={8} /></label>
+              <label>멤버 <small>이름 | 역할 | current/former/touring | 활동연도 | 사망 연도(선택)</small><textarea key={`${selectedId}-members`} defaultValue={membersToText(draft.members)} onBlur={(event) => change({ members: parseMembers(event.target.value) })} rows={8} /></label>
               <label>대표곡 <small>제목 | YouTube ID 또는 URL | 연도 | 앨범 | 한 줄 감상 안내</small><textarea key={`${selectedId}-tracks-${tracksRevision}`} defaultValue={tracksToText(draft.tracks)} onBlur={(event) => change({ tracks: parseTracks(event.target.value, draft.tracks, draft.name) })} rows={8} placeholder="Paranoid | dQw4w9WgXcQ | 1970 | Paranoid | 압축적인 리프와 속도감에 주목" /></label>
             </div>
-            {draft.tracks.length > 0 && <YoutubeTrackFinder bandName={draft.name} tracks={draft.tracks} onSelect={selectYoutubeCandidate} />}
+            {draft.tracks.length > 0 && <YoutubeTrackFinder bandName={draft.name} tracks={draft.tracks} onSelect={selectYoutubeCandidate} channelId={draft.sources.map((source) => source.publisher === 'YouTube' && source.official ? (source.externalId?.startsWith('UC') ? source.externalId : source.url.match(/channel\/(UC[\w-]{22})/)?.[1]) : undefined).find(Boolean)} />}
+          </section>
+
+          <section className="studio-form-section">
+            <div className="studio-section-heading"><span>03B</span><div><h3>음반과 연표</h3><p>음반 목록·연도는 <code>scripts/collect-albums.ts</code>로 MusicBrainz에서 가져옵니다. 여기서는 입문 추천(*)과 한 줄 해설을 달고, 결성·멤버 변동·재결합 같은 사건을 적습니다.</p></div></div>
+            <div className="studio-dual-fields">
+              <label>음반 <small>제목 | 연도 | studio/ep/live/compilation | 입문 추천이면 * | 한 줄 해설</small><textarea key={`${selectedId}-albums`} defaultValue={albumsToText(draft.albums)} onBlur={(event) => change({ albums: parseAlbums(event.target.value, draft.albums) })} rows={8} placeholder="Master of Puppets | 1986 | studio | * | 스래시 메탈의 작곡 문법을 완성한 음반" /></label>
+              <label>연표 <small>연도 | formed/lineup/hiatus/reunion/event/award | 내용</small><textarea key={`${selectedId}-milestones`} defaultValue={milestonesToText(draft.milestones)} onBlur={(event) => change({ milestones: parseMilestones(event.target.value, draft.milestones) })} rows={8} placeholder="1986 | lineup | 베이시스트 클리프 버턴이 투어 버스 사고로 사망" /></label>
+            </div>
           </section>
 
           <section className="studio-form-section">

@@ -155,8 +155,13 @@ interface Band {
   relations: RelationDraft[]                // 0~3개, 근거 있는 만큼만 (targetBandName 방식, 위 설명 참고)
   sources: SourceRef[]                      // Wikipedia/Wikidata/MusicBrainz/Commons/YouTube 전부 포함
   reviewStatus: 'draft'                      // 항상 draft
+  // ── 선택 필드 (P4) ──
+  milestones?: Array<{ year: number; type: 'formed' | 'lineup' | 'hiatus' | 'reunion' | 'event' | 'award'; text: string }>  // 결성·멤버 변동·재결합 등, 출처 있는 것만
+  trivia?: Array<{ text: string; source: SourceRef }>  // 출처 URL 필수, 없으면 넣지 마라
 }
 ```
+
+> 음반 목록(`albums`)은 넣지 마라. 공개 전에 `scripts/collect-albums.ts`가 MusicBrainz에서 정규 음반 제목·연도를 가져온다. 멤버의 사망 연도는 `members[].deceased`(숫자)로 적는다.
 
 ---
 

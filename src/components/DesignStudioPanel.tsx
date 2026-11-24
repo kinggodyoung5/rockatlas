@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Save, Smartphone, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import type { MoodGroupId, MoodId, MoodPreset, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
+import type { MoodGroupId, MoodId, MoodPreset, TaxonomyGenre, TaxonomyMood, TaxonomySubgenre } from '../types/taxonomy'
 import { HITCHHIKING_DIRECTIONS } from '../config/hitchhiking'
 import type { BandDetailCopy, SiteContent, SiteSectionId } from '../data/siteContent'
 import { formatFileSize, optimizeImageUpload, type StudioImageAssetType } from '../lib/imageUpload'
@@ -14,12 +14,14 @@ interface DesignStudioPanelProps {
   genres: TaxonomyGenre[]
   moods: TaxonomyMood[]
   presets: MoodPreset[]
+  subgenres: TaxonomySubgenre[]
   genresDirty: boolean
   genreMessage: string
   onChange: (patch: Partial<SiteContent>) => void
   onGenresChange: (genres: TaxonomyGenre[]) => void
   onMoodsChange: (moods: TaxonomyMood[]) => void
   onPresetsChange: (presets: MoodPreset[]) => void
+  onSubgenresChange: (subgenres: TaxonomySubgenre[]) => void
   onSave: () => Promise<void>
   onSaveGenres: () => Promise<void>
 }
@@ -34,7 +36,9 @@ function colorToAccent(hex: string) {
   return [0, 2, 4].map((index) => Number.parseInt(normalized.slice(index, index + 2), 16)).join(' ')
 }
 
-export function DesignStudioPanel({ value, dirty, message, genres, moods, presets, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onPresetsChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
+export function DesignStudioPanel({ value, dirty, message, genres, moods, presets, subgenres, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onPresetsChange, onSubgenresChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
+  const updateSubgenre = (id: string, patch: Partial<TaxonomySubgenre>) => onSubgenresChange(subgenres.map((item) => item.id === id ? { ...item, ...patch } : item))
+  const describedCount = subgenres.filter((item) => item.description?.trim()).length
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
   const [imageMessage, setImageMessage] = useState('이미지는 용도에 맞게 자동 축소·압축되며 결과 용량을 여기에 표시합니다.')
@@ -359,6 +363,11 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, preset
           <button className="studio-upload-button studio-grid-span" onClick={() => pickGenreArt(genre.id)}><ImagePlus size={14} /> 이 장르의 삽화 교체</button>
           {visual.artMode === 'image' && visual.imageUrl && <div className="studio-genre-art-preview studio-grid-span" style={{ '--genre-preview-color': genre.color } as React.CSSProperties}><img src={visual.imageUrl} alt="" style={{ objectPosition: visual.imagePosition, opacity: visual.imageOpacity, transform: `scale(${visual.imageScale})` }} /><strong>{genre.displayName}</strong></div>}
           <label className="studio-grid-span">설명<textarea value={genre.description} onChange={(event) => updateGenre(genre.id, { description: event.target.value })} rows={3} /></label>
+          <label className="studio-grid-span">이 장르 이야기 <small>장르 페이지 해설. 문단은 빈 줄로 나눕니다. 연도와 기점 음반을 밝혀 쓰세요.</small><textarea value={genre.history ?? ''} onChange={(event) => updateGenre(genre.id, { history: event.target.value || undefined })} rows={6} /></label>
+          <label className="studio-grid-span">여기서 시작하세요 <small>입문 순서대로 밴드 ID를 쉼표로 (3~5팀)</small><input value={(genre.starterBandIds ?? []).join(', ')} onChange={(event) => updateGenre(genre.id, { starterBandIds: event.target.value.split(',').map((id) => id.trim()).filter(Boolean) })} /></label>
+          <label className="studio-grid-span">대표 밴드(장르 카드·시작 화면) <small>밴드 ID를 쉼표로</small><input value={genre.featuredBandIds.join(', ')} onChange={(event) => updateGenre(genre.id, { featuredBandIds: event.target.value.split(',').map((id) => id.trim()).filter(Boolean) })} /></label>
+          <label className="studio-grid-span">핵심 음반 <small>한 줄에 하나: 밴드 ID | 음반 제목 | 연도 | 한 줄 해설</small><textarea value={(genre.keyAlbums ?? []).map((album) => [album.bandId, album.title, album.year, album.note].join(' | ')).join('\n')} onChange={(event) => updateGenre(genre.id, { keyAlbums: event.target.value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([bandId, title, year]) => bandId && title && /^\d{4}$/.test(year ?? '')).map(([bandId, title, year, note]) => ({ bandId, title, year: Number(year), note: note ?? '' })) })} rows={4} /></label>
+          <label className="studio-grid-span">해설 출처 <small>한 줄에 하나: 이름 | https://…</small><textarea value={(genre.sources ?? []).map((source) => `${source.label} | ${source.url}`).join('\n')} onChange={(event) => updateGenre(genre.id, { sources: event.target.value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([, url]) => url?.startsWith('https://')).map(([label, url]) => ({ label, url })) })} rows={2} /></label>
           <p className="studio-upload-note studio-grid-span">세부 장르 {genre.subgenreIds.length}개 · 빠른 분위기 {genre.quickMoodIds.length}개 · 고유 ID는 데이터 연결 보호를 위해 잠겨 있습니다.</p>
         </div></details>
         })}
@@ -409,6 +418,19 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, preset
           <label className="studio-grid-span">카드 설명<textarea value={mood.description} onChange={(event) => updateMood(mood.id, { description: event.target.value })} rows={3} /></label>
           <p className="studio-upload-note studio-grid-span">고유 ID와 그룹은 기존 밴드 점수 연결을 보호하기 위해 잠겨 있습니다.</p>
         </div></details>)}
+      </div></details>
+      <details className="studio-genre-editor"><summary>세부장르 정의 ({describedCount}/{subgenres.length}) — 용어 사전·장르 칩에 표시</summary><div className="studio-subgenre-editor">
+        {genres.map((genre) => <details key={genre.id}><summary>{genre.displayName} · {genre.subgenreIds.filter((id) => subgenres.find((item) => item.id === id)?.description?.trim()).length}/{genre.subgenreIds.length}</summary>
+          {genre.subgenreIds.map((id) => {
+            const item = subgenres.find((subgenre) => subgenre.id === id)
+            if (!item) return null
+            return <div key={id} className="studio-subgenre-row">
+              <strong>{item.name}<small>{item.englishName}</small></strong>
+              <textarea value={item.description ?? ''} placeholder="한두 문장 정의: 언제 어디서 생겼고 어떤 소리인가" onChange={(event) => updateSubgenre(id, { description: event.target.value || undefined })} rows={2} />
+              <input value={(item.exampleBandIds ?? []).join(', ')} placeholder="대표 밴드 ID (쉼표)" onChange={(event) => updateSubgenre(id, { exampleBandIds: event.target.value.split(',').map((value) => value.trim()).filter(Boolean) })} />
+            </div>
+          })}
+        </details>)}
       </div></details>
       <details className="studio-genre-editor"><summary>느낌으로 찾기 추천 조합 ({presets.length})</summary><div className="studio-genre-editor-grid">
         {presets.map((preset, index) => <details key={preset.id}><summary>{preset.name}{preset.moodIds.length ? '' : ' · 무드를 고르세요'}</summary><div>

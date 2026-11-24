@@ -7,6 +7,8 @@ import { GenreExplorerPage } from './components/GenreExplorerPage'
 import { JourneyBar } from './components/JourneyBar'
 import { MoodFinderPage } from './components/MoodFinderPage'
 import { TasteProfilePage } from './components/TasteProfilePage'
+import { GlossaryPage } from './components/GlossaryPage'
+import { dailyBand } from './lib/dailyBand'
 import { SharePanel } from './components/SharePanel'
 import { loadPublicBand, publicBandById, publicBands as bands } from './data/publicBands'
 import { siteContent as staticSiteContent } from './data/siteContent'
@@ -217,6 +219,7 @@ function ExplorerApp() {
   const goBands = useCallback(() => updateRoute({ ...defaultRoute(), view: 'bands' }), [updateRoute])
   const goBandsSearch = useCallback(() => { goBands(); setSearchFocusToken((token) => token + 1) }, [goBands])
   const goMoods = useCallback(() => updateRoute({ ...defaultRoute(), view: 'moods' }), [updateRoute])
+  const goGlossary = useCallback(() => updateRoute({ ...defaultRoute(), view: 'glossary' }), [updateRoute])
   const goProfile = useCallback(() => { setProfilePickerToken(0); updateRoute({ ...defaultRoute(), view: 'profile' }) }, [updateRoute])
   const startWithTaste = useCallback(() => { setProfilePickerToken((token) => token + 1); updateRoute({ ...defaultRoute(), view: 'profile' }) }, [updateRoute])
   const goBackToPreviousPage = useCallback(() => {
@@ -339,6 +342,7 @@ function ExplorerApp() {
           setShareOpen(true)
         }}
         bandDetailCopy={siteContent.bandDetailCopy}
+        reportUrl={siteContent.suggestionLinkUrl || undefined}
       />
       <SharePanel
         open={shareOpen}
@@ -351,6 +355,7 @@ function ExplorerApp() {
   }
 
   const manifesto = <section className={`manifesto manifesto-bg-${siteContent.theme.manifestoBackgroundMode}`} key="manifesto">{siteContent.theme.manifestoBackgroundMode === 'image' && siteContent.theme.manifestoImageUrl && <img className="manifesto-bg-image" src={siteContent.theme.manifestoImageUrl} alt="" style={positionStyle(siteContent.theme.manifestoImagePosition, siteContent.theme.manifestoImagePositionMobile)} />}{siteContent.theme.manifestoBackgroundMode === 'image' && <div className="manifesto-bg-overlay" style={{ opacity: siteContent.theme.manifestoOverlayOpacity }} />}<div className="shell manifesto-inner"><span>{siteContent.manifestoLabel}</span><h2>{siteContent.manifestoTitle.split('\n').map((line, index) => <span key={index}>{index > 0 && <br />}{line}</span>)}</h2><button onClick={surpriseMe}>{siteContent.manifestoButtonLabel} <ArrowRight /></button></div></section>
+  const todaysBand = dailyBand(bands)
   const homeMain = (
     <main id="top" tabIndex={-1}>
       <section className="hero shell">
@@ -360,6 +365,7 @@ function ExplorerApp() {
         <div className="hero-index" aria-hidden="true">VOL. 01 / 2026</div>
       </section>
       <div className="shell"><JourneyBar historyIds={historyIds} favoriteIds={favoriteIds} onSelect={openBand} onClearHistory={clearHistory} /></div>
+      {todaysBand && <div className="shell daily-band"><span>오늘의 밴드</span><button onClick={() => openBand(todaysBand)}><strong>{todaysBand.name}</strong><small>{todaysBand.summary.split(/(?<=다\.)\s/)[0]}</small></button></div>}
       {siteContent.sectionOrder.map((sectionId) => {
         if (!siteContent.sectionVisibility[sectionId]) return null
         if (sectionId === 'genres') return <DiscoveryHome key="genres" bands={bands} label={siteContent.genreSectionLabel} title={siteContent.genreSectionTitle} description={siteContent.genreSectionDescription} genreVisuals={siteContent.genreVisuals} explorerVisuals={siteContent.explorerVisuals} onGenre={goGenre} onAllBands={goBands} onMoods={goMoods} />
@@ -371,8 +377,9 @@ function ExplorerApp() {
 
   const activeGenreId = route.genreId === 'all' ? taxonomyGenres[0].id : route.genreId
   const content = route.view === 'home' ? homeMain
-    : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goBackToPreviousPage} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId }, true)} />
+    : route.view === 'genre' ? <GenreExplorerPage bands={bands} genreId={activeGenreId} subgenreId={route.subgenreId} moodId={route.quickMoodId} favoriteIds={favoriteIds} onBack={goBackToPreviousPage} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onFilter={(patch) => updateRoute({ subgenreId: patch.subgenreId ?? route.subgenreId, quickMoodId: patch.moodId ?? route.quickMoodId }, true)} onGlossary={goGlossary} />
       : route.view === 'bands' ? <AllBandsPage bands={bands} query={route.query} genreId={route.genreId} subgenreId={route.subgenreId} eraId={route.eraId} countryCode={route.countryCode} sort={route.sort} favoriteIds={favoriteIds} sectionLabel={siteContent.allBandsSectionLabel} sectionTitle={siteContent.allBandsSectionTitle} sectionDescription={siteContent.allBandsSectionDescription} searchFocusToken={searchFocusToken} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
+        : route.view === 'glossary' ? <GlossaryPage bands={bands} onBack={goBackToPreviousPage} onSubgenre={(genreId, subgenreId) => updateRoute({ ...defaultRoute(), view: 'genre', genreId, subgenreId })} onMood={(moodId) => updateRoute({ ...defaultRoute(), view: 'moods', selectedMoodIds: [moodId] })} onSelectBand={openBand} />
         : route.view === 'profile' ? <TasteProfilePage key={`profile-${profilePickerToken}-${route.profileIds.join('.')}`} bands={bands} favoriteIds={favoriteIds} historyIds={historyIds} journeyIds={journeySteps.map((step) => step.bandId)} sharedIds={route.profileIds} startWithPicker={profilePickerToken > 0} onSelectBand={openBand} onToggleFavorite={toggleFavorite} onAddFavorites={addFavorites} onMoods={goMoods} onShare={(url) => { setProfileShareUrl(url); setShareOpen(true) }} onExport={exportState} onImport={importState} />
         : <MoodFinderPage bands={bands} selectedMoodIds={route.selectedMoodIds} excludeMoodId={route.excludeMoodId} genreId={route.genreId} eraId={route.eraId} countryCode={route.countryCode} favoriteIds={favoriteIds} sectionLabel={siteContent.moodSectionLabel} sectionTitle={siteContent.moodSectionTitle} sectionDescription={siteContent.moodSectionDescription} onFilter={(patch) => updateRoute(patch, true)} onSelectBand={openBand} onToggleFavorite={toggleFavorite} />
 
@@ -388,7 +395,7 @@ function ExplorerApp() {
       <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className="main-nav" aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><nav id="mobile-quick-nav" className={mobileMenu ? 'mobile-quick-nav is-open' : 'mobile-quick-nav'} aria-label="모바일 메뉴">{navLink('bands', '이름으로 검색', goBandsSearch)}{navLink('bands', '모든 밴드 보기', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}</nav><button className="menu-button" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="mobile-quick-nav">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
       {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
-      <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription}</p><span>{siteContent.footerLocation}</span></footer>
+      <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription} <a href="?view=glossary" onClick={(event) => { event.preventDefault(); goGlossary() }}>용어 사전</a></p><span>{siteContent.footerLocation}</span></footer>
       <SharePanel open={shareOpen} title={profileShareUrl ? '나의 ROCK ATLAS 취향 지도' : 'ROCK ATLAS — 락의 세계를 여행하는 안내서'} description={profileShareUrl ? '내가 저장한 밴드로 만든 취향 지도와 추천을 보내보세요.' : '락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요.'} url={profileShareUrl || undefined} onClose={() => { setShareOpen(false); setProfileShareUrl('') }} />
     </div>
   )

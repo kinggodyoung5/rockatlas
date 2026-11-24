@@ -1,5 +1,6 @@
 import { bands, catalogFile } from '../src/data/bands.ts'
 import { genres } from '../src/data/genres.ts'
+import { tracksMissingFromAlbums } from '../src/lib/bandTimeline.ts'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -83,6 +84,26 @@ for (const band of bands) {
   } else if (image.displayUrl || image.originalUrl || image.fileName) {
     warnings.push(`${band.id}: 미검수 이미지에 정적 파일 정보가 있음`)
   }
+
+  // 음반·연표·트리비아 (plan P4-1, P4-7). 필드가 없어도 화면은 그대로 나오므로 있는 경우만 검사한다.
+  const currentYear = new Date().getFullYear()
+  const validYear = (year: unknown) => Number.isInteger(year) && (year as number) >= 1940 && (year as number) <= currentYear + 1
+  const albumKeys = new Set<string>()
+  for (const album of band.albums ?? []) {
+    if (!album.title?.trim() || !validYear(album.year)) errors.push(`${band.id}: 음반 제목·연도 형식 오류 (${album.title ?? '?'})`)
+    if (!['studio', 'ep', 'live', 'compilation'].includes(album.type)) errors.push(`${band.id}: 음반 종류 오류 (${album.title})`)
+    const key = `${album.title}|${album.year}`
+    if (albumKeys.has(key)) errors.push(`${band.id}: 중복 음반 ${album.title} (${album.year})`)
+    albumKeys.add(key)
+    if (album.year < band.formed - 1) warnings.push(`${band.id}: 결성(${band.formed}) 전 음반 ${album.title} (${album.year})`)
+  }
+  for (const milestone of band.milestones ?? []) {
+    if (!validYear(milestone.year) || !milestone.text?.trim()) errors.push(`${band.id}: 연표 항목 형식 오류 (${milestone.text ?? '?'})`)
+    if (!['formed', 'lineup', 'hiatus', 'reunion', 'event', 'award'].includes(milestone.type)) errors.push(`${band.id}: 연표 종류 오류 (${milestone.type})`)
+  }
+  for (const item of band.trivia ?? []) if (!item.text?.trim() || !item.source?.url?.startsWith('https://')) errors.push(`${band.id}: 트리비아는 출처 URL이 필요함`)
+  for (const member of band.members) if (member.deceased !== undefined && !validYear(member.deceased)) errors.push(`${band.id}: ${member.name} 사망 연도 형식 오류`)
+  for (const track of tracksMissingFromAlbums(band)) warnings.push(`${band.id}/${track.id}: 대표곡 앨범 "${track.album}"이 음반 목록에 없음 (오타·편집 음반 확인)`)
 
   const trackIds = new Set<string>()
   for (const track of band.tracks) {

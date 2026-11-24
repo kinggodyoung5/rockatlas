@@ -8,3 +8,5 @@ src/data/generated/
 public/data/bands/
 public/bands/
 rock-atlas-backups/
+scripts/.cache/
+scripts/data/album-candidates.json

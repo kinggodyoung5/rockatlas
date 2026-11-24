@@ -1,5 +1,5 @@
 import { eras } from '../data/eras'
-import type { Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Track } from '../types/music'
+import type { Album, Band, BandEraTag, BandTaxonomyV2, EraId, GenreId, Member, Milestone, MilestoneType, Track } from '../types/music'
 import { slugify } from './bandIntake'
 
 export const clone = <T,>(value: T): T => structuredClone(value)
@@ -58,7 +58,36 @@ export function createDraftBand(): Band {
   }
 }
 
-export const membersToText = (members: Member[]) => members.map((member) => [member.name, member.role, member.status, member.activeYears ?? ''].join(' | ')).join('\n')
+export const membersToText = (members: Member[]) => members.map((member) => [member.name, member.role, member.status, member.activeYears ?? '', member.deceased ?? ''].join(' | ').replace(/( \| )+$/, '')).join('\n')
+
+/** 음반 한 줄: 제목 | 연도 | 종류(studio/ep/live/compilation) | 추천(*) | 한 줄 해설. 기존 출처는 제목+연도가 같으면 유지한다. */
+export const albumsToText = (albums: Album[] = []) => albums.map((album) => [album.title, album.year, album.type, album.essential ? '*' : '', album.note ?? ''].join(' | ').replace(/( \| )+$/, '')).join('\n')
+
+export function parseAlbums(value: string, current: Album[] = []): Album[] {
+  const types = new Set<Album['type']>(['studio', 'ep', 'live', 'compilation'])
+  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([title, year]) => Boolean(title) && /^\d{4}$/.test(year ?? '')).map(([title, year, type, essential, note]) => {
+    const existing = current.find((album) => album.title === title && album.year === Number(year))
+    return {
+      title,
+      year: Number(year),
+      type: types.has(type as Album['type']) ? type as Album['type'] : 'studio',
+      ...(essential === '*' ? { essential: true } : {}),
+      ...(note ? { note } : {}),
+      ...(existing?.source ? { source: existing.source } : {}),
+    }
+  }).sort((a, b) => a.year - b.year)
+}
+
+/** 연표 한 줄: 연도 | 종류(formed/lineup/hiatus/reunion/event/award) | 내용 */
+export const milestonesToText = (milestones: Milestone[] = []) => milestones.map((item) => [item.year, item.type, item.text].join(' | ')).join('\n')
+
+export function parseMilestones(value: string, current: Milestone[] = []): Milestone[] {
+  const types = new Set<MilestoneType>(['formed', 'lineup', 'hiatus', 'reunion', 'event', 'award'])
+  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([year, , text]) => /^\d{4}$/.test(year ?? '') && Boolean(text)).map(([year, type, text]) => {
+    const existing = current.find((item) => item.year === Number(year) && item.text === text)
+    return { year: Number(year), type: types.has(type as MilestoneType) ? type as MilestoneType : 'event', text, ...(existing?.source ? { source: existing.source } : {}) }
+  }).sort((a, b) => a.year - b.year)
+}
 export const tracksToText = (tracks: Track[]) => tracks.map((track) => [track.title, track.youtubeId, track.year ?? '', track.album ?? '', track.guide ?? ''].join(' | ')).join('\n')
 
 const youtubeIdFromInput = (value: string | undefined) => {
@@ -79,11 +108,12 @@ const youtubeTrackUrl = (bandName: string, trackTitle: string, youtubeId: string
   : `https://www.youtube.com/results?search_query=${encodeURIComponent(`${bandName} ${trackTitle}`)}`
 
 export function parseMembers(value: string): Member[] {
-  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([name]) => Boolean(name)).map(([name, role, status, activeYears]) => ({
+  return value.split(/\r?\n/).map((line) => line.split('|').map((item) => item.trim())).filter(([name]) => Boolean(name)).map(([name, role, status, activeYears, deceased]) => ({
     name,
     role: role || '역할 미정',
     status: status === 'former' || status === 'touring' ? status : 'current',
     activeYears: activeYears || undefined,
+    ...(/^\d{4}$/.test(deceased ?? '') ? { deceased: Number(deceased) } : {}),
   }))
 }
 

@@ -82,6 +82,36 @@ export interface Member {
   role: string
   activeYears?: string
   status: 'current' | 'former' | 'touring'
+  /** 사망 연도. 화면에는 "· 2016년 별세"로 표시한다(plan P4-4). */
+  deceased?: number
+}
+
+/** 음반 (plan P4-1). 목록과 연도는 MusicBrainz release-group에서 가져오고, `essential`·`note`는 사람이 단다. */
+export interface Album {
+  title: string
+  year: number
+  type: 'studio' | 'ep' | 'live' | 'compilation'
+  /** 입문 추천 음반 */
+  essential?: boolean
+  /** 한 줄 해설: 이 음반이 왜 중요한가 */
+  note?: string
+  source?: SourceRef
+}
+
+export type MilestoneType = 'formed' | 'lineup' | 'hiatus' | 'reunion' | 'event' | 'award'
+
+/** 연표의 사건 (plan P4-1): 결성·멤버 변동·활동 중단·재결합·사건·수상. */
+export interface Milestone {
+  year: number
+  type: MilestoneType
+  text: string
+  source?: SourceRef
+}
+
+/** "알고 계셨나요" (plan P4-7). 출처가 있어야 화면에 나온다. */
+export interface Trivia {
+  text: string
+  source: SourceRef
 }
 
 export interface Track extends ReviewRecord {
@@ -168,4 +198,8 @@ export interface Band extends Omit<ReviewRecord, 'reviewStatus'> {
   relations: Relation[]
   sources: SourceRef[]
   taxonomyV2?: BandTaxonomyV2
+  /** 상세 화면 전용(공개 인덱스에는 넣지 않는다). */
+  albums?: Album[]
+  milestones?: Milestone[]
+  trivia?: Trivia[]
 }
