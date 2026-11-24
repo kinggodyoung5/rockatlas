@@ -23,6 +23,13 @@ describe('explorer routes', () => {
     expect(parseExplorerRoute('?view=moods&selected=slow-calm&exclude=fast-driving').excludeMoodId).toBe('fast-driving')
   })
 
+  it('round-trips a shared taste profile', () => {
+    const route = { ...defaultRoute(), view: 'profile' as const, profileIds: ['metallica', 'slayer', 'iron-maiden'] }
+    expect(routeToSearch(route)).toBe('?view=profile&p=metallica.slayer.iron-maiden')
+    expect(parseExplorerRoute(routeToSearch(route))).toEqual(route)
+    expect(parseExplorerRoute('?view=profile&p=../x.ok-band').profileIds).toEqual(['ok-band'])
+  })
+
   it('falls back safely for unknown enum values', () => {
     const route = parseExplorerRoute('?view=unknown&genre=not-real&mood=nope&era=1800s&sort=random')
     expect(route).toMatchObject(defaultRoute())

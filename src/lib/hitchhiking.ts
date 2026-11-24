@@ -126,7 +126,7 @@ const formatDelta = (value: number) => `${value >= 0 ? '+' : '−'}${Math.abs(va
 
 /** "Metallica 대비 무게감 +1.2". 이미 끝자락에 있는 밴드에서는 차이가 작으므로 "Metallica만큼의 무게감"으로 말한다. */
 export function directionComparison(subject: Band, direction: HitchhikingDirection, gain: number) {
-  if (Math.abs(gain) < 0.2) return `${subject.name}만큼의 ${direction.metricLabel}, 다른 결`
+  if (Math.abs(gain) < minimumForwardGain) return `${subject.name}만큼의 ${direction.metricLabel}, 다른 결`
   return `${subject.name} 대비 ${direction.metricLabel} ${formatDelta(gain)}`
 }
 
@@ -198,7 +198,8 @@ export function recommendHitchhikingBands(
         visited: visited.has(candidate.id),
         reasons: [
           `${taxonomyMoodById[leadMood.moodId]?.name ?? leadMood.moodId} ${leadMood.rawScore}/5`,
-          directionComparison(subject, direction, gain),
+          // 카드 머리말(directionGain 기준)과 어긋나지 않게 같은 반올림 값을 쓴다.
+          directionComparison(subject, direction, Math.round(gain * 10) / 10),
           continuityReason,
         ],
       }

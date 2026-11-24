@@ -4,7 +4,8 @@ import { decodeJourney, type JourneyStep, type JourneyVia } from '../lib/hitchhi
 const FAVORITES_KEY = 'rock-atlas:favorites'
 const HISTORY_KEY = 'rock-atlas:history'
 const JOURNEY_KEY = 'rock-atlas:hitchhiking-journey'
-const MAX_HISTORY = 12
+/** 화면의 "최근 탐험" 칩은 6개만 보이지만, 취향 프로필(plan P3-5)을 위해 60개까지 쌓는다. */
+const MAX_HISTORY = 60
 const MAX_JOURNEY = 12
 
 function readList(key: string): string[] {
@@ -75,6 +76,22 @@ export function useExplorerState() {
     })
   }, [])
 
+  /** 시작 화면에서 고른 밴드를 한 번에 저장한다(이미 저장한 밴드는 그대로). */
+  const addFavorites = useCallback((bandIds: string[]) => {
+    setFavoriteIds((current) => [...current, ...bandIds.filter((id) => !current.includes(id))])
+  }, [])
+
+  /** 내보내기/가져오기(JSON 파일)로 다른 기기에서 이어 쓴다. 가져올 때는 형식이 맞는 값만 받는다. */
+  const exportState = useCallback(() => ({ app: 'rock-atlas', version: 1, exportedAt: new Date().toISOString(), favorites: favoriteIds, history: historyIds, journey: journeySteps }), [favoriteIds, historyIds, journeySteps])
+  const importState = useCallback((payload: unknown) => {
+    const data = payload as { app?: unknown; favorites?: unknown; history?: unknown; journey?: unknown }
+    if (!data || data.app !== 'rock-atlas') throw new Error('ROCK ATLAS에서 내보낸 파일이 아닙니다.')
+    const ids = (value: unknown) => Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string' && /^[a-z0-9][a-z0-9-]*$/i.test(item)) : []
+    setFavoriteIds([...new Set(ids(data.favorites))])
+    setHistoryIds(ids(data.history).slice(0, MAX_HISTORY))
+    if (Array.isArray(data.journey)) setJourneySteps(decodeJourney(data.journey.map((step: { bandId?: unknown; via?: unknown }) => `${String(step?.bandId ?? '')}${typeof step?.via === 'string' ? `~${step.via}` : ''}`).join(',')).slice(-MAX_JOURNEY))
+  }, [])
+
   const clearJourney = useCallback(() => setJourneySteps([]), [])
   const restoreJourney = useCallback((steps: JourneyStep[]) => setJourneySteps(steps.slice(-MAX_JOURNEY)), [])
 
@@ -89,5 +106,8 @@ export function useExplorerState() {
     travelJourney,
     clearJourney,
     restoreJourney,
+    addFavorites,
+    exportState,
+    importState,
   }
 }

@@ -2,8 +2,9 @@ import { eras } from '../data/eras'
 import { taxonomyGenres, taxonomyMoods } from '../data/taxonomy'
 import type { EraId } from '../types/music'
 import type { GenreTaxonomyId, MoodId } from '../types/taxonomy'
+import { decodeProfileIds, encodeProfileIds } from './tasteProfile'
 
-export type ExplorerView = 'home' | 'genre' | 'bands' | 'moods'
+export type ExplorerView = 'home' | 'genre' | 'bands' | 'moods' | 'profile'
 export type CatalogSort = 'name' | 'formed-asc' | 'formed-desc'
 
 export interface ExplorerRoute {
@@ -18,6 +19,8 @@ export interface ExplorerRoute {
   eraId: EraId | 'all'
   countryCode: string | 'all'
   sort: CatalogSort
+  /** 공유받은 취향 프로필의 밴드 id(`?view=profile&p=a.b.c`). 비어 있으면 내 프로필. */
+  profileIds: string[]
 }
 
 const genreIds = new Set(taxonomyGenres.map((genre) => genre.id))
@@ -35,7 +38,7 @@ export function parseExplorerRoute(search = window.location.search): ExplorerRou
   const era = params.get('era')
   const sort = params.get('sort')
   return {
-    view: view === 'genre' || view === 'bands' || view === 'moods' ? view : 'home',
+    view: view === 'genre' || view === 'bands' || view === 'moods' || view === 'profile' ? view : 'home',
     genreId: genre && genreIds.has(genre as GenreTaxonomyId) ? genre as GenreTaxonomyId : 'all',
     subgenreId: subgenre || 'all',
     quickMoodId: mood && moodIds.has(mood as MoodId) ? mood as MoodId : 'all',
@@ -45,6 +48,7 @@ export function parseExplorerRoute(search = window.location.search): ExplorerRou
     eraId: era && eraIds.has(era as EraId) ? era as EraId : 'all',
     countryCode: params.get('country')?.toUpperCase() || 'all',
     sort: sort === 'formed-asc' || sort === 'formed-desc' ? sort : 'name',
+    profileIds: view === 'profile' ? decodeProfileIds(params.get('p')) : [],
   }
 }
 
@@ -60,10 +64,11 @@ export function routeToSearch(route: ExplorerRoute) {
   if (route.eraId !== 'all') params.set('era', route.eraId)
   if (route.countryCode !== 'all') params.set('country', route.countryCode)
   if (route.sort !== 'name') params.set('sort', route.sort)
+  if (route.view === 'profile' && route.profileIds.length) params.set('p', encodeProfileIds(route.profileIds))
   const query = params.toString()
   return query ? `?${query}` : ''
 }
 
 export const defaultRoute = (): ExplorerRoute => ({
-  view: 'home', genreId: 'all', subgenreId: 'all', quickMoodId: 'all', selectedMoodIds: [], excludeMoodId: 'all', query: '', eraId: 'all', countryCode: 'all', sort: 'name',
+  view: 'home', genreId: 'all', subgenreId: 'all', quickMoodId: 'all', selectedMoodIds: [], excludeMoodId: 'all', query: '', eraId: 'all', countryCode: 'all', sort: 'name', profileIds: [],
 })

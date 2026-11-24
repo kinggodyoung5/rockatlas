@@ -228,6 +228,31 @@ img { display: block; max-width: 100%; }
 .mood-presets button:hover, .mood-presets button.is-selected { border-color: var(--orange); }
 .mood-presets button strong { font-size: 15px; }
 .mood-presets button small { color: #929095; font-size: 12px; }
+.taste-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; }
+.taste-message { margin-top: 10px; color: #8ad49a; font-size: 13px; }
+.taste-summary { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; margin: 10px auto 34px; }
+.taste-summary h2 { margin: 0 0 12px; color: #929095; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.taste-moods svg { width: 100%; max-width: 520px; height: auto; overflow: visible; }
+.taste-bar-label { fill: #e6e3e8; font-size: 12px; }
+.taste-bar-value { fill: #929095; font-size: 11px; }
+.taste-bar-track { fill: rgba(255,255,255,.08); }
+.taste-bar-fill { fill: var(--orange); }
+.taste-shares ul { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 6px; }
+.taste-shares li { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid #2a292e; font-size: 14px; }
+.taste-shares em { color: var(--orange); font-style: normal; font-weight: 700; }
+.taste-result { display: grid; }
+.taste-why { padding: 8px 12px; border: 1px solid rgba(232,99,53,.35); border-bottom: 0; background: rgba(232,99,53,.08); color: #bbb8be; font-size: 12px; }
+.taste-picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.taste-picker-grid button { display: grid; gap: 4px; padding: 0 0 10px; border: 1px solid #343239; background: #121216; color: inherit; text-align: left; cursor: pointer; }
+.taste-picker-grid button strong, .taste-picker-grid button small { padding: 0 10px; }
+.taste-picker-grid button small { color: #929095; font-size: 12px; }
+.taste-picker-grid button.is-selected { border-color: var(--orange); box-shadow: inset 0 0 0 1px var(--orange); }
+.taste-picker-grid button:disabled { cursor: default; opacity: .75; }
+.taste-picker-image { aspect-ratio: 4 / 3; overflow: hidden; background: #1a1a1e; }
+.taste-picker-image img { width: 100%; height: 100%; object-fit: cover; }
+.taste-picker-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 24px 0 40px; }
+.taste-picker-actions .primary-button:disabled { opacity: .45; cursor: not-allowed; }
+@media (max-width: 760px) { .taste-summary { grid-template-columns: 1fr; gap: 22px; } }
 .mood-results-jump { position: fixed; left: 50%; bottom: 22px; z-index: 30; transform: translateX(-50%); display: inline-flex; gap: 8px; align-items: center; padding: 12px 18px; border: 1px solid var(--orange); background: #121216; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
 
 .manifesto { background: var(--orange); color: white; position: relative; overflow: hidden; }
@@ -628,7 +653,8 @@ img { display: block; max-width: 100%; }
 .taxonomy-queue-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 12px 0; }
 .taxonomy-queue-controls label { display: grid; gap: 4px; font-size: 12px; color: #8b888e; }
 .taxonomy-queue-controls select { margin: 0; min-width: 200px; }
-.taxonomy-queue-toggle { display: flex !important; align-items: center; gap: 6px; }
+.taxonomy-queue-toggle { display: flex !important; align-items: center; gap: 6px; white-space: nowrap; }
+.taxonomy-queue-toggle input { width: auto; height: auto; min-height: 0; margin: 0; }
 .taxonomy-queue-controls small { color: #8b888e; }
 .taxonomy-queue-table-wrap { max-height: 560px; overflow: auto; border: 1px solid #2a292e; }
 .taxonomy-queue-table { border-collapse: collapse; font-size: 12px; min-width: 100%; }
