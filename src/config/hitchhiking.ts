@@ -5,6 +5,8 @@ export interface HitchhikingEntryRule {
   all: Partial<Record<MoodId, number>>
   /** When present, at least one mood in `any` must also meet its threshold. */
   any?: Partial<Record<MoodId, number>>
+  /** When present, every mood in `none` must stay BELOW its threshold (e.g. "calm" excludes fast bands). */
+  none?: Partial<Record<MoodId, number>>
 }
 
 /**
@@ -14,6 +16,7 @@ export interface HitchhikingEntryRule {
 export const HITCHHIKING_DIRECTIONS = [
   {
     id: 'heavier',
+    metricLabel: '무게감',
     label: '더 무겁게',
     resultLabel: '무게와 타격감을 따라',
     description: '더 강한 리프와 압도적인 에너지 쪽으로',
@@ -32,6 +35,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'dreamier',
+    metricLabel: '몽환감',
     label: '더 몽환적으로',
     resultLabel: '잔향과 우주감을 따라',
     description: '더 흐릿한 질감과 깊은 몰입감 쪽으로',
@@ -51,6 +55,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'accessible',
+    metricLabel: '대중성',
     label: '더 대중적으로',
     resultLabel: '선명한 멜로디를 따라',
     description: '더 쉽게 꽂히는 멜로디와 후렴 쪽으로',
@@ -71,6 +76,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'experimental',
+    metricLabel: '실험성',
     label: '더 실험적으로',
     resultLabel: '낯선 구조와 소리를 따라',
     description: '더 복잡하고 예측하기 어려운 소리 쪽으로',
@@ -90,6 +96,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'faster',
+    metricLabel: '속도감',
     label: '더 빠르게',
     resultLabel: '속도와 추진력을 따라',
     description: '더 빠른 비트와 질주하는 에너지 쪽으로',
@@ -104,6 +111,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'darker',
+    metricLabel: '어두움',
     label: '더 어둡게',
     resultLabel: '그늘진 정서와 긴장을 따라',
     description: '더 음울하고 차가운 정서의 소리 쪽으로',
@@ -123,6 +131,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'warmer',
+    metricLabel: '온기',
     label: '더 따뜻하게',
     resultLabel: '온기와 자연스러운 울림을 따라',
     description: '더 포근하고 어쿠스틱한 감촉의 소리 쪽으로',
@@ -142,6 +151,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'groovier',
+    metricLabel: '그루브',
     label: '더 그루비하게',
     resultLabel: '리듬과 몸의 움직임을 따라',
     description: '더 리드미컬하고 몸이 반응하는 소리 쪽으로',
@@ -157,6 +167,7 @@ export const HITCHHIKING_DIRECTIONS = [
   },
   {
     id: 'grander',
+    metricLabel: '웅장함',
     label: '더 웅장하게',
     resultLabel: '큰 스케일과 극적인 전개를 따라',
     description: '더 거대하고 영화적인 울림의 소리 쪽으로',
@@ -173,8 +184,31 @@ export const HITCHHIKING_DIRECTIONS = [
       'long-form-immersive': 0.4,
     },
   },
+  {
+    id: 'calmer',
+    metricLabel: '잔잔함',
+    label: '더 잔잔하게',
+    resultLabel: '느린 호흡과 여백을 따라',
+    description: '더 느리고 차분하게 가라앉는 소리 쪽으로',
+    iconKey: 'feather',
+    accent: '#8fb7c9',
+    entryRules: [
+      { all: { 'slow-calm': 3 } },
+      { all: { 'warm-comforting': 3 }, any: { 'romantic-emotional': 4, 'acoustic-organic': 3, 'melancholic-lonely': 4 }, none: { 'fast-driving': 3, 'aggressive-heavy': 3 } },
+      { all: { 'dreamy-ethereal': 4 }, any: { 'melancholic-lonely': 3, 'romantic-emotional': 3 }, none: { 'fast-driving': 3, 'aggressive-heavy': 3 } },
+    ],
+    moodWeights: {
+      'slow-calm': 1,
+      'warm-comforting': 0.5,
+      'dreamy-ethereal': 0.35,
+      'melancholic-lonely': 0.3,
+      'acoustic-organic': 0.3,
+    },
+  },
 ] as const satisfies ReadonlyArray<{
   id: string
+  /** 출발 밴드와의 차이를 말할 때 쓰는 짧은 명사 ("Metallica 대비 무게감 +1.2"). */
+  metricLabel: string
   label: string
   resultLabel: string
   description: string

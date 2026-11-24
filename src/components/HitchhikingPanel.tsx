@@ -1,9 +1,9 @@
-import { ArrowRight, AudioWaveform, FlaskConical, Gauge, Mountain, MoonStar, Radio, RotateCcw, Route, Share2, Sparkles, SunMedium, Weight } from 'lucide-react'
+import { ArrowRight, AudioWaveform, Feather, FlaskConical, Gauge, Mountain, MoonStar, Radio, RotateCcw, Route, Share2, Sparkles, SunMedium, Weight } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { hitchhikingDirectionById, type HitchhikingDirectionId } from '../config/hitchhiking'
 import type { BandDetailCopy } from '../data/siteContent'
 import { publicBandById, publicBands } from '../data/publicBands'
-import { availableHitchhikingDirections, recommendHitchhikingBands, type JourneyStep } from '../lib/hitchhiking'
+import { availableHitchhikingDirections, describeJourneyShifts, journeyShifts, recommendHitchhikingBands, type JourneyStep } from '../lib/hitchhiking'
 import type { Band } from '../types/music'
 import { BandImage } from './BandImage'
 
@@ -17,6 +17,7 @@ const directionIcons = {
   sun: SunMedium,
   waves: AudioWaveform,
   mountain: Mountain,
+  feather: Feather,
 }
 
 interface HitchhikingPanelProps {
@@ -57,6 +58,9 @@ export function HitchhikingPanel({
     .map((step) => ({ ...step, band: publicBandById[step.bandId] }))
     .filter((step): step is JourneyStep & { band: Band } => Boolean(step.band))
     .slice(-6)
+  // 4단계 이상 이동했으면 출발점 대비 가장 크게 달라진 축을 요약한다(plan P3-3).
+  const journeyStart = journeySteps.length >= 4 ? publicBandById[journeySteps[0].bandId] : undefined
+  const journeySummary = journeyStart && journeyStart.id !== band.id ? describeJourneyShifts(journeyShifts(journeyStart, band)) : ''
 
   useEffect(() => {
     setDirectionId(null)
@@ -120,13 +124,13 @@ export function HitchhikingPanel({
           </div>
           <div className="hitchhiking-candidates">
             {visibleRecommendations.map((item) => (
-              <button key={item.band.id} className="hitchhiking-card" onClick={() => onTravel(item.band, direction.id)}>
+              <button key={item.band.id} className={`hitchhiking-card${item.visited ? ' is-visited' : ''}`} onClick={() => onTravel(item.band, direction.id)}>
                 <div className="hitchhiking-card-image"><BandImage band={item.band} /></div>
                 <div className="hitchhiking-card-copy">
-                  <span>{item.directionGain >= 0.75 ? '확실한 방향 전환' : item.directionGain >= 0.2 ? '자연스러운 다음 걸음' : '이 방향을 더 깊게'}</span>
+                  <span>{item.visited ? '이미 지나온 곳' : item.directionGain >= 0.75 ? '확실한 방향 전환' : item.directionGain >= 0.2 ? '자연스러운 다음 걸음' : '이 방향을 더 깊게'}</span>
                   <strong>{item.band.name}</strong>
                   <ul>
-                    <li>{item.reasons[0]}</li>
+                    <li>{item.reasons[1]}</li>
                     <li>{item.reasons[2]}</li>
                   </ul>
                   <em>{copy.hitchhikingMoveLabel} <ArrowRight size={14} /></em>
@@ -148,6 +152,7 @@ export function HitchhikingPanel({
             </span>
           ))}
         </div>
+        {journeySummary && <p className="hitchhiking-route-summary">출발({journeyStart!.name}) 대비 {journeySummary}</p>}
         <div className="hitchhiking-route-actions">
           {journeySteps.length > 1 && <button onClick={onShareJourney}><Share2 size={14} /> {copy.hitchhikingShareLabel}</button>}
           <button onClick={onResetJourney}><RotateCcw size={14} /> {copy.hitchhikingRestartLabel}</button>

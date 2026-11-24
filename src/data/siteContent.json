@@ -232,6 +232,11 @@
         "label": "더 웅장하게",
         "description": "더 거대하고 영화적인 울림의 소리 쪽으로",
         "resultLabel": "큰 스케일과 극적인 전개를 따라"
+      },
+      "calmer": {
+        "label": "더 잔잔하게",
+        "description": "더 느리고 차분하게 가라앉는 소리 쪽으로",
+        "resultLabel": "느린 호흡과 여백을 따라"
       }
     },
     "relationEyebrow": "EDITORIAL CONNECTIONS",

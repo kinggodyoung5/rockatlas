@@ -3,7 +3,7 @@ import { hitchhikingDirectionById, type HitchhikingDirectionId } from '../config
 import { publicBands } from '../data/publicBands'
 import type { Band } from '../types/music'
 import type { MoodId, MoodScore } from '../types/taxonomy'
-import { availableHitchhikingDirections, decodeJourney, directionEntrySignal, encodeJourney, recommendHitchhikingBands, type JourneyStep } from './hitchhiking'
+import { availableHitchhikingDirections, decodeJourney, describeJourneyShifts, directionComparison, directionEntrySignal, encodeJourney, journeyShifts, recommendHitchhikingBands, type JourneyStep } from './hitchhiking'
 
 describe('히치하이킹 방향 추천', () => {
   const bandWithMoods = (moodScores: Partial<Record<MoodId, MoodScore>>): Band => ({
@@ -100,6 +100,43 @@ describe('히치하이킹 방향 추천', () => {
       limit: 5,
     })
     expect(revisited.slice(0, 3).some((item) => first.slice(0, 3).some((original) => original.band.id === item.band.id))).toBe(false)
+  })
+})
+
+describe('히치하이킹 개선 (P3-3)', () => {
+  const byId = (id: string) => publicBands.find((item) => item.id === id)!
+
+  it('Coldplay에서 "더 잔잔하게"가 열리고, 빠르거나 공격적인 밴드에는 열리지 않는다', () => {
+    expect(availableHitchhikingDirections(byId('coldplay'), publicBands).map((item) => item.direction.id)).toContain('calmer')
+    const calmer = hitchhikingDirectionById.calmer
+    expect(directionEntrySignal({ ...publicBands[0], taxonomyV2: { ...publicBands[0].taxonomyV2!, moodScores: { 'warm-comforting': 4, 'romantic-emotional': 5, 'fast-driving': 4 } } }, calmer)).toBe(0)
+    expect(directionEntrySignal(byId('metallica'), calmer)).toBe(0)
+  })
+
+  it('추천 이유에 출발 밴드 대비 차이와 이어지는 이유를 담는다', () => {
+    const metallica = byId('metallica')
+    const [first] = recommendHitchhikingBands(metallica, publicBands, 'heavier', { limit: 1 })
+    expect(first.reasons[1]).toMatch(/^Metallica (대비 무게감 [+−]\d\.\d|만큼의 무게감)/)
+    expect(first.reasons[2].length).toBeGreaterThan(2)
+    expect(directionComparison(metallica, hitchhikingDirectionById.heavier, 1.24)).toBe('Metallica 대비 무게감 +1.2')
+    expect(directionComparison(metallica, hitchhikingDirectionById.heavier, 0.1)).toBe('Metallica만큼의 무게감, 다른 결')
+  })
+
+  it('이미 지나온 밴드에 표시를 붙인다', () => {
+    const band = byId('coldplay')
+    const [first] = recommendHitchhikingBands(band, publicBands, 'calmer', { limit: 1 })
+    const again = recommendHitchhikingBands(band, publicBands, 'calmer', { visitedIds: [first.band.id], limit: 200 })
+    expect(again.find((item) => item.band.id === first.band.id)?.visited).toBe(true)
+    expect(again[0].visited).toBe(false)
+  })
+
+  it('여정 요약은 출발점 대비 가장 크게 달라진 두 축을 말한다', () => {
+    const shifts = journeyShifts(byId('coldplay'), byId('slayer'))
+    expect(shifts).toHaveLength(2)
+    expect(Math.abs(shifts[0].delta)).toBeGreaterThanOrEqual(Math.abs(shifts[1].delta))
+    expect(shifts.find((item) => item.direction.id === 'accessible')?.delta).toBeLessThan(0)
+    expect(describeJourneyShifts(shifts)).toMatch(/^\S+ [+−]\d\.\d, \S+ [+−]\d\.\d$/)
+    expect(journeyShifts(byId('coldplay'), byId('coldplay'))).toEqual([])
   })
 })
 

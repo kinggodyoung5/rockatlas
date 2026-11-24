@@ -43,7 +43,8 @@ if (unusedMoods.length) errors.push(`아무 밴드에도 쓰이지 않는 분위
 const opensDirection = (scores: Record<string, number>, axis: (typeof HITCHHIKING_DIRECTIONS)[number]) => axis.entryRules.some((rule) => {
   const all = Object.entries(rule.all).every(([id, threshold]) => (scores[id] ?? 0) >= threshold)
   const any = !('any' in rule) || Object.entries(rule.any).some(([id, threshold]) => (scores[id] ?? 0) >= threshold)
-  return all && any
+  const none = !('none' in rule) || Object.entries(rule.none).every(([id, threshold]) => (scores[id] ?? 0) < threshold)
+  return all && any && none
 })
 const axisCoverage = HITCHHIKING_DIRECTIONS.map((axis) => {
   const candidates = rows.filter((band) => opensDirection(band.scores, axis))

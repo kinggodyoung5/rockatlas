@@ -12,7 +12,7 @@ import { siteContent as staticSiteContent } from './data/siteContent'
 import type { SiteContent } from './data/siteContent'
 import { taxonomyGenres } from './data/taxonomy'
 import { defaultRoute, parseExplorerRoute, routeToSearch, type ExplorerRoute } from './lib/explorerRoute'
-import { decodeJourney, encodeJourney, type JourneyStep, type JourneyVia } from './lib/hitchhiking'
+import { decodeJourney, describeJourneyShifts, encodeJourney, journeyShifts, type JourneyStep, type JourneyVia } from './lib/hitchhiking'
 import { positionStyle } from './lib/imagePosition'
 import { checkStudioAvailability, studioUnavailableMessage } from './lib/studioApiClient'
 import { useExplorerState } from './hooks/useExplorerState'
@@ -311,6 +311,8 @@ function ExplorerApp() {
     const journeyNames = journeySteps
       .map((step) => publicBandById[step.bandId]?.name)
       .filter((name): name is string => Boolean(name))
+    const journeyStartBand = journeySteps.length >= 4 ? publicBandById[journeySteps[0].bandId] : undefined
+    const journeySummary = journeyStartBand && journeyStartBand.id !== selectedBand.id ? describeJourneyShifts(journeyShifts(journeyStartBand, selectedBand)) : ''
     return <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}
       <BandDetail
@@ -333,7 +335,7 @@ function ExplorerApp() {
       <SharePanel
         open={shareOpen}
         title={shareJourneyUrl ? '나의 ROCK ATLAS 히치하이킹 여정' : `${selectedBand.name} — ROCK ATLAS`}
-        description={shareJourneyUrl ? journeyNames.join(' → ') : `${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`}
+        description={shareJourneyUrl ? `${journeyNames.join(' → ')}${journeySummary ? ` · 출발 대비 ${journeySummary}` : ''}` : `${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`}
         url={shareJourneyUrl || shareBandUrl}
         onClose={() => setShareOpen(false)}
       />

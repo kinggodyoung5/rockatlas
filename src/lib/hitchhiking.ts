@@ -1,5 +1,5 @@
 import { HITCHHIKING_DIRECTIONS, hitchhikingDirectionById, type HitchhikingDirection, type HitchhikingDirectionId, type HitchhikingEntryRule } from '../config/hitchhiking'
-import { taxonomyGenreById, taxonomyMoodById } from '../data/taxonomy'
+import { taxonomyGenreById, taxonomyMoodById, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band } from '../types/music'
 import type { MoodId } from '../types/taxonomy'
 import { scoreBandSimilarity } from './bandSimilarity'
@@ -19,7 +19,15 @@ export interface HitchhikingRecommendation {
   directionLevel: number
   directionGain: number
   leadMoodId: MoodId
+  /** 여정에서 이미 지나온 밴드인지. 점수에서 뒤로 미루고, 카드에 "이미 지나온 곳"으로 표시한다. */
+  visited: boolean
+  /** [대표 무드 점수, 출발 밴드 대비 차이, 이어지는 이유]. */
   reasons: string[]
+}
+
+export interface JourneyShift {
+  direction: HitchhikingDirection
+  delta: number
 }
 
 export interface AvailableHitchhikingDirection {
@@ -50,8 +58,9 @@ export function directionLevel(band: Band, direction: HitchhikingDirection) {
   return entries.reduce((sum, [moodId, weight]) => sum + (scores[moodId] ?? 0) * weight, 0) / totalWeight
 }
 
-function meetsMoodThresholds(scores: Partial<Record<MoodId, number>>, thresholds: Partial<Record<MoodId, number>>, mode: 'all' | 'any') {
+function meetsMoodThresholds(scores: Partial<Record<MoodId, number>>, thresholds: Partial<Record<MoodId, number>>, mode: 'all' | 'any' | 'none') {
   const entries = Object.entries(thresholds) as Array<[MoodId, number]>
+  if (mode === 'none') return entries.every(([moodId, threshold]) => (scores[moodId] ?? 0) < threshold)
   return mode === 'all'
     ? entries.every(([moodId, threshold]) => (scores[moodId] ?? 0) >= threshold)
     : entries.some(([moodId, threshold]) => (scores[moodId] ?? 0) >= threshold)
@@ -63,6 +72,7 @@ export function directionEntrySignal(band: Band, direction: HitchhikingDirection
   return rules.reduce((strongest, rule) => {
     if (!meetsMoodThresholds(scores, rule.all, 'all')) return strongest
     if (rule.any && !meetsMoodThresholds(scores, rule.any, 'any')) return strongest
+    if (rule.none && !meetsMoodThresholds(scores, rule.none, 'none')) return strongest
     const primaryMoodIds = Object.keys(rule.all) as MoodId[]
     return Math.max(strongest, ...primaryMoodIds.map((moodId) => scores[moodId] ?? 0))
   }, 0)
@@ -112,10 +122,25 @@ function strongestDirectionMood(band: Band, direction: HitchhikingDirection) {
     .sort((left, right) => right.weightedScore - left.weightedScore || right.rawScore - left.rawScore)[0]
 }
 
-function directionReason(gain: number) {
-  if (gain >= 0.75) return '지금보다 방향 변화가 확실한 선택'
-  if (gain >= 0.2) return '익숙함을 유지하며 한 걸음 이동'
-  return '이미 깊은 위치에서 새로운 결을 발견'
+const formatDelta = (value: number) => `${value >= 0 ? '+' : '−'}${Math.abs(value).toFixed(1)}`
+
+/** "Metallica 대비 무게감 +1.2". 이미 끝자락에 있는 밴드에서는 차이가 작으므로 "Metallica만큼의 무게감"으로 말한다. */
+export function directionComparison(subject: Band, direction: HitchhikingDirection, gain: number) {
+  if (Math.abs(gain) < 0.2) return `${subject.name}만큼의 ${direction.metricLabel}, 다른 결`
+  return `${subject.name} 대비 ${direction.metricLabel} ${formatDelta(gain)}`
+}
+
+/** 여정 출발점과 지금 밴드 사이에서 가장 크게 달라진 축 두 개(차이 0.5 이상). */
+export function journeyShifts(start: Band, current: Band, limit = 2): JourneyShift[] {
+  return HITCHHIKING_DIRECTIONS
+    .map((direction) => ({ direction, delta: Math.round((directionLevel(current, direction) - directionLevel(start, direction)) * 10) / 10 }))
+    .filter((item) => Math.abs(item.delta) >= 0.5)
+    .sort((left, right) => Math.abs(right.delta) - Math.abs(left.delta) || left.direction.id.localeCompare(right.direction.id))
+    .slice(0, limit)
+}
+
+export function describeJourneyShifts(shifts: JourneyShift[]) {
+  return shifts.map((item) => `${item.direction.metricLabel} ${formatDelta(item.delta)}`).join(', ')
 }
 
 /**
@@ -148,7 +173,9 @@ export function recommendHitchhikingBands(
       const leadMood = strongestDirectionMood(candidate, direction)
       const relation = subject.relations.find((item) => isMusicalRelation(item) && item.targetBandId === candidate.id)
         ?? candidate.relations.find((item) => isMusicalRelation(item) && item.targetBandId === subject.id)
-      const continuityReason = relation?.note || similarity.reasons[0]
+      const sharedSubgenre = similarity.sharedSubgenres[0]
+      const continuityReason = relation?.note
+        || (sharedSubgenre ? `같은 ${taxonomySubgenreById[sharedSubgenre]?.name ?? sharedSubgenre}` : '')
         || `${taxonomyGenreById[candidate.taxonomyV2!.primaryGenreId]?.displayName ?? '새로운 록의 계보'} 쪽으로 장르가 확장`
       const forwardStep = Math.min(Math.max(gain, 0), 1.5)
       const overshoot = Math.max(0, gain - 1.75)
@@ -168,9 +195,10 @@ export function recommendHitchhikingBands(
         directionLevel: Math.round(candidateLevel * 10) / 10,
         directionGain: Math.round(gain * 10) / 10,
         leadMoodId: leadMood.moodId,
+        visited: visited.has(candidate.id),
         reasons: [
           `${taxonomyMoodById[leadMood.moodId]?.name ?? leadMood.moodId} ${leadMood.rawScore}/5`,
-          directionReason(gain),
+          directionComparison(subject, direction, gain),
           continuityReason,
         ],
       }

@@ -370,6 +370,9 @@ img { display: block; max-width: 100%; }
 .hitchhiking-card-copy li::before { content: ""; position: absolute; left: 0; top: .65em; width: 4px; height: 4px; border-radius: 50%; background: var(--direction-color); }
 .hitchhiking-card-copy em { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 13px; border-top: 1px solid #302e34; color: #d2cfd4; font-size: 12px; font-style: normal; }
 .hitchhiking-route { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 24px; align-items: center; margin-top: 30px; padding-top: 24px; border-top: 1px solid #343239; }
+.hitchhiking-route-summary { grid-column: 1 / -1; order: 3; margin: 0; color: #bbb8be; font-size: 13px; }
+.hitchhiking-card.is-visited { opacity: .62; }
+.hitchhiking-card.is-visited .hitchhiking-card-copy > span { color: #8b888e; }
 .hitchhiking-route-label { display: flex; align-items: center; gap: 10px; color: var(--genre-color); }
 .hitchhiking-route-label > span { display: grid; gap: 4px; }
 .hitchhiking-route-label strong { color: #d8d5da; font-size: 13px; }
