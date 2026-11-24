@@ -15,6 +15,7 @@ import { BandIntakePanel } from './BandIntakePanel'
 import { DesignStudioPanel } from './DesignStudioPanel'
 import { DataManagerPanel, type DeletedBandRecord } from './DataManagerPanel'
 import { MemberLinkPanel } from './MemberLinkPanel'
+import { TaxonomyReviewQueue } from './TaxonomyReviewQueue'
 import type { LinkHealthSummary } from './LinkHealthPanel'
 import { StudioOperationsDashboard } from './StudioOperationsDashboard'
 import { ExternalSourceFinder, type ExternalCandidate } from './ExternalSourceFinder'
@@ -694,6 +695,7 @@ export function StudioPage() {
 
           <DataManagerPanel bands={catalogBands} selectedBandId={selectedId} trash={trash} pendingRelations={pendingRelations} onSelectBand={chooseBand} onAddBands={addBands} onDeleteBand={deleteManagedBand} onRestoreBand={restoreManagedBand} onUpdateBand={updateManagedBand} onPersist={(note) => saveCatalog(note).then(() => undefined)} onLinkHealthSummary={setLinkHealth} />
           <MemberLinkPanel bands={catalogBands} onLink={(updated) => updated.forEach(updateManagedBand)} />
+          <TaxonomyReviewQueue bands={catalogBands} onSelectBand={chooseBand} onUpdateBand={updateManagedBand} />
 
           <StudioBandBasics
             draft={draft}

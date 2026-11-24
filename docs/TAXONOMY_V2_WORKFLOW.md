@@ -74,3 +74,56 @@
 - 승인 뒤에만 `main` 병합·GitHub Pages 배포
 
 배포 후에도 변경 전 백업 브랜치와 태그를 유지한다.
+
+## 8. 무드 점수 기준 (개선 계획 P3-1)
+
+무드 점수는 히치하이킹 방향, 느낌으로 찾기 일치도, 밴드 유사도의 **유일한 입력**이다. 같은 숫자가 밴드마다 다른 뜻이 되지 않도록 아래 기준을 따른다. 검수는 Studio **분류 검수 대기열**에서 같은 장르 밴드를 나란히 놓고 한다(`npm run audit:moods -- --queue`로도 목록을 볼 수 있다).
+
+### 점수의 뜻
+
+| 점수 | 뜻 | 판단 질문 |
+|---|---|---|
+| 5 | 핵심 정체성 | 이 무드를 빼면 밴드를 설명할 수 없는가? |
+| 4 | 대표곡 대부분에서 뚜렷함 | 대표곡 3곡 중 2곡 이상에서 바로 들리는가? |
+| 3 | 분명한 특징 | 한 시기나 일부 대표곡에서 분명하게 들리는가? |
+| 1–2 | 가끔 드러남 | 있긴 하지만 이 밴드를 고르는 이유는 아닌가? |
+| 0 | 미지정 | 해당 없음 |
+
+- **3점부터 "강한 신호"다.** 히치하이킹 진입 규칙, 느낌으로 찾기 결과, 유사도의 공유 무드는 모두 3점 이상만 센다. 1–2점은 화면에 거의 영향을 주지 않으므로, 애매하면 넣지 않는 편이 낫다.
+- 밴드당 3점 이상 무드는 **3~6개**, 5점은 **1~3개**를 권한다. 3점 이상이 2개 이하면 히치하이킹 방향이 1개 이하로 줄어 막다른 길이 된다.
+- 점수는 밴드의 **대표적인 시기·대표곡** 기준이다. 커리어 전체의 모든 변화를 넣지 않는다(예: 후기 실험작 한 장 때문에 `experimental-weird`를 올리지 않는다).
+- 장르 이름이 곧 무드는 아니다. 메탈이라고 `aggressive-heavy`를 자동으로 주지 않는다(예: Nightwish·Within Temptation은 웅장함이 핵심이고 공격성은 약하다).
+
+### 무드별 기준 밴드
+
+같은 장르 안에서 점수를 맞출 때 아래 밴드를 기준점으로 쓴다. 0점 예시는 "헷갈리기 쉽지만 해당하지 않는" 밴드다.
+
+| 무드 | 5점 | 3점 | 0점(헷갈리지만 해당 없음) |
+|---|---|---|---|
+| bright-upbeat 밝고 신나는 | Van Halen, The Vaccines, The Kooks | The Cars, Journey, Pulp | Joy Division, Radiohead |
+| fast-driving 빠르고 질주하는 | Anthrax, Bad Religion, Dead Kennedys | Sabaton, Royal Blood, Trivium | Black Sabbath(묵직하지만 느림) |
+| groovy-danceable 춤추기 좋고 그루비한 | New Order, The Stone Roses, Franz Ferdinand | Red Hot Chili Peppers, The Black Keys, Bloc Party | Radiohead(전자음만으로 그루비가 아님) |
+| aggressive-heavy 강렬하고 공격적인 | Lamb of God, Machine Head, Anthrax | Foo Fighters, Rancid, Audioslave | Nightwish, Evanescence(무겁지만 공격성은 약함) |
+| massive-heavy 묵직하고 압도적인 | Meshuggah, Gojira, Melvins | Thin Lizzy, Dio, Porcupine Tree | Coldplay |
+| slow-calm 잔잔하고 느린 | Beach House, Mazzy Star, The xx | — (기준 밴드 보강 필요) | Slowdive(몽환적이지만 노이즈가 큼) |
+| melancholic-lonely 우울하고 쓸쓸한 | The Smiths, Joy Division, The National | The Smashing Pumpkins, Wolf Alice, Fontaines D.C. | Oasis |
+| dark-gloomy 어둡고 음울한 | Bauhaus, King Diamond, Interpol | Soundgarden, Depeche Mode, Ghost | The Smiths(쓸쓸하지만 음산하지 않음) |
+| warm-comforting 따뜻하고 편안한 | Kings of Convenience, Peach Pit | Tom Petty and the Heartbreakers, Toto, Mumford & Sons | Cigarettes After Sex를 5로 주지 않는다(차분하지만 차가운 쪽) |
+| romantic-emotional 낭만적이고 감성적인 | Snow Patrol, Suede, Kodaline | Foreigner, Europe, Tesla | Interpol |
+| youth-rebellious 청춘과 반항 | The Libertines, Dead Kennedys, Mudhoney | Kings of Leon, Rage Against the Machine, Wet Leg | Eagles |
+| hopeful-uplifting 희망적이고 벅찬 | Boston, The Verve, Mumford & Sons | Fleetwood Mac, Incubus, Scorpions | Joy Division |
+| dreamy-ethereal 몽환적이고 흐릿한 | Cocteau Twins, Slowdive, Beach House | Tame Impala, Sleep Token, A Perfect Circle | Pink Floyd를 우주감(cosmic)과 혼동하지 않는다 |
+| cold-urban 차갑고 도시적인 | Interpol, Joy Division, The xx | Depeche Mode, The Cars, Bloc Party | The Strokes(도시적이지만 차갑지 않음) |
+| cosmic-psychedelic 우주적이고 환각적인 | Pink Floyd, The Doors, King Gizzard | The Beatles(사이키 시기), Screaming Trees | Slowdive |
+| noisy-wall 노이즈와 사운드의 벽 | My Bloody Valentine, Sonic Youth, The Jesus and Mary Chain | The Smashing Pumpkins, Wolf Alice | Metallica(무겁지만 노이즈 질감이 아님) |
+| acoustic-organic 어쿠스틱하고 자연스러운 | Eagles, Kings of Convenience, Mumford & Sons | Fleetwood Mac, Led Zeppelin, The Rolling Stones | Coldplay |
+| electronic-synth 전자음과 신스가 많은 | Depeche Mode, New Order, Nine Inch Nails | Tame Impala, Architects, Kasabian | The Killers를 5로 주지 않는다(신스는 장식) |
+| epic-cinematic 웅장하고 영화적인 | Nightwish, Sabaton, Muse | Genesis, Mastodon, Behemoth | Travis(떼창형이지만 웅장하지 않음) |
+| technical-complex 복잡하고 테크니컬 | Dream Theater, Meshuggah, Rush | Gojira, Blind Guardian, Kreator | AC/DC |
+| experimental-weird 실험적이고 기묘한 | Talking Heads, King Crimson, Sonic Youth | Pavement, Faith No More, Jane's Addiction | Dream Theater(복잡하지만 기묘하지 않음) |
+| long-form-immersive 긴 곡에 몰입하는 | Godspeed You! Black Emperor, Tool, Yes | Genesis, Black Sabbath | Iron Maiden을 대표곡 길이만으로 5로 주지 않는다 |
+| riff-solo-driven 기타 리프와 솔로 중심 | Deep Purple, Jimi Hendrix Experience, Cream | Foo Fighters, Ghost, Incubus | Queen을 0으로 두지 않는다(브라이언 메이) — 검수 대상 |
+| anthemic-live 떼창하고 싶은 공연장형 | Foo Fighters, Kings of Leon, Muse | Soundgarden, Trivium, Dirty Honey | Mazzy Star |
+
+- 표의 예시는 2026-11-24 카탈로그 점수를 바탕으로 했다. 기준 밴드의 점수를 바꾸면 이 표도 함께 고친다.
+- 대기열의 표시 기준: **같은 계열과 점수가 크게 다름** = 같은 대표 장르+세부장르를 공유하는 동료 평균 무드 벡터와의 코사인 유사도 0.5 미만 / **3점 이상 무드 2개 이하** / **히치하이킹 방향 1개 이하**(진입 규칙 기준) / **대표 장르의 핵심 무드**(`quickMoodIds`)가 모두 3점 미만. 표시는 "먼저 볼 곳"이지 오류가 아니다 — Queen처럼 장르 안에서 원래 독특한 밴드도 걸린다.

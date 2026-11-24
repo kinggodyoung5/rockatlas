@@ -1,12 +1,14 @@
 import { readFile } from 'node:fs/promises'
 import { HITCHHIKING_DIRECTIONS } from '../src/config/hitchhiking.ts'
+import { buildTaxonomyReviewRows, reviewFlagLabels, sortReviewQueue, type ReviewableBand } from '../src/lib/taxonomyReview.ts'
 
 interface MoodDefinition { id: string; name: string }
-interface TaxonomyFile { moods: MoodDefinition[] }
+interface TaxonomyFile { moods: MoodDefinition[]; genres: Array<{ id: string; displayName: string; quickMoodIds: string[] }> }
 interface CatalogBand {
   id: string
   name: string
-  taxonomyV2?: { primaryGenreId: string; moodScores: Record<string, number> }
+  reviewStatus?: string
+  taxonomyV2?: { primaryGenreId: string; subgenreIds: string[]; moodScores: Record<string, number>; reviewStatus: 'draft' | 'reviewed' }
 }
 interface CatalogFile { bands: CatalogBand[] }
 
@@ -38,12 +40,13 @@ const moodCoverage = taxonomy.moods.map((mood) => {
 const unusedMoods = moodCoverage.filter((mood) => mood.any === 0)
 if (unusedMoods.length) errors.push(`아무 밴드에도 쓰이지 않는 분위기: ${unusedMoods.map((mood) => mood.name).join(', ')}`)
 
+const opensDirection = (scores: Record<string, number>, axis: (typeof HITCHHIKING_DIRECTIONS)[number]) => axis.entryRules.some((rule) => {
+  const all = Object.entries(rule.all).every(([id, threshold]) => (scores[id] ?? 0) >= threshold)
+  const any = !('any' in rule) || Object.entries(rule.any).some(([id, threshold]) => (scores[id] ?? 0) >= threshold)
+  return all && any
+})
 const axisCoverage = HITCHHIKING_DIRECTIONS.map((axis) => {
-  const candidates = rows.filter((band) => axis.entryRules.some((rule) => {
-    const all = Object.entries(rule.all).every(([id, threshold]) => (band.scores[id] ?? 0) >= threshold)
-    const any = !rule.any || Object.entries(rule.any).some(([id, threshold]) => (band.scores[id] ?? 0) >= threshold)
-    return all && any
-  }))
+  const candidates = rows.filter((band) => opensDirection(band.scores, axis))
   if (candidates.length < minimumAxisCandidates) errors.push(`${axis.label} 후보가 ${candidates.length}개뿐입니다. 최소 ${minimumAxisCandidates}개가 필요합니다.`)
   return { ...axis, candidates }
 })
@@ -65,6 +68,24 @@ moodCoverage.forEach((mood) => console.log(`- ${mood.name} (${mood.id}): ${mood.
 
 const nicheMoods = moodCoverage.filter((mood) => mood.strong < 5)
 if (nicheMoods.length) console.log(`\n참고: 3점 이상 밴드가 5개 미만인 희소 분위기 · ${nicheMoods.map((mood) => `${mood.name} ${mood.strong}개`).join(' · ')}`)
+
+// 분류 검수 대기열 (plan P3-1). 방향 수는 진입 규칙만 센다 — 후보 3팀 조건까지 보려면 Studio 대기열을 쓴다.
+const quickMoodIdsByGenre = Object.fromEntries(taxonomy.genres.map((genre) => [genre.id, genre.quickMoodIds]))
+const reviewRows = sortReviewQueue(buildTaxonomyReviewRows(catalog.bands as ReviewableBand[], {
+  quickMoodIdsByGenre,
+  directionCount: (band) => HITCHHIKING_DIRECTIONS.filter((axis) => opensDirection((band.taxonomyV2?.moodScores ?? {}) as Record<string, number>, axis)).length,
+}))
+const moodName = new Map(taxonomy.moods.map((mood) => [mood.id, mood.name]))
+const pendingRows = reviewRows.filter((row) => row.reviewStatus !== 'reviewed')
+console.log(`
+분류 검수 대기열 · 미검수 ${pendingRows.length}팀 · 표시 있는 밴드 ${reviewRows.filter((row) => row.flags.length).length}팀 (검수 완료 포함)`)
+for (const [kind, label] of Object.entries(reviewFlagLabels)) console.log(`- ${label}: ${reviewRows.filter((row) => row.flags.includes(kind as keyof typeof reviewFlagLabels)).length}팀`)
+const verbose = process.argv.includes('--queue')
+for (const row of (verbose ? reviewRows : reviewRows.slice(0, 25)).filter((item) => item.flags.length)) {
+  const deviations = row.deviations.slice(0, 3).map((item) => `${moodName.get(item.moodId) ?? item.moodId} ${item.score} (동료 ${item.peerMean.toFixed(1)})`).join(', ')
+  console.log(`  ${row.reviewStatus === 'reviewed' ? '✓' : '·'} ${row.name} [${row.primaryGenreId}] ${row.flags.map((flag) => reviewFlagLabels[flag]).join(' / ')}${row.peerSimilarity !== null ? ` · 동료 유사도 ${row.peerSimilarity}` : ''}${deviations ? ` — ${deviations}` : ''}`)
+}
+if (!verbose) console.log('  (전체 목록: npm run audit:moods -- --queue)')
 
 if (errors.length) {
   console.error('\n보완 필요')

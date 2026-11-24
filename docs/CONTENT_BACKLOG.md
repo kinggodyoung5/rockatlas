@@ -31,4 +31,10 @@
 
 ## 기능 작업 중 새로 발견한 보완거리
 
-(P3 이후 작업하며 여기에 덧붙인다)
+### 5. 무드 점수 검수 183팀 (P3-1에서 도구만 만들고 데이터는 여기로)
+
+- 도구: Studio **분류 검수 대기열**(같은 장르 밴드를 표로 나란히 놓고 점수 수정 → "검수 완료"), CLI `npm run audit:moods -- --queue`.
+- 기준: `docs/TAXONOMY_V2_WORKFLOW.md` 8절(점수의 뜻, 무드별 기준 밴드).
+- 2026-11-24 대기열: 표시 있는 밴드 96팀(같은 계열과 크게 다름 46, 3점 이상 무드 2개 이하 7, 방향 1개 이하 43, 장르 핵심 무드 없음 33).
+- 대기열을 만들며 눈에 띈 의심 점수: Queen `riff-solo-driven` 0(브라이언 메이), Led Zeppelin `anthemic-live` 0, Iron Maiden `aggressive-heavy` 0, Black Sabbath `fast-driving` 0은 맞을 수 있으나 확인, Misfits `youth-rebellious` 0, Opeth `aggressive-heavy`·`massive-heavy` 0.
+- 완료 조건(계획서): 공개 밴드 `taxonomyV2.reviewStatus` 전부 `reviewed`, 방향 1개뿐인 밴드 0팀.
