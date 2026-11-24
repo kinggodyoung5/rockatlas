@@ -157,7 +157,7 @@ export function recommendHitchhikingBands(
         + forwardStep * 24
         - overshoot * 12
         + Math.min(0, gain) * 8
-        + similarity.score * 0.9
+        + similarity.score * 3
         + (relation ? 8 : 0)
         - (visited.has(candidate.id) ? 24 : 0)
 

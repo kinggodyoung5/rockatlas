@@ -6,7 +6,7 @@ import { siteContent, type SiteContent } from '../data/siteContent'
 import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band, BandTaxonomyV2, GenreId, MemberLinkType, PendingRelation, Relation, RelationKind, SourceRef } from '../types/music'
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
-import { scoreBandSimilarity } from '../lib/bandSimilarity'
+import { scoreBandSimilarity, similarBands } from '../lib/bandSimilarity'
 import { finalizeIntakeBand, lookupCommonsImage, slugify, type CommonsLookupResult } from '../lib/bandIntake'
 import { resolvePendingRelations, syncMirroredRelation as syncMirroredRelationData } from '../lib/relationSync'
 import { studioFetchJson } from '../lib/studioApiClient'
@@ -158,9 +158,9 @@ function completeness(band: Band) {
   ]
 }
 
-function suggestionScore(subject: Band, candidate: Band) {
+function suggestionScore(subject: Band, candidate: Band, population: Band[]) {
   if (subject.taxonomyV2 && candidate.taxonomyV2) {
-    const result = scoreBandSimilarity(subject, candidate)
+    const result = scoreBandSimilarity(subject, candidate, population)
     return { score: result.score, reason: result.reasons.join(', ') || '새 장르·분위기·시대 교차' }
   }
   let score = subject.primaryGenre === candidate.primaryGenre ? 5 : 0
@@ -246,10 +246,13 @@ export function StudioPage() {
 
   const suggestions = useMemo(() => catalogBands
     .filter((band) => band.id !== draft.id && !draft.relations.some((relation) => relation.targetBandId === band.id))
-    .map((band) => ({ band, ...suggestionScore(draft, band) }))
+    .map((band) => ({ band, ...suggestionScore(draft, band, catalogBands) }))
     .filter((item) => item.score > 0)
     .sort((left, right) => right.score - left.score || left.band.name.localeCompare(right.band.name))
-    .slice(0, 6), [catalogBands, draft])
+    .slice(0, 6)
+    // 서로의 상위 5에 드는 쌍(plan P3-2 상호 상위 k)은 "서로 가까움"으로 표시해 먼저 검토하게 한다.
+    .map((item) => ({ ...item, mutual: Boolean(draft.taxonomyV2) && similarBands(item.band, catalogBands).slice(0, 5).some((other) => other.band.id === draft.id) }))
+    .sort((left, right) => Number(right.mutual) - Number(left.mutual)), [catalogBands, draft])
 
   const taxonomyDraft = draft.taxonomyV2 ?? createTaxonomyDraft()
   const activeTaxonomyGenreIds = [taxonomyDraft.primaryGenreId, ...taxonomyDraft.secondaryGenreIds]
@@ -498,7 +501,7 @@ export function StudioPage() {
   const addRelation = (targetBandId?: string, note?: string, score = 1) => {
     const target = targetBandId ?? catalogBands.find((band) => band.id !== draft.id && !draft.relations.some((relation) => relation.targetBandId === band.id))?.id
     if (!target) return
-    const newRelation: Relation = { targetBandId: target, kind: 'sounds-like', strength: score >= 10 ? 3 : score >= 6 ? 2 : 1, note: note ?? '연결 이유를 입력하세요.', reviewStatus: 'draft' }
+    const newRelation: Relation = { targetBandId: target, kind: 'sounds-like', strength: score >= 18 ? 3 : score >= 12 ? 2 : 1, note: note ?? '연결 이유를 입력하세요.', reviewStatus: 'draft' }
     change({ relations: [...draft.relations, newRelation] })
     syncMirroredRelation(draft.id, draft.name, undefined, newRelation)
   }
@@ -743,7 +746,7 @@ export function StudioPage() {
             <div className="studio-section-heading"><span>04</span><div><h3>관계 연결</h3><p>분류·태그·시대가 가까운 밴드를 후보로 추천합니다. 영향 관계는 출처 확인 뒤 승인하세요.</p></div></div>
             <div className="studio-suggestions">
               <span><Sparkles size={15} /> 가까운 밴드 후보</span>
-              {suggestions.map((item) => <button key={item.band.id} onClick={() => addRelation(item.band.id, undefined, item.score)}><strong>{item.band.name}</strong><small>{item.reason} · 점수 {item.score}</small><Plus size={14} /></button>)}
+              {suggestions.map((item) => <button key={item.band.id} onClick={() => addRelation(item.band.id, undefined, item.score)}><strong>{item.band.name}</strong><small>{item.mutual ? '서로 가까움 · ' : ''}{item.reason} · 점수 {item.score}</small><Plus size={14} /></button>)}
             </div>
             <div className="studio-relations">
               {draft.relations.map((relation, index) => (
