@@ -79,10 +79,20 @@ export interface TaxonomyMood {
   iconKey: string
 }
 
+/** 느낌으로 찾기 상단의 이름 붙은 무드 조합(plan P3-4). Studio 디자인 작업실에서 편집한다. */
+export interface MoodPreset {
+  id: string
+  name: string
+  description?: string
+  moodIds: MoodId[]
+  excludeMoodIds?: MoodId[]
+}
+
 export interface TaxonomyCatalog {
   schemaVersion: 2
   updatedAt: string
   genres: TaxonomyGenre[]
   subgenres: TaxonomySubgenre[]
   moods: TaxonomyMood[]
+  moodPresets?: MoodPreset[]
 }

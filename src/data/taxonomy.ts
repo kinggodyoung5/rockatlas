@@ -5,6 +5,7 @@ export const taxonomy = taxonomyData as TaxonomyCatalog
 export const taxonomyGenres = [...taxonomy.genres].sort((a, b) => a.order - b.order)
 export const taxonomySubgenres = taxonomy.subgenres
 export const taxonomyMoods = [...taxonomy.moods].sort((a, b) => a.order - b.order)
+export const taxonomyMoodPresets = taxonomy.moodPresets ?? []
 
 export const taxonomyGenreById = Object.fromEntries(
   taxonomyGenres.map((genre) => [genre.id, genre]),

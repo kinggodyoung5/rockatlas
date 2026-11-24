@@ -207,7 +207,11 @@
       "name": "포스트펑크 / 고딕 / 뉴웨이브",
       "displayName": "포스트펑크 / 고딕 / 뉴웨이브",
       "englishName": "Post-Punk, Goth & New Wave",
-      "cardSubgenreLabels": ["포스트펑크", "고딕 록", "뉴웨이브"],
+      "cardSubgenreLabels": [
+        "포스트펑크",
+        "고딕 록",
+        "뉴웨이브"
+      ],
       "description": "펑크의 거친 에너지에 전자음과 댄서블한 리듬을 얹어, 어두운 감성부터 신나는 팝 멜로디까지.",
       "vibeDescription": "80년대 감성의 스타일리시한 사운드, 세련된 도시의 록.",
       "order": 7,
@@ -1392,6 +1396,86 @@
       "description": "크고 기억하기 쉬운 후렴과 라이브 공연의 에너지가 강한 음악.",
       "order": 24,
       "iconKey": "mic2"
+    }
+  ],
+  "moodPresets": [
+    {
+      "id": "rainy-night",
+      "name": "비 오는 밤",
+      "description": "창밖 빗소리와 어울리는 흐릿하고 쓸쓸한 곡",
+      "moodIds": [
+        "melancholic-lonely",
+        "dreamy-ethereal"
+      ],
+      "excludeMoodIds": [
+        "fast-driving"
+      ]
+    },
+    {
+      "id": "night-drive",
+      "name": "밤 드라이브",
+      "description": "도시 불빛을 지나며 듣는 차갑고 매끈한 곡",
+      "moodIds": [
+        "cold-urban",
+        "electronic-synth"
+      ]
+    },
+    {
+      "id": "road-trip",
+      "name": "운전할 때",
+      "description": "창문을 내리고 크게 틀고 싶은 질주감",
+      "moodIds": [
+        "fast-driving",
+        "anthemic-live"
+      ]
+    },
+    {
+      "id": "workout",
+      "name": "운동할 때",
+      "description": "한 세트 더 버티게 해 주는 무게와 속도",
+      "moodIds": [
+        "aggressive-heavy",
+        "fast-driving"
+      ]
+    },
+    {
+      "id": "slow-morning",
+      "name": "느긋한 주말 아침",
+      "description": "커피 한 잔과 어울리는 따뜻한 소리",
+      "moodIds": [
+        "warm-comforting",
+        "acoustic-organic"
+      ],
+      "excludeMoodIds": [
+        "aggressive-heavy"
+      ]
+    },
+    {
+      "id": "sing-along",
+      "name": "다 같이 떼창",
+      "description": "공연장에서 모두가 따라 부르는 후렴",
+      "moodIds": [
+        "anthemic-live",
+        "hopeful-uplifting"
+      ]
+    },
+    {
+      "id": "dance-floor",
+      "name": "몸이 먼저 반응할 때",
+      "description": "리듬에 맞춰 움직이고 싶은 곡",
+      "moodIds": [
+        "groovy-danceable",
+        "bright-upbeat"
+      ]
+    },
+    {
+      "id": "deep-listening",
+      "name": "헤드폰으로 깊게",
+      "description": "긴 전개를 따라 끝까지 몰입하는 곡",
+      "moodIds": [
+        "long-form-immersive",
+        "cosmic-psychedelic"
+      ]
     }
   ]
 }

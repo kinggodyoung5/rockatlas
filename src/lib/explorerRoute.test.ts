@@ -9,12 +9,18 @@ describe('explorer routes', () => {
       genreId: 'pop-soft-rock' as const,
       quickMoodId: 'bright-upbeat' as const,
       selectedMoodIds: ['groovy-danceable' as const],
+      excludeMoodId: 'aggressive-heavy' as const,
       query: 'Dream Theater',
       eraId: '1990s' as const,
       countryCode: 'US',
       sort: 'formed-desc' as const,
     }
     expect(parseExplorerRoute(routeToSearch(route))).toEqual(route)
+  })
+
+  it('ignores an excluded mood that is also selected', () => {
+    expect(parseExplorerRoute('?view=moods&selected=slow-calm&exclude=slow-calm').excludeMoodId).toBe('all')
+    expect(parseExplorerRoute('?view=moods&selected=slow-calm&exclude=fast-driving').excludeMoodId).toBe('fast-driving')
   })
 
   it('falls back safely for unknown enum values', () => {

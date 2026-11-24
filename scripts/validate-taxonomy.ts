@@ -7,6 +7,7 @@ interface TaxonomyFile {
   genres: GenreItem[]
   subgenres: TaxonomyItem[]
   moods: Array<TaxonomyItem & { groupId: string }>
+  moodPresets?: Array<{ id: string; name: string; moodIds: string[]; excludeMoodIds?: string[] }>
 }
 interface BandTaxonomyV2 {
   primaryGenreId: string
@@ -46,6 +47,15 @@ const moodIds = new Set(taxonomy.moods.map((item) => item.id))
 for (const genre of taxonomy.genres) {
   for (const id of genre.subgenreIds) if (!subgenreIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 세부 장르 ${id}`)
   for (const id of genre.quickMoodIds) if (!moodIds.has(id)) errors.push(`${genre.id}: 존재하지 않는 분위기 ${id}`)
+}
+
+const presetIds = (taxonomy.moodPresets ?? []).map((preset) => preset.id)
+if (new Set(presetIds).size !== presetIds.length) errors.push('추천 조합 ID가 중복되었습니다.')
+for (const preset of taxonomy.moodPresets ?? []) {
+  if (!preset.name?.trim()) errors.push(`${preset.id}: 추천 조합 이름이 비었습니다.`)
+  if (preset.moodIds.length < 1 || preset.moodIds.length > 3) errors.push(`${preset.id}: 추천 조합 무드는 1~3개여야 합니다.`)
+  for (const id of [...preset.moodIds, ...(preset.excludeMoodIds ?? [])]) if (!moodIds.has(id)) errors.push(`${preset.id}: 존재하지 않는 분위기 ${id}`)
+  for (const id of preset.excludeMoodIds ?? []) if (preset.moodIds.includes(id)) errors.push(`${preset.id}: 고른 무드를 동시에 뺄 수 없습니다 (${id})`)
 }
 
 const normalizeLabel = (value: string) => value.toLocaleLowerCase().normalize('NFKC').replace(/락/g, '록').replace(/&/g, 'and').replace(/[^a-z0-9가-힣]+/g, '')

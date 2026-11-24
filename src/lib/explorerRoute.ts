@@ -12,6 +12,8 @@ export interface ExplorerRoute {
   subgenreId: string | 'all'
   quickMoodId: MoodId | 'all'
   selectedMoodIds: MoodId[]
+  /** 느낌으로 찾기의 "이건 빼고" 무드. */
+  excludeMoodId: MoodId | 'all'
   query: string
   eraId: EraId | 'all'
   countryCode: string | 'all'
@@ -29,6 +31,7 @@ export function parseExplorerRoute(search = window.location.search): ExplorerRou
   const subgenre = params.get('subgenre')
   const mood = params.get('mood')
   const selected = (params.get('selected') ?? '').split(',').filter((id): id is MoodId => moodIds.has(id as MoodId)).slice(0, 3)
+  const exclude = params.get('exclude')
   const era = params.get('era')
   const sort = params.get('sort')
   return {
@@ -37,6 +40,7 @@ export function parseExplorerRoute(search = window.location.search): ExplorerRou
     subgenreId: subgenre || 'all',
     quickMoodId: mood && moodIds.has(mood as MoodId) ? mood as MoodId : 'all',
     selectedMoodIds: selected,
+    excludeMoodId: exclude && moodIds.has(exclude as MoodId) && !selected.includes(exclude as MoodId) ? exclude as MoodId : 'all',
     query: params.get('q') ?? '',
     eraId: era && eraIds.has(era as EraId) ? era as EraId : 'all',
     countryCode: params.get('country')?.toUpperCase() || 'all',
@@ -51,6 +55,7 @@ export function routeToSearch(route: ExplorerRoute) {
   if (route.subgenreId !== 'all') params.set('subgenre', route.subgenreId)
   if (route.quickMoodId !== 'all') params.set('mood', route.quickMoodId)
   if (route.selectedMoodIds.length) params.set('selected', route.selectedMoodIds.join(','))
+  if (route.excludeMoodId !== 'all') params.set('exclude', route.excludeMoodId)
   if (route.query) params.set('q', route.query)
   if (route.eraId !== 'all') params.set('era', route.eraId)
   if (route.countryCode !== 'all') params.set('country', route.countryCode)
@@ -60,5 +65,5 @@ export function routeToSearch(route: ExplorerRoute) {
 }
 
 export const defaultRoute = (): ExplorerRoute => ({
-  view: 'home', genreId: 'all', subgenreId: 'all', quickMoodId: 'all', selectedMoodIds: [], query: '', eraId: 'all', countryCode: 'all', sort: 'name',
+  view: 'home', genreId: 'all', subgenreId: 'all', quickMoodId: 'all', selectedMoodIds: [], excludeMoodId: 'all', query: '', eraId: 'all', countryCode: 'all', sort: 'name',
 })

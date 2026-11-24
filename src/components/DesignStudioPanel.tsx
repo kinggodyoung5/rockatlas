@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUp, ExternalLink, FileUp, ImagePlus, Monitor, Orbit, Save, Smartphone, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import type { MoodGroupId, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
+import type { MoodGroupId, MoodId, MoodPreset, TaxonomyGenre, TaxonomyMood } from '../types/taxonomy'
 import { HITCHHIKING_DIRECTIONS } from '../config/hitchhiking'
 import type { BandDetailCopy, SiteContent, SiteSectionId } from '../data/siteContent'
 import { formatFileSize, optimizeImageUpload, type StudioImageAssetType } from '../lib/imageUpload'
@@ -13,11 +13,13 @@ interface DesignStudioPanelProps {
   message: string
   genres: TaxonomyGenre[]
   moods: TaxonomyMood[]
+  presets: MoodPreset[]
   genresDirty: boolean
   genreMessage: string
   onChange: (patch: Partial<SiteContent>) => void
   onGenresChange: (genres: TaxonomyGenre[]) => void
   onMoodsChange: (moods: TaxonomyMood[]) => void
+  onPresetsChange: (presets: MoodPreset[]) => void
   onSave: () => Promise<void>
   onSaveGenres: () => Promise<void>
 }
@@ -32,7 +34,7 @@ function colorToAccent(hex: string) {
   return [0, 2, 4].map((index) => Number.parseInt(normalized.slice(index, index + 2), 16)).join(' ')
 }
 
-export function DesignStudioPanel({ value, dirty, message, genres, moods, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
+export function DesignStudioPanel({ value, dirty, message, genres, moods, presets, genresDirty, genreMessage, onChange, onGenresChange, onMoodsChange, onPresetsChange, onSave, onSaveGenres }: DesignStudioPanelProps) {
   const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop')
   const [fontMessage, setFontMessage] = useState('WOFF2 권장 · WOFF, TTF, OTF 지원 · 최대 9MB')
   const [imageMessage, setImageMessage] = useState('이미지는 용도에 맞게 자동 축소·압축되며 결과 용량을 여기에 표시합니다.')
@@ -106,6 +108,19 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
     onGenresChange(next.map((genre, order) => ({ ...genre, order: order + 1 })))
   }
   const updateMood = (id: TaxonomyMood['id'], patch: Partial<TaxonomyMood>) => onMoodsChange(moods.map((mood) => mood.id === id ? { ...mood, ...patch } : mood))
+  const updatePreset = (index: number, patch: Partial<MoodPreset>) => onPresetsChange(presets.map((preset, presetIndex) => presetIndex === index ? { ...preset, ...patch } : preset))
+  const togglePresetMood = (index: number, moodId: MoodId) => {
+    const current = presets[index].moodIds
+    const moodIds = current.includes(moodId) ? current.filter((id) => id !== moodId) : current.length < 3 ? [...current, moodId] : current
+    updatePreset(index, { moodIds, excludeMoodIds: presets[index].excludeMoodIds?.filter((id) => !moodIds.includes(id)) })
+  }
+  const addPreset = () => onPresetsChange([...presets, { id: `preset-${Date.now().toString(36)}`, name: '새 조합', moodIds: [] }])
+  const movePreset = (index: number, offset: number) => {
+    const next = [...presets]
+    const [item] = next.splice(index, 1)
+    next.splice(Math.max(0, Math.min(next.length, index + offset)), 0, item)
+    onPresetsChange(next)
+  }
   const uploadImage = async (file: File, assetType: StudioImageAssetType, assetKey = '') => {
     setImageMessage(`${file.name} 최적화 중…`)
     try {
@@ -394,6 +409,20 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, genres
           <label className="studio-grid-span">카드 설명<textarea value={mood.description} onChange={(event) => updateMood(mood.id, { description: event.target.value })} rows={3} /></label>
           <p className="studio-upload-note studio-grid-span">고유 ID와 그룹은 기존 밴드 점수 연결을 보호하기 위해 잠겨 있습니다.</p>
         </div></details>)}
+      </div></details>
+      <details className="studio-genre-editor"><summary>느낌으로 찾기 추천 조합 ({presets.length})</summary><div className="studio-genre-editor-grid">
+        {presets.map((preset, index) => <details key={preset.id}><summary>{preset.name}{preset.moodIds.length ? '' : ' · 무드를 고르세요'}</summary><div>
+          <label>조합 이름<input value={preset.name} onChange={(event) => updatePreset(index, { name: event.target.value })} /></label>
+          <label>이건 빼고<select value={preset.excludeMoodIds?.[0] ?? ''} onChange={(event) => updatePreset(index, { excludeMoodIds: event.target.value ? [event.target.value as MoodId] : undefined })}><option value="">빼지 않음</option>{moods.filter((mood) => !preset.moodIds.includes(mood.id)).map((mood) => <option key={mood.id} value={mood.id}>{mood.name}</option>)}</select></label>
+          <label className="studio-grid-span">설명<input value={preset.description ?? ''} onChange={(event) => updatePreset(index, { description: event.target.value })} /></label>
+          <fieldset className="studio-checkboxes studio-grid-span"><legend>무드 (1~3개)</legend>{moods.map((mood) => <label key={mood.id}><input type="checkbox" checked={preset.moodIds.includes(mood.id)} disabled={!preset.moodIds.includes(mood.id) && preset.moodIds.length >= 3} onChange={() => togglePresetMood(index, mood.id)} />{mood.name}</label>)}</fieldset>
+          <div className="studio-grid-span studio-preset-actions">
+            <button type="button" onClick={() => movePreset(index, -1)} disabled={index === 0}><ArrowUp size={13} /> 위로</button>
+            <button type="button" onClick={() => movePreset(index, 1)} disabled={index === presets.length - 1}><ArrowDown size={13} /> 아래로</button>
+            <button type="button" onClick={() => onPresetsChange(presets.filter((_, presetIndex) => presetIndex !== index))}>삭제</button>
+          </div>
+        </div></details>)}
+        <button type="button" className="studio-add-row" onClick={addPreset}>조합 추가</button>
       </div></details>
       <div className="studio-site-actions"><span className={genresDirty ? 'is-dirty' : ''}>{genreMessage}</span><button onClick={() => void onSaveGenres()}><Save size={15} /> 장르·분위기 카드 저장</button></div>
     </section>

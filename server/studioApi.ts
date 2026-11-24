@@ -971,6 +971,17 @@ export function studioApi(): Plugin {
           if (genres.some((genre) => !genre.name?.trim() || !genre.displayName?.trim() || !genre.englishName?.trim() || !genre.description?.trim() || !genre.vibeDescription?.trim() || !/^#[0-9a-f]{6}$/i.test(genre.color ?? ''))) throw new Error('장르 이름·설명·색상을 모두 확인하세요.')
           const moodIds = moods.map((mood) => mood.id)
           if (moods.length !== 24 || moodIds.some((id) => !id) || new Set(moodIds).size !== moodIds.length || moods.some((mood) => !mood.name?.trim() || !mood.description?.trim() || !mood.groupId)) throw new Error('24개 분위기 카드의 이름과 설명을 확인하세요.')
+          const presets = payload.moodPresets as Array<{ id?: string; name?: string; moodIds?: unknown; excludeMoodIds?: unknown }> | undefined
+          if (presets !== undefined) {
+            const validMood = new Set(moodIds)
+            const presetIds = Array.isArray(presets) ? presets.map((preset) => preset.id) : []
+            if (!Array.isArray(presets) || presetIds.some((id) => !id) || new Set(presetIds).size !== presetIds.length) throw new Error('추천 조합 ID가 비어 있거나 중복되었습니다.')
+            for (const preset of presets) {
+              const ids = Array.isArray(preset.moodIds) ? preset.moodIds : []
+              const excluded = Array.isArray(preset.excludeMoodIds) ? preset.excludeMoodIds : []
+              if (!preset.name?.trim() || ids.length < 1 || ids.length > 3 || [...ids, ...excluded].some((id) => !validMood.has(String(id)))) throw new Error(`추천 조합 "${preset.name ?? preset.id}"의 이름과 무드(1~3개)를 확인하세요.`)
+            }
+          }
           const nextTaxonomy = { ...payload, updatedAt: new Date().toISOString(), genres: genres.map((genre, index) => ({ ...genre, order: index + 1 })) }
           await writeFile(taxonomyPath, `${JSON.stringify(nextTaxonomy, null, 2)}\n`, 'utf8')
           json(response, { ok: true, updatedAt: nextTaxonomy.updatedAt, count: genres.length })

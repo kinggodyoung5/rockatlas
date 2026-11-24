@@ -3,7 +3,7 @@ import { ArrowLeft, Check, Database, Download, ExternalLink, FileUp, Link2, Load
 import { bands as initialBands, catalogFile } from '../data/bands'
 import { genres as initialGenres } from '../data/genres'
 import { siteContent, type SiteContent } from '../data/siteContent'
-import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
+import { taxonomy, taxonomyGenreById, taxonomyGenres, taxonomyMoodPresets, taxonomyMoods, taxonomySubgenreById } from '../data/taxonomy'
 import type { Band, BandTaxonomyV2, GenreId, MemberLinkType, PendingRelation, Relation, RelationKind, SourceRef } from '../types/music'
 import type { GenreTaxonomyId, MoodId, MoodScore } from '../types/taxonomy'
 import { scoreBandSimilarity, similarBands } from '../lib/bandSimilarity'
@@ -207,6 +207,7 @@ export function StudioPage() {
   const studioGenres = initialGenres
   const [taxonomyGenreDrafts, setTaxonomyGenreDrafts] = useState(() => clone(taxonomyGenres))
   const [taxonomyMoodDrafts, setTaxonomyMoodDrafts] = useState(() => clone(taxonomyMoods))
+  const [taxonomyPresetDrafts, setTaxonomyPresetDrafts] = useState(() => clone(taxonomyMoodPresets))
   const [taxonomyDirty, setTaxonomyDirty] = useState(false)
   const [taxonomyMessage, setTaxonomyMessage] = useState('현재 13개 장르 카드입니다.')
   const [trash, setTrash] = useState<DeletedBandRecord[]>([])
@@ -332,6 +333,11 @@ export function StudioPage() {
     setTaxonomyDirty(true)
   }
 
+  const changeTaxonomyPresets = (nextPresets: typeof taxonomyPresetDrafts) => {
+    setTaxonomyPresetDrafts(nextPresets)
+    setTaxonomyDirty(true)
+  }
+
   const selectExternalCandidate = (publisher: 'Wikidata' | 'MusicBrainz', candidate: ExternalCandidate) => {
     setDraft((current) => {
       const withSource = updateExternalSource(current, publisher, candidate.id)
@@ -432,7 +438,7 @@ export function StudioPage() {
 
   const saveTaxonomyGenres = async () => {
     try {
-      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts }) })
+      const result = await studioFetchJson<{ updatedAt: string }>('/api/studio/taxonomy', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...taxonomy, genres: taxonomyGenreDrafts, moods: taxonomyMoodDrafts, moodPresets: taxonomyPresetDrafts.filter((preset) => preset.name.trim() && preset.moodIds.length) }) })
       setTaxonomyDirty(false)
       setTaxonomyMessage(`13장르 카드 저장 완료 · ${new Date(result.updatedAt).toLocaleTimeString('ko-KR')}`)
     } catch (error) { setTaxonomyMessage(`저장 실패: ${error instanceof Error ? error.message : '서버를 확인하세요.'}`) }
@@ -691,7 +697,7 @@ export function StudioPage() {
         </aside>}
 
         <div className="studio-editor">
-          {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
+          {workspace === 'design' ? <DesignStudioPanel value={siteDraft} dirty={siteDirty} message={siteMessage} genres={taxonomyGenreDrafts} moods={taxonomyMoodDrafts} presets={taxonomyPresetDrafts} genresDirty={taxonomyDirty} genreMessage={taxonomyMessage} onChange={changeSite} onGenresChange={changeTaxonomyGenres} onMoodsChange={changeTaxonomyMoods} onPresetsChange={changeTaxonomyPresets} onSave={saveSiteContent} onSaveGenres={saveTaxonomyGenres} /> : <>
           <StudioOperationsDashboard bands={catalogBands} pendingRelations={pendingRelations} hasUnsavedChanges={dirty || catalogDirty || siteDirty || taxonomyDirty} linkHealth={linkHealth} onSelectBand={chooseBand} />
 
           <BandIntakePanel bands={catalogBands} onAddBands={addBands} />
