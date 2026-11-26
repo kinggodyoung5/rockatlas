@@ -98,7 +98,7 @@ export function MoodFinderPage({ bands, selectedMoodIds, excludeMoodId, genreId,
           </div>
           <BandCard band={band} index={index} onSelect={(band) => onSelectBand(band, listIds)} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />
         </div>)}</div>}
-        {selectedMoodIds.length > 0 && results.length === 0 && <div className="empty-state"><p>선택한 분위기를 함께 만족하는 밴드가 없습니다. 조건을 줄여보세요.</p></div>}
+        {selectedMoodIds.length > 0 && results.length === 0 && <div className="empty-state"><p>이 분위기 조합의 좌표에는 아직 밴드가 없습니다. 조건을 하나 줄여 보세요.</p></div>}
       </section>
       {selectedMoodIds.length > 0 && !resultsVisible && <button className="mood-results-jump" onClick={scrollToResults}>결과 {results.length}팀 보기 <ArrowDown size={15} /></button>}
     </main>

@@ -57,7 +57,7 @@ export function SearchOverlay({ open, onClose, onPick }: SearchOverlayProps) {
         </label>
         <div id="search-results" className="search-overlay-results" role="listbox" aria-label="검색 결과">
           {error && <p className="search-overlay-note">{error}</p>}
-          {!error && !index && <p className="search-overlay-note">검색 색인을 불러오는 중입니다…</p>}
+          {!error && !index && <p className="search-overlay-note">안내서 색인을 펼치는 중입니다…</p>}
           {index && !query.trim() && <p className="search-overlay-note">예: 너바나, Smells Like, 슈게이즈, Dave Grohl · 위아래 화살표로 고르고 Enter</p>}
           {index && query.trim() && !flat.length && <p className="search-overlay-note">이 좌표에서는 아무것도 찾지 못했습니다.</p>}
           <p className="sr-only" aria-live="polite">{index && query.trim() ? `결과 ${flat.length}개` : ''}</p>

@@ -331,6 +331,10 @@ export function DesignStudioPanel({ value, dirty, message, genres, moods, preset
             <label>제목<input value={value.bandDetailCopy.relationTitle} onChange={(event) => changeBandDetailCopy({ relationTitle: event.target.value })} /></label>
             <label className="studio-grid-span">설명<textarea value={value.bandDetailCopy.relationDescription} onChange={(event) => changeBandDetailCopy({ relationDescription: event.target.value })} rows={2} /></label>
             <label className="studio-grid-span">검수된 연결이 없을 때 표시할 문구<textarea value={value.bandDetailCopy.relationEmptyMessage} onChange={(event) => changeBandDetailCopy({ relationEmptyMessage: event.target.value })} rows={2} /></label>
+            <p className="studio-upload-note studio-grid-span">상세 화면 구역 제목 — 비워 두면 기본값(01 / SOUND · 어떤 음악을 하나요?, 02 / FOOTPRINT · 연표로 보는 발자취, 03 / CREW · 이 밴드의 사람들, 출처와 검수)을 씁니다.</p>
+            {([['soundLabel', '소리 구역 표기'], ['soundTitle', '소리 구역 제목'], ['footprintLabel', '발자취 구역 표기'], ['footprintTitle', '발자취 구역 제목'], ['crewLabel', '사람들 구역 표기'], ['crewTitle', '사람들 구역 제목'], ['sourcesTitle', '출처 구역 제목']] as const).map(([key, label]) => (
+              <label key={key}>{label}<input value={value.bandDetailCopy.sections?.[key] ?? ''} onChange={(event) => changeBandDetailCopy({ sections: { ...value.bandDetailCopy.sections, [key]: event.target.value } })} /></label>
+            ))}
           </div></details>
         </div>
 
