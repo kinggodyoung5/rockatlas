@@ -119,7 +119,7 @@ export function HitchhikingPanel({
       {direction && (
         <div className="hitchhiking-results" style={{ '--direction-color': direction.accent } as React.CSSProperties}>
           <div className="hitchhiking-results-heading">
-            <div><span>SELECTED DIRECTION</span><strong>{direction.resultLabel}</strong></div>
+            <div aria-live="polite"><span>SELECTED DIRECTION</span><strong>{direction.resultLabel}</strong><span className="sr-only">{`${direction.label} 후보 ${recommendations.length}팀 중 ${visibleRecommendations.length}팀 표시`}</span></div>
             <button onClick={showNextCandidates}>{copy.hitchhikingOtherCandidatesLabel} <RotateCcw size={14} /></button>
           </div>
           <div className="hitchhiking-candidates">

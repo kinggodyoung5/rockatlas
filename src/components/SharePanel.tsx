@@ -1,5 +1,6 @@
 import { Check, Copy, Share2, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { useDialog } from '../hooks/useDialog'
 
 interface SharePanelProps {
   open: boolean
@@ -16,29 +17,13 @@ export function SharePanel({ open, title, description, url: suppliedUrl, onClose
   const panelRef = useRef<HTMLElement>(null)
   const url = suppliedUrl ?? (typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}`)
 
+  // Esc·포커스 가두기·스크롤 잠금·닫을 때 여는 버튼으로 포커스 복귀는 공용 훅이 맡는다 (plan P5-5).
+  useDialog(open, panelRef, onClose, { initialFocus: closeRef })
   useEffect(() => {
-    if (!open) return
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    closeRef.current?.focus()
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') return onClose()
-      if (event.key !== 'Tab') return
-      const focusable = [...(panelRef.current?.querySelectorAll<HTMLElement>('button, input, [href], [tabindex]:not([tabindex="-1"])') ?? [])].filter((element) => !element.hasAttribute('disabled'))
-      if (!focusable.length) return
-      const first = focusable[0]
-      const last = focusable.at(-1) as HTMLElement
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus() }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus() }
-    }
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      document.body.style.overflow = previousOverflow
-      window.removeEventListener('keydown', onKeyDown)
-      setCopied(false)
-      setError('')
-    }
-  }, [onClose, open])
+    if (open) return
+    setCopied(false)
+    setError('')
+  }, [open])
 
   if (!open) return null
 

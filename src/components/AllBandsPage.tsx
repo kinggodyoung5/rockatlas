@@ -8,6 +8,7 @@ import type { CatalogSort } from '../lib/explorerRoute'
 import { countryName } from '../lib/countryNames'
 import { activeFilterCount, letterIndex, matchesCatalogFilter, sortCatalog } from '../lib/catalogFilters'
 import { BandCard } from './BandCard'
+import { useDialog } from '../hooks/useDialog'
 
 type FilterPatch = Partial<{ query: string; genreId: GenreTaxonomyId | 'all'; subgenreId: string | 'all'; eraId: EraId | 'all'; countryCode: string | 'all'; sort: CatalogSort }>
 
@@ -81,14 +82,8 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
   }, [pendingJump, renderCount])
   const jumpTo = (position: number) => { setRenderCount((count) => Math.max(count, position + pageSize)); setPendingJump(position) }
 
-  // 모바일 필터 시트: Esc로 닫고, 닫으면 여는 버튼으로 포커스를 돌려준다.
-  useEffect(() => {
-    if (!sheetOpen) return
-    sheetRef.current?.focus()
-    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') setSheetOpen(false) }
-    window.addEventListener('keydown', onKey)
-    return () => { window.removeEventListener('keydown', onKey); sheetButtonRef.current?.focus() }
-  }, [sheetOpen])
+  // 모바일 필터 시트: Esc로 닫고, 포커스를 안에 가두고, 닫으면 여는 버튼으로 포커스를 돌려준다 (plan P5-5).
+  useDialog(sheetOpen, sheetRef, () => setSheetOpen(false))
 
   const reset = () => onFilter({ query: '', genreId: 'all', subgenreId: 'all', eraId: 'all', countryCode: 'all', sort: 'name' })
   const applied: Array<{ key: string; label: string; clear: FilterPatch }> = []
