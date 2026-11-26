@@ -27,7 +27,8 @@ interface AllBandsPageProps {
    *  the search field even when this page is already mounted. Ignored on plain page visits. */
   searchFocusToken?: number
   onFilter: (patch: FilterPatch, replace?: boolean) => void
-  onSelectBand: (band: Band) => void
+  /** 두 번째 인자: 지금 보이는 목록 순서(상세의 이전·다음 이동용). */
+  onSelectBand: (band: Band, listIds?: string[]) => void
   onToggleFavorite: (bandId: string) => void
 }
 
@@ -120,6 +121,7 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
     </>
   )
 
+  const listIds = visible.map((band) => band.id)
   return (
     <main id="top" className="catalog-page all-bands-page" tabIndex={-1}>
       <section className="catalog-hero shell"><span className="section-no">{sectionLabel}</span><h1>{sectionTitle}</h1><p>{bands.length}개의 출발점을 {sectionDescription}</p></section>
@@ -149,12 +151,12 @@ export function AllBandsPage({ bands, query, genreId, subgenreId, eraId, country
       </section>
       <section className="catalog-results shell" ref={resultsRef}>
         {visible.length === 0 && <div className="empty-state"><p>이 좌표에는 아직 등록된 밴드가 없습니다. 조건을 줄여 보세요.</p><button onClick={reset}>필터 초기화</button></div>}
-        {visible.length > 0 && view === 'grid' && <div className="band-grid">{shown.map((band, index) => <BandCard key={band.id} band={band} index={index} onSelect={onSelectBand} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />)}</div>}
+        {visible.length > 0 && view === 'grid' && <div className="band-grid">{shown.map((band, index) => <BandCard key={band.id} band={band} index={index} onSelect={(band) => onSelectBand(band, listIds)} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />)}</div>}
         {visible.length > 0 && view === 'list' && <ol className="band-list">{shown.map((band) => {
           const genre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
           const favorite = favoriteIds.includes(band.id)
           return <li key={band.id} style={{ '--chip-color': genre?.color } as React.CSSProperties}>
-            <button className="band-list-main" onClick={() => onSelectBand(band)}><strong>{band.name}</strong><span>{genre?.displayName ?? band.primaryGenre}</span><span>{band.formed}</span><span>{countryName(band.countryCode)}</span></button>
+            <button className="band-list-main" onClick={() => onSelectBand(band, listIds)}><strong>{band.name}</strong><span>{genre?.displayName ?? band.primaryGenre}</span><span>{band.formed}</span><span>{countryName(band.countryCode)}</span></button>
             <button className={`band-list-favorite ${favorite ? 'is-active' : ''}`} aria-pressed={favorite} aria-label={`${band.name} ${favorite ? '저장 취소' : '저장'}`} onClick={() => onToggleFavorite(band.id)}><Heart size={15} fill={favorite ? 'currentColor' : 'none'} /></button>
           </li>
         })}</ol>}

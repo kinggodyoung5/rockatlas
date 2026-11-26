@@ -1,4 +1,4 @@
-import { ArrowLeft, CalendarDays, ExternalLink, Flag, Heart, MapPin, Search, Share2, Users } from 'lucide-react'
+import { ArrowLeft, CalendarDays, ChevronLeft, ChevronRight, ExternalLink, Flag, Heart, MapPin, Search, Share2, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { buildBandTimeline } from '../lib/bandTimeline'
 import { genreById } from '../data/genres'
@@ -8,7 +8,7 @@ import type { HitchhikingDirectionId } from '../config/hitchhiking'
 import type { BandDetailCopy } from '../data/siteContent'
 import type { JourneyStep, JourneyVia } from '../lib/hitchhiking'
 import type { Band, BandEraTag, Member } from '../types/music'
-import type { MoodId } from '../types/taxonomy'
+import type { GenreTaxonomyId, MoodId } from '../types/taxonomy'
 import { BandImage } from './BandImage'
 import { HitchhikingPanel } from './HitchhikingPanel'
 import { RelationMap } from './RelationMap'
@@ -74,6 +74,22 @@ interface BandDetailProps {
   /** 검색에서 곡을 골라 들어왔으면 그 대표곡으로 스크롤한다. */
   focusTrackId?: string
   onSearch?: () => void
+  /** 상세 JSON을 받는 중: 인덱스의 축약 데이터로 히어로만 먼저 그린다 (plan P5-4). */
+  loading?: boolean
+  onMood?: (moodId: MoodId) => void
+  onSubgenre?: (genreId: GenreTaxonomyId, subgenreId: string) => void
+  /** 목록에서 들어왔을 때 같은 목록의 이전·다음 밴드. ←/→ 키로도 이동한다. */
+  prevBand?: Band
+  nextBand?: Band
+  onNavigate?: (band: Band) => void
+}
+
+/** 구역 제목 기본값. Studio 디자인 작업실의 상세 화면 문구로 바꿀 수 있다 (plan P5-4 #6). */
+const defaultSectionCopy = {
+  soundLabel: '01 / SOUND', soundTitle: '어떤 음악을 하나요?',
+  footprintLabel: '02 / FOOTPRINT', footprintTitle: '연표로 보는 발자취',
+  crewLabel: '03 / CREW', crewTitle: '이 밴드의 사람들',
+  sourcesTitle: '출처와 검수',
 }
 
 export function BandDetail({
@@ -91,8 +107,27 @@ export function BandDetail({
   reportUrl,
   focusTrackId,
   onSearch,
+  loading = false,
+  onMood,
+  onSubgenre,
+  prevBand,
+  nextBand,
+  onNavigate,
 }: BandDetailProps) {
   const [showAllAlbums, setShowAllAlbums] = useState(false)
+  const copy = { ...defaultSectionCopy, ...Object.fromEntries(Object.entries(bandDetailCopy.sections ?? {}).filter(([, value]) => value?.trim())) }
+  useEffect(() => {
+    if (!onNavigate || (!prevBand && !nextBand)) return
+    const onKey = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)) return
+      if (event.altKey || event.ctrlKey || event.metaKey) return
+      if (event.key === 'ArrowLeft' && prevBand) onNavigate(prevBand)
+      if (event.key === 'ArrowRight' && nextBand) onNavigate(nextBand)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [nextBand, onNavigate, prevBand])
   useEffect(() => {
     if (!focusTrackId) return
     const row = document.getElementById(`track-${focusTrackId}`)
@@ -109,12 +144,13 @@ export function BandDetail({
   const taxonomyCrossings = band.taxonomyV2
     ? [...new Set([band.taxonomyV2.primaryGenreId, ...band.taxonomyV2.secondaryGenreIds])].map((id) => taxonomyGenreById[id]).filter(Boolean)
     : []
+  const subgenreTags = band.taxonomyV2?.subgenreIds.map((id) => ({ id, name: taxonomySubgenreById[id]?.name ?? id })) ?? []
   const topMoods = band.taxonomyV2
-    ? Object.entries(band.taxonomyV2.moodScores)
+    ? (Object.entries(band.taxonomyV2.moodScores) as Array<[MoodId, number]>)
       .filter(([, score]) => score >= 3)
       .sort((left, right) => right[1] - left[1])
       .slice(0, 5)
-      .map(([id]) => taxonomyMoodById[id as MoodId]?.name ?? id)
+      .map(([id, score]) => ({ id, score, name: taxonomyMoodById[id]?.name ?? id }))
     : []
   const currentMembers = band.members.filter((member) => member.status !== 'former')
   const formerMembers = band.members.filter((member) => member.status === 'former')
@@ -141,6 +177,8 @@ export function BandDetail({
         <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 이전 페이지</button>
         <span>ROCK ATLAS / {(taxonomyGenre?.englishName ?? genre.englishName).toUpperCase()}</span>
         <span className="detail-topbar-actions">
+          {prevBand && onNavigate && <button className="back-button" onClick={() => onNavigate(prevBand)} aria-label={`이전 밴드: ${prevBand.name} (←)`} title={`${prevBand.name} (←)`}><ChevronLeft size={16} /></button>}
+          {nextBand && onNavigate && <button className="back-button" onClick={() => onNavigate(nextBand)} aria-label={`다음 밴드: ${nextBand.name} (→)`} title={`${nextBand.name} (→)`}><ChevronRight size={16} /></button>}
           {onSearch && <button className="back-button" onClick={onSearch} aria-label="검색 (/ 또는 Ctrl+K)"><Search size={16} /></button>}
           <button className="back-button" onClick={onShare}><Share2 size={16} /> 이 밴드 공유</button>
         </span>
@@ -167,22 +205,32 @@ export function BandDetail({
           <div className="detail-facts detail-facts-emphasis">
             <span><MapPin size={17} />{band.origin}</span>
             <span><CalendarDays size={17} />{band.activeYears}</span>
-            <span><Users size={17} />주요 멤버 {band.members.length}명</span>
+            <span><Users size={17} />{formerMembers.length ? `${stillActive ? '현재' : '마지막'} ${currentMembers.length}명 · 거쳐간 멤버 ${formerMembers.length}명` : `멤버 ${currentMembers.length}명`}</span>
           </div>
-          <div className="tag-list tag-list-emphasis">{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((tag) => <span key={tag}>#{tag}</span>)}</div>
+          <div className="tag-list tag-list-emphasis">{subgenreTags.length && band.taxonomyV2 && onSubgenre
+            ? subgenreTags.map((tag) => <button key={tag.id} onClick={() => onSubgenre(band.taxonomyV2!.primaryGenreId, tag.id)} title={taxonomySubgenreById[tag.id]?.description ?? `${tag.name} 밴드 더 보기`}>#{tag.name}</button>)
+            : (taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((tag) => <span key={tag}>#{tag}</span>)}</div>
         </div>
       </section>
 
+      {loading ? <div className="detail-loading shell" aria-live="polite">밴드 항해 기록을 불러오는 중입니다…</div> : <>
+      <nav className="detail-section-nav shell" aria-label="이 페이지의 구역">
+        <a href="#sound">소리</a><a href="#footprint">발자취</a><a href="#crew">사람들</a><a href="#hitchhiking">히치하이킹</a><a href="#connections">이어진 밴드</a>
+      </nav>
+
       <div className="detail-grid shell">
-        <section className="detail-story">
-          <span className="section-no">01 / SOUND</span>
-          <h2>어떤 음악을 하나요?</h2>
+        <section className="detail-story" id="sound">
+          <span className="section-no">{copy.soundLabel}</span>
+          <h2>{copy.soundTitle}</h2>
           <p>{band.style}</p>
           <div className="sound-facts">
             <div><span>세부 장르</span>{(taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).length
               ? (taxonomySubgenres.length ? taxonomySubgenres : band.subgenres).map((item) => <strong key={item}>{item}</strong>)
               : <strong>{taxonomyGenre?.displayName || genre.name}</strong>}</div>
-            {topMoods.length > 0 && <div><span>대표 분위기</span>{topMoods.map((mood) => <strong key={mood}>{mood}</strong>)}</div>}
+            {topMoods.length > 0 && <div><span>대표 분위기</span><ul className="detail-mood-bars">{topMoods.map((mood) => <li key={mood.id}>
+              {onMood ? <button onClick={() => onMood(mood.id)} title="이 분위기로 밴드 찾기">{mood.name}</button> : <strong>{mood.name}</strong>}
+              <i aria-hidden="true"><b style={{ width: `${mood.score * 20}%` }} /></i><em aria-label={`5점 중 ${mood.score}점`}>{mood.score}</em>
+            </li>)}</ul></div>}
             <div><span>대표 음반</span>{albums.length ? albums.map((album) => <strong key={album}>{album}</strong>) : <strong>편집 대기</strong>}</div>
           </div>
           <div className="genre-crossings">
@@ -202,9 +250,9 @@ export function BandDetail({
           </div>
         </section>
 
-        <section className="track-list-section">
-          <span className="section-no">02 / FOOTPRINT</span>
-          <h2>{band.albums?.length || band.milestones?.length ? '연표로 보는 발자취' : '대표곡으로 보는 발자취'}</h2>
+        <section className="track-list-section" id="footprint">
+          <span className="section-no">{copy.footprintLabel}</span>
+          <h2>{band.albums?.length || band.milestones?.length ? copy.footprintTitle : '대표곡으로 보는 발자취'}</h2>
           <ol className="career-timeline band-timeline">
             {timeline.map((entry) => {
               if (entry.kind === 'formed') return <li key={entry.key} data-kind="event"><time>{entry.year}</time><span><strong>{band.origin}에서 결성</strong><small>{band.activeYears}</small></span></li>
@@ -246,9 +294,9 @@ export function BandDetail({
           )}
         </section>
 
-        <section className="members-section detail-grid-wide">
-          <span className="section-no">03 / PEOPLE</span>
-          <h2>주요 멤버</h2>
+        <section className="members-section detail-grid-wide" id="crew">
+          <span className="section-no">{copy.crewLabel}</span>
+          <h2>{copy.crewTitle}</h2>
           <div className="member-columns">
             <div>
               <h3>{stillActive ? '현재 라인업' : '마지막 라인업'}</h3>
@@ -269,6 +317,7 @@ export function BandDetail({
       </div>
 
       <div className="shell">
+        <div id="hitchhiking" className="detail-anchor" />
         <HitchhikingPanel
           band={band}
           visitedIds={visitedIds}
@@ -278,11 +327,12 @@ export function BandDetail({
           onResetJourney={onResetJourney}
           onShareJourney={onShareJourney}
         />
+        <div id="connections" className="detail-anchor" />
         <RelationMap band={band} onSelect={(target) => onTravelBand(target, 'connection')} visitedIds={visitedIds} copy={bandDetailCopy} />
 
         <section className="sources-section" aria-labelledby="sources-title">
           <span className="section-no">SOURCES</span>
-          <h2 id="sources-title">출처와 검수</h2>
+          <h2 id="sources-title">{copy.sourcesTitle}</h2>
           <div className="sources-grid">
             <div>
               <h3>참고한 자료</h3>
@@ -304,7 +354,7 @@ export function BandDetail({
           </div>
         </section>
       </div>
-
+      </>}
     </main>
   )
 }

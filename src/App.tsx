@@ -11,6 +11,7 @@ import { GlossaryPage } from './components/GlossaryPage'
 import { SearchOverlay } from './components/SearchOverlay'
 import type { SearchEntry } from './lib/searchIndex'
 import { dailyBand } from './lib/dailyBand'
+import { similarBandIds } from './lib/similarIds'
 import { SharePanel } from './components/SharePanel'
 import { loadPublicBand, publicBandById, publicBands as bands } from './data/publicBands'
 import { siteContent as staticSiteContent } from './data/siteContent'
@@ -108,6 +109,8 @@ function ExplorerApp() {
   const [profileShareUrl, setProfileShareUrl] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
   const [focusTrackId, setFocusTrackId] = useState<string | undefined>()
+  /** 목록에서 밴드를 열었을 때 그 목록의 순서 — 상세의 이전·다음 이동에 쓴다 (plan P5-4 #7). */
+  const [browseIds, setBrowseIds] = useState<string[]>([])
   const isLivePreview = new URLSearchParams(window.location.search).get('livePreview') === '1'
   const [previewOverride, setPreviewOverride] = useState<SiteContent | null>(null)
   const siteContent = previewOverride ?? staticSiteContent
@@ -242,7 +245,8 @@ function ExplorerApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
-  const openBand = useCallback((band: Band) => {
+  const openBand = useCallback((band: Band, listIds?: string[]) => {
+    setBrowseIds(listIds ?? [])
     const nextJourney = [{ bandId: band.id }]
     startJourney(band.id)
     navigateToBand(band, journeySteps, nextJourney)
@@ -334,47 +338,65 @@ function ExplorerApp() {
   const fontFaceRule = hasCustomFont ? `@font-face{font-family:RockAtlasCustom;src:url("${siteContent.theme.customFontUrl}") format("${siteContent.theme.customFontFormat}");font-display:swap;font-weight:100 900;font-style:normal;}` : ''
   const appClassName = `app-shell theme-${siteContent.theme.fontPreset} cosmic-${siteContent.theme.cosmicMode} genre-card-style-${siteContent.theme.genreCardStyle}${siteContent.theme.motionIntensity === 0 ? ' cosmic-motion-off' : ''}`
 
-  if (selectedBandId && bandLoading) {
+  const compactBand = selectedBandId ? publicBandById[selectedBandId] : undefined
+  if (selectedBandId && bandLoading && !compactBand) {
     return <main className="route-loading" aria-live="polite">밴드 항해 기록을 불러오는 중입니다…</main>
   }
 
-  if (selectedBandId && bandLoadError) {
-    return <main className="route-loading"><p>{bandLoadError}</p><button onClick={closeBand}>이전 페이지</button></main>
+  if (selectedBandId && (bandLoadError || (!bandLoading && !compactBand && !selectedBand))) {
+    // 지도에 없는 밴드: 비슷한 id를 제안한다 (plan P5-4 #8).
+    const suggestions = similarBandIds(selectedBandId, bands.map((band) => band.id)).map((id) => publicBandById[id]).filter(Boolean)
+    return <div className={appClassName} style={themeStyle}><main className="route-loading not-found-page">
+      <h1>지도에 없는 곳입니다.</h1>
+      <p>{compactBand ? bandLoadError : `"${selectedBandId}" 밴드를 찾지 못했습니다.`}</p>
+      {suggestions.length > 0 && <div className="not-found-suggestions"><span>혹시 이 밴드인가요?</span>{suggestions.map((band) => <button key={band.id} onClick={() => openBand(band)}>{band.name}</button>)}</div>}
+      <div className="not-found-actions"><button onClick={goHome}>홈으로</button><button onClick={goBands}>모든 밴드 보기</button></div>
+    </main></div>
   }
 
-  if (selectedBand) {
+  const detailBand = bandLoading && compactBand ? compactBand : selectedBand
+  if (detailBand) {
+    const browseIndex = browseIds.indexOf(detailBand.id)
+    const prevBand = browseIndex > 0 ? publicBandById[browseIds[browseIndex - 1]] : undefined
+    const nextBand = browseIndex >= 0 && browseIndex < browseIds.length - 1 ? publicBandById[browseIds[browseIndex + 1]] : undefined
     const journeyNames = journeySteps
       .map((step) => publicBandById[step.bandId]?.name)
       .filter((name): name is string => Boolean(name))
     const journeyStartBand = journeySteps.length >= 4 ? publicBandById[journeySteps[0].bandId] : undefined
-    const journeySummary = journeyStartBand && journeyStartBand.id !== selectedBand.id ? describeJourneyShifts(journeyShifts(journeyStartBand, selectedBand)) : ''
+    const journeySummary = journeyStartBand && journeyStartBand.id !== detailBand.id ? describeJourneyShifts(journeyShifts(journeyStartBand, detailBand)) : ''
     return <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}
       <BandDetail
-        band={selectedBand}
+        band={detailBand}
         onBack={closeBand}
-        isFavorite={favoriteIds.includes(selectedBand.id)}
+        isFavorite={favoriteIds.includes(detailBand.id)}
         onToggleFavorite={toggleFavorite}
         visitedIds={historyIds}
         journeySteps={journeySteps}
         onTravelBand={travelToBand}
-        onResetJourney={() => startJourney(selectedBand.id)}
+        onResetJourney={() => startJourney(detailBand.id)}
         onShareJourney={openJourneyShare}
         onShare={() => {
           setShareJourneyUrl('')
-          setShareBand(selectedBand)
+          setShareBand(detailBand)
           setShareOpen(true)
         }}
         bandDetailCopy={siteContent.bandDetailCopy}
         reportUrl={siteContent.suggestionLinkUrl || undefined}
+        loading={bandLoading}
+        onMood={(moodId) => { updateRoute({ ...defaultRoute(), view: 'moods', selectedMoodIds: [moodId] }) }}
+        onSubgenre={(genreId, subgenreId) => { updateRoute({ ...defaultRoute(), view: 'genre', genreId, subgenreId }) }}
+        prevBand={prevBand}
+        nextBand={nextBand}
+        onNavigate={(band) => openBand(band, browseIds)}
         focusTrackId={focusTrackId}
         onSearch={() => setSearchOpen(true)}
       />
       {searchOverlay}
       <SharePanel
         open={shareOpen}
-        title={shareJourneyUrl ? '나의 ROCK ATLAS 히치하이킹 여정' : `${selectedBand.name} — ROCK ATLAS`}
-        description={shareJourneyUrl ? `${journeyNames.join(' → ')}${journeySummary ? ` · 출발 대비 ${journeySummary}` : ''}` : `${selectedBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`}
+        title={shareJourneyUrl ? '나의 ROCK ATLAS 히치하이킹 여정' : `${detailBand.name} — ROCK ATLAS`}
+        description={shareJourneyUrl ? `${journeyNames.join(' → ')}${journeySummary ? ` · 출발 대비 ${journeySummary}` : ''}` : `${detailBand.name}의 발자취와 음악, 연결된 밴드를 함께 살펴보세요.`}
         url={shareJourneyUrl || shareBandUrl}
         onClose={() => setShareOpen(false)}
       />

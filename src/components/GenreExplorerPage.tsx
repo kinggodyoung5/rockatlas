@@ -12,7 +12,8 @@ interface GenreExplorerPageProps {
   moodId: MoodId | 'all'
   favoriteIds: string[]
   onBack: () => void
-  onSelectBand: (band: Band) => void
+  /** 두 번째 인자: 지금 보이는 목록 순서(상세의 이전·다음 이동용). */
+  onSelectBand: (band: Band, listIds?: string[]) => void
   onToggleFavorite: (bandId: string) => void
   onFilter: (patch: { subgenreId?: string | 'all'; moodId?: MoodId | 'all' }) => void
   onGlossary: () => void
@@ -33,6 +34,7 @@ export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favorite
     const inMood = moodId === 'all' || (band.taxonomyV2?.moodScores[moodId] ?? 0) >= 2
     return inSubgenre && inMood
   }).sort((a, b) => a.name.localeCompare(b.name, 'en'))
+  const listIds = visible.map((band) => band.id)
   return (
     <main id="top" className="catalog-page" tabIndex={-1} style={{ '--active-genre': genre.color } as React.CSSProperties}>
       <section className="catalog-hero shell">
@@ -46,7 +48,7 @@ export function GenreExplorerPage({ bands, genreId, subgenreId, moodId, favorite
         <div className="filter-block"><span>빠른 분위기</span><div className="filter-chips"><button className={moodId === 'all' ? 'active' : ''} onClick={() => onFilter({ moodId: 'all' })}>전체</button>{genre.quickMoodIds.map((id) => <button key={id} className={moodId === id ? 'active' : ''} onClick={() => onFilter({ moodId: id })}>{taxonomyMoodById[id].name}</button>)}</div></div>
         {(subgenreId !== 'all' || moodId !== 'all') && <button className="filter-reset" onClick={() => onFilter({ subgenreId: 'all', moodId: 'all' })}><RotateCcw size={14} /> 필터 초기화</button>}
       </section>
-      <section className="catalog-results shell"><div className="result-heading"><h2>{visible.length}개의 밴드</h2><p>한 밴드는 대표 장르 한 곳에만 나타납니다.</p></div>{visible.length ? <div className="band-grid">{visible.map((band, index) => <BandCard key={band.id} band={band} index={index} onSelect={onSelectBand} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />)}</div> : <div className="empty-state"><p>현재 이 조건에 등록된 밴드가 없습니다.</p><button onClick={() => onFilter({ subgenreId: 'all', moodId: 'all' })}>필터 초기화</button></div>}</section>
+      <section className="catalog-results shell"><div className="result-heading"><h2>{visible.length}개의 밴드</h2><p>한 밴드는 대표 장르 한 곳에만 나타납니다.</p></div>{visible.length ? <div className="band-grid">{visible.map((band, index) => <BandCard key={band.id} band={band} index={index} onSelect={(band) => onSelectBand(band, listIds)} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />)}</div> : <div className="empty-state"><p>현재 이 조건에 등록된 밴드가 없습니다.</p><button onClick={() => onFilter({ subgenreId: 'all', moodId: 'all' })}>필터 초기화</button></div>}</section>
     </main>
   )
 }

@@ -27,7 +27,8 @@ interface MoodFinderPageProps {
   sectionDescription: string
   presets?: MoodPreset[]
   onFilter: (patch: MoodFilterPatch) => void
-  onSelectBand: (band: Band) => void
+  /** 두 번째 인자: 지금 보이는 목록 순서(상세의 이전·다음 이동용). */
+  onSelectBand: (band: Band, listIds?: string[]) => void
   onToggleFavorite: (bandId: string) => void
 }
 
@@ -54,6 +55,7 @@ export function MoodFinderPage({ bands, selectedMoodIds, excludeMoodId, genreId,
   }, [])
   const scrollToResults = () => resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
+  const listIds = results.map((item) => item.band).map((band) => band.id)
   return (
     <main id="top" className="catalog-page mood-page" tabIndex={-1}>
       <section className="catalog-hero shell"><span className="section-no">{sectionLabel}</span><h1>{sectionTitle}</h1><p>{sectionDescription}</p><strong>{selectedMoodIds.length}/{maxSelectedMoods} 선택</strong></section>
@@ -94,7 +96,7 @@ export function MoodFinderPage({ bands, selectedMoodIds, excludeMoodId, genreId,
               <em>{scores[moodIndex]}</em>
             </li>)}</ul>
           </div>
-          <BandCard band={band} index={index} onSelect={onSelectBand} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />
+          <BandCard band={band} index={index} onSelect={(band) => onSelectBand(band, listIds)} isFavorite={favoriteIds.includes(band.id)} onToggleFavorite={onToggleFavorite} />
         </div>)}</div>}
         {selectedMoodIds.length > 0 && results.length === 0 && <div className="empty-state"><p>선택한 분위기를 함께 만족하는 밴드가 없습니다. 조건을 줄여보세요.</p></div>}
       </section>

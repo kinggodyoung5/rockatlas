@@ -1643,3 +1643,28 @@ ol.career-timeline { list-style: none; padding: 0; }
 
 /* 통합 검색 오버레이는 화면 고정이어야 한다 — 코스믹 테마의 `.app-shell.cosmic-deep > * { position: relative }`보다 우선. */
 .app-shell > .search-overlay { position: fixed; z-index: 80; }
+
+/* 밴드 상세 다듬기 (plan P5-4) */
+.detail-section-nav { position: sticky; top: 0; z-index: 15; display: flex; gap: 4px; overflow-x: auto; margin-top: 18px; margin-bottom: 8px; padding: 10px 0; background: color-mix(in srgb, #0b0b0d 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.detail-section-nav a { flex: none; padding: 7px 12px; color: #a9a6ad; font-size: 13px; text-decoration: none; border: 1px solid transparent; }
+.detail-section-nav a:hover { color: #fff; border-color: var(--genre-color, var(--orange)); }
+#sound, #footprint, #crew, .detail-anchor { scroll-margin-top: 70px; }
+.detail-anchor { display: block; height: 0; }
+.detail-mood-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.detail-mood-bars li { display: grid; grid-template-columns: minmax(0, 1fr) 70px 14px; gap: 8px; align-items: center; }
+.detail-mood-bars button, .detail-mood-bars strong { padding: 0; border: 0; background: none; color: #e6e3e8; font-size: 13px; font-weight: 700; text-align: left; cursor: pointer; }
+.detail-mood-bars button:hover { color: var(--genre-color, var(--orange)); text-decoration: underline; }
+.detail-mood-bars i { height: 4px; background: rgba(255,255,255,.1); }
+.detail-mood-bars b { display: block; height: 100%; background: var(--genre-color, var(--orange)); }
+.detail-mood-bars em { color: #a9a6ad; font-size: 11px; font-style: normal; text-align: right; }
+.tag-list button { padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+.tag-list-emphasis button { color: var(--genre-color, #d2d0d2); }
+.tag-list button:hover { text-decoration: underline; }
+.detail-loading { padding: 60px 0 120px; color: #929095; }
+.not-found-page { display: grid; gap: 14px; justify-items: center; text-align: center; }
+.not-found-page h1 { margin: 0; font-size: 34px; }
+.not-found-page p { margin: 0; color: #a9a6ad; }
+.not-found-suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; color: #929095; font-size: 13px; }
+.not-found-suggestions button, .not-found-actions button { padding: 8px 14px; border: 1px solid #3a383e; background: transparent; color: #e6e3e8; cursor: pointer; }
+.not-found-suggestions button:hover, .not-found-actions button:hover { border-color: var(--orange); }
+.not-found-actions { display: flex; gap: 8px; }

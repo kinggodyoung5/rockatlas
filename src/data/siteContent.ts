@@ -39,6 +39,8 @@ export interface BandDetailCopy {
   relationTitle: string
   relationDescription: string
   relationEmptyMessage: string
+  /** 상세 화면 구역 제목 (plan P5-4 #6). 비워 두면 기본값을 쓴다. */
+  sections?: Partial<Record<'soundLabel' | 'soundTitle' | 'footprintLabel' | 'footprintTitle' | 'crewLabel' | 'crewTitle' | 'sourcesTitle', string>>
 }
 
 export interface SiteContent {
