@@ -1,5 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowRight, Compass, Heart, MessageSquarePlus, Menu, Share2, Shuffle, X } from 'lucide-react'
+import { ArrowDown, ArrowRight, Compass, Heart, MessageSquarePlus, Menu, Search, Share2, Shuffle, X } from 'lucide-react'
 import { AllBandsPage } from './components/AllBandsPage'
 import { BandDetail } from './components/BandDetail'
 import { DiscoveryHome } from './components/DiscoveryHome'
@@ -8,6 +8,8 @@ import { JourneyBar } from './components/JourneyBar'
 import { MoodFinderPage } from './components/MoodFinderPage'
 import { TasteProfilePage } from './components/TasteProfilePage'
 import { GlossaryPage } from './components/GlossaryPage'
+import { SearchOverlay } from './components/SearchOverlay'
+import type { SearchEntry } from './lib/searchIndex'
 import { dailyBand } from './lib/dailyBand'
 import { SharePanel } from './components/SharePanel'
 import { loadPublicBand, publicBandById, publicBands as bands } from './data/publicBands'
@@ -104,6 +106,8 @@ function ExplorerApp() {
   } = useExplorerState()
   const [profilePickerToken, setProfilePickerToken] = useState(0)
   const [profileShareUrl, setProfileShareUrl] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [focusTrackId, setFocusTrackId] = useState<string | undefined>()
   const isLivePreview = new URLSearchParams(window.location.search).get('livePreview') === '1'
   const [previewOverride, setPreviewOverride] = useState<SiteContent | null>(null)
   const siteContent = previewOverride ?? staticSiteContent
@@ -244,6 +248,26 @@ function ExplorerApp() {
     navigateToBand(band, journeySteps, nextJourney)
   }, [journeySteps, navigateToBand, startJourney])
 
+  // 통합 검색 (plan P5-3): `/` 또는 Ctrl/Cmd+K. 입력 중일 때 `/`는 무시한다.
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null
+      const typing = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)
+      if ((event.key === 'k' || event.key === 'K') && (event.ctrlKey || event.metaKey)) { event.preventDefault(); setSearchOpen(true) }
+      else if (event.key === '/' && !typing && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); setSearchOpen(true) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+  const pickSearchResult = (entry: SearchEntry) => {
+    if (entry.bandId && publicBandById[entry.bandId]) {
+      setFocusTrackId(entry.t === 'track' ? entry.trackId : undefined)
+      openBand(publicBandById[entry.bandId])
+    } else if (entry.t === 'subgenre' && entry.genreId && entry.subgenreId) updateRoute({ ...defaultRoute(), view: 'genre', genreId: entry.genreId as GenreTaxonomyId, subgenreId: entry.subgenreId })
+    else if (entry.t === 'mood' && entry.moodId) updateRoute({ ...defaultRoute(), view: 'moods', selectedMoodIds: [entry.moodId as MoodId] })
+  }
+  const searchOverlay = <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} onPick={pickSearchResult} />
+
   const travelToBand = useCallback((band: Band, via: JourneyVia) => {
     const nextJourney = journeySteps.at(-1)?.bandId === band.id
       ? journeySteps
@@ -343,7 +367,10 @@ function ExplorerApp() {
         }}
         bandDetailCopy={siteContent.bandDetailCopy}
         reportUrl={siteContent.suggestionLinkUrl || undefined}
+        focusTrackId={focusTrackId}
+        onSearch={() => setSearchOpen(true)}
       />
+      {searchOverlay}
       <SharePanel
         open={shareOpen}
         title={shareJourneyUrl ? '나의 ROCK ATLAS 히치하이킹 여정' : `${selectedBand.name} — ROCK ATLAS`}
@@ -392,8 +419,9 @@ function ExplorerApp() {
   return (
     <div className={appClassName} style={themeStyle}>
       {fontFaceRule && <style>{fontFaceRule}</style>}<a className="skip-link" href="#top">본문으로 건너뛰기</a>
-      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className="main-nav" aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><nav id="mobile-quick-nav" className={mobileMenu ? 'mobile-quick-nav is-open' : 'mobile-quick-nav'} aria-label="모바일 메뉴">{navLink('bands', '이름으로 검색', goBandsSearch)}{navLink('bands', '모든 밴드 보기', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}</nav><button className="menu-button" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="mobile-quick-nav">{mobileMenu ? <X /> : <Menu />}</button></header>
+      <header className="site-header shell"><a className="site-banner-link" href="./" onClick={(event) => { event.preventDefault(); goHome() }} aria-label="Rock Atlas 홈">{siteBanner(siteContent.headerTagline, siteContent.brandSuffix)}</a><nav id="main-navigation" className="main-nav" aria-label="주요 메뉴">{navLink('home', '장르', goHome)}{navLink('bands', '모든 밴드', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}<button onClick={() => { surpriseMe(); setMobileMenu(false) }}><Shuffle size={15} /> 랜덤 탐험</button>{siteContent.suggestionLinkUrl && <a className="suggestion-link" href={siteContent.suggestionLinkUrl} target="_blank" rel="noreferrer" onClick={() => setMobileMenu(false)}><MessageSquarePlus size={15} /> {siteContent.suggestionButtonLabel}</a>}{studioAvailable && <a href="?studio=1">Studio</a>}</nav><nav id="mobile-quick-nav" className={mobileMenu ? 'mobile-quick-nav is-open' : 'mobile-quick-nav'} aria-label="모바일 메뉴">{navLink('bands', '이름으로 검색', goBandsSearch)}{navLink('bands', '모든 밴드 보기', goBands)}{navLink('moods', '느낌으로 찾기', goMoods)}{navLink('profile', '내 취향', goProfile)}</nav><button className="header-search-button" onClick={() => setSearchOpen(true)} aria-label="검색 (/ 또는 Ctrl+K)" title="검색 (/ 또는 Ctrl+K)"><Search size={18} /></button><button className="menu-button" onClick={() => setMobileMenu(!mobileMenu)} aria-label={mobileMenu ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={mobileMenu} aria-controls="mobile-quick-nav">{mobileMenu ? <X /> : <Menu />}</button></header>
       {content}
+      {searchOverlay}
       {studioAvailable && <a className="local-edit-shortcut" href="?studio=1#design">화면 수정</a>}
       <footer className="site-footer shell"><div className="site-banner-link">{siteBanner(siteContent.footerTagline)}</div><p>{bands.length}개 밴드를 수록했습니다. {siteContent.footerDescription} <a href="?view=glossary" onClick={(event) => { event.preventDefault(); goGlossary() }}>용어 사전</a></p><span>{siteContent.footerLocation}</span></footer>
       <SharePanel open={shareOpen} title={profileShareUrl ? '나의 ROCK ATLAS 취향 지도' : 'ROCK ATLAS — 락의 세계를 여행하는 안내서'} description={profileShareUrl ? '내가 저장한 밴드로 만든 취향 지도와 추천을 보내보세요.' : '락의 계보를 함께 여행할 사람에게 메인 지도를 보내보세요.'} url={profileShareUrl || undefined} onClose={() => { setShareOpen(false); setProfileShareUrl('') }} />

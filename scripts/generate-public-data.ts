@@ -1,5 +1,6 @@
 import { mkdir, readFile, readdir, rm, unlink, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { buildSearchIndex } from '../src/lib/searchIndex.ts'
 
 type JsonRecord = Record<string, unknown>
 type Catalog = { schemaVersion: number; updatedAt: string; bands: JsonRecord[] }
@@ -61,6 +62,9 @@ function compactBand(band: JsonRecord) {
     image: {
       wikipediaTitle: image.wikipediaTitle ?? band.name,
       displayUrl: image.displayUrl,
+      // 카드가 Commons 썸네일(330/500px)을 만들 수 있도록 원본 주소도 넣는다 (plan P5-2).
+      originalUrl: image.originalUrl,
+      ...(image.kind ? { kind: image.kind } : {}),
       alt: image.alt ?? `${band.name} 밴드 사진`,
       credit: { sourceUrl: '', license: '', reviewStatus: 'needs-review' },
     },
@@ -135,4 +139,11 @@ await Promise.all(publicBands.flatMap((band) => {
   ]
 }))
 
-console.log(`공개 데이터 생성 완료 · 목록 ${publicBands.length}개 · 상세 ${publicBands.length}개 · 공유 페이지 ${publicBands.length}개`)
+// 통합 검색 인덱스 (plan P5-3): 한글 밴드명은 Wikidata 라벨을 수동 보정으로 덮어쓴다.
+const readNames = async (path: string) => JSON.parse(await readFile(resolve(root, path), 'utf8')) as Record<string, string>
+const koreanNames = { ...(await readNames('scripts/data/korean-names-wikidata.json')), ...(await readNames('scripts/data/korean-names-manual.json')) }
+const taxonomy = JSON.parse(await readFile(resolve(root, 'src/data/taxonomy.v2.json'), 'utf8'))
+const searchIndex = buildSearchIndex({ bands: publicBands as never, koreanNames, genres: taxonomy.genres, subgenres: taxonomy.subgenres, moods: taxonomy.moods })
+await writeFile(resolve(root, 'public/data/search-index.json'), `${JSON.stringify(searchIndex)}\n`, 'utf8')
+
+console.log(`공개 데이터 생성 완료 · 목록 ${publicBands.length}개 · 상세 ${publicBands.length}개 · 공유 페이지 ${publicBands.length}개 · 검색 항목 ${searchIndex.length}개`)

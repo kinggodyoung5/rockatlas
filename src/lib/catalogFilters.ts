@@ -36,3 +36,20 @@ export function sortCatalog(bands: Band[], sort: CatalogSort): Band[] {
     : sort === 'formed-desc' ? b.formed - a.formed
       : a.name.localeCompare(b.name, 'en'))
 }
+
+/** 검색어를 뺀 필터 수 — 모바일 "필터 (2)" 버튼에 쓴다. */
+export function activeFilterCount(filter: Omit<CatalogFilter, 'query'>) {
+  return [filter.genreId, filter.subgenreId, filter.eraId, filter.countryCode].filter((value) => value !== 'all').length
+}
+
+/** 이름순 목록의 A–Z 색인. 글자마다 첫 밴드의 위치를 돌려준다. "The "는 건너뛰지 않는다(정렬과 같게).
+ *  숫자·기호로 시작하면 '#'. */
+export function letterIndex(sortedBands: Pick<Band, 'name'>[]) {
+  const index = new Map<string, number>()
+  sortedBands.forEach((band, position) => {
+    const first = band.name.normalize('NFD').replace(/[̀-ͯ]/g, '').charAt(0).toUpperCase()
+    const letter = /[A-Z]/.test(first) ? first : '#'
+    if (!index.has(letter)) index.set(letter, position)
+  })
+  return index
+}

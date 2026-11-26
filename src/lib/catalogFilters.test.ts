@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { publicBandById, publicBands } from '../data/publicBands'
-import { formedEra, matchesCatalogFilter, sortCatalog, type CatalogFilter } from './catalogFilters'
+import { activeFilterCount, formedEra, letterIndex, matchesCatalogFilter, sortCatalog, type CatalogFilter } from './catalogFilters'
 
 const none: CatalogFilter = { query: '', genreId: 'all', subgenreId: 'all', eraId: 'all', countryCode: 'all' }
 
@@ -31,5 +31,17 @@ describe('catalog filters', () => {
     expect(publicBands.filter((band) => matchesCatalogFilter(band, { ...none, query: 'METALLICA' })).map((band) => band.id)).toContain('metallica')
     const sorted = sortCatalog(publicBands.slice(0, 20), 'name').map((band) => band.name)
     expect(sorted).toEqual([...sorted].sort((a, b) => a.localeCompare(b, 'en')))
+  })
+
+  it('counts active filters without the search query', () => {
+    expect(activeFilterCount({ genreId: 'all', subgenreId: 'all', eraId: 'all', countryCode: 'all' })).toBe(0)
+    expect(activeFilterCount({ genreId: 'extreme-metal', subgenreId: 'all', eraId: '1980s', countryCode: 'all' })).toBe(2)
+  })
+
+  it('builds an A–Z index with the first position of each letter', () => {
+    const index = letterIndex([{ name: '10cc' }, { name: 'ABBA' }, { name: 'AC/DC' }, { name: 'Mötley Crüe' }, { name: 'Muse' }])
+    expect([...index]).toEqual([['#', 0], ['A', 1], ['M', 3]])
+    const real = letterIndex(sortCatalog(publicBands, 'name'))
+    expect(real.get('M')).toBeGreaterThan(real.get('A')!)
   })
 })

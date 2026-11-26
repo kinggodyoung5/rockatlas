@@ -1,5 +1,5 @@
-import { ArrowLeft, CalendarDays, ExternalLink, Flag, Heart, MapPin, Share2, Users } from 'lucide-react'
-import { useState } from 'react'
+import { ArrowLeft, CalendarDays, ExternalLink, Flag, Heart, MapPin, Search, Share2, Users } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { buildBandTimeline } from '../lib/bandTimeline'
 import { genreById } from '../data/genres'
 import { eraById } from '../data/eras'
@@ -71,6 +71,9 @@ interface BandDetailProps {
   bandDetailCopy: BandDetailCopy
   /** "잘못된 정보 알리기" 링크(사이트 설정의 제안 폼). 없으면 링크를 숨긴다. */
   reportUrl?: string
+  /** 검색에서 곡을 골라 들어왔으면 그 대표곡으로 스크롤한다. */
+  focusTrackId?: string
+  onSearch?: () => void
 }
 
 export function BandDetail({
@@ -86,8 +89,19 @@ export function BandDetail({
   onShare,
   bandDetailCopy,
   reportUrl,
+  focusTrackId,
+  onSearch,
 }: BandDetailProps) {
   const [showAllAlbums, setShowAllAlbums] = useState(false)
+  useEffect(() => {
+    if (!focusTrackId) return
+    const row = document.getElementById(`track-${focusTrackId}`)
+    if (!row) return
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    row.classList.add('is-focused')
+    const timer = window.setTimeout(() => row.classList.remove('is-focused'), 2400)
+    return () => window.clearTimeout(timer)
+  }, [band.id, focusTrackId])
   const genre = genreById[band.primaryGenre]
   const taxonomyGenre = band.taxonomyV2 ? taxonomyGenreById[band.taxonomyV2.primaryGenreId] : undefined
   const genreColor = taxonomyGenre?.color ?? genre.color
@@ -126,7 +140,10 @@ export function BandDetail({
       <div className="detail-topbar shell">
         <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> 이전 페이지</button>
         <span>ROCK ATLAS / {(taxonomyGenre?.englishName ?? genre.englishName).toUpperCase()}</span>
-        <button className="back-button" onClick={onShare}><Share2 size={16} /> 이 밴드 공유</button>
+        <span className="detail-topbar-actions">
+          {onSearch && <button className="back-button" onClick={onSearch} aria-label="검색 (/ 또는 Ctrl+K)"><Search size={16} /></button>}
+          <button className="back-button" onClick={onShare}><Share2 size={16} /> 이 밴드 공유</button>
+        </span>
       </div>
 
       <section className="detail-hero shell">
@@ -213,7 +230,7 @@ export function BandDetail({
                 ? item.source.url
                 : `https://www.youtube.com/results?search_query=${encodeURIComponent(`${band.name} ${item.title}`)}`
               return (
-                <a key={item.id} className="track-row track-guide-row" href={href} target="_blank" rel="noreferrer">
+                <a key={item.id} id={`track-${item.id}`} className="track-row track-guide-row" href={href} target="_blank" rel="noreferrer">
                   <span className="track-number">{String(index + 1).padStart(2, '0')}</span>
                   <span className="track-info"><strong>{item.title}</strong><small>{[item.album ?? (item.releaseType === 'single' ? '싱글' : undefined), item.year].filter(Boolean).join(' · ')}</small>{item.guide && <p>{item.guide}</p>}</span>
                   <span className="track-external"><small>{hasReviewedDirectLink ? 'YouTube' : 'YouTube 검색'}</small><ExternalLink size={15} /></span>

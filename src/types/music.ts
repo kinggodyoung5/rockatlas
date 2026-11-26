@@ -160,6 +160,8 @@ export interface PendingRelation {
 }
 
 export interface BandImage {
+  /** 'logo'면 잘라내지 않고 여백을 둔다(object-fit: contain). 기본은 사진. */
+  kind?: 'photo' | 'logo'
   wikipediaTitle: string
   fileName?: string
   displayUrl?: string

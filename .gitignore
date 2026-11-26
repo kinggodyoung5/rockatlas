@@ -10,3 +10,4 @@ public/bands/
 rock-atlas-backups/
 scripts/.cache/
 scripts/data/album-candidates.json
+public/data/search-index.json
